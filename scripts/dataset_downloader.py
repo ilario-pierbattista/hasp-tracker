@@ -44,6 +44,10 @@ class Element:
         target_path = self._generate_path(path)
         target_file = os.path.join(target_path, self.name)
         downf = not os.path.exists(target_file)
+        if not downf: 
+            """ A questo livello, il file esiste"""
+            self.path = target_file
+            self.directory = target_path
         downf = downf or (self.size != os.path.getsize(target_file))
         if downf:
             try:
@@ -68,7 +72,7 @@ class Element:
         """
         Estrae gli archivi
         """
-        if self.path is not None:
+        if hasattr(self, 'path') and self.path is not None:
             exts = self.path.split('.')[-1]
             if exts == 'zip':
                 os.system("unzip -q "+
@@ -163,13 +167,18 @@ def balance_load(childnum, main_runner, dataset):
     Bilancia il carico di lavoro dividendo l'input
     """
     global done
-    x = 0
-    indexes = []
-    delta = int(len(dataset) / childnum)
-    while x < childnum:
-        indexes.append([x*delta, (x+1)*delta])
-        x += 1
-    indexes[childnum-1][1] = len(dataset)
+    i = 0
+    partitions = [None]*childnum
+    for k,v in enumerate(partitions):
+        partitions[k] = []
+    while i < len(dataset):
+        j = 0
+        while j < childnum:
+            if i >= len(dataset):
+                break
+            partitions[j].append(dataset[i])
+            i += 1
+            j += 1
 
     possibles = globals().copy()
     possibles.update(locals())
@@ -178,9 +187,9 @@ def balance_load(childnum, main_runner, dataset):
         raise Exception("Funzione %s non implementata" % main_runner)
 
     done.acquire()
-    for index in indexes:
+    for partition in partitions:
         threading.Thread(target=function, 
-                args=([dataset[index[0]:index[1]]],)
+                args=([partition],)
                 ).start()
     done.acquire()
 
