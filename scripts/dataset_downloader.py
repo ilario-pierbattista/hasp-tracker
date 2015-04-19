@@ -133,7 +133,7 @@ def usage():
     """
     Stampa le istruzioni d'uso
     """
-    print("""Usage: %s <url> <dest_dir>""" % (sys.argv[0]))
+    print("""Usage: %s <url> <dest_dir> <number_of_thread>""" % (sys.argv[0]))
 
 def child_info(subset):
     """
@@ -197,20 +197,21 @@ def main():
     """
     Main del programma
     """
-    if(len(sys.argv) != 3):
+    if(len(sys.argv) != 4):
         usage()
         sys.exit(1)
     page = HtmlPage(sys.argv[1])
+    thread_num = int(sys.argv[3])
     print('Sto scaricando le informazioni...')
     page.parse_tables()
-    balance_load(6, "child_info", page.elements)
+    balance_load(thread_num, "child_info", page.elements)
     
     total_size = 0
     for elem in page.elements:
         if elem.size != -1:
             total_size += elem.size
     print("Dimensione minima dei dataset %s B" % (total_size))
-    balance_load(6, "child_download", page.elements)
+    balance_load(thread_num, "child_download", page.elements)
     print("Estrazione")
     for elem in page.elements:
         elem.extract()
