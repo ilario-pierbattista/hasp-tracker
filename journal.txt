@@ -1,5 +1,9 @@
 Journal
 
+19/04/2015: Dataset da "University of Rzeszow"
+    Sviluppo di un piccolo script per il download dell'interno dataset
+    e l'estrazione degli archivi (script/dataset-download.py)
+
 16/04/2015: Attivazione tirocinio
     Paper di riferimento: "Human Tracking and Counting Using the 
     Kinect Range Sensor Based on Adaboost and Kalman Filter"
