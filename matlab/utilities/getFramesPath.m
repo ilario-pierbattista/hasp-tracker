@@ -19,7 +19,7 @@ end
 
 function sorted = sortName(names)
 % Ordina i nomi in base al numero di frame
-sorted = cell(size(names));
+sorted = cell(size(names,1) - 2, 1);
 for i = [1:length(names)]
     if ~(strcmp(names(i).name, '.') || strcmp(names(i).name, '..'))
         splitted = strsplit(names(i).name, '_');

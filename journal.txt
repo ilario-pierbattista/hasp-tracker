@@ -2,9 +2,12 @@ Journal
 
 21/04/2015: Utilities in Matlab
     Sviluppo delle prime funzioni di supporto in matlab (caricamento
-    veloce delle path dei frame, plotting)
+    veloce delle path dei frame, plotting statico dei frame)
     NB: i dataset del dipartimento sono file binari di 16bit di
     16bit di profondità a risoluzione 320x240
+    Primo, grande impatto con Matlab.
+    Ottimizzazione delle operazioni di lettura dei frame per avvicinarsi
+    al plotting video (parsing dello stream binario grezzo).
 
 19/04/2015: Dataset da "University of Rzeszow"
     Sviluppo di un piccolo script per il download dell'interno dataset
