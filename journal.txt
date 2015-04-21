@@ -8,6 +8,7 @@ Journal
     Primo, grande impatto con Matlab.
     Ottimizzazione delle operazioni di lettura dei frame per avvicinarsi
     al plotting video (parsing dello stream binario grezzo).
+    Plot video riuscito. Problemi: scala colori e frame rate troppo alto
 
 19/04/2015: Dataset da "University of Rzeszow"
     Sviluppo di un piccolo script per il download dell'interno dataset
