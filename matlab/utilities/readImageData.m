@@ -1,10 +1,8 @@
-function data = readImageData(fp, colDim, rowDim, colorDepth, filterMatrix)
+function data = readImageData(fp, colDim, rowDim, colorDepth)
 % Legge un'immagine come array di double
 
-if nargin > 5
+if nargin > 4
     error('myfuns:readImageData:tooManyArguments')
-elseif nargin == 4
-    filterMatrix = generateFilterMatrix(colDim, rowDim, colorDepth);
 end
 
 % se fp non è un file descriptor, potrebbe essere una path
@@ -13,21 +11,28 @@ if ~isnumeric(fp)
     fp = fopen(fp, 'r');
 end
 
-% Controllo sul valore di colorDepth
-if colorDepth ~= 16 && colorDepth ~= 24 && colorDepth ~= 8 && colorDepth ~= 32
-    error('myfuns:readImageData:strangeColorDepth',...
+% Impostazione del formato
+formato = '';
+switch colorDepth
+    case 16
+        formato = 'uint16';
+    case 24
+        % Potrebbe generare errori. Oppure potrebbe essere del tutto
+        % inutile.
+        formato = 'ubit24'; 
+    case 8
+        formato = 'uint8';
+    case 32
+        formato = 'uint32';
+    otherwise
+        error('myfuns:readImageData:strangeColorDepth',...
         strcat('colorDepth = ',num2str(colorDepth),' non è un valore valido.'))
 end
 
-bpp = colorDepth / 8;   % Bytes Per Pixel
-data = zeros(rowDim, colDim);
-
-cursore = 1;
-i = 1; j = 1;
-stream = transpose(fread(fp));
+stream = fread(fp, formato);
 
 % Controllo dei file immagine
-if length(stream) ~= bpp * colDim * rowDim
+if length(stream) ~= colDim * rowDim
     error('myfuns:readImageData:dimentionMismatch',...
         strcat('Le dimensioni date ',num2str(colDim),'x',num2str(rowDim),...
         ' e ColorDepth = ',num2str(colorDepth),' non sono corretti oppure',...
@@ -35,5 +40,4 @@ if length(stream) ~= bpp * colDim * rowDim
 end
 
 % Conversione da array a matrice 
-raw = vec2mat(stream, colDim*bpp);
-data = raw*filterMatrix;
+data = vec2mat(stream, colDim);

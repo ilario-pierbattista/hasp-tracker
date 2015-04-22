@@ -1,5 +1,11 @@
 Journal
 
+22/04/2015: Video renderizzato con successo
+    Eccetto la regolazione del framerate, il video viene visualizzato nel
+    modo corretto (c'era un bug nella conversione dei byte, scambio del
+    byte più significativo con quello meno significativo).
+    Approfondimento teorico sulle haar-features.
+
 21/04/2015: Utilities in Matlab
     Sviluppo delle prime funzioni di supporto in matlab (caricamento
     veloce delle path dei frame, plotting statico dei frame)
