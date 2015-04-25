@@ -1,5 +1,10 @@
 Journal
 
+25/04/2015: Minimi locali
+    Sviluppata funzione per il calcolo dei minimi locali previa applicazione
+    di una griglia all'immagine.
+    Sviluppata griglia per l'identificazione hasp. 
+
 24/04/2015: Features di Haar
     Trovato del codice che implementa in matlab il calcolo delle features
     di haar del tipo "edge".
