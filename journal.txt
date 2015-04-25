@@ -1,5 +1,10 @@
 Journal
 
+24/04/2015: Features di Haar
+    Trovato del codice che implementa in matlab il calcolo delle features
+    di haar del tipo "edge".
+    Implementazione di alcune parti in C. 
+
 22/04/2015: Video renderizzato con successo
     Eccetto la regolazione del framerate, il video viene visualizzato nel
     modo corretto (c'era un bug nella conversione dei byte, scambio del

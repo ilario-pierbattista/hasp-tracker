@@ -1,0 +1,41 @@
+<html>
+<head>
+    <title>Hasp Tracker</title>
+    <link rel="stylesheet" src="stile.css" type="text/css">
+</head>
+<body>
+    <h1>Hasp Tracker</h1>
+    
+    <p>
+        Algoritmo di riconoscimento del profilo umano a partire da una 
+        registrazione dei valori misurati da un sensore di profondit&agrave;
+        posizionata in modo da avere il profilo dall'alto del soggetto.
+    </p>
+
+    <p>
+        <b>HASP</b> &egrave; l'acronimo di <i>Head And Shoulder Profile</i>
+        ed &egrave; il target da riconoscere e tracciare a seguito delle
+        misurazioni. Le misurazioni vengono effettuate con il sensore 
+        Kinect V2.
+    </p>
+
+    <p>
+        L'algoritmo da implementare pu&ograve; essere scomposto nelle sue
+        componenti:
+        <dl>
+            <dt>Detecting</dt>
+            <dd>
+                Utilizzo estensivo delle <b>features di Haar</b>. L'algoritmo di
+                machine learning usato per allenare la macchina &egrave;
+                <b>Adaboost</b>
+            </dd>
+
+            <dt>Tracking</dt>
+            <dd>
+                Il tracking degli oggetti rilevati viene effettuato
+                applicando il <b>Filtro di Kalman</b>
+            </dd>
+        </dl>
+    </p>
+</body>
+</html>
