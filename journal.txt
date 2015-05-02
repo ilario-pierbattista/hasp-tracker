@@ -1,5 +1,24 @@
 Journal
 
+02/05/2015: Proseguimento sviluppo Gui
+    Lo sviluppo della gui per il training si sposta in java. L'idea di
+    fondo è quella di sviluppare un tool indipendente per la creazione
+    di dataset d'allenamento.
+
+30/04/2015: Modello
+    Prove di applicazione del modello descritto dal paper di riferimento,
+    senza grandi successi. Il modello è troppo idealizzato e le immagini
+    sono soggette ad una distorsione prospettica.
+
+28/04/2015: GUI
+    Inizio sviluppo della gui per la fase di training.
+    Inizio definizione del pattern di riconoscimento.
+
+26/04/2015: Implementazione Haar
+    Sviluppo delle funzioni per l'implementazione delle features di Haar
+    "edge" e "linear".
+    Correzione bug del mex file.
+
 25/04/2015: Minimi locali
     Sviluppata funzione per il calcolo dei minimi locali previa applicazione
     di una griglia all'immagine.

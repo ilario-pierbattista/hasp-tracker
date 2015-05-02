@@ -25,22 +25,21 @@
 
 */
 
+#include <stdio.h>
 #include <math.h>
 #include "mex.h"
-#include <stdio.h>
+#include "matrix.h"
+
+void checkArguments(int nlhs, int nrhs);
 
 // main function
 void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[]) {
-    // check
-    if (nrhs != 2) {
-        mexErrMsgTxt("Two inputs required: 1. input integral image (II) 2. Haar filter size");
-    }
-    if (nlhs != 2)
-        mexErrMsgTxt("Two outputs required: 1. Haar filter response (Hx) 2. Haar filter response (Hy)");
+
+    checkArguments(nlhs, nrhs);
 
     // integral image (II)
     double *II = (double *)mxGetPr(prhs[0]);
-    const int *imgSize = mxGetDimensions(prhs[0]);
+    const int *imgSize = (const int *) mxGetDimensions(prhs[0]);
 
     // Haar filter size
     int hs = (int)mxGetScalar(prhs[1]);
@@ -50,7 +49,7 @@ void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[]) {
     int sx = imgSize[1];
 
     // middle point
-    int mp = (int)round((double)hs / 2);
+    int mp = (int)round((double)hs / 2) - 1;
 
     // output maps limits
     int ly = sy - hs - 1;
@@ -74,8 +73,8 @@ void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[]) {
             // region coordinates
             x1 = x;  // left
             y1 = y;  // top
-            x2 = x1 + hs;  // right
-            y2 = y1 + hs;  // bottom
+            x2 = x1 + hs - 1;  // right
+            y2 = y1 + hs - 1;  // bottom
 
             // Haar x
             /*
@@ -87,8 +86,14 @@ void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[]) {
                    *         *         *
                    *********************
             */
-            area1 = *(II + x2 * sy + y2) + *(II + (x1 + mp) * sy + y1) - *(II + x2 * sy + y1) - *(II + (x1 + mp) * sy + y2); // right area
-            area2 = *(II + (x2 - mp) * sy + y2) + *(II + x1 * sy + y1) - *(II + (x2 - mp) * sy + y1) - *(II + x1 * sy + y2); // left area
+            area1 = *(II + x2*sy + y2) +
+                *(II + (x1 + mp)*sy + y1) - 
+                *(II + x2*sy + y1) - 
+                *(II + (x1 + mp)*sy + y2); // right area
+            area2 = *(II + (x2 - mp)*sy + y2) +
+                *(II + x1*sy + y1) - 
+                *(II + (x2 - mp)*sy + y1) - 
+                *(II + x1*sy + y2); // left area
             Hx = (area2 - area1) / (hs * hs);
 
             // Haar y
@@ -113,3 +118,15 @@ void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[]) {
         }
     }
 }
+
+
+void checkArguments(int nlhs, int nrhs) {
+    // check
+    if (nrhs != 2) {
+        mexErrMsgTxt("Two inputs required: 1. input integral image (II) 2. Haar filter size");
+    }
+    if (nlhs != 2) {
+        mexErrMsgTxt("Two outputs required: 1. Haar filter response (Hx) 2. Haar filter response (Hy)");
+    }
+}
+

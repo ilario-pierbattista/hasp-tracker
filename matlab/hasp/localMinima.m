@@ -18,8 +18,6 @@ if mod(rows + 1, meshSize) ~= 0
     x(meshrows+1,:) = x(meshrows,:);
     y(meshrows+1,:) = rows;
 end
-x
-y
 
 minima = zeros(meshrows, meshcols);
 mx = zeros(meshrows, meshcols);
@@ -39,15 +37,16 @@ for i = [1:meshrows]
         my(i,j) = my(i,j) + y(i,1) - 1;
     end
 end
-minima(minima == 0) = NaN;
-[globalMinimum, I] = min(minima(:));
-[i, j] = ind2sub(size(minima), I);
 
-imagesc(data);
-hold on;
+% Le istruzioni di qui in avanti sono introdotte per motivi di debugging
+%minima(minima == 0) = NaN;
+%[globalMinimum, I] = min(minima(:));
+%[i, j] = ind2sub(size(minima), I);
+%imagesc(data);
+%hold on;
 % Plot del grid
-plot(x, y, 'w.');
+%plot(x, y, 'w.');
 % Plot dei minimi
-plot(mx, my, 'g.');
+%plot(mx, my, 'g.');
 % Plot del minimo globale
-plot(mx(i,j), my(i,j), 'y*');
+%plot(mx(i,j), my(i,j), 'y*');

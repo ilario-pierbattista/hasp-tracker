@@ -61,6 +61,8 @@ flags = [
 'c++',
 '-I',
 '/usr/local/MATLAB/R2014a/extern/include',
+'-I',
+'./matlab/include',
 '-isystem',
 '../BoostParts',
 '-isystem',
