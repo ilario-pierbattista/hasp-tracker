@@ -17,6 +17,10 @@ public class MainFrame extends View {
     private MenuItems menuItems;
     private Menus menus;
     private JPanel panel1;
+    private JTable table1;
+    private JButton aggiungiButton;
+    private JButton eliminaButton;
+    private JButton modificaButton;
 
     public MainFrame() {
         menuItems = new MenuItems();
@@ -79,5 +83,17 @@ public class MainFrame extends View {
 
     public Menus getMenus() {
         return menus;
+    }
+
+    public JButton getAggiungiButton() {
+        return aggiungiButton;
+    }
+
+    public JButton getEliminaButton() {
+        return eliminaButton;
+    }
+
+    public JButton getModificaButton() {
+        return modificaButton;
     }
 }

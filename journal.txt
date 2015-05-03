@@ -1,5 +1,10 @@
 Journal
 
+03/05/2015: Sviluppo GUI, Sviluppo modello
+    Lo sviluppo della gui in java procede molto più velocemente che
+    in matlab.
+    Sviluppo della logica dei classificatori deboli.
+
 02/05/2015: Proseguimento sviluppo Gui
     Lo sviluppo della gui per il training si sposta in java. L'idea di
     fondo è quella di sviluppare un tool indipendente per la creazione

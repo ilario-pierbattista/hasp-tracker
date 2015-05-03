@@ -12,8 +12,6 @@ import javax.swing.*;
 public class TrainsetCreator {
     public static void main(String[] args) {
         setupLookAndFeel();
-
-        System.out.println("Hello World");
         MainFrame mf = new MainFrame();
         MainController mc = new MainController(mf);
     }
