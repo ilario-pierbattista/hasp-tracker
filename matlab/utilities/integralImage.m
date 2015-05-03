@@ -12,6 +12,12 @@ ii(1,2) = ii(1,1) + data(1,2);
 ii(2,1) = ii(1,1) + data(2,1);
 
 [rows, cols] = size(data);
+for i = [2:cols]
+    ii(1,i) = ii(1,i-1) + data(1,i);
+end
+for i = [2:rows]
+    ii(i,1) = ii(i-1, 1) + data(i,1);
+end
 for i = [2:rows]
     for j = [2:cols]
         ii(i, j) = data(i, j) + ii(i-1, j) + ii(i, j-1) - ii(i-1, j-1);

@@ -44,8 +44,20 @@ void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[]) {
      * condizionali all'interno del loop)
      */
     *(ii) = *(image);
-    *(ii + rows) = *(image + rows) + *(ii);
+    *(ii + cols) = *(image + cols) + *(ii);
     *(ii + 1) = *(image + 1) + *(ii);
+    /*
+     * *(ii + 1) = ii(2,1) (in matlab)
+     * *(ii + rows) = ii(1,2) (in matlab)
+     */
+    for(int i = 1; i < rows; i++) {
+        *(ii + i) = *(image + i) + 
+            *(ii + (i-1));
+    }
+    for(int j = 1; j < cols; j++) {
+        *(ii + j*rows) = *(image + j*rows) +
+            *(ii + (j-1)*rows);
+    }
     for(int i = 1; i < cols; i++) {
         for(int j = 1; j < rows; j++) {
             *(ii + i*rows + j) =            // ii(x,y) = 

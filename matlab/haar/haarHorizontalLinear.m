@@ -20,7 +20,7 @@ area = sx * sy;
 %    *          *
 % y2 ************
 
-top = ii(m1, x2) + ii(y1, x1) - ii(y1, x2) - ii(m1, x2);
+top = ii(m1, x2) + ii(y1, x1) - ii(m1, x1) - ii(y1, x2);
 center = ii(m2, x2) + ii(m1+1,x1) - ii(m1+1,x2) - ii(m2,x1);
 bottom = ii(y2,x2) + ii(m2+1,x1) - ii(m2+1,x2) - ii(y2,x1);
 value = (top - center + bottom)/area;

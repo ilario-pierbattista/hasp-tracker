@@ -24,9 +24,7 @@ function [x,y] = generateWindow(x0, y0, subwSize)
 %      |    |    |    |    |    
 %      *----*----*----*----*
 
-% Se è un vettore riga, j è diverso da 1
-[i, j] = size(subwSize);
-if j ~= 1
+if length(subwSize) ~= 1
     sx = subwSize(1);
     sy = subwSize(2);
 else
