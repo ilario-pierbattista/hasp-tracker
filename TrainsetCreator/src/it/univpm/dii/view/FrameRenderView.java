@@ -13,13 +13,13 @@ public class FrameRenderView extends View {
     private JPanel panel;
     private JFormattedTextField heightTextField;
     private JFormattedTextField widthTextField;
-    private NumberFormat pixelFormat;
 
     public FrameRenderView() {
         frame = new JFrame("FrameRenderView");
         frame.setContentPane(panel);
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frame.pack();
+        frame.setLocationRelativeTo(null);
     }
 
     public int getWidth() {
@@ -28,6 +28,16 @@ public class FrameRenderView extends View {
 
     public int getHeight() {
         return Integer.parseInt(heightTextField.getText());
+    }
+
+    public FrameRenderView setWidth(String width) {
+        widthTextField.setText(width);
+        return this;
+    }
+
+    public FrameRenderView setHeight(String height) {
+        heightTextField.setText(height);
+        return this;
     }
 
     public JButton getAvantiButton() {
@@ -39,7 +49,7 @@ public class FrameRenderView extends View {
     }
 
     private void createUIComponents() {
-        pixelFormat = NumberFormat.getNumberInstance();
+        NumberFormat pixelFormat = NumberFormat.getNumberInstance();
         pixelFormat.setMaximumFractionDigits(0);
         heightTextField = new JFormattedTextField(pixelFormat);
         widthTextField = new JFormattedTextField(pixelFormat);

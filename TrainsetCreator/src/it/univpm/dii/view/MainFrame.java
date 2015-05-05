@@ -21,6 +21,7 @@ public class MainFrame extends View {
     private JButton aggiungiButton;
     private JButton eliminaButton;
     private JButton modificaButton;
+    private JLabel trainsetLabel;
 
     public MainFrame() {
         menuItems = new MenuItems();
@@ -31,6 +32,7 @@ public class MainFrame extends View {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         createMenuBar();
         frame.pack();
+        frame.setLocationRelativeTo(null);
     }
 
     private void createMenuBar() {

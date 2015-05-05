@@ -4,13 +4,17 @@ import it.univpm.dii.contoller.MainController;
 import it.univpm.dii.view.MainFrame;
 
 import javax.swing.*;
+import java.util.prefs.Preferences;
 
 /**
  * Created by ilario
  * on 01/05/15.
  */
 public class TrainsetCreator {
+    public static Preferences pref;
+
     public static void main(String[] args) {
+        pref = Preferences.userNodeForPackage(it.univpm.dii.TrainsetCreator.class);
         setupLookAndFeel();
         MainFrame mf = new MainFrame();
         MainController mc = new MainController(mf);

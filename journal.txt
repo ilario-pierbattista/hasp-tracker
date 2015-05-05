@@ -1,5 +1,8 @@
 Journal
 
+05/05/2015: GUI
+    Implementazione del rettangolo di ritaglio del frame. 
+
 03/05/2015: Sviluppo GUI, primo detect umano
     Lo sviluppo della gui in java procede molto più velocemente che
     in matlab.
