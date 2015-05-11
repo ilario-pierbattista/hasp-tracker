@@ -4,6 +4,7 @@ import it.univpm.dii.utils.MenuItems;
 import it.univpm.dii.utils.Menus;
 
 import java.awt.*;
+import java.io.File;
 import java.util.HashMap;
 import javax.swing.*;
 
@@ -44,13 +45,13 @@ public class MainFrame extends View {
         /* Aggiunta dei menuitems ai menu */
         for (MenuItems.Entry<String, JMenuItem> menuItemsEntry : menuItems.entrySet()) {
             String menuKey = getMenuFromMenuItemKey(menuItemsEntry.getKey());
-            if(menuKey != null) {
+            if (menuKey != null) {
                 menus.get(menuKey).add(menuItemsEntry.getValue());
             }
         }
 
         /* Aggiunta dei menu alla menubar */
-        for(Menus.Entry<String, JMenu> menuEntry : menus.entrySet()) {
+        for (Menus.Entry<String, JMenu> menuEntry : menus.entrySet()) {
             menuBar.add(menuEntry.getValue());
         }
 
@@ -58,14 +59,14 @@ public class MainFrame extends View {
     }
 
     private void createMenu() {
-        menus.add("file", new JMenu("File"))
-                .add("insert", new JMenu("Inserisci"));
+        menus.add("file", new JMenu("File"));
+        //.add("insert", new JMenu("Inserisci"));
     }
 
     private void createMenuItems() {
         menuItems.add("file_new", new JMenuItem("Nuovo set"))
-                .add("file_open", new JMenuItem("Apri set"))
-                .add("insert_from_frameset", new JMenuItem("Frame da una Registrazione"));
+                .add("file_open", new JMenuItem("Apri set"));
+        //.add("insert_from_frameset", new JMenuItem("Frame da una Registrazione"));
     }
 
     private String getMenuFromMenuItemKey(String mikey) {
@@ -77,6 +78,22 @@ public class MainFrame extends View {
             ee.printStackTrace();
         }
         return key;
+    }
+
+    public void setDatasetPath(File path) {
+        if (path == null) {
+            aggiungiButton.setEnabled(false);
+            eliminaButton.setEnabled(false);
+            modificaButton.setEnabled(false);
+            trainsetLabel.setText("Nessun database di allenamento aperto");
+            trainsetLabel.setEnabled(false);
+        } else {
+            aggiungiButton.setEnabled(true);
+            eliminaButton.setEnabled(true);
+            modificaButton.setEnabled(true);
+            trainsetLabel.setText("Database: " + path.getAbsolutePath());
+            trainsetLabel.setEnabled(true);
+        }
     }
 
     public MenuItems getMenuItems() {
@@ -97,5 +114,9 @@ public class MainFrame extends View {
 
     public JButton getModificaButton() {
         return modificaButton;
+    }
+
+    public JLabel getTrainsetLabel() {
+        return trainsetLabel;
     }
 }

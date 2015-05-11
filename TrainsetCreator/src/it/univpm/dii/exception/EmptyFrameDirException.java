@@ -6,6 +6,6 @@ package it.univpm.dii.exception;
  */
 public class EmptyFrameDirException extends Exception {
     public EmptyFrameDirException(String path) {
-        super("Non ci sono file .bin nella cartella '"+path+"'");
+        super("Non ci sono file .bin nella cartella '" + path + "'");
     }
 }

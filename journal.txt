@@ -1,5 +1,7 @@
 Journal
 
+08/05/2015: GUI
+
 05/05/2015: GUI
     Implementazione del rettangolo di ritaglio del frame. 
 

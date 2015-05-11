@@ -126,7 +126,7 @@ public class AddFrameView extends View {
     }
 
     private void printLabelForCurrentFrame() {
-        frameLabel.setText("Frame: "+current+"/"+frames.length);
+        frameLabel.setText("Frame: " + current + "/" + frames.length);
         slider.setValue(current);
     }
 }

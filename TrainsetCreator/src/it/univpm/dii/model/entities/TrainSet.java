@@ -1,5 +1,6 @@
 package it.univpm.dii.model.entities;
 
+import java.io.File;
 import java.util.ArrayList;
 
 /**
@@ -7,28 +8,52 @@ import java.util.ArrayList;
  * on 01/05/15.
  */
 public class TrainSet {
+    private File basePath;
+    private ArrayList<Element> positives;
+    private ArrayList<Element> negatives;
 
-    protected int id;
-    private ArrayList<Element> elements;
-
-    public int getId() {
-        return id;
+    /**
+     * @param basePath
+     */
+    public TrainSet(File basePath) {
+        this.basePath = basePath;
+        positives = new ArrayList<Element>(30);
+        negatives = new ArrayList<Element>(30);
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public ArrayList<Element> getElements() {
-        return elements;
-    }
-
-    public TrainSet addElement(Element element) {
-        elements.add(element);
+    /**
+     * Aggiunge un elemento
+     *
+     * @param e
+     * @return
+     */
+    public TrainSet add(Element e) {
+        if (e.isPositive()) {
+            positives.add(e);
+        } else {
+            negatives.add(e);
+        }
         return this;
     }
 
-    public void setElements(ArrayList<Element> elements) {
-        this.elements = elements;
+    public File getBasePath() {
+        return basePath;
+    }
+
+    public ArrayList<Element> getPositives() {
+        return positives;
+    }
+
+    public ArrayList<Element> getNegatives() {
+        return negatives;
+    }
+
+    @Override
+    public String toString() {
+        return "TrainSet{" +
+                "basePath=" + basePath +
+                ", positives=" + positives +
+                ", negatives=" + negatives +
+                '}';
     }
 }

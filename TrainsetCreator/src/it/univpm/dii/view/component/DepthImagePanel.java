@@ -83,14 +83,15 @@ public class DepthImagePanel extends JPanel implements MouseListener, MouseMotio
     /**
      * Resize forzato per un cambiamento dei valori di
      * rWidth ed rHeight
+     *
      * @return
      */
     public DepthImagePanel forceResize() {
-        if(rWidth == 0 || rHeight == 0) {
+        if (rWidth == 0 || rHeight == 0) {
             return this;
         }
 
-        if(rectangle.x + rWidth >= image.getWidth()) {
+        if (rectangle.x + rWidth >= image.getWidth()) {
             rectangle.setBounds(
                     image.getWidth() - rWidth - 1,
                     rectangle.y,
@@ -104,7 +105,7 @@ public class DepthImagePanel extends JPanel implements MouseListener, MouseMotio
             );
         }
 
-        if(rectangle.y + rHeight >= image.getHeight()) {
+        if (rectangle.y + rHeight >= image.getHeight()) {
             rectangle.setBounds(
                     rectangle.x,
                     image.getHeight() - rHeight - 1,
@@ -142,7 +143,7 @@ public class DepthImagePanel extends JPanel implements MouseListener, MouseMotio
     public void mouseDragged(MouseEvent e) {
         currentPt = e.getPoint();
         if (rectangle != null && rectangle.contains(currentPt)) {
-            if(resize == DO_NOT_RESIZE) {
+            if (resize == DO_NOT_RESIZE) {
                 moveRectangle();
             } else {
                 resizeRectangle();
@@ -281,16 +282,16 @@ public class DepthImagePanel extends JPanel implements MouseListener, MouseMotio
         Point tl, br;
         tl = new Point(currentPt.x - offsetPt.x, currentPt.y - offsetPt.y);
         br = new Point(tl.x + rectangle.width, tl.y + rectangle.height);
-        if(tl.x >= 0 && tl.y >= 0 &&
+        if (tl.x >= 0 && tl.y >= 0 &&
                 br.x < image.getWidth() && br.y < image.getHeight()) {
             rectangle.setLocation(tl);
-        } else if(tl.x >= 0 && br.x < image.getWidth() && (
+        } else if (tl.x >= 0 && br.x < image.getWidth() && (
                 tl.y < 0 || br.y >= image.getHeight()
-                )) {
+        )) {
             rectangle.setLocation(tl.x, rectangle.y);
-        } else if(tl.y >= 0 && br.y < image.getHeight() && (
+        } else if (tl.y >= 0 && br.y < image.getHeight() && (
                 tl.x < 0 || br.x >= image.getWidth()
-                )) {
+        )) {
             rectangle.setLocation(rectangle.x, tl.y);
         }
     }
@@ -299,7 +300,7 @@ public class DepthImagePanel extends JPanel implements MouseListener, MouseMotio
      * Ridimensiona il rettangolo
      */
     private void resizeRectangle() {
-        if(resize == W_RESIZE) {
+        if (resize == W_RESIZE) {
             resizeW();
         } else if (resize == E_RESIZE) {
             resizeE();
@@ -327,7 +328,7 @@ public class DepthImagePanel extends JPanel implements MouseListener, MouseMotio
      */
     private void resizeW() {
         int newX = currentPt.x - MVPX;
-        if(newX >= 0) {
+        if (newX >= 0) {
             int newWidth = rectangle.x + rectangle.width - newX;
             rectangle.setBounds(newX, rectangle.y, newWidth, rectangle.height);
         }
@@ -338,7 +339,7 @@ public class DepthImagePanel extends JPanel implements MouseListener, MouseMotio
      */
     private void resizeE() {
         int newEndX = currentPt.x + MVPX;
-        if(newEndX < image.getWidth()) {
+        if (newEndX < image.getWidth()) {
             int newWidth = newEndX - rectangle.x;
             rectangle.setBounds(rectangle.x, rectangle.y, newWidth, rectangle.height);
         }
@@ -349,7 +350,7 @@ public class DepthImagePanel extends JPanel implements MouseListener, MouseMotio
      */
     private void resizeN() {
         int newY = currentPt.y - MVPX;
-        if(newY >= 0) {
+        if (newY >= 0) {
             int newHeight = rectangle.y + rectangle.height - newY;
             rectangle.setBounds(rectangle.x, newY, rectangle.width, newHeight);
         }
@@ -360,7 +361,7 @@ public class DepthImagePanel extends JPanel implements MouseListener, MouseMotio
      */
     private void resizeS() {
         int newEndY = currentPt.y + MVPX;
-        if(newEndY < image.getHeight()) {
+        if (newEndY < image.getHeight()) {
             int newHeight = newEndY - rectangle.y;
             rectangle.setBounds(rectangle.x, rectangle.y, rectangle.width, newHeight);
         }

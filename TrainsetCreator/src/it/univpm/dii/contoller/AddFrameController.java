@@ -3,6 +3,7 @@ package it.univpm.dii.contoller;
 import it.univpm.dii.TrainsetCreator;
 import it.univpm.dii.exception.EmptyFrameDirException;
 import it.univpm.dii.service.DepthImage;
+import it.univpm.dii.utils.BinFileFilter;
 import it.univpm.dii.view.AddFrameView;
 import it.univpm.dii.view.FrameRenderView;
 import org.omg.PortableServer.THREAD_POLICY_ID;
@@ -34,6 +35,7 @@ public class AddFrameController {
     private int width;
     private int height;
     private static AddFrameController instance;
+
     public static final String PREF_IMAGE_WIDTH = "TSC_Image_Width";
     public static final String PREF_IMAGE_HEIGHT = "TSC_Image_Height";
     public static final String PREF_CROP_WIDTH = "TSC_Crop_Width";
@@ -75,7 +77,7 @@ public class AddFrameController {
         try {
             cropH = Integer.parseInt(view.getCropHeight().getText());
             cropW = cropH;
-            if(!view.getSquareCheckbox().isSelected()) {
+            if (!view.getSquareCheckbox().isSelected()) {
                 cropW = Integer.parseInt(view.getCropWidth().getText());
             }
         } catch (NumberFormatException ee) {
@@ -160,7 +162,7 @@ public class AddFrameController {
         @Override
         public void actionPerformed(ActionEvent e) {
             JCheckBox b = (JCheckBox) e.getSource();
-            if(b.isSelected()) {
+            if (b.isSelected()) {
                 view.setSquareCropArea(view.getCropWidth().getText());
                 view.getCropWidth().setEnabled(false);
             } else {
@@ -177,7 +179,7 @@ public class AddFrameController {
         @Override
         public void actionPerformed(ActionEvent e) {
             JCheckBox b = (JCheckBox) e.getSource();
-            if(b.isSelected()) {
+            if (b.isSelected()) {
                 view.setCropWidthValue("0");
                 view.setCropHeightValue("0");
                 view.getCropWidth().setEnabled(false);
@@ -221,16 +223,6 @@ public class AddFrameController {
         @Override
         public void actionPerformed(ActionEvent e) {
             renderInfoView.frame.dispose();
-        }
-    }
-
-    /**
-     * Fitro per i file .bin
-     */
-    class BinFileFilter implements FilenameFilter {
-        @Override
-        public boolean accept(File dir, String name) {
-            return name.endsWith(".bin");
         }
     }
 

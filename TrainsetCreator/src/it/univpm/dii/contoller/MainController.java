@@ -1,6 +1,7 @@
 package it.univpm.dii.contoller;
 
 import it.univpm.dii.exception.EmptyFrameDirException;
+import it.univpm.dii.model.DatasetManager;
 import it.univpm.dii.view.MainFrame;
 import it.univpm.dii.view.View;
 
@@ -15,66 +16,102 @@ import java.io.File;
  */
 public class MainController {
     protected MainFrame view;
+    protected File datasetPath;
+
+    /**
+     * Costanti per il directory chooser
+     */
+    private static final int DIRECTORY_EMPTY = 0;
+    private static final int DIRECTORY_NOT_EMPTY = 1;
 
     public MainController(MainFrame view) {
         this.view = view;
         actionSetter();
+        setDatasetPath(null);
         this.view.setVisible(true);
     }
 
     public void actionSetter() {
         view.getMenuItems().get("file_new")
-                .addActionListener(new NewTrainingSetAction(view));
+                .addActionListener(new NewTrainingSetAction());
         view.getMenuItems().get("file_open")
-                .addActionListener(new OpenTrainingSetAction(view));
-        view.getAggiungiButton().addActionListener(new AddFrameAction(view));
+                .addActionListener(new OpenTrainingSetAction());
+        /* @TODO Aggiungere gli action listeners agli altri pulsanti */
+        view.getAggiungiButton().addActionListener(new AddFrameAction());
+    }
+
+    public File getDatasetPath() {
+        return datasetPath;
+    }
+
+    /**
+     * Impostazione della path con il dataset
+     *
+     * @param datasetPath Path del dataset
+     */
+    public void setDatasetPath(File datasetPath) {
+        view.setDatasetPath(datasetPath);
+        this.datasetPath = datasetPath;
+    }
+
+    /**
+     * Metodo per l'apertura del file chooser
+     *
+     * @param title
+     * @param constraint
+     * @return
+     */
+    private File openDirectoryChooser(String title, int constraint) {
+        int returnValue;
+        boolean flag = true;
+        File selected = null;
+        String error = null;
+        JFileChooser jf = new JFileChooser();
+        jf.setDialogTitle(title);
+        jf.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+        do {
+            returnValue = jf.showOpenDialog(view.frame);
+            if (returnValue == JFileChooser.APPROVE_OPTION) {
+                selected = jf.getSelectedFile();
+                if (!selected.exists()) {
+                    error = "La cartella non esiste";
+                } else if (!selected.isDirectory()) {
+                    error = "Non è stata selezionata una cartella";
+                } else if (constraint == DIRECTORY_EMPTY &&
+                        selected.list().length > 0) {
+                    error = "La cartella selezionata non è vuota";
+                } else if (constraint == DIRECTORY_NOT_EMPTY &&
+                        selected.list().length == 0) {
+                    error = "La cartella selezionata è vuota";
+                } else {
+                    flag = false;
+                }
+
+                if (error != null) {
+                    JOptionPane.showMessageDialog(view.frame,
+                            error,
+                            "Errore di IO",
+                            JOptionPane.ERROR_MESSAGE);
+                    error = null;
+                    selected = null;
+                }
+            } else {
+                flag = false;
+            }
+        } while (flag);
+        return selected;
     }
 
     /**
      * Creazione di un nuovo trainset
      */
     class NewTrainingSetAction implements ActionListener {
-        View v;
-
-        public NewTrainingSetAction(View v) {
-            this.v = v;
-        }
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            int returnValue;
-            boolean flag = true;
-            File selected;
-            String error = null;
-            JFileChooser jf = new JFileChooser();
-            jf.setDialogTitle("Scegliere la directory di destinazione");
-            jf.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
-            do {
-                returnValue = jf.showOpenDialog(v.frame);
-                if (returnValue == JFileChooser.APPROVE_OPTION) {
-                    selected = jf.getSelectedFile();
-                    if (!selected.exists()) {
-                        error = "La cartella non esiste";
-                    } else if (!selected.isDirectory()) {
-                        error = "Non è stata selezionata una cartella";
-                    } else if (selected.list().length > 0) {
-                        error = "La cartella selezionata non è vuota";
-                    } else {
-                        System.out.println(selected.getAbsolutePath());
-                        flag = false;
-                    }
-
-                    if (error != null) {
-                        JOptionPane.showMessageDialog(this.v.frame,
-                                error,
-                                "Errore di IO",
-                                JOptionPane.ERROR_MESSAGE);
-                        error = null;
-                    }
-                } else {
-                    flag = false;
-                }
-            } while (flag);
+            File selected = openDirectoryChooser("Scegliere la directory di destinazione", DIRECTORY_EMPTY);
+            setDatasetPath(selected);
+            DatasetManager.newInstance(datasetPath);
         }
     }
 
@@ -82,48 +119,12 @@ public class MainController {
      * Apertura di un trainset
      */
     class OpenTrainingSetAction implements ActionListener {
-        View view;
-
-        public OpenTrainingSetAction(View v) {
-            this.view = v;
-        }
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            int returnValue;
-            boolean flag = true;
-            File selected;
-            String error = null;
-            JFileChooser jf = new JFileChooser();
-            jf.setDialogTitle("Apri la directory con il training set");
-            jf.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
-            do {
-                returnValue = jf.showOpenDialog(view.frame);
-                if (returnValue == JFileChooser.APPROVE_OPTION) {
-                    selected = jf.getSelectedFile();
-                    if (!selected.exists()) {
-                        error = "La cartella non esiste";
-                    } else if (!selected.isDirectory()) {
-                        error = "Non è stata selezionata una cartella";
-                    } else if (selected.list().length == 0) {
-                        error = "La cartella selezionata è vuota";
-                        /* @TODO Effettuare il check del file meta */
-                    } else {
-                        System.out.println(selected.getAbsolutePath());
-                        flag = false;
-                    }
-
-                    if (error != null) {
-                        JOptionPane.showMessageDialog(this.view.frame,
-                                error,
-                                "Errore di IO",
-                                JOptionPane.ERROR_MESSAGE);
-                        error = null;
-                    }
-                } else {
-                    flag = false;
-                }
-            } while (flag);
+            File selected = openDirectoryChooser("Apri la cartella contenente il training set", DIRECTORY_NOT_EMPTY);
+            setDatasetPath(selected);
+            DatasetManager.newInstance(datasetPath);
         }
     }
 
@@ -131,49 +132,20 @@ public class MainController {
      * Aggiunta di un frame al trainset
      */
     class AddFrameAction implements ActionListener {
-        private View v;
-
-        public AddFrameAction(View v) {
-            this.v = v;
-        }
-
         @Override
         public void actionPerformed(ActionEvent e) {
-            int returnValue;
+            File selected = null;
             boolean flag = true;
-            File selected;
-            String error = null;
-            JFileChooser jf = new JFileChooser();
-            jf.setDialogTitle("Scegliere la directory con i frames");
-            jf.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
             do {
-                returnValue = jf.showOpenDialog(v.frame);
-                if (returnValue == JFileChooser.APPROVE_OPTION) {
-                    selected = jf.getSelectedFile();
-                    if (!selected.exists()) {
-                        error = "La cartella non esiste";
-                    } else if (!selected.isDirectory()) {
-                        error = "Non è stata selezionata una cartella";
-                    } else if (selected.list().length == 0) {
-                        error = "La cartella selezionata è vuota";
-                    } else {
-                        try {
-                            new AddFrameController(selected);
-                            flag = false;
-                        } catch (EmptyFrameDirException ee) {
-                            error = ee.getMessage();
-                        }
-                    }
-
-                    if (error != null) {
-                        JOptionPane.showMessageDialog(this.v.frame,
-                                error,
-                                "Errore di IO",
-                                JOptionPane.ERROR_MESSAGE);
-                        error = null;
-                    }
-                } else {
+                selected = openDirectoryChooser("Apri la cartella con i frame", DIRECTORY_NOT_EMPTY);
+                try {
+                    new AddFrameController(selected);
                     flag = false;
+                } catch (EmptyFrameDirException ee) {
+                    JOptionPane.showMessageDialog(view.frame,
+                            ee.getMessage(),
+                            "Errore di IO",
+                            JOptionPane.ERROR_MESSAGE);
                 }
             } while (flag);
         }
