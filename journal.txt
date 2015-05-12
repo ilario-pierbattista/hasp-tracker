@@ -1,5 +1,11 @@
 Journal
 
+12/05/2015: GUI quasi funzionante
+
+11/05/2015: Registrazioni con Kinect
+    Prime tre registrazioni con kinect. Definiti i vincoli che il set di
+    allenamento del primo classificatore deve rispettare.
+
 08/05/2015: GUI
 
 05/05/2015: GUI

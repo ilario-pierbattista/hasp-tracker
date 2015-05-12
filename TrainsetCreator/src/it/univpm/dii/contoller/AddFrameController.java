@@ -2,11 +2,12 @@ package it.univpm.dii.contoller;
 
 import it.univpm.dii.TrainsetCreator;
 import it.univpm.dii.exception.EmptyFrameDirException;
+import it.univpm.dii.model.DatasetManager;
+import it.univpm.dii.model.entities.Element;
 import it.univpm.dii.service.DepthImage;
 import it.univpm.dii.utils.BinFileFilter;
 import it.univpm.dii.view.AddFrameView;
 import it.univpm.dii.view.FrameRenderView;
-import org.omg.PortableServer.THREAD_POLICY_ID;
 
 import javax.swing.*;
 import javax.swing.event.ChangeEvent;
@@ -18,7 +19,6 @@ import java.beans.PropertyChangeListener;
 import java.io.File;
 import java.io.FilenameFilter;
 import java.io.IOException;
-import java.text.NumberFormat;
 import java.util.Arrays;
 import java.util.Comparator;
 
@@ -119,6 +119,7 @@ public class AddFrameController {
                 view.getCropHeight().addPropertyChangeListener("value", action);
                 view.getCropWidth().addPropertyChangeListener("value", action);
                 view.getFineButton().addActionListener(new FineAction());
+                view.getAggiungiButton().addActionListener(new SalvaAction());
                 // Visualizzazione
                 view.setVisible(true);
                 addListernes();
@@ -163,7 +164,7 @@ public class AddFrameController {
         public void actionPerformed(ActionEvent e) {
             JCheckBox b = (JCheckBox) e.getSource();
             if (b.isSelected()) {
-                view.setSquareCropArea(view.getCropWidth().getText());
+                view.setSquareCropArea(view.getCropHeight().getText());
                 view.getCropWidth().setEnabled(false);
             } else {
                 view.getCropWidth().setEnabled(true);
@@ -201,8 +202,15 @@ public class AddFrameController {
     class SalvaAction implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            /* @TODO Implementare */
-            System.out.println("Da salvare");
+            /* @TODO Aggiungere l'aggiornamento della view */
+            DatasetManager dm = DatasetManager.getInstance();
+            Element element = view.getData();
+            dm.create(element);
+            // La generazione del nome deve essere lanciata dopo il create
+            // altrimenti l'id non viene assegnato
+            DatasetManager.getInstance().generateFilename(element);
+            view.getImagePanel().cropAndSave(new File(element.getFileName()));
+            System.out.println(element.isPositive());
         }
     }
 

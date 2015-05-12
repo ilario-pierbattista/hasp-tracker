@@ -8,16 +8,19 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 import java.awt.image.BufferedImage;
+import java.io.File;
 
 /**
  * Created by ilario
  * on 03/05/15.
  */
 public class DepthImagePanel extends JPanel implements MouseListener, MouseMotionListener {
+    private DepthImage depthImage;
     private BufferedImage image;
     private Point startPt, endPt, currentPt, offsetPt;
     private Rectangle rectangle;
     private int rWidth, rHeight, resize;
+    private int mode;
     public static final Color BORDER_COLOR = Color.BLUE;
     public static final Color DRAWING_COLOR = Color.GREEN;
     public static final int MVPX = 10;
@@ -30,37 +33,67 @@ public class DepthImagePanel extends JPanel implements MouseListener, MouseMotio
     public static final int E_RESIZE = 6;
     public static final int W_RESIZE = 7;
     public static final int DO_NOT_RESIZE = 8;
+    public static final int MODE_PREVIEW = 0;
+    public static final int MODE_CROP = 1;
+
+    public DepthImagePanel(int mode) {
+        this.mode = mode;
+        setListeners();
+    }
+
+    public DepthImagePanel(DepthImage depthImage, int mode) {
+        this.depthImage = depthImage;
+        this.mode = mode;
+        image = this.depthImage.getImage();
+        setPreferredSize(image);
+        setListeners();
+    }
 
     public DepthImagePanel(DepthImage depthImage) {
-        image = depthImage.getImage();
+        this(depthImage, MODE_CROP);
+        this.mode = MODE_CROP;
+    }
+
+    public DepthImagePanel setPreferredSize(BufferedImage image) {
         this.setPreferredSize(new Dimension(
                 image.getWidth(),
                 image.getHeight()
         ));
-        addMouseListener(this);
-        addMouseMotionListener(this);
+        return this;
     }
 
-    public BufferedImage getImage() {
-        return image;
-    }
-
-    public Rectangle getRectangle() {
-        return rectangle;
+    public void setListeners() {
+        switch (this.mode) {
+            case MODE_CROP:
+                addMouseListener(this);
+                addMouseMotionListener(this);
+                break;
+            case MODE_PREVIEW:
+                break;
+            default:
+                break;
+        }
     }
 
     /**
      * Imposta una nuova immagine
      *
-     * @param image
-     * @return
+     * @param depthImage DepthImage da impostare
+     * @return Istanza corrente di DepthImagePanel
      */
-    public DepthImagePanel setImage(BufferedImage image) {
-        this.image = image;
+    public DepthImagePanel setDepthImage(DepthImage depthImage) {
+        this.depthImage = depthImage;
+        image = this.depthImage.getImage();
+        setPreferredSize(image);
         this.startPt = null;
         this.endPt = null;
         this.rectangle = null;
+        this.repaint();
         return this;
+    }
+
+    public Rectangle getRectangle() {
+        return rectangle;
     }
 
     /**
@@ -81,10 +114,27 @@ public class DepthImagePanel extends JPanel implements MouseListener, MouseMotio
     }
 
     /**
+     * Salva la porzione selezionata
+     * @param out File dove salvare l'immagine
+     * @return Istanza corrente di DepthImagePanel
+     */
+    public DepthImagePanel cropAndSave(File out) {
+        if(rectangle != null) {
+            try {
+                depthImage.crop(rectangle.x, rectangle.y, rectangle.width, rectangle.height);
+                depthImage.save(out);
+            } catch (Exception ee) {
+                ee.printStackTrace();
+            }
+        }
+        return this;
+    }
+
+    /**
      * Resize forzato per un cambiamento dei valori di
      * rWidth ed rHeight
      *
-     * @return
+     * @return Istanza attiva di DepthImagePanel
      */
     public DepthImagePanel forceResize() {
         if (rWidth == 0 || rHeight == 0) {
@@ -247,6 +297,11 @@ public class DepthImagePanel extends JPanel implements MouseListener, MouseMotio
 
     @Override
     protected void paintComponent(Graphics g) {
+        if(this.mode == MODE_PREVIEW) {
+            g.setColor(getBackground());
+            g.fillRect(0, 0, getWidth(), getHeight());
+        }
+
         g.drawImage(image, 0, 0, this);
 
         /* Painting del rettangolo durante la selezione dell'area */

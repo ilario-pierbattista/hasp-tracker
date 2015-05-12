@@ -1,9 +1,9 @@
 package it.univpm.dii.utils;
 
-import it.univpm.dii.model.dao.ElementDAO;
+
+import it.univpm.dii.model.DatasetManager;
 
 import java.io.File;
-import java.io.FileFilter;
 import java.io.FilenameFilter;
 
 /**
@@ -13,6 +13,6 @@ import java.io.FilenameFilter;
 public class TrainsetFileFilter implements FilenameFilter {
     @Override
     public boolean accept(File dir, String name) {
-        return name.equals(ElementDAO.POSITIVES_DIR) || name.equals(ElementDAO.NEGATIVES_DIR);
+        return name.equals(DatasetManager.POSITIVES_DIR) || name.equals(DatasetManager.NEGATIVES_DIR);
     }
 }

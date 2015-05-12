@@ -2,10 +2,10 @@ package it.univpm.dii.model;
 
 import it.univpm.dii.model.entities.Element;
 import it.univpm.dii.model.entities.TrainSet;
+import it.univpm.dii.utils.ElementComparator;
 
-import javax.xml.crypto.Data;
 import java.io.File;
-import java.io.IOException;
+import java.util.ArrayList;
 
 /**
  * Created by ilario
@@ -19,6 +19,7 @@ public class DatasetManager {
     private File basepath;
     private File negativesDir;
     private File positivesDir;
+    private int nextIdAvailable;
 
     /**
      * Costruttore
@@ -28,17 +29,17 @@ public class DatasetManager {
     public DatasetManager(File base) throws Exception {
         instance = this;
         basepath = base;
+        // Registrazione ed eventuale creazione delle cartelle
         positivesDir = new File(base, POSITIVES_DIR);
         negativesDir = new File(base, NEGATIVES_DIR);
-
         if (!positivesDir.exists()) {
             positivesDir.mkdir();
         }
         if (!negativesDir.exists()) {
             negativesDir.mkdir();
         }
-
-        trainSet = fetchTrainset();
+        // Fetch delle informazioni del trainset
+        fetchTrainset();
     }
 
     /**
@@ -48,6 +49,10 @@ public class DatasetManager {
      */
     public static DatasetManager getInstance() {
         return instance;
+    }
+
+    public TrainSet getTrainSet() {
+        return trainSet;
     }
 
     /**
@@ -70,33 +75,83 @@ public class DatasetManager {
      *
      * @return
      */
-    public TrainSet fetchTrainset() {
-        TrainSet ts = new TrainSet(basepath);
+    private void fetchTrainset() {
+        ArrayList<Element> elements = new ArrayList<Element>(60);
         File[] positives = positivesDir.listFiles();
         File[] negatives = negativesDir.listFiles();
+        Element current = null;
+        trainSet = new TrainSet(basepath);
+        nextIdAvailable = 1;
+
         for (File pos : positives) {
-            ts.add(createElement(pos));
+            current = createElement(pos);
+            if(current != null) {
+                elements.add(current);
+            }
         }
         for (File neg : negatives) {
-            ts.add(createElement(neg));
+            current = createElement(neg);
+            if(current != null) {
+                elements.add(current);
+            }
         }
-        return ts;
+        elements.sort(new ElementComparator());
+        if (elements.isEmpty()) {
+            nextIdAvailable = 1;
+        } else {
+            nextIdAvailable = elements.get(elements.size() - 1).getId() + 1;
+        }
+        elements.forEach((e) -> {
+            trainSet.add(e);
+        });
     }
 
+    /**
+     * Ritorna un elemento cercandolo tramite id
+     *
+     * @param id
+     * @return
+     */
     public Element find(int id) {
+        ArrayList<Element> pos = trainSet.getPositives();
+        ArrayList<Element> neg = trainSet.getNegatives();
+        for (int i = 0; i < pos.size(); i++) {
+            if (pos.get(i).getId() == id) {
+                return pos.get(i);
+            }
+        }
+        for (int i = 0; i < neg.size(); i++) {
+            if (neg.get(i).getId() == id) {
+                return neg.get(i);
+            }
+        }
         return null;
     }
 
+    /**
+     * Creazione di un elemento in tabella
+     *
+     * @param e
+     * @return
+     */
     public DatasetManager create(Element e) {
-        return null;
+        e.setId(nextIdAvailable);
+        System.out.println(nextIdAvailable);
+        trainSet.add(e);
+        nextIdAvailable++;
+        return this;
     }
 
     public DatasetManager update(Element e) {
-        return null;
+        return this;
     }
 
     public DatasetManager remove(Element e) {
         return null;
+    }
+
+    public DatasetManager flush() {
+        return this;
     }
 
     /**
@@ -107,7 +162,13 @@ public class DatasetManager {
      */
     private Element createElement(File file) {
         Element e = null;
-        String[] parts = file.getName().split("_");
+        // Separazione del nome del file dalla sua estensione
+        String[] fileNameParts = file.getName().split("\\.");   // <- split prende come argomento un'espressione regolare
+        if(fileNameParts.length < 2) {
+            return null;
+        }
+        // Analisi del nome del file (senza l'estensione)
+        String[] parts = fileNameParts[0].split("_");
         if (parts.length == 5) {
             e = new Element();
             e.setFileName(file.getAbsolutePath())
@@ -117,5 +178,25 @@ public class DatasetManager {
                     .setPositive(Boolean.parseBoolean(parts[4]));
         }
         return e;
+    }
+
+    /**
+     * Genera il nome del file
+     *
+     * @param e
+     * @return
+     */
+    public DatasetManager generateFilename(Element e) {
+        String filename = "sample_" + e.getId() +
+                "_" + e.getWidth() +
+                "_" + e.getHeight() +
+                "_" + Boolean.toString(e.isPositive()) +
+                ".bin";
+        if(e.isPositive()) {
+            e.setFileName(new File(positivesDir, filename).getAbsolutePath());
+        } else {
+            e.setFileName(new File(negativesDir, filename).getAbsolutePath());
+        }
+        return this;
     }
 }

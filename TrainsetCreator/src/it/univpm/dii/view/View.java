@@ -6,10 +6,12 @@ import javax.swing.*;
  * Created by ilario
  * on 02/05/15.
  */
-public class View {
+abstract class View {
     public JFrame frame;
 
     public void setVisible(boolean visible) {
         frame.setVisible(visible);
     }
+
+    public abstract void refresh();
 }

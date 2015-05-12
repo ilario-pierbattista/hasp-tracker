@@ -22,6 +22,11 @@ public class FrameRenderView extends View {
         frame.setLocationRelativeTo(null);
     }
 
+    @Override
+    public void refresh() {
+
+    }
+
     public int getWidth() {
         return Integer.parseInt(widthTextField.getText());
     }

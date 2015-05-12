@@ -28,7 +28,9 @@ public class TrainSet {
      * @return
      */
     public TrainSet add(Element e) {
-        if (e.isPositive()) {
+        if(e == null) {
+            return this;
+        } else if (e.isPositive()) {
             positives.add(e);
         } else {
             negatives.add(e);

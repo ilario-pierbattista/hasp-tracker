@@ -1,11 +1,10 @@
 package it.univpm.dii.view;
 
+import it.univpm.dii.model.entities.Element;
 import it.univpm.dii.service.DepthImage;
 import it.univpm.dii.view.component.DepthImagePanel;
 
 import javax.swing.*;
-import java.awt.*;
-import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.text.NumberFormat;
@@ -44,6 +43,18 @@ public class AddFrameView extends View {
         frame.setLocationRelativeTo(null);
         slider.setMaximum(frames.length);
         printLabelForCurrentFrame();
+    }
+
+    /**
+     * Ritorna i dati immessi
+     * @return
+     */
+    public Element getData() {
+        Element e = new Element();
+        e.setPositive(this.humanCheckbox.isSelected())
+                .setWidth(imagePanel.getRectangle().width)
+                .setHeight(imagePanel.getRectangle().height);
+        return e;
     }
 
     public DepthImage getDepthImage() {
@@ -110,7 +121,7 @@ public class AddFrameView extends View {
         try {
             printLabelForCurrentFrame();
             depthImage = new DepthImage(frames[current], width, height);
-            imagePanel.setImage(depthImage.getImage());
+            imagePanel.setDepthImage(depthImage);
             imagePanel.repaint();
         } catch (IOException ee) {
             ee.printStackTrace();
