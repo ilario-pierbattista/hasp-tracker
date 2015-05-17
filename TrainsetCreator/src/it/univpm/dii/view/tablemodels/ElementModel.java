@@ -38,6 +38,17 @@ public class ElementModel extends AbstractTableModel {
     }
 
     /**
+     * Aggiunta di un singolo elemento
+     * @param element
+     * @return
+     */
+    public ElementModel addElement(Element element) {
+        elements.add(element);
+        fireTableDataChanged();
+        return this;
+    }
+
+    /**
      * Permette di sapere se il model della tabella è stato popolato
      * @return True se il model è stato popolato, false altrimenti
      */
@@ -97,6 +108,10 @@ public class ElementModel extends AbstractTableModel {
     }
 
     public Element getRow(int i) {
-        return elements.get(i);
+        try {
+            return elements.get(i);
+        } catch (ArrayIndexOutOfBoundsException ee) {
+            return null;
+        }
     }
 }

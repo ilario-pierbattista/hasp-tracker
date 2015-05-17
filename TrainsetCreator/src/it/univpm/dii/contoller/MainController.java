@@ -179,15 +179,17 @@ public class MainController {
                 SampleTable table = view.getSampleTable();
                 ElementModel model = (ElementModel) table.getModel();
                 Element element = model.getRow(table.getSelectedRow());
-                try {
-                    DepthImage depthImage = new DepthImage(
-                            new File(element.getFileName()),
-                            element.getWidth(),
-                            element.getHeight());
-                    view.getPreviewImagePanel()
-                            .setDepthImage(depthImage);
-                } catch (IOException ee) {
-                    ee.printStackTrace();
+                if (element != null) {
+                    try {
+                        DepthImage depthImage = new DepthImage(
+                                new File(element.getFileName()),
+                                element.getWidth(),
+                                element.getHeight());
+                        view.getPreviewImagePanel()
+                                .setDepthImage(depthImage);
+                    } catch (IOException ee) {
+                        ee.printStackTrace();
+                    }
                 }
             }
         }

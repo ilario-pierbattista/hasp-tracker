@@ -8,6 +8,8 @@ import it.univpm.dii.service.DepthImage;
 import it.univpm.dii.utils.BinFileFilter;
 import it.univpm.dii.view.AddFrameView;
 import it.univpm.dii.view.FrameRenderView;
+import it.univpm.dii.view.MainFrame;
+import it.univpm.dii.view.tablemodels.ElementModel;
 
 import javax.swing.*;
 import javax.swing.event.ChangeEvent;
@@ -87,6 +89,15 @@ public class AddFrameController {
             view.getImagePanel().setRectangleDimensions(cropW, cropH)
                     .forceResize();
         }
+    }
+
+    /**
+     * Aggiorna la vista del mainframe
+     */
+    private void addlElementToMF(Element element) {
+        MainFrame mainFrame = MainFrame.getInstance();
+        ElementModel model = (ElementModel) mainFrame.getSampleTable().getModel();
+        model.addElement(element);
     }
 
     public static AddFrameController getInstance() {
@@ -210,7 +221,7 @@ public class AddFrameController {
             // altrimenti l'id non viene assegnato
             DatasetManager.getInstance().generateFilename(element);
             view.getImagePanel().cropAndSave(new File(element.getFileName()));
-            System.out.println(element.isPositive());
+            addlElementToMF(element);
         }
     }
 

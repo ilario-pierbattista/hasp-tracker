@@ -17,6 +17,7 @@ import java.io.File;
  * on 01/05/15.
  */
 public class MainFrame extends View {
+    private static MainFrame instance;
 
     private JMenuBar menuBar;
     private MenuItems menuItems;
@@ -41,6 +42,7 @@ public class MainFrame extends View {
         createMenuBar();
         frame.pack();
         frame.setLocationRelativeTo(null);
+        instance = this;
     }
 
     @Override
@@ -170,5 +172,9 @@ public class MainFrame extends View {
     private void createUIComponents() {
         previewImagePanel = new DepthImagePanel(DepthImagePanel.MODE_PREVIEW);
         previewImagePanel.setPreferredSize(new Dimension(200, 200));
+    }
+
+    public static MainFrame getInstance() {
+        return instance;
     }
 }

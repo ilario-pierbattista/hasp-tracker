@@ -297,7 +297,7 @@ public class DepthImagePanel extends JPanel implements MouseListener, MouseMotio
 
     @Override
     protected void paintComponent(Graphics g) {
-        if(this.mode == MODE_PREVIEW) {
+        if(this.mode == MODE_PREVIEW) { // Serve a cancellare l'immagine disegnata in precedenza
             g.setColor(getBackground());
             g.fillRect(0, 0, getWidth(), getHeight());
         }
