@@ -5,11 +5,7 @@ if nargin > 4
     error('myfuns:readImageData:tooManyArguments')
 end
 
-% se fp non è un file descriptor, potrebbe essere una path
-% tento quindi di aprire il file in modalità binaria
-if ~isnumeric(fp)
-    fp = fopen(fp, 'r');
-end
+fp = fopen(fp, 'r');
 
 % Impostazione del formato
 formato = '';

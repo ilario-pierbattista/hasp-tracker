@@ -1,5 +1,13 @@
 Journal
 
+21/05/2015: Adaboost
+    Script principale dell'algoritmo, implementazione in corso
+
+19/05/2015: Adaboost
+    Algoritmo di generazione di tutte le possibili feature in una
+    finestra.
+    Implementazione delle features di haar in C.
+
 12/05/2015: GUI quasi funzionante
 
 11/05/2015: Registrazioni con Kinect
