@@ -1,4 +1,5 @@
 initEnvironment;
+fprintf('Questo script sta usando il primo database di allenamento\n');
 samples = getTrainingFrames(getenv('DB1'));
 
 %definizione di costanti nel codice
@@ -31,7 +32,7 @@ fmin = [
     12 12;
     12 12
 ];
-% step d'incremento delle features
+% step incremento delle features
 fstep = [
     1 2;
     2 1;
@@ -59,6 +60,9 @@ for t = [1:T]
     w = w / sum(w);
 
     % Ricerca del classificatore migliore
+    for i = [1:length(features)]
+        
+    end
 
     % Aggiornamento dei pesi
 

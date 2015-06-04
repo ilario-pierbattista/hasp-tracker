@@ -1,0 +1,4 @@
+add_library(haar_horizontal_edge SHARED haar_horizontal_edge.cxx)
+add_library(haar_horizontal_linear SHARED haar_horizontal_linear.cxx)
+add_library(haar_vertical_edge SHARED haar_vertical_edge.cxx)
+add_library(haar_vertical_linear SHARED haar_vertical_linear.cxx)
