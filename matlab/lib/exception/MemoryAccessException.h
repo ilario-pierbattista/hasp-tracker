@@ -1,0 +1,14 @@
+//
+// Created by ilario on 11/06/15.
+//
+
+#ifndef HASP_TRACKER_MEMORYACCESSEXCEPTION_H
+#define HASP_TRACKER_MEMORYACCESSEXCEPTION_H
+
+
+class MemoryAccessException {
+
+};
+
+
+#endif //HASP_TRACKER_MEMORYACCESSEXCEPTION_H

@@ -1,31 +1,4 @@
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
 
-# Precompiled Headers
-*.gch
-*.pch
-
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
-
-# Fortran module files
-*.mod
-
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
-
-# Executables
-*.exe
-*.out
-*.app
 
 # Vim
 *~
@@ -46,7 +19,6 @@ slprj/
 
 ### C template
 # Object files
-*.o
 *.ko
 *.obj
 *.elf
@@ -69,7 +41,6 @@ slprj/
 
 # Executables
 *.exe
-*.out
 *.app
 *.i*86
 *.x86_64
@@ -87,44 +58,12 @@ cmake_install.cmake
 install_manifest.txt
 
 
-### C++ template
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
-
-# Precompiled Headers
-*.gch
-*.pch
-
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
-
-# Fortran module files
-*.mod
-
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
-
-# Executables
-*.exe
-*.out
-*.app
-
-
 ### JetBrains template
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion
 
 *.iml
 
 ## Directory-based project format:
-.idea/
 # if you remove the above rule, at least ignore the following:
 
 # User-specific stuff:

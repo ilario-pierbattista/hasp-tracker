@@ -28,7 +28,7 @@ void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[]) {
 
     /* Lettura dell'immagine in input e delle sue dimensioni */
     double *image = mxGetPr(prhs[0]);
-    const int *size = (const int *) mxGetDimensions(prhs[0]);
+    const int *size = (const int *)mxGetDimensions(prhs[0]);
     const int rows = size[0];
     double *point = mxGetPr(prhs[1]);
     double *fsize = mxGetPr(prhs[2]);
@@ -36,38 +36,41 @@ void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[]) {
     int y = (int) point[1];
     int w = (int) fsize[0];
     int h = (int) fsize[1];
-    int right, left, m;
+    int top, bottom, m;
 
     /* Creazione del valore di output */
     plhs[0] = mxCreateDoubleScalar(0);
     double *value = mxGetPr(plhs[0]);
 
     /* Controllo delle dimensioni dell'immagine */
-    if(w % 2 != 0) {
-        mexErrMsgTxt("Dimensioni non corrette. La larghezza della " 
+    if(h % 2 != 0) {
+        mexErrMsgTxt("Dimensioni non corrette. l'altezza della " 
                 "feature deve essere divisibile per 2\n");
     }
-    if(w <= 2 || h <= 1) {
+    m = h / 2;
+    if(w <= 1 || h <= 2) {
         mexErrMsgTxt("Dimensioni non consentite. La dimensione minima "
-                "della finestra deve essere 4px in larghezza e 2px "
+                "della finestra deve essere 2px in larghezza e 4px "
                 "in altezza\n");
     }
-    m = w / 2;
 
     /*
-     *     x    x+m-1 x+m     x+w-1       
-     *   y +--------++--------+
-     *     |        ||        |
-     *y+h-1+--------++--------+
+     *       x             x+w-1       
+     *     y +----------------+
+     *       |                |
+     * y+m-1 +----------------+
+     * y+m   +----------------+
+     *       |                |
+     *y+h-1  +----------------+
      *
      */
-    left = *(image + (x+m-1)*rows + y+h-1) + 
-        *(image +x*rows + y) -
-        *(image + (x+m-1)*rows + y) - 
+    top = *(image + (x+w-1)*rows + y+m-1) + 
+        *(image + x*rows + y) -
+        *(image + (x+w-1)*rows + y) -
+        *(image + x*rows + y+m-1);
+    bottom = *(image + (x+w-1)*rows + y+h-1) +
+        *(image + x*rows + y+m) -
+        *(image + (x+w-1)*rows + y+m) -
         *(image + x*rows + y+h-1);
-    right = *(image + (x+w-1)*rows + y+h-1) +
-        *(image + (x+m)*rows + y) -
-        *(image + (x+m)*rows + y+h-1) -
-        *(image + (x+w-1)*rows + y);
-    *(value) = left - right;
+    *(value) = top - bottom;
 }

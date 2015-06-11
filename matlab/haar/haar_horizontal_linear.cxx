@@ -36,48 +36,43 @@ void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[]) {
     int y = (int) point[1];
     int w = (int) fsize[0];
     int h = (int) fsize[1];
-    int top, center, bottom, m1, m2;
+    int right, left, center, m1, m2;
 
     /* Creazione del valore di output */
     plhs[0] = mxCreateDoubleScalar(0);
     double *value = mxGetPr(plhs[0]);
 
     /* Controllo delle dimensioni dell'immagine */
-    if(h % 4 != 0) {
-        mexErrMsgTxt("Dimensioni non corrette. L'altezza della " 
+    if(w % 4 != 0) {
+        mexErrMsgTxt("Dimensioni non corrette. La larghezza della " 
                 "feature deve essere divisibile per 4\n");
     }
-    if(h <= 4 || w <= 2) {
-        mexErrMsgTxt("Dimensioni non consentite: la finestra deve essere "
-                "larga almeno 2px ed alta almeno 8px");
+    if(w <= 8 || h <= 1) {
+        mexErrMsgTxt("Dimensioni non consentite. La dimensione minima "
+                "della finestra deve essere 8px in larghezza e 2px "
+                "in altezza\n");
     }
-    m1 = h / 4;
+    m1 = w / 4;
     m2 = m1 * 3;
 
     /*
-     *       x             x+w-1       
-     *     y +----------------+
-     *       |                |
-     * y+m1-1+----------------+
-     * y+m1  +----------------+
-     *       |                |
-     * y+m2-1+----------------+
-     * y+m2  +----------------+
-     *       |                |
-     *y+h-1  +----------------+
+     *     x  x+m1-1 x+m1 x+m2-1 x+m2   x+w-1       
+     *   y +--------++--------++--------+
+     *     |        ||        ||        |
+     *y+h-1+--------++--------++--------+
      *
      */
-    top = *(image + (x+w-1)*rows + y+m1-1) + 
+    left = *(image + (x+m1-1)*rows + y+h-1) + 
         *(image + x*rows + y) -
-        *(image + (x+w-1)*rows + y) -
-        *(image + x*rows + y+m1-1);
-    center = *(image + (x+w-1)*rows + y+m2-1) +
-        *(image + x*rows + y+m1) -
-        *(image + (x+w-1)*rows + y+m1) - 
-        *(image + x*rows + y+m2-1);
-    bottom = *(image + (x+w-1)*rows + y+h-1) +
-        *(image + x*rows + y+m2) -
-        *(image + (x+w-1)*rows + y+m2) -
+        *(image + (x+m1-1)*rows + y) - 
         *(image + x*rows + y+h-1);
-    *(value) = top + bottom - center;
+    center = *(image + (x+m2-1)*rows + y+h-1) +
+        *(image + (x+m1)*rows + y) -
+        *(image + (x+m1)*rows + y+h-1) -
+        *(image + (x+m2-1)*rows + y);
+    right = *(image + (x+w-1)*rows + y+h-1) +
+        *(image + (x+m2)*rows + y) -
+        *(image + (x+m2)*rows + y+h-1) -
+        *(image + (x+w-1)*rows + y);
+    *(value) = left + right - center;
 }
