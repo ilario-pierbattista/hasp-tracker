@@ -1,4 +1,11 @@
+include_directories(../lib)
+
 add_library(haar_horizontal_edge SHARED haar_horizontal_edge.cxx)
 add_library(haar_horizontal_linear SHARED haar_horizontal_linear.cxx)
 add_library(haar_vertical_edge SHARED haar_vertical_edge.cxx)
 add_library(haar_vertical_linear SHARED haar_vertical_linear.cxx)
+
+target_link_libraries(haar_vertical_edge haar)
+target_link_libraries(haar_horizontal_edge haar)
+target_link_libraries(haar_vertical_linear haar)
+target_link_libraries(haar_horizontal_linear haar)

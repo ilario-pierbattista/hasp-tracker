@@ -7,7 +7,10 @@
 
 
 class Dimensions {
+public:
+    Dimensions(unsigned int width, unsigned int height);
 
+    unsigned int width, height;
 };
 
 

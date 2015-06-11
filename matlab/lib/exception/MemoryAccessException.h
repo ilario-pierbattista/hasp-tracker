@@ -7,7 +7,10 @@
 
 
 class MemoryAccessException {
-
+public:
+    virtual const char *what() const throw() {
+        return "L'accesso a questa area di memoria non è consentito";
+    }
 };
 
 

@@ -32,16 +32,12 @@ void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[]) {
     }
 
     /* Lettura dell'immagine in input e delle sue dimensioni */
-    double *image = mxGetPr(prhs[0]);
-    const int *size = (const int *) mxGetDimensions(prhs[0]);
-    const int rows = size[0];
     double *point = mxGetPr(prhs[1]);
     double *fsize = mxGetPr(prhs[2]);
     int x = (int) point[0];
     int y = (int) point[1];
     int w = (int) fsize[0];
     int h = (int) fsize[1];
-    int right, left, m;
 
     /* Creazione del valore di output */
     plhs[0] = mxCreateDoubleScalar(0);
@@ -57,33 +53,9 @@ void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[]) {
                              "della finestra deve essere 4px in larghezza e 2px "
                              "in altezza\n");
     }
-    m = w / 2;
 
-    /*
-     *     x    x+m-1 x+m     x+w-1       
-     *   y +--------++--------+
-     *     |        ||        |
-     *y+h-1+--------++--------+
-     *
-     */
-    left = *(image + (x + m - 1) * rows + y + h - 1) +
-           *(image + x * rows + y) -
-           *(image + (x + m - 1) * rows + y) -
-           *(image + x * rows + y + h - 1);
-    right = *(image + (x + w - 1) * rows + y + h - 1) +
-            *(image + (x + m) * rows + y) -
-            *(image + (x + m) * rows + y + h - 1) -
-            *(image + (x + w - 1) * rows + y);
-    *(value) = left - right;
-
+    /* Calcolo del valore della feature */
     Image *img = new Image(mxGetPr(prhs[0]), mxGetDimensions(prhs[0]));
     Rectangle *r = new Rectangle(x, y, w, h);
-    double haar = Haar::horizontalEdge(img, r);
-
-    if (haar != *value) {
-        cout << "Diversi" << endl;
-    } else {
-        cout << "Uguali" << endl;
-    }
-    cout << "mex: " << *value << " c++: " << haar << endl;
+    *value = Haar::horizontalEdge(img, r);
 }

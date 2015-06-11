@@ -1,7 +1,12 @@
-#include <stdio.h>
+#include <iostream>
 #include <math.h>
 #include "mex.h"
 #include "matrix.h"
+#include "Haar.h"
+#include "Image.h"
+#include "Rectangle.h"
+
+using namespace std;
 
 /*
  * Main function
@@ -27,16 +32,12 @@ void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[]) {
     }
 
     /* Lettura dell'immagine in input e delle sue dimensioni */
-    double *image = mxGetPr(prhs[0]);
-    const int *size = (const int *)mxGetDimensions(prhs[0]);
-    const int rows = size[0];
     double *point = mxGetPr(prhs[1]);
     double *fsize = mxGetPr(prhs[2]);
     int x = (int) point[0];
     int y = (int) point[1];
     int w = (int) fsize[0];
     int h = (int) fsize[1];
-    int top, bottom, m;
 
     /* Creazione del valore di output */
     plhs[0] = mxCreateDoubleScalar(0);
@@ -47,30 +48,13 @@ void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[]) {
         mexErrMsgTxt("Dimensioni non corrette. l'altezza della " 
                 "feature deve essere divisibile per 2\n");
     }
-    m = h / 2;
     if(w <= 1 || h <= 2) {
         mexErrMsgTxt("Dimensioni non consentite. La dimensione minima "
                 "della finestra deve essere 2px in larghezza e 4px "
                 "in altezza\n");
     }
 
-    /*
-     *       x             x+w-1       
-     *     y +----------------+
-     *       |                |
-     * y+m-1 +----------------+
-     * y+m   +----------------+
-     *       |                |
-     *y+h-1  +----------------+
-     *
-     */
-    top = *(image + (x+w-1)*rows + y+m-1) + 
-        *(image + x*rows + y) -
-        *(image + (x+w-1)*rows + y) -
-        *(image + x*rows + y+m-1);
-    bottom = *(image + (x+w-1)*rows + y+h-1) +
-        *(image + x*rows + y+m) -
-        *(image + (x+w-1)*rows + y+m) -
-        *(image + x*rows + y+h-1);
-    *(value) = top - bottom;
+    Image *img = new Image(mxGetPr(prhs[0]), mxGetDimensions(prhs[0]));
+    Rectangle *r = new Rectangle(x, y, w, h);
+    *value = Haar::verticalEdge(img, r);
 }

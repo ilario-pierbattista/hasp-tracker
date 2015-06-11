@@ -5,9 +5,23 @@
 #ifndef HASP_TRACKER_INTERVAL_H
 #define HASP_TRACKER_INTERVAL_H
 
+#include <vector>
+#include <string>
+#include "exception/SplitException.h"
+
+using namespace std;
 
 class Interval {
+public:
+    Interval(int a, int b);
 
+    vector<Interval *> split(int divider) throw(SplitException);
+
+    unsigned int length();
+
+    std::string to_string();
+
+    int a, b;
 };
 
 

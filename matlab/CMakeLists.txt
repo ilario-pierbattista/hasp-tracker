@@ -6,7 +6,6 @@ set(CMAKE_C_COMPILER mex)
 SET( CMAKE_SHARED_LIBRARY_SUFFIX .mexa64 )  # set suffix to .mexa64
 SET( CMAKE_SHARED_LIBRARY_PREFIX )      # remove the "lib" prefix
 
-
 # Variables controlling the build-phrase
 SET( CMAKE_CXX_FLAGS "-silent -cxx -largeArrayDims CXXFLAGS='$$CXXFLAGS -Wall -std=c++11'" )
 SET( CMAKE_SHARED_LIBRARY_CXX_FLAGS )       # remove the -fPIC option. mex does not accept the "-fPIC" option
@@ -35,6 +34,10 @@ set( CMAKE_LIBRARY_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/mex")
 
 MESSAGE( STATUS "mex.cmake is loaded.\n" )
 
+include_directories(lib)
+
+add_subdirectory(lib)
 add_subdirectory(adaboost)
 add_subdirectory(haar)
 add_subdirectory(preprocess)
+
