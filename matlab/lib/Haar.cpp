@@ -4,8 +4,39 @@
 
 #include <iostream>
 #include <cmath>
+#include <exception>
+#include <bits/unique_ptr.h>
 #include "Haar.h"
-#include "Rectangle.h"
+
+using namespace std;
+
+Haar::Haar(Rectangle *r, int code) {
+    this->area = r;
+    this->code = (unsigned char) code;
+}
+
+Haar::~Haar() {
+    delete this->area;
+}
+
+double Haar::value(Image *image) {
+    return Haar::calculateValue(image, this->area, this->code);
+}
+
+string Haar::to_string() {
+    string stringa = "{ area: " + this->area->to_string() +
+                     ", code: " + std::to_string(this->code) + "}";
+    return stringa;
+}
+
+Haar *Haar::clone() {
+    Rectangle *r = new Rectangle(this->getArea()->x,
+                                 this->getArea()->y,
+                                 (unsigned int) this->getArea()->width,
+                                 (unsigned int) this->getArea()->height);
+    Haar *copy = new Haar(r, this->code);
+    return copy;
+}
 
 double Haar::verticalEdge(Image *image, Rectangle *rectangle) {
     try {
@@ -13,6 +44,8 @@ double Haar::verticalEdge(Image *image, Rectangle *rectangle) {
         double value =
                 Haar::calculateIntensity(image, parts.at(0)) -
                 Haar::calculateIntensity(image, parts.at(1));
+        Haar::clearRectangles(parts);
+        parts.clear();
         return value;
     } catch (exception &e) {
         return NAN;
@@ -25,6 +58,8 @@ double Haar::horizontalEdge(Image *image, Rectangle *rectangle) {
         double value =
                 Haar::calculateIntensity(image, parts.at(0)) -
                 Haar::calculateIntensity(image, parts.at(1));
+        Haar::clearRectangles(parts);
+        parts.clear();
         return value;
     } catch (exception &e) {
         return NAN;
@@ -38,6 +73,8 @@ double Haar::verticalLinear(Image *image, Rectangle *rectangle) {
                 Haar::calculateIntensity(image, parts.at(0)) +
                 Haar::calculateIntensity(image, parts.at(2)) -
                 Haar::calculateIntensity(image, parts.at(1));
+        Haar::clearRectangles(parts);
+        parts.clear();
         return value;
     } catch (exception &e) {
         cout << e.what() << endl;
@@ -52,10 +89,41 @@ double Haar::horizontalLinear(Image *image, Rectangle *rectangle) {
                 Haar::calculateIntensity(image, parts.at(0)) +
                 Haar::calculateIntensity(image, parts.at(2)) -
                 Haar::calculateIntensity(image, parts.at(1));
+        Haar::clearRectangles(parts);
+        parts.clear();
         return value;
     } catch (exception &e) {
         return NAN;
     }
+}
+
+/**
+ * Calcola la feature di haar corrispondente al codice passato
+ */
+double Haar::calculateValue(Image *image, Rectangle *rectangle, int code) {
+    double value;
+    switch (code) {
+        case Haar::VERTICAL_EDGE: {
+            value = Haar::verticalEdge(image, rectangle);
+            break;
+        };
+        case Haar::HORIZONTAL_EDGE: {
+            value = Haar::horizontalEdge(image, rectangle);
+            break;
+        };
+        case Haar::VERTICAL_LINEAR: {
+            value = Haar::verticalLinear(image, rectangle);
+            break;
+        };
+        case Haar::HORIZONTAL_LINEAR: {
+            value = Haar::horizontalLinear(image, rectangle);
+            break;
+        };
+        default: {
+            value = NAN;
+        }
+    }
+    return value;
 }
 
 /**
@@ -76,4 +144,10 @@ double Haar::calculateIntensity(Image *image, Rectangle *rectangle) {
            image->read(rectangle->topLeftPoint()) -
            image->read(rectangle->topRightPoint()) -
            image->read(rectangle->bottomLeftPoint());
+}
+
+void Haar::clearRectangles(vector<Rectangle *> rects) {
+    for (unsigned int i = 0; i < rects.size(); i++) {
+        delete rects.at(i);
+    }
 }

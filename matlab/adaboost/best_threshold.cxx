@@ -3,6 +3,7 @@
 #include <math.h>
 #include "mex.h"
 #include "matrix.h"
+#include <Adaboost.h>
 
 using namespace std;
 

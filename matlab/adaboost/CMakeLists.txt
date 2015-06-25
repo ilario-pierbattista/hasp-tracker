@@ -1,2 +1,6 @@
 add_library(get_features SHARED get_features.cxx)
 add_library(best_threshold SHARED best_threshold.cxx)
+add_library(best_weak_classifier SHARED best_weak_classifier.cxx)
+
+target_link_libraries(best_threshold adaboost)
+target_link_libraries(best_weak_classifier adaboost)

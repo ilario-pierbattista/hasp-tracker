@@ -62,6 +62,11 @@ Image::Image(char *filePath) {
     }
 }
 
+
+Image::~Image() {
+    /*@TODO distruttore */
+}
+
 /**
  * floorRebase
  * Ricerca il punto di massimo dell'immagine di profondità e,
@@ -142,8 +147,8 @@ double Image::read(int index) throw (MemoryAccessException) {
     return *(this->image + index);
 }
 
-double Image::read(Point *p) throw (MemoryAccessException) {
-    return this->read(p->x, p->y);
+double Image::read(Point p) throw (MemoryAccessException) {
+    return this->read(p.x, p.y);
 }
 
 /**

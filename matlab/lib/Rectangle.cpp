@@ -26,26 +26,30 @@ Rectangle::Rectangle(Point p, Dimensions d) {
     this->height = d.height;
 }
 
-Point *Rectangle::topLeftPoint() {
-    return new Point(this->x, this->y);
+Point Rectangle::topLeftPoint() {
+    Point tl(this->x, this->y);
+    return tl;
 }
 
-Point *Rectangle::topRightPoint() {
-    return new Point(this->x + this->width - 1, this->y);
+Point Rectangle::topRightPoint() {
+    Point tr(this->x + this->width - 1, this->y);
+    return tr;
 }
 
-Point *Rectangle::bottomLeftPoint() {
-    return new Point(this->x, this->y + this->height - 1);
+Point Rectangle::bottomLeftPoint() {
+    Point bl(this->x, this->y + this->height - 1);
+    return bl;
 }
 
-Point *Rectangle::bottomRightPoint() {
-    return new Point(this->x + this->width - 1, this->y + this->height - 1);
+Point Rectangle::bottomRightPoint() {
+    Point br(this->x + this->width - 1, this->y + this->height - 1);
+    return br;
 }
 
 vector<Rectangle *> Rectangle::horizontalSplit(unsigned int divider)
 throw(SplitException) {
-    Interval *width = this->xInterval();
-    vector<Interval *> intervals = width->split(divider);
+    Interval width = this->xInterval();
+    vector<Interval *> intervals = width.split(divider);
     vector<Rectangle *> result(divider);
 
     for (unsigned int i = 0; i < divider; i++) {
@@ -57,14 +61,16 @@ throw(SplitException) {
         );
     }
 
-    /** @TODO distruzione */
+    Rectangle::cleanIntervals(intervals);
+    intervals.clear();
+
     return result;
 }
 
 vector<Rectangle *> Rectangle::verticalSplit(unsigned int divider)
 throw(SplitException) {
-    Interval *height = this->yInterval();
-    vector<Interval *> intervals = height->split(divider);
+    Interval height = this->yInterval();
+    vector<Interval *> intervals = height.split(divider);
     vector<Rectangle *> result(divider);
 
     for (unsigned int i = 0; i < divider; ++i) {
@@ -76,23 +82,24 @@ throw(SplitException) {
         );
     }
 
+    Rectangle::cleanIntervals(intervals);
+    intervals.clear();
+
     return result;
 }
 
-Interval *Rectangle::xInterval() {
-    Interval *interval;
-    interval = new Interval(
-            this->topLeftPoint()->x,
-            this->topRightPoint()->x
+Interval Rectangle::xInterval() {
+    Interval interval(
+            this->topLeftPoint().x,
+            this->topRightPoint().x
     );
     return interval;
 }
 
-Interval *Rectangle::yInterval() {
-    Interval *interval;
-    interval = new Interval(
-            this->topLeftPoint()->y,
-            this->bottomLeftPoint()->y
+Interval Rectangle::yInterval() {
+    Interval interval(
+            this->topLeftPoint().y,
+            this->bottomLeftPoint().y
     );
     return interval;
 }
@@ -102,9 +109,15 @@ string Rectangle::to_string() {
                      ", y: " + std::to_string(this->y) +
                      ", width: " + std::to_string(this->width) +
                      ", height: " + std::to_string(this->height) +
-                     ", top_left: " + this->topLeftPoint()->to_string() +
-                     ", top_right: " + this->topRightPoint()->to_string() +
-                     ", bottom_left: " + this->bottomLeftPoint()->to_string() +
-                     ", bottom_right: " + this->bottomRightPoint()->to_string() + "}";
+                     ", top_left: " + this->topLeftPoint().to_string() +
+                     ", top_right: " + this->topRightPoint().to_string() +
+                     ", bottom_left: " + this->bottomLeftPoint().to_string() +
+                     ", bottom_right: " + this->bottomRightPoint().to_string() + "}";
     return stringa;
+}
+
+void Rectangle::cleanIntervals(vector<Interval *> intervals) {
+    for(unsigned int i = 0; i < intervals.size(); i++) {
+        delete intervals.at(i);
+    }
 }

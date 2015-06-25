@@ -5,6 +5,7 @@
 #ifndef HASP_TRACKER_INTERVAL_H
 #define HASP_TRACKER_INTERVAL_H
 
+#include <iostream>
 #include <vector>
 #include <string>
 #include "exception/SplitException.h"

@@ -1,7 +1,5 @@
 #include <iostream>
-#include <math.h>
 #include "mex.h"
-#include "matrix.h"
 #include "Image.h"
 #include "Rectangle.h"
 #include "Haar.h"

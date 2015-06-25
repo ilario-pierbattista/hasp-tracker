@@ -21,13 +21,13 @@ public:
 
     Rectangle(Point p, Dimensions d);
 
-    Point *topLeftPoint();
+    Point topLeftPoint();
 
-    Point *topRightPoint();
+    Point topRightPoint();
 
-    Point *bottomLeftPoint();
+    Point bottomLeftPoint();
 
-    Point *bottomRightPoint();
+    Point bottomRightPoint();
 
     vector<Rectangle *> horizontalSplit(unsigned int divider
     ) throw(SplitException);
@@ -35,13 +35,16 @@ public:
     vector<Rectangle *> verticalSplit(unsigned int divider
     ) throw(SplitException);
 
-    Interval *xInterval();
+    Interval xInterval();
 
-    Interval *yInterval();
+    Interval yInterval();
 
     string to_string();
 
     int x, y, width, height;
+
+private:
+    static void cleanIntervals(vector<Interval *> intervals);
 };
 
 

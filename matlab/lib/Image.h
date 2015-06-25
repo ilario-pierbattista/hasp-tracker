@@ -20,6 +20,7 @@ public:
     Image(double *image, const size_t *size);
     Image(double *image, int width, int height);
     Image(char *filePath);
+    ~Image();
 
     /**
      * Static methods for image processing
@@ -32,7 +33,7 @@ public:
      */
     double read(int index) throw (MemoryAccessException);
     double read(int x, int y) throw (MemoryAccessException);
-    double read(Point *p) throw (MemoryAccessException);
+    double read(Point p) throw (MemoryAccessException);
     void write(double value, int index) throw (MemoryAccessException);
     void write(double value, int x, int y) throw (MemoryAccessException);
     void write(double value, Point *p) throw (MemoryAccessException);
@@ -48,8 +49,10 @@ public:
     void setHeight(int height);
     void setSize(const size_t *size);
 
-private:
+protected:
     double *image;
+
+private:
     int width;
     int height;
 

@@ -3,7 +3,7 @@ fprintf('Questo script sta usando il primo database di allenamento\n');
 samples = getTrainingFrames(getenv('DB1'));
 
 %definizione di costanti nel codice
-T = 5;
+T = 20;
 
 % Conteggio dei sample negativi e positivi
 m = 0; l = 0;
@@ -27,43 +27,54 @@ end
 
 % dimensioni minime delle features
 fmin = [
-    12 12;
-    12 12;
-    12 12;
-    12 12
+    24 24;
+    24 24;
+    24 24;
+    24 24
 ];
 % step incremento delle features
 fstep = [
-    1 2;
-    2 1;
-    1 4;
-    4 1
+    8 16;
+    16 8;
+    8 24;
+    24 8
 ];
+
+%fstep = [4 8; 8 4; 4 12; 12 4];
 
 % Calcolo di tutte le combinazioni di features
 width = samples(1).width;
 height = samples(1).height;
-features = get_features([width height], fmin, fstep);
+features = transpose(get_features([width height], fmin, fstep));
 
 % preprocessing delle immagini
 frames = zeros(height, width, length(samples));
+labels = [];
 for i = [1:length(samples)]
     image = readImageData(samples(i).filepath, samples(i).width, samples(i).height, 16);   
     image = floor_rebase(image);
     image = integral_image(image);
     frames(:,:,i) = image;
+    labels = [labels samples(i).positive];
 end
+betasT = [];
+weightedErrors = [];
+weakClassifiers = [];
+alphas = [];
 
 % Main loop
 for t = [1:T]
     % Normalizzazione dei pesi
-    w = w / sum(w);
+    w(t,:) = w(t,:) / sum(w(t,:));
 
-    % Ricerca del classificatore migliore
-    for i = [1:length(features)]
-        
-    end
+    tic;
+    [h, e, updatedWeights, betaT] = best_weak_classifier(frames, labels, w, features);
+    toc;
 
-    % Aggiornamento dei pesi
-
+    % Aggiornamento dei pesi e dei parametri
+    w = [w; updatedWeights];
+    betasT = [betasT; betaT];
+    weightedErrors = [weightedErrors; e];
+    weakClassifiers = [weakClassifiers; h];
+    alphas = [alphas; log(1/betaT)];
 end

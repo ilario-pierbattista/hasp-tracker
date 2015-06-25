@@ -16,23 +16,23 @@ Interval::Interval(int a, int b) {
  */
 vector<Interval *> Interval::split(int divider) throw(SplitException) {
     int part = 0;
-    vector<Interval *> *result;
+    vector<Interval *> result;
     Interval *interval;
     if (this->length() % divider != 0) {
         throw new SplitException();
     }
 
-    result = new vector<Interval *>((unsigned int) divider);
     part = this->length() / divider;
     for (unsigned int i = 0; i < divider; i++) {
         interval = new Interval(
                 this->a + i * part,
                 this->a + (i + 1) * part - 1
         );
-        result->at(i) = interval;
+        result.push_back(interval);
     }
+    result.shrink_to_fit();
 
-    return *result;
+    return result;
 }
 
 /**
