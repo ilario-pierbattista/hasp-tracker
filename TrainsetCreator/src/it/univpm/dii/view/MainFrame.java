@@ -186,6 +186,16 @@ public class MainFrame extends View {
         previewImagePanel.setDepthImage(depthImage);
     }
 
+    public void addElement(Element element) {
+        ElementModel model = (ElementModel) this.sampleTable.getModel();
+        model.addElement(element);
+    }
+
+    public void removeElement(Element element) {
+        ElementModel model = (ElementModel) this.sampleTable.getModel();
+        model.removeElement(element);
+    }
+
     public MenuItems getMenuItems() {
         return menuItems;
     }

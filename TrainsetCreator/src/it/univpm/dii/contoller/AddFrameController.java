@@ -221,7 +221,7 @@ public class AddFrameController {
             // altrimenti l'id non viene assegnato
             DatasetManager.getInstance().generateFilename(element);
             view.getImagePanel().cropAndSave(new File(element.getFileName()));
-            addlElementToMF(element);
+            MainFrame.getInstance().addElement(element);
         }
     }
 

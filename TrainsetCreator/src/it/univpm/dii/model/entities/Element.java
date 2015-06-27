@@ -56,6 +56,15 @@ public class Element {
         return this;
     }
 
+    public boolean equals(Element obj) {
+        if(this == obj) {
+            return true;
+        } else if (this.id == obj.getId()) {
+            return true;
+        }
+        return false;
+    }
+
     @Override
     public String toString() {
         return "Element{" +

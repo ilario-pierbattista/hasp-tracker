@@ -1,7 +1,10 @@
 package it.univpm.dii.model.entities;
 
+import it.univpm.dii.utils.ElementEqualityPredicate;
+
 import java.io.File;
 import java.util.ArrayList;
+import java.util.function.Predicate;
 
 /**
  * Created by ilario
@@ -34,6 +37,15 @@ public class TrainSet {
             positives.add(e);
         } else {
             negatives.add(e);
+        }
+        return this;
+    }
+
+    public TrainSet remove(Element e) {
+        if(e.isPositive()) {
+            positives.removeIf(new ElementEqualityPredicate(e));
+        } else {
+            negatives.removeIf(new ElementEqualityPredicate(e));
         }
         return this;
     }

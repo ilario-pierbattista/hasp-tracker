@@ -16,6 +16,7 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.NoSuchFileException;
 import java.util.ArrayList;
 
 
@@ -57,6 +58,7 @@ public class MainController {
         // Listeners dei pulsanti
         /* @TODO Aggiungere gli action listeners agli altri pulsanti */
         view.getAggiungiButton().addActionListener(new AddFrameAction());
+        view.getEliminaButton().addActionListener(new EliminaSelectedAction());
 
         // Listener della tabella
         view.getSampleTable().getSelectionModel().addListSelectionListener(new SampleSelectedAction());
@@ -160,7 +162,7 @@ public class MainController {
                 found = true;
             }
         }
-        
+
         for (int i = index; i > 0; i--) {
             element = recentDatasets.get(i - 1);
             if (recentDatasets.size() <= i) {
@@ -276,6 +278,28 @@ public class MainController {
                 } else {
                     view.enableEdit(false);
                 }
+            }
+        }
+    }
+
+    class EliminaSelectedAction implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            try {
+                DatasetManager dm = DatasetManager.getInstance();
+                Element element = view.getSelectedElement();
+                dm.remove(element);
+                view.removeElement(element);
+            } catch (NoSuchFileException ee) {
+                JOptionPane.showMessageDialog(view.frame,
+                        "Nessun file trovato: "+ee.getMessage(),
+                        ee.getClass().getName(),
+                        JOptionPane.ERROR_MESSAGE);
+            } catch (IOException ee) {
+                JOptionPane.showMessageDialog(view.frame,
+                        ee.getMessage(),
+                        ee.getClass().getName(),
+                        JOptionPane.ERROR_MESSAGE);
             }
         }
     }

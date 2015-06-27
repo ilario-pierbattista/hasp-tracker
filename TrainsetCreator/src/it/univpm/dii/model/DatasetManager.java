@@ -4,7 +4,12 @@ import it.univpm.dii.model.entities.Element;
 import it.univpm.dii.model.entities.TrainSet;
 import it.univpm.dii.utils.ElementComparator;
 
+import javax.swing.*;
 import java.io.File;
+import java.io.IOException;
+import java.nio.file.DirectoryNotEmptyException;
+import java.nio.file.Files;
+import java.nio.file.NoSuchFileException;
 import java.util.ArrayList;
 
 /**
@@ -85,13 +90,13 @@ public class DatasetManager {
 
         for (File pos : positives) {
             current = createElement(pos);
-            if(current != null) {
+            if (current != null) {
                 elements.add(current);
             }
         }
         for (File neg : negatives) {
             current = createElement(neg);
-            if(current != null) {
+            if (current != null) {
                 elements.add(current);
             }
         }
@@ -115,15 +120,11 @@ public class DatasetManager {
     public Element find(int id) {
         ArrayList<Element> pos = trainSet.getPositives();
         ArrayList<Element> neg = trainSet.getNegatives();
-        for (int i = 0; i < pos.size(); i++) {
-            if (pos.get(i).getId() == id) {
-                return pos.get(i);
-            }
+        for (Element e : pos) {
+            if (e.getId() == id) return e;
         }
-        for (int i = 0; i < neg.size(); i++) {
-            if (neg.get(i).getId() == id) {
-                return neg.get(i);
-            }
+        for (Element e : neg) {
+            if (e.getId() == id) return e;
         }
         return null;
     }
@@ -136,7 +137,6 @@ public class DatasetManager {
      */
     public DatasetManager create(Element e) {
         e.setId(nextIdAvailable);
-        System.out.println(nextIdAvailable);
         trainSet.add(e);
         nextIdAvailable++;
         return this;
@@ -146,8 +146,16 @@ public class DatasetManager {
         return this;
     }
 
-    public DatasetManager remove(Element e) {
-        return null;
+    public DatasetManager remove(Element e)
+            throws IOException {
+        try {
+            File elementFile = new File(e.getFileName());
+            Files.delete(elementFile.toPath());
+        } catch (DirectoryNotEmptyException ee) {
+            ee.printStackTrace();
+        }
+        trainSet.remove(e);
+        return this;
     }
 
     public DatasetManager flush() {
@@ -164,7 +172,7 @@ public class DatasetManager {
         Element e = null;
         // Separazione del nome del file dalla sua estensione
         String[] fileNameParts = file.getName().split("\\.");   // <- split prende come argomento un'espressione regolare
-        if(fileNameParts.length < 2) {
+        if (fileNameParts.length < 2) {
             return null;
         }
         // Analisi del nome del file (senza l'estensione)
@@ -192,7 +200,7 @@ public class DatasetManager {
                 "_" + e.getHeight() +
                 "_" + Boolean.toString(e.isPositive()) +
                 ".bin";
-        if(e.isPositive()) {
+        if (e.isPositive()) {
             e.setFileName(new File(positivesDir, filename).getAbsolutePath());
         } else {
             e.setFileName(new File(negativesDir, filename).getAbsolutePath());

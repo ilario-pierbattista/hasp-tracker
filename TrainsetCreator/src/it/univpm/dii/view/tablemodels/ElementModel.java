@@ -39,6 +39,7 @@ public class ElementModel extends AbstractTableModel {
 
     /**
      * Aggiunta di un singolo elemento
+     *
      * @param element
      * @return
      */
@@ -48,8 +49,37 @@ public class ElementModel extends AbstractTableModel {
         return this;
     }
 
+    public ElementModel removeElement(Element element) {
+        int index = indexOf(element);
+        if (index >= 0) {
+            elements.remove(index);
+            fireTableDataChanged();
+        }
+        return this;
+    }
+
+    public ElementModel updateElement(Element element) {
+        int index = indexOf(element);
+        if (index >= 0) {
+            elements.set(index, element);
+            fireTableDataChanged();
+        }
+        return this;
+    }
+
+    public int indexOf(Element element) {
+        int index = -1;
+        for (int i = 0; i < elements.size() && index == -1; i++) {
+            if (elements.get(i).equals(element)) {
+                index = i;
+            }
+        }
+        return index;
+    }
+
     /**
      * Permette di sapere se il model della tabella è stato popolato
+     *
      * @return True se il model è stato popolato, false altrimenti
      */
     public boolean isDataSetted() {
@@ -72,7 +102,7 @@ public class ElementModel extends AbstractTableModel {
 
     @Override
     public int getRowCount() {
-        if(elements == null) {
+        if (elements == null) {
             return 0;
         }
         return elements.size();
