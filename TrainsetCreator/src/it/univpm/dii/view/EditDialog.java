@@ -7,6 +7,9 @@ public class EditDialog extends JDialog {
     private JPanel contentPane;
     private JButton buttonOK;
     private JButton buttonCancel;
+    private JRadioButton positivoRadioButton;
+    private JRadioButton negativoRadioButton;
+    private JLabel nameLabel;
 
     public EditDialog() {
         setContentPane(contentPane);
@@ -39,6 +42,9 @@ public class EditDialog extends JDialog {
                 onCancel();
             }
         }, KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
+
+        this.pack();
+        this.setVisible(true);
     }
 
     private void onOK() {
@@ -49,12 +55,5 @@ public class EditDialog extends JDialog {
     private void onCancel() {
 // add your code here if necessary
         dispose();
-    }
-
-    public static void main(String[] args) {
-        EditDialog dialog = new EditDialog();
-        dialog.pack();
-        dialog.setVisible(true);
-        System.exit(0);
     }
 }

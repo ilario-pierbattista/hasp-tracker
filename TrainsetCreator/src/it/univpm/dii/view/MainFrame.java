@@ -1,6 +1,8 @@
 package it.univpm.dii.view;
 
 import it.univpm.dii.model.DatasetManager;
+import it.univpm.dii.model.entities.Element;
+import it.univpm.dii.service.DepthImage;
 import it.univpm.dii.utils.MenuItems;
 import it.univpm.dii.utils.Menus;
 import it.univpm.dii.view.component.DepthImagePanel;
@@ -11,6 +13,8 @@ import javax.swing.*;
 import javax.swing.table.JTableHeader;
 import java.awt.*;
 import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
 
 /**
  * Created by ilario
@@ -43,6 +47,7 @@ public class MainFrame extends View {
         frame.pack();
         frame.setLocationRelativeTo(null);
         instance = this;
+        enableEdit(false);
     }
 
     @Override
@@ -52,7 +57,7 @@ public class MainFrame extends View {
             posNumLabel.setText(Integer.toString(dm.getTrainSet().getPositives().size()));
             negNumLabel.setText(Integer.toString(dm.getTrainSet().getNegatives().size()));
 
-            if(dm.getTrainSet() != null) {
+            if (dm.getTrainSet() != null) {
                 ElementModel tableModel = (ElementModel) sampleTable.getModel();
                 tableModel.setData(dm.getTrainSet());
             }
@@ -101,7 +106,7 @@ public class MainFrame extends View {
         menuItems.add("file_open", file_open);
 
         /* Apri recenti */
-        JMenuItem file_recent = new JMenuItem("Aperti di recente");
+        JMenu file_recent = new JMenu("Aperti di recente");
         menuItems.add("file_recent", file_recent);
 
         /* Salva il set */
@@ -124,17 +129,61 @@ public class MainFrame extends View {
     public void setDatasetPath(File path) {
         if (path == null) {
             aggiungiButton.setEnabled(false);
-            eliminaButton.setEnabled(false);
-            modificaButton.setEnabled(false);
             trainsetLabel.setText("Nessun database di allenamento aperto");
             trainsetLabel.setEnabled(false);
         } else {
             aggiungiButton.setEnabled(true);
-            eliminaButton.setEnabled(true);
-            modificaButton.setEnabled(true);
             trainsetLabel.setText("Database: " + path.getAbsolutePath());
             trainsetLabel.setEnabled(true);
         }
+    }
+
+    /**
+     * Abilitazione/Disabilitazione dei pulsanti di modifica e cancellazione
+     *
+     * @param enable Abilitazione/Disabilitazione
+     */
+    public void enableEdit(boolean enable) {
+        eliminaButton.setEnabled(enable);
+        modificaButton.setEnabled(enable);
+    }
+
+    public void setRecents(ArrayList<File> paths) {
+        JMenuItem item;
+        JMenu recent = (JMenu) menuItems.get("file_recent");
+        recent.removeAll();
+        if(paths.size() > 0) {
+            for (File path : paths) {
+                item = new JMenuItem(path.getAbsolutePath());
+                recent.add(item);
+            }
+            recent.setEnabled(true);
+        } else {
+            recent.setEnabled(false);
+        }
+        this.refresh();
+    }
+
+    /**
+     * Restituisce l'elemento selezionato
+     * @return Elemento selezionato
+     */
+    public Element getSelectedElement() {
+        ElementModel model = (ElementModel) sampleTable.getModel();
+        return model.getRow(sampleTable.getSelectedRow());
+    }
+
+    /**
+     * Aggiorna il pannello della preview
+     * @param e Elemento di cui mostrare la preview
+     * @throws IOException
+     */
+    public void updatePreviewPanel(Element e) throws IOException {
+        DepthImage depthImage = new DepthImage(
+                new File(e.getFileName()),
+                e.getWidth(),
+                e.getHeight());
+        previewImagePanel.setDepthImage(depthImage);
     }
 
     public MenuItems getMenuItems() {
@@ -169,6 +218,9 @@ public class MainFrame extends View {
         return previewImagePanel;
     }
 
+    /**
+     * Creazione custom dei componenti grafici della vista
+     */
     private void createUIComponents() {
         previewImagePanel = new DepthImagePanel(DepthImagePanel.MODE_PREVIEW);
         previewImagePanel.setPreferredSize(new Dimension(200, 200));
