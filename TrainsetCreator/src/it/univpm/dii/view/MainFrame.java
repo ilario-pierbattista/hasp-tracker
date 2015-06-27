@@ -10,7 +10,6 @@ import it.univpm.dii.view.component.SampleTable;
 import it.univpm.dii.view.tablemodels.ElementModel;
 
 import javax.swing.*;
-import javax.swing.table.JTableHeader;
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
@@ -194,6 +193,11 @@ public class MainFrame extends View {
     public void removeElement(Element element) {
         ElementModel model = (ElementModel) this.sampleTable.getModel();
         model.removeElement(element);
+    }
+
+    public void updateElement(Element element) {
+        ElementModel model = (ElementModel) this.sampleTable.getModel();
+        model.updateElement(element);
     }
 
     public MenuItems getMenuItems() {

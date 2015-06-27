@@ -1,6 +1,10 @@
 package it.univpm.dii.view;
 
+import it.univpm.dii.model.entities.Element;
+
 import javax.swing.*;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 import java.awt.event.*;
 
 public class EditDialog extends JDialog {
@@ -10,17 +14,12 @@ public class EditDialog extends JDialog {
     private JRadioButton positivoRadioButton;
     private JRadioButton negativoRadioButton;
     private JLabel nameLabel;
+    private Element element;
 
-    public EditDialog() {
+    public EditDialog(Element element) {
         setContentPane(contentPane);
         setModal(true);
         getRootPane().setDefaultButton(buttonOK);
-
-        buttonOK.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                onOK();
-            }
-        });
 
         buttonCancel.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -36,6 +35,12 @@ public class EditDialog extends JDialog {
             }
         });
 
+        setElement(element);
+
+        RadioButtonHandler handler = new RadioButtonHandler();
+        positivoRadioButton.addChangeListener(handler);
+        negativoRadioButton.addChangeListener(handler);
+
 // call onCancel() on ESCAPE
         contentPane.registerKeyboardAction(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -44,16 +49,46 @@ public class EditDialog extends JDialog {
         }, KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
 
         this.pack();
-        this.setVisible(true);
+        this.setLocationRelativeTo(null);
     }
 
-    private void onOK() {
-// add your code here
-        dispose();
+    public EditDialog setElement(Element element) {
+        this.element = element;
+        nameLabel.setText(element.getFileName());
+        if (element.isPositive()) {
+            positivoRadioButton.setSelected(true);
+            negativoRadioButton.setSelected(false);
+        } else {
+            positivoRadioButton.setSelected(false);
+            negativoRadioButton.setSelected(true);
+        }
+        return this;
     }
 
     private void onCancel() {
-// add your code here if necessary
         dispose();
+    }
+
+    public boolean getNewPositiveness() {
+        return positivoRadioButton.isSelected() && !negativoRadioButton.isSelected();
+    }
+
+    class RadioButtonHandler implements ChangeListener {
+        @Override
+        public void stateChanged(ChangeEvent e) {
+            mutualExclusion(e);
+        }
+
+        private void mutualExclusion(ChangeEvent e) {
+            if(e.getSource() == positivoRadioButton) {
+                negativoRadioButton.setSelected(!positivoRadioButton.isSelected());
+            } else if(e.getSource() == negativoRadioButton) {
+                positivoRadioButton.setSelected(!negativoRadioButton.isSelected());
+            }
+        }
+    }
+
+    public JButton getButtonOK() {
+        return buttonOK;
     }
 }

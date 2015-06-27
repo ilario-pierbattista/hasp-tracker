@@ -9,7 +9,6 @@ import it.univpm.dii.view.MainFrame;
 import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
-import javax.swing.text.FieldView;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
@@ -56,9 +55,9 @@ public class MainController {
         setRecentMenuActions();
 
         // Listeners dei pulsanti
-        /* @TODO Aggiungere gli action listeners agli altri pulsanti */
         view.getAggiungiButton().addActionListener(new AddFrameAction());
         view.getEliminaButton().addActionListener(new EliminaSelectedAction());
+        view.getModificaButton().addActionListener(new EditSelectedAction());
 
         // Listener della tabella
         view.getSampleTable().getSelectionModel().addListSelectionListener(new SampleSelectedAction());
@@ -301,6 +300,13 @@ public class MainController {
                         ee.getClass().getName(),
                         JOptionPane.ERROR_MESSAGE);
             }
+        }
+    }
+
+    class EditSelectedAction implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            new EditFrameController(view.getSelectedElement());
         }
     }
 

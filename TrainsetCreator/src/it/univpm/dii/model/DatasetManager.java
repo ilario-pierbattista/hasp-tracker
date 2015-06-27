@@ -4,12 +4,10 @@ import it.univpm.dii.model.entities.Element;
 import it.univpm.dii.model.entities.TrainSet;
 import it.univpm.dii.utils.ElementComparator;
 
-import javax.swing.*;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.DirectoryNotEmptyException;
 import java.nio.file.Files;
-import java.nio.file.NoSuchFileException;
 import java.util.ArrayList;
 
 /**
@@ -142,7 +140,19 @@ public class DatasetManager {
         return this;
     }
 
-    public DatasetManager update(Element e) {
+    public DatasetManager changePositive(Element e, boolean newVal)
+            throws IOException
+    {
+        try {
+            File oldFile = new File(e.getFileName()), targetFile;
+            trainSet.changePositiveness(e, newVal);
+            generateFilename(e);
+            targetFile = new File(e.getFileName());
+            Files.copy(oldFile.toPath(), targetFile.toPath());
+            Files.delete(oldFile.toPath());
+        } catch (DirectoryNotEmptyException ee) {
+            ee.printStackTrace();
+        }
         return this;
     }
 

@@ -213,7 +213,6 @@ public class AddFrameController {
     class SalvaAction implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            /* @TODO Aggiungere l'aggiornamento della view */
             DatasetManager dm = DatasetManager.getInstance();
             Element element = view.getData();
             dm.create(element);

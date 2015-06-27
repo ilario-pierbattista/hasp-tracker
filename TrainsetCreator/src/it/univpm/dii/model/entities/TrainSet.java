@@ -4,7 +4,6 @@ import it.univpm.dii.utils.ElementEqualityPredicate;
 
 import java.io.File;
 import java.util.ArrayList;
-import java.util.function.Predicate;
 
 /**
  * Created by ilario
@@ -38,6 +37,17 @@ public class TrainSet {
         } else {
             negatives.add(e);
         }
+        return this;
+    }
+
+    public TrainSet changePositiveness(Element element, boolean newVal) {
+        if(element.isPositive()) {
+            positives.removeIf(new ElementEqualityPredicate(element));
+        } else {
+            negatives.removeIf(new ElementEqualityPredicate(element));
+        }
+        element.setPositive(newVal);
+        add(element);
         return this;
     }
 
