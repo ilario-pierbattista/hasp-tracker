@@ -9,79 +9,113 @@
 
 using namespace std;
 
-WeakClassifier *Adaboost::bestWeakClassifier(vector<Sample *> samples, Haar *feature) {
+WeakClassifier *Adaboost::bestWeakClassifier(vector<Sample *> samples, vector<Haar *> features, double *values) {
     FeatureTest *ft;
     list<FeatureTest *> tests;
     list<FeatureTest *>::const_iterator iterator;
     // Somme degli esempi positivi e negativi
-    double positiveSum = 0, negativeSum = 0;
+    double positiveSum, negativeSum;
     // Somme degli esempi positivi e negativi sotto la soglia
-    double partialPositives = 0, partialNegatives = 0;
+    double partialPositives, partialNegatives;
     // Soglia migliore
-    double bestThreshold = 0;
+    double bestThreshold;
     // Errore minimo assoluto e relativo all'iterazione
-    double absoluteMinimumError = INFINITY, currentMinimumError;
+    double absoluteMinimumError, currentMinimumError;
     // Errore nella classificazione sotto la soglia e sopra la soglia
-    double errorBelowThreshold = 0, errorOverThreshold = 0;
+    double errorBelowThreshold, errorOverThreshold;
     // Polarità dell'iterazione corrente e dell'iterazione finale
     short currentPolarity, finalPolarity = 1;
+    WeakClassifier *bestClassifier = new WeakClassifier();
+    unsigned int sampleIndex, featureIndex;
 
-    // Calcolo dei valori della feature per ciascuna immagine
-    // Calcolo delle somme dei pesi
     for (unsigned int i = 0; i < samples.size(); i++) {
-        ft = new FeatureTest(feature, samples.at(i));
-        if (ft->getSample()->isPositive()) {
-            positiveSum += ft->getSample()->getWeight();
-        } else {
-            negativeSum += ft->getSample()->getWeight();
-        }
-        tests.push_back(ft);
+        tests.push_back(new FeatureTest());
     }
 
-    // Ordimento delle immagini in base al valore della feature (crescente)
-    tests.sort(FeatureTest::compare);
+    for(unsigned int i = 0; i < features.size(); i++) {
+        // Inizializzazione
+        positiveSum = 0;
+        negativeSum = 0;
+        partialNegatives = 0;
+        partialPositives = 0;
+        bestThreshold = 0;
+        absoluteMinimumError = INFINITY;
+        finalPolarity = 1;
 
-    // Iterazione sulla lista per estrarre la soglia ad errore minimo
-    for (iterator = tests.begin(); iterator != tests.end(); ++iterator) {
-        // Aggiornamento delle somme dei pesi delle immagini sotto la soglia
-        if ((*iterator)->getSample()->isPositive()) {
-            partialPositives += (*iterator)->getSample()->getWeight();
-        } else {
-            partialNegatives += (*iterator)->getSample()->getWeight();
+        // Calcolo dei valori della feature per ciascuna immagine
+        // Calcolo delle somme dei pesi
+        for (iterator = tests.begin(), sampleIndex = 0, featureIndex = 0;
+             iterator != tests.end();
+             ++iterator, sampleIndex++, featureIndex++) {
+            (*iterator)->setFeature(features.at(i));
+            (*iterator)->setSample(samples.at(sampleIndex));
+            if(values == nullptr) {
+                (*iterator)->calculateValue();
+            } else {
+                (*iterator)->value = *(values + sampleIndex*features.size() + featureIndex);
+            }
+            if((*iterator)->sample->positive) {
+                positiveSum += (*iterator)->sample->weight;
+            } else {
+                negativeSum += (*iterator)->sample->weight;
+            }
         }
 
-        // Aggiornamento degli errori di classificazione al di sotto e al di sopra
-        // della soglia
-        errorBelowThreshold = partialNegatives + positiveSum - partialPositives;
-        errorOverThreshold = partialPositives + negativeSum - partialNegatives;
+        // Ordimento delle immagini in base al valore della feature (crescente)
+        tests.sort(FeatureTest::compare);
 
-        // Calcolo dell'errore relativo all'iterazione corrente
-        // minore tra le due classificazioni
-        if (errorBelowThreshold < errorOverThreshold) {
-            currentMinimumError = errorBelowThreshold;
-            currentPolarity = 1;
-        } else {
-            currentMinimumError = errorOverThreshold;
-            currentPolarity = -1;
+        // Iterazione sulla lista per estrarre la soglia ad errore minimo
+        for (iterator = tests.begin(); iterator != tests.end(); ++iterator) {
+            // Aggiornamento delle somme dei pesi delle immagini sotto la soglia
+            if ((*iterator)->sample->positive) {
+                partialPositives += (*iterator)->sample->weight;
+            } else {
+                partialNegatives += (*iterator)->sample->weight;
+            }
+
+            // Aggiornamento degli errori di classificazione al di sotto e al di sopra
+            // della soglia
+            errorBelowThreshold = partialNegatives + positiveSum - partialPositives;
+            errorOverThreshold = partialPositives + negativeSum - partialNegatives;
+
+            // Calcolo dell'errore relativo all'iterazione corrente
+            // minore tra le due classificazioni
+            if (errorBelowThreshold < errorOverThreshold) {
+                currentMinimumError = errorBelowThreshold;
+                currentPolarity = 1;
+            } else {
+                currentMinimumError = errorOverThreshold;
+                currentPolarity = -1;
+            }
+
+            if (currentMinimumError < absoluteMinimumError) {
+                absoluteMinimumError = currentMinimumError;
+                bestThreshold = (*iterator)->value;
+                finalPolarity = currentPolarity;
+            }
         }
 
-        if (currentMinimumError < absoluteMinimumError) {
-            absoluteMinimumError = currentMinimumError;
-            bestThreshold = (*iterator)->getValue();
-            finalPolarity = currentPolarity;
+        if(bestClassifier->feature != nullptr) {
+            if(bestClassifier->weightedError > absoluteMinimumError) {
+                bestClassifier->feature = features.at(i);
+                bestClassifier->weightedError = absoluteMinimumError;
+                bestClassifier->polarity = finalPolarity;
+                bestClassifier->threshold = bestThreshold;
+            }
+        } else {
+            bestClassifier->feature = features.at(i);
+            bestClassifier->weightedError = absoluteMinimumError;
+            bestClassifier->polarity = finalPolarity;
+            bestClassifier->threshold = bestThreshold;
         }
     }
 
-    WeakClassifier *classifier = new WeakClassifier(feature, bestThreshold, finalPolarity, absoluteMinimumError);
+    return bestClassifier;
+}
 
-    // Pulizia della memoria
-    while (!tests.empty()) {
-        delete tests.front();
-        tests.pop_front();
-    }
-    tests.clear();
 
-    return classifier;
+WeakClassifier *Adaboost::bestWeakClassifier(vector<Sample *> samples, vector<Haar *> features) {
+    return bestWeakClassifier(samples, features, nullptr);
 }
 
 double Adaboost::calculateBetaT(double minimumError, double errorSmothing) {
@@ -125,16 +159,14 @@ vector<double> Adaboost::updateWeights(WeakClassifier *classifier, vector<Sample
 FeatureTest::FeatureTest(Haar *feature, Sample *sample) {
     this->feature = feature;
     this->sample = sample;
-    this->value = NAN;
+    this->calculateValue();
 }
 
-double FeatureTest::getValue() {
-    if (isnan(this->value)) {
-        this->value = this->feature->value(this->sample);
-    }
-    return value;
+void FeatureTest::calculateValue() {
+    this->value = this->feature->value(this->sample);
 }
 
 bool FeatureTest::compare(FeatureTest *f1, FeatureTest *f2) {
-    return f1->getValue() < f2->getValue();
+    return f1->value < f2->value;
 }
+

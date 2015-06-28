@@ -14,6 +14,8 @@ public:
 
     WeakClassifier(Haar *feature, double thr, short p);
 
+    WeakClassifier();
+
     ~WeakClassifier();
 
     bool classify(Image *image);
@@ -50,7 +52,6 @@ public:
         WeakClassifier::weightedError = weightedError;
     }
 
-protected:
     Haar *feature;
     double threshold;
     short polarity;

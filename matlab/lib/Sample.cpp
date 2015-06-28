@@ -4,6 +4,7 @@
 
 #include "Sample.h"
 
+using namespace std;
 
 Sample::Sample(double *image, const size_t *size, bool positive, double weight)
         : Image(image, size) {

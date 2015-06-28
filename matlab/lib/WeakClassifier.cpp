@@ -3,6 +3,7 @@
 //
 
 #include "WeakClassifier.h"
+#include <math.h>
 
 WeakClassifier::WeakClassifier(Haar *feature, double thr, short p, double weightedError) {
     this->feature = feature->clone();
@@ -11,6 +12,13 @@ WeakClassifier::WeakClassifier(Haar *feature, double thr, short p, double weight
     this->weightedError = weightedError;
 }
 
+
+WeakClassifier::WeakClassifier() {
+    this->feature = nullptr;
+    this->threshold = NAN;
+    this->weightedError = NAN;
+    this->polarity = 0;
+}
 
 WeakClassifier::WeakClassifier(Haar *feature, double thr, short p) {
     this->feature = feature->clone();

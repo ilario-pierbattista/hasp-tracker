@@ -62,7 +62,6 @@ Image::Image(char *filePath) {
     }
 }
 
-
 Image::~Image() {
     /*@TODO distruttore */
 }

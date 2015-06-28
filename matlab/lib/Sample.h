@@ -13,10 +13,14 @@ using namespace std;
 
 class Sample : public Image {
 public:
-    Sample() {};
-    Sample(double *image, const size_t* size, bool positive, double weight);
+    Sample() { };
+
+    Sample(double *image, const size_t *size, bool positive, double weight);
+
     Sample(double *image, int width, int height, bool positive, double weight);
+
     Sample(char *filePath, bool positive, double weight);
+
     ~Sample();
 
     bool isPositive() const {
@@ -37,7 +41,6 @@ public:
 
     string to_string();
 
-private:
     bool positive;
     double weight;
 };

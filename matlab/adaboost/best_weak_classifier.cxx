@@ -3,7 +3,10 @@
 #include <Sample.h>
 #include <Haar.h>
 #include <Adaboost.h>
+#include <thread>
 #include "mex.h"
+
+#define NUMBER_OF_THREADS 3
 
 using namespace std;
 
@@ -47,6 +50,24 @@ vector<Sample *> allocateSamples(const mxArray *input,
 Haar *getHaarFeature(const mxArray *input, int index);
 
 /**
+ * multithreadBestWeakClassifier
+ * Calcola il migliore classificatore debole con più di un thread
+ *
+WeakClassifier *multithreadBestWeakClassifier(
+        const mxArray *inputFeatures,
+        vector<Sample *> samples,
+        unsigned int concurrentThread
+);
+
+void bestWeakClassifierForSubset(
+        const mxArray *inputFeatures,
+        int base,
+        int limit,
+        vector<Sample *> samples,
+        WeakClassifier **pWeakClassifier
+); */
+
+/**
  * outputWeakClassifier
  * Crea i dati di output per il classificatore debole
  */
@@ -64,12 +85,13 @@ void outputUpdatedWeights(mxArray **output,
  * Main function
  */
 void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[]) {
-    if (nrhs != 4) {
+    if (nrhs != 5) {
         mexErrMsgTxt("I parametri richiesti sono:\n"
                              "\t1)Array delle immagini di allenamento\n"
                              "\t2)Array delle etichette\n"
                              "\t3)Array dei pesi\n"
-                             "\t4)Array delle features\n");
+                             "\t4)Array delle features\n"
+                             "\t5)Valori delle features\n");
     }
     if (nlhs != 4) {
         mexErrMsgTxt("Sono richiesti due parametri di output:\n"
@@ -89,27 +111,17 @@ void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[]) {
     vector<bool> labels = getLabels(prhs[1]);
     vector<double> weights = getWeights(prhs[2]);
     vector<Sample *> samples = allocateSamples(prhs[0], labels, weights);
-    Haar *feature;
-    WeakClassifier *bestWeakClassifier = nullptr,
-            *currentWeakClassifier = nullptr;
+    WeakClassifier *bestWeakClassifier = nullptr;
+    double *values = mxGetPr(prhs[4]);
+
     const size_t *size = mxGetDimensions(prhs[3]);
-
-    // For each feature (size[1])
+    vector<Haar *> features(size[1]);
     for (unsigned int i = 0; i < size[1]; i++) {
-        feature = getHaarFeature(prhs[3], i);
-        currentWeakClassifier = Adaboost::bestWeakClassifier(samples, feature);
-        // Aggiornamento del migliore classificatore
-        if (bestWeakClassifier != nullptr) {
-            if (currentWeakClassifier->getWeightedError() < bestWeakClassifier->getWeightedError()) {
-                delete bestWeakClassifier;
-                bestWeakClassifier = currentWeakClassifier;
-            }
-        } else {
-            bestWeakClassifier = currentWeakClassifier;
-        }
-
-        delete feature;
+        features.at(i) = getHaarFeature(prhs[3], i);
     }
+
+    bestWeakClassifier = Adaboost::bestWeakClassifier(samples, features, values);
+    //bestWeakClassifier = multithreadBestWeakClassifier(prhs[3], samples, NUMBER_OF_THREADS);
 
     // Output
     if (bestWeakClassifier != nullptr) {
@@ -126,6 +138,7 @@ void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[]) {
     }
 
     // Pulizia della memoria
+    /*@TODO Eliminare features*/
     labels.clear();
     weights.clear();
     for (unsigned int i = 0; i < samples.size(); i++) {
@@ -183,6 +196,96 @@ vector<Sample *> allocateSamples(const mxArray *input,
     samples.shrink_to_fit();
     return samples;
 }
+
+/*
+WeakClassifier *multithreadBestWeakClassifier(
+        const mxArray *inputFeatures,
+        vector<Sample *> samples,
+        unsigned int concurrentThread
+) {
+    const size_t *size = mxGetDimensions(inputFeatures);
+    int numberOfFeatures = (int) size[1], featuresPerThread;
+    vector<int> base(concurrentThread), limit(concurrentThread);
+    vector<WeakClassifier *> classifiers(concurrentThread);
+    vector<thread *> threads(concurrentThread);
+    WeakClassifier *bestWeakClassifier = nullptr;
+    unsigned int i;
+
+    // Divisione dell'input
+    featuresPerThread = numberOfFeatures / concurrentThread;
+    for (i = 0; i < concurrentThread; i++) {
+        base.at(i) = i * featuresPerThread;
+        limit.at(i) = (i + 1) * featuresPerThread;
+    }
+    limit.at(concurrentThread - 1) = numberOfFeatures;
+
+    for (unsigned int j = 0; j < concurrentThread; j++) {
+        cout << "Base: " << base.at(j) << " limit: " << limit.at(j) << endl;
+    }
+
+    // Creazione dei thread
+    for (i = 0; i < concurrentThread; i++) {
+        threads.at(i) = new thread(
+                bestWeakClassifierForSubset,
+                inputFeatures,
+                base.at(i),
+                limit.at(i),
+                samples,
+                &(classifiers.at(i))
+        );
+    }
+
+    // Sincronizzazione dei thread
+    for (i = 0; i < concurrentThread; i++) {
+        threads.at(i)->join();
+    }
+
+    threads.clear();
+    base.clear();
+    limit.clear();
+
+    // Combinazione dei risultati
+    for (i = 0; i < concurrentThread; i++) {
+        if (bestWeakClassifier != nullptr) {
+            if (classifiers.at(i)->getWeightedError() < bestWeakClassifier->getWeightedError()) {
+                delete bestWeakClassifier;
+                bestWeakClassifier = classifiers.at(i);
+            }
+        } else {
+            bestWeakClassifier = classifiers.at(i);
+        }
+    }
+
+    return bestWeakClassifier;
+}
+
+void bestWeakClassifierForSubset(
+        const mxArray *inputFeatures,
+        int base,
+        int limit,
+        vector<Sample *> samples,
+        WeakClassifier **pWeakClassifier
+) {
+    Haar *feature;
+    WeakClassifier *currentWC = nullptr, *bestWC = nullptr;
+
+    for (int i = base; i < limit; i++) {
+        feature = getHaarFeature(inputFeatures, i);
+        currentWC = Adaboost::bestWeakClassifier(samples, feature);
+        if (bestWC != nullptr) {
+            if (currentWC->getWeightedError() < bestWC->getWeightedError()) {
+                delete bestWC;
+                bestWC = currentWC;
+            }
+        } else {
+            bestWC = currentWC;
+        }
+        delete feature;
+    }
+
+    *pWeakClassifier = bestWC;
+    cout << "Thread with base: " << base << " limit: " << limit << " finished" << endl;
+}*/
 
 Haar *getHaarFeature(const mxArray *input, int index) {
     Haar *feature;

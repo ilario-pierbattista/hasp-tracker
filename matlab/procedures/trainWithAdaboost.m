@@ -3,7 +3,7 @@ fprintf('Questo script sta usando il primo database di allenamento\n');
 samples = getTrainingFrames(getenv('DB1'));
 
 %definizione di costanti nel codice
-T = 20;
+T = 50;
 
 % Conteggio dei sample negativi e positivi
 m = 0; l = 0;
@@ -62,14 +62,20 @@ weightedErrors = [];
 weakClassifiers = [];
 alphas = [];
 
+fprintf('Calcolo iniziale del valore delle features\n');
+featuresValues = calculate_features(frames, labels, w, features);
+
+fprintf('Inizio di Adaboost\n');
 % Main loop
 for t = [1:T]
     % Normalizzazione dei pesi
     w(t,:) = w(t,:) / sum(w(t,:));
 
     tic;
-    [h, e, updatedWeights, betaT] = best_weak_classifier(frames, labels, w, features);
+    [h, e, updatedWeights, betaT] = best_weak_classifier(frames, labels, w, features, featuresValues);
     toc;
+
+    fprintf('Weak classifier #%d/%d [%d%%]\n', t, T, round(t*10000/T)/100);
 
     % Aggiornamento dei pesi e dei parametri
     w = [w; updatedWeights];
