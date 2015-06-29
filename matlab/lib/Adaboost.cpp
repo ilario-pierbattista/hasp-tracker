@@ -9,10 +9,9 @@
 
 using namespace std;
 
-WeakClassifier *Adaboost::bestWeakClassifier(vector<Sample *> samples, vector<Haar *> features, double *values) {
-    FeatureTest *ft;
+WeakClassifier *Adaboost::bestWeakClassifier(vector<Sample *> samples, vector<Haar *> features, float *values) {
     list<FeatureTest *> tests;
-    list<FeatureTest *>::const_iterator iterator;
+    list<FeatureTest *>::const_iterator testIterator;
     // Somme degli esempi positivi e negativi
     double positiveSum, negativeSum;
     // Somme degli esempi positivi e negativi sotto la soglia
@@ -32,7 +31,7 @@ WeakClassifier *Adaboost::bestWeakClassifier(vector<Sample *> samples, vector<Ha
         tests.push_back(new FeatureTest());
     }
 
-    for(unsigned int i = 0; i < features.size(); i++) {
+    for (unsigned int i = 0; i < features.size(); i++) {
         // Inizializzazione
         positiveSum = 0;
         negativeSum = 0;
@@ -44,20 +43,26 @@ WeakClassifier *Adaboost::bestWeakClassifier(vector<Sample *> samples, vector<Ha
 
         // Calcolo dei valori della feature per ciascuna immagine
         // Calcolo delle somme dei pesi
-        for (iterator = tests.begin(), sampleIndex = 0, featureIndex = 0;
-             iterator != tests.end();
-             ++iterator, sampleIndex++, featureIndex++) {
-            (*iterator)->setFeature(features.at(i));
-            (*iterator)->setSample(samples.at(sampleIndex));
-            if(values == nullptr) {
-                (*iterator)->calculateValue();
+        for (testIterator = tests.begin(), sampleIndex = 0, featureIndex = 0;
+             testIterator != tests.end();
+             ++testIterator, sampleIndex++, featureIndex++) {
+            (*testIterator)->setFeature(features.at(i));
+            (*testIterator)->setSample(samples.at(sampleIndex));
+
+            if (values == nullptr) {
+                (*testIterator)->calculateValue();
             } else {
-                (*iterator)->value = *(values + sampleIndex*features.size() + featureIndex);
+                (*testIterator)->value = *(values + sampleIndex * features.size() + featureIndex);
+                if(!(*testIterator)->testValue()) {
+                    cout << "Valore non corrispondente" << endl;
+                    exit(1);
+                }
             }
-            if((*iterator)->sample->positive) {
-                positiveSum += (*iterator)->sample->weight;
+
+            if ((*testIterator)->sample->positive) {
+                positiveSum += (*testIterator)->sample->weight;
             } else {
-                negativeSum += (*iterator)->sample->weight;
+                negativeSum += (*testIterator)->sample->weight;
             }
         }
 
@@ -65,12 +70,12 @@ WeakClassifier *Adaboost::bestWeakClassifier(vector<Sample *> samples, vector<Ha
         tests.sort(FeatureTest::compare);
 
         // Iterazione sulla lista per estrarre la soglia ad errore minimo
-        for (iterator = tests.begin(); iterator != tests.end(); ++iterator) {
+        for (testIterator = tests.begin(); testIterator != tests.end(); ++testIterator) {
             // Aggiornamento delle somme dei pesi delle immagini sotto la soglia
-            if ((*iterator)->sample->positive) {
-                partialPositives += (*iterator)->sample->weight;
+            if ((*testIterator)->sample->positive) {
+                partialPositives += (*testIterator)->sample->weight;
             } else {
-                partialNegatives += (*iterator)->sample->weight;
+                partialNegatives += (*testIterator)->sample->weight;
             }
 
             // Aggiornamento degli errori di classificazione al di sotto e al di sopra
@@ -90,13 +95,13 @@ WeakClassifier *Adaboost::bestWeakClassifier(vector<Sample *> samples, vector<Ha
 
             if (currentMinimumError < absoluteMinimumError) {
                 absoluteMinimumError = currentMinimumError;
-                bestThreshold = (*iterator)->value;
+                bestThreshold = (*testIterator)->value;
                 finalPolarity = currentPolarity;
             }
         }
 
-        if(bestClassifier->feature != nullptr) {
-            if(bestClassifier->weightedError > absoluteMinimumError) {
+        if (bestClassifier->feature != nullptr) {
+            if (bestClassifier->weightedError > absoluteMinimumError) {
                 bestClassifier->feature = features.at(i);
                 bestClassifier->weightedError = absoluteMinimumError;
                 bestClassifier->polarity = finalPolarity;
@@ -109,6 +114,12 @@ WeakClassifier *Adaboost::bestWeakClassifier(vector<Sample *> samples, vector<Ha
             bestClassifier->threshold = bestThreshold;
         }
     }
+
+    for (unsigned int i = 0; i < samples.size(); i++) {
+        delete tests.front();
+        tests.pop_front();
+    }
+    tests.clear();
 
     return bestClassifier;
 }
@@ -164,6 +175,11 @@ FeatureTest::FeatureTest(Haar *feature, Sample *sample) {
 
 void FeatureTest::calculateValue() {
     this->value = this->feature->value(this->sample);
+}
+
+
+bool FeatureTest::testValue() {
+    return this->feature->value(this->sample) == this->value;
 }
 
 bool FeatureTest::compare(FeatureTest *f1, FeatureTest *f2) {

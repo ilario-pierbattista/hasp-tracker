@@ -1,0 +1,1 @@
+add_library(mapping STATIC matlab.cpp)

@@ -23,7 +23,9 @@ sorted = cell(size(names,1) - 2, 1);
 for i = [1:length(names)]
     if ~(strcmp(names(i).name, '.') || strcmp(names(i).name, '..'))
         splitted = strsplit(names(i).name, '_');
-        new_index = str2num(splitted{2}) + 1;
+        numberString = splitted{2};
+        numberString = strrep(numberString, '.bin', '');
+        new_index = str2num(numberString) + 1;
         % Gli indici in matlab partono da 1
         % Complimenti, Matlab!
         sorted{new_index} = names(i).name;

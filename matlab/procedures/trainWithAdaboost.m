@@ -3,7 +3,7 @@ fprintf('Questo script sta usando il primo database di allenamento\n');
 samples = getTrainingFrames(getenv('DB1'));
 
 %definizione di costanti nel codice
-T = 50;
+T = 10;
 
 % Conteggio dei sample negativi e positivi
 m = 0; l = 0;
@@ -62,8 +62,8 @@ weightedErrors = [];
 weakClassifiers = [];
 alphas = [];
 
-fprintf('Calcolo iniziale del valore delle features\n');
-featuresValues = calculate_features(frames, labels, w, features);
+% fprintf('Calcolo iniziale del valore delle features\n');
+% featuresValues = calculate_features(frames, labels, w, features);
 
 fprintf('Inizio di Adaboost\n');
 % Main loop
@@ -72,7 +72,8 @@ for t = [1:T]
     w(t,:) = w(t,:) / sum(w(t,:));
 
     tic;
-    [h, e, updatedWeights, betaT] = best_weak_classifier(frames, labels, w, features, featuresValues);
+    [h, e, updatedWeights, betaT] = best_weak_classifier(frames, labels, w, features);
+    % [h, e, updatedWeights, betaT] = best_weak_classifier(frames, labels, w, features, featuresValues);
     toc;
 
     fprintf('Weak classifier #%d/%d [%d%%]\n', t, T, round(t*10000/T)/100);
@@ -84,3 +85,13 @@ for t = [1:T]
     weakClassifiers = [weakClassifiers; h];
     alphas = [alphas; log(1/betaT)];
 end
+
+% Salvataggio dei risultati
+folder = strcat('strong_classifier_',datestr(now, 'DD-mmm-YYYY_HH:MM:SS'));
+mkdir(folder);
+dlmwrite(fullfile(folder, 'weakClassifiers.dat'), weakClassifiers);
+dlmwrite(fullfile(folder, 'weightedErrors.dat'), weightedErrors);
+dlmwrite(fullfile(folder, 'weights.dat'), w);
+dlmwrite(fullfile(folder, 'betasT.dat'), betasT);
+dlmwrite(fullfile(folder, 'alphas.dat'), alphas);
+fprintf('Risultati salvati nella cartella %s\n', folder);

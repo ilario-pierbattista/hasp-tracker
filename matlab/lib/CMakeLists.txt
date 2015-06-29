@@ -6,3 +6,5 @@ add_library(adaboost STATIC Adaboost.cpp Sample.cpp WeakClassifier.cpp)
 target_link_libraries(image geometry)
 target_link_libraries(haar image geometry)
 target_link_libraries(adaboost haar image)
+
+add_subdirectory(mapping)

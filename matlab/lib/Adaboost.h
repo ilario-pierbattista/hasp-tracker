@@ -14,7 +14,7 @@ using namespace std;
 
 class Adaboost {
 public:
-    static WeakClassifier *bestWeakClassifier(vector<Sample *> samples, vector<Haar *> features, double *values);
+    static WeakClassifier *bestWeakClassifier(vector<Sample *> samples, vector<Haar *> features, float *values);
     static WeakClassifier *bestWeakClassifier(vector<Sample *> samples, vector<Haar *> features);
 
     static double calculateBetaT(double minimumError, double errorSmothing);
@@ -57,6 +57,8 @@ public:
     }
 
     void calculateValue();
+
+    bool testValue();
 
     Haar *feature;
     Sample *sample;

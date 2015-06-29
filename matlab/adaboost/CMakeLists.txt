@@ -2,5 +2,5 @@ add_library(get_features SHARED get_features.cxx)
 add_library(best_weak_classifier SHARED best_weak_classifier.cxx)
 add_library(calculate_features SHARED calculate_features.cxx)
 
-target_link_libraries(best_weak_classifier adaboost)
-target_link_libraries(calculate_features adaboost)
+target_link_libraries(best_weak_classifier adaboost mapping)
+target_link_libraries(calculate_features adaboost mapping)

@@ -8,7 +8,7 @@ else
     sub_with_nans = true;
     hold on;
 end
-frames = getFramesPath(getDatasetPath(set_number));
+frames = getFramesPath(getDatasetPath('DATASET_ROOT', set_number));
 im = imagesc(readImageData(char(frames{1}), 320, 240, 16));
 tic;
 h = zeros(1, length(frames));

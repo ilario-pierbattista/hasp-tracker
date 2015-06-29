@@ -12,6 +12,8 @@ file(GLOB hasp_lib
 "matlab/lib/*.cpp"
 "matlab/lib/exception/*.h"
 "matlab/lib/exception/*.cpp"
+"matlab/lib/mapping/*.h"
+"matlab/lib/mapping/*.cpp"
 "matlab/haar/*.cxx"
 "matlab/adaboost/*.cxx"
 "matlab/preprocess/*.cxx")
