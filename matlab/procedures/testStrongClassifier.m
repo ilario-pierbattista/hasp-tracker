@@ -5,7 +5,7 @@ samples = getTrainingFrames(getenv('DB1'));
 % preprocessing delle immagini
 frames = zeros(100, 160, length(samples));
 for i = [1:length(samples)]
-    image = readImageData(samples(i).filepath, samples(i).width, samples(i).height, 16);   
+    image = readImageData(samples(i).filepath, samples(i).width, samples(i).height, 16);
     image = floor_rebase(image);
     image = integral_image(image);
     frames(:,:,i) = image;
@@ -17,13 +17,23 @@ weak_classifiers = dlmread(fullfile(class_folder, 'weakClassifiers.dat'));
 alphas = dlmread(fullfile(class_folder, 'alphas.dat'));
 classifiers = createStrongClassifier(weak_classifiers, alphas);
 
-errors = 0;
+bestThreshold = 0;
+minimumErrors = length(samples);
 tic;
-for f = [1:length(samples)]
-    if strongClassify(frames(:,:,i), classifiers, [0 0]) ~= samples(f).positive
-        errors = errors + 1;
+for threshold = [0 : 0.01 : 1]
+    errors = 0;
+    for f = [1:length(samples)]
+        if strongClassify(frames(:,:,f), classifiers, [0 0], threshold) ~= samples(f).positive
+            errors = errors + 1;
+        end
+    end
+    fprintf('Errori %d per la soglia %f\n', errors, threshold);
+
+    if errors < minimumErrors
+        bestThreshold = threshold;
+        minimumErrors = errors;
     end
 end
 toc;
 
-fprintf('Errori %d \n', errors);
+fprintf('Soglia migliore %f\n', bestThreshold);

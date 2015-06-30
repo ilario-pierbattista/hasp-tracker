@@ -1,5 +1,5 @@
 %% strongClassify: classifica
-function presence = strongClassify(image, classifiers, offset);
+function presence = strongClassify(image, classifiers, offset, threshold);
 	linearCombination = 0;
 	wcs = [];
 	wc = 0;
@@ -10,12 +10,11 @@ function presence = strongClassify(image, classifiers, offset);
 		linearCombination = linearCombination + alpha * wc;
 	end
 	alphaSum = sum(classifiers(:,8));
-	if linearCombination >= (alphaSum*0.90)
+	if linearCombination >= (alphaSum*threshold)
 		presence = true;
 	else
 		presence = false;
 	end
-	wcs
 
 %% calculateWeakClassifier: calcola il classificatore debole
 function value = calculateWeakClassifier(image, classifier, offset)
@@ -24,10 +23,10 @@ function value = calculateWeakClassifier(image, classifier, offset)
 	pol = classifier(6);
 	if(pol * f < pol * thr)
 		value = 1;
-		fprintf('%f * %f < %f * %f --->[%d]\n', pol, f, pol, thr, value);
+		%fprintf('%f * %f < %f * %f --->[%d]\n', pol, f, pol, thr, value);
 	else
 		value = 0;
-		fprintf('%f * %f > %f * %f --->[%d]\n', pol, f, pol, thr, value);
+		%fprintf('%f * %f > %f * %f --->[%d]\n', pol, f, pol, thr, value);
 	end
 
 

@@ -3,7 +3,7 @@ fprintf('Questo script sta usando il primo database di allenamento\n');
 samples = getTrainingFrames(getenv('DB1'));
 
 %definizione di costanti nel codice
-T = 10;
+T = 50;
 
 % Conteggio dei sample negativi e positivi
 m = 0; l = 0;

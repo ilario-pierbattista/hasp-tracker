@@ -53,7 +53,7 @@ WeakClassifier *Adaboost::bestWeakClassifier(vector<Sample *> samples, vector<Ha
                 (*testIterator)->calculateValue();
             } else {
                 (*testIterator)->value = *(values + sampleIndex * features.size() + featureIndex);
-                if(!(*testIterator)->testValue()) {
+                if (!(*testIterator)->testValue()) {
                     cout << "Valore non corrispondente" << endl;
                     exit(1);
                 }
@@ -70,7 +70,7 @@ WeakClassifier *Adaboost::bestWeakClassifier(vector<Sample *> samples, vector<Ha
         tests.sort(FeatureTest::compare);
 
         // Iterazione sulla lista per estrarre la soglia ad errore minimo
-        for (testIterator = tests.begin(); testIterator != tests.end(); ++testIterator) {
+        for (testIterator = tests.begin(); testIterator != tests.end(); testIterator++) {
             // Aggiornamento delle somme dei pesi delle immagini sotto la soglia
             if ((*testIterator)->sample->positive) {
                 partialPositives += (*testIterator)->sample->weight;
@@ -121,6 +121,7 @@ WeakClassifier *Adaboost::bestWeakClassifier(vector<Sample *> samples, vector<Ha
     }
     tests.clear();
 
+    bestClassifier->feature = bestClassifier->feature->clone();
     return bestClassifier;
 }
 
@@ -148,18 +149,30 @@ double Adaboost::calculateBetaT(WeakClassifier *classifier) {
 
 vector<double> Adaboost::updateWeights(WeakClassifier *classifier, vector<Sample *> samples) {
     vector<double> updatedWeights(samples.size());
-    double betaT = 0, eT = 0;
+    double betaT;
 
-    betaT = calculateBetaT(classifier, samples);
+    betaT = calculateBetaT(classifier);
+    //cout << "Beta " << betaT;
+    int correct = 0, nonCorrect = 0;
 
+    /**
+     * Da Viola-Jones
+     * W_t+1,i = W_t,i * beta_t ^ (1 - e_i)
+     * con e_i = 0 se l'esempio x_i viene classificato correttamente, uguale a 1 altrimenti
+     * beta_t ^ (1 - e_i) = beta_t se e_i = 0
+     * beta_t ^ (1 - e_i) = beta_t ^ 0 = 1 se e_i = 1
+     */
     for (unsigned int i = 0; i < samples.size(); i++) {
-        if (classifier->classify(samples.at(i)) == samples.at(i)->isPositive()) {
-            eT = 0;
+        if (classifier->classify(samples.at(i)) == samples.at(i)->positive) {
+            updatedWeights.at(i) = samples.at(i)->weight * betaT;
+            correct++;
         } else {
-            eT = 1;
+            updatedWeights.at(i) = samples.at(i)->weight;
+            nonCorrect++;
         }
-        updatedWeights.at(i) = samples.at(i)->getWeight() * pow(betaT, 1 - eT);
+        //cout << "Old weight " << samples.at(i)->weight << " New weight " << updatedWeights.at(i) << endl;
     }
+    //cout << "Correct classifications " << correct << " uncorrect " << nonCorrect << endl;
 
     return updatedWeights;
 }

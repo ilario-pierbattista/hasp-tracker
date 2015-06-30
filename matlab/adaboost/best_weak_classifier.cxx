@@ -111,7 +111,7 @@ void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[]) {
         // Output dei pesi aggiornati
         outputUpdatedWeights(&plhs[2], bestWeakClassifier, samples);
         // Output di betaT
-        plhs[3] = mxCreateDoubleScalar(Adaboost::calculateBetaT(bestWeakClassifier, samples));
+        plhs[3] = mxCreateDoubleScalar(Adaboost::calculateBetaT(bestWeakClassifier));
 
         // Pulizia della memoria
         delete bestWeakClassifier;
