@@ -1,0 +1,52 @@
+\documentclass[a4paper,11pt,oneside]{article}
+
+
+\usepackage{packages}
+%\usepackage{frontespizio}
+%\makeindex                                          %CREA INDICE ANALITICO
+
+
+%Document begin
+\begin{document}
+	%\pagenumbering{roman} %IMPOSTA NUMERAZIONE ROMANA FINO ALL'INTRODUZIONE
+	%\afterpage{\cfoot{\thepage}} %METTE I NUMERI DI PAGINA IN FONDO AL FOOTER. NECESSARIO SE SI USA FANCYHDR
+	% \frontespizio
+	%\clearpage{\pagestyle{empty}\cleardoublepage}
+	%\setlength{\parskip}{0em}
+	%\tableofcontents
+	%\setlength{\parskip}{1em}
+	%\newpage
+	%\listoffigures		
+	%\newpage
+	%\pagenumbering{arabic} %IMPOSTA NUMERAZIONE TRADIZIONALE A PARTIRE DALL'INTRODUZIONE
+	%\pagebreak
+	%===========================
+
+	\title{Head and Shoulder Profile Detector}
+	\author{Ilario Pierbattista}
+	\maketitle
+
+	\section{Panoramica generale} % (fold)
+	\label{sec:panoramica_generale}
+		Si vuole sviluppare un software in grado di riconoscere in modo efficiente e quanto più accurato il profilo umano ripreso dall'alto dal sensore di profondità di un dispositivo Kinect v2.
+
+		\subsection{Hardware e setup} % (fold)
+		\label{sub:hardware_e_setup}
+			Il sensore di profondità del Kinect ha una risoluzione di 16bit ed una precisione intorno ai 3mm (che diminuisce con l'aumentare della distanza). È montato al soffitto di una stanza a circa tre metri da terra, ha un campo visivo\footnote{FOV: \url{https://en.wikipedia.org/wiki/Field_of_view}} di $70^{\circ} \times 60^{\circ}$, i quale, in relazione alla distanza dal pavimento, permette di catturare un'area di circa $4m \times 5m$.
+
+			Il Kinect cattura 30 frame ogni secondo. La dimensione di ogni frame è pari a $512 \times 424$ pixel.
+		% subsection hardware_e_setup (end)
+
+		\subsection{Struttura software} % (fold)
+		\label{sub:struttura_software}
+			Il software è diviso in due moduli: il modulo per il riconoscimento e il modulo di allenamento.
+
+			Nella prima fase, quella di allenamento, il relativo modulo software, a partire da un insieme di campioni classificati, genererà un insieme di regole per classificare campioni con le medesime caratteristiche. Implementa l'algoritmo Adaboost.
+
+			La seconda fase, quella di riconoscimento, lavora su dati reali: ad ogni frame acquisito tramite il sensore di profondità del Kinect si applicano le regole di classificazione generate nella fase precedente, stabilendo se nel frame è stata ripresa una persona e - in caso affermativo - la posizione di quest'ultima.
+		% subsection struttura_software (end)
+		
+	% section panoramica_generale (end)
+
+	% section prova (end)
+\end{document}

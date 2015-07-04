@@ -1,0 +1,79 @@
+% *********************************************************
+% *                      Pacchetti                        *
+% *********************************************************
+
+%Inclusioni
+\usepackage{lmodern}
+\usepackage{amsmath}	% advanced math symbols pkg
+\usepackage{amsthm, amsthm}
+\usepackage[utf8]{inputenc}	% utf8 encoding
+\usepackage{graphicx} % pictures support
+\usepackage{longtable} % table on multiple pages support
+\usepackage[italian]{babel} % language support
+\usepackage{enumitem} % custom enumeration support
+\usepackage{rotating} % Rotating pictures support
+\usepackage{float} % Support for floated images
+\usepackage{hyperref} % Support for href in toc
+\usepackage{marvosym} % Currency symbols
+\usepackage{fancyhdr} % Fancy headers
+\usepackage[a4paper]{geometry} % Geometry Page
+\usepackage{array}
+\usepackage{footnote}
+\usepackage{setspace}
+\usepackage{listings} % Code listings support
+\usepackage{afterpage} % Permette di mettere i numeri di pagina nel footer se si usa il package Fancyhdr
+
+
+% * Intestazioni/piè di pagina *
+
+\pagestyle{fancy}															%OPZIONI PACCHETTO: fancy
+\fancyhf{} 																	    %LIBERA TUTTI GLI HEADER
+\lhead{\rightmark}																											
+\rhead{\bfseries\thepage} 														%RIGHT HEADER: num. pag. in grassetto
+\renewcommand{\headrulewidth}{0.4pt}										    %LINE ORIZ. INTESTAZIONE DI 0.4pt
+\renewcommand{\footrulewidth}{0pt}										        %LINE ORIZ. PIÈ PAG.: assente
+\setlength{\headheight}{15pt}													%ALTEZZA HEADER: 15pt
+\fancypagestyle{plain}{\fancyhead{}\renewcommand{\headrulewidth}{0pt}}		%NELLE PAG. VUOTE: non inserire niente
+
+\fancyhead[LE,RO]{\textbf{\thepage}} %Mostra il numero della pagina in grassetto; 
+%a sinistra nelle pagine pari e destra in quelle dispari.
+\fancyhead[RE,LO]{\nouppercase{\leftmark}} %Mostra l'upper-level (Capitolo) RE: right, even page.
+%\fancyhead[LO]{\nouppercase{\leftmark}} %Mostra l'upper-level (Capitolo) LO: left, odd page.
+
+
+% * hyperref *
+
+\usepackage{hyperref}
+\hypersetup{
+	pdftitle = {Titolo},										                        %TITOLO DEL PDF
+	pdfauthor= {Il tuo nome},				                                            %AUTORE/I
+	colorlinks=true,																	%ABILITA COLORE DEI COLLEGAMENTI
+	linkcolor=blue,																		%COLLEGAMENTI DI COLORE: blu
+	bookmarksopen=true,																%ACROBAT: barra laterale segnalibri aperta
+	bookmarksopenlevel=0,															%ACROBAT: livello di sezione visibile
+	citecolor=black,															    %COLORE DELLE CITAZIONI: nere
+	urlcolor=black,																	%COLORE URL: nero	
+	%pdfsubject={???},
+	pdfkeywords= {Tesi, Informatica, Università di Milano, Polo di Crema}	%PAROLE CHIAVE DOCUMENTO
+} 
+
+
+% Paragraph settings
+\setlength{\parindent}{0em}
+
+% Example tag definitions
+\theoremstyle{definition}
+\newtheorem{example}{Esempio}[section]
+
+% layout setup
+%\headsep=50pt
+
+
+% Defining frontespice
+%\newlength{\drop}% for my convenience
+%\setlength{\drop}{1em}
+
+
+% Redefining arraystretch
+\renewcommand{\arraystretch}{1.5}
+

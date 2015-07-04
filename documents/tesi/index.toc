@@ -1,0 +1,4 @@
+\select@language {italian}
+\select@language {italian}
+\contentsline {section}{\numberline {0.1}prova}{1}{section.0.1}
+\contentsline {chapter}{Bibliografia}{1}{section.0.1}

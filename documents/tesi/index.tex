@@ -1,0 +1,38 @@
+\documentclass[a4paper,11pt,oneside]{book}
+
+
+\usepackage{packages}
+\usepackage{frontespizio}
+%\makeindex                                          %CREA INDICE ANALITICO
+
+
+%Document begin
+\begin{document}
+	\pagenumbering{roman} %IMPOSTA NUMERAZIONE ROMANA FINO ALL'INTRODUZIONE
+	\afterpage{\cfoot{\thepage}} %METTE I NUMERI DI PAGINA IN FONDO AL FOOTER. NECESSARIO SE SI USA FANCYHDR
+	\frontespizio
+	\clearpage{\pagestyle{empty}\cleardoublepage}
+	\setlength{\parskip}{0em}
+	\tableofcontents
+	\setlength{\parskip}{1em}
+	\newpage
+	\listoffigures		
+	\newpage
+	\pagenumbering{arabic} %IMPOSTA NUMERAZIONE TRADIZIONALE A PARTIRE DALL'INTRODUZIONE
+	\pagebreak
+	%===========================
+	% Sezioni
+	\section{prova} % (fold)
+	\label{sec:prova}
+	
+	% section prova (end)
+	%===========================
+	%===========================
+	%===========================
+	
+	
+	%Bibliografia
+	\bibliographystyle{alpha}
+	\bibliography{bibliografia}
+	\addcontentsline{toc}{chapter}{Bibliografia}
+\end{document}
