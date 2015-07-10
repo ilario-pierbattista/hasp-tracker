@@ -55,10 +55,10 @@ void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[]) {
     }
 
     plhs[0] = mxCreateNumericMatrix(samples.size(), features.size(), mxSINGLE_CLASS, mxREAL);
-    float *values = (float *) mxGetData(plhs[0]);
+    float *values = (float *) mxGetPr(plhs[0]);
     for (unsigned int i = 0; i < samples.size(); i++) {
-        for (unsigned int j = 0; j < size[1]; j++) {
-            *(values + i * size[1] + j) = (float) features.at(j)->value(samples.at(i));
+        for (unsigned int j = 0; j < features.size(); j++) {
+            *(values + i * features.size() + j) = (float) features.at(j)->value(samples.at(i));
         }
         cout << i + 1 << "/" << samples.size() << endl;
     }

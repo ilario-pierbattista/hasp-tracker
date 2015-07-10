@@ -63,18 +63,24 @@ weakClassifiers = [];
 alphas = [];
 
 % fprintf('Calcolo iniziale del valore delle features\n');
-% featuresValues = calculate_features(frames, labels, w, features);
+featuresValues = calculate_features(frames, labels, w, features);
+size(featuresValues)
+size(features)
 
 fprintf('Inizio di Adaboost\n');
 % Main loop
+loopETA = tic;
 for t = [1:T]
     % Normalizzazione dei pesi
     w(t,:) = w(t,:) / sum(w(t,:));
 
-    tic;
-    [h, e, updatedWeights, betaT] = best_weak_classifier(frames, labels, w, features);
+    singlePassETA = tic;
+    [h, e, updatedWeights, betaT, fIndex] = best_weak_classifier(frames, labels, w, features, featuresValues);
     % [h, e, updatedWeights, betaT] = best_weak_classifier(frames, labels, w, features, featuresValues);
-    toc;
+    % Rimozione della feature selezionata da quelle esistenti
+    features(:,fIndex) = [];
+    featuresValues(:,fIndex) = [];
+    toc(singlePassETA);
 
     fprintf('Weak classifier #%d/%d [%d%%]\n', t, T, round(t*10000/T)/100);
 
@@ -85,6 +91,7 @@ for t = [1:T]
     weakClassifiers = [weakClassifiers; h];
     alphas = [alphas; log(1/betaT)];
 end
+toc(loopETA);
 
 % Salvataggio dei risultati
 folder = strcat('strong_classifier_',datestr(now, 'DD-mmm-YYYY_HH:MM:SS'));

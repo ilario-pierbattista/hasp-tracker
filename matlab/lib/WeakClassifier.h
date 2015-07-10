@@ -53,6 +53,7 @@ public:
     }
 
     Haar *feature;
+    int featureIndex;
     double threshold;
     short polarity;
     double weightedError;

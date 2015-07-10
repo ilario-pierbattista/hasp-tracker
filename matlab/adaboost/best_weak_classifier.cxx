@@ -65,12 +65,13 @@ void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[]) {
                              "\t4)Array delle features\n"
                              "\t5)Valori delle features [OPZIONALE]\n");
     }
-    if (nlhs != 4) {
+    if (nlhs < 4 || nlhs > 5) {
         mexErrMsgTxt("Sono richiesti due parametri di output:\n"
                              "\t1)Classificatore debole\n"
                              "\t2)Errore minimo\n"
                              "\t3)Vettore dei nuovi pesi\n"
-                             "\t4)BetaT\n");
+                             "\t4)BetaT\n"
+                             "\t5)Indice della feature selezionata per il classificatore debole\n");
     }
 
     if (!checkDimensions(mxGetDimensions(prhs[0]),
@@ -96,7 +97,7 @@ void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[]) {
         features.at(i) = getHaarFeature(prhs[3], i);
     }
 
-    if(values != nullptr) {
+    if (values != nullptr) {
         bestWeakClassifier = Adaboost::bestWeakClassifier(samples, features, values);
     } else {
         bestWeakClassifier = Adaboost::bestWeakClassifier(samples, features);
@@ -112,6 +113,10 @@ void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[]) {
         outputUpdatedWeights(&plhs[2], bestWeakClassifier, samples);
         // Output di betaT
         plhs[3] = mxCreateDoubleScalar(Adaboost::calculateBetaT(bestWeakClassifier));
+
+        if(nlhs == 5) {
+            plhs[4] = mxCreateDoubleScalar((double) bestWeakClassifier->featureIndex);
+        }
 
         // Pulizia della memoria
         delete bestWeakClassifier;

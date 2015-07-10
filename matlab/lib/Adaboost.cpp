@@ -5,7 +5,6 @@
 #include <list>
 #include <math.h>
 #include "Adaboost.h"
-#include "WeakClassifier.h"
 
 using namespace std;
 
@@ -13,7 +12,7 @@ WeakClassifier *Adaboost::bestWeakClassifier(vector<Sample *> samples, vector<Ha
     list<FeatureTest *> tests;
     list<FeatureTest *>::const_iterator testIterator;
     // Somme degli esempi positivi e negativi
-    double positiveSum, negativeSum;
+    double positiveSum = 0, negativeSum = 0;
     // Somme degli esempi positivi e negativi sotto la soglia
     double partialPositives, partialNegatives;
     // Soglia migliore
@@ -23,18 +22,22 @@ WeakClassifier *Adaboost::bestWeakClassifier(vector<Sample *> samples, vector<Ha
     // Errore nella classificazione sotto la soglia e sopra la soglia
     double errorBelowThreshold, errorOverThreshold;
     // Polarità dell'iterazione corrente e dell'iterazione finale
-    short currentPolarity, finalPolarity = 1;
+    short currentPolarity, finalPolarity;
     WeakClassifier *bestClassifier = new WeakClassifier();
-    unsigned int sampleIndex, featureIndex;
+    unsigned int sampleIndex;
+    bool writeClassifier;
 
     for (unsigned int i = 0; i < samples.size(); i++) {
         tests.push_back(new FeatureTest());
+        if(samples.at(i)->positive) {
+            positiveSum += samples.at(i)->weight;
+        } else {
+            negativeSum += samples.at(i)->weight;
+        }
     }
 
-    for (unsigned int i = 0; i < features.size(); i++) {
+    for (unsigned int featureIndex = 0; featureIndex < features.size(); featureIndex++) {
         // Inizializzazione
-        positiveSum = 0;
-        negativeSum = 0;
         partialNegatives = 0;
         partialPositives = 0;
         bestThreshold = 0;
@@ -43,26 +46,16 @@ WeakClassifier *Adaboost::bestWeakClassifier(vector<Sample *> samples, vector<Ha
 
         // Calcolo dei valori della feature per ciascuna immagine
         // Calcolo delle somme dei pesi
-        for (testIterator = tests.begin(), sampleIndex = 0, featureIndex = 0;
+        for (testIterator = tests.begin(), sampleIndex = 0;
              testIterator != tests.end();
-             ++testIterator, sampleIndex++, featureIndex++) {
-            (*testIterator)->setFeature(features.at(i));
+             ++testIterator, sampleIndex++) {
+            (*testIterator)->setFeature(features.at(featureIndex));
             (*testIterator)->setSample(samples.at(sampleIndex));
 
             if (values == nullptr) {
                 (*testIterator)->calculateValue();
             } else {
                 (*testIterator)->value = *(values + sampleIndex * features.size() + featureIndex);
-                if (!(*testIterator)->testValue()) {
-                    cout << "Valore non corrispondente" << endl;
-                    exit(1);
-                }
-            }
-
-            if ((*testIterator)->sample->positive) {
-                positiveSum += (*testIterator)->sample->weight;
-            } else {
-                negativeSum += (*testIterator)->sample->weight;
             }
         }
 
@@ -100,18 +93,17 @@ WeakClassifier *Adaboost::bestWeakClassifier(vector<Sample *> samples, vector<Ha
             }
         }
 
-        if (bestClassifier->feature != nullptr) {
-            if (bestClassifier->weightedError > absoluteMinimumError) {
-                bestClassifier->feature = features.at(i);
-                bestClassifier->weightedError = absoluteMinimumError;
-                bestClassifier->polarity = finalPolarity;
-                bestClassifier->threshold = bestThreshold;
-            }
-        } else {
-            bestClassifier->feature = features.at(i);
+        writeClassifier = (bestClassifier->feature == nullptr);
+        if(!writeClassifier) {
+            writeClassifier = (bestClassifier->weightedError > absoluteMinimumError);
+        }
+
+        if(writeClassifier) {
+            bestClassifier->feature = features.at(featureIndex);
             bestClassifier->weightedError = absoluteMinimumError;
             bestClassifier->polarity = finalPolarity;
             bestClassifier->threshold = bestThreshold;
+            bestClassifier->featureIndex = featureIndex;
         }
     }
 
