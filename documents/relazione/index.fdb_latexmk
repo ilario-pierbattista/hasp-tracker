@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1436566882 "index.tex" "index.pdf" "index" 1436566883
+["pdflatex"] 1436609881 "index.tex" "index.pdf" "index" 1436609882
   "/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii" 1337017135 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "/usr/share/texlive/texmf-dist/tex/generic/babel-italian/italian.ldf" 1396131330 11067 8c8876b93edd923daff1c88610e8c408 ""
   "/usr/share/texlive/texmf-dist/tex/generic/babel/babel.def" 1411763270 49725 b40154b767b0073ee42b35911042b793 ""
@@ -65,15 +65,14 @@
   "/usr/share/texmf/tex/latex/lm/omslmsy.fd" 1256929440 805 af340a8260c447aa315cfc740ff0152f ""
   "/usr/share/texmf/tex/latex/lm/omxlmex.fd" 1256929440 566 a94661f7b66063f191960bb7935b6ba2 ""
   "/usr/share/texmf/tex/latex/lm/ot1lmr.fd" 1256929440 1880 bae7b659316f7344a86218ad38b01d91 ""
-  "/usr/share/texmf/tex/latex/lm/ot1lmtt.fd" 1256929440 2712 a8a977c98484ccc2dbc768e5509e3790 ""
-  "index.aux" 1436566883 4106 45664005cf9fff906f939f991be7f107 ""
-  "index.out" 1436566883 775 2e0477d717a868fd880eb49749fa3c4f ""
-  "index.tex" 1436566878 20031 de0cfa1cc623d946383531a6d1480caa ""
+  "index.aux" 1436609881 4106 202413c26ed1060d3e02498bbb79a75a ""
+  "index.out" 1436609881 775 2e0477d717a868fd880eb49749fa3c4f ""
+  "index.tex" 1436609880 23718 101da20f63aec19b43c22de317362b7a ""
   "packages.sty" 1436563968 2973 584ef69ef81a7500dc952489f3d43892 ""
   (generated)
-  "index.toc"
-  "index.lof"
+  "index.aux"
   "index.pdf"
+  "index.toc"
   "index.out"
   "index.log"
-  "index.aux"
+  "index.lof"

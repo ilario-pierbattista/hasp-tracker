@@ -32,7 +32,7 @@
 
 		\subsection{Hardware e setup} % (fold)
 		\label{sub:hardware_e_setup}
-			Il sensore di profondità del Kinect ha una risoluzione di 16bit ed una precisione intorno ai 3mm (che diminuisce con l'aumentare della distanza). È montato al soffitto di una stanza a circa tre metri da terra, ha un campo visivo\footnote{FOV: \url{https://en.wikipedia.org/wiki/Field_of_view}} di $70^{\circ} \times 60^{\circ}$, i quale, in relazione alla distanza dal pavimento, permette di catturare un'area di circa $4m \times 5m$.
+			Il sensore di profondità del Kinect ha una risoluzione di 16bit ed una precisione intorno ai 3mm (che diminuisce con l'aumentare della distanza). È montato al soffitto di una stanza a circa tre metri da terra, ha un campo visivo di $70^{\circ} \times 60^{\circ}$, i quale, in relazione alla distanza dal pavimento, permette di catturare un'area di circa $4m \times 5m$.
 
 			Il Kinect cattura 30 frame ogni secondo. La dimensione di ogni frame è pari a $512 \times 424$ pixel.
 		% subsection hardware_e_setup (end)
@@ -86,7 +86,7 @@
 				Costruire una funzione riesca a classificare un'immagine (la matrice dei valori del sensore di profondità è a tutti gli effetti considerabile come un'immagine) prevede l'utilizzo delle \emph{Haar-like features}.
 
 				L'obbiettivo di una feature di Haar è quello di evidenziare le \emph{differenze d'intensità} tra due regioni rettangolari adiacenti di un'immagine. Il valore di una semplice feature a due rettangoli corrisponde alla differenza tra la somma delle intensità di tutti i pixel della prima area e la somma delle intensità di tutti i pixel della seconda. Per intensità del pixel si intende il valore che il pixel assume. Inoltre si possono considerare aree partizionate in più di due rettangoli con una semplice generalizzazione del calcolo.
-				$$feature = Aree_{White} - Aree_{Black}$$
+				$$feature = \sum Area_{White} - \sum Area_{Black}$$
 				Saranno utilizzate solamente features a due e a tre rettangoli (bandate).
 
 				Il calcolo di una feature è un'operazione computazionalmente costosa. Si introduce quindi il concetto di \emph{immagine integrale} (altrimenti nota come \emph{summed area table}): ogni pixel dell'immagine integrale corrisponde alla somma dei valori di tutti i pixel della regione in alto a sinistra dell'immagine. 
@@ -148,7 +148,7 @@
 				\item \label{adaboost_strong_classifier} Il classificatore forte è dato da:
 				\begin{equation}
 					F(x) = \begin{cases}
-						1 & \text{ se } \sum_{t = 1}^{T} \alpha_t h_t(x) > \theta \alpha_t \\
+						1 & \text{ se } \sum_{t = 1}^{T} \alpha_t h_t(x) > \theta \sum_{t = 1}^{T} \alpha_t \\
 						0 & \text{ altrimenti }
 					\end{cases}
 				\end{equation}
@@ -255,14 +255,50 @@
 
 			In definitiva, con uno scorrimento della lista ordinata si ottengo i parametri per la costruzione del classificatore debole. La complessità di tale operazione è fortemente legata all'algoritmo di ordinamento della lista, la quale ha $\Theta(n\log n)$ come limite teorico inferiore. Nell'implementazione è stato scelto proprio un algoritmo che avesse complessità $\Theta(n\log n)$ nel caso peggiore. Ripetendo queste operazioni per ognuna delle feature selezionabili, si ottiene che l'algoritmo di selezione del miglior classificatore debole ha complessità $\Theta(kn\log n)$.
 
-		
 		% subsection il_miglior_classificatore_debole (end)
 
 	% section adaboost (end)
 
 	\section{Considerazioni sulla costruzione dei dataset} % (fold)
 	\label{sec:considerazioni_sulla_costruzione_dei_dataset}
-	
+
+		La descrizione dell'algoritmo di allenamento dovrebbe far intuire quanto la qualità del dataset di allenamento sia importante per ottenere dei buoni risultati. Quest'ultimo, infatti, costituisce un'universo di campioni dal quale è possibile estrarre un classificatore forte.
+
+		Un campione dovrebbe avere le seguenti caratteristiche:
+		\begin{enumerate}
+			\item dall'immagine del profilo ci dovrebbe essere uno spazio vuoto di fronte e dietro di esso;
+			\item al lato di ciascuna spalla ci dovrebbe essere uno spazio vuoto;
+			\item tra la testa e le spalle ci deve essere una differenza d'altezza.
+	 	\end{enumerate}
+
+		Poichè la forma del profilo umano in una registrazione dall'alto è mutevole a seconda della \emph{direzione}, della \emph{corporatura} e della \emph{postura} dell'individuo, una tale varietà di forme potrebbe portare a dei classificatori che commetterebbero troppi errori in un caso di riconoscimento reale.
+
+		\begin{description}
+			\item[Postura] Per valutare un classificatore forte bisogna sempre tenere conto del contesto applicativo: un dataset di allenamento per un'applicazione di riconoscimento in un ambiente assistivo, ritrarrà individui con una postura diversa da altri ambienti. La postura è quindi un parametro legato al contesto applicativo e tutti i campioni del dataset dovrebbero essere simili tra loro sotto tale aspetto.
+
+			\item[Corporatura] A differenza dalla postura, la corporatura è un parametro che sfugge alla classificazione in un singolo contesto. I campioni del dataset dovrebbero ritrarre individui di corporatura diversa.
+
+			\item[Direzione] Anche la direzione che l'individuo ha rispetto alla stanza è un parametro che non può essere legato al contesto, d'altra parte un dataset in cui i campioni abbiano tutti direzioni diverse non può fornire un classificatore affidabile.
+
+		\end{description}
+
+		La soluzione al problema della direzione dei campioni consiste nell'utilizzare più classificatori forti per il riconoscimento. In prima approssimazione si possono individuare 2 direzioni, quella perpendicolare alla largezza della finestra di registrazione e quella perpendicolare all'altezza. Nel primo caso il profilo umano apparirà orizzontale, nel secondo verticale.
+
+		Costruendo un dataset di campioni in posizione un posizione orizzontale ed uno un posizione verticale, si possono estrarre i classificatori $F_{hor}(x)$ ed $F_{ver}(x)$. A questo punto, si possono combinare i due in un classificatore unico che riesca a riconoscere correttamente individui che, in casi reali, possono assumere entrambe le direzioni. Con un piccolo abuso di notazione:
+		$$F(x) := F_{hor}(x) \vee F_{ver}(x) $$
+		Allo stesso modo possono essere costruiti classificatori ancora più stringenti considerando altre direzioni intermedie, quindi combinandoli in parallelo.
+
+		Un ulteriore problema che merita di essere affrontato è quello della \emph{distorsione prospettica} del sensore, che muta la forma del profilo umano a seconda della sua posizione nella stanza. Purtroppo questa è una limitazione hardware del sensore che non può essere eliminata a meno operazioni di preprocessing più potenti come l'estrazione del \emph{point cloud} dal frame di profondità (e quindi formulando anche un nuovo algoritmo di allenamento).
+
+		Sarebbe possibile invece, sulla falsa riga di quanto concluso per il problema della direzione, creare più classificatori, ognuno dei quali opera in una regione della finestra ben specifica, una regione che è caratterizzata da una particolare distorsione.
+		\begin{equation}
+			\begin{cases}
+				F_1(x) = F_{1,hor}(x) \vee F_{1,ver}(x) & \\
+				... & \\
+				F_p(x) = F_{p,hor}(x) \vee F_{p,ver}(x) & \\
+			\end{cases}
+		\end{equation}
+
 	% section considerazioni_sulla_costruzione_dei_dataset (end)
 
 \end{document}
