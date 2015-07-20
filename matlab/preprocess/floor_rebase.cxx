@@ -6,8 +6,6 @@
 /*
  * Main function
  *
- *
- *
  * nlhs:    Numero atteso di output
  * plhs:    Array di puntatori all'output
  * nrhs:    Numero di parametri in input

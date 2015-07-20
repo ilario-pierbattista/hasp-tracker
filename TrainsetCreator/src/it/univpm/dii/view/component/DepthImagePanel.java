@@ -9,6 +9,7 @@ import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
+import java.util.ArrayList;
 
 /**
  * Created by ilario
@@ -19,6 +20,7 @@ public class DepthImagePanel extends JPanel implements MouseListener, MouseMotio
     private BufferedImage image;
     private Point startPt, endPt, currentPt, offsetPt;
     private Rectangle rectangle;
+    private ArrayList<Rectangle> fastRectangles;
     private int rWidth, rHeight, resize;
     private int mode;
     public static final Color BORDER_COLOR = Color.BLUE;

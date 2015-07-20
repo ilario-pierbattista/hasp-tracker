@@ -27,6 +27,9 @@ public:
      */
     static void floorRebase(Image *origin, Image *destination);
     static void integralImage(Image *origin, Image *destination);
+    static void scaleImage(Image *origin,
+        Image *destination,
+        unsigned int scale);
 
     /**
      * Object methods

@@ -1,9 +1,0 @@
-Directory structure:
-
-./  <- makefiles, conf scripts
-./src <- general sources
-./include <- header files to expose to the public
-./lib <- library build directory
-./bin <- tools bin directory
-./tools <- tools sources
-./tests <- test suite during make text

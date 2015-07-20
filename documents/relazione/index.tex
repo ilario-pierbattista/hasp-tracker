@@ -16,7 +16,7 @@
 	%\tableofcontents
 	%\setlength{\parskip}{1em}
 	%\newpage
-	%\listoffigures		
+	%\listoffigures
 	%\newpage
 	%\pagenumbering{arabic} %IMPOSTA NUMERAZIONE TRADIZIONALE A PARTIRE DALL'INTRODUZIONE
 	%\pagebreak
@@ -45,7 +45,7 @@
 
 			La seconda fase, quella di riconoscimento, lavora su dati reali: ad ogni frame acquisito tramite il sensore di profondità del Kinect si applicano le regole di classificazione generate nella fase precedente, stabilendo se nel frame è stata ripresa una persona e - in caso affermativo - la posizione di quest'ultima.
 		% subsection struttura_software (end)
-	
+
 	% section panoramica_generale (end)
 
 	\section{Adaboost} % (fold)
@@ -76,7 +76,7 @@
 			\label{ssub:conversione_delle_distanze}
 				La prima operazione di preprocessing consiste nel trasformare tali distanze (sensore-superficie) in distanze dal pavimento della stanza. Come è facilmente intuibile
 				$$ d' = d_{pavimento} - d $$
-				dove la distanza del pavimento dal sensore ($d_{pavimento}$). La distanza del pavimento può essere estratta dall'immagine stessa 
+				dove la distanza del pavimento dal sensore ($d_{pavimento}$). La distanza del pavimento può essere estratta dall'immagine stessa
 
 				Questa prima operazione di preprocessing ha complessità computazionale $\Theta(n \cdot m)$ con $n$ ed $m$ dimensioni della porzione del frame.
 			% subsubsection conversione_delle_distanze (end)
@@ -89,11 +89,11 @@
 				$$feature = \sum Area_{White} - \sum Area_{Black}$$
 				Saranno utilizzate solamente features a due e a tre rettangoli (bandate).
 
-				Il calcolo di una feature è un'operazione computazionalmente costosa. Si introduce quindi il concetto di \emph{immagine integrale} (altrimenti nota come \emph{summed area table}): ogni pixel dell'immagine integrale corrisponde alla somma dei valori di tutti i pixel della regione in alto a sinistra dell'immagine. 
+				Il calcolo di una feature è un'operazione computazionalmente costosa. Si introduce quindi il concetto di \emph{immagine integrale} (altrimenti nota come \emph{summed area table}): ogni pixel dell'immagine integrale corrisponde alla somma dei valori di tutti i pixel della regione in alto a sinistra dell'immagine.
 				Rigorosamente, sia $II(x,y)$ l'intensità del pixel alla posizione $(x,y)$ dell'immagine integrale: $$ II(x, y) = \sum_{i = 0}^{x} \sum_{j = 0}^{y} I(i, j) $$
 
 				Calcolare la somma delle intensità di tutti i pixel in un'area rettangolare attraverso l'immagine integrale diventa un'operazione molto veloce.
-				Infatti: $$ \sum_{i = x_1}^{x_2} \sum_{j = y_1}^{y_2} I(i,j) = 
+				Infatti: $$ \sum_{i = x_1}^{x_2} \sum_{j = y_1}^{y_2} I(i,j) =
 				II(x_2, y_2) + II(x_1, y_1) - II(x_1, y_2) - II(x_2, y_1)$$
 
 				Grazie all'immagine integrale, una feature di qualsiasi dimensione può essere calcolata in un tempo costante.
@@ -105,7 +105,7 @@
 		\label{sub:estrazione_del_classificatore_forte}
 			Sia $D = \{(x_1, y_1), ..., (x_n, y_n)\}$ un insieme di $n$ coppie costituite da un'immagine ($x_i$) e la relativa classificazione ($y_i \in \{ 0, 1 \}$). Se $y_i = 1$, allora $x_i$ appartiene alla classe \emph{umano} (la coppia $(x_i, y_i)$ prende il nome di \emph{esempio positivo}), altrimenti appartiene alla classe \emph{non umano} (la coppia $(x_i, y_i)$ prende il nome di \emph{esempio negativo}).
 
-			L'insieme $D$ può essere partizionato come segue: 
+			L'insieme $D$ può essere partizionato come segue:
 			$$P = \{(x, y) \in D | y = 1\} \text{ e } N = \{(x,y) \in D | y = 0\}$$
 
 			Si introduce anche il concetto di \emph{classificatore debole}. Si tratta di una funzione che per una data immagine $x$ in ingresso, assume il valore che simboleggia la presunta classe di appartenenza di quest'ultima.
@@ -178,13 +178,13 @@
 			È da tener presente che moltissime di queste feature sono poco significative in questa situazione: non ha senso calcolare la variazione di intensità di due aree molto piccole con delle immagini che hanno una risoluzione tanto alta. Effettuando una prima scrematura, si cercherà di avere un pool di feature selezionabili la cui dimensione non superi quella del pool di Viola-Jones per più di un ordine di grandezza.
 
 			Sia $\{ f_1,...,f_k\}$ l'insieme di tutte le feature selezionabili, $D = \{(x_1,y_1), ..., (x_n, y_n) \}$ l'insieme degli esempi di allenamento e $\{w_1, ..., w_n\}$ l'insieme dei relativi pesi. La scelta del classificatore debole avviene come descritto dal seguente algoritmo in pseudocodice:
-			
+
 			\begin{enumerate}
 				\item Si calcolano $T^+$ e $T^-$, rispettivamente, somma dei pesi degli esempi negativi e di quelli negativi:
-				$$T^+ \leftarrow \sum_{i = 1}^{n} (w_i y_i)  
-				\text{ , } 
+				$$T^+ \leftarrow \sum_{i = 1}^{n} (w_i y_i)
+				\text{ , }
 				T^- \leftarrow \sum_{i = 1}^{n} [w_i (1 - y_i)]$$
-				
+
 				\item \emph{For} $f = [f_1, ..., f_k]$
 
 				\begin{enumerate}
@@ -210,7 +210,7 @@
 								\item $S^+ \leftarrow S^- + w_j$
 							\end{enumerate}
 
-						\item \label{best_classifier_p_theta} 
+						\item \label{best_classifier_p_theta}
 						Si calcola calcola l'errore pesato di classificazione:
 							$$e_i = \min\{ S^+ + (T^- - S^-), S^- + (T^+ - S^+) \}$$
 

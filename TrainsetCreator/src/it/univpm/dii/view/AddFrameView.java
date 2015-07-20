@@ -25,6 +25,9 @@ public class AddFrameView extends View {
     private JFormattedTextField cropWidth;
     private JCheckBox handfreeCheckbox;
     private JCheckBox squareCheckbox;
+    private JCheckBox fastNegsCheck;
+    private JSlider xoffset;
+    private JSlider yoffset;
     private DepthImage depthImage;
     private File[] frames;
     private int current, width, height;
@@ -43,6 +46,8 @@ public class AddFrameView extends View {
         frame.setLocationRelativeTo(null);
         slider.setMaximum(frames.length);
         printLabelForCurrentFrame();
+        xoffset.setEnabled(false);
+        yoffset.setEnabled(false);
     }
 
     /**
@@ -87,6 +92,22 @@ public class AddFrameView extends View {
 
     public JButton getAggiungiButton() {
         return aggiungiButton;
+    }
+
+    public JCheckBox getHumanCheckbox() {
+        return humanCheckbox;
+    }
+
+    public JCheckBox getFastNegsCheck() {
+        return fastNegsCheck;
+    }
+
+    public JSlider getXoffset() {
+        return xoffset;
+    }
+
+    public JSlider getYoffset() {
+        return yoffset;
     }
 
     public DepthImagePanel getImagePanel() {

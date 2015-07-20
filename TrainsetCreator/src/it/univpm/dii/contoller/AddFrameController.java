@@ -1,9 +1,11 @@
 package it.univpm.dii.contoller;
 
+import com.sun.org.apache.xml.internal.security.algorithms.JCEMapper;
 import it.univpm.dii.TrainsetCreator;
 import it.univpm.dii.exception.EmptyFrameDirException;
 import it.univpm.dii.model.DatasetManager;
 import it.univpm.dii.model.entities.Element;
+import it.univpm.dii.model.entities.TrainSet;
 import it.univpm.dii.service.DepthImage;
 import it.univpm.dii.utils.BinFileFilter;
 import it.univpm.dii.view.AddFrameView;
@@ -66,9 +68,22 @@ public class AddFrameController {
         renderInfoView.setVisible(true);
     }
 
+    /**
+     * Imposta le ultime dimensioni usate per il crop
+     */
     private void setCropPreference() {
         view.setCropWidthValue(TrainsetCreator.pref.get(PREF_CROP_WIDTH, ""));
         view.setCropHeightValue(TrainsetCreator.pref.get(PREF_CROP_HEIGTH, ""));
+    }
+
+    /**
+     * Salva le ultime dimensioni usate per il crop
+     * @param w Larghezza
+     * @param h Altezza
+     */
+    private void saveCropPreference(int w, int h) {
+        TrainsetCreator.pref.put(PREF_CROP_WIDTH, Integer.toString(w));
+        TrainsetCreator.pref.put(PREF_CROP_HEIGTH, Integer.toString(h));
     }
 
     /**
@@ -82,6 +97,7 @@ public class AddFrameController {
             if (!view.getSquareCheckbox().isSelected()) {
                 cropW = Integer.parseInt(view.getCropWidth().getText());
             }
+            saveCropPreference(cropW, cropH);
         } catch (NumberFormatException ee) {
             cropH = 0;  // Giusto per essere più certi della morte
             cropW = 0;
@@ -131,6 +147,7 @@ public class AddFrameController {
                 view.getCropWidth().addPropertyChangeListener("value", action);
                 view.getFineButton().addActionListener(new FineAction());
                 view.getAggiungiButton().addActionListener(new SalvaAction());
+                view.getFastNegsCheck().addActionListener(new FastNegativesCheckedAction());
                 // Visualizzazione
                 view.setVisible(true);
                 addListernes();
@@ -175,7 +192,11 @@ public class AddFrameController {
         public void actionPerformed(ActionEvent e) {
             JCheckBox b = (JCheckBox) e.getSource();
             if (b.isSelected()) {
-                view.setSquareCropArea(view.getCropHeight().getText());
+                String dim = view.getCropHeight().getText();
+                if(dim.isEmpty()) {
+                    dim = view.getCropWidth().getText();
+                }
+                view.setSquareCropArea(dim);
                 view.getCropWidth().setEnabled(false);
             } else {
                 view.getCropWidth().setEnabled(true);
@@ -204,6 +225,28 @@ public class AddFrameController {
                 view.setCropWidthValue(Integer.toString(view.getImagePanel().getRectangle().width));
             }
             updateCropDimensions();
+        }
+    }
+
+    /**
+     * Gestore del checkbox per la generazione veloce di negativi
+     */
+    class FastNegativesCheckedAction implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            JCheckBox b = (JCheckBox) e.getSource();
+            if(b.isSelected()) {
+                // Attivato
+                view.getHumanCheckbox().setSelected(false);
+                view.getHumanCheckbox().setEnabled(false);
+                view.getXoffset().setEnabled(true);
+                view.getYoffset().setEnabled(true);
+            } else {
+                // Disattivato
+                view.getHumanCheckbox().setEnabled(true);
+                view.getXoffset().setEnabled(false);
+                view.getYoffset().setEnabled(false);
+            }
         }
     }
 

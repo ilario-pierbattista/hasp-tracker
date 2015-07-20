@@ -133,6 +133,30 @@ void Image::integralImage(Image *origin, Image *destination) {
 }
 
 /**
+ * Riscala le dimensioni di una immagine
+ */
+void Image::scaleImage(Image *origin, Image *destination, unsigned int scale) {
+    double value;
+    try {
+        for(unsigned int j = 0, y = 0;
+                j < origin->height;
+                j += scale, y++)
+            {
+            for(unsigned int i = 0, x = 0;
+                i < origin->width;
+                i += scale, x++)
+            {
+                // Scrittura dei pixel nella nuova immagine riscalata
+                value = origin->read(i, j);
+                destination->write(value, x, y);
+            }
+        }
+    } catch(std::exception &e) {
+        std::cout << e.what() << std::endl;
+    }
+}
+
+/**
  * Lettura di un pixel
  */
 double Image::read(int x, int y) throw (MemoryAccessException) {
