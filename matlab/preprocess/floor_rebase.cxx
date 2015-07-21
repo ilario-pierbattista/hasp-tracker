@@ -12,30 +12,33 @@
  * prhs:    Array di puntatori all'input
  */
 void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[]) {
+    Image *origin, *destination;
+    double floorValue;
+
     /* Controllo dell'input */
-    if (nrhs != 1) {
+    if (nrhs < 1 || nrhs > 2) {
         mexErrMsgTxt("È richiesto un solo parametro in input:\n"
-                             "\t1)Immagine");
+                             "\t1)Immagine\n"
+                             "\t2)Floor Value\n");
     }
     if (nlhs != 1) {
         mexErrMsgTxt("È richiesto un solo parametro in output:\n"
                              "\t1)Immagine processata");
     }
 
-    /* Creazione dell'immagine di output
-     * 2 -> array bidimensionale
-     * size -> dimensioni
-     * mxDOUBLE_CLASS -> tipo di dato
-     * mxREAL -> no numeri complessi
-     */
     plhs[0] = mxCreateNumericArray(2, mxGetDimensions(prhs[0]),
                                    mxDOUBLE_CLASS, mxREAL);
 
-    Image *origin = new Image(mxGetPr(prhs[0]), mxGetDimensions(prhs[0]));
-
-    Image *destination = new Image();
+    origin = new Image(mxGetPr(prhs[0]), mxGetDimensions(prhs[0]));
+    destination = new Image();
     destination->setImage(mxGetPr(plhs[0]));
     destination->setSize(mxGetDimensions(plhs[0]));
 
-    Image::floorRebase(origin, destination);
+    if(nrhs == 2) {
+        floorValue = *(mxGetPr(prhs[1]));
+        Image::floorRebase(origin, destination, floorValue);
+    } else if(nrhs == 1) {
+        Image::floorRebase(origin, destination);
+    }
+
 }

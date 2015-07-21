@@ -108,6 +108,17 @@
 			L'insieme $D$ può essere partizionato come segue:
 			$$P = \{(x, y) \in D | y = 1\} \text{ e } N = \{(x,y) \in D | y = 0\}$$
 
+			Si tenga a mente che, essendo $P$ ed $N$ partizioni di $D$, valgono le seguenti\footnote{La scrittura $\#(D)$ denota il numero di elementi dell'insieme $D$.}:
+			\begin{equation}
+				D = P \cup N
+			\end{equation}
+			\begin{equation}
+				P \cap N = \emptyset
+			\end{equation}
+			\begin{equation}
+				\#(D) = \#(P \cup N) = \#(P) + \#(N)
+			\end{equation}
+
 			Si introduce anche il concetto di \emph{classificatore debole}. Si tratta di una funzione che per una data immagine $x$ in ingresso, assume il valore che simboleggia la presunta classe di appartenenza di quest'ultima.
 			Nel dettaglio:
 			\begin{equation}
@@ -120,8 +131,12 @@
 
 			L'obbiettivo di Adaboost è quello di formare un \emph{classificatore forte} come combinazione lineare dei migliori classificatori deboli estraibili dal set di allenamento, dove il fattore moltiplicativo di ogni classificatore nella combinazione è inversamente proporzionale agli errori di classificazione compiuti da quest'ultimo in fase di allenamento.
 
+			Il seguente algoritmo descrive la procedura di estrazione e combinazone di $T$ classificatori deboli.
+
 			\begin{enumerate}
-				\item Si associa ad ogni elemento $(x_i, y_i)$ un peso $w_i$ tale che $w_i = \frac{1}{2l}$ se $(x_i, y_i) \in P$ oppure $w_i = \frac{1}{2m}$ se $(x_i, y_i) \in N$, dove $l = \#(P)$ ed $m = \#(N)$ (numero degli esempi positivi e numero degli esempi negativi).
+				\item Si associa ad ogni elemento $(x_i, y_i) \in D$ un peso $w_i$ tale che $w_i = \frac{1}{2l}$ se $(x_i, y_i) \in P$ oppure $w_i = \frac{1}{2m}$ se $(x_i, y_i) \in N$, dove $l = \#(P)$ ed $m = \#(N)$ (numero degli esempi positivi e numero degli esempi negativi).
+
+				Sia inoltre $n := \#(D) = \#(P) + \#(N) = l + m$.
 
 				\item \emph{For} $t = [1:T]$
 					\begin{enumerate}
@@ -173,7 +188,7 @@
 
 			Si ricordi che le feature di Haar sono degli indicatori di quanto le intensità dei pixel variano da una regione della feature ad un'altra. Il classificatore debole, quindi, classificherà l'immagine a seconda che tale indice sia maggiore o minore di una certa soglia. Il compito della polarità è quello di stabilire il verso della diseguaglianza.
 
-			Il pool di feature da testare è costituito - teoricamente - da tutte quelle individuabili nell'immagini di allenamento. In [\emph{inseririre riferimento}] Viola-Jones vengono utilizzate immagini di allenamento di $24 \times 24$ pixel e 5 tipologie di feature: il numero di possibili features in tale area è maggiore di 160000. In questa applicazione si utilizzano immagini di $160 \times 100$ pixel e 4 tipologie di feature: il pool è costituito da un numero di elementi maggiore di almeno 4 ordini di grandezza.
+			Il pool di feature da testare è costituito - teoricamente - da tutte quelle individuabili nell'immagini di allenamento. Nell'opera di Viola e Jones vengono utilizzate immagini di allenamento di $24 \times 24$ pixel e 5 tipologie di feature (\cite{ViolaJones}, sezione 2.2): il numero di possibili features in tale area è maggiore di 160000. In questa applicazione si utilizzano immagini di $160 \times 100$ pixel e 4 tipologie di feature: il pool è costituito da un numero di elementi maggiore di almeno 4 ordini di grandezza.
 
 			È da tener presente che moltissime di queste feature sono poco significative in questa situazione: non ha senso calcolare la variazione di intensità di due aree molto piccole con delle immagini che hanno una risoluzione tanto alta. Effettuando una prima scrematura, si cercherà di avere un pool di feature selezionabili la cui dimensione non superi quella del pool di Viola-Jones per più di un ordine di grandezza.
 
@@ -253,7 +268,7 @@
 				\end{cases}
 			\end{equation}
 
-			In definitiva, con uno scorrimento della lista ordinata si ottengo i parametri per la costruzione del classificatore debole. La complessità di tale operazione è fortemente legata all'algoritmo di ordinamento della lista, la quale ha $\Theta(n\log n)$ come limite teorico inferiore. Nell'implementazione è stato scelto proprio un algoritmo che avesse complessità $\Theta(n\log n)$ nel caso peggiore. Ripetendo queste operazioni per ognuna delle feature selezionabili, si ottiene che l'algoritmo di selezione del miglior classificatore debole ha complessità $\Theta(kn\log n)$.
+			In definitiva, con uno scorrimento della lista ordinata si ottengo i parametri per la costruzione del classificatore debole. La complessità di tale operazione è fortemente legata all'algoritmo di ordinamento della lista, la quale ha $\Theta(n\log n)$ come limite teorico inferiore (\cite{CormenLeiserson}, p. 167). Nell'implementazione è stato scelto proprio un algoritmo che avesse complessità $\Theta(n\log n)$ nel caso peggiore. Ripetendo queste operazioni per ognuna delle feature selezionabili, si ottiene che l'algoritmo di selezione del miglior classificatore debole ha complessità $\Theta(kn\log n)$.
 
 		% subsection il_miglior_classificatore_debole (end)
 
@@ -299,6 +314,13 @@
 			\end{cases}
 		\end{equation}
 
-	% section considerazioni_sulla_costruzione_dei_dataset (end)
+		% section considerazioni_sulla_costruzione_dei_dataset (end)
+
+	\begin{thebibliography}{9}
+		\bibitem{HASPPaper} Lei Zhu, Kin-Hong Wong. \emph{Human Tracking and Counting Using the KINECT Range Sensor Based on Adaboost and Kalman Filter}. Advances in Visual Computing, 9th International Symposium, ISVC 2013, Rethymnon, Crete, Greece, July 29-31, 2013. Proceedings, Part II, pp 582-591.
+		\bibitem{ViolaJones} Paul Viola, Michael J. Jones. \emph{Robust Real-Time Face Detection}. International Journal of Computer Vision 57(2), pp 137-154, 2004.
+		\bibitem{CormenLeiserson} T.H. Cormen, C.E. Leiserson, R.L. Rivest, C. Stein. \emph{Introduction to Algorithms}. The MIT Press, second edition, 2001.
+		\bibitem{FreundSchapire} Yoav Freund, Robert E. Schapire. \emph{A Decision-Theoretic Generalization of On-Line Learning and an Application to Boosting}. Journal of Computer and System Science 55, pp 119-139, 1997.
+	\end{thebibliography}
 
 \end{document}

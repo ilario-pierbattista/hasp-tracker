@@ -26,6 +26,7 @@ public:
      * Static methods for image processing
      */
     static void floorRebase(Image *origin, Image *destination);
+    static void floorRebase(Image *origin, Image *destination, double floorValue);
     static void integralImage(Image *origin, Image *destination);
     static void scaleImage(Image *origin,
         Image *destination,

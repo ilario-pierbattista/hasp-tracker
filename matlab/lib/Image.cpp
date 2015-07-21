@@ -33,13 +33,13 @@ Image::Image(char *filePath) {
     unsigned int value;
 
     imageStream.open(filePath, ios::in | ios::binary);
-    if(imageStream.good()) {
+    if (imageStream.good()) {
 
         // Impostazione della dimensione
         begin = imageStream.tellg();
         imageStream.seekg(0, ios::end);
         end = imageStream.tellg();
-        size = ( (int) end - begin ) / 2;
+        size = ((int) end - begin) / 2;
         this->image = new double[size];
         this->width = size;
         this->height = 1;
@@ -48,7 +48,7 @@ Image::Image(char *filePath) {
         imageStream.seekg(0, ios::beg);
 
         // Lettura del contenuto del file
-        while(imageStream.good()) {
+        while (imageStream.good()) {
             imageStream.read(buff, 2);
             msb = (unsigned char) buff[1];
             lsb = (unsigned char) buff[0];
@@ -87,6 +87,24 @@ void Image::floorRebase(Image *origin, Image *destination) {
         // Riscrittura delle quote
         for (int i = 0; i < length; i++) {
             destination->write(floor - origin->read(i), i);
+        }
+    } catch (std::exception &e) {
+        std::cout << e.what() << std::endl;
+    }
+}
+
+/**
+ * Data la quota del pavimento (utile nei casi in cui il valore
+ * della distanza del pavimento non è uniforme in tutti i punti della
+ * finestra di visualizzazione, ovvero sempre), converte le distanze
+ * delle altre superfici, facendole diventare distanze dal pavimento
+ * stesso.
+ */
+void Image::floorRebase(Image *origin, Image *destination, double floorValue) {
+    try {
+        int len = origin->getWidth() * origin->getHeight();
+        for (int i = 0; i < len; i++) {
+            destination->write(floorValue - origin->read(i), i);
         }
     } catch (std::exception &e) {
         std::cout << e.what() << std::endl;
@@ -138,20 +156,18 @@ void Image::integralImage(Image *origin, Image *destination) {
 void Image::scaleImage(Image *origin, Image *destination, unsigned int scale) {
     double value;
     try {
-        for(unsigned int j = 0, y = 0;
-                j < origin->height;
-                j += scale, y++)
-            {
-            for(unsigned int i = 0, x = 0;
-                i < origin->width;
-                i += scale, x++)
-            {
+        for (unsigned int j = 0, y = 0;
+             j < origin->height;
+             j += scale, y++) {
+            for (unsigned int i = 0, x = 0;
+                 i < origin->width;
+                 i += scale, x++) {
                 // Scrittura dei pixel nella nuova immagine riscalata
                 value = origin->read(i, j);
                 destination->write(value, x, y);
             }
         }
-    } catch(std::exception &e) {
+    } catch (std::exception &e) {
         std::cout << e.what() << std::endl;
     }
 }
@@ -159,36 +175,36 @@ void Image::scaleImage(Image *origin, Image *destination, unsigned int scale) {
 /**
  * Lettura di un pixel
  */
-double Image::read(int x, int y) throw (MemoryAccessException) {
+double Image::read(int x, int y) throw(MemoryAccessException) {
     return this->read(this->coordinatesToIndex(x, y));
 }
 
-double Image::read(int index) throw (MemoryAccessException) {
-    if(index < 0 || index >= this->length()) {
+double Image::read(int index) throw(MemoryAccessException) {
+    if (index < 0 || index >= this->length()) {
         throw new MemoryAccessException();
     }
     return *(this->image + index);
 }
 
-double Image::read(Point p) throw (MemoryAccessException) {
+double Image::read(Point p) throw(MemoryAccessException) {
     return this->read(p.x, p.y);
 }
 
 /**
  * Scrittura di un pixel
  */
-void Image::write(double value, int x, int y) throw (MemoryAccessException) {
+void Image::write(double value, int x, int y) throw(MemoryAccessException) {
     this->write(value, this->coordinatesToIndex(x, y));
 }
 
-void Image::write(double value, int index) throw (MemoryAccessException) {
-    if(index < 0 || index >= this->length()) {
+void Image::write(double value, int index) throw(MemoryAccessException) {
+    if (index < 0 || index >= this->length()) {
         throw new MemoryAccessException();
     }
     *(this->image + index) = value;
 }
 
-void Image::write(double value, Point *p) throw (MemoryAccessException) {
+void Image::write(double value, Point *p) throw(MemoryAccessException) {
     this->write(value, p->x, p->y);
 }
 

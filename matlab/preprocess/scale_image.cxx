@@ -20,7 +20,7 @@ void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[]) {
     unsigned int scaleFactor;
 
     /* Controllo dell'input */
-    if (nrhs != 1) {
+    if (nrhs != 2) {
         mexErrMsgTxt("È richiesto un solo parametro in input:\n"
                              "\t1)Immagine\n"
                              "\t2)Scale factor\n");
