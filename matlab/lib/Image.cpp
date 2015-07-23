@@ -156,10 +156,10 @@ void Image::integralImage(Image *origin, Image *destination) {
 void Image::scaleImage(Image *origin, Image *destination, unsigned int scale) {
     double value;
     try {
-        for (unsigned int j = 0, y = 0;
+        for (unsigned int j = scale-1, y = 0;
              j < origin->height;
              j += scale, y++) {
-            for (unsigned int i = 0, x = 0;
+            for (unsigned int i = scale-1, x = 0;
                  i < origin->width;
                  i += scale, x++) {
                 // Scrittura dei pixel nella nuova immagine riscalata

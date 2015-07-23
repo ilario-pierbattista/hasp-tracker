@@ -1,12 +1,13 @@
 # Fdb version 3
-["bibtex index"] 1436000454 "index.aux" "index.bbl" "index" 1436000456
+["bibtex index"] 1437555118 "index.aux" "index.bbl" "index" 1437555118
   "/usr/share/texlive/texmf-dist/bibtex/bst/base/alpha.bst" 1292289607 23907 a5f93555796fb564b924339521f10a7c ""
   "bibliografia.bib" 0 -1 0 ""
   "index.aux" 1436000456 1225 5e3f97476092404bc70b8bfacfcb5c2f ""
   "index.bcf" 0 -1 0 ""
   (generated)
   "index.bbl"
-["pdflatex"] 1436000455 "index.tex" "index.pdf" "index" 1436000456
+  "index.blg"
+["pdflatex"] 1436000455 "index.tex" "index.pdf" "index" 1437555118
   "/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii" 1337017135 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "/usr/share/texlive/texmf-dist/tex/generic/babel-italian/italian.ldf" 1396131330 11067 8c8876b93edd923daff1c88610e8c408 ""
   "/usr/share/texlive/texmf-dist/tex/generic/babel/babel.def" 1411763270 49725 b40154b767b0073ee42b35911042b793 ""
@@ -82,9 +83,9 @@
   "index.toc" 1436000456 172 857aa7d0a3e9129ce339f99ecc99ca3b ""
   "packages.sty" 1435998738 3024 5208a8029cf023fbbddd39d86c979127 ""
   (generated)
-  "index.lof"
-  "index.pdf"
   "index.out"
   "index.toc"
+  "index.lof"
   "index.log"
   "index.aux"
+  "index.pdf"
