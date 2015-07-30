@@ -25,7 +25,3 @@ add_subdirectory(matlab/preprocess)
 
 add_executable(hasp_tracker main.cpp)
 target_link_libraries(hasp_tracker image haar)
-
-add_executable(adaboost_train adaboost_train.cpp)
-target_link_libraries(adaboost_train image haar adaboost)
-

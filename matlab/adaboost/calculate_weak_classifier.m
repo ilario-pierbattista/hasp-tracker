@@ -1,4 +1,7 @@
-function [presence, value] = calculate_weak_classifier(img, feature, polarity, threshold);
-    value = feature.calculate(img);
+function [presence, value] = calculate_weak_classifier(img, feature, polarity, threshold, offset);
+    if nargin == 4
+        offset = [0 0];
+    end
+    value = feature.calculate(img, offset);
     presence = polarity * value < polarity * threshold;
 end

@@ -3,11 +3,11 @@ function weakClassifiers = decodeWeakClassifier(filePath);
     % nei file .dat alla fine di Adaboost
 
     [realPath, isdirectory] = checkpath(filePath);
-    if isempty(realPath) || isdirectory
-        error('Path non valida');
+    if isempty(realPath) || ~isdirectory
+        error('Path del classficatore debole non valida');
     end
 
-    data = dlmread(realPath);
+    data = dlmread(fullfile(realPath, 'weakClassifiers.dat'));
     [r, c] = size(data);
 
     % Controlli sulla dimensione dei dati
@@ -41,7 +41,7 @@ function weakClassifiers = decodeWeakClassifier(filePath);
         'dimension', dimension,...
         'calculate', handler);
         % Implementazione del classificatore debole
-        classifierFunc = @(img) calculate_weak_classifier(img, feature, polarity, threshold);
+        classifierFunc = @(img, offset) calculate_weak_classifier(img, feature, polarity, threshold, offset);
         % Struttura descrittiva del classificatore debole
         classifier = struct('feature', feature,...
         'polarity', polarity,...
@@ -56,15 +56,15 @@ end
 function handler = featureHandler(featureType, topleft, dimension);
     switch featureType
     case 0
-        handler = @(img) haar_vertical_edge(img, topleft, dimension);
+        handler = @(img, offset) haar_vertical_edge(img, topleft + offset, dimension);
     case 1
-        handler = @(img) haar_horizontal_edge(img, topleft, dimension);
+        handler = @(img, offset) haar_horizontal_edge(img, topleft + offset, dimension);
     case 2
-        handler = @(img) haar_vertical_linear(img, topleft, dimension);
+        handler = @(img, offset) haar_vertical_linear(img, topleft + offset, dimension);
     case 3
-        handler = @(img) haar_horizontal_linear(img, topleft, dimension);
+        handler = @(img, offset) haar_horizontal_linear(img, topleft + offset, dimension);
     otherwise
         % Questo statement non dovrebbe essere mai raggiunto
-        handler = @(img) haar_vertical_edge(img, topleft, dimension);
+        handler = @(img, offset) haar_vertical_edge(img, topleft + offset, dimension);
     end
 end

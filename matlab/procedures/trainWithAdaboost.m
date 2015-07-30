@@ -34,6 +34,7 @@ foldery = fullfile(folder, 'y');
 foldero1 = fullfile(folder, 'o1');
 foldero2 = fullfile(folder, 'o2');
 
+% X
 % Esecuzione di adaboost
 [weakClassifiers, weightedErrors, w, betasT, alphas, samplesSize] = adaboostTraining('DBX', T, fmin, fstep, true, scaleFactor, floorValue);
 % Salvataggio dei risultati
@@ -41,6 +42,19 @@ mkdir(folder);
 mkdir(folderx);
 encodeWeakClassifier(folderx, weakClassifiers, weightedErrors, w, betasT, alphas, scaleFactor, samplesSize, floorValue);
 
-% TODO Aggiungere gli altri classificatori
+% Y
+[weakClassifiers, weightedErrors, w, betasT, alphas, samplesSize] = adaboostTraining('DBY', T, fmin, fstep, true, scaleFactor, floorValue);
+mkdir(foldery);
+encodeWeakClassifier(foldery, weakClassifiers, weightedErrors, w, betasT, alphas, scaleFactor, samplesSize, floorValue);
+
+% O1
+[weakClassifiers, weightedErrors, w, betasT, alphas, samplesSize] = adaboostTraining('DBO1', T, fmin, fstep, true, scaleFactor, floorValue);
+mkdir(foldero1);
+encodeWeakClassifier(foldero1, weakClassifiers, weightedErrors, w, betasT, alphas, scaleFactor, samplesSize, floorValue);
+
+% O2
+[weakClassifiers, weightedErrors, w, betasT, alphas, samplesSize] = adaboostTraining('DBO2', T, fmin, fstep, true, scaleFactor, floorValue);
+mkdir(foldero2);
+encodeWeakClassifier(foldero2, weakClassifiers, weightedErrors, w, betasT, alphas, scaleFactor, samplesSize, floorValue);
 
 fprintf('Risultati salvati nella cartella %s\n', folder);
