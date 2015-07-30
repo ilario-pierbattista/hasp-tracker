@@ -3,9 +3,17 @@ project(hasp_tracker)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 
-include_directories(matlab/lib)
-include_directories(/usr/local/MATLAB/current/extern/include)
+set(CMAKE_MODULE_PATH cmake)
+find_package(Matlab)
+message(STATUS 'include dir ${MATLAB_INCLUDE_DIR}')
 
+include_directories(matlab/lib)
+if(UNIX)
+    include_directories(/usr/local/MATLAB/current/extern/include)
+elseif(WIN32)
+    include_directories(C:\\Program Files\\MATLAB\\MATLAB Production Server\\R2015a\\extern\\include)
+    include_directories(MATLAB_INCLUDE_DIR)
+endif(UNIX)
 
 file(GLOB hasp_lib
 "matlab/lib/*.h"
@@ -18,10 +26,8 @@ file(GLOB hasp_lib
 "matlab/adaboost/*.cxx"
 "matlab/preprocess/*.cxx")
 
-add_subdirectory(matlab/lib)
-add_subdirectory(matlab/haar)
-add_subdirectory(matlab/adaboost)
-add_subdirectory(matlab/preprocess)
+add_subdirectory(matlab)
+
 
 add_executable(hasp_tracker main.cpp)
-target_link_libraries(hasp_tracker image haar)
+target_link_libraries(hasp_tracker)

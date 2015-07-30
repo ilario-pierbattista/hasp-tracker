@@ -6,6 +6,7 @@
 #define HASP_TRACKER_POINT_H
 
 #include <string>
+#include "to_string_patch.h"
 
 class Point {
 public:

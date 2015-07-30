@@ -5,7 +5,6 @@
 #ifndef HASP_TRACKER_HAAR_H
 #define HASP_TRACKER_HAAR_H
 
-#include <zconf.h>
 #include "Image.h"
 #include "Rectangle.h"
 

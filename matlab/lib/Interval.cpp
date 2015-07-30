@@ -23,7 +23,7 @@ vector<Interval *> Interval::split(int divider) throw(SplitException) {
     }
 
     part = this->length() / divider;
-    for (unsigned int i = 0; i < divider; i++) {
+    for (unsigned int i = 0; i < (unsigned int) divider; i++) {
         interval = new Interval(
                 this->a + i * part,
                 this->a + (i + 1) * part - 1

@@ -3,6 +3,7 @@
 //
 
 #include <iostream>
+#include <cstdlib>
 #include <Rectangle.h>
 #include <Haar.h>
 
