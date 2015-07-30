@@ -11,9 +11,9 @@ function [weakClassifiers, weightedErrors, w, betasT, alphas, samplesSize] = ada
     w = initWeights(samples);
     % Setup delle features
     features = setupFeatures(samples, scaleFactor, featuresMinimumSizes, featuresStepSizes);
-    fs = size(features);
-    fprintf('Rilevate %d features possibili.', fs(2));
-    input('Premere invio per continuare');
+    % fs = size(features);
+    % fprintf('Rilevate %d features possibili.', fs(2));
+    % input('Premere invio per continuare');
     % Lettura dei frames e delle etichette
     [frames, labels] = readFramesAndLabels(samples, scaleFactor, floorValue);
     % Inizializzazione degli altri vettori

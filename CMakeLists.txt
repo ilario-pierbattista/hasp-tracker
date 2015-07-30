@@ -4,7 +4,7 @@ project(hasp_tracker)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 
 include_directories(matlab/lib)
-include_directories(/usr/local/MATLAB/R2014a/extern/include)
+include_directories(/usr/local/MATLAB/current/extern/include)
 
 
 file(GLOB hasp_lib
