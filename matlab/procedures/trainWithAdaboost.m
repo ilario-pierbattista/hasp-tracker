@@ -28,7 +28,7 @@ fstep = [2 2; 2 2; 2 3; 3 2];
 scaleFactor = 4;
 
 % Nomi delle cartelle per i risultati
-folder = strcat('strong_classifier_',datestr(now, 'DD-mmm-YYYY_HH:MM:SS'));
+folder = strcat('strong_classifier_',datestr(now, 'DD-mmm-YYYY_HH-MM-SS'));
 folderx = fullfile(folder, 'x');
 foldery = fullfile(folder, 'y');
 foldero1 = fullfile(folder, 'o1');

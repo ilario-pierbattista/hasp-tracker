@@ -52,7 +52,7 @@ function [weakClassifiers, weightedErrors, w, betasT, alphas, samplesSize] = ada
         featuresValues(:,fIndex) = [];
         toc(singlePassETA);
 
-        fprintf('Weak classifier #%d/%d [%d%%]\n', t, T, round(t*10000/T)/100);
+        fprintf('Weak classifier #%d/%d [%.2f%%]\n', t, T, round(t*10000/T)/100);
 
         % Aggiornamento dei pesi e dei parametri
         w = [w; updatedWeights];
