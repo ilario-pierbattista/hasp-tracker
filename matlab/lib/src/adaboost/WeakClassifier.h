@@ -5,8 +5,7 @@
 #ifndef HASP_TRACKER_WEAKCLASSIFIER_H
 #define HASP_TRACKER_WEAKCLASSIFIER_H
 
-
-#include "Haar.h"
+#include "feature.h"
 
 class WeakClassifier {
 public:

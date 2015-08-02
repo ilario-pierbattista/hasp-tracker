@@ -1,10 +1,5 @@
 #include <stdio.h>
-#include <math.h>
-#include <Image.h>
-#include <Rectangle.h>
-#include <Haar.h>
-#include "mex.h"
-#include "matrix.h"
+#include "mexutils.h"
 
 /*
  * Main function

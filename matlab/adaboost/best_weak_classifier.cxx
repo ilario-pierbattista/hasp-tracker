@@ -1,25 +1,11 @@
 #include <iostream>
 #include <vector>
-#include <Sample.h>
-#include <Haar.h>
-#include <Adaboost.h>
-#include <thread>
-#include "mapping/matlab.h"
-#include "mex.h"
+#include "adaboost.h"
+#include "mexutils.h"
 
 #define NUMBER_OF_THREADS 3
 
 using namespace std;
-
-/**
- * Controllo delle dimensioni delle matrici in ingresso
- * samples: dimensione della matrice degli esempi
- * labels: dimensione della matrice delle etichette
- * weights: dimensione della matrice dei pesi
- */
-bool checkDimensions(const size_t *samples,
-                     const size_t *labels,
-                     const size_t *weights);
 
 /**
  * multithreadBestWeakClassifier
@@ -74,12 +60,9 @@ void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[]) {
                              "\t5)Indice della feature selezionata per il classificatore debole\n");
     }
 
-    if (!checkDimensions(mxGetDimensions(prhs[0]),
+    checkSamplesLabelsWeightsDim(mxGetDimensions(prhs[0]),
                          mxGetDimensions(prhs[1]),
-                         mxGetDimensions(prhs[2]))) {
-        mexErrMsgTxt("Le dimensioni dell'array di immagini, "
-                             "delle etichette e dei pesi non corrispondono");
-    }
+                         mxGetDimensions(prhs[2]));
 
     vector<bool> labels = getLabels(prhs[1]);
     vector<double> weights = getWeights(prhs[2]);
@@ -134,13 +117,6 @@ void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[]) {
         delete samples.at(i);
     }
     samples.clear();
-}
-
-
-bool checkDimensions(const size_t *samples,
-                     const size_t *labels,
-                     const size_t *weights) {
-    return samples[2] == labels[1] && labels[1] == weights[1];
 }
 
 

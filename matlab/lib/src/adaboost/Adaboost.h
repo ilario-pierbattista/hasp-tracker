@@ -6,15 +6,16 @@
 #define HASP_TRACKER_ADABOOST_H
 
 #include <vector>
-#include "Sample.h"
-#include "Haar.h"
 #include "WeakClassifier.h"
+#include "Sample.h"
+#include "feature.h"
 
 using namespace std;
 
 class Adaboost {
 public:
     static WeakClassifier *bestWeakClassifier(vector<Sample *> samples, vector<Haar *> features, float *values);
+
     static WeakClassifier *bestWeakClassifier(vector<Sample *> samples, vector<Haar *> features);
 
     static double calculateBetaT(double minimumError, double errorSmothing);
@@ -36,7 +37,8 @@ public:
 class FeatureTest {
 public:
     FeatureTest(Haar *feature, Sample *sample);
-    FeatureTest() {};
+
+    FeatureTest() { };
 
     static bool compare(FeatureTest *f1, FeatureTest *f2);
 

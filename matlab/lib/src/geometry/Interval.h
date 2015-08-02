@@ -8,7 +8,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
-#include "exception/SplitException.h"
+#include "exceptions.h"
 #include "to_string_patch.h"
 
 using namespace std;

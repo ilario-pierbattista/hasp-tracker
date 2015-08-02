@@ -20,7 +20,8 @@ set(CMAKE_CXX_FLAGS "-fPIC -std=c++11")
 
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY "${PROJECT_SOURCE_DIR}/matlab/mex")
 
-include_directories(lib)
+# Setup dei file da compilare
+include_directories(lib/include)
 
 add_subdirectory(lib)
 add_subdirectory(adaboost)

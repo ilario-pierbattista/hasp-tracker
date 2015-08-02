@@ -4,7 +4,6 @@
 
 #include <iostream>
 #include <cmath>
-#include <exception>
 #include <bits/unique_ptr.h>
 #include "Haar.h"
 

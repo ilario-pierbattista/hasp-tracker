@@ -1,10 +1,5 @@
 #include <iostream>
-#include <math.h>
-#include "mex.h"
-#include "matrix.h"
-#include "Haar.h"
-#include "Image.h"
-#include "Rectangle.h"
+#include "mexutils.h"
 
 using namespace std;
 

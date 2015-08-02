@@ -5,8 +5,8 @@
 #ifndef HASP_TRACKER_SAMPLE_H
 #define HASP_TRACKER_SAMPLE_H
 
-
-#include "Image.h"
+#include <iostream>
+#include "image.h"
 
 using namespace std;
 

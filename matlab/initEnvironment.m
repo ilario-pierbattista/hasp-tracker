@@ -10,7 +10,8 @@ setenv('DBO1', '/home/ilario/Documenti/Tirocinio/Training/obliquo1/');
 setenv('DBO2', '/home/ilario/Documenti/Tirocinio/Training/obliquo2/');
 
 % Dataset di testing
-setenv('TEST1', '/home/ilario/Documenti/Tirocinio/Testing/');
+setenv('TEST1', '/home/ilario/Documenti/Tirocinio/Testing/1');
+setenv('TEST2', '/home/ilario/Documenti/Tirocinio/Testing/2');
 
 % Path delle cartelle con i frame delle registrazioni
 setenv('REG1', '/home/ilario/Documenti/Tirocinio/Registrazioni/V2/1/');

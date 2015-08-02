@@ -25,7 +25,7 @@
 #   **version**, which should not be confused with the Matlab *release* name
 #   (eg. `R2014`).
 #   The :command:`matlab_get_version_from_release_name` and
-#   :command:`matlab_get_release_name_from_version` allow a mapping
+#   :command:`matlab_get_release_name_from_version` allow a mexutils
 #   from the release name to the version.
 #
 # The variable :variable:`Matlab_ROOT_DIR` may be specified in order to give
@@ -44,7 +44,7 @@
 # is not given, the version is queried from Matlab directly.
 # On Windows, it can make a window running Matlab appear.
 #
-# The mapping of the release names and the version of Matlab is performed by
+# The mexutils of the release names and the version of Matlab is performed by
 # defining pairs (name, version).  The variable
 # :variable:`MATLAB_ADDITIONAL_VERSIONS` may be provided before the call to
 # the :command:`find_package` in order to handle additional versions.

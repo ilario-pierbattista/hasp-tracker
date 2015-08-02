@@ -1,8 +1,5 @@
 #include <iostream>
-#include "mex.h"
-#include "Image.h"
-#include "Rectangle.h"
-#include "Haar.h"
+#include "mexutils.h"
 
 using namespace std;
 

@@ -1,7 +1,5 @@
 #include <stdio.h>
-#include <math.h>
 #include "mex.h"
-#include "matrix.h"
 
 typedef short int int16;
 

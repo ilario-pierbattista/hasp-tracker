@@ -7,8 +7,8 @@
 
 #include <climits>
 #include <exception>
-#include "Point.h"
-#include "exception/MemoryAccessException.h"
+#include "geometry.h"
+#include "../exception/MemoryAccessException.h"
 
 class Image {
 public:

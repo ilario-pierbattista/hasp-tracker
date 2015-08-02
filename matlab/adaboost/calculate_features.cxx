@@ -1,25 +1,8 @@
 #include <iostream>
 #include <vector>
-#include <Sample.h>
-#include <Haar.h>
-#include <Adaboost.h>
-#include <thread>
-#include "mex.h"
-#include "mapping/matlab.h"
+#include "mexutils.h"
 
 using namespace std;
-
-/*@TODO fattorizzare il codice */
-
-/**
- * Controllo delle dimensioni delle matrici in ingresso
- * samples: dimensione della matrice degli esempi
- * labels: dimensione della matrice delle etichette
- * weights: dimensione della matrice dei pesi
- */
-bool checkDimensions(const size_t *samples,
-                     const size_t *labels,
-                     const size_t *weights);
 
 /**
  * Main function
@@ -37,12 +20,9 @@ void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[]) {
                              "\t1)Matrice dei valori\n");
     }
 
-    if (!checkDimensions(mxGetDimensions(prhs[0]),
+    checkSamplesLabelsWeightsDim(mxGetDimensions(prhs[0]),
                          mxGetDimensions(prhs[1]),
-                         mxGetDimensions(prhs[2]))) {
-        mexErrMsgTxt("Le dimensioni dell'array di immagini, "
-                             "delle etichette e dei pesi non corrispondono");
-    }
+                         mxGetDimensions(prhs[2]));
 
     vector<bool> labels = getLabels(prhs[1]);
     vector<double> weights = getWeights(prhs[2]);

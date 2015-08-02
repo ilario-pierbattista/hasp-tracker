@@ -1,7 +1,5 @@
 #include <stdio.h>
-#include <math.h>
-#include "mex.h"
-#include "Image.h"
+#include "mexutils.h"
 
 /*
  * Main function

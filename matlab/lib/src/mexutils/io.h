@@ -7,10 +7,20 @@
 
 #include "mex.h"
 #include <vector>
-#include <Sample.h>
-#include <Haar.h>
+#include "feature.h"
+#include "adaboost.h"
 
 using namespace std;
+
+/**
+ * Controllo delle dimensioni delle matrici in ingresso
+ * samples: dimensione della matrice degli esempi
+ * labels: dimensione della matrice delle etichette
+ * weights: dimensione della matrice dei pesi
+ */
+void checkSamplesLabelsWeightsDim(const size_t *samples,
+                     const size_t *labels,
+                     const size_t *weights);
 
 /**
  * getLabels
