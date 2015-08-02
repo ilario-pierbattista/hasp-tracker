@@ -1,6 +1,3 @@
-add_library(get_features SHARED get_features.cxx)
-add_library(best_weak_classifier SHARED best_weak_classifier.cxx)
-add_library(calculate_features SHARED calculate_features.cxx)
-
-target_link_libraries(best_weak_classifier adaboost mapping)
-target_link_libraries(calculate_features adaboost mapping)
+matlab_add_mex(NAME get_features SRC get_features.cxx)
+matlab_add_mex(NAME best_weak_classifier best_weak_classifier.cxx LINK_TO adaboost mapping)
+matlab_add_mex(NAME calculate_features calculate_features.cxx LINK_TO adaboost mapping)

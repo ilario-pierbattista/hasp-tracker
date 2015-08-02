@@ -1,8 +1,3 @@
-add_library(floor_rebase SHARED floor_rebase.cxx)
-add_library(integral_image SHARED integral_image.cxx)
-add_library(scale_image SHARED scale_image.cxx)
-
-# image è la libreria in lib
-target_link_libraries(floor_rebase image)
-target_link_libraries(integral_image image)
-target_link_libraries(scale_image image)
+matlab_add_mex(NAME floor_rebase SRC floor_rebase.cxx LINK_TO image)
+matlab_add_mex(NAME integral_image SRC integral_image.cxx LINK_TO image)
+matlab_add_mex(NAME scale_image SRC scale_image.cxx LINK_TO image)
