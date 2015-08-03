@@ -39,3 +39,4 @@ add_library(
 
 target_link_libraries(feature geometry image)
 target_link_libraries(adaboost feature)
+target_link_libraries(mexutils adaboost feature image geometry)

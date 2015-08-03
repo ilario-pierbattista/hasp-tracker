@@ -5,10 +5,10 @@
 #include "io.h"
 
 void checkSamplesLabelsWeightsDim(const size_t *samples,
-                     const size_t *labels,
-                     const size_t *weights) {
+                                  const size_t *labels,
+                                  const size_t *weights) {
     bool correct = samples[2] == labels[1] && labels[1] == weights[1];
-    if(!correct) {
+    if (!correct) {
         mexErrMsgTxt("Le dimensioni dell'array di immagini, "
                              "delle etichette e dei pesi non corrispondono");
     }
@@ -70,4 +70,25 @@ Haar *getHaarFeature(const mxArray *input, int index) {
             (unsigned int) *(data + 3));
     feature = new Haar(rectangle, (int) *(data + 4));
     return feature;
+}
+
+StrongClassifier *getStrongClassifier(const mxArray *input) {
+    StrongClassifier *strongClassifier = new StrongClassifier();
+    mxArray *cursor;
+
+    cursor = mxGetField(input, 0, "samplesSize");
+    strongClassifier->samplesSize = Dimensions(
+            (unsigned int) mxGetPr(cursor)[0],
+            (unsigned int) mxGetPr(cursor)[1]
+    );
+    cursor = mxGetField(input, 0, "scaleFactor");
+    strongClassifier->scaleFactor = (unsigned int) *mxGetPr(cursor);
+    cursor = mxGetField(input, 0, "innerOffset");
+    strongClassifier->innerOffset = Point(
+            (int) mxGetPr(cursor)[0],
+            (int) mxGetPr(cursor)[1]
+    );
+
+    cout << *mxGetPr(mxGetField(input, 0, "scaleFactor")) << endl;
+    return strongClassifier;
 }

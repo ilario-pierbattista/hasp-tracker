@@ -19,6 +19,7 @@ set(CMAKE_SHARED_LIBRARY_PREFIX)
 set(CMAKE_CXX_FLAGS "-fPIC -std=c++11")
 
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY "${PROJECT_SOURCE_DIR}/matlab/mex")
+set(CMAKE_BUILD_TYPE Debug)
 
 # Setup dei file da compilare
 include_directories(lib/include)

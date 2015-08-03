@@ -51,4 +51,10 @@ vector<Sample *> allocateSamples(const mxArray *input,
  */
 Haar *getHaarFeature(const mxArray *input, int index);
 
+/**
+ * getStrongClassifier
+ * input: dati del classificatore forte
+ */
+StrongClassifier *getStrongClassifier(const mxArray *input);
+
 #endif //HASP_TRACKER_MATLAB_H

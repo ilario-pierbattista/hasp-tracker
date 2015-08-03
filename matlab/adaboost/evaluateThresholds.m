@@ -14,6 +14,8 @@ function [accuracy, sensitivity, specificity, mcc] = evaluateThresholds(classifi
 
     fprintf('\n');
 
+    % @TODO Scrivere una funzione mex per velocizzare il test
+
     % Per ognuna soglia
     for i = [1:length(thresholds)]
         % Per ogni lunghezza del classificatore forte
