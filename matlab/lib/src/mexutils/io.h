@@ -19,8 +19,8 @@ using namespace std;
  * weights: dimensione della matrice dei pesi
  */
 void checkSamplesLabelsWeightsDim(const size_t *samples,
-                     const size_t *labels,
-                     const size_t *weights);
+                                  const size_t *labels,
+                                  const size_t *weights);
 
 /**
  * getLabels
@@ -56,5 +56,17 @@ Haar *getHaarFeature(const mxArray *input, int index);
  * input: dati del classificatore forte
  */
 StrongClassifier *getStrongClassifier(const mxArray *input);
+
+/**
+ * getWeakClassifiers
+ * input: dati del classificatore debole
+ */
+WeakClassifier getWeakClassifier(const mxArray *input);
+
+/**
+ * getHaarFeatureFromStruct
+ * input: dati della feature
+ */
+Haar getHaarFeatureFromStruct(const mxArray *input);
 
 #endif //HASP_TRACKER_MATLAB_H

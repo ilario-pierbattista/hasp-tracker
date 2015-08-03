@@ -6,6 +6,7 @@
 #define HASP_TRACKER_STRONGCLASSIFIER_H
 
 #include <iostream>
+#include "WeakClassifier.h"
 
 using namespace std;
 
@@ -25,15 +26,24 @@ typedef struct classifier_struct classifier_struct;
  */
 class StrongClassifier {
 public:
-    StrongClassifier(){};
+    StrongClassifier(
+            vector<classifier_struct> classifiers,
+            Dimensions samplesSize,
+            Point innerOffset,
+            unsigned int scaleFactor,
+            double alphaSum,
+            double floorValue
+    );
 
-    ~StrongClassifier(){};
+    // Empty constructor
+    StrongClassifier() { };
 
     vector<classifier_struct> classifiers;
+    Dimensions samplesSize = Dimensions(0, 0);
+    Point innerOffset = Point(0, 0);
     unsigned int scaleFactor;
+    double alphaSum;
     double floorValue;
-    Point innerOffset;
-    Dimensions samplesSize;
 };
 
 #endif //HASP_TRACKER_STRONGCLASSIFIER_H

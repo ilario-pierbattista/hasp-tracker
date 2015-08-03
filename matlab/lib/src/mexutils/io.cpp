@@ -3,6 +3,7 @@
 //
 
 #include "io.h"
+#include "structure_mapping.h"
 
 void checkSamplesLabelsWeightsDim(const size_t *samples,
                                   const size_t *labels,
@@ -74,21 +75,50 @@ Haar *getHaarFeature(const mxArray *input, int index) {
 
 StrongClassifier *getStrongClassifier(const mxArray *input) {
     StrongClassifier *strongClassifier = new StrongClassifier();
+    vector<classifier_struct> weakClassifiers(50);
     mxArray *cursor;
+    unsigned int i = 0;
+    double alphaSum = 0;
 
-    cursor = mxGetField(input, 0, "samplesSize");
+    cursor = mxGetField(input, 0, STRONG_CLASSIFIER_SAMPLES_SIZE);
     strongClassifier->samplesSize = Dimensions(
             (unsigned int) mxGetPr(cursor)[0],
             (unsigned int) mxGetPr(cursor)[1]
     );
-    cursor = mxGetField(input, 0, "scaleFactor");
-    strongClassifier->scaleFactor = (unsigned int) *mxGetPr(cursor);
-    cursor = mxGetField(input, 0, "innerOffset");
+
+    cursor = mxGetField(input, 0, STRONG_CLASSIFIER_INNER_OFFSET);
     strongClassifier->innerOffset = Point(
             (int) mxGetPr(cursor)[0],
             (int) mxGetPr(cursor)[1]
     );
 
-    cout << *mxGetPr(mxGetField(input, 0, "scaleFactor")) << endl;
+    cursor = mxGetField(input, 0, STRONG_CLASSIFIER_SCALE_FACTOR);
+    strongClassifier->scaleFactor = (unsigned int) *mxGetPr(cursor);
+
+    cursor = mxGetField(input, 0, STRONG_CLASSIFIER_FLOOR_VALUE);
+    strongClassifier->floorValue = *mxGetPr(cursor);
+
+    do {
+        cursor = mxGetField(input, i, STRONG_CLASSIFIER_WEAK_CLASSIFIERS);
+
+        i++;
+    } while (cursor != NULL);
+    strongClassifier->classifiers = weakClassifiers;
+
     return strongClassifier;
+}
+
+WeakClassifier getWeakClassifier(const mxArray *input) {
+    mxArray *cursor;
+
+    cursor = mxGetField(input, 0, WEAK_CLASSIFIER_FEATURE);
+    cursor = mxGetField(input, 0, WEAK_CLASSIFIER_POLARITY);
+    cursor = mxGetField(input, 0, WEAK_CLASSIFIER_THRESHOLD);
+    return WeakClassifier();
+}
+
+
+Haar getHaarFeatureFromStruct(const mxArray *input) {
+    /* @TODO Implementare */
+    return Haar();
 }
