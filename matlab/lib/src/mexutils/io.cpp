@@ -5,6 +5,8 @@
 #include "io.h"
 #include "structure_mapping.h"
 
+using namespace std;
+
 void checkSamplesLabelsWeightsDim(const size_t *samples,
                                   const size_t *labels,
                                   const size_t *weights) {
@@ -35,7 +37,6 @@ vector<double> getWeights(const mxArray *input) {
     return weights;
 }
 
-
 vector<Sample *> allocateSamples(const mxArray *input,
                                  vector<bool> labels,
                                  vector<double> weights) {
@@ -54,6 +55,30 @@ vector<Sample *> allocateSamples(const mxArray *input,
     }
     samples.shrink_to_fit();
     return samples;
+}
+
+vector<Sample *> allocateSamples(const mxArray *input, vector<bool> labels) {
+    vector<double> weights(0);
+    for (unsigned int i = 0; i < labels.size(); i++) {
+        weights.push_back(0);
+    }
+    return allocateSamples(input, labels, weights);
+}
+
+vector<Image *> allocateImages(const mxArray *input) {
+    const size_t *size = mxGetDimensions(input);
+    double *data = mxGetPr(input);
+    unsigned int imagesCount = (unsigned int) size[2];
+    unsigned int lenght = (unsigned int) (size[0] * size[1]);
+    vector<Image *> images(imagesCount);
+    Image *img;
+    for (unsigned int i = 0; i < imagesCount; i++) {
+        img = new Image(data + i * lenght,
+                            size);
+        images.at(i) = img;
+    }
+    images.shrink_to_fit();
+    return images;
 }
 
 Haar *getHaarFeature(const mxArray *input, int index) {
@@ -75,10 +100,9 @@ Haar *getHaarFeature(const mxArray *input, int index) {
 
 StrongClassifier *getStrongClassifier(const mxArray *input) {
     StrongClassifier *strongClassifier = new StrongClassifier();
-    vector<classifier_struct> weakClassifiers(50);
-    mxArray *cursor;
-    unsigned int i = 0;
-    double alphaSum = 0;
+    mxArray *cursor, *wc_struct;
+    double alpha_sum = 0, *alphas;
+    classifier_struct *wc = nullptr;
 
     cursor = mxGetField(input, 0, STRONG_CLASSIFIER_SAMPLES_SIZE);
     strongClassifier->samplesSize = Dimensions(
@@ -98,27 +122,64 @@ StrongClassifier *getStrongClassifier(const mxArray *input) {
     cursor = mxGetField(input, 0, STRONG_CLASSIFIER_FLOOR_VALUE);
     strongClassifier->floorValue = *mxGetPr(cursor);
 
-    do {
-        cursor = mxGetField(input, i, STRONG_CLASSIFIER_WEAK_CLASSIFIERS);
-
-        i++;
-    } while (cursor != NULL);
+    wc_struct = mxGetField(input, 0, STRONG_CLASSIFIER_WEAK_CLASSIFIERS);
+    alphas = mxGetPr(mxGetField(input, 0, STRONG_CLASSIFIER_ALPHAS));
+    vector<classifier_struct *> weakClassifiers(mxGetNumberOfElements(wc_struct));
+    for (unsigned int i = 0; i < mxGetNumberOfElements(wc_struct); i++) {
+        wc = new classifier_struct();
+        wc->classifier = getWeakClassifierFromStruct(wc_struct, i);
+        wc->alpha = *(alphas + i);
+        alpha_sum += wc->alpha;
+        wc->alphaSum = alpha_sum;
+        weakClassifiers.at(i) = wc;
+    }
     strongClassifier->classifiers = weakClassifiers;
 
     return strongClassifier;
 }
 
-WeakClassifier getWeakClassifier(const mxArray *input) {
+WeakClassifier *getWeakClassifierFromStruct(const mxArray *input, mwIndex index) {
     mxArray *cursor;
+    short polarity;
+    double threshold;
+    Haar * feature;
+    WeakClassifier *classifier;
 
-    cursor = mxGetField(input, 0, WEAK_CLASSIFIER_FEATURE);
-    cursor = mxGetField(input, 0, WEAK_CLASSIFIER_POLARITY);
-    cursor = mxGetField(input, 0, WEAK_CLASSIFIER_THRESHOLD);
-    return WeakClassifier();
+    cursor = mxGetField(input, index, WEAK_CLASSIFIER_FEATURE);
+    feature = getHaarFeatureFromStruct(cursor);
+
+    cursor = mxGetField(input, index, WEAK_CLASSIFIER_POLARITY);
+    polarity = (short) mxGetPr(cursor)[0];
+
+    cursor = mxGetField(input, index, WEAK_CLASSIFIER_THRESHOLD);
+    threshold = mxGetPr(cursor)[0];
+
+    classifier = new WeakClassifier(feature, threshold, polarity, 0);
+    return classifier;
 }
 
+Haar *getHaarFeatureFromStruct(const mxArray *input) {
+    mxArray *cursor;
+    Rectangle *r;
+    Haar *feature;
+    int feature_type;
 
-Haar getHaarFeatureFromStruct(const mxArray *input) {
-    /* @TODO Implementare */
-    return Haar();
+    cursor = mxGetField(input, 0, FEATURE_TLP);
+    Point tl(
+            (int) mxGetPr(cursor)[0],
+            (int) mxGetPr(cursor)[1]
+    );
+
+    cursor = mxGetField(input, 0, FEATURE_DIM);
+    Dimensions dims(
+            (unsigned int) mxGetPr(cursor)[0],
+            (unsigned int) mxGetPr(cursor)[1]
+    );
+
+    cursor = mxGetField(input, 0, FEATURE_TYPE);
+    feature_type = (int) *mxGetPr(cursor);
+
+    r = new Rectangle(tl, dims);
+    feature = new Haar(r, feature_type);
+    return feature;
 }

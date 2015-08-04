@@ -26,6 +26,27 @@ Rectangle::Rectangle(Point p, Dimensions d) {
     this->height = d.height;
 }
 
+Rectangle *Rectangle::clone() {
+    Rectangle *copy = new Rectangle(
+            this->topLeftPoint(),
+            this->getDimension()
+    );
+    return copy;
+}
+
+void Rectangle::translate(Point p) {
+    this->x += p.x;
+    this->y += p.y;
+}
+
+Dimensions Rectangle::getDimension() {
+    Dimensions dims(
+            (unsigned int) this->width,
+            (unsigned int) this->height
+    );
+    return dims;
+}
+
 Point Rectangle::topLeftPoint() {
     Point tl(this->x, this->y);
     return tl;
@@ -117,7 +138,7 @@ string Rectangle::to_string() {
 }
 
 void Rectangle::cleanIntervals(vector<Interval *> intervals) {
-    for(unsigned int i = 0; i < intervals.size(); i++) {
+    for (unsigned int i = 0; i < intervals.size(); i++) {
         delete intervals.at(i);
     }
 }

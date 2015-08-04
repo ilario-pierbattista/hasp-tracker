@@ -9,6 +9,7 @@
 #include <vector>
 #include "feature.h"
 #include "adaboost.h"
+#include "templates_definition.h"
 
 using namespace std;
 
@@ -45,6 +46,24 @@ vector<Sample *> allocateSamples(const mxArray *input,
                                  vector<double> weights);
 
 /**
+ * allocateSamples
+ * input: dati delle immagini
+ * labels: vettore delle etichette
+ */
+vector<Sample *> allocateSamples(
+        const mxArray *input,
+        vector<bool> labels
+);
+
+/**
+ * allocateImages
+ * input: dati delle immagini
+ */
+vector<Image *> allocateImages(
+        const mxArray *input
+);
+
+/**
  * getHaarFeature
  * input: dati delle feature
  * index: indice della feature
@@ -61,12 +80,12 @@ StrongClassifier *getStrongClassifier(const mxArray *input);
  * getWeakClassifiers
  * input: dati del classificatore debole
  */
-WeakClassifier getWeakClassifier(const mxArray *input);
+WeakClassifier *getWeakClassifierFromStruct(const mxArray *input, mwIndex index);
 
 /**
  * getHaarFeatureFromStruct
  * input: dati della feature
  */
-Haar getHaarFeatureFromStruct(const mxArray *input);
+Haar *getHaarFeatureFromStruct(const mxArray *input);
 
 #endif //HASP_TRACKER_MATLAB_H

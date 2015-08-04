@@ -5,7 +5,7 @@
 #include "StrongClassifier.h"
 
 StrongClassifier::StrongClassifier(
-        vector<classifier_struct> classifiers,
+        vector<classifier_struct *> classifiers,
         Dimensions samplesSize,
         Point innerOffset,
         unsigned int scaleFactor,
@@ -18,3 +18,4 @@ StrongClassifier::StrongClassifier(
     this->alphaSum = alphaSum;
     this->floorValue = floorValue;
 }
+

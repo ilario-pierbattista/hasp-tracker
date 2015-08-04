@@ -35,6 +35,7 @@ add_library(
     mexutils
     STATIC
     src/mexutils/io.cpp
+    src/mexutils/structure_mapping.h
 )
 
 target_link_libraries(feature geometry image)

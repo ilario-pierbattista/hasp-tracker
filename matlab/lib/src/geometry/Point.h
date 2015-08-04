@@ -12,6 +12,8 @@ class Point {
 public:
     Point(int x, int y);
 
+    Point() { };
+
     std::string to_string();
 
     int x, y;

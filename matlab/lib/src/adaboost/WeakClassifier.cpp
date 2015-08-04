@@ -12,7 +12,6 @@ WeakClassifier::WeakClassifier(Haar *feature, double thr, short p, double weight
     this->weightedError = weightedError;
 }
 
-
 WeakClassifier::WeakClassifier() {
     this->feature = nullptr;
     this->threshold = NAN;
@@ -28,6 +27,11 @@ WeakClassifier::WeakClassifier(Haar *feature, double thr, short p) {
 
 WeakClassifier::~WeakClassifier() {
     delete this->feature;
+}
+
+bool WeakClassifier::classify(Image *image, Point offset) {
+    double value = this->feature->value(image, offset);
+    return value * this->polarity < this->polarity * this->threshold;
 }
 
 bool WeakClassifier::classify(Image *image) {

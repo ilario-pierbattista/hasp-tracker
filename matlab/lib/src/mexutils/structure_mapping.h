@@ -15,6 +15,7 @@
 #define STRONG_CLASSIFIER_SCALE_FACTOR "scaleFactor"
 #define STRONG_CLASSIFIER_INNER_OFFSET "innerOffset"
 #define STRONG_CLASSIFIER_WEAK_CLASSIFIERS "weakClassifiers"
+#define STRONG_CLASSIFIER_ALPHAS "alphas"
 
 /*
  * Mappatura dei campi della struttura del classificatore
@@ -26,7 +27,7 @@
 #define WEAK_CLASSIFIER_THRESHOLD "threshold"
 #define FEATURE_TLP "topleft"
 #define FEATURE_DIM "dimension"
-#define FEATURE_TYPE "featureType"
+#define FEATURE_TYPE "type"
 
 
 #endif //HASP_TRACKER_STRUCTURE_MAPPING_H

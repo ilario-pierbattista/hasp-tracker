@@ -17,6 +17,8 @@ public:
 
     ~WeakClassifier();
 
+    bool classify(Image *image, Point offset);
+
     bool classify(Image *image);
 
     Haar *getFeature() const {
@@ -57,6 +59,5 @@ public:
     short polarity;
     double weightedError;
 };
-
 
 #endif //HASP_TRACKER_WEAKCLASSIFIER_H

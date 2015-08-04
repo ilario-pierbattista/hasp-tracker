@@ -21,6 +21,8 @@ public:
 
     double value(Image *image);
 
+    double value(Image *image, Point offset);
+
     string to_string();
 
     Haar *clone();
@@ -64,6 +66,5 @@ private:
     Rectangle *area;
     unsigned char code;
 };
-
 
 #endif //HASP_TRACKER_HAAR_H

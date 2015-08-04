@@ -15,7 +15,7 @@ using namespace std;
  * facente parte di un classificatore forte
  */
 struct classifier_struct {
-    WeakClassifier classifier;
+    WeakClassifier* classifier;
     double alpha;
     double alphaSum;
 };
@@ -27,7 +27,7 @@ typedef struct classifier_struct classifier_struct;
 class StrongClassifier {
 public:
     StrongClassifier(
-            vector<classifier_struct> classifiers,
+            vector<classifier_struct *> classifiers,
             Dimensions samplesSize,
             Point innerOffset,
             unsigned int scaleFactor,
@@ -38,7 +38,9 @@ public:
     // Empty constructor
     StrongClassifier() { };
 
-    vector<classifier_struct> classifiers;
+
+
+    vector<classifier_struct *> classifiers;
     Dimensions samplesSize = Dimensions(0, 0);
     Point innerOffset = Point(0, 0);
     unsigned int scaleFactor;

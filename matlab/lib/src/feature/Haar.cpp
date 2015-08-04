@@ -22,6 +22,14 @@ double Haar::value(Image *image) {
     return Haar::calculateValue(image, this->area, this->code);
 }
 
+double Haar::value(Image *image, Point offset) {
+    double value = 0;
+    Rectangle *rectangle = this->area->clone();
+    rectangle->translate(offset);
+    value = Haar::calculateValue(image, rectangle, this->code);
+    return value;
+}
+
 string Haar::to_string() {
     string stringa = "{ area: " + this->area->to_string() +
                      ", code: " + std::to_string(this->code) + "}";

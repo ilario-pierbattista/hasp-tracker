@@ -21,6 +21,10 @@ public:
 
     Rectangle(Point p, Dimensions d);
 
+    Rectangle *clone();
+
+    void translate(Point p);
+
     Point topLeftPoint();
 
     Point topRightPoint();
@@ -28,6 +32,8 @@ public:
     Point bottomLeftPoint();
 
     Point bottomRightPoint();
+
+    Dimensions getDimension();
 
     vector<Rectangle *> horizontalSplit(unsigned int divider
     ) throw(SplitException);
@@ -46,6 +52,5 @@ public:
 private:
     static void cleanIntervals(vector<Interval *> intervals);
 };
-
 
 #endif //HASP_TRACKER_RECTANGLE_H
