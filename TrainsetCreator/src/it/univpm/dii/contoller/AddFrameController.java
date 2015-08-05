@@ -16,13 +16,13 @@ import it.univpm.dii.view.tablemodels.ElementModel;
 import javax.swing.*;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.*;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.io.File;
 import java.io.FilenameFilter;
 import java.io.IOException;
+import java.security.Key;
 import java.util.Arrays;
 import java.util.Comparator;
 
@@ -148,6 +148,9 @@ public class AddFrameController {
                 view.getFineButton().addActionListener(new FineAction());
                 view.getAggiungiButton().addActionListener(new SalvaAction());
                 view.getFastNegsCheck().addActionListener(new FastNegativesCheckedAction());
+                view.getImagePanel().addMouseWheelListener(new FrameMouseWheelListener(view));
+                // Kyestrokes
+                view.getAggiungiButton().setMnemonic(KeyEvent.VK_A);
                 // Visualizzazione
                 view.setVisible(true);
                 addListernes();
@@ -297,6 +300,20 @@ public class AddFrameController {
             f1 = o1.getName().replaceAll("[^0-9]", "");
             f2 = o2.getName().replaceAll("[^0-9]", "");
             return Integer.parseInt(f1) - Integer.parseInt(f2);
+        }
+    }
+
+    class FrameMouseWheelListener implements MouseWheelListener {
+        private JSlider slider;
+
+        FrameMouseWheelListener(AddFrameView view) {
+            this.slider = view.getSlider();
+        }
+
+        @Override
+        public void mouseWheelMoved(MouseWheelEvent e) {
+            int notches = e.getWheelRotation();
+            slider.setValue(slider.getValue() + notches);
         }
     }
 }

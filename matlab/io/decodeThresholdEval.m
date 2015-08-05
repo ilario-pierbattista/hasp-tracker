@@ -6,7 +6,7 @@ function data = decodeThresholdEval(dataPath);
 
     data = struct();
     % Nomi dei files da decodificare
-    filesToDecode = {'accuracy', 'sensitivity', 'specificity', 'mcc'};
+    filesToDecode = {'thresholds', 'accuracy', 'sensitivity', 'specificity', 'mcc'};
     filesExtension = '.dat';
 
     for i = [1:length(filesToDecode)]
