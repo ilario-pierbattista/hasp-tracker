@@ -9,6 +9,7 @@
 #include "WeakClassifier.h"
 #include "Sample.h"
 #include "feature.h"
+#include "../mexutils/utils.h"
 
 using namespace std;
 

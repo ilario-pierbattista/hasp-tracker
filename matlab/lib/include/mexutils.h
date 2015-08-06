@@ -7,5 +7,6 @@
 
 #include "src/mexutils/io.h"
 #include "src/mexutils/templates_definition.h"
+#include "src/mexutils/utils.h"
 
 #endif //HASP_TRACKER_LIBMEXUTILS_H

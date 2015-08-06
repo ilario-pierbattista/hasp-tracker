@@ -36,6 +36,7 @@ add_library(
     STATIC
     src/mexutils/io.cpp
     src/mexutils/structure_mapping.h
+    src/mexutils/utils.cpp
 )
 
 target_link_libraries(image ${ArrayFire_LIBS})

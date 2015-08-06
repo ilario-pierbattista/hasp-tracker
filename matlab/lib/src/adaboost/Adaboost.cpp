@@ -27,14 +27,24 @@ WeakClassifier *Adaboost::bestWeakClassifier(vector<Sample *> samples, vector<Ha
     unsigned int sampleIndex;
     bool writeClassifier;
 
+    auto begin = Time::now(), end = Time::now();
+    lsec duration;
+    double feature_assignation_avg = 0,
+            sorting_avg = 0,
+            lowest_error_avg = 0;
+
+    begin = Time::now();
     for (unsigned int i = 0; i < samples.size(); i++) {
         tests.push_back(new FeatureTest());
-        if(samples.at(i)->positive) {
+        if (samples.at(i)->positive) {
             positiveSum += samples.at(i)->weight;
         } else {
             negativeSum += samples.at(i)->weight;
         }
     }
+    end = Time::now();
+    duration = end - begin;
+    cout << "Allocazione degli oggetti per i test: " << duration.count() << endl;
 
     for (unsigned int featureIndex = 0; featureIndex < features.size(); featureIndex++) {
         // Inizializzazione
@@ -44,6 +54,7 @@ WeakClassifier *Adaboost::bestWeakClassifier(vector<Sample *> samples, vector<Ha
         absoluteMinimumError = INFINITY;
         finalPolarity = 1;
 
+        begin = Time::now();
         // Calcolo dei valori della feature per ciascuna immagine
         // Calcolo delle somme dei pesi
         for (testIterator = tests.begin(), sampleIndex = 0;
@@ -58,10 +69,18 @@ WeakClassifier *Adaboost::bestWeakClassifier(vector<Sample *> samples, vector<Ha
                 (*testIterator)->value = *(values + sampleIndex * features.size() + featureIndex);
             }
         }
+        end = Time::now();
+        duration = end - begin;
+        feature_assignation_avg = (feature_assignation_avg * (featureIndex) + duration.count()) / (featureIndex + 1);
 
+        begin = Time::now();
         // Ordimento delle immagini in base al valore della feature (crescente)
         tests.sort(FeatureTest::compare);
+        end = Time::now();
+        duration = end - begin;
+        sorting_avg = (sorting_avg * (featureIndex) + duration.count()) / (featureIndex + 1);
 
+        begin = Time::now();
         // Iterazione sulla lista per estrarre la soglia ad errore minimo
         for (testIterator = tests.begin(); testIterator != tests.end(); testIterator++) {
             // Aggiornamento delle somme dei pesi delle immagini sotto la soglia
@@ -92,13 +111,16 @@ WeakClassifier *Adaboost::bestWeakClassifier(vector<Sample *> samples, vector<Ha
                 finalPolarity = currentPolarity;
             }
         }
+        end = Time::now();
+        duration = end - begin;
+        lowest_error_avg = (lowest_error_avg * (featureIndex) + duration.count()) / (featureIndex + 1);
 
         writeClassifier = (bestClassifier->feature == nullptr);
-        if(!writeClassifier) {
+        if (!writeClassifier) {
             writeClassifier = (bestClassifier->weightedError > absoluteMinimumError);
         }
 
-        if(writeClassifier) {
+        if (writeClassifier) {
             bestClassifier->feature = features.at(featureIndex);
             bestClassifier->weightedError = absoluteMinimumError;
             bestClassifier->polarity = finalPolarity;
@@ -106,6 +128,11 @@ WeakClassifier *Adaboost::bestWeakClassifier(vector<Sample *> samples, vector<Ha
             bestClassifier->featureIndex = featureIndex;
         }
     }
+
+    cout << "Tempo medio di esecuzione:" << endl;
+    cout << "Assegnazione feature: " << feature_assignation_avg << endl;
+    cout << "Ordinamento lista: " << sorting_avg << endl;
+    cout << "Estrazione soglia: " << lowest_error_avg << endl;
 
     for (unsigned int i = 0; i < samples.size(); i++) {
         delete tests.front();
@@ -116,7 +143,6 @@ WeakClassifier *Adaboost::bestWeakClassifier(vector<Sample *> samples, vector<Ha
     bestClassifier->feature = bestClassifier->feature->clone();
     return bestClassifier;
 }
-
 
 WeakClassifier *Adaboost::bestWeakClassifier(vector<Sample *> samples, vector<Haar *> features) {
     return bestWeakClassifier(samples, features, nullptr);
@@ -181,7 +207,6 @@ FeatureTest::FeatureTest(Haar *feature, Sample *sample) {
 void FeatureTest::calculateValue() {
     this->value = this->feature->value(this->sample);
 }
-
 
 bool FeatureTest::testValue() {
     return this->feature->value(this->sample) == this->value;
