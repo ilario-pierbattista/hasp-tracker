@@ -55,4 +55,6 @@ function finalClassifier = decodeFinalClassifier(dataPath, windowSize);
         yoffset = (windowSize.height - yoffset) / finalClassifier.scaleFactor;
         finalClassifier.y.innerOffset = [0 yoffset];
     end
+
+    finalClassifier.windowSize = windowSize;
 end

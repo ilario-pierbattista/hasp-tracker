@@ -1,5 +1,5 @@
 function [presence, value] = calculate_strong_classifier(strong, img, offset);
-    if nargin == 3
+    if nargin == 2
         offset = [0 0];
     end
 

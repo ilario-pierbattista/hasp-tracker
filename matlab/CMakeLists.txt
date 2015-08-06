@@ -9,7 +9,12 @@ if(NOT Matlab_FOUND)
     find_package(MatlabCustom ${MATLAB_MIN_VER} REQUIRED COMPONENTS MX_LIBRARY MEX_COMPILER)
 endif()
 
+if(NOT ArrayFire_FOUND)
+    find_package(ArrayFire)
+endif()
+
 include_directories(${Matlab_INCLUDE_DIRS})
+include_directories(${ArrayFire_INCLUDE_DIRS})
 
 # Shared library prefix-suffix
 set(CMAKE_SHARED_LIBRARY_SUFFIX ".${Matlab_MEX_EXTENSION}")
