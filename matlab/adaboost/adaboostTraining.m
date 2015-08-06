@@ -5,7 +5,7 @@ function [weakClassifiers, weightedErrors, w, betasT, alphas, samplesSize] = ada
     % Long description
 
     % Apertura del dataset
-    samples = getTrainingFrames(getRealPath(datasetPath));
+    samples = getFrames(getRealPath(datasetPath));
     samplesSize = [samples(1).width, samples(1).height];
     % Inizializzazione dei pesi
     w = initWeights(samples);
@@ -62,6 +62,7 @@ function [weakClassifiers, weightedErrors, w, betasT, alphas, samplesSize] = ada
         alphas = [alphas; log(1/betaT)];
     end
     toc(loopETA);
+    % @TODO Organizzare il classificatore forte come una struttura
 end
 
 

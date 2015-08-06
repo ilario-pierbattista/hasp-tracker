@@ -56,10 +56,3 @@ void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[]) {
     }
     samples.clear();
 }
-
-
-bool checkDimensions(const size_t *samples,
-                     const size_t *labels,
-                     const size_t *weights) {
-    return samples[2] == labels[1] && labels[1] == weights[1];
-}

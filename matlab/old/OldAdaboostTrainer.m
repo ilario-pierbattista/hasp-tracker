@@ -1,6 +1,6 @@
 initEnvironment;
 fprintf('Questo script sta usando il primo database di allenamento\n');
-samples = getTrainingFrames(getenv('DB1'));
+samples = getFrames(getenv('DB1'));
 
 %definizione di costanti nel codice
 T = 50;
@@ -51,7 +51,7 @@ features = transpose(get_features([width height], fmin, fstep));
 frames = zeros(height, width, length(samples));
 labels = [];
 for i = [1:length(samples)]
-    image = readImageData(samples(i).filepath, samples(i).width, samples(i).height, 16);   
+    image = readImageData(samples(i).filepath, samples(i).width, samples(i).height, 16);
     image = floor_rebase(image);
     image = integral_image(image);
     frames(:,:,i) = image;

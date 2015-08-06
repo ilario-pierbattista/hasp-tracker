@@ -17,12 +17,12 @@ if isempty(testPath) || ~isdirectory
 end
 
 % estrazione dei frames
-samples = getTrainingFrames(testPath);
+samples = getFrames(testPath);
 windowSize = struct('width', samples(1).width,...
 'height', samples(1).height);
 
 % Decodicia del classificatore finale
-finalClassifier = decodeFinalClassifier(dataPath, windowSize);
+finalClassifier = decodeFinalClassifier(dataPath);
 
 [frames, labels] = readFramesAndLabels(samples, finalClassifier.scaleFactor, finalClassifier.floorValue);
 

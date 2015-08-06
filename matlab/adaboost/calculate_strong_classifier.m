@@ -1,19 +1,15 @@
-function [presence, value] = calculate_strong_classifier(img, strong, threshold, offset, precedentValue, classifierIndex)
+function [presence, value] = calculate_strong_classifier(strong, img, offset);
     if nargin == 3
         offset = [0 0];
     end
 
-    if nargin == 6 && classifierIndex > 0 && classifierIndex <= length(strong.weakClassifiers)
-        % calcola un solo classificatore debole
-        t = classifierIndex;
-        value = precedentValue + strong.alphas(t) * strong.weakClassifiers(t).classify(img, strong.innerOffset + offset);
-        presence = value > threshold * strong.summedAlphaList(t);
-    else
-        %calcola l'intero classificatore forte
-        value = 0;
-        for i = [1:length(strong.weakClassifiers)]
-            value = value + strong.alphas(i) * strong.weakClassifiers(i).classify(img, strong.innerOffset + offset);
-        end
-        presence = value > threshold * strong.alphasum;
+    value = 0;
+    alphasum = 0;
+    %strong.threshold
+    %strong.numberOfClassifiers
+    for i = [1:length(strong.numberOfClassifiers)]
+        value = value + strong.alphas(i) * strong.weakClassifiers(i).classify(img, strong.innerOffset + offset);
+        alphasum = alphasum + strong.alphas(i);
     end
+    presence = value > strong.threshold * alphasum;
 end

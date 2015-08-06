@@ -1,6 +1,6 @@
 initEnvironment;
 fprintf('Questo script sta usando il primo database di allenamento\n');
-samples = getTrainingFrames(getenv('DB1'));
+samples = getFrames(getenv('DB1'));
 
 % preprocessing delle immagini
 frames = zeros(100, 160, length(samples));

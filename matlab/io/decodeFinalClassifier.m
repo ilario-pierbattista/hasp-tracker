@@ -34,6 +34,16 @@ function finalClassifier = decodeFinalClassifier(dataPath, windowSize);
         error('Nessun classificatore trovato');
     end
 
+    if nargin == 1 && (isfield(finalClassifier, 'o1') || isfield(finalClassifier, 'o2'))
+        if isfield(finalClassifier, 'o1')
+            windowSize = struct('width', finalClassifier.o1.samplesSize(1),...
+            'height', finalClassifier.o1.samplesSize(2));
+        elseif isfield(finalClassifier, 'o2')
+            windowSize = struct('width', finalClassifier.o2.samplesSize(1),...
+            'height', finalClassifier.o2.samplesSize(2));
+        end
+    end
+
     % Calcolo degli offset dei classificatori ortogonali
     if isfield(finalClassifier, 'x')
         xoffset = finalClassifier.x.samplesSize(1);
