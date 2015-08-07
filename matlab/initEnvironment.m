@@ -1,13 +1,12 @@
 % Deprecato
 setenv('DATASET_ROOT', '/home/ilario/Documenti/Tirocinio/Dataset/DataBaseKinect/FindPerson/KinectLab/');
-% Deprecato
-setenv('DB1', '/home/ilario/Documenti/Tirocinio/TrainingDb1/');
 
 % Dataset di allenamento
+setenv('DB1', '/home/ilario/Documenti/Tirocinio/Training/');
 setenv('DBX', '/home/ilario/Documenti/Tirocinio/Training/x/');
 setenv('DBY', '/home/ilario/Documenti/Tirocinio/Training/y/');
-setenv('DBO1', '/home/ilario/Documenti/Tirocinio/Training/obliquo1/');
-setenv('DBO2', '/home/ilario/Documenti/Tirocinio/Training/obliquo2/');
+setenv('DBO1', '/home/ilario/Documenti/Tirocinio/Training/o1/');
+setenv('DBO2', '/home/ilario/Documenti/Tirocinio/Training/o2/');
 
 % Dataset di testing
 setenv('TEST1', '/home/ilario/Documenti/Tirocinio/Testing/1');

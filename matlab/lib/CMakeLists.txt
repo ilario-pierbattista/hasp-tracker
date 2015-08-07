@@ -39,7 +39,7 @@ add_library(
     src/mexutils/utils.cpp
 )
 
-target_link_libraries(image ${ArrayFire_LIBS})
+target_link_libraries(image)
 target_link_libraries(feature geometry image)
 target_link_libraries(adaboost feature)
 target_link_libraries(mexutils adaboost feature image geometry)

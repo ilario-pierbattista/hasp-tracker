@@ -38,7 +38,7 @@ void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[]) {
     float *values = (float *) mxGetPr(plhs[0]);
     for (unsigned int i = 0; i < samples.size(); i++) {
         for (unsigned int j = 0; j < features.size(); j++) {
-            *(values + i * features.size() + j) = (float) features.at(j)->value(samples.at(i));
+            *(values + i * features.size() + j) = (float) features.at(j)->calculateValue(samples.at(i));
         }
         cout << i + 1 << "/" << samples.size() << endl;
     }

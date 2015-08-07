@@ -205,11 +205,11 @@ FeatureTest::FeatureTest(Haar *feature, Sample *sample) {
 }
 
 void FeatureTest::calculateValue() {
-    this->value = this->feature->value(this->sample);
+    this->value = this->feature->calculateValue(this->sample);
 }
 
 bool FeatureTest::testValue() {
-    return this->feature->value(this->sample) == this->value;
+    return this->feature->calculateValue(this->sample) == this->value;
 }
 
 bool FeatureTest::compare(FeatureTest *f1, FeatureTest *f2) {

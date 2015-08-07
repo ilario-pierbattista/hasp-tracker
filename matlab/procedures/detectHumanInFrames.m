@@ -61,11 +61,16 @@ finalClassifier = decodeFinalClassifier(classifierPath);
 windowHeight = finalClassifier.windowSize.height / finalClassifier.scaleFactor;
 windowWidth = finalClassifier.windowSize.width / finalClassifier.scaleFactor;
 
+frameStep = input('Intervallo con cui analizzare i frame [20]');
+if(isempty(frameStep))
+    frameStep = 20;
+end
+
 % Lettura e preprocessing dei file
 rectangles = [];
 figure;
 im1 = imagesc();
-for i = [1:length(framesFiles)]
+for i = [1:frameStep:length(framesFiles)]
     tic;
     frame = readImageData(char(framesFiles{i}), width, height, 16);
     processedFrame = preprocessImage(frame,...

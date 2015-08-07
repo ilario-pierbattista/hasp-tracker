@@ -19,9 +19,9 @@ public:
 
     ~Haar();
 
-    double value(Image *image);
+    double calculateValue(Image *image);
 
-    double value(Image *image, Point offset);
+    double calculateValue(Image *image, Point offset);
 
     string to_string();
 

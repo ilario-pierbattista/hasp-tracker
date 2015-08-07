@@ -30,12 +30,12 @@ WeakClassifier::~WeakClassifier() {
 }
 
 bool WeakClassifier::classify(Image *image, Point offset) {
-    double value = this->feature->value(image, offset);
+    double value = this->feature->calculateValue(image, offset);
     return value * this->polarity < this->polarity * this->threshold;
 }
 
 bool WeakClassifier::classify(Image *image) {
     double value;
-    value = this->feature->value(image);
+    value = this->feature->calculateValue(image);
     return value * this->polarity < this->polarity * this->threshold;
 }

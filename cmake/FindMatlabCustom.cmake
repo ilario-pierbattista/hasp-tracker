@@ -105,7 +105,7 @@
 # ``Matlab_MEX_EXTENSION``
 #   the extension of the mex files for the current platform (given by Matlab).
 # ``Matlab_ROOT_DIR``
-#   the location of the root of the Matlab installation found. If this value
+#   the location of the root of the Matlab installation found. If this calculateValue
 #   is changed by the user, the result variables are recomputed.
 #
 # Provided macros
@@ -706,7 +706,7 @@ endfunction()
 #   The function expects one Matlab test script file to be given.
 #   In the case ``NO_UNITTEST_FRAMEWORK`` is given, the unittest script file
 #   should contain the script to be run, plus an exit command with the exit
-#   value. This exit value will be passed to the ctest framework (0 success,
+#   calculateValue. This exit calculateValue will be passed to the ctest framework (0 success,
 #   non 0 failure). Additional arguments accepted by :command:`add_test` can be
 #   passed through ``TEST_ARGS`` (eg. ``CONFIGURATION <config> ...``).
 #
@@ -1036,7 +1036,7 @@ function(_Matlab_get_version_from_root matlab_root matlab_known_version matlab_f
     message(WARNING "[MATLAB] Found several versions, taking the first one (versions found ${matlab_list_of_all_versions})")
   endif()
 
-  # return the updated value
+  # return the updated calculateValue
   set(${matlab_final_version} ${Matlab_VERSION_STRING_INTERNAL} PARENT_SCOPE)
 
 endfunction()

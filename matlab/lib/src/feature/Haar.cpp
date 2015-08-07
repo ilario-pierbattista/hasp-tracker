@@ -18,11 +18,11 @@ Haar::~Haar() {
     delete this->area;
 }
 
-double Haar::value(Image *image) {
+double Haar::calculateValue(Image *image) {
     return Haar::calculateValue(image, this->area, this->code);
 }
 
-double Haar::value(Image *image, Point offset) {
+double Haar::calculateValue(Image *image, Point offset) {
     double value = 0;
     Rectangle *rectangle = this->area->clone();
     rectangle->translate(offset);

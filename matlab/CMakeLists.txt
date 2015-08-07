@@ -9,22 +9,7 @@ if(NOT Matlab_FOUND)
     find_package(MatlabCustom ${MATLAB_MIN_VER} REQUIRED COMPONENTS MX_LIBRARY MEX_COMPILER)
 endif()
 
-if(NOT ArrayFire_FOUND)
-    find_package(ArrayFire)
-endif()
-if(ArrayFire_CUDA_FOUND)
-    message(STATUS "Cuda backend")
-    set(ArrayFire_LIBS ${ArrayFire_CUDA_LIBRARIES})
-elseif(ArrayFire_OpenCL_FOUND)
-    message(STATUS "OpenCl backend")
-    set(ArrayFire_LIBS ${ArrayFire_OpenCL_LIBRARIES})
-else()
-    message(STATUS "Cpu backend")
-    set(ArrayFire_LIBS ${ArrayFire_LIBRARIES})
-endif()
-
 include_directories(${Matlab_INCLUDE_DIRS})
-include_directories(${ArrayFire_INCLUDE_DIRS})
 
 # Shared library prefix-suffix
 set(CMAKE_SHARED_LIBRARY_SUFFIX ".${Matlab_MEX_EXTENSION}")

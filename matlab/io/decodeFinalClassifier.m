@@ -1,4 +1,8 @@
-function finalClassifier = decodeFinalClassifier(dataPath, windowSize);
+function finalClassifier = decodeFinalClassifier(dataPath, disableOffset);
+    if nargin == 1
+        disableOffset = false;
+    end
+
     [dataPath, isdirectory] = checkpath(dataPath);
     if isempty(dataPath) || ~isdirectory
         error('Path del classificatore finale non valida');
@@ -34,7 +38,7 @@ function finalClassifier = decodeFinalClassifier(dataPath, windowSize);
         error('Nessun classificatore trovato');
     end
 
-    if nargin == 1 && (isfield(finalClassifier, 'o1') || isfield(finalClassifier, 'o2'))
+    if ~disableOffset
         if isfield(finalClassifier, 'o1')
             windowSize = struct('width', finalClassifier.o1.samplesSize(1),...
             'height', finalClassifier.o1.samplesSize(2));
@@ -42,19 +46,19 @@ function finalClassifier = decodeFinalClassifier(dataPath, windowSize);
             windowSize = struct('width', finalClassifier.o2.samplesSize(1),...
             'height', finalClassifier.o2.samplesSize(2));
         end
-    end
 
-    % Calcolo degli offset dei classificatori ortogonali
-    if isfield(finalClassifier, 'x')
-        xoffset = finalClassifier.x.samplesSize(1);
-        xoffset = (windowSize.width - xoffset) / finalClassifier.scaleFactor;
-        finalClassifier.x.innerOffset = [xoffset 0];
-    end
-    if isfield(finalClassifier, 'y')
-        yoffset = finalClassifier.y.samplesSize(2);
-        yoffset = (windowSize.height - yoffset) / finalClassifier.scaleFactor;
-        finalClassifier.y.innerOffset = [0 yoffset];
-    end
+        % Calcolo degli offset dei classificatori ortogonali
+        if isfield(finalClassifier, 'x')
+            xoffset = finalClassifier.x.samplesSize(1);
+            xoffset = (windowSize.width - xoffset) / finalClassifier.scaleFactor;
+            finalClassifier.x.innerOffset = [xoffset 0];
+        end
+        if isfield(finalClassifier, 'y')
+            yoffset = finalClassifier.y.samplesSize(2);
+            yoffset = (windowSize.height - yoffset) / finalClassifier.scaleFactor;
+            finalClassifier.y.innerOffset = [0 yoffset];
+        end
 
-    finalClassifier.windowSize = windowSize;
+        finalClassifier.windowSize = windowSize;
+    end
 end

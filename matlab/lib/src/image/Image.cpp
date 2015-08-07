@@ -5,7 +5,6 @@
 #include <iostream>
 #include <fstream>
 #include "Image.h"
-#include "arrayfire.h"
 
 using namespace std;
 
@@ -106,18 +105,9 @@ void Image::floorRebase(Image *origin, Image *destination) {
 void Image::floorRebase(Image *origin, Image *destination, double floorValue) {
     try {
         int len = origin->getWidth() * origin->getHeight();
-        af::array originArray(1, len, origin->getImage());
-        af::array destinationArray(1, len, destination->getImage());
-
-        /* Vecchio codice sequenziale
         for (int i = 0; i < len; i++) {
             destination->write(floorValue - origin->read(i), i);
-        }*/
-
-        gfor(af::seq i, len) {
-            destinationArray(i) = floorValue - originArray(i);
         }
-        destinationArray.host(destination->getImage());
     } catch (std::exception &e) {
         std::cout << e.what() << std::endl;
     }
