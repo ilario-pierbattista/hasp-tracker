@@ -1,55 +1,20 @@
 % Procedura di visualizzazione dei frame registrati con il Kinect
 % Inizializzazione dell'ambiente
-clear frames;
-clear fm;
-clear subfolders;
-clear width;
-clear height;
-clear content;
+clear framesPath;
 initEnvironment;
 
 % Inserimento della path
 framesPath = input('Percorso (o variabile globale che contiene la path) dei frames: ', 's');
-[framesPath, isdirectory] = checkpath(framesPath);
-if isempty(framesPath) || ~isdirectory
+framesPath = checkisdir(framesPath);
+if framesPath == false
     error('La path dei frames non è valida');
 end
-
 % Scelta della sottocartella (se presente) con i frames
-content = dir(framesPath);
-subfolders = [];
-% Lettura del contenuto della directory
-for i = [1:length(content)]
-    if content(i).isdir && ~(strcmp(content(i).name, '.') || strcmp(content(i).name, '..'))
-        subfolders = [subfolders; {content(i).name}];
-    end
-end
-
-if ~isempty(subfolders)
-    % Visualizzazione del contentuto della directory
-    fprintf('Contenuto della directory:\n');
-    for i = [1:length(subfolders)]
-        fprintf('%s ', subfolders{i});
-    end
-    fprintf('\n');
-
-    subf = input('Sottocartella da utilizzare: ', 's');
-    framesPath = fullfile(framesPath, subf);
-    % Ulteriore controllo della path
-    if exist(framesPath) ~= 7
-        error('framesPath non valida\n');
-    end
-end
+framesPath = choosesubdir(framesPath);
 
 % Inserimento della dimensione dei frames
-width = input('Larghezza [512]: ');
-height = input('Altezza [424]: ');
-if isempty(width)
-    width = 512;
-end
-if isempty(height)
-    height = 424;
-end
+width = inputdef('Larghezza [%d]: ', 512);
+height = inputdef('Altezza [%d]: ', 424);
 
 % Estrazione delle path di tutti i frames
 framesFiles = getFramesPath(framesPath);
@@ -61,10 +26,7 @@ finalClassifier = decodeFinalClassifier(classifierPath);
 windowHeight = finalClassifier.windowSize.height / finalClassifier.scaleFactor;
 windowWidth = finalClassifier.windowSize.width / finalClassifier.scaleFactor;
 
-frameStep = input('Intervallo con cui analizzare i frame [20]');
-if(isempty(frameStep))
-    frameStep = 20;
-end
+framestep = inputdef('Intervallo con cui analizzare i frame [%d]: ', 20);
 
 % Lettura e preprocessing dei file
 rectangles = [];

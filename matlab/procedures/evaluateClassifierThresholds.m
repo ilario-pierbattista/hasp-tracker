@@ -15,53 +15,55 @@ testPath = input(promptStr, 's');
 if isempty(testPath)
     testPath = getenv(DEFAULT_TESTING_SET);
 end
-[testPath, isdirectory] = checkpath(testPath);
-if isempty(testPath) || ~isdirectory
+testPath = checkisdir(testPath);
+if testPath == false;
     error('Path di testing non valida');
 end
 
-% Decodicia del classificatore finale
-finalClassifier = decodeFinalClassifier(dataPath, true);
+% Se sono presenti le sottocartelle con gli stessi nomi dei classificatori
+% allora bisogna usare una sottocartella per ogni classificatore
+if checksubdir(testPath, classifierNames)
+    % Decodicia del classificatore finale senza l'applicazione dell'offset
+    % Ogni cartella, infatti, deve contenere frame di allenamento della
+    % dimensione del classificatore forte
+    finalClassifier = decodeFinalClassifier(dataPath, true);
+else
+    finalClassifier = decodeFinalClassifier(dataPath);
+end
 
 % estrazione dei frames
 samples = struct();
 frames = struct();
 labels = struct();
-for i = [1:length(classifierNames)]
-    % Decodifica del dataset
-    samples = setfield(samples,...
-    classifierNames{i},...
-    getFrames(fullfile(testPath, classifierNames{i})));
-    [f, l] = readFramesAndLabels(getfield(samples, classifierNames{i}),...
-    finalClassifier.scaleFactor,...
-    finalClassifier.floorValue);
-    frames = setfield(frames, classifierNames{i}, f);
-    labels = setfield(labels, classifierNames{i}, l);
+
+% Estrazione dei frame
+for name = classifierNames
+    samples = setfield(samples, name, getFrames(fullfile(testPath, name)));
+    [f, l] = readFramesAndLabels(getfield(samples, name),...
+        finalClassifier.scaleFactor, finalClassifier.floorValue);
+    frames = setfield(frames, name, f);
+    labels = setfield(labels, name, l);
 end
 
 % Valutazione delle soglie
 thresholds = [0 : 0.01 : 1];
-accuracy = struct();
-sensitivity = struct();
-specificity = struct();
-
 data = struct();
-
 tic;
-for i = [1:length(classifierNames)]
-    [acc, tpr, tnr, mcc] = evaluateThresholds(getfield(finalClassifier, classifierNames{i}),...
-    getfield(frames, classifierNames{i}),...
-    getfield(labels, classifierNames{i}),...
-    thresholds);
+for name = classifierNames
+    [acc, tpr, tnr, mcc] = evaluateThresholds(getfield(finalClassifier, name),...
+        getfield(frames, name), getfield(labels, name), thresholds);
     d = struct('thresholds', thresholds,...
-    'accuracy', acc,...
-    'sensitivity', tpr,...
-    'specificity', tnr,...
-    'mcc', mcc);
-    data = setfield(data, classifierNames{i}, d);
-    encodeThresholdEval(fullfile(dataPath, classifierNames{i}),...
-    getfield(data, classifierNames{i}));
+        'accuracy', acc,...
+        'sensitivity', tpr,...
+        'specificity', tnr,...
+        'mcc', mcc);
+    data = setfield(data, name, d);
+    encodeThresholdEval(fullfile(dataPath, name), getfield(data, name));
 end
 toc;
 
+% Estrazione della coppia soglia-numero di classificatori deboli
+% che massimizza il parametro mcc
 tuneStrongClassifier(dataPath);
+% massimizzazione dell'accuracy
+% tuneStrongClassifier(dataPath, 'accuracy');

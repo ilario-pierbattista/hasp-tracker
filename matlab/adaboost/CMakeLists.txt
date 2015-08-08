@@ -1,3 +1,5 @@
+add_compile_options(-largeArrayDims)
+
 matlab_add_mex(
     NAME get_features
     SRC get_features.cxx
@@ -26,3 +28,4 @@ matlab_add_mex(
     SRC weak_classify_samples.cxx
     LINK_TO mexutils
 )
+

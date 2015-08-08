@@ -6,29 +6,22 @@ T = 200;
 floorValue = KINECT_V2_FLOOR_VALUE;
 
 % dimensioni minime delle features
-fmin = [
-    2 4;
-    4 2;
-    2 6;
-    6 2
-];
-% step incremento delle features
-fstep = [
-    1 2;
-    2 1;
-    1 3;
-    3 1
-];
-
-% Altre configurazioni di gruppi di features
+%fmin = [2 4; 4 2; 2 6; 6 2];
 fmin = [4 8; 8 4; 4 12; 12 4];
-% fstep = [1 2; 2 1; 1 3; 3 1];
-fstep = [2 2; 2 2; 2 3; 3 2];
+%fmin = [8 8; 8 8; 8 12; 12 8];
 
+% step incremento delle features
+%fstep = [1 2; 2 1; 1 3; 3 1];
+%fstep = [1 2; 2 1; 1 3; 3 1];
+fstep = [2 2; 2 2; 2 3; 3 2];
+%fstep = [2 4; 4 2; 2 6; 6 2];
+%fstep = [4 4; 4 4; 4 6; 6 4];
+
+%scaleFactor = 2;
 scaleFactor = 4;
 
 % Nomi delle cartelle per i risultati
-folder = strcat('strong_classifier_',datestr(now, 'DD-mmm-YYYY_HH-MM-SS'));
+folder = strcat('strong_classifier_',datestr(now, 'DDmmmYYYYHHMMSS'));
 folderx = fullfile(folder, 'x');
 foldery = fullfile(folder, 'y');
 foldero1 = fullfile(folder, 'o1');
