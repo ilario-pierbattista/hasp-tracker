@@ -36,6 +36,13 @@ vector<bool> getLabels(const mxArray *input);
 vector<double> getWeights(const mxArray *input);
 
 /**
+ * readImage
+ * input: puntatore alla matrice dell'immagine
+ */
+Image* readImage(const mxArray *input);
+void readImage(const mxArray *input, Image *image);
+
+/**
  * allocateSamples
  * input: dati delle immagini d'allenamento
  * labels: vettore delle etichette

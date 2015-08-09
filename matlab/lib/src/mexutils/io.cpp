@@ -37,6 +37,21 @@ vector<double> getWeights(const mxArray *input) {
     return weights;
 }
 
+Image *readImage(const mxArray* input) {
+    Image *img = new Image();
+    readImage(input, img);
+    return img;
+}
+
+void readImage(const mxArray* input, Image* image) {
+    const size_t *size;
+    size = mxGetDimensions(input);
+    image->setHeight((unsigned int) size[0]);
+    image->setWidth((unsigned int) size[1]);
+    image->setImage(mxGetPr(input));
+}
+
+
 vector<Sample *> allocateSamples(const mxArray *input,
                                  vector<bool> labels,
                                  vector<double> weights) {

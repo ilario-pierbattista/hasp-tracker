@@ -15,6 +15,7 @@ framesPath = choosesubdir(framesPath);
 % Inserimento della dimensione dei frames
 width = inputdef('Larghezza [%d]: ', 512);
 height = inputdef('Altezza [%d]: ', 424);
+framestep = inputdef('Intervallo con cui analizzare i frame [%d]: ', 20);
 
 % Estrazione delle path di tutti i frames
 framesFiles = getFramesPath(framesPath);
@@ -26,31 +27,42 @@ finalClassifier = decodeFinalClassifier(classifierPath);
 windowHeight = finalClassifier.windowSize.height / finalClassifier.scaleFactor;
 windowWidth = finalClassifier.windowSize.width / finalClassifier.scaleFactor;
 
-framestep = inputdef('Intervallo con cui analizzare i frame [%d]: ', 20);
 
 % Lettura e preprocessing dei file
 rectangles = [];
-figure;
+integralRectangles = [];
+f1 = figure;
 im1 = imagesc();
-for i = [1:frameStep:length(framesFiles)]
+f2 = figure;
+im2 = imagesc();
+for i = [1:framestep:length(framesFiles)]
     tic;
     frame = readImageData(char(framesFiles{i}), width, height, 16);
     processedFrame = preprocessImage(frame,...
         finalClassifier.scaleFactor,...
         finalClassifier.floorValue);
+    scaledFrame = scale_image(frame, finalClassifier.scaleFactor);
+
     [x, y] = detectHuman(processedFrame, finalClassifier, windowWidth, windowHeight);
-    for j = [1:length(rectangles)]
-        delete(rectangles(j));
-    end
-    rectangles = [];
+
+    destroyrectangles(f1, rectangles);
+    destroyrectangles(f2, integralRectangles);
+
+    figure(f1);
     im1.CData = frame;
     title(strcat('Frame: ', num2str(i)));
-    for j = [1:length(x)]
-        % Ritorno alle dimensioni normali
-        rectbox = [x(j) y(j) windowWidth windowHeight] * finalClassifier.scaleFactor;
-        r = rectangle('Position', rectbox, 'EdgeColor', 'y');
-        rectangles = [rectangles; r];
-    end
+    truesize(f1);
+
+    figure(f2);
+    im2.CData = scaledFrame;
+    title(strcat('Frame: ', num2str(i)));
+    truesize(f2);
+
+    rectbox = [x y repmat(windowWidth, length(x), 1) repmat(windowHeight, length(x), 1)];
+    integralRectangles = drawrectangles(f2, rectbox, 'k');
+
+    rectbox = rectbox * finalClassifier.scaleFactor;
+    rectangles = drawrectangles(f1, rectbox, 'y');
     drawnow;
     toc;
 end
