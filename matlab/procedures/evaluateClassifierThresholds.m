@@ -10,11 +10,7 @@ DEFAULT_TESTING_SET = 'DB1';
 % Input della path del classificatore
 dataPath = input('Path del classificatore forte: ', 's');
 % Input della path del dataset di testing
-promptStr = sprintf('Path del dataset di allenamento [%s]: ', DEFAULT_TESTING_SET);
-testPath = input(promptStr, 's');
-if isempty(testPath)
-    testPath = getenv(DEFAULT_TESTING_SET);
-end
+testPath = inputdef('Path del dataset di testing [%s]: ', DEFAULT_TESTING_SET, 's');
 testPath = checkisdir(testPath);
 if testPath == false;
     error('Path di testing non valida');
@@ -22,7 +18,7 @@ end
 
 % Se sono presenti le sottocartelle con gli stessi nomi dei classificatori
 % allora bisogna usare una sottocartella per ogni classificatore
-if checksubdir(testPath, classifierNames)
+if checksubdirs(testPath, classifierNames)
     % Decodicia del classificatore finale senza l'applicazione dell'offset
     % Ogni cartella, infatti, deve contenere frame di allenamento della
     % dimensione del classificatore forte

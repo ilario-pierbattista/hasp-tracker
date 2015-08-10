@@ -5,6 +5,7 @@ function presence = checksubdirs(baseDir, dirs);
 
     presence = true;
     for subdir = dirs
+        subdir
         [fullpath, isdirectory] = checkpath(fullfile(baseDir, subdir));
         if isempty(fullpath) || ~isdirectory
             presence = false;
