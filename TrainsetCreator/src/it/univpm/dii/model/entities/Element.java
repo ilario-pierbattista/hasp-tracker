@@ -9,6 +9,8 @@ public class Element {
     private String fileName;
     private int width;
     private int height;
+    private int x;
+    private int y;
     private boolean positive;
 
     public int getId() {
@@ -53,6 +55,24 @@ public class Element {
 
     public Element setPositive(boolean positive) {
         this.positive = positive;
+        return this;
+    }
+
+    public int getX() {
+        return x;
+    }
+
+    public Element setX(int x) {
+        this.x = x;
+        return this;
+    }
+
+    public int getY() {
+        return y;
+    }
+
+    public Element setY(int y) {
+        this.y = y;
         return this;
     }
 

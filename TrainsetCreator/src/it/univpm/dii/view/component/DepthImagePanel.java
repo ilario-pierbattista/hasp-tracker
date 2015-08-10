@@ -7,6 +7,7 @@ import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
+import java.awt.geom.Line2D;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.util.ArrayList;
@@ -117,11 +118,12 @@ public class DepthImagePanel extends JPanel implements MouseListener, MouseMotio
 
     /**
      * Salva la porzione selezionata
+     *
      * @param out File dove salvare l'immagine
      * @return Istanza corrente di DepthImagePanel
      */
     public DepthImagePanel cropAndSave(File out) {
-        if(rectangle != null) {
+        if (rectangle != null) {
             try {
                 depthImage.crop(rectangle.x, rectangle.y, rectangle.width, rectangle.height);
                 depthImage.save(out);
@@ -299,7 +301,7 @@ public class DepthImagePanel extends JPanel implements MouseListener, MouseMotio
 
     @Override
     protected void paintComponent(Graphics g) {
-        if(this.mode == MODE_PREVIEW) { // Serve a cancellare l'immagine disegnata in precedenza
+        if (this.mode == MODE_PREVIEW) { // Serve a cancellare l'immagine disegnata in precedenza
             g.setColor(getBackground());
             g.fillRect(0, 0, getWidth(), getHeight());
         }
@@ -308,12 +310,10 @@ public class DepthImagePanel extends JPanel implements MouseListener, MouseMotio
 
         /* Painting del rettangolo durante la selezione dell'area */
         if (rectangle == null && startPt != null && currentPt != null) {
-            g.setColor(DRAWING_COLOR);
             Rectangle r = generateRectangle(startPt, currentPt);
-            g.drawRect(r.x, r.y, r.width, r.height);
+            drawRectangle(g, r, DRAWING_COLOR);
         } else if (rectangle != null) {
-            g.setColor(BORDER_COLOR);
-            g.drawRect(rectangle.x, rectangle.y, rectangle.width, rectangle.height);
+            drawRectangle(g, rectangle, BORDER_COLOR);
         }
     }
 
@@ -330,6 +330,23 @@ public class DepthImagePanel extends JPanel implements MouseListener, MouseMotio
         int height = Math.abs(sp.y - ep.y);
         r.setBounds(x, y, width, height);
         return r;
+    }
+
+    /**
+     * Disegna un rettangolo con griglia
+     *
+     * @param g     Componente grafico su cui disegnare il rettangolo
+     * @param r     Rettangolo
+     * @param color Colore dei bordi del rettangolo
+     */
+    private void drawRectangle(Graphics g, Rectangle r, Color color) {
+        int midx, midy;
+        midx = r.x + (r.width / 2);
+        midy = r.y + (r.height / 2);
+        g.setColor(color);
+        g.drawRect(r.x, r.y, r.width, r.height);
+        g.drawLine(r.x, midy, (int) r.getMaxX(), midy);
+        g.drawLine(midx, r.y, midx, (int) r.getMaxY());
     }
 
     /**
