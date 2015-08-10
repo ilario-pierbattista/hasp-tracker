@@ -141,8 +141,7 @@ public class DatasetManager {
     }
 
     public DatasetManager changePositive(Element e, boolean newVal)
-            throws IOException
-    {
+            throws IOException {
         try {
             File oldFile = new File(e.getFileName()), targetFile;
             trainSet.changePositiveness(e, newVal);
@@ -209,6 +208,8 @@ public class DatasetManager {
                 "_" + e.getWidth() +
                 "_" + e.getHeight() +
                 "_" + Boolean.toString(e.isPositive()) +
+                "_" + e.getX() +
+                "_" + e.getY() +
                 ".bin";
         if (e.isPositive()) {
             e.setFileName(new File(positivesDir, filename).getAbsolutePath());

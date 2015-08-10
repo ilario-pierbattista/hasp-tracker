@@ -99,7 +99,7 @@ public class AddFrameController {
             }
             saveCropPreference(cropW, cropH);
         } catch (NumberFormatException ee) {
-            cropH = 0;  // Giusto per essere più certi della morte
+            cropH = 0;
             cropW = 0;
         } finally {
             view.getImagePanel().setRectangleDimensions(cropW, cropH)
@@ -139,27 +139,27 @@ public class AddFrameController {
                 DepthImage initDeptImage = new DepthImage(frames[0], width, height);
                 view = new AddFrameView(initDeptImage, frames, width, height);
                 setCropPreference();
-                // Action listeners
-                view.getHandfreeCheckbox().addActionListener(new HandFreeSelectionCheckedAction());
-                view.getSquareCheckbox().addActionListener(new SquareSelectionCheckedAction());
-                DimCropChangeAction action = new DimCropChangeAction();
-                view.getCropHeight().addPropertyChangeListener("value", action);
-                view.getCropWidth().addPropertyChangeListener("value", action);
-                view.getFineButton().addActionListener(new FineAction());
-                view.getAggiungiButton().addActionListener(new SalvaAction());
-                view.getFastNegsCheck().addActionListener(new FastNegativesCheckedAction());
-                view.getImagePanel().addMouseWheelListener(new FrameMouseWheelListener(view));
+                addListernes();
                 // Kyestrokes
                 view.getAggiungiButton().setMnemonic(KeyEvent.VK_A);
                 // Visualizzazione
                 view.setVisible(true);
-                addListernes();
             } catch (IOException ee) {
                 ee.printStackTrace();
             }
         }
 
         private void addListernes() {
+            view.getHandfreeCheckbox().addActionListener(new HandFreeSelectionCheckedAction());
+            view.getSquareCheckbox().addActionListener(new SquareSelectionCheckedAction());
+            view.getCropHeight().addPropertyChangeListener(
+                    "value", new DimCropChangeAction());
+            view.getCropWidth().addPropertyChangeListener(
+                    "value", new DimCropChangeAction());
+            view.getFineButton().addActionListener(new FineAction());
+            view.getAggiungiButton().addActionListener(new SalvaAction());
+            view.getFastNegsCheck().addActionListener(new FastNegativesCheckedAction());
+            view.getImagePanel().addMouseWheelListener(new FrameMouseWheelListener(view));
             view.getSlider().addChangeListener(new SliderChangedAction());
         }
     }

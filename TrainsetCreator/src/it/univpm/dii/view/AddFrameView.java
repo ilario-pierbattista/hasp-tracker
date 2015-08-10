@@ -58,7 +58,9 @@ public class AddFrameView extends View {
         Element e = new Element();
         e.setPositive(this.humanCheckbox.isSelected())
                 .setWidth(imagePanel.getRectangle().width)
-                .setHeight(imagePanel.getRectangle().height);
+                .setHeight(imagePanel.getRectangle().height)
+                .setX(imagePanel.getRectangle().x)
+                .setY(imagePanel.getRectangle().y);
         return e;
     }
 
