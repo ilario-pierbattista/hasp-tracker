@@ -291,7 +291,7 @@ public class MainController {
                 view.removeElement(element);
             } catch (NoSuchFileException ee) {
                 JOptionPane.showMessageDialog(view.frame,
-                        "Nessun file trovato: "+ee.getMessage(),
+                        "Nessun file trovato: " + ee.getMessage(),
                         ee.getClass().getName(),
                         JOptionPane.ERROR_MESSAGE);
             } catch (IOException ee) {

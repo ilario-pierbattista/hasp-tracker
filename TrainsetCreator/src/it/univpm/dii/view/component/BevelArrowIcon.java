@@ -82,7 +82,7 @@ public class BevelArrowIcon implements Icon {
 
     private void drawDownArrow(Graphics g, int x0, int y0) {
         g.setColor(edge1);
-        int[] X = {x0, x0 + DEFAULT_SIZE, x0 + DEFAULT_SIZE/2};
+        int[] X = {x0, x0 + DEFAULT_SIZE, x0 + DEFAULT_SIZE / 2};
         int[] Y = {y0, y0, y0 + DEFAULT_SIZE};
         Polygon arrow = new Polygon(X, Y, X.length);
         g.drawPolygon(arrow);
@@ -91,7 +91,7 @@ public class BevelArrowIcon implements Icon {
 
     private void drawUpArrow(Graphics g, int x0, int y0) {
         g.setColor(edge1);
-        int[] X = {x0, x0 + DEFAULT_SIZE, x0 + DEFAULT_SIZE/2};
+        int[] X = {x0, x0 + DEFAULT_SIZE, x0 + DEFAULT_SIZE / 2};
         int[] Y = {y0 + DEFAULT_SIZE, y0 + DEFAULT_SIZE, y0};
         Polygon arrow = new Polygon(X, Y, X.length);
         g.drawPolygon(arrow);

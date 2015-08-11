@@ -66,6 +66,9 @@ public class MainFrame extends View {
         }
     }
 
+    /**
+     * Crea la barra del menu
+     */
     private void createMenuBar() {
         menuBar = new JMenuBar();
 
@@ -90,7 +93,7 @@ public class MainFrame extends View {
 
     private void createMenu() {
         menus.add("file", new JMenu("File"));
-        //.add("insert", new JMenu("Inserisci"));
+        menus.add("export", new JMenu("Esporta"));
     }
 
     private void createMenuItems() {
@@ -108,10 +111,9 @@ public class MainFrame extends View {
         JMenu file_recent = new JMenu("Aperti di recente");
         menuItems.add("file_recent", file_recent);
 
-        /* Salva il set */
-        JMenuItem file_save = new JMenuItem("Salva");
-        file_save.setAccelerator(KeyStroke.getKeyStroke('S', Toolkit.getDefaultToolkit().getMenuShortcutKeyMask()));
-        menuItems.add("file_save", file_save);
+        /* Resize set */
+        JMenu resize = new JMenu("Resize");
+        menuItems.add("export_resize", resize);
     }
 
     private String getMenuFromMenuItemKey(String mikey) {
@@ -125,6 +127,11 @@ public class MainFrame extends View {
         return key;
     }
 
+    /**
+     * Imposta la path del dataset corrente
+     *
+     * @param path Path del dataset
+     */
     public void setDatasetPath(File path) {
         if (path == null) {
             aggiungiButton.setEnabled(false);
@@ -147,6 +154,11 @@ public class MainFrame extends View {
         modificaButton.setEnabled(enable);
     }
 
+    /**
+     * Imposta la lista dei dataset utilizzati più di recente nella lista del menu
+     *
+     * @param paths Path dei dataset utilizzati di recente
+     */
     public void setRecents(ArrayList<File> paths) {
         JMenuItem item;
         JMenu recent = (JMenu) menuItems.get("file_recent");
@@ -187,20 +199,30 @@ public class MainFrame extends View {
         previewImagePanel.setDepthImage(depthImage);
     }
 
+    /**
+     * Aggiunge un elemento appena inserito nel dataset alla vista principale
+     *
+     * @param element Elemento da inserire
+     */
     public void addElement(Element element) {
         ElementModel model = (ElementModel) this.sampleTable.getModel();
         model.addElement(element);
-        if(element.isPositive()) {
+        if (element.isPositive()) {
             setPositiveSamplesNumber(getPositiveSamplesNumber() + 1);
         } else {
             setNegativeSamplesNumber(getNegativeSamplesNumber() + 1);
         }
     }
 
+    /**
+     * Rimuove un elemento del dataset dalla vista principale
+     *
+     * @param element Elemento da rimuovere
+     */
     public void removeElement(Element element) {
         ElementModel model = (ElementModel) this.sampleTable.getModel();
         model.removeElement(element);
-        if(element.isPositive()) {
+        if (element.isPositive()) {
             setPositiveSamplesNumber(getPositiveSamplesNumber() - 1);
         } else {
             setNegativeSamplesNumber(getNegativeSamplesNumber() - 1);

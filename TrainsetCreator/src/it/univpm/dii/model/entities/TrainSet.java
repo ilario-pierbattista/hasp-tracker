@@ -30,7 +30,7 @@ public class TrainSet {
      * @return
      */
     public TrainSet add(Element e) {
-        if(e == null) {
+        if (e == null) {
             return this;
         } else if (e.isPositive()) {
             positives.add(e);
@@ -41,7 +41,7 @@ public class TrainSet {
     }
 
     public TrainSet changePositiveness(Element element, boolean newVal) {
-        if(element.isPositive()) {
+        if (element.isPositive()) {
             positives.removeIf(new ElementEqualityPredicate(element));
         } else {
             negatives.removeIf(new ElementEqualityPredicate(element));
@@ -52,7 +52,7 @@ public class TrainSet {
     }
 
     public TrainSet remove(Element e) {
-        if(e.isPositive()) {
+        if (e.isPositive()) {
             positives.removeIf(new ElementEqualityPredicate(e));
         } else {
             negatives.removeIf(new ElementEqualityPredicate(e));

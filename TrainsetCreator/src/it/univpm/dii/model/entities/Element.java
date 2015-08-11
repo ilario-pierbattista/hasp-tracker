@@ -77,7 +77,7 @@ public class Element {
     }
 
     public boolean equals(Element obj) {
-        if(this == obj) {
+        if (this == obj) {
             return true;
         } else if (this.id == obj.getId()) {
             return true;

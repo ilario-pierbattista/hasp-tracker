@@ -78,6 +78,7 @@ public class AddFrameController {
 
     /**
      * Salva le ultime dimensioni usate per il crop
+     *
      * @param w Larghezza
      * @param h Altezza
      */
@@ -200,7 +201,7 @@ public class AddFrameController {
             JCheckBox b = (JCheckBox) e.getSource();
             if (b.isSelected()) {
                 String dim = view.getCropHeight().getText();
-                if(dim.isEmpty()) {
+                if (dim.isEmpty()) {
                     dim = view.getCropWidth().getText();
                 }
                 view.setSquareCropArea(dim);
@@ -254,7 +255,7 @@ public class AddFrameController {
         @Override
         public void actionPerformed(ActionEvent e) {
             JCheckBox b = (JCheckBox) e.getSource();
-            if(b.isSelected()) {
+            if (b.isSelected()) {
                 // Attivato
                 view.getHumanCheckbox().setSelected(false);
                 view.getHumanCheckbox().setEnabled(false);

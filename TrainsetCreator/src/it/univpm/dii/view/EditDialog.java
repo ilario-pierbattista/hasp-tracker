@@ -80,9 +80,9 @@ public class EditDialog extends JDialog {
         }
 
         private void mutualExclusion(ChangeEvent e) {
-            if(e.getSource() == positivoRadioButton) {
+            if (e.getSource() == positivoRadioButton) {
                 negativoRadioButton.setSelected(!positivoRadioButton.isSelected());
-            } else if(e.getSource() == negativoRadioButton) {
+            } else if (e.getSource() == negativoRadioButton) {
                 positivoRadioButton.setSelected(!negativoRadioButton.isSelected());
             }
         }

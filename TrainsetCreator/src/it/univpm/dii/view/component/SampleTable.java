@@ -39,7 +39,7 @@ public class SampleTable extends JTable {
             super();
             this.header = header;
             this.renderer = renderer;
-            this.model = ((ElementModel)header.getTable().getModel());
+            this.model = ((ElementModel) header.getTable().getModel());
         }
 
         public void mousePressed(MouseEvent e) {
@@ -54,7 +54,7 @@ public class SampleTable extends JTable {
             }
 
             boolean isAscent = SortButtonRenderer.DOWN == renderer.getState(col);
-            if(model.isDataSetted()) {
+            if (model.isDataSetted()) {
                 model.sortByColumn(sortCol, isAscent);
             }
         }

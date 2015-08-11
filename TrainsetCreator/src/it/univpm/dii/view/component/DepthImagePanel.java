@@ -1,17 +1,14 @@
 package it.univpm.dii.view.component;
 
 import it.univpm.dii.service.DepthImage;
-import org.w3c.dom.css.Rect;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
-import java.awt.geom.Line2D;
 import java.awt.image.BufferedImage;
 import java.io.File;
-import java.util.ArrayList;
 
 /**
  * Created by ilario
@@ -174,7 +171,7 @@ public class DepthImagePanel extends JPanel implements MouseListener, MouseMotio
         if (rectangle != null) {
             try {
                 depthImage.crop(rectangle.x, rectangle.y, rectangle.width, rectangle.height);
-                depthImage.save(out);
+                depthImage.saveCrop(out);
             } catch (Exception ee) {
                 ee.printStackTrace();
             }

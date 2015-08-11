@@ -1,7 +1,5 @@
 package it.univpm.dii.service;
 
-import javafx.scene.transform.Affine;
-
 import java.awt.*;
 import java.awt.geom.AffineTransform;
 import java.awt.image.AffineTransformOp;
@@ -20,14 +18,15 @@ public class DepthImage {
 
     private BufferedImage image;
     private byte[] binaryImage, cropped;
+    protected static final int COLOR_DEPTH = 2;
 
     public DepthImage(File depth, int width, int height)
             throws IOException {
         /* Apertura del file */
-        binaryImage = new byte[2 * width * height];
+        binaryImage = new byte[COLOR_DEPTH * width * height];
         FileInputStream fis = new FileInputStream(depth.getAbsolutePath());
         // Lettura del file
-        fis.read(binaryImage, 0, 2 * width * height);
+        fis.read(binaryImage, 0, COLOR_DEPTH * width * height);
 
         /* creazione dell'immagine */
         image = new BufferedImage(width, height, BufferedImage.TYPE_USHORT_GRAY);
@@ -39,11 +38,11 @@ public class DepthImage {
         int pixelValue;
         byte b1, b2;
         for (int i = 0; i < height; i++) {
-            for (int j = 0; j < 2 * width; j += 2) {
-                b1 = binaryImage[i * 2 * width + j];
-                b2 = binaryImage[i * 2 * width + j + 1];
+            for (int j = 0; j < COLOR_DEPTH * width; j += COLOR_DEPTH) {
+                b1 = binaryImage[i * COLOR_DEPTH * width + j];
+                b2 = binaryImage[i * COLOR_DEPTH * width + j + 1];
                 pixelValue = (int) (b1 << 8) | b2;
-                raster.setSample(j / 2, i, 0, pixelValue);
+                raster.setSample(j / COLOR_DEPTH, i, 0, pixelValue);
             }
         }
 
@@ -56,22 +55,22 @@ public class DepthImage {
     /**
      * Ritaglia un pezzo d'immagine
      *
-     * @param x
-     * @param y
-     * @param width
-     * @param height
-     * @return
+     * @param x      Ascissa del punto in alto a sinistra.
+     * @param y      Ordinata del punto in alto a sinistra.
+     * @param width  Larghezza dell'area.
+     * @param height Altezza dell'area.
+     * @return Istanza di {@link DepthImage}.
      */
     public DepthImage crop(int x, int y, int width, int height) {
         /* L'immagine è a 16 bit. Per la porzione di frame estratta sono necessari
          * 2 byte per ogni pixel, ed è composta da width * height pixel in totale
          */
-        cropped = new byte[2 * width * height];
+        cropped = new byte[COLOR_DEPTH * width * height];
         System.out.println(width + " " + height);
         int k = 0, imageWidth = image.getWidth();
         for (int i = y; i < y + height; i++) {
-            for (int j = x * 2; j < (x + width) * 2; j++) {
-                cropped[k++] = binaryImage[i * 2 * imageWidth + j];
+            for (int j = x * COLOR_DEPTH; j < (x + width) * COLOR_DEPTH; j++) {
+                cropped[k++] = binaryImage[i * COLOR_DEPTH * imageWidth + j];
             }
         }
         return this;
@@ -80,11 +79,11 @@ public class DepthImage {
     /**
      * Salva l'immagine croppata
      *
-     * @param filename
-     * @return
+     * @param filename File di destinazione
+     * @return Istanza di {@link DepthImage} per il method chaining
      * @throws Exception
      */
-    public DepthImage save(File filename) throws Exception {
+    public DepthImage saveCrop(File filename) throws Exception {
         try {
             FileOutputStream fos = new FileOutputStream(filename.getAbsolutePath());
             fos.write(cropped, 0, cropped.length);
