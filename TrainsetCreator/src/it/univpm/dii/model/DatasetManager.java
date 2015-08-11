@@ -186,13 +186,15 @@ public class DatasetManager {
         }
         // Analisi del nome del file (senza l'estensione)
         String[] parts = fileNameParts[0].split("_");
-        if (parts.length == 5) {
+        if (parts.length == 7) {
             e = new Element();
             e.setFileName(file.getAbsolutePath())
                     .setId(Integer.parseInt(parts[1]))
                     .setWidth(Integer.parseInt(parts[2]))
                     .setHeight(Integer.parseInt(parts[3]))
-                    .setPositive(Boolean.parseBoolean(parts[4]));
+                    .setPositive(Boolean.parseBoolean(parts[4]))
+                    .setX(Integer.parseInt(parts[5]))
+                    .setY(Integer.parseInt(parts[6]));
         }
         return e;
     }

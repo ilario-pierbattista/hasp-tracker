@@ -151,7 +151,7 @@ public class MainFrame extends View {
         JMenuItem item;
         JMenu recent = (JMenu) menuItems.get("file_recent");
         recent.removeAll();
-        if(paths.size() > 0) {
+        if (paths.size() > 0) {
             for (File path : paths) {
                 item = new JMenuItem(path.getAbsolutePath());
                 recent.add(item);
@@ -165,6 +165,7 @@ public class MainFrame extends View {
 
     /**
      * Restituisce l'elemento selezionato
+     *
      * @return Elemento selezionato
      */
     public Element getSelectedElement() {
@@ -174,6 +175,7 @@ public class MainFrame extends View {
 
     /**
      * Aggiorna il pannello della preview
+     *
      * @param e Elemento di cui mostrare la preview
      * @throws IOException
      */
@@ -188,11 +190,21 @@ public class MainFrame extends View {
     public void addElement(Element element) {
         ElementModel model = (ElementModel) this.sampleTable.getModel();
         model.addElement(element);
+        if(element.isPositive()) {
+            setPositiveSamplesNumber(getPositiveSamplesNumber() + 1);
+        } else {
+            setNegativeSamplesNumber(getNegativeSamplesNumber() + 1);
+        }
     }
 
     public void removeElement(Element element) {
         ElementModel model = (ElementModel) this.sampleTable.getModel();
         model.removeElement(element);
+        if(element.isPositive()) {
+            setPositiveSamplesNumber(getPositiveSamplesNumber() - 1);
+        } else {
+            setNegativeSamplesNumber(getNegativeSamplesNumber() - 1);
+        }
     }
 
     public void updateElement(Element element) {
@@ -242,5 +254,23 @@ public class MainFrame extends View {
 
     public static MainFrame getInstance() {
         return instance;
+    }
+
+    private int getPositiveSamplesNumber() {
+        return Integer.parseInt(posNumLabel.getText());
+    }
+
+    private MainFrame setPositiveSamplesNumber(int n) {
+        posNumLabel.setText(Integer.toString(n));
+        return this;
+    }
+
+    private int getNegativeSamplesNumber() {
+        return Integer.parseInt(negNumLabel.getText());
+    }
+
+    private MainFrame setNegativeSamplesNumber(int n) {
+        negNumLabel.setText(Integer.toString(n));
+        return this;
     }
 }

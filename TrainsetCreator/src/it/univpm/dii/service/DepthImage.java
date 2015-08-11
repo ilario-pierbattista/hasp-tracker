@@ -1,6 +1,10 @@
 package it.univpm.dii.service;
 
+import javafx.scene.transform.Affine;
+
 import java.awt.*;
+import java.awt.geom.AffineTransform;
+import java.awt.image.AffineTransformOp;
 import java.awt.image.BufferedImage;
 import java.awt.image.WritableRaster;
 import java.io.File;
@@ -51,6 +55,7 @@ public class DepthImage {
 
     /**
      * Ritaglia un pezzo d'immagine
+     *
      * @param x
      * @param y
      * @param width
@@ -65,7 +70,7 @@ public class DepthImage {
         System.out.println(width + " " + height);
         int k = 0, imageWidth = image.getWidth();
         for (int i = y; i < y + height; i++) {
-            for (int j = x*2; j < (x + width) * 2; j++) {
+            for (int j = x * 2; j < (x + width) * 2; j++) {
                 cropped[k++] = binaryImage[i * 2 * imageWidth + j];
             }
         }
@@ -74,6 +79,7 @@ public class DepthImage {
 
     /**
      * Salva l'immagine croppata
+     *
      * @param filename
      * @return
      * @throws Exception
@@ -89,7 +95,45 @@ public class DepthImage {
         return this;
     }
 
+    /**
+     * Esegue un flip dell'immagine rispetto l'asse x
+     *
+     * @return Oggetto DepthImage
+     */
+    public DepthImage flipVertical() {
+        AffineTransform af = new AffineTransform();
+        af.concatenate(AffineTransform.getScaleInstance(1, -1));
+        af.concatenate(AffineTransform.getTranslateInstance(0, -image.getHeight()));
+        performTransformation(af);
+        return this;
+    }
+
+    /**
+     * Esegue un flip rispetto l'asse y
+     *
+     * @return Oggetto DepthImage
+     */
+    public DepthImage flipHorizontal() {
+        AffineTransform af = new AffineTransform();
+        af.concatenate(AffineTransform.getScaleInstance(-1, 1));
+        af.concatenate(AffineTransform.getTranslateInstance(-image.getWidth(), 0));
+        performTransformation(af);
+        return this;
+    }
+
     public BufferedImage getImage() {
         return image;
+    }
+
+    /**
+     * Esegue le operazioni descritte in una trasformazione affine
+     *
+     * @param af Oggetto della trasformazione affine
+     * @return Oggetto DepthImage
+     */
+    private DepthImage performTransformation(AffineTransform af) {
+        AffineTransformOp op = new AffineTransformOp(af, AffineTransformOp.TYPE_BILINEAR);
+        this.image = op.filter(this.image, null);
+        return this;
     }
 }

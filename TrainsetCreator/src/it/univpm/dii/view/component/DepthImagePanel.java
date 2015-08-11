@@ -1,6 +1,7 @@
 package it.univpm.dii.view.component;
 
 import it.univpm.dii.service.DepthImage;
+import org.w3c.dom.css.Rect;
 
 import javax.swing.*;
 import java.awt.*;
@@ -21,11 +22,11 @@ public class DepthImagePanel extends JPanel implements MouseListener, MouseMotio
     private BufferedImage image;
     private Point startPt, endPt, currentPt, offsetPt;
     private Rectangle rectangle;
-    private ArrayList<Rectangle> fastRectangles;
     private int rWidth, rHeight, resize;
-    private int mode;
+    private int mode, flipDirection = DISABLE_FLIP;
     public static final Color BORDER_COLOR = Color.BLUE;
     public static final Color DRAWING_COLOR = Color.GREEN;
+    public static final Color GRID_COLOR = Color.RED;
     public static final int MVPX = 10;
     public static final int N_RESIZE = 0;
     public static final int NE_RESIZE = 1;
@@ -38,12 +39,27 @@ public class DepthImagePanel extends JPanel implements MouseListener, MouseMotio
     public static final int DO_NOT_RESIZE = 8;
     public static final int MODE_PREVIEW = 0;
     public static final int MODE_CROP = 1;
+    public static final int DISABLE_FLIP = 0;
+    public static final int X_FLIP = 1;
+    public static final int Y_FLIP = 2;
 
+    /**
+     * Costruisce il componente senza impostarne l'immagine
+     *
+     * @param mode Modalità. Valori ammessi MODE_CROP e MODE_PREVIEW.
+     */
     public DepthImagePanel(int mode) {
         this.mode = mode;
         setListeners();
     }
 
+    /**
+     * Costruisce il componente
+     *
+     * @param depthImage Immagine da impostare
+     * @param mode       Modalità del componente. Valori ammessi MODE_PREVIEW
+     *                   e MODE_CROP
+     */
     public DepthImagePanel(DepthImage depthImage, int mode) {
         this.depthImage = depthImage;
         this.mode = mode;
@@ -52,11 +68,24 @@ public class DepthImagePanel extends JPanel implements MouseListener, MouseMotio
         setListeners();
     }
 
+    /**
+     * Costruisce il componente in modalità CROP impostando
+     * un'immagine
+     *
+     * @param depthImage Immagine
+     */
     public DepthImagePanel(DepthImage depthImage) {
         this(depthImage, MODE_CROP);
         this.mode = MODE_CROP;
     }
 
+    /**
+     * Imposta le dimensioni preferite del componente in base alla dimensione
+     * dell'immagine
+     *
+     * @param image Immagine
+     * @return Il componente stesso
+     */
     public DepthImagePanel setPreferredSize(BufferedImage image) {
         this.setPreferredSize(new Dimension(
                 image.getWidth(),
@@ -65,6 +94,9 @@ public class DepthImagePanel extends JPanel implements MouseListener, MouseMotio
         return this;
     }
 
+    /**
+     * Imposta i listeners in entrambe le modalità
+     */
     public void setListeners() {
         switch (this.mode) {
             case MODE_CROP:
@@ -95,8 +127,24 @@ public class DepthImagePanel extends JPanel implements MouseListener, MouseMotio
         return this;
     }
 
+    /**
+     * Restituisce il rettangolo disegnato
+     *
+     * @return Rettangolo
+     */
     public Rectangle getRectangle() {
         return rectangle;
+    }
+
+    /**
+     * Imposta la direzione dell'operazione di flipping
+     *
+     * @param direction Direzione.
+     * @return Componente.
+     */
+    public DepthImagePanel setFlipDirection(int direction) {
+        this.flipDirection = direction;
+        return this;
     }
 
     /**
@@ -179,7 +227,21 @@ public class DepthImagePanel extends JPanel implements MouseListener, MouseMotio
 
     @Override
     public void mouseClicked(MouseEvent e) {
-
+        if (SwingUtilities.isRightMouseButton(e)) {
+            switch (this.flipDirection) {
+                case X_FLIP:
+                    depthImage.flipVertical();
+                    image = depthImage.getImage();
+                    repaint();
+                    break;
+                case Y_FLIP:
+                    depthImage.flipHorizontal();
+                    image = depthImage.getImage();
+                    break;
+                default:
+                    break;
+            }
+        }
     }
 
     @Override
@@ -308,6 +370,10 @@ public class DepthImagePanel extends JPanel implements MouseListener, MouseMotio
 
         g.drawImage(image, 0, 0, this);
 
+        if (this.mode == MODE_CROP) {
+            drawGrid(g, GRID_COLOR);
+        }
+
         /* Painting del rettangolo durante la selezione dell'area */
         if (rectangle == null && startPt != null && currentPt != null) {
             Rectangle r = generateRectangle(startPt, currentPt);
@@ -347,6 +413,27 @@ public class DepthImagePanel extends JPanel implements MouseListener, MouseMotio
         g.drawRect(r.x, r.y, r.width, r.height);
         g.drawLine(r.x, midy, (int) r.getMaxX(), midy);
         g.drawLine(midx, r.y, midx, (int) r.getMaxY());
+    }
+
+    /**
+     * Disegna la griglia sull'immagine
+     *
+     * @param g Componente grafico
+     * @param c Colore della griglia
+     */
+    private void drawGrid(Graphics g, Color c) {
+        int midleftx, midrightx, midtopy, midbottomy;
+
+        g.setColor(c);
+        midleftx = image.getWidth() / 3;
+        midrightx = midleftx * 2;
+        midtopy = image.getHeight() / 3;
+        midbottomy = midtopy * 2;
+
+        g.drawLine(0, midtopy, image.getWidth() - 1, midtopy);
+        g.drawLine(0, midbottomy, image.getWidth() - 1, midbottomy);
+        g.drawLine(midleftx, 0, midleftx, image.getHeight() - 1);
+        g.drawLine(midrightx, 0, midrightx, image.getHeight() - 1);
     }
 
     /**

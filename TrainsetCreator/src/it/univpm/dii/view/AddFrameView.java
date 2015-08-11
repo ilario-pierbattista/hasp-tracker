@@ -1,5 +1,6 @@
 package it.univpm.dii.view;
 
+import com.sun.deploy.uitoolkit.impl.fx.DeployPerfLogger;
 import it.univpm.dii.model.entities.Element;
 import it.univpm.dii.service.DepthImage;
 import it.univpm.dii.view.component.DepthImagePanel;
@@ -28,6 +29,10 @@ public class AddFrameView extends View {
     private JCheckBox fastNegsCheck;
     private JSlider xoffset;
     private JSlider yoffset;
+    private JRadioButton xFlipRadio;
+    private JRadioButton yFlipRadio;
+    private JTextPane premereIlTastoDestroTextPane;
+    private ButtonGroup flipRadioGroup;
     private DepthImage depthImage;
     private File[] frames;
     private int current, width, height;
@@ -39,20 +44,27 @@ public class AddFrameView extends View {
         this.width = width;
         this.height = height;
         current = 0;
-        frame = new JFrame("AddFrameView");
+        frame = new JFrame("Aggiunta di frame al dataset");
         frame.setContentPane(panel);
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frame.pack();
         frame.setLocationRelativeTo(null);
         slider.setMaximum(frames.length);
         printLabelForCurrentFrame();
+
+        /**
+         * @TODO implementare, se necessario, la generazione veloce
+         * dei negativi
+         */
+        fastNegsCheck.setEnabled(false);
         xoffset.setEnabled(false);
         yoffset.setEnabled(false);
     }
 
     /**
      * Ritorna i dati immessi
-     * @return
+     *
+     * @return Nuovo elemento del dataset
      */
     public Element getData() {
         Element e = new Element();
@@ -120,8 +132,12 @@ public class AddFrameView extends View {
         this.current = current;
     }
 
-    public void setDepthImage(DepthImage depthImage) {
-        this.depthImage = depthImage;
+    public JRadioButton getxFlipRadio() {
+        return xFlipRadio;
+    }
+
+    public JRadioButton getyFlipRadio() {
+        return yFlipRadio;
     }
 
     public AddFrameView setCropWidthValue(String width) {
@@ -157,8 +173,18 @@ public class AddFrameView extends View {
         cropWidth = new JFormattedTextField(pixelFormat);
         cropHeight = new JFormattedTextField(pixelFormat);
         imagePanel = new DepthImagePanel(depthImage);
+        xFlipRadio = new JRadioButton("x");
+        xFlipRadio.setActionCommand(Integer.toString(DepthImagePanel.X_FLIP));
+        yFlipRadio = new JRadioButton("y");
+        yFlipRadio.setActionCommand(Integer.toString(DepthImagePanel.Y_FLIP));
+        flipRadioGroup = new ButtonGroup();
+        flipRadioGroup.add(xFlipRadio);
+        flipRadioGroup.add(yFlipRadio);
     }
 
+    /**
+     * Aggiornamento delle label presenti nella vista a seconda del frame in uso
+     */
     private void printLabelForCurrentFrame() {
         frameLabel.setText("Frame: " + current + "/" + frames.length);
         slider.setValue(current);

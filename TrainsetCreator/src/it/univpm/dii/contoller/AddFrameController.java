@@ -161,6 +161,10 @@ public class AddFrameController {
             view.getFastNegsCheck().addActionListener(new FastNegativesCheckedAction());
             view.getImagePanel().addMouseWheelListener(new FrameMouseWheelListener(view));
             view.getSlider().addChangeListener(new SliderChangedAction());
+
+            ChangeFlipDirectionAction cfd = new ChangeFlipDirectionAction();
+            view.getxFlipRadio().addActionListener(cfd);
+            view.getyFlipRadio().addActionListener(cfd);
         }
     }
 
@@ -228,6 +232,18 @@ public class AddFrameController {
                 view.setCropWidthValue(Integer.toString(view.getImagePanel().getRectangle().width));
             }
             updateCropDimensions();
+        }
+    }
+
+    /**
+     * Imposta la direzione del flipping dell'immagine
+     */
+    class ChangeFlipDirectionAction implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            view.getImagePanel().setFlipDirection(
+                    Integer.parseInt(e.getActionCommand())
+            );
         }
     }
 
