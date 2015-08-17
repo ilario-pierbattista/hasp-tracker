@@ -1,6 +1,6 @@
 package it.univpm.dii;
 
-import it.univpm.dii.contoller.MainController;
+import it.univpm.dii.contoller.main.MainController;
 import it.univpm.dii.view.MainFrame;
 
 import javax.swing.*;

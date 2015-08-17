@@ -39,6 +39,8 @@ public class DepthImagePanel extends JPanel implements MouseListener, MouseMotio
     public static final int DISABLE_FLIP = 0;
     public static final int X_FLIP = 1;
     public static final int Y_FLIP = 2;
+    public static final int XY_FLIP = 3;
+    public static final int YX_FLIP = 4;
 
     /**
      * Costruisce il componente senza impostarne l'immagine
@@ -227,14 +229,18 @@ public class DepthImagePanel extends JPanel implements MouseListener, MouseMotio
         if (SwingUtilities.isRightMouseButton(e)) {
             switch (this.flipDirection) {
                 case X_FLIP:
-                    depthImage.flipVertical();
+                    depthImage.flipHorizontal();
                     image = depthImage.getImage();
                     repaint();
                     break;
                 case Y_FLIP:
-                    depthImage.flipHorizontal();
+                    depthImage.flipVertical();
                     image = depthImage.getImage();
                     break;
+                case XY_FLIP:
+                    depthImage.flipVertical();
+                    depthImage.flipHorizontal();
+                    image = depthImage.getImage();
                 default:
                     break;
             }

@@ -22,10 +22,14 @@ import java.util.ArrayList;
 public class MainFrame extends View {
     private static MainFrame instance;
 
+    // Dimensioni della finestra di preview
+    private static final int PREVIEW_WIDTH = 200;
+    private static final int PREVIEW_HEIGHT = 200;
+
     private JMenuBar menuBar;
     private MenuItems menuItems;
     private Menus menus;
-    private JPanel panel1;
+    private JPanel mainPanel;
     private JTable sampleTable;
     private JButton aggiungiButton;
     private JButton eliminaButton;
@@ -40,7 +44,7 @@ public class MainFrame extends View {
         menus = new Menus();
 
         frame = new JFrame("Training Set Creator");
-        frame.setContentPane(panel1);
+        frame.setContentPane(mainPanel);
         frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         createMenuBar();
         frame.pack();
@@ -112,7 +116,7 @@ public class MainFrame extends View {
         menuItems.add("file_recent", file_recent);
 
         /* Resize set */
-        JMenu resize = new JMenu("Resize");
+        JMenuItem resize = new JMenuItem("Resize");
         menuItems.add("export_resize", resize);
     }
 
@@ -271,7 +275,7 @@ public class MainFrame extends View {
      */
     private void createUIComponents() {
         previewImagePanel = new DepthImagePanel(DepthImagePanel.MODE_PREVIEW);
-        previewImagePanel.setPreferredSize(new Dimension(200, 200));
+        previewImagePanel.setPreferredSize(new Dimension(PREVIEW_WIDTH, PREVIEW_HEIGHT));
     }
 
     public static MainFrame getInstance() {

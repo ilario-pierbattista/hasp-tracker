@@ -31,7 +31,8 @@ public class AddFrameView extends View {
     private JSlider yoffset;
     private JRadioButton xFlipRadio;
     private JRadioButton yFlipRadio;
-    private JTextPane premereIlTastoDestroTextPane;
+    private JRadioButton yXFlipRadio;
+    private JRadioButton xYFlipRadio;
     private ButtonGroup flipRadioGroup;
     private DepthImage depthImage;
     private File[] frames;
@@ -173,13 +174,19 @@ public class AddFrameView extends View {
         cropWidth = new JFormattedTextField(pixelFormat);
         cropHeight = new JFormattedTextField(pixelFormat);
         imagePanel = new DepthImagePanel(depthImage);
-        xFlipRadio = new JRadioButton("x");
+        xFlipRadio = new JRadioButton("x=w/2");
         xFlipRadio.setActionCommand(Integer.toString(DepthImagePanel.X_FLIP));
-        yFlipRadio = new JRadioButton("y");
+        yFlipRadio = new JRadioButton("y=h/2");
         yFlipRadio.setActionCommand(Integer.toString(DepthImagePanel.Y_FLIP));
+        xYFlipRadio = new JRadioButton("y=x");
+        xYFlipRadio.setActionCommand(Integer.toString(DepthImagePanel.XY_FLIP));
+        yXFlipRadio = new JRadioButton("y=-x");
+        yXFlipRadio.setActionCommand(Integer.toString(DepthImagePanel.YX_FLIP));
         flipRadioGroup = new ButtonGroup();
         flipRadioGroup.add(xFlipRadio);
         flipRadioGroup.add(yFlipRadio);
+        flipRadioGroup.add(xYFlipRadio);
+        flipRadioGroup.add(yXFlipRadio);
     }
 
     /**

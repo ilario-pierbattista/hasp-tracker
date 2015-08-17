@@ -51,6 +51,9 @@ public class ResizeDialog extends JDialog {
                 onCancel();
             }
         }, KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
+
+        this.pack();
+        this.setLocationRelativeTo(null);
     }
 
     private void onOK() {
@@ -61,13 +64,6 @@ public class ResizeDialog extends JDialog {
     private void onCancel() {
         // add your code here if necessary
         dispose();
-    }
-
-    public static void main(String[] args) {
-        ResizeDialog dialog = new ResizeDialog();
-        dialog.pack();
-        dialog.setVisible(true);
-        System.exit(0);
     }
 
     private void createUIComponents() {
