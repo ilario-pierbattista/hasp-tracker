@@ -2,9 +2,7 @@ package it.univpm.dii.service;
 
 import java.awt.*;
 import java.awt.geom.AffineTransform;
-import java.awt.image.AffineTransformOp;
-import java.awt.image.BufferedImage;
-import java.awt.image.WritableRaster;
+import java.awt.image.*;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -66,7 +64,6 @@ public class DepthImage {
          * 2 byte per ogni pixel, ed è composta da width * height pixel in totale
          */
         cropped = new byte[COLOR_DEPTH * width * height];
-        System.out.println(width + " " + height);
         int k = 0, imageWidth = image.getWidth();
         for (int i = y; i < y + height; i++) {
             for (int j = x * COLOR_DEPTH; j < (x + width) * COLOR_DEPTH; j++) {
@@ -95,7 +92,35 @@ public class DepthImage {
     }
 
     /**
-     * Esegue un flip dell'immagine rispetto l'asse x
+     * Salvataggio dell'immagine.
+     *
+     * @param filename File dell'immagine.
+     * @return Istanza di {@link DepthImage}.
+     * @throws Exception
+     */
+    public DepthImage save(File filename) throws Exception {
+        try {
+            FileOutputStream fos = new FileOutputStream(filename.getAbsolutePath());
+            short[] imageData = ((DataBufferUShort) image.getRaster().getDataBuffer())
+                    .getData();
+            byte[] byteImageData = new byte[imageData.length * COLOR_DEPTH];
+            byte b1, b2;
+            for (int i = 0; i < imageData.length; i++) {
+                b1 = (byte) ((imageData[i] & 0xFF00) >> 8);
+                b2 = (byte) (imageData[i] & 0x00FF);
+                byteImageData[i * COLOR_DEPTH] = b1;
+                byteImageData[i * COLOR_DEPTH + 1] = b2;
+            }
+            fos.write(byteImageData, 0, byteImageData.length);
+            fos.close();
+        } catch (IOException ee) {
+            ee.printStackTrace();
+        }
+        return this;
+    }
+
+    /**
+     * Esegue un flip dell'immagine rispetto l'asse  = c;
      *
      * @return Oggetto DepthImage
      */
@@ -103,12 +128,13 @@ public class DepthImage {
         AffineTransform af = new AffineTransform();
         af.concatenate(AffineTransform.getScaleInstance(1, -1));
         af.concatenate(AffineTransform.getTranslateInstance(0, -image.getHeight()));
-        performTransformation(af);
+        AffineTransformOp op = new AffineTransformOp(af, AffineTransformOp.TYPE_NEAREST_NEIGHBOR);
+        this.image = op.filter(this.image, null);
         return this;
     }
 
     /**
-     * Esegue un flip rispetto l'asse y
+     * Esegue un flip rispetto l'asse y = c;
      *
      * @return Oggetto DepthImage
      */
@@ -116,23 +142,30 @@ public class DepthImage {
         AffineTransform af = new AffineTransform();
         af.concatenate(AffineTransform.getScaleInstance(-1, 1));
         af.concatenate(AffineTransform.getTranslateInstance(-image.getWidth(), 0));
-        performTransformation(af);
+        AffineTransformOp op = new AffineTransformOp(af, AffineTransformOp.TYPE_NEAREST_NEIGHBOR);
+        this.image = op.filter(this.image, null);
+        return this;
+    }
+
+    /**
+     * Ridimensiona l'immagine alle dimensioni specificate.
+     *
+     * @param dim  Dimensioni.
+     * @param type Algoritmo di resampling da utilizzare.
+     * @return Istanza di {@link DepthImage}.
+     */
+    public DepthImage resize(Dimension dim, int type) {
+        double sx, sy;
+        sx = dim.getWidth() / image.getWidth();
+        sy = dim.getHeight() / image.getHeight();
+        AffineTransform transform = new AffineTransform();
+        transform.setToScale(sx, sy);
+        AffineTransformOp op = new AffineTransformOp(transform, type);
+        this.image = op.filter(this.image, null);
         return this;
     }
 
     public BufferedImage getImage() {
         return image;
-    }
-
-    /**
-     * Esegue le operazioni descritte in una trasformazione affine
-     *
-     * @param af Oggetto della trasformazione affine
-     * @return Oggetto DepthImage
-     */
-    private DepthImage performTransformation(AffineTransform af) {
-        AffineTransformOp op = new AffineTransformOp(af, AffineTransformOp.TYPE_BILINEAR);
-        this.image = op.filter(this.image, null);
-        return this;
     }
 }

@@ -1,7 +1,7 @@
 package it.univpm.dii.view.tablemodels;
 
 import it.univpm.dii.model.entities.Element;
-import it.univpm.dii.model.entities.TrainSet;
+import it.univpm.dii.model.entities.TrainingSet;
 import it.univpm.dii.utils.ElementComparator;
 
 import javax.swing.table.AbstractTableModel;
@@ -28,7 +28,7 @@ public class ElementModel extends AbstractTableModel {
      * @param set Oggetto che modella il training set
      * @return L'istanza di ElementModel
      */
-    public ElementModel setData(TrainSet set) {
+    public ElementModel setData(TrainingSet set) {
         elements = new ArrayList<>(60);
         elements.addAll(set.getPositives());
         elements.addAll(set.getNegatives());

@@ -1,6 +1,5 @@
 package it.univpm.dii.contoller.main;
 
-import it.univpm.dii.contoller.addframe.AddFrameController;
 import it.univpm.dii.contoller.framerender.FrameRenderController;
 import it.univpm.dii.exception.EmptyFrameDirException;
 import it.univpm.dii.view.MainFrame;

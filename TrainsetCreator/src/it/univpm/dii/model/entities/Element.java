@@ -13,6 +13,20 @@ public class Element {
     private int y;
     private boolean positive;
 
+    public Element() {
+        super();
+    }
+
+    public Element(Element e) {
+        this.id = e.getId();
+        this.fileName = e.getFileName();
+        this.width = e.getWidth();
+        this.height = e.getHeight();
+        this.x = e.getX();
+        this.y = e.getY();
+        this.positive = e.isPositive();
+    }
+
     public int getId() {
         return id;
     }

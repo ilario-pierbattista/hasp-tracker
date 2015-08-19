@@ -1,6 +1,5 @@
 package it.univpm.dii.view;
 
-import com.sun.deploy.uitoolkit.impl.fx.DeployPerfLogger;
 import it.univpm.dii.model.entities.Element;
 import it.univpm.dii.service.DepthImage;
 import it.univpm.dii.view.component.DepthImagePanel;
@@ -139,6 +138,14 @@ public class AddFrameView extends View {
 
     public JRadioButton getyFlipRadio() {
         return yFlipRadio;
+    }
+
+    public JRadioButton getyXFlipRadio() {
+        return yXFlipRadio;
+    }
+
+    public JRadioButton getxYFlipRadio() {
+        return xYFlipRadio;
     }
 
     public AddFrameView setCropWidthValue(String width) {

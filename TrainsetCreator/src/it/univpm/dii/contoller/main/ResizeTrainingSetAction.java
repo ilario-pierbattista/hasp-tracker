@@ -1,15 +1,18 @@
 package it.univpm.dii.contoller.main;
 
+import it.univpm.dii.contoller.resize.ResizeController;
+import it.univpm.dii.view.MainFrame;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /**
  * Created by ilario
- * on 12/08/15.
+ * on 17/08/15.
  */
-class OpenResizeDialog implements ActionListener {
+public class ResizeTrainingSetAction implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
-        System.out.println("Da implemenetare");
+        new ResizeController();
     }
 }

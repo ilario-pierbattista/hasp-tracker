@@ -57,12 +57,12 @@ public class MainFrame extends View {
     public void refresh() {
         DatasetManager dm = DatasetManager.getInstance();
         if (dm != null) {   // C'è un'istanza attiva di DatasetManager
-            posNumLabel.setText(Integer.toString(dm.getTrainSet().getPositives().size()));
-            negNumLabel.setText(Integer.toString(dm.getTrainSet().getNegatives().size()));
+            posNumLabel.setText(Integer.toString(dm.getTrainingSet().getPositives().size()));
+            negNumLabel.setText(Integer.toString(dm.getTrainingSet().getNegatives().size()));
 
-            if (dm.getTrainSet() != null) {
+            if (dm.getTrainingSet() != null) {
                 ElementModel tableModel = (ElementModel) sampleTable.getModel();
-                tableModel.setData(dm.getTrainSet());
+                tableModel.setData(dm.getTrainingSet());
             }
         } else {    // Non c'è un'istanza attiva di DatasetManager
             posNumLabel.setText("-");
@@ -141,10 +141,12 @@ public class MainFrame extends View {
             aggiungiButton.setEnabled(false);
             trainsetLabel.setText("Nessun database di allenamento aperto");
             trainsetLabel.setEnabled(false);
+            menuItems.get("export_resize").setEnabled(false);
         } else {
             aggiungiButton.setEnabled(true);
             trainsetLabel.setText("Database: " + path.getAbsolutePath());
             trainsetLabel.setEnabled(true);
+            menuItems.get("export_resize").setEnabled(true);
         }
     }
 

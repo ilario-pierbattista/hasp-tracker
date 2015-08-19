@@ -230,20 +230,22 @@ public class DepthImagePanel extends JPanel implements MouseListener, MouseMotio
             switch (this.flipDirection) {
                 case X_FLIP:
                     depthImage.flipHorizontal();
-                    image = depthImage.getImage();
-                    repaint();
                     break;
                 case Y_FLIP:
                     depthImage.flipVertical();
-                    image = depthImage.getImage();
+                    break;
+                case YX_FLIP:
+                    depthImage.flipHorizontal();
+                    depthImage.flipVertical();
                     break;
                 case XY_FLIP:
                     depthImage.flipVertical();
                     depthImage.flipHorizontal();
-                    image = depthImage.getImage();
                 default:
                     break;
             }
+            image = depthImage.getImage();
+            repaint();
         }
     }
 

@@ -1,19 +1,9 @@
 package it.univpm.dii.contoller.addframe;
 
 import it.univpm.dii.TrainsetCreator;
-import it.univpm.dii.exception.EmptyFrameDirException;
-import it.univpm.dii.model.entities.Element;
-import it.univpm.dii.utils.BinFileComparator;
-import it.univpm.dii.utils.BinFileFilter;
 import it.univpm.dii.view.AddFrameView;
-import it.univpm.dii.view.FrameRenderView;
-import it.univpm.dii.view.MainFrame;
-import it.univpm.dii.view.tablemodels.ElementModel;
 
 import java.awt.event.KeyEvent;
-import java.io.File;
-import java.io.FilenameFilter;
-import java.util.Arrays;
 
 /**
  * Created by ilario
@@ -60,6 +50,8 @@ public class AddFrameController {
         ChangeFlipDirectionAction cfd = new ChangeFlipDirectionAction(view);
         view.getxFlipRadio().addActionListener(cfd);
         view.getyFlipRadio().addActionListener(cfd);
+        view.getxYFlipRadio().addActionListener(cfd);
+        view.getyXFlipRadio().addActionListener(cfd);
 
         // Mnemonic setup
         view.getAggiungiButton().setMnemonic(KeyEvent.VK_A);
@@ -103,15 +95,6 @@ public class AddFrameController {
             view.getImagePanel().setRectangleDimensions(cropW, cropH)
                     .forceResize();
         }
-    }
-
-    /**
-     * Aggiorna la vista del mainframe
-     */
-    private void addlElementToMF(Element element) {
-        MainFrame mainFrame = MainFrame.getInstance();
-        ElementModel model = (ElementModel) mainFrame.getSampleTable().getModel();
-        model.addElement(element);
     }
 
     public static AddFrameController getInstance() {
