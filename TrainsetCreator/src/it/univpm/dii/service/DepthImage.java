@@ -46,10 +46,6 @@ public class DepthImage {
 
     }
 
-    public DepthImage crop(Point p, int width, int height) {
-        return crop(p.x, p.y, width, height);
-    }
-
     /**
      * Ritaglia un pezzo d'immagine
      *
@@ -60,16 +56,10 @@ public class DepthImage {
      * @return Istanza di {@link DepthImage}.
      */
     public DepthImage crop(int x, int y, int width, int height) {
-        /* L'immagine è a 16 bit. Per la porzione di frame estratta sono necessari
-         * 2 byte per ogni pixel, ed è composta da width * height pixel in totale
-         */
-        cropped = new byte[COLOR_DEPTH * width * height];
-        int k = 0, imageWidth = image.getWidth();
-        for (int i = y; i < y + height; i++) {
-            for (int j = x * COLOR_DEPTH; j < (x + width) * COLOR_DEPTH; j++) {
-                cropped[k++] = binaryImage[i * COLOR_DEPTH * imageWidth + j];
-            }
-        }
+        Rectangle region = new Rectangle(x, y, width, height);
+        short[] subImageData = ((DataBufferUShort) image.getData(region).getDataBuffer())
+                .getData();
+        cropped = convertShort2Byte(subImageData);
         return this;
     }
 
@@ -103,14 +93,7 @@ public class DepthImage {
             FileOutputStream fos = new FileOutputStream(filename.getAbsolutePath());
             short[] imageData = ((DataBufferUShort) image.getRaster().getDataBuffer())
                     .getData();
-            byte[] byteImageData = new byte[imageData.length * COLOR_DEPTH];
-            byte b1, b2;
-            for (int i = 0; i < imageData.length; i++) {
-                b1 = (byte) ((imageData[i] & 0xFF00) >> 8);
-                b2 = (byte) (imageData[i] & 0x00FF);
-                byteImageData[i * COLOR_DEPTH] = b1;
-                byteImageData[i * COLOR_DEPTH + 1] = b2;
-            }
+            byte[] byteImageData = convertShort2Byte(imageData);
             fos.write(byteImageData, 0, byteImageData.length);
             fos.close();
         } catch (IOException ee) {
@@ -167,5 +150,23 @@ public class DepthImage {
 
     public BufferedImage getImage() {
         return image;
+    }
+
+    /**
+     * Converte un array di short in un array di byte per il salvataggio su file
+     *
+     * @param imageData Array di short.
+     * @return Array di byte.
+     */
+    private byte[] convertShort2Byte(short[] imageData) {
+        byte[] byteImageData = new byte[imageData.length * COLOR_DEPTH];
+        byte b1, b2;
+        for (int i = 0; i < imageData.length; i++) {
+            b1 = (byte) ((imageData[i] & 0xFF00) >> 8);
+            b2 = (byte) (imageData[i] & 0x00FF);
+            byteImageData[i * COLOR_DEPTH] = b1;
+            byteImageData[i * COLOR_DEPTH + 1] = b2;
+        }
+        return byteImageData;
     }
 }
