@@ -3,51 +3,44 @@ format long g;
 %definizione di costanti nel codice
 T = 200;
 % Il valore del pavimento al centro dell'inquadratura
+% Non essendo costante in tutti i punti, ho preferito valuturlo al centro
+% dell'inquadratura ed impostarlo a mano.
 floorValue = KINECT_V2_FLOOR_VALUE;
 
 % dimensioni minime delle features
-%fmin = [2 4; 4 2; 2 6; 6 2];
-fmin = [4 8; 8 4; 4 12; 12 4];
+fmin = [2 4; 4 2; 2 6; 6 2];
+%fmin = [4 8; 8 4; 4 12; 12 4];
 %fmin = [8 8; 8 8; 8 12; 12 8];
 
 % step incremento delle features
-%fstep = [1 2; 2 1; 1 3; 3 1];
-%fstep = [1 2; 2 1; 1 3; 3 1];
-fstep = [2 2; 2 2; 2 3; 3 2];
+fstep = [1 2; 2 1; 1 3; 3 1];
+%fstep = [2 2; 2 2; 2 3; 3 2];
 %fstep = [2 4; 4 2; 2 6; 6 2];
 %fstep = [4 4; 4 4; 4 6; 6 4];
 
+% Le immagini vengono ridimensionate
+% precedentemente
+scaleFactor = 1;
 %scaleFactor = 2;
-scaleFactor = 4;
+%scaleFactor = 4;
+
+classifiersName = {'x' 'y'};
 
 % Nomi delle cartelle per i risultati
 folder = strcat('strong_classifier_',datestr(now, 'DDmmmYYYYHHMMSS'));
-folderx = fullfile(folder, 'x');
-foldery = fullfile(folder, 'y');
-foldero1 = fullfile(folder, 'o1');
-foldero2 = fullfile(folder, 'o2');
+trainingFolder = checkpath('TRAINING1');
 
-% X
-% Esecuzione di adaboost
-[weakClassifiers, weightedErrors, w, betasT, alphas, samplesSize] = adaboostTraining('DBX', T, fmin, fstep, true, scaleFactor, floorValue);
-% Salvataggio dei risultati
-mkdir(folder);
-mkdir(folderx);
-encodeWeakClassifier(folderx, weakClassifiers, weightedErrors, w, betasT, alphas, scaleFactor, samplesSize, floorValue);
-
-% Y
-[weakClassifiers, weightedErrors, w, betasT, alphas, samplesSize] = adaboostTraining('DBY', T, fmin, fstep, true, scaleFactor, floorValue);
-mkdir(foldery);
-encodeWeakClassifier(foldery, weakClassifiers, weightedErrors, w, betasT, alphas, scaleFactor, samplesSize, floorValue);
-
-% O1
-[weakClassifiers, weightedErrors, w, betasT, alphas, samplesSize] = adaboostTraining('DBO1', T, fmin, fstep, true, scaleFactor, floorValue);
-mkdir(foldero1);
-encodeWeakClassifier(foldero1, weakClassifiers, weightedErrors, w, betasT, alphas, scaleFactor, samplesSize, floorValue);
-
-% O2
-[weakClassifiers, weightedErrors, w, betasT, alphas, samplesSize] = adaboostTraining('DBO2', T, fmin, fstep, true, scaleFactor, floorValue);
-mkdir(foldero2);
-encodeWeakClassifier(foldero2, weakClassifiers, weightedErrors, w, betasT, alphas, scaleFactor, samplesSize, floorValue);
+for name = classifiersName
+    trainingData = fullfile(trainingFolder, char(name));
+    outputFolder = fullfile(folder, name);
+    [weakClassifiers, weightedErrors, w, betasT, alphas, samplesSize] = adaboostTraining(trainingData,...
+        T, fmin, fstep, true, scaleFactor, floorValue);
+    if ~exist(folder)
+        mkdir(folder);
+    end
+    mkdir(outputFolder);
+    encodeWeakClassifier(outputFolder, weakClassifiers, weightedErrors,...
+    w, betasT, alphas, scaleFactor, samplesSize, floorValue);
+end
 
 fprintf('Risultati salvati nella cartella %s\n', folder);

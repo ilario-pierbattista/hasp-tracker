@@ -22,16 +22,28 @@ function sorted = sortName(framesPath, names);
     sorted = [];
     for i = [1:length(names)]
         if ~(strcmp(names(i).name, '.') || strcmp(names(i).name, '..'))
-            splitted = strsplit(names(i).name, '_');
+            file_parts = strsplit(names(i).name, '.');
+            file_name = char(file_parts(1));
+            splitted = strsplit(file_name, '_');
             pathname = fullfile(framesPath, names(i).name);
-            positive = false;
-            if strcmp(splitted(5), 'true.bin')
-                positive = true;
-            end
             id = str2double(splitted(2));
             width = str2double(splitted(3));
             height = str2double(splitted(4));
-            sorted = [sorted; struct('filepath', pathname, 'positive', positive, 'id', id, 'width', width, 'height', height) ];
+            if strcmp(splitted(5), 'true')
+                positive = true;
+            else
+                positive = false;
+            end
+            data = struct('filepath', pathname, 'positive', positive,...
+                'id', id, 'width', width, 'height', height);
+            if length(splitted) == 7
+                tlx = str2double(splitted(6));
+                tly = str2double(splitted(7));
+                data = struct('filepath', pathname, 'positive', positive,...
+                    'id', id, 'width', width, 'height', height,...
+                    'x', tlx, 'y', tly);
+            end
+            sorted = [sorted; data];
         end
     end
 end

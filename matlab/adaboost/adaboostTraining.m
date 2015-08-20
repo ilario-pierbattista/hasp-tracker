@@ -5,15 +5,17 @@ function [weakClassifiers, weightedErrors, w, betasT, alphas, samplesSize] = ada
     % Long description
 
     % Apertura del dataset
-    samples = getFrames(getRealPath(datasetPath));
+    datasetPath = checkisdir(datasetPath);
+    if datasetPath == false
+        error('Path non valida');
+    end
+    samples = getFrames(datasetPath);
     samplesSize = [samples(1).width, samples(1).height];
     % Inizializzazione dei pesi
     w = initWeights(samples);
     % Setup delle features
     features = setupFeatures(samples, scaleFactor, featuresMinimumSizes, featuresStepSizes);
-    % fs = size(features);
-    % fprintf('Rilevate %d features possibili.', fs(2));
-    % input('Premere invio per continuare');
+    fprintf('Rilevate %d configurazioni di feature possibili.\n', size(features, 2));
     % Lettura dei frames e delle etichette
     [frames, labels] = readFramesAndLabels(samples, scaleFactor, floorValue);
     % Inizializzazione degli altri vettori
@@ -47,9 +49,11 @@ function [weakClassifiers, weightedErrors, w, betasT, alphas, samplesSize] = ada
         else
             [h, e, updatedWeights, betaT, fIndex] = best_weak_classifier(frames, labels, w, features, featuresValues);
         end
-        % Rimozione della feature selezionata da quelle esistenti
+        % Rimozione della feature selezionata
         features(:,fIndex) = [];
-        featuresValues(:,fIndex) = [];
+        if ~isempty(featuresValues)
+            featuresValues(:,fIndex) = [];
+        end
         toc(singlePassETA);
 
         fprintf('Weak classifier #%d/%d [%.2f%%]\n', t, T, round(t*10000/T)/100);
@@ -95,17 +99,5 @@ function [l,m] = countSamples(samples);
         else
             l = l+1;
         end
-    end
-end
-
-
-function checkedPath = getRealPath(pathname);
-    % ${2/.*/U/} Description
-    %    ${1/.*/U/} = ${2/.*/U/}()
-    %
-    % Long description
-    [checkedPath, isdirectory] = checkpath(pathname);
-    if isempty(checkedPath) || ~isdirectory
-        error('Path non valida\n');
     end
 end

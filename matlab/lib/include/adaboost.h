@@ -9,5 +9,6 @@
 #include "src/adaboost/StrongClassifier.h"
 #include "src/adaboost/WeakClassifier.h"
 #include "src/adaboost/Sample.h"
+#include "src/adaboost/FeatureTest.h"
 
 #endif //HASP_TRACKER_LIBADABOOST_H

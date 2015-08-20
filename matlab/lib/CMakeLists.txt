@@ -28,6 +28,7 @@ add_library(
     src/adaboost/Adaboost.cpp
     src/adaboost/WeakClassifier.cpp
     src/adaboost/StrongClassifier.cpp
+    src/adaboost/FeatureTest.cpp
     src/adaboost/Sample.cpp
 )
 

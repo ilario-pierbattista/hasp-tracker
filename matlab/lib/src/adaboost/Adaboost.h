@@ -6,7 +6,9 @@
 #define HASP_TRACKER_ADABOOST_H
 
 #include <vector>
+#include <list>
 #include "WeakClassifier.h"
+#include "FeatureTest.h"
 #include "Sample.h"
 #include "feature.h"
 #include "../mexutils/utils.h"
@@ -28,45 +30,13 @@ public:
     static double calculateBetaT(WeakClassifier *classifier);
 
     static vector<double> updateWeights(WeakClassifier *classifier, vector<Sample *> samples);
+
+private:
+    static WeakClassifier *lowestErrorThreshold(
+            list<FeatureTest *> &tests,
+            double positiveSum,
+            double negativeSum
+    );
 };
-
-
-/**
- * FeatureTest
- * Combina l'oggetto software di una feature di haar con quello di un'immagine d'esempio
- */
-class FeatureTest {
-public:
-    FeatureTest(Haar *feature, Sample *sample);
-
-    FeatureTest() { };
-
-    static bool compare(FeatureTest *f1, FeatureTest *f2);
-
-    Haar *getFeature() const {
-        return feature;
-    }
-
-    void setFeature(Haar *feature) {
-        FeatureTest::feature = feature;
-    }
-
-    Sample *getSample() const {
-        return sample;
-    }
-
-    void setSample(Sample *sample) {
-        FeatureTest::sample = sample;
-    }
-
-    void calculateValue();
-
-    bool testValue();
-
-    Haar *feature;
-    Sample *sample;
-    double value;
-};
-
 
 #endif //HASP_TRACKER_ADABOOST_H

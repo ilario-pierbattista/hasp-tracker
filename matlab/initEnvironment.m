@@ -2,11 +2,7 @@
 setenv('DATASET_ROOT', '/home/ilario/Documenti/Tirocinio/Dataset/DataBaseKinect/FindPerson/KinectLab/');
 
 % Dataset di allenamento
-setenv('DB1', '/home/ilario/Documenti/Tirocinio/Training/');
-setenv('DBX', '/home/ilario/Documenti/Tirocinio/Training/x/');
-setenv('DBY', '/home/ilario/Documenti/Tirocinio/Training/y/');
-setenv('DBO1', '/home/ilario/Documenti/Tirocinio/Training/o1/');
-setenv('DBO2', '/home/ilario/Documenti/Tirocinio/Training/o2/');
+setenv('TRAINING1', '/home/ilario/Documenti/Tirocinio/Training/resized/');
 
 % Dataset di testing
 setenv('TEST1', '/home/ilario/Documenti/Tirocinio/Testing/1');
