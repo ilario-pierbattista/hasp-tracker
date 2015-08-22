@@ -31,3 +31,5 @@ setenv('FALSE7', '/home/ilario/Documenti/Tirocinio/Registrazioni/Falses-V2/7/');
 setenv('FALSE8', '/home/ilario/Documenti/Tirocinio/Registrazioni/Falses-V2/8/');
 
 KINECT_V2_FLOOR_VALUE = 2850;
+global CLASSIFIER_NAMES
+CLASSIFIER_NAMES = {'x', 'y'};

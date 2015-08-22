@@ -4,8 +4,8 @@ clear dataPath;
 clear testPath;
 clear samples;
 
-classifierNames = {'x', 'y', 'o1', 'o2'};
-DEFAULT_TESTING_SET = 'DB1';
+classifierNames = ['x', 'y'];
+DEFAULT_TESTING_SET = 'TRAINING1';
 
 % Input della path del classificatore
 dataPath = input('Path del classificatore forte: ', 's');
@@ -60,6 +60,6 @@ toc;
 
 % Estrazione della coppia soglia-numero di classificatori deboli
 % che massimizza il parametro mcc
-tuneStrongClassifier(dataPath);
+% tuneStrongClassifier(dataPath);
 % massimizzazione dell'accuracy
-% tuneStrongClassifier(dataPath, 'accuracy');
+tuneStrongClassifier(dataPath, 'accuracy');

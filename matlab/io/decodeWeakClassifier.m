@@ -35,7 +35,7 @@ function weakClassifiers = decodeWeakClassifier(filePath);
         % Soglia
         threshold = data(i, 7);
         % Funzione di calcolo della feature
-        handler = featureHandler(featureType, topleft, dimension);
+        handler = get_feature_handler(featureType, topleft, dimension);
         % Struttura descrittiva delle feature
         feature = struct('topleft', topleft,...
         'dimension', dimension,...
@@ -50,22 +50,5 @@ function weakClassifiers = decodeWeakClassifier(filePath);
         'classify', classifierFunc);
 
         weakClassifiers = [weakClassifiers; classifier];
-    end
-end
-
-
-function handler = featureHandler(featureType, topleft, dimension);
-    switch featureType
-    case 0
-        handler = @(img, offset) haar_vertical_edge(img, topleft + offset, dimension);
-    case 1
-        handler = @(img, offset) haar_horizontal_edge(img, topleft + offset, dimension);
-    case 2
-        handler = @(img, offset) haar_vertical_linear(img, topleft + offset, dimension);
-    case 3
-        handler = @(img, offset) haar_horizontal_linear(img, topleft + offset, dimension);
-    otherwise
-        % Questo statement non dovrebbe essere mai raggiunto
-        handler = @(img, offset) haar_vertical_edge(img, topleft + offset, dimension);
     end
 end

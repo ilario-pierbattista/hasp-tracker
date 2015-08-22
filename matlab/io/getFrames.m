@@ -1,8 +1,7 @@
-function samples = getFrames(framesPath);
-    [framesPath, isdirectory] = checkpath(framesPath);
-    if isempty(framesPath) || ~isdirectory
-        error('myfuns:getFrames:fileNotFound',...
-            'La cartella non esiste');
+function samples = getFrames(framesPath, dimension);
+    framesPath = checkisdir(framesPath);
+    if framesPath == false
+        error('La path non esiste o non punta ad una cartella');
     end
     negatives = fullfile(framesPath, 'negatives');
     positives = fullfile(framesPath, 'positives');

@@ -1,3 +1,6 @@
+% testAdaboost.m
+% Testing generale delle prestazioni dell'algoritmo.
+
 % Inizializzazione dell'ambiente
 initEnvironment;
 clear dataPath;
@@ -8,12 +11,9 @@ clear samples;
 dataPath = input('Path del classificatore forte: ', 's');
 
 % Input della path del dataset di testing
-testPath = input('Path del dataset di allenamento [TEST1]: ', 's');
-if isempty(testPath)
-    testPath = getenv('TEST1');
-end
-[testPath, isdirectory] = checkpath(testPath);
-if isempty(testPath) || ~isdirectory
+testPath = inputdef('Path del dataset di allenamento [%s]: ', 'TEST1', 's');
+testPath = checkisdir(testPath);
+if testPath == false
     error('Path di testing non valida');
 end
 
@@ -23,5 +23,5 @@ finalClassifier = decodeFinalClassifier(dataPath);
 samples = getFrames(testPath);
 [frames, labels] = readFramesAndLabels(samples, finalClassifier.scaleFactor, finalClassifier.floorValue);
 
-[tp, tn, fp, fn] = adaboostTesting(finalClassifier, frames, labels);
+[tp, tn, fp, fn] = test_classifier(finalClassifier, frames, labels);
 [sensitivity, specificity, accuracy, mcc] = calculateEvaluationParams(tp, tn, fp, fn)

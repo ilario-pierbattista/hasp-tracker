@@ -10,7 +10,7 @@ function tuneStrongClassifier(dataPath, param);
 
     folders = struct();
     data = struct();
-    classNames = {'x', 'y', 'o1', 'o2'};
+    classNames = {'x', 'y'};
 
     for i = [1:length(classNames)]
         name = classNames{i};

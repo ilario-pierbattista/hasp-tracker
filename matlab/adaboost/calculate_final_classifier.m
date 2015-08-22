@@ -1,9 +1,10 @@
 function presence = calculate_final_classifier(final, frame, offset);
-    classifiers = {'x', 'y', 'o1', 'o2'};
-    % classifiers = {'x', 'y'};
+    global CLASSIFIER_NAMES;
+
     presence = false;
-    for i = [1:length(classifiers)]
-        presence = calculate_strong_classifier(getfield(final, classifiers{i}), frame, offset);
+    for classifier = CLASSIFIER_NAMES
+        classifier = char(classifier);
+        presence = calculate_strong_classifier(getfield(final, classifier), frame, offset);
         if presence
             break;
         end

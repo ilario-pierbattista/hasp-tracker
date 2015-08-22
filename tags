@@ -1,0 +1,1649 @@
+			La finestra di visualizzazione, come accennato in precedenza è di $512 times 424$ pixel. In una registrazione che riprende dall alto una persona che attraversa la stanza camminando  la figura della persona occupa una porzione della finestra di circa $160 times 100$ pixel. Un dataset di allenamento non   altro che un insieme di porzioni di frame di una certa dimensione  la stessa per tutti  che vegono classificati manualmente dal creatore footnote  Il sistema di apprendimento che si sta trattando ricade nella categoria dei sistemi di emph  apprendimento supervisionato	documents/relazione/index.tex	/^		I dati in input per la fase di allenamento sono costituiti dal \\emph{dataset di allenamento}, ovvero una raccolta di oggetti preclassificati attraverso i quali Adaboost riuscirà a selezionare una combinazione di classificatori deboli che meglio approssimano la classificazione degli elementi del dataset.$/;"	u
+		label{sub:il_dataset_dall_allenamento}
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+ARCHITECTURE_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	372;"	d	file:
+ARCHITECTURE_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	375;"	d	file:
+ARCHITECTURE_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	378;"	d	file:
+ARCHITECTURE_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	381;"	d	file:
+ARCHITECTURE_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	384;"	d	file:
+ARCHITECTURE_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	387;"	d	file:
+ARCHITECTURE_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	390;"	d	file:
+ARCHITECTURE_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	395;"	d	file:
+ARCHITECTURE_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	398;"	d	file:
+ARCHITECTURE_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	401;"	d	file:
+ARCHITECTURE_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	405;"	d	file:
+ARCHITECTURE_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	367;"	d	file:
+ARCHITECTURE_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	370;"	d	file:
+ARCHITECTURE_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	373;"	d	file:
+ARCHITECTURE_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	376;"	d	file:
+ARCHITECTURE_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	379;"	d	file:
+ARCHITECTURE_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	382;"	d	file:
+ARCHITECTURE_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	385;"	d	file:
+ARCHITECTURE_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	390;"	d	file:
+ARCHITECTURE_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	393;"	d	file:
+ARCHITECTURE_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	396;"	d	file:
+ARCHITECTURE_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	400;"	d	file:
+ARCHITECTURE_ID	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	372;"	d	file:
+ARCHITECTURE_ID	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	375;"	d	file:
+ARCHITECTURE_ID	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	378;"	d	file:
+ARCHITECTURE_ID	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	381;"	d	file:
+ARCHITECTURE_ID	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	384;"	d	file:
+ARCHITECTURE_ID	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	387;"	d	file:
+ARCHITECTURE_ID	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	390;"	d	file:
+ARCHITECTURE_ID	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	395;"	d	file:
+ARCHITECTURE_ID	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	398;"	d	file:
+ARCHITECTURE_ID	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	401;"	d	file:
+ARCHITECTURE_ID	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	405;"	d	file:
+ARCHITECTURE_ID	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	367;"	d	file:
+ARCHITECTURE_ID	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	370;"	d	file:
+ARCHITECTURE_ID	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	373;"	d	file:
+ARCHITECTURE_ID	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	376;"	d	file:
+ARCHITECTURE_ID	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	379;"	d	file:
+ARCHITECTURE_ID	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	382;"	d	file:
+ARCHITECTURE_ID	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	385;"	d	file:
+ARCHITECTURE_ID	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	390;"	d	file:
+ARCHITECTURE_ID	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	393;"	d	file:
+ARCHITECTURE_ID	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	396;"	d	file:
+ARCHITECTURE_ID	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	400;"	d	file:
+ASC	TrainsetCreator/src/it/univpm/dii/utils/ElementComparator.java	/^    public static final int ASC = 0;$/;"	f	class:ElementComparator
+Adaboost	matlab/lib/src/adaboost/Adaboost.h	/^class Adaboost {$/;"	c
+AddFrameAction	TrainsetCreator/src/it/univpm/dii/contoller/main/AddFrameAction.java	/^class AddFrameAction implements ActionListener {$/;"	c
+AddFrameController	TrainsetCreator/src/it/univpm/dii/contoller/addframe/AddFrameController.java	/^    public AddFrameController(AddFrameView view) {$/;"	m	class:AddFrameController
+AddFrameController	TrainsetCreator/src/it/univpm/dii/contoller/addframe/AddFrameController.java	/^public class AddFrameController {$/;"	c
+AddFrameView	TrainsetCreator/src/it/univpm/dii/view/AddFrameView.java	/^    public AddFrameView(DepthImage init, File[] frames, int width, int height) {$/;"	m	class:AddFrameView
+AddFrameView	TrainsetCreator/src/it/univpm/dii/view/AddFrameView.java	/^public class AddFrameView extends View {$/;"	c
+AvantiRenderInfoAction	TrainsetCreator/src/it/univpm/dii/contoller/framerender/AvantiRenderInfoAction.java	/^    public AvantiRenderInfoAction(FrameRenderView renderInfoView, File[] frames) {$/;"	m	class:AvantiRenderInfoAction
+AvantiRenderInfoAction	TrainsetCreator/src/it/univpm/dii/contoller/framerender/AvantiRenderInfoAction.java	/^class AvantiRenderInfoAction implements ActionListener {$/;"	c
+BORDER_COLOR	TrainsetCreator/src/it/univpm/dii/view/component/DepthImagePanel.java	/^    public static final Color BORDER_COLOR = Color.BLUE;$/;"	f	class:DepthImagePanel
+BY_HEIGHT	TrainsetCreator/src/it/univpm/dii/utils/ElementComparator.java	/^    public static final int BY_HEIGHT = 2;$/;"	f	class:ElementComparator
+BY_ID	TrainsetCreator/src/it/univpm/dii/utils/ElementComparator.java	/^    public static final int BY_ID = 0;$/;"	f	class:ElementComparator
+BY_POSITIVE	TrainsetCreator/src/it/univpm/dii/utils/ElementComparator.java	/^    public static final int BY_POSITIVE = 3;$/;"	f	class:ElementComparator
+BY_WIDTH	TrainsetCreator/src/it/univpm/dii/utils/ElementComparator.java	/^    public static final int BY_WIDTH = 1;$/;"	f	class:ElementComparator
+BevelArrowIcon	TrainsetCreator/src/it/univpm/dii/view/component/BevelArrowIcon.java	/^    public BevelArrowIcon(Color edge1, Color edge2, Color fill,$/;"	m	class:BevelArrowIcon
+BevelArrowIcon	TrainsetCreator/src/it/univpm/dii/view/component/BevelArrowIcon.java	/^    public BevelArrowIcon(int direction, boolean isRaisedView, boolean isPressedView) {$/;"	m	class:BevelArrowIcon
+BevelArrowIcon	TrainsetCreator/src/it/univpm/dii/view/component/BevelArrowIcon.java	/^public class BevelArrowIcon implements Icon {$/;"	c
+BinFileComparator	TrainsetCreator/src/it/univpm/dii/utils/BinFileComparator.java	/^public class BinFileComparator implements Comparator<File> {$/;"	c
+BinFileFilter	TrainsetCreator/src/it/univpm/dii/utils/BinFileFilter.java	/^public class BinFileFilter implements FilenameFilter {$/;"	c
+BlankIcon	TrainsetCreator/src/it/univpm/dii/view/component/BlankIcon.java	/^    public BlankIcon() {$/;"	m	class:BlankIcon
+BlankIcon	TrainsetCreator/src/it/univpm/dii/view/component/BlankIcon.java	/^    public BlankIcon(Color color, int size) {$/;"	m	class:BlankIcon
+BlankIcon	TrainsetCreator/src/it/univpm/dii/view/component/BlankIcon.java	/^public class BlankIcon implements Icon {$/;"	c
+CMAKE_BINARY_DIR	Makefile	/^CMAKE_BINARY_DIR = \/home\/ilario\/Projects\/hasp-tracker$/;"	m
+CMAKE_BINARY_DIR	matlab/Makefile	/^CMAKE_BINARY_DIR = \/home\/ilario\/Projects\/hasp-tracker$/;"	m
+CMAKE_BINARY_DIR	matlab/adaboost/Makefile	/^CMAKE_BINARY_DIR = \/home\/ilario\/Projects\/hasp-tracker$/;"	m
+CMAKE_BINARY_DIR	matlab/detection/Makefile	/^CMAKE_BINARY_DIR = \/home\/ilario\/Projects\/hasp-tracker$/;"	m
+CMAKE_BINARY_DIR	matlab/haar/Makefile	/^CMAKE_BINARY_DIR = \/home\/ilario\/Projects\/hasp-tracker$/;"	m
+CMAKE_BINARY_DIR	matlab/lib/Makefile	/^CMAKE_BINARY_DIR = \/home\/ilario\/Projects\/hasp-tracker$/;"	m
+CMAKE_BINARY_DIR	matlab/preprocess/Makefile	/^CMAKE_BINARY_DIR = \/home\/ilario\/Projects\/hasp-tracker$/;"	m
+CMAKE_COMMAND	Makefile	/^CMAKE_COMMAND = \/usr\/bin\/cmake$/;"	m
+CMAKE_COMMAND	matlab/Makefile	/^CMAKE_COMMAND = \/usr\/bin\/cmake$/;"	m
+CMAKE_COMMAND	matlab/adaboost/Makefile	/^CMAKE_COMMAND = \/usr\/bin\/cmake$/;"	m
+CMAKE_COMMAND	matlab/detection/Makefile	/^CMAKE_COMMAND = \/usr\/bin\/cmake$/;"	m
+CMAKE_COMMAND	matlab/haar/Makefile	/^CMAKE_COMMAND = \/usr\/bin\/cmake$/;"	m
+CMAKE_COMMAND	matlab/lib/Makefile	/^CMAKE_COMMAND = \/usr\/bin\/cmake$/;"	m
+CMAKE_COMMAND	matlab/preprocess/Makefile	/^CMAKE_COMMAND = \/usr\/bin\/cmake$/;"	m
+CMAKE_SOURCE_DIR	Makefile	/^CMAKE_SOURCE_DIR = \/home\/ilario\/Projects\/hasp-tracker$/;"	m
+CMAKE_SOURCE_DIR	matlab/Makefile	/^CMAKE_SOURCE_DIR = \/home\/ilario\/Projects\/hasp-tracker$/;"	m
+CMAKE_SOURCE_DIR	matlab/adaboost/Makefile	/^CMAKE_SOURCE_DIR = \/home\/ilario\/Projects\/hasp-tracker$/;"	m
+CMAKE_SOURCE_DIR	matlab/detection/Makefile	/^CMAKE_SOURCE_DIR = \/home\/ilario\/Projects\/hasp-tracker$/;"	m
+CMAKE_SOURCE_DIR	matlab/haar/Makefile	/^CMAKE_SOURCE_DIR = \/home\/ilario\/Projects\/hasp-tracker$/;"	m
+CMAKE_SOURCE_DIR	matlab/lib/Makefile	/^CMAKE_SOURCE_DIR = \/home\/ilario\/Projects\/hasp-tracker$/;"	m
+CMAKE_SOURCE_DIR	matlab/preprocess/Makefile	/^CMAKE_SOURCE_DIR = \/home\/ilario\/Projects\/hasp-tracker$/;"	m
+COLOR_DEPTH	TrainsetCreator/src/it/univpm/dii/service/DepthImage.java	/^    protected static final int COLOR_DEPTH = 2;$/;"	f	class:DepthImage
+COMPILER_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	103;"	d	file:
+COMPILER_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	110;"	d	file:
+COMPILER_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	117;"	d	file:
+COMPILER_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	124;"	d	file:
+COMPILER_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	132;"	d	file:
+COMPILER_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	137;"	d	file:
+COMPILER_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	144;"	d	file:
+COMPILER_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	147;"	d	file:
+COMPILER_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	14;"	d	file:
+COMPILER_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	150;"	d	file:
+COMPILER_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	153;"	d	file:
+COMPILER_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	168;"	d	file:
+COMPILER_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	182;"	d	file:
+COMPILER_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	190;"	d	file:
+COMPILER_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	208;"	d	file:
+COMPILER_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	217;"	d	file:
+COMPILER_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	220;"	d	file:
+COMPILER_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	227;"	d	file:
+COMPILER_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	245;"	d	file:
+COMPILER_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	248;"	d	file:
+COMPILER_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	251;"	d	file:
+COMPILER_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	37;"	d	file:
+COMPILER_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	45;"	d	file:
+COMPILER_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	51;"	d	file:
+COMPILER_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	57;"	d	file:
+COMPILER_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	66;"	d	file:
+COMPILER_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	75;"	d	file:
+COMPILER_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	89;"	d	file:
+COMPILER_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	96;"	d	file:
+COMPILER_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	101;"	d	file:
+COMPILER_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	108;"	d	file:
+COMPILER_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	115;"	d	file:
+COMPILER_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	122;"	d	file:
+COMPILER_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	129;"	d	file:
+COMPILER_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	137;"	d	file:
+COMPILER_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	13;"	d	file:
+COMPILER_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	142;"	d	file:
+COMPILER_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	149;"	d	file:
+COMPILER_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	152;"	d	file:
+COMPILER_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	155;"	d	file:
+COMPILER_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	170;"	d	file:
+COMPILER_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	184;"	d	file:
+COMPILER_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	192;"	d	file:
+COMPILER_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	19;"	d	file:
+COMPILER_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	210;"	d	file:
+COMPILER_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	219;"	d	file:
+COMPILER_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	222;"	d	file:
+COMPILER_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	240;"	d	file:
+COMPILER_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	243;"	d	file:
+COMPILER_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	246;"	d	file:
+COMPILER_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	42;"	d	file:
+COMPILER_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	50;"	d	file:
+COMPILER_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	56;"	d	file:
+COMPILER_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	62;"	d	file:
+COMPILER_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	71;"	d	file:
+COMPILER_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	80;"	d	file:
+COMPILER_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	94;"	d	file:
+COMPILER_ID	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	103;"	d	file:
+COMPILER_ID	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	110;"	d	file:
+COMPILER_ID	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	117;"	d	file:
+COMPILER_ID	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	124;"	d	file:
+COMPILER_ID	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	132;"	d	file:
+COMPILER_ID	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	137;"	d	file:
+COMPILER_ID	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	144;"	d	file:
+COMPILER_ID	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	147;"	d	file:
+COMPILER_ID	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	14;"	d	file:
+COMPILER_ID	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	150;"	d	file:
+COMPILER_ID	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	153;"	d	file:
+COMPILER_ID	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	168;"	d	file:
+COMPILER_ID	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	182;"	d	file:
+COMPILER_ID	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	190;"	d	file:
+COMPILER_ID	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	208;"	d	file:
+COMPILER_ID	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	217;"	d	file:
+COMPILER_ID	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	220;"	d	file:
+COMPILER_ID	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	227;"	d	file:
+COMPILER_ID	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	245;"	d	file:
+COMPILER_ID	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	248;"	d	file:
+COMPILER_ID	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	251;"	d	file:
+COMPILER_ID	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	37;"	d	file:
+COMPILER_ID	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	45;"	d	file:
+COMPILER_ID	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	51;"	d	file:
+COMPILER_ID	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	57;"	d	file:
+COMPILER_ID	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	66;"	d	file:
+COMPILER_ID	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	75;"	d	file:
+COMPILER_ID	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	89;"	d	file:
+COMPILER_ID	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	96;"	d	file:
+COMPILER_ID	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	101;"	d	file:
+COMPILER_ID	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	108;"	d	file:
+COMPILER_ID	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	115;"	d	file:
+COMPILER_ID	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	122;"	d	file:
+COMPILER_ID	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	129;"	d	file:
+COMPILER_ID	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	137;"	d	file:
+COMPILER_ID	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	13;"	d	file:
+COMPILER_ID	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	142;"	d	file:
+COMPILER_ID	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	149;"	d	file:
+COMPILER_ID	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	152;"	d	file:
+COMPILER_ID	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	155;"	d	file:
+COMPILER_ID	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	170;"	d	file:
+COMPILER_ID	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	184;"	d	file:
+COMPILER_ID	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	192;"	d	file:
+COMPILER_ID	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	19;"	d	file:
+COMPILER_ID	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	210;"	d	file:
+COMPILER_ID	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	219;"	d	file:
+COMPILER_ID	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	222;"	d	file:
+COMPILER_ID	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	240;"	d	file:
+COMPILER_ID	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	243;"	d	file:
+COMPILER_ID	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	246;"	d	file:
+COMPILER_ID	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	42;"	d	file:
+COMPILER_ID	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	50;"	d	file:
+COMPILER_ID	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	56;"	d	file:
+COMPILER_ID	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	62;"	d	file:
+COMPILER_ID	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	71;"	d	file:
+COMPILER_ID	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	80;"	d	file:
+COMPILER_ID	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	94;"	d	file:
+COMPILER_VERSION_MAJOR	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	105;"	d	file:
+COMPILER_VERSION_MAJOR	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	112;"	d	file:
+COMPILER_VERSION_MAJOR	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	119;"	d	file:
+COMPILER_VERSION_MAJOR	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	125;"	d	file:
+COMPILER_VERSION_MAJOR	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	133;"	d	file:
+COMPILER_VERSION_MAJOR	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	139;"	d	file:
+COMPILER_VERSION_MAJOR	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	157;"	d	file:
+COMPILER_VERSION_MAJOR	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	172;"	d	file:
+COMPILER_VERSION_MAJOR	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	183;"	d	file:
+COMPILER_VERSION_MAJOR	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	192;"	d	file:
+COMPILER_VERSION_MAJOR	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	19;"	d	file:
+COMPILER_VERSION_MAJOR	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	211;"	d	file:
+COMPILER_VERSION_MAJOR	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	222;"	d	file:
+COMPILER_VERSION_MAJOR	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	230;"	d	file:
+COMPILER_VERSION_MAJOR	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	235;"	d	file:
+COMPILER_VERSION_MAJOR	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	38;"	d	file:
+COMPILER_VERSION_MAJOR	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	46;"	d	file:
+COMPILER_VERSION_MAJOR	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	53;"	d	file:
+COMPILER_VERSION_MAJOR	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	59;"	d	file:
+COMPILER_VERSION_MAJOR	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	68;"	d	file:
+COMPILER_VERSION_MAJOR	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	78;"	d	file:
+COMPILER_VERSION_MAJOR	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	83;"	d	file:
+COMPILER_VERSION_MAJOR	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	91;"	d	file:
+COMPILER_VERSION_MAJOR	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	98;"	d	file:
+COMPILER_VERSION_MAJOR	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	103;"	d	file:
+COMPILER_VERSION_MAJOR	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	110;"	d	file:
+COMPILER_VERSION_MAJOR	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	117;"	d	file:
+COMPILER_VERSION_MAJOR	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	124;"	d	file:
+COMPILER_VERSION_MAJOR	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	130;"	d	file:
+COMPILER_VERSION_MAJOR	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	138;"	d	file:
+COMPILER_VERSION_MAJOR	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	144;"	d	file:
+COMPILER_VERSION_MAJOR	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	159;"	d	file:
+COMPILER_VERSION_MAJOR	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	15;"	d	file:
+COMPILER_VERSION_MAJOR	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	174;"	d	file:
+COMPILER_VERSION_MAJOR	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	185;"	d	file:
+COMPILER_VERSION_MAJOR	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	194;"	d	file:
+COMPILER_VERSION_MAJOR	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	213;"	d	file:
+COMPILER_VERSION_MAJOR	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	225;"	d	file:
+COMPILER_VERSION_MAJOR	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	230;"	d	file:
+COMPILER_VERSION_MAJOR	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	24;"	d	file:
+COMPILER_VERSION_MAJOR	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	43;"	d	file:
+COMPILER_VERSION_MAJOR	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	51;"	d	file:
+COMPILER_VERSION_MAJOR	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	58;"	d	file:
+COMPILER_VERSION_MAJOR	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	64;"	d	file:
+COMPILER_VERSION_MAJOR	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	73;"	d	file:
+COMPILER_VERSION_MAJOR	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	83;"	d	file:
+COMPILER_VERSION_MAJOR	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	88;"	d	file:
+COMPILER_VERSION_MAJOR	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	96;"	d	file:
+COMPILER_VERSION_MAJOR	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	105;"	d	file:
+COMPILER_VERSION_MAJOR	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	112;"	d	file:
+COMPILER_VERSION_MAJOR	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	119;"	d	file:
+COMPILER_VERSION_MAJOR	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	125;"	d	file:
+COMPILER_VERSION_MAJOR	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	133;"	d	file:
+COMPILER_VERSION_MAJOR	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	139;"	d	file:
+COMPILER_VERSION_MAJOR	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	157;"	d	file:
+COMPILER_VERSION_MAJOR	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	172;"	d	file:
+COMPILER_VERSION_MAJOR	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	183;"	d	file:
+COMPILER_VERSION_MAJOR	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	192;"	d	file:
+COMPILER_VERSION_MAJOR	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	19;"	d	file:
+COMPILER_VERSION_MAJOR	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	211;"	d	file:
+COMPILER_VERSION_MAJOR	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	222;"	d	file:
+COMPILER_VERSION_MAJOR	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	230;"	d	file:
+COMPILER_VERSION_MAJOR	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	235;"	d	file:
+COMPILER_VERSION_MAJOR	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	38;"	d	file:
+COMPILER_VERSION_MAJOR	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	46;"	d	file:
+COMPILER_VERSION_MAJOR	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	53;"	d	file:
+COMPILER_VERSION_MAJOR	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	59;"	d	file:
+COMPILER_VERSION_MAJOR	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	68;"	d	file:
+COMPILER_VERSION_MAJOR	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	78;"	d	file:
+COMPILER_VERSION_MAJOR	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	83;"	d	file:
+COMPILER_VERSION_MAJOR	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	91;"	d	file:
+COMPILER_VERSION_MAJOR	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	98;"	d	file:
+COMPILER_VERSION_MAJOR	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	103;"	d	file:
+COMPILER_VERSION_MAJOR	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	110;"	d	file:
+COMPILER_VERSION_MAJOR	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	117;"	d	file:
+COMPILER_VERSION_MAJOR	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	124;"	d	file:
+COMPILER_VERSION_MAJOR	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	130;"	d	file:
+COMPILER_VERSION_MAJOR	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	138;"	d	file:
+COMPILER_VERSION_MAJOR	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	144;"	d	file:
+COMPILER_VERSION_MAJOR	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	159;"	d	file:
+COMPILER_VERSION_MAJOR	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	15;"	d	file:
+COMPILER_VERSION_MAJOR	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	174;"	d	file:
+COMPILER_VERSION_MAJOR	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	185;"	d	file:
+COMPILER_VERSION_MAJOR	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	194;"	d	file:
+COMPILER_VERSION_MAJOR	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	213;"	d	file:
+COMPILER_VERSION_MAJOR	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	225;"	d	file:
+COMPILER_VERSION_MAJOR	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	230;"	d	file:
+COMPILER_VERSION_MAJOR	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	24;"	d	file:
+COMPILER_VERSION_MAJOR	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	43;"	d	file:
+COMPILER_VERSION_MAJOR	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	51;"	d	file:
+COMPILER_VERSION_MAJOR	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	58;"	d	file:
+COMPILER_VERSION_MAJOR	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	64;"	d	file:
+COMPILER_VERSION_MAJOR	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	73;"	d	file:
+COMPILER_VERSION_MAJOR	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	83;"	d	file:
+COMPILER_VERSION_MAJOR	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	88;"	d	file:
+COMPILER_VERSION_MAJOR	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	96;"	d	file:
+COMPILER_VERSION_MINOR	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	106;"	d	file:
+COMPILER_VERSION_MINOR	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	113;"	d	file:
+COMPILER_VERSION_MINOR	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	120;"	d	file:
+COMPILER_VERSION_MINOR	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	126;"	d	file:
+COMPILER_VERSION_MINOR	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	134;"	d	file:
+COMPILER_VERSION_MINOR	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	140;"	d	file:
+COMPILER_VERSION_MINOR	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	158;"	d	file:
+COMPILER_VERSION_MINOR	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	173;"	d	file:
+COMPILER_VERSION_MINOR	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	184;"	d	file:
+COMPILER_VERSION_MINOR	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	193;"	d	file:
+COMPILER_VERSION_MINOR	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	20;"	d	file:
+COMPILER_VERSION_MINOR	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	212;"	d	file:
+COMPILER_VERSION_MINOR	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	223;"	d	file:
+COMPILER_VERSION_MINOR	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	231;"	d	file:
+COMPILER_VERSION_MINOR	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	236;"	d	file:
+COMPILER_VERSION_MINOR	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	39;"	d	file:
+COMPILER_VERSION_MINOR	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	47;"	d	file:
+COMPILER_VERSION_MINOR	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	54;"	d	file:
+COMPILER_VERSION_MINOR	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	60;"	d	file:
+COMPILER_VERSION_MINOR	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	69;"	d	file:
+COMPILER_VERSION_MINOR	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	79;"	d	file:
+COMPILER_VERSION_MINOR	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	84;"	d	file:
+COMPILER_VERSION_MINOR	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	92;"	d	file:
+COMPILER_VERSION_MINOR	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	99;"	d	file:
+COMPILER_VERSION_MINOR	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	104;"	d	file:
+COMPILER_VERSION_MINOR	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	111;"	d	file:
+COMPILER_VERSION_MINOR	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	118;"	d	file:
+COMPILER_VERSION_MINOR	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	125;"	d	file:
+COMPILER_VERSION_MINOR	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	131;"	d	file:
+COMPILER_VERSION_MINOR	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	139;"	d	file:
+COMPILER_VERSION_MINOR	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	145;"	d	file:
+COMPILER_VERSION_MINOR	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	160;"	d	file:
+COMPILER_VERSION_MINOR	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	16;"	d	file:
+COMPILER_VERSION_MINOR	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	175;"	d	file:
+COMPILER_VERSION_MINOR	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	186;"	d	file:
+COMPILER_VERSION_MINOR	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	195;"	d	file:
+COMPILER_VERSION_MINOR	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	214;"	d	file:
+COMPILER_VERSION_MINOR	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	226;"	d	file:
+COMPILER_VERSION_MINOR	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	231;"	d	file:
+COMPILER_VERSION_MINOR	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	25;"	d	file:
+COMPILER_VERSION_MINOR	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	44;"	d	file:
+COMPILER_VERSION_MINOR	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	52;"	d	file:
+COMPILER_VERSION_MINOR	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	59;"	d	file:
+COMPILER_VERSION_MINOR	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	65;"	d	file:
+COMPILER_VERSION_MINOR	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	74;"	d	file:
+COMPILER_VERSION_MINOR	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	84;"	d	file:
+COMPILER_VERSION_MINOR	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	89;"	d	file:
+COMPILER_VERSION_MINOR	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	97;"	d	file:
+COMPILER_VERSION_MINOR	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	106;"	d	file:
+COMPILER_VERSION_MINOR	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	113;"	d	file:
+COMPILER_VERSION_MINOR	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	120;"	d	file:
+COMPILER_VERSION_MINOR	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	126;"	d	file:
+COMPILER_VERSION_MINOR	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	134;"	d	file:
+COMPILER_VERSION_MINOR	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	140;"	d	file:
+COMPILER_VERSION_MINOR	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	158;"	d	file:
+COMPILER_VERSION_MINOR	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	173;"	d	file:
+COMPILER_VERSION_MINOR	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	184;"	d	file:
+COMPILER_VERSION_MINOR	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	193;"	d	file:
+COMPILER_VERSION_MINOR	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	20;"	d	file:
+COMPILER_VERSION_MINOR	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	212;"	d	file:
+COMPILER_VERSION_MINOR	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	223;"	d	file:
+COMPILER_VERSION_MINOR	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	231;"	d	file:
+COMPILER_VERSION_MINOR	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	236;"	d	file:
+COMPILER_VERSION_MINOR	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	39;"	d	file:
+COMPILER_VERSION_MINOR	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	47;"	d	file:
+COMPILER_VERSION_MINOR	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	54;"	d	file:
+COMPILER_VERSION_MINOR	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	60;"	d	file:
+COMPILER_VERSION_MINOR	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	69;"	d	file:
+COMPILER_VERSION_MINOR	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	79;"	d	file:
+COMPILER_VERSION_MINOR	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	84;"	d	file:
+COMPILER_VERSION_MINOR	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	92;"	d	file:
+COMPILER_VERSION_MINOR	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	99;"	d	file:
+COMPILER_VERSION_MINOR	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	104;"	d	file:
+COMPILER_VERSION_MINOR	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	111;"	d	file:
+COMPILER_VERSION_MINOR	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	118;"	d	file:
+COMPILER_VERSION_MINOR	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	125;"	d	file:
+COMPILER_VERSION_MINOR	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	131;"	d	file:
+COMPILER_VERSION_MINOR	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	139;"	d	file:
+COMPILER_VERSION_MINOR	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	145;"	d	file:
+COMPILER_VERSION_MINOR	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	160;"	d	file:
+COMPILER_VERSION_MINOR	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	16;"	d	file:
+COMPILER_VERSION_MINOR	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	175;"	d	file:
+COMPILER_VERSION_MINOR	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	186;"	d	file:
+COMPILER_VERSION_MINOR	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	195;"	d	file:
+COMPILER_VERSION_MINOR	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	214;"	d	file:
+COMPILER_VERSION_MINOR	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	226;"	d	file:
+COMPILER_VERSION_MINOR	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	231;"	d	file:
+COMPILER_VERSION_MINOR	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	25;"	d	file:
+COMPILER_VERSION_MINOR	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	44;"	d	file:
+COMPILER_VERSION_MINOR	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	52;"	d	file:
+COMPILER_VERSION_MINOR	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	59;"	d	file:
+COMPILER_VERSION_MINOR	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	65;"	d	file:
+COMPILER_VERSION_MINOR	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	74;"	d	file:
+COMPILER_VERSION_MINOR	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	84;"	d	file:
+COMPILER_VERSION_MINOR	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	89;"	d	file:
+COMPILER_VERSION_MINOR	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	97;"	d	file:
+COMPILER_VERSION_PATCH	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	100;"	d	file:
+COMPILER_VERSION_PATCH	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	107;"	d	file:
+COMPILER_VERSION_PATCH	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	114;"	d	file:
+COMPILER_VERSION_PATCH	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	121;"	d	file:
+COMPILER_VERSION_PATCH	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	128;"	d	file:
+COMPILER_VERSION_PATCH	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	141;"	d	file:
+COMPILER_VERSION_PATCH	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	159;"	d	file:
+COMPILER_VERSION_PATCH	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	174;"	d	file:
+COMPILER_VERSION_PATCH	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	186;"	d	file:
+COMPILER_VERSION_PATCH	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	197;"	d	file:
+COMPILER_VERSION_PATCH	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	200;"	d	file:
+COMPILER_VERSION_PATCH	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	213;"	d	file:
+COMPILER_VERSION_PATCH	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	224;"	d	file:
+COMPILER_VERSION_PATCH	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	22;"	d	file:
+COMPILER_VERSION_PATCH	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	232;"	d	file:
+COMPILER_VERSION_PATCH	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	237;"	d	file:
+COMPILER_VERSION_PATCH	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	24;"	d	file:
+COMPILER_VERSION_PATCH	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	41;"	d	file:
+COMPILER_VERSION_PATCH	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	48;"	d	file:
+COMPILER_VERSION_PATCH	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	62;"	d	file:
+COMPILER_VERSION_PATCH	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	71;"	d	file:
+COMPILER_VERSION_PATCH	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	80;"	d	file:
+COMPILER_VERSION_PATCH	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	85;"	d	file:
+COMPILER_VERSION_PATCH	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	93;"	d	file:
+COMPILER_VERSION_PATCH	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	105;"	d	file:
+COMPILER_VERSION_PATCH	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	112;"	d	file:
+COMPILER_VERSION_PATCH	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	119;"	d	file:
+COMPILER_VERSION_PATCH	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	126;"	d	file:
+COMPILER_VERSION_PATCH	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	133;"	d	file:
+COMPILER_VERSION_PATCH	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	146;"	d	file:
+COMPILER_VERSION_PATCH	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	161;"	d	file:
+COMPILER_VERSION_PATCH	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	176;"	d	file:
+COMPILER_VERSION_PATCH	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	188;"	d	file:
+COMPILER_VERSION_PATCH	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	199;"	d	file:
+COMPILER_VERSION_PATCH	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	202;"	d	file:
+COMPILER_VERSION_PATCH	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	215;"	d	file:
+COMPILER_VERSION_PATCH	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	227;"	d	file:
+COMPILER_VERSION_PATCH	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	232;"	d	file:
+COMPILER_VERSION_PATCH	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	27;"	d	file:
+COMPILER_VERSION_PATCH	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	29;"	d	file:
+COMPILER_VERSION_PATCH	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	46;"	d	file:
+COMPILER_VERSION_PATCH	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	53;"	d	file:
+COMPILER_VERSION_PATCH	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	67;"	d	file:
+COMPILER_VERSION_PATCH	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	76;"	d	file:
+COMPILER_VERSION_PATCH	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	85;"	d	file:
+COMPILER_VERSION_PATCH	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	90;"	d	file:
+COMPILER_VERSION_PATCH	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	98;"	d	file:
+COMPILER_VERSION_PATCH	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	100;"	d	file:
+COMPILER_VERSION_PATCH	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	107;"	d	file:
+COMPILER_VERSION_PATCH	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	114;"	d	file:
+COMPILER_VERSION_PATCH	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	121;"	d	file:
+COMPILER_VERSION_PATCH	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	128;"	d	file:
+COMPILER_VERSION_PATCH	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	141;"	d	file:
+COMPILER_VERSION_PATCH	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	159;"	d	file:
+COMPILER_VERSION_PATCH	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	174;"	d	file:
+COMPILER_VERSION_PATCH	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	186;"	d	file:
+COMPILER_VERSION_PATCH	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	197;"	d	file:
+COMPILER_VERSION_PATCH	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	200;"	d	file:
+COMPILER_VERSION_PATCH	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	213;"	d	file:
+COMPILER_VERSION_PATCH	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	224;"	d	file:
+COMPILER_VERSION_PATCH	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	22;"	d	file:
+COMPILER_VERSION_PATCH	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	232;"	d	file:
+COMPILER_VERSION_PATCH	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	237;"	d	file:
+COMPILER_VERSION_PATCH	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	24;"	d	file:
+COMPILER_VERSION_PATCH	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	41;"	d	file:
+COMPILER_VERSION_PATCH	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	48;"	d	file:
+COMPILER_VERSION_PATCH	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	62;"	d	file:
+COMPILER_VERSION_PATCH	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	71;"	d	file:
+COMPILER_VERSION_PATCH	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	80;"	d	file:
+COMPILER_VERSION_PATCH	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	85;"	d	file:
+COMPILER_VERSION_PATCH	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	93;"	d	file:
+COMPILER_VERSION_PATCH	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	105;"	d	file:
+COMPILER_VERSION_PATCH	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	112;"	d	file:
+COMPILER_VERSION_PATCH	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	119;"	d	file:
+COMPILER_VERSION_PATCH	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	126;"	d	file:
+COMPILER_VERSION_PATCH	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	133;"	d	file:
+COMPILER_VERSION_PATCH	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	146;"	d	file:
+COMPILER_VERSION_PATCH	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	161;"	d	file:
+COMPILER_VERSION_PATCH	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	176;"	d	file:
+COMPILER_VERSION_PATCH	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	188;"	d	file:
+COMPILER_VERSION_PATCH	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	199;"	d	file:
+COMPILER_VERSION_PATCH	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	202;"	d	file:
+COMPILER_VERSION_PATCH	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	215;"	d	file:
+COMPILER_VERSION_PATCH	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	227;"	d	file:
+COMPILER_VERSION_PATCH	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	232;"	d	file:
+COMPILER_VERSION_PATCH	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	27;"	d	file:
+COMPILER_VERSION_PATCH	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	29;"	d	file:
+COMPILER_VERSION_PATCH	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	46;"	d	file:
+COMPILER_VERSION_PATCH	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	53;"	d	file:
+COMPILER_VERSION_PATCH	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	67;"	d	file:
+COMPILER_VERSION_PATCH	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	76;"	d	file:
+COMPILER_VERSION_PATCH	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	85;"	d	file:
+COMPILER_VERSION_PATCH	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	90;"	d	file:
+COMPILER_VERSION_PATCH	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	98;"	d	file:
+COMPILER_VERSION_TWEAK	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	165;"	d	file:
+COMPILER_VERSION_TWEAK	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	204;"	d	file:
+COMPILER_VERSION_TWEAK	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	28;"	d	file:
+COMPILER_VERSION_TWEAK	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	167;"	d	file:
+COMPILER_VERSION_TWEAK	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	206;"	d	file:
+COMPILER_VERSION_TWEAK	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	33;"	d	file:
+COMPILER_VERSION_TWEAK	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	165;"	d	file:
+COMPILER_VERSION_TWEAK	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	204;"	d	file:
+COMPILER_VERSION_TWEAK	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	28;"	d	file:
+COMPILER_VERSION_TWEAK	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	167;"	d	file:
+COMPILER_VERSION_TWEAK	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	206;"	d	file:
+COMPILER_VERSION_TWEAK	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	33;"	d	file:
+CancelAction	TrainsetCreator/src/it/univpm/dii/contoller/resize/CancelAction.java	/^    public CancelAction(ResizeDialog dialog) {$/;"	m	class:CancelAction
+CancelAction	TrainsetCreator/src/it/univpm/dii/contoller/resize/CancelAction.java	/^class CancelAction implements ActionListener {$/;"	c
+ChangeFlipDirectionAction	TrainsetCreator/src/it/univpm/dii/contoller/addframe/ChangeFlipDirectionAction.java	/^    public ChangeFlipDirectionAction(AddFrameView view) {$/;"	m	class:ChangeFlipDirectionAction
+ChangeFlipDirectionAction	TrainsetCreator/src/it/univpm/dii/contoller/addframe/ChangeFlipDirectionAction.java	/^class ChangeFlipDirectionAction implements ActionListener {$/;"	c
+Conversione delle distanze	documents/relazione/index.tex	/^			Da ricordare che stiamo trattando di matrici $160 \\times 100$ (porzione del frame principale) i cui valori corrispondo al risultato della misurazione del sensore di profondità del Kinect ed è proporzionale alla distanza rilevata.$/;"	b
+DEC	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	409;"	d	file:
+DEC	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	404;"	d	file:
+DEC	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	409;"	d	file:
+DEC	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	404;"	d	file:
+DEFAULT_SIZE	TrainsetCreator/src/it/univpm/dii/view/component/BevelArrowIcon.java	/^    private static final int DEFAULT_SIZE = 8;$/;"	f	class:BevelArrowIcon	file:
+DESC	TrainsetCreator/src/it/univpm/dii/utils/ElementComparator.java	/^    public static final int DESC = 10;$/;"	f	class:ElementComparator
+DIRECTORY_EMPTY	TrainsetCreator/src/it/univpm/dii/contoller/main/MainController.java	/^    protected static final int DIRECTORY_EMPTY = 0;$/;"	f	class:MainController
+DIRECTORY_NOT_EMPTY	TrainsetCreator/src/it/univpm/dii/contoller/main/MainController.java	/^    protected static final int DIRECTORY_NOT_EMPTY = 1;$/;"	f	class:MainController
+DISABLE_FLIP	TrainsetCreator/src/it/univpm/dii/view/component/DepthImagePanel.java	/^    public static final int DISABLE_FLIP = 0;$/;"	f	class:DepthImagePanel
+DOWN	TrainsetCreator/src/it/univpm/dii/view/component/BevelArrowIcon.java	/^    public static final int DOWN = 1;$/;"	f	class:BevelArrowIcon
+DOWN	TrainsetCreator/src/it/univpm/dii/view/component/SortButtonRenderer.java	/^    public static final int DOWN = 2;$/;"	f	class:SortButtonRenderer
+DO_NOT_RESIZE	TrainsetCreator/src/it/univpm/dii/view/component/DepthImagePanel.java	/^    public static final int DO_NOT_RESIZE = 8;$/;"	f	class:DepthImagePanel
+DRAWING_COLOR	TrainsetCreator/src/it/univpm/dii/view/component/DepthImagePanel.java	/^    public static final Color DRAWING_COLOR = Color.GREEN;$/;"	f	class:DepthImagePanel
+DatasetManager	TrainsetCreator/src/it/univpm/dii/model/DatasetManager.java	/^    public DatasetManager(File base) throws Exception {$/;"	m	class:DatasetManager
+DatasetManager	TrainsetCreator/src/it/univpm/dii/model/DatasetManager.java	/^public class DatasetManager {$/;"	c
+DepthImage	TrainsetCreator/src/it/univpm/dii/service/DepthImage.java	/^    public DepthImage(File depth, int width, int height)$/;"	m	class:DepthImage
+DepthImage	TrainsetCreator/src/it/univpm/dii/service/DepthImage.java	/^public class DepthImage {$/;"	c
+DepthImagePanel	TrainsetCreator/src/it/univpm/dii/view/component/DepthImagePanel.java	/^    public DepthImagePanel(DepthImage depthImage) {$/;"	m	class:DepthImagePanel
+DepthImagePanel	TrainsetCreator/src/it/univpm/dii/view/component/DepthImagePanel.java	/^    public DepthImagePanel(DepthImage depthImage, int mode) {$/;"	m	class:DepthImagePanel
+DepthImagePanel	TrainsetCreator/src/it/univpm/dii/view/component/DepthImagePanel.java	/^    public DepthImagePanel(int mode) {$/;"	m	class:DepthImagePanel
+DepthImagePanel	TrainsetCreator/src/it/univpm/dii/view/component/DepthImagePanel.java	/^public class DepthImagePanel extends JPanel implements MouseListener, MouseMotionListener {$/;"	c
+DimCropChangeAction	TrainsetCreator/src/it/univpm/dii/contoller/addframe/DimCropChangeAction.java	/^    public DimCropChangeAction(AddFrameView view) {$/;"	m	class:DimCropChangeAction
+DimCropChangeAction	TrainsetCreator/src/it/univpm/dii/contoller/addframe/DimCropChangeAction.java	/^class DimCropChangeAction implements PropertyChangeListener {$/;"	c
+Dimensions	matlab/lib/src/geometry/Dimensions.cpp	/^Dimensions::Dimensions(unsigned int width, unsigned int height) {$/;"	f	class:Dimensions
+Dimensions	matlab/lib/src/geometry/Dimensions.h	/^class Dimensions {$/;"	c
+EQUALS	Makefile	/^EQUALS = =$/;"	m
+EQUALS	matlab/Makefile	/^EQUALS = =$/;"	m
+EQUALS	matlab/adaboost/Makefile	/^EQUALS = =$/;"	m
+EQUALS	matlab/detection/Makefile	/^EQUALS = =$/;"	m
+EQUALS	matlab/haar/Makefile	/^EQUALS = =$/;"	m
+EQUALS	matlab/lib/Makefile	/^EQUALS = =$/;"	m
+EQUALS	matlab/preprocess/Makefile	/^EQUALS = =$/;"	m
+E_RESIZE	TrainsetCreator/src/it/univpm/dii/view/component/DepthImagePanel.java	/^    public static final int E_RESIZE = 6;$/;"	f	class:DepthImagePanel
+EditDialog	TrainsetCreator/src/it/univpm/dii/view/EditDialog.java	/^    public EditDialog(Element element) {$/;"	m	class:EditDialog
+EditDialog	TrainsetCreator/src/it/univpm/dii/view/EditDialog.java	/^public class EditDialog extends JDialog {$/;"	c
+EditFrameController	TrainsetCreator/src/it/univpm/dii/contoller/editframe/EditFrameController.java	/^    public EditFrameController(Element element) {$/;"	m	class:EditFrameController
+EditFrameController	TrainsetCreator/src/it/univpm/dii/contoller/editframe/EditFrameController.java	/^public class EditFrameController {$/;"	c
+EditSelectedAction	TrainsetCreator/src/it/univpm/dii/contoller/main/EditSelectedAction.java	/^class EditSelectedAction implements ActionListener {$/;"	c
+Element	TrainsetCreator/src/it/univpm/dii/model/entities/Element.java	/^    public Element() {$/;"	m	class:Element
+Element	TrainsetCreator/src/it/univpm/dii/model/entities/Element.java	/^    public Element(Element e) {$/;"	m	class:Element
+Element	TrainsetCreator/src/it/univpm/dii/model/entities/Element.java	/^public class Element {$/;"	c
+Element	scripts/dataset_downloader.py	/^class Element:$/;"	c
+ElementComparator	TrainsetCreator/src/it/univpm/dii/utils/ElementComparator.java	/^    public ElementComparator() {$/;"	m	class:ElementComparator
+ElementComparator	TrainsetCreator/src/it/univpm/dii/utils/ElementComparator.java	/^    public ElementComparator(int rule, int order) {$/;"	m	class:ElementComparator
+ElementComparator	TrainsetCreator/src/it/univpm/dii/utils/ElementComparator.java	/^public class ElementComparator implements Comparator<Element> {$/;"	c
+ElementEqualityPredicate	TrainsetCreator/src/it/univpm/dii/utils/ElementEqualityPredicate.java	/^    public ElementEqualityPredicate(Element element) {$/;"	m	class:ElementEqualityPredicate
+ElementEqualityPredicate	TrainsetCreator/src/it/univpm/dii/utils/ElementEqualityPredicate.java	/^public class ElementEqualityPredicate implements Predicate<Element> {$/;"	c
+ElementModel	TrainsetCreator/src/it/univpm/dii/view/tablemodels/ElementModel.java	/^public class ElementModel extends AbstractTableModel {$/;"	c
+EliminaSelectedAction	TrainsetCreator/src/it/univpm/dii/contoller/main/EliminaSelectedAction.java	/^class EliminaSelectedAction implements ActionListener {$/;"	c
+EmptyFrameDirException	TrainsetCreator/src/it/univpm/dii/exception/EmptyFrameDirException.java	/^    public EmptyFrameDirException(String path) {$/;"	m	class:EmptyFrameDirException
+EmptyFrameDirException	TrainsetCreator/src/it/univpm/dii/exception/EmptyFrameDirException.java	/^public class EmptyFrameDirException extends Exception {$/;"	c
+FEATURE_DIM	matlab/lib/src/mexutils/structure_mapping.h	29;"	d
+FEATURE_TLP	matlab/lib/src/mexutils/structure_mapping.h	28;"	d
+FEATURE_TYPE	matlab/lib/src/mexutils/structure_mapping.h	30;"	d
+FastNegativesCheckedAction	TrainsetCreator/src/it/univpm/dii/contoller/addframe/FastNegativesCheckedAction.java	/^    public FastNegativesCheckedAction(AddFrameView view) {$/;"	m	class:FastNegativesCheckedAction
+FastNegativesCheckedAction	TrainsetCreator/src/it/univpm/dii/contoller/addframe/FastNegativesCheckedAction.java	/^class FastNegativesCheckedAction implements ActionListener {$/;"	c
+FeatureTest	matlab/lib/src/adaboost/FeatureTest.cpp	/^FeatureTest::FeatureTest(Haar *feature, Sample *sample) {$/;"	f	class:FeatureTest
+FeatureTest	matlab/lib/src/adaboost/FeatureTest.h	/^    FeatureTest() { };$/;"	f	class:FeatureTest
+FeatureTest	matlab/lib/src/adaboost/FeatureTest.h	/^class FeatureTest {$/;"	c
+FineAction	TrainsetCreator/src/it/univpm/dii/contoller/addframe/FineAction.java	/^    public FineAction(AddFrameView view) {$/;"	m	class:FineAction
+FineAction	TrainsetCreator/src/it/univpm/dii/contoller/addframe/FineAction.java	/^class FineAction implements ActionListener {$/;"	c
+FrameMouseWheelListener	TrainsetCreator/src/it/univpm/dii/contoller/addframe/FrameMouseWheelListener.java	/^    FrameMouseWheelListener(AddFrameView view) {$/;"	m	class:FrameMouseWheelListener
+FrameMouseWheelListener	TrainsetCreator/src/it/univpm/dii/contoller/addframe/FrameMouseWheelListener.java	/^class FrameMouseWheelListener implements MouseWheelListener {$/;"	c
+FrameRenderController	TrainsetCreator/src/it/univpm/dii/contoller/framerender/FrameRenderController.java	/^    public FrameRenderController(File framesDir)$/;"	m	class:FrameRenderController
+FrameRenderController	TrainsetCreator/src/it/univpm/dii/contoller/framerender/FrameRenderController.java	/^public class FrameRenderController {$/;"	c
+FrameRenderView	TrainsetCreator/src/it/univpm/dii/view/FrameRenderView.java	/^    public FrameRenderView() {$/;"	m	class:FrameRenderView
+FrameRenderView	TrainsetCreator/src/it/univpm/dii/view/FrameRenderView.java	/^public class FrameRenderView extends View {$/;"	c
+GRID_COLOR	TrainsetCreator/src/it/univpm/dii/view/component/DepthImagePanel.java	/^    public static final Color GRID_COLOR = Color.RED;$/;"	f	class:DepthImagePanel
+HASP_TRACKER_ADABOOST_H	matlab/lib/src/adaboost/Adaboost.h	6;"	d
+HASP_TRACKER_DIMENSIONS_H	matlab/lib/src/geometry/Dimensions.h	6;"	d
+HASP_TRACKER_FEATURETEST_H	matlab/lib/src/adaboost/FeatureTest.h	6;"	d
+HASP_TRACKER_HAAR_H	matlab/lib/src/feature/Haar.h	6;"	d
+HASP_TRACKER_IMAGE_H	matlab/lib/src/image/Image.h	6;"	d
+HASP_TRACKER_INTERVAL_H	matlab/lib/src/geometry/Interval.h	6;"	d
+HASP_TRACKER_LIBADABOOST_H	matlab/lib/include/adaboost.h	6;"	d
+HASP_TRACKER_LIBEXCEPTIONS_H	matlab/lib/include/exceptions.h	6;"	d
+HASP_TRACKER_LIBFEATURE_H	matlab/lib/include/feature.h	6;"	d
+HASP_TRACKER_LIBGEOMETRY_H	matlab/lib/include/geometry.h	6;"	d
+HASP_TRACKER_LIBIMAGE_H	matlab/lib/include/image.h	6;"	d
+HASP_TRACKER_LIBMEXUTILS_H	matlab/lib/include/mexutils.h	6;"	d
+HASP_TRACKER_MATLAB_H	matlab/lib/src/mexutils/io.h	6;"	d
+HASP_TRACKER_MEMORYACCESSEXCEPTION_H	matlab/lib/src/exception/MemoryAccessException.h	6;"	d
+HASP_TRACKER_POINT_H	matlab/lib/src/geometry/Point.h	6;"	d
+HASP_TRACKER_RECTANGLE_H	matlab/lib/src/geometry/Rectangle.h	12;"	d
+HASP_TRACKER_SAMPLE_H	matlab/lib/src/adaboost/Sample.h	6;"	d
+HASP_TRACKER_SPLITEXCEPTION_H	matlab/lib/src/exception/SplitException.h	6;"	d
+HASP_TRACKER_STRONGCLASSIFIER_H	matlab/lib/src/adaboost/StrongClassifier.h	6;"	d
+HASP_TRACKER_STRUCTURE_MAPPING_H	matlab/lib/src/mexutils/structure_mapping.h	6;"	d
+HASP_TRACKER_TEMPLATES_DEFINITION_H	matlab/lib/src/mexutils/templates_definition.h	6;"	d
+HASP_TRACKER_TO_STRING_PATCH_H	matlab/lib/to_string_patch.h	6;"	d
+HASP_TRACKER_UTILS_H	matlab/lib/src/mexutils/utils.h	6;"	d
+HASP_TRACKER_WEAKCLASSIFIER_H	matlab/lib/src/adaboost/WeakClassifier.h	6;"	d
+HEX	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	420;"	d	file:
+HEX	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	415;"	d	file:
+HEX	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	420;"	d	file:
+HEX	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	415;"	d	file:
+HORIZONTAL_EDGE	matlab/lib/src/feature/Haar.h	/^    static const unsigned char HORIZONTAL_EDGE = 1;$/;"	m	class:Haar
+HORIZONTAL_LINEAR	matlab/lib/src/feature/Haar.h	/^    static const unsigned char HORIZONTAL_LINEAR = 3;$/;"	m	class:Haar
+Haar	matlab/lib/src/feature/Haar.cpp	/^Haar::Haar(Rectangle *r, int code) {$/;"	f	class:Haar
+Haar	matlab/lib/src/feature/Haar.h	/^    Haar() { };$/;"	f	class:Haar
+Haar	matlab/lib/src/feature/Haar.h	/^class Haar {$/;"	c
+HandFreeSelectionCheckedAction	TrainsetCreator/src/it/univpm/dii/contoller/addframe/HandFreeSelectionCheckedAction.java	/^    public HandFreeSelectionCheckedAction(AddFrameView view) {$/;"	m	class:HandFreeSelectionCheckedAction
+HandFreeSelectionCheckedAction	TrainsetCreator/src/it/univpm/dii/contoller/addframe/HandFreeSelectionCheckedAction.java	/^class HandFreeSelectionCheckedAction implements ActionListener {$/;"	c
+HeaderListener	TrainsetCreator/src/it/univpm/dii/view/component/SampleTable.java	/^        public HeaderListener(JTableHeader header, SortButtonRenderer renderer) {$/;"	m	class:SampleTable.HeaderListener
+HeaderListener	TrainsetCreator/src/it/univpm/dii/view/component/SampleTable.java	/^    class HeaderListener extends MouseAdapter {$/;"	c	class:SampleTable
+HtmlPage	scripts/dataset_downloader.py	/^class HtmlPage:$/;"	c
+ID_VOID_MAIN	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	6;"	d	file:
+ID_VOID_MAIN	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	6;"	d	file:
+Il dataset dall allenamento} % (fold)
+Image	matlab/lib/src/image/Image.cpp	/^Image::Image() { }$/;"	f	class:Image
+Image	matlab/lib/src/image/Image.cpp	/^Image::Image(char *filePath) {$/;"	f	class:Image
+Image	matlab/lib/src/image/Image.cpp	/^Image::Image(double *image, const size_t *size) {$/;"	f	class:Image
+Image	matlab/lib/src/image/Image.cpp	/^Image::Image(double *image, int width, int height) {$/;"	f	class:Image
+Image	matlab/lib/src/image/Image.h	/^class Image {$/;"	c
+Immagine integrale	documents/relazione/index.tex	/^				Questa prima operazione di preprocessing ha complessità computazionale $\\Theta(n \\cdot m)$ con $n$ ed $m$ dimensioni della porzione del frame.$/;"	b
+IndietroRenderInfoAction	TrainsetCreator/src/it/univpm/dii/contoller/framerender/IndietroRenderInfoAction.java	/^    public IndietroRenderInfoAction(FrameRenderView view) {$/;"	m	class:IndietroRenderInfoAction
+IndietroRenderInfoAction	TrainsetCreator/src/it/univpm/dii/contoller/framerender/IndietroRenderInfoAction.java	/^class IndietroRenderInfoAction implements ActionListener {$/;"	c
+Interval	matlab/lib/src/geometry/Interval.cpp	/^Interval::Interval(int a, int b) {$/;"	f	class:Interval
+Interval	matlab/lib/src/geometry/Interval.h	/^class Interval {$/;"	c
+MODE_CROP	TrainsetCreator/src/it/univpm/dii/view/component/DepthImagePanel.java	/^    public static final int MODE_CROP = 1;$/;"	f	class:DepthImagePanel
+MODE_PREVIEW	TrainsetCreator/src/it/univpm/dii/view/component/DepthImagePanel.java	/^    public static final int MODE_PREVIEW = 0;$/;"	f	class:DepthImagePanel
+MVPX	TrainsetCreator/src/it/univpm/dii/view/component/DepthImagePanel.java	/^    public static final int MVPX = 10;$/;"	f	class:DepthImagePanel
+MainController	TrainsetCreator/src/it/univpm/dii/contoller/main/MainController.java	/^    public MainController(MainFrame view) {$/;"	m	class:MainController
+MainController	TrainsetCreator/src/it/univpm/dii/contoller/main/MainController.java	/^public class MainController {$/;"	c
+MainFrame	TrainsetCreator/src/it/univpm/dii/view/MainFrame.java	/^    public MainFrame() {$/;"	m	class:MainFrame
+MainFrame	TrainsetCreator/src/it/univpm/dii/view/MainFrame.java	/^public class MainFrame extends View {$/;"	c
+MemoryAccessException	matlab/lib/src/exception/MemoryAccessException.h	/^class MemoryAccessException {$/;"	c
+MenuItems	TrainsetCreator/src/it/univpm/dii/utils/MenuItems.java	/^public class MenuItems extends HashMap<String, JMenuItem> {$/;"	c
+Menus	TrainsetCreator/src/it/univpm/dii/utils/Menus.java	/^public class Menus extends HashMap<String, JMenu> {$/;"	c
+NEGATIVES_DIR	TrainsetCreator/src/it/univpm/dii/model/DatasetManager.java	/^    public static final String NEGATIVES_DIR = "negatives";$/;"	f	class:DatasetManager
+NE_RESIZE	TrainsetCreator/src/it/univpm/dii/view/component/DepthImagePanel.java	/^    public static final int NE_RESIZE = 1;$/;"	f	class:DepthImagePanel
+NONE	TrainsetCreator/src/it/univpm/dii/view/component/SortButtonRenderer.java	/^    public static final int NONE = 0;$/;"	f	class:SortButtonRenderer
+NW_RESIZE	TrainsetCreator/src/it/univpm/dii/view/component/DepthImagePanel.java	/^    public static final int NW_RESIZE = 2;$/;"	f	class:DepthImagePanel
+N_RESIZE	TrainsetCreator/src/it/univpm/dii/view/component/DepthImagePanel.java	/^    public static final int N_RESIZE = 0;$/;"	f	class:DepthImagePanel
+NewTrainingSetAction	TrainsetCreator/src/it/univpm/dii/contoller/main/NewTrainingSetAction.java	/^class NewTrainingSetAction implements ActionListener {$/;"	c
+OkButtonListener	TrainsetCreator/src/it/univpm/dii/contoller/editframe/OkButtonListener.java	/^    public OkButtonListener(EditDialog view, Element element) {$/;"	m	class:OkButtonListener
+OkButtonListener	TrainsetCreator/src/it/univpm/dii/contoller/editframe/OkButtonListener.java	/^class OkButtonListener implements ActionListener {$/;"	c
+OpenRecentAction	TrainsetCreator/src/it/univpm/dii/contoller/main/OpenRecentAction.java	/^class OpenRecentAction implements ActionListener {$/;"	c
+OpenTrainingSetAction	TrainsetCreator/src/it/univpm/dii/contoller/main/OpenTrainingSetAction.java	/^class OpenTrainingSetAction implements ActionListener {$/;"	c
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	269;"	d	file:
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	272;"	d	file:
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	275;"	d	file:
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	278;"	d	file:
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	281;"	d	file:
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	284;"	d	file:
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	287;"	d	file:
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	290;"	d	file:
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	293;"	d	file:
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	296;"	d	file:
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	299;"	d	file:
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	302;"	d	file:
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	305;"	d	file:
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	308;"	d	file:
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	311;"	d	file:
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	314;"	d	file:
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	317;"	d	file:
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	320;"	d	file:
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	323;"	d	file:
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	326;"	d	file:
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	329;"	d	file:
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	332;"	d	file:
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	335;"	d	file:
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	338;"	d	file:
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	341;"	d	file:
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	345;"	d	file:
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	348;"	d	file:
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	351;"	d	file:
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	354;"	d	file:
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	357;"	d	file:
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	361;"	d	file:
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	264;"	d	file:
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	267;"	d	file:
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	270;"	d	file:
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	273;"	d	file:
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	276;"	d	file:
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	279;"	d	file:
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	282;"	d	file:
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	285;"	d	file:
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	288;"	d	file:
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	291;"	d	file:
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	294;"	d	file:
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	297;"	d	file:
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	300;"	d	file:
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	303;"	d	file:
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	306;"	d	file:
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	309;"	d	file:
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	312;"	d	file:
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	315;"	d	file:
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	318;"	d	file:
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	321;"	d	file:
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	324;"	d	file:
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	327;"	d	file:
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	330;"	d	file:
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	333;"	d	file:
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	336;"	d	file:
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	340;"	d	file:
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	343;"	d	file:
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	346;"	d	file:
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	349;"	d	file:
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	352;"	d	file:
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	356;"	d	file:
+PLATFORM_ID	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	269;"	d	file:
+PLATFORM_ID	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	272;"	d	file:
+PLATFORM_ID	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	275;"	d	file:
+PLATFORM_ID	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	278;"	d	file:
+PLATFORM_ID	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	281;"	d	file:
+PLATFORM_ID	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	284;"	d	file:
+PLATFORM_ID	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	287;"	d	file:
+PLATFORM_ID	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	290;"	d	file:
+PLATFORM_ID	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	293;"	d	file:
+PLATFORM_ID	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	296;"	d	file:
+PLATFORM_ID	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	299;"	d	file:
+PLATFORM_ID	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	302;"	d	file:
+PLATFORM_ID	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	305;"	d	file:
+PLATFORM_ID	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	308;"	d	file:
+PLATFORM_ID	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	311;"	d	file:
+PLATFORM_ID	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	314;"	d	file:
+PLATFORM_ID	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	317;"	d	file:
+PLATFORM_ID	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	320;"	d	file:
+PLATFORM_ID	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	323;"	d	file:
+PLATFORM_ID	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	326;"	d	file:
+PLATFORM_ID	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	329;"	d	file:
+PLATFORM_ID	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	332;"	d	file:
+PLATFORM_ID	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	335;"	d	file:
+PLATFORM_ID	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	338;"	d	file:
+PLATFORM_ID	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	341;"	d	file:
+PLATFORM_ID	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	345;"	d	file:
+PLATFORM_ID	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	348;"	d	file:
+PLATFORM_ID	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	351;"	d	file:
+PLATFORM_ID	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	354;"	d	file:
+PLATFORM_ID	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	357;"	d	file:
+PLATFORM_ID	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	361;"	d	file:
+PLATFORM_ID	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	264;"	d	file:
+PLATFORM_ID	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	267;"	d	file:
+PLATFORM_ID	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	270;"	d	file:
+PLATFORM_ID	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	273;"	d	file:
+PLATFORM_ID	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	276;"	d	file:
+PLATFORM_ID	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	279;"	d	file:
+PLATFORM_ID	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	282;"	d	file:
+PLATFORM_ID	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	285;"	d	file:
+PLATFORM_ID	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	288;"	d	file:
+PLATFORM_ID	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	291;"	d	file:
+PLATFORM_ID	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	294;"	d	file:
+PLATFORM_ID	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	297;"	d	file:
+PLATFORM_ID	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	300;"	d	file:
+PLATFORM_ID	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	303;"	d	file:
+PLATFORM_ID	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	306;"	d	file:
+PLATFORM_ID	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	309;"	d	file:
+PLATFORM_ID	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	312;"	d	file:
+PLATFORM_ID	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	315;"	d	file:
+PLATFORM_ID	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	318;"	d	file:
+PLATFORM_ID	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	321;"	d	file:
+PLATFORM_ID	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	324;"	d	file:
+PLATFORM_ID	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	327;"	d	file:
+PLATFORM_ID	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	330;"	d	file:
+PLATFORM_ID	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	333;"	d	file:
+PLATFORM_ID	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	336;"	d	file:
+PLATFORM_ID	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	340;"	d	file:
+PLATFORM_ID	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	343;"	d	file:
+PLATFORM_ID	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	346;"	d	file:
+PLATFORM_ID	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	349;"	d	file:
+PLATFORM_ID	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	352;"	d	file:
+PLATFORM_ID	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	356;"	d	file:
+POSITIVES_DIR	TrainsetCreator/src/it/univpm/dii/model/DatasetManager.java	/^    public static final String POSITIVES_DIR = "positives";$/;"	f	class:DatasetManager
+PREF_CROP_HANDFREE	TrainsetCreator/src/it/univpm/dii/contoller/addframe/AddFrameController.java	/^    public static final String PREF_CROP_HANDFREE = "TSC_Crop_Handfree";$/;"	f	class:AddFrameController
+PREF_CROP_HEIGTH	TrainsetCreator/src/it/univpm/dii/contoller/addframe/AddFrameController.java	/^    public static final String PREF_CROP_HEIGTH = "TSC_Crop_Height";$/;"	f	class:AddFrameController
+PREF_CROP_SQUARE	TrainsetCreator/src/it/univpm/dii/contoller/addframe/AddFrameController.java	/^    public static final String PREF_CROP_SQUARE = "TSC_Crop_Square";$/;"	f	class:AddFrameController
+PREF_CROP_WIDTH	TrainsetCreator/src/it/univpm/dii/contoller/addframe/AddFrameController.java	/^    public static final String PREF_CROP_WIDTH = "TSC_Crop_Width";$/;"	f	class:AddFrameController
+PREF_IMAGE_HEIGHT	TrainsetCreator/src/it/univpm/dii/contoller/framerender/FrameRenderController.java	/^    public static final String PREF_IMAGE_HEIGHT = "TSC_Image_Height";$/;"	f	class:FrameRenderController
+PREF_IMAGE_WIDTH	TrainsetCreator/src/it/univpm/dii/contoller/framerender/FrameRenderController.java	/^    public static final String PREF_IMAGE_WIDTH = "TSC_Image_Width";$/;"	f	class:FrameRenderController
+PREF_LAST_SET	TrainsetCreator/src/it/univpm/dii/contoller/main/RecentFilesManager.java	/^    public static final String[] PREF_LAST_SET = {$/;"	f	class:RecentFilesManager
+PREVIEW_HEIGHT	TrainsetCreator/src/it/univpm/dii/view/MainFrame.java	/^    private static final int PREVIEW_HEIGHT = 200;$/;"	f	class:MainFrame	file:
+PREVIEW_WIDTH	TrainsetCreator/src/it/univpm/dii/view/MainFrame.java	/^    private static final int PREVIEW_WIDTH = 200;$/;"	f	class:MainFrame	file:
+Panoramica generale	documents/relazione/index.tex	/^	\\maketitle$/;"	s
+Point	matlab/lib/src/geometry/Point.cpp	/^Point::Point(int x, int y) {$/;"	f	class:Point
+Point	matlab/lib/src/geometry/Point.h	/^    Point() { };$/;"	f	class:Point
+Point	matlab/lib/src/geometry/Point.h	/^class Point {$/;"	c
+QuitAction	TrainsetCreator/src/it/univpm/dii/contoller/main/QuitAction.java	/^class QuitAction extends WindowAdapter {$/;"	c
+RM	Makefile	/^RM = \/usr\/bin\/cmake -E remove -f$/;"	m
+RM	matlab/Makefile	/^RM = \/usr\/bin\/cmake -E remove -f$/;"	m
+RM	matlab/adaboost/Makefile	/^RM = \/usr\/bin\/cmake -E remove -f$/;"	m
+RM	matlab/detection/Makefile	/^RM = \/usr\/bin\/cmake -E remove -f$/;"	m
+RM	matlab/haar/Makefile	/^RM = \/usr\/bin\/cmake -E remove -f$/;"	m
+RM	matlab/lib/Makefile	/^RM = \/usr\/bin\/cmake -E remove -f$/;"	m
+RM	matlab/preprocess/Makefile	/^RM = \/usr\/bin\/cmake -E remove -f$/;"	m
+RadioButtonHandler	TrainsetCreator/src/it/univpm/dii/view/EditDialog.java	/^    class RadioButtonHandler implements ChangeListener {$/;"	c	class:EditDialog
+RecentFilesManager	TrainsetCreator/src/it/univpm/dii/contoller/main/RecentFilesManager.java	/^    public RecentFilesManager() {$/;"	m	class:RecentFilesManager
+RecentFilesManager	TrainsetCreator/src/it/univpm/dii/contoller/main/RecentFilesManager.java	/^class RecentFilesManager {$/;"	c
+Rectangle	matlab/lib/src/geometry/Rectangle.cpp	/^Rectangle::Rectangle(Point p, Dimensions d) {$/;"	f	class:Rectangle
+Rectangle	matlab/lib/src/geometry/Rectangle.cpp	/^Rectangle::Rectangle(Point p, unsigned int width, unsigned int height) {$/;"	f	class:Rectangle
+Rectangle	matlab/lib/src/geometry/Rectangle.cpp	/^Rectangle::Rectangle(int x, int y, unsigned int width, unsigned height) {$/;"	f	class:Rectangle
+Rectangle	matlab/lib/src/geometry/Rectangle.h	/^class Rectangle {$/;"	c
+ResizeController	TrainsetCreator/src/it/univpm/dii/contoller/resize/ResizeController.java	/^    public ResizeController() {$/;"	m	class:ResizeController
+ResizeController	TrainsetCreator/src/it/univpm/dii/contoller/resize/ResizeController.java	/^public class ResizeController {$/;"	c
+ResizeDialog	TrainsetCreator/src/it/univpm/dii/view/ResizeDialog.java	/^    public ResizeDialog() {$/;"	m	class:ResizeDialog
+ResizeDialog	TrainsetCreator/src/it/univpm/dii/view/ResizeDialog.java	/^public class ResizeDialog extends JDialog {$/;"	c
+ResizeSetAction	TrainsetCreator/src/it/univpm/dii/contoller/resize/ResizeSetAction.java	/^    public ResizeSetAction(ResizeDialog dialog) {$/;"	m	class:ResizeSetAction
+ResizeSetAction	TrainsetCreator/src/it/univpm/dii/contoller/resize/ResizeSetAction.java	/^class ResizeSetAction implements ActionListener {$/;"	c
+ResizeTrainingSetAction	TrainsetCreator/src/it/univpm/dii/contoller/main/ResizeTrainingSetAction.java	/^public class ResizeTrainingSetAction implements ActionListener {$/;"	c
+SE_RESIZE	TrainsetCreator/src/it/univpm/dii/view/component/DepthImagePanel.java	/^    public static final int SE_RESIZE = 4;$/;"	f	class:DepthImagePanel
+SHELL	Makefile	/^SHELL = \/bin\/sh$/;"	m
+SHELL	matlab/Makefile	/^SHELL = \/bin\/sh$/;"	m
+SHELL	matlab/adaboost/Makefile	/^SHELL = \/bin\/sh$/;"	m
+SHELL	matlab/detection/Makefile	/^SHELL = \/bin\/sh$/;"	m
+SHELL	matlab/haar/Makefile	/^SHELL = \/bin\/sh$/;"	m
+SHELL	matlab/lib/Makefile	/^SHELL = \/bin\/sh$/;"	m
+SHELL	matlab/preprocess/Makefile	/^SHELL = \/bin\/sh$/;"	m
+SIMULATE_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	155;"	d	file:
+SIMULATE_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	16;"	d	file:
+SIMULATE_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	170;"	d	file:
+SIMULATE_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	157;"	d	file:
+SIMULATE_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	172;"	d	file:
+SIMULATE_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	21;"	d	file:
+SIMULATE_ID	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	155;"	d	file:
+SIMULATE_ID	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	16;"	d	file:
+SIMULATE_ID	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	170;"	d	file:
+SIMULATE_ID	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	157;"	d	file:
+SIMULATE_ID	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	172;"	d	file:
+SIMULATE_ID	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	21;"	d	file:
+SIMULATE_VERSION_MAJOR	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	162;"	d	file:
+SIMULATE_VERSION_MAJOR	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	177;"	d	file:
+SIMULATE_VERSION_MAJOR	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	32;"	d	file:
+SIMULATE_VERSION_MAJOR	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	164;"	d	file:
+SIMULATE_VERSION_MAJOR	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	179;"	d	file:
+SIMULATE_VERSION_MAJOR	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	37;"	d	file:
+SIMULATE_VERSION_MAJOR	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	162;"	d	file:
+SIMULATE_VERSION_MAJOR	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	177;"	d	file:
+SIMULATE_VERSION_MAJOR	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	32;"	d	file:
+SIMULATE_VERSION_MAJOR	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	164;"	d	file:
+SIMULATE_VERSION_MAJOR	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	179;"	d	file:
+SIMULATE_VERSION_MAJOR	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	37;"	d	file:
+SIMULATE_VERSION_MINOR	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	163;"	d	file:
+SIMULATE_VERSION_MINOR	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	178;"	d	file:
+SIMULATE_VERSION_MINOR	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	33;"	d	file:
+SIMULATE_VERSION_MINOR	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	165;"	d	file:
+SIMULATE_VERSION_MINOR	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	180;"	d	file:
+SIMULATE_VERSION_MINOR	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	38;"	d	file:
+SIMULATE_VERSION_MINOR	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	163;"	d	file:
+SIMULATE_VERSION_MINOR	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	178;"	d	file:
+SIMULATE_VERSION_MINOR	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	33;"	d	file:
+SIMULATE_VERSION_MINOR	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	165;"	d	file:
+SIMULATE_VERSION_MINOR	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	180;"	d	file:
+SIMULATE_VERSION_MINOR	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	38;"	d	file:
+STRONG_CLASSIFIER_ALPHAS	matlab/lib/src/mexutils/structure_mapping.h	18;"	d
+STRONG_CLASSIFIER_FLOOR_VALUE	matlab/lib/src/mexutils/structure_mapping.h	14;"	d
+STRONG_CLASSIFIER_INNER_OFFSET	matlab/lib/src/mexutils/structure_mapping.h	16;"	d
+STRONG_CLASSIFIER_SAMPLES_SIZE	matlab/lib/src/mexutils/structure_mapping.h	13;"	d
+STRONG_CLASSIFIER_SCALE_FACTOR	matlab/lib/src/mexutils/structure_mapping.h	15;"	d
+STRONG_CLASSIFIER_WEAK_CLASSIFIERS	matlab/lib/src/mexutils/structure_mapping.h	17;"	d
+SUFFIXES	Makefile	/^SUFFIXES =$/;"	m
+SUFFIXES	matlab/Makefile	/^SUFFIXES =$/;"	m
+SUFFIXES	matlab/adaboost/Makefile	/^SUFFIXES =$/;"	m
+SUFFIXES	matlab/detection/Makefile	/^SUFFIXES =$/;"	m
+SUFFIXES	matlab/haar/Makefile	/^SUFFIXES =$/;"	m
+SUFFIXES	matlab/lib/Makefile	/^SUFFIXES =$/;"	m
+SUFFIXES	matlab/preprocess/Makefile	/^SUFFIXES =$/;"	m
+SW_RESIZE	TrainsetCreator/src/it/univpm/dii/view/component/DepthImagePanel.java	/^    public static final int SW_RESIZE = 5;$/;"	f	class:DepthImagePanel
+S_RESIZE	TrainsetCreator/src/it/univpm/dii/view/component/DepthImagePanel.java	/^    public static final int S_RESIZE = 3;$/;"	f	class:DepthImagePanel
+SalvaAction	TrainsetCreator/src/it/univpm/dii/contoller/addframe/SalvaAction.java	/^    public SalvaAction(AddFrameView view) {$/;"	m	class:SalvaAction
+SalvaAction	TrainsetCreator/src/it/univpm/dii/contoller/addframe/SalvaAction.java	/^class SalvaAction implements ActionListener {$/;"	c
+Sample	matlab/lib/src/adaboost/Sample.cpp	/^Sample::Sample(char *filePath, bool positive, double weight)$/;"	f	class:Sample
+Sample	matlab/lib/src/adaboost/Sample.cpp	/^Sample::Sample(double *image, const size_t *size, bool positive, double weight)$/;"	f	class:Sample
+Sample	matlab/lib/src/adaboost/Sample.cpp	/^Sample::Sample(double *image, int width, int height, bool positive, double weight)$/;"	f	class:Sample
+Sample	matlab/lib/src/adaboost/Sample.h	/^    Sample() { };$/;"	f	class:Sample
+Sample	matlab/lib/src/adaboost/Sample.h	/^class Sample : public Image {$/;"	c
+SampleSelectedAction	TrainsetCreator/src/it/univpm/dii/contoller/main/SampleSelectedAction.java	/^class SampleSelectedAction implements ListSelectionListener {$/;"	c
+SampleTable	TrainsetCreator/src/it/univpm/dii/view/component/SampleTable.java	/^    public SampleTable() {$/;"	m	class:SampleTable
+SampleTable	TrainsetCreator/src/it/univpm/dii/view/component/SampleTable.java	/^public class SampleTable extends JTable {$/;"	c
+SizeFieldChangeAction	TrainsetCreator/src/it/univpm/dii/contoller/resize/SizeFieldChangeAction.java	/^    public SizeFieldChangeAction(ResizeDialog dialog) {$/;"	m	class:SizeFieldChangeAction
+SizeFieldChangeAction	TrainsetCreator/src/it/univpm/dii/contoller/resize/SizeFieldChangeAction.java	/^class SizeFieldChangeAction implements PropertyChangeListener {$/;"	c
+SliderChangedAction	TrainsetCreator/src/it/univpm/dii/contoller/addframe/SliderChangedAction.java	/^    public SliderChangedAction(AddFrameView view) {$/;"	m	class:SliderChangedAction
+SliderChangedAction	TrainsetCreator/src/it/univpm/dii/contoller/addframe/SliderChangedAction.java	/^class SliderChangedAction implements ChangeListener {$/;"	c
+SortButtonRenderer	TrainsetCreator/src/it/univpm/dii/view/component/SortButtonRenderer.java	/^    public SortButtonRenderer() {$/;"	m	class:SortButtonRenderer
+SortButtonRenderer	TrainsetCreator/src/it/univpm/dii/view/component/SortButtonRenderer.java	/^public class SortButtonRenderer extends JButton implements TableCellRenderer {$/;"	c
+SplitException	matlab/lib/src/exception/SplitException.h	/^class SplitException : public std::exception{$/;"	c
+SquareSelectionCheckedAction	TrainsetCreator/src/it/univpm/dii/contoller/addframe/SquareSelectionCheckedAction.java	/^    public SquareSelectionCheckedAction(AddFrameView view) {$/;"	m	class:SquareSelectionCheckedAction
+SquareSelectionCheckedAction	TrainsetCreator/src/it/univpm/dii/contoller/addframe/SquareSelectionCheckedAction.java	/^class SquareSelectionCheckedAction implements ActionListener {$/;"	c
+StrongClassifier	matlab/lib/src/adaboost/StrongClassifier.cpp	/^StrongClassifier::StrongClassifier($/;"	f	class:StrongClassifier
+StrongClassifier	matlab/lib/src/adaboost/StrongClassifier.h	/^    StrongClassifier() { };$/;"	f	class:StrongClassifier
+StrongClassifier	matlab/lib/src/adaboost/StrongClassifier.h	/^class StrongClassifier {$/;"	c
+Time	matlab/lib/src/mexutils/utils.h	/^typedef std::chrono::high_resolution_clock Time;$/;"	t
+TrainingSet	TrainsetCreator/src/it/univpm/dii/model/entities/TrainingSet.java	/^    public TrainingSet(File basePath) {$/;"	m	class:TrainingSet
+TrainingSet	TrainsetCreator/src/it/univpm/dii/model/entities/TrainingSet.java	/^public class TrainingSet {$/;"	c
+TrainsetCreator	TrainsetCreator/src/it/univpm/dii/TrainsetCreator.java	/^public class TrainsetCreator {$/;"	c
+TrainsetFileFilter	TrainsetCreator/src/it/univpm/dii/utils/TrainsetFileFilter.java	/^public class TrainsetFileFilter implements FilenameFilter {$/;"	c
+UP	TrainsetCreator/src/it/univpm/dii/view/component/BevelArrowIcon.java	/^    public static final int UP = 0;         \/\/ direction$/;"	f	class:BevelArrowIcon
+UP	TrainsetCreator/src/it/univpm/dii/view/component/SortButtonRenderer.java	/^    public static final int UP = 1;$/;"	f	class:SortButtonRenderer
+VERTICAL_EDGE	matlab/lib/src/feature/Haar.h	/^    static const unsigned char VERTICAL_EDGE = 0;$/;"	m	class:Haar
+VERTICAL_LINEAR	matlab/lib/src/feature/Haar.h	/^    static const unsigned char VERTICAL_LINEAR = 2;$/;"	m	class:Haar
+View	TrainsetCreator/src/it/univpm/dii/view/View.java	/^abstract class View {$/;"	c
+WEAK_CLASSIFIER_FEATURE	matlab/lib/src/mexutils/structure_mapping.h	25;"	d
+WEAK_CLASSIFIER_POLARITY	matlab/lib/src/mexutils/structure_mapping.h	26;"	d
+WEAK_CLASSIFIER_THRESHOLD	matlab/lib/src/mexutils/structure_mapping.h	27;"	d
+W_RESIZE	TrainsetCreator/src/it/univpm/dii/view/component/DepthImagePanel.java	/^    public static final int W_RESIZE = 7;$/;"	f	class:DepthImagePanel
+WeakClassifier	matlab/lib/src/adaboost/WeakClassifier.cpp	/^WeakClassifier::WeakClassifier() {$/;"	f	class:WeakClassifier
+WeakClassifier	matlab/lib/src/adaboost/WeakClassifier.cpp	/^WeakClassifier::WeakClassifier(Haar *feature, double thr, short p) {$/;"	f	class:WeakClassifier
+WeakClassifier	matlab/lib/src/adaboost/WeakClassifier.cpp	/^WeakClassifier::WeakClassifier(Haar *feature, double thr, short p, double weightedError) {$/;"	f	class:WeakClassifier
+WeakClassifier	matlab/lib/src/adaboost/WeakClassifier.h	/^class WeakClassifier {$/;"	c
+XY_FLIP	TrainsetCreator/src/it/univpm/dii/view/component/DepthImagePanel.java	/^    public static final int XY_FLIP = 3;$/;"	f	class:DepthImagePanel
+X_FLIP	TrainsetCreator/src/it/univpm/dii/view/component/DepthImagePanel.java	/^    public static final int X_FLIP = 1;$/;"	f	class:DepthImagePanel
+YX_FLIP	TrainsetCreator/src/it/univpm/dii/view/component/DepthImagePanel.java	/^    public static final int YX_FLIP = 4;$/;"	f	class:DepthImagePanel
+Y_FLIP	TrainsetCreator/src/it/univpm/dii/view/component/DepthImagePanel.java	/^    public static final int Y_FLIP = 2;$/;"	f	class:DepthImagePanel
+__init__	scripts/dataset_downloader.py	/^    def __init__(self, url):$/;"	m	class:Element
+__init__	scripts/dataset_downloader.py	/^    def __init__(self, url):$/;"	m	class:HtmlPage
+_generate_path	scripts/dataset_downloader.py	/^    def _generate_path(self, path):$/;"	m	class:Element
+a	matlab/lib/src/geometry/Interval.h	/^    int a, b;$/;"	m	class:Interval
+accept	TrainsetCreator/src/it/univpm/dii/utils/BinFileFilter.java	/^    public boolean accept(File dir, String name) {$/;"	m	class:BinFileFilter
+accept	TrainsetCreator/src/it/univpm/dii/utils/TrainsetFileFilter.java	/^    public boolean accept(File dir, String name) {$/;"	m	class:TrainsetFileFilter
+actionPerformed	TrainsetCreator/src/it/univpm/dii/contoller/addframe/ChangeFlipDirectionAction.java	/^    public void actionPerformed(ActionEvent e) {$/;"	m	class:ChangeFlipDirectionAction
+actionPerformed	TrainsetCreator/src/it/univpm/dii/contoller/addframe/FastNegativesCheckedAction.java	/^    public void actionPerformed(ActionEvent e) {$/;"	m	class:FastNegativesCheckedAction
+actionPerformed	TrainsetCreator/src/it/univpm/dii/contoller/addframe/FineAction.java	/^    public void actionPerformed(ActionEvent e) {$/;"	m	class:FineAction
+actionPerformed	TrainsetCreator/src/it/univpm/dii/contoller/addframe/HandFreeSelectionCheckedAction.java	/^    public void actionPerformed(ActionEvent e) {$/;"	m	class:HandFreeSelectionCheckedAction
+actionPerformed	TrainsetCreator/src/it/univpm/dii/contoller/addframe/SalvaAction.java	/^    public void actionPerformed(ActionEvent e) {$/;"	m	class:SalvaAction
+actionPerformed	TrainsetCreator/src/it/univpm/dii/contoller/addframe/SquareSelectionCheckedAction.java	/^    public void actionPerformed(ActionEvent e) {$/;"	m	class:SquareSelectionCheckedAction
+actionPerformed	TrainsetCreator/src/it/univpm/dii/contoller/editframe/OkButtonListener.java	/^    public void actionPerformed(ActionEvent e) {$/;"	m	class:OkButtonListener
+actionPerformed	TrainsetCreator/src/it/univpm/dii/contoller/framerender/AvantiRenderInfoAction.java	/^    public void actionPerformed(ActionEvent e) {$/;"	m	class:AvantiRenderInfoAction
+actionPerformed	TrainsetCreator/src/it/univpm/dii/contoller/framerender/IndietroRenderInfoAction.java	/^    public void actionPerformed(ActionEvent e) {$/;"	m	class:IndietroRenderInfoAction
+actionPerformed	TrainsetCreator/src/it/univpm/dii/contoller/main/AddFrameAction.java	/^    public void actionPerformed(ActionEvent e) {$/;"	m	class:AddFrameAction
+actionPerformed	TrainsetCreator/src/it/univpm/dii/contoller/main/EditSelectedAction.java	/^    public void actionPerformed(ActionEvent e) {$/;"	m	class:EditSelectedAction
+actionPerformed	TrainsetCreator/src/it/univpm/dii/contoller/main/EliminaSelectedAction.java	/^    public void actionPerformed(ActionEvent e) {$/;"	m	class:EliminaSelectedAction
+actionPerformed	TrainsetCreator/src/it/univpm/dii/contoller/main/NewTrainingSetAction.java	/^    public void actionPerformed(ActionEvent e) {$/;"	m	class:NewTrainingSetAction
+actionPerformed	TrainsetCreator/src/it/univpm/dii/contoller/main/OpenRecentAction.java	/^    public void actionPerformed(ActionEvent e) {$/;"	m	class:OpenRecentAction
+actionPerformed	TrainsetCreator/src/it/univpm/dii/contoller/main/OpenTrainingSetAction.java	/^    public void actionPerformed(ActionEvent e) {$/;"	m	class:OpenTrainingSetAction
+actionPerformed	TrainsetCreator/src/it/univpm/dii/contoller/main/ResizeTrainingSetAction.java	/^    public void actionPerformed(ActionEvent e) {$/;"	m	class:ResizeTrainingSetAction
+actionPerformed	TrainsetCreator/src/it/univpm/dii/contoller/resize/CancelAction.java	/^    public void actionPerformed(ActionEvent e) {$/;"	m	class:CancelAction
+actionPerformed	TrainsetCreator/src/it/univpm/dii/contoller/resize/ResizeSetAction.java	/^    public void actionPerformed(ActionEvent e) {$/;"	m	class:ResizeSetAction
+actionSetter	TrainsetCreator/src/it/univpm/dii/contoller/main/MainController.java	/^    public void actionSetter() {$/;"	m	class:MainController
+adaboostTraining	matlab/adaboost/adaboostTraining.m	/^function [weakClassifiers, weightedErrors, w, betasT, alphas, samplesSize] = adaboostTraining(datasetPath, numberOfWeakClassifiers, featuresMinimumSizes, featuresStepSizes, precalculateFeatures, scaleFactor, floorValue);$/;"	f
+add	TrainsetCreator/src/it/univpm/dii/model/entities/TrainingSet.java	/^    public TrainingSet add(Element e) {$/;"	m	class:TrainingSet
+add	TrainsetCreator/src/it/univpm/dii/utils/MenuItems.java	/^    public MenuItems add(String key, JMenuItem menuItem) {$/;"	m	class:MenuItems
+add	TrainsetCreator/src/it/univpm/dii/utils/Menus.java	/^    public Menus add(String key, JMenu menu) {$/;"	m	class:Menus
+addElement	TrainsetCreator/src/it/univpm/dii/view/MainFrame.java	/^    public void addElement(Element element) {$/;"	m	class:MainFrame
+addElement	TrainsetCreator/src/it/univpm/dii/view/tablemodels/ElementModel.java	/^    public ElementModel addElement(Element element) {$/;"	m	class:ElementModel
+aggiungiButton	TrainsetCreator/src/it/univpm/dii/view/AddFrameView.java	/^    private JButton aggiungiButton;$/;"	f	class:AddFrameView	file:
+aggiungiButton	TrainsetCreator/src/it/univpm/dii/view/MainFrame.java	/^    private JButton aggiungiButton;$/;"	f	class:MainFrame	file:
+allocateImages	matlab/lib/src/mexutils/io.cpp	/^vector<Image *> allocateImages(const mxArray *input) {$/;"	f
+allocateSamples	matlab/lib/src/mexutils/io.cpp	/^vector<Sample *> allocateSamples(const mxArray *input, vector<bool> labels) {$/;"	f
+allocateSamples	matlab/lib/src/mexutils/io.cpp	/^vector<Sample *> allocateSamples(const mxArray *input,$/;"	f
+alpha	matlab/lib/src/adaboost/StrongClassifier.h	/^    double alpha;$/;"	m	struct:classifier_struct
+alphaSum	matlab/lib/src/adaboost/StrongClassifier.h	/^    double alphaSum;$/;"	m	class:StrongClassifier
+alphaSum	matlab/lib/src/adaboost/StrongClassifier.h	/^    double alphaSum;$/;"	m	struct:classifier_struct
+area	matlab/lib/src/feature/Haar.h	/^    Rectangle *area;$/;"	m	class:Haar
+arrangeFeatures	matlab/old/arrangeFeatures.m	/^function features = arrangeFeatures(width, height, minf, step)$/;"	f
+avantiButton	TrainsetCreator/src/it/univpm/dii/view/FrameRenderView.java	/^    private JButton avantiButton;$/;"	f	class:FrameRenderView	file:
+b	matlab/lib/src/geometry/Interval.h	/^    int a, b;$/;"	m	class:Interval
+balance_load	scripts/dataset_downloader.py	/^def balance_load(childnum, main_runner, dataset):$/;"	f
+basePath	TrainsetCreator/src/it/univpm/dii/model/entities/TrainingSet.java	/^    private File basePath;$/;"	f	class:TrainingSet	file:
+basepath	TrainsetCreator/src/it/univpm/dii/model/DatasetManager.java	/^    private File basepath;$/;"	f	class:DatasetManager	file:
+bestWeakClassifier	matlab/lib/src/adaboost/Adaboost.cpp	/^WeakClassifier *Adaboost::bestWeakClassifier(vector<Sample *> samples, vector<Haar *> features) {$/;"	f	class:Adaboost
+bestWeakClassifier	matlab/lib/src/adaboost/Adaboost.cpp	/^WeakClassifier *Adaboost::bestWeakClassifier(vector<Sample *> samples, vector<Haar *> features, float *values) {$/;"	f	class:Adaboost
+bicubicInterpolationRadio	TrainsetCreator/src/it/univpm/dii/view/ResizeDialog.java	/^    private JRadioButton bicubicInterpolationRadio;$/;"	f	class:ResizeDialog	file:
+bilinearInterpolationRadio	TrainsetCreator/src/it/univpm/dii/view/ResizeDialog.java	/^    private JRadioButton bilinearInterpolationRadio;$/;"	f	class:ResizeDialog	file:
+binaryImage	TrainsetCreator/src/it/univpm/dii/service/DepthImage.java	/^    private byte[] binaryImage, cropped;$/;"	f	class:DepthImage	file:
+bottomLeftPoint	matlab/lib/src/geometry/Rectangle.cpp	/^Point Rectangle::bottomLeftPoint() {$/;"	f	class:Rectangle
+bottomRightPoint	matlab/lib/src/geometry/Rectangle.cpp	/^Point Rectangle::bottomRightPoint() {$/;"	f	class:Rectangle
+buttonCancel	TrainsetCreator/src/it/univpm/dii/view/EditDialog.java	/^    private JButton buttonCancel;$/;"	f	class:EditDialog	file:
+buttonCancel	TrainsetCreator/src/it/univpm/dii/view/ResizeDialog.java	/^    private JButton buttonCancel;$/;"	f	class:ResizeDialog	file:
+buttonOK	TrainsetCreator/src/it/univpm/dii/view/EditDialog.java	/^    private JButton buttonOK;$/;"	f	class:EditDialog	file:
+buttonOK	TrainsetCreator/src/it/univpm/dii/view/ResizeDialog.java	/^    private JButton buttonOK;$/;"	f	class:ResizeDialog	file:
+calcHaarFeature	matlab/adaboost/strongClassify.m	/^function value = calcHaarFeature(image, feature, offset)$/;"	f
+calculateBetaT	matlab/lib/src/adaboost/Adaboost.cpp	/^double Adaboost::calculateBetaT(WeakClassifier *classifier) {$/;"	f	class:Adaboost
+calculateBetaT	matlab/lib/src/adaboost/Adaboost.cpp	/^double Adaboost::calculateBetaT(WeakClassifier *classifier, vector<Sample *> samples) {$/;"	f	class:Adaboost
+calculateBetaT	matlab/lib/src/adaboost/Adaboost.cpp	/^double Adaboost::calculateBetaT(double minimumError) {$/;"	f	class:Adaboost
+calculateBetaT	matlab/lib/src/adaboost/Adaboost.cpp	/^double Adaboost::calculateBetaT(double minimumError, double errorSmothing) {$/;"	f	class:Adaboost
+calculateEvaluationParams	matlab/analysis/calculateEvaluationParams.m	/^function [sensitivity, specificity, accuracy, mcc] = calculateEvaluationParams(tp, tn, fp, fn);$/;"	f
+calculateIntensity	matlab/lib/src/feature/Haar.cpp	/^double Haar::calculateIntensity(Image *image, Rectangle *rectangle) {$/;"	f	class:Haar
+calculateValue	matlab/lib/src/adaboost/FeatureTest.cpp	/^void FeatureTest::calculateValue() {$/;"	f	class:FeatureTest
+calculateValue	matlab/lib/src/feature/Haar.cpp	/^double Haar::calculateValue(Image *image) {$/;"	f	class:Haar
+calculateValue	matlab/lib/src/feature/Haar.cpp	/^double Haar::calculateValue(Image *image, Point offset) {$/;"	f	class:Haar
+calculateValue	matlab/lib/src/feature/Haar.cpp	/^double Haar::calculateValue(Image *image, Rectangle *rectangle, int code) {$/;"	f	class:Haar
+calculateWeakClassifier	matlab/adaboost/strongClassify.m	/^function value = calculateWeakClassifier(image, classifier, offset)$/;"	f
+calculate_final_classifier	matlab/adaboost/calculate_final_classifier.m	/^function presence = calculate_final_classifier(final, frame, offset);$/;"	f
+calculate_strong_classifier	matlab/adaboost/calculate_strong_classifier.m	/^function [presence, value] = calculate_strong_classifier(strong, img, offset);$/;"	f
+calculate_weak_classifier	matlab/adaboost/calculate_weak_classifier.m	/^function [presence, value] = calculate_weak_classifier(img, feature, polarity, threshold, offset);$/;"	f
+changePositive	TrainsetCreator/src/it/univpm/dii/model/DatasetManager.java	/^    public DatasetManager changePositive(Element e, boolean newVal)$/;"	m	class:DatasetManager
+changePositiveness	TrainsetCreator/src/it/univpm/dii/model/entities/TrainingSet.java	/^    public TrainingSet changePositiveness(Element element, boolean newVal) {$/;"	m	class:TrainingSet
+checkArgs	matlab/adaboost/evaluate_thresholds.cxx	/^void checkArgs(int nin, int outn) {$/;"	f
+checkArgs	matlab/adaboost/weak_classify_samples.cxx	/^void checkArgs(int nin, int outn) {$/;"	f
+checkSamplesLabelsWeightsDim	matlab/lib/src/mexutils/io.cpp	/^void checkSamplesLabelsWeightsDim(const size_t *samples,$/;"	f
+checkinput	matlab/adaboost/best_weak_classifier.cxx	/^void checkinput(int inc, int outc) {$/;"	f
+checkinput	matlab/detection/detect_human.cxx	/^void checkinput(int inputc, int outputc)$/;"	f
+checkisdir	matlab/utilities/checkisdir.m	/^function result = checkisdir(fullpath)$/;"	f
+checkpath	matlab/utilities/checkpath.m	/^function [checkedPath, isdirectory] = checkpath(pathname)$/;"	f
+checksubdirs	matlab/utilities/checksubdirs.m	/^function presence = checksubdirs(baseDir, dirs);$/;"	f
+child_download	scripts/dataset_downloader.py	/^def child_download(subset):$/;"	f
+child_info	scripts/dataset_downloader.py	/^def child_info(subset):$/;"	f
+choosesubdir	matlab/utilities/choosesubdir.m	/^function dirpath = choosesubdir(basepath);$/;"	f
+classifier	matlab/lib/src/adaboost/StrongClassifier.h	/^    WeakClassifier* classifier;$/;"	m	struct:classifier_struct
+classifier_struct	matlab/lib/src/adaboost/StrongClassifier.h	/^struct classifier_struct {$/;"	s
+classifier_struct	matlab/lib/src/adaboost/StrongClassifier.h	/^typedef struct classifier_struct classifier_struct;$/;"	t	typeref:struct:classifier_struct
+classifiers	matlab/lib/src/adaboost/StrongClassifier.h	/^    vector<classifier_struct *> classifiers;$/;"	m	class:StrongClassifier
+classify	matlab/lib/src/adaboost/WeakClassifier.cpp	/^bool WeakClassifier::classify(Image *image) {$/;"	f	class:WeakClassifier
+classify	matlab/lib/src/adaboost/WeakClassifier.cpp	/^bool WeakClassifier::classify(Image *image, Point offset) {$/;"	f	class:WeakClassifier
+cleanIntervals	matlab/lib/src/geometry/Rectangle.cpp	/^void Rectangle::cleanIntervals(vector<Interval *> intervals) {$/;"	f	class:Rectangle
+clearRectangles	matlab/lib/src/feature/Haar.cpp	/^void Haar::clearRectangles(vector<Rectangle *> rects) {$/;"	f	class:Haar
+clone	matlab/lib/src/feature/Haar.cpp	/^Haar *Haar::clone() {$/;"	f	class:Haar
+clone	matlab/lib/src/geometry/Rectangle.cpp	/^Rectangle *Rectangle::clone() {$/;"	f	class:Rectangle
+closeWindow	TrainsetCreator/src/it/univpm/dii/view/ResizeDialog.java	/^    private void closeWindow() {$/;"	m	class:ResizeDialog	file:
+code	matlab/lib/src/feature/Haar.h	/^    unsigned char code;$/;"	m	class:Haar
+compare	TrainsetCreator/src/it/univpm/dii/utils/BinFileComparator.java	/^    public int compare(File o1, File o2) {$/;"	m	class:BinFileComparator
+compare	TrainsetCreator/src/it/univpm/dii/utils/ElementComparator.java	/^    public int compare(Element o1, Element o2) {$/;"	m	class:ElementComparator
+compare	matlab/lib/src/adaboost/FeatureTest.cpp	/^bool FeatureTest::compare(FeatureTest *f1, FeatureTest *f2) {$/;"	f	class:FeatureTest
+contentPane	TrainsetCreator/src/it/univpm/dii/view/EditDialog.java	/^    private JPanel contentPane;$/;"	f	class:EditDialog	file:
+contentPane	TrainsetCreator/src/it/univpm/dii/view/ResizeDialog.java	/^    private JPanel contentPane;$/;"	f	class:ResizeDialog	file:
+controller	TrainsetCreator/src/it/univpm/dii/contoller/resize/ResizeSetAction.java	/^    private ResizeController controller;$/;"	f	class:ResizeSetAction	file:
+convertShort2Byte	TrainsetCreator/src/it/univpm/dii/service/DepthImage.java	/^    private byte[] convertShort2Byte(short[] imageData) {$/;"	m	class:DepthImage	file:
+coordinatesToIndex	matlab/lib/src/image/Image.cpp	/^int Image::coordinatesToIndex(int x, int y) {$/;"	f	class:Image
+countFeatures	matlab/utilities/countFeatures.m	/^function count = countFeatures(width, height, minf, step)$/;"	f
+countSamples	matlab/adaboost/adaboostTraining.m	/^function [l,m] = countSamples(samples);$/;"	f
+count_features	matlab/adaboost/get_features.cxx	/^int count_features(int w, int h, int minw, int minh, int stepw, int steph) {$/;"	f
+create	TrainsetCreator/src/it/univpm/dii/model/DatasetManager.java	/^    public DatasetManager create(Element e) {$/;"	m	class:DatasetManager
+createElement	TrainsetCreator/src/it/univpm/dii/model/DatasetManager.java	/^    private Element createElement(File file) {$/;"	m	class:DatasetManager	file:
+createMenu	TrainsetCreator/src/it/univpm/dii/view/MainFrame.java	/^    private void createMenu() {$/;"	m	class:MainFrame	file:
+createMenuBar	TrainsetCreator/src/it/univpm/dii/view/MainFrame.java	/^    private void createMenuBar() {$/;"	m	class:MainFrame	file:
+createMenuItems	TrainsetCreator/src/it/univpm/dii/view/MainFrame.java	/^    private void createMenuItems() {$/;"	m	class:MainFrame	file:
+createStrongClassifier	matlab/adaboost/createStrongClassifier.m	/^function classifier = createStrongClassifier(weakClassifiers, alphas)$/;"	f
+createUIComponents	TrainsetCreator/src/it/univpm/dii/view/AddFrameView.java	/^    private void createUIComponents() {$/;"	m	class:AddFrameView	file:
+createUIComponents	TrainsetCreator/src/it/univpm/dii/view/FrameRenderView.java	/^    private void createUIComponents() {$/;"	m	class:FrameRenderView	file:
+createUIComponents	TrainsetCreator/src/it/univpm/dii/view/MainFrame.java	/^    private void createUIComponents() {$/;"	m	class:MainFrame	file:
+createUIComponents	TrainsetCreator/src/it/univpm/dii/view/ResizeDialog.java	/^    private void createUIComponents() {$/;"	m	class:ResizeDialog	file:
+createView	TrainsetCreator/src/it/univpm/dii/contoller/framerender/FrameRenderController.java	/^    private FrameRenderView createView() {$/;"	m	class:FrameRenderController	file:
+crop	TrainsetCreator/src/it/univpm/dii/service/DepthImage.java	/^    public DepthImage crop(int x, int y, int width, int height) {$/;"	m	class:DepthImage
+cropAndSave	TrainsetCreator/src/it/univpm/dii/view/component/DepthImagePanel.java	/^    public DepthImagePanel cropAndSave(File out) {$/;"	m	class:DepthImagePanel
+cropHeight	TrainsetCreator/src/it/univpm/dii/view/AddFrameView.java	/^    private JFormattedTextField cropHeight;$/;"	f	class:AddFrameView	file:
+cropWidth	TrainsetCreator/src/it/univpm/dii/view/AddFrameView.java	/^    private JFormattedTextField cropWidth;$/;"	f	class:AddFrameView	file:
+cropped	TrainsetCreator/src/it/univpm/dii/service/DepthImage.java	/^    private byte[] binaryImage, cropped;$/;"	f	class:DepthImage	file:
+current	TrainsetCreator/src/it/univpm/dii/view/AddFrameView.java	/^    private int current, width, height;$/;"	f	class:AddFrameView	file:
+currentPt	TrainsetCreator/src/it/univpm/dii/view/component/DepthImagePanel.java	/^    private Point startPt, endPt, currentPt, offsetPt;$/;"	f	class:DepthImagePanel	file:
+currentResizeProgress	TrainsetCreator/src/it/univpm/dii/view/ResizeDialog.java	/^    private int currentResizeProgress, numberOfImages;$/;"	f	class:ResizeDialog	file:
+datasetManager	TrainsetCreator/src/it/univpm/dii/contoller/resize/ResizeSetAction.java	/^    private DatasetManager datasetManager;$/;"	f	class:ResizeSetAction	file:
+datasetPath	TrainsetCreator/src/it/univpm/dii/contoller/main/MainController.java	/^    protected static File datasetPath;$/;"	f	class:MainController
+decodeFinalClassifier	matlab/io/decodeFinalClassifier.m	/^function finalClassifier = decodeFinalClassifier(dataPath, disableOffset);$/;"	f
+decodeStrongClassifier	matlab/io/decodeStrongClassifier.m	/^function strongClassifier = decodeStrongClassifier(dataPath);$/;"	f
+decodeThresholdEval	matlab/io/decodeThresholdEval.m	/^function data = decodeThresholdEval(dataPath);$/;"	f
+decodeTuning	matlab/io/decodeTuning.m	/^function [thr, cls] = decodeTuning(dataPath);$/;"	f
+decodeWeakClassifier	matlab/io/decodeWeakClassifier.m	/^function weakClassifiers = decodeWeakClassifier(filePath);$/;"	f
+depthImage	TrainsetCreator/src/it/univpm/dii/view/AddFrameView.java	/^    private DepthImage depthImage;$/;"	f	class:AddFrameView	file:
+depthImage	TrainsetCreator/src/it/univpm/dii/view/component/DepthImagePanel.java	/^    private DepthImage depthImage;$/;"	f	class:DepthImagePanel	file:
+destroyrectangles	matlab/gfx/destroyrectangles.m	/^function destroyrectangles(fig, rectangles);$/;"	f
+detectHuman	matlab/detection/detectHuman.m	/^function [x, y] = detectHuman(frame, finalClassifier, windowWidth, windowHeight);$/;"	f
+detectHuman	matlab/old/hasp/OLDdetectHuman.m	/^function [precence, Wx, Wy] = detectHuman(image, subWindowSize, threshold)$/;"	f
+dialog	TrainsetCreator/src/it/univpm/dii/contoller/resize/CancelAction.java	/^    private ResizeDialog dialog;$/;"	f	class:CancelAction	file:
+dialog	TrainsetCreator/src/it/univpm/dii/contoller/resize/ResizeSetAction.java	/^    private ResizeDialog dialog;$/;"	f	class:ResizeSetAction	file:
+dialog	TrainsetCreator/src/it/univpm/dii/contoller/resize/SizeFieldChangeAction.java	/^    private ResizeDialog dialog;$/;"	f	class:SizeFieldChangeAction	file:
+direction	TrainsetCreator/src/it/univpm/dii/view/component/BevelArrowIcon.java	/^    private int direction;$/;"	f	class:BevelArrowIcon	file:
+done	scripts/dataset_downloader.py	/^done = threading.Lock()$/;"	v
+downButton	TrainsetCreator/src/it/univpm/dii/view/component/SortButtonRenderer.java	/^    private JButton upButton, downButton;$/;"	f	class:SortButtonRenderer	file:
+download	scripts/dataset_downloader.py	/^    def download(self, path):$/;"	m	class:Element
+drawDownArrow	TrainsetCreator/src/it/univpm/dii/view/component/BevelArrowIcon.java	/^    private void drawDownArrow(Graphics g, int x0, int y0) {$/;"	m	class:BevelArrowIcon	file:
+drawGrid	TrainsetCreator/src/it/univpm/dii/view/component/DepthImagePanel.java	/^    private void drawGrid(Graphics g, Color c) {$/;"	m	class:DepthImagePanel	file:
+drawRectangle	TrainsetCreator/src/it/univpm/dii/view/component/DepthImagePanel.java	/^    private void drawRectangle(Graphics g, Rectangle r, Color color) {$/;"	m	class:DepthImagePanel	file:
+drawUpArrow	TrainsetCreator/src/it/univpm/dii/view/component/BevelArrowIcon.java	/^    private void drawUpArrow(Graphics g, int x0, int y0) {$/;"	m	class:BevelArrowIcon	file:
+drawrectangles	matlab/gfx/drawrectangles.m	/^function rectangles = drawrectangles(fig, boxes, edgecolor);$/;"	f
+edge1	TrainsetCreator/src/it/univpm/dii/view/component/BevelArrowIcon.java	/^    private Color edge1;$/;"	f	class:BevelArrowIcon	file:
+edge2	TrainsetCreator/src/it/univpm/dii/view/component/BevelArrowIcon.java	/^    private Color edge2;$/;"	f	class:BevelArrowIcon	file:
+element	TrainsetCreator/src/it/univpm/dii/contoller/editframe/OkButtonListener.java	/^    private Element element;$/;"	f	class:OkButtonListener	file:
+element	TrainsetCreator/src/it/univpm/dii/view/EditDialog.java	/^    private Element element;$/;"	f	class:EditDialog	file:
+elements	TrainsetCreator/src/it/univpm/dii/contoller/resize/ResizeSetAction.java	/^    private ArrayList<Element> elements;$/;"	f	class:ResizeSetAction	file:
+elements	TrainsetCreator/src/it/univpm/dii/view/tablemodels/ElementModel.java	/^    private ArrayList<Element> elements;$/;"	f	class:ElementModel	file:
+eliminaButton	TrainsetCreator/src/it/univpm/dii/view/MainFrame.java	/^    private JButton eliminaButton;$/;"	f	class:MainFrame	file:
+enableEdit	TrainsetCreator/src/it/univpm/dii/view/MainFrame.java	/^    public void enableEdit(boolean enable) {$/;"	m	class:MainFrame
+encodeThresholdEval	matlab/io/encodeThresholdEval.m	/^function encodeThresholdEval(destination, data);$/;"	f
+encodeTuning	matlab/io/encodeTuning.m	/^function encodeTuning(dataPath, thr, cls);$/;"	f
+encodeWeakClassifier	matlab/io/encodeWeakClassifier.m	/^function encodeWeakClassifier(dataPath,...$/;"	f
+endPt	TrainsetCreator/src/it/univpm/dii/view/component/DepthImagePanel.java	/^    private Point startPt, endPt, currentPt, offsetPt;$/;"	f	class:DepthImagePanel	file:
+endResizeProcess	TrainsetCreator/src/it/univpm/dii/view/ResizeDialog.java	/^    public void endResizeProcess() {$/;"	m	class:ResizeDialog
+equals	TrainsetCreator/src/it/univpm/dii/model/entities/Element.java	/^    public boolean equals(Element obj) {$/;"	m	class:Element
+evaluateThresholds	matlab/adaboost/evaluateThresholds.m	/^function [accuracy, sensitivity, specificity, mcc] = evaluateThresholds(classifier, frames, labels, thresholds);$/;"	f
+extract	scripts/dataset_downloader.py	/^    def extract(self):$/;"	m	class:Element
+fastNegsCheck	TrainsetCreator/src/it/univpm/dii/view/AddFrameView.java	/^    private JCheckBox fastNegsCheck;$/;"	f	class:AddFrameView	file:
+feature	matlab/lib/src/adaboost/FeatureTest.h	/^    Haar *feature;$/;"	m	class:FeatureTest
+feature	matlab/lib/src/adaboost/WeakClassifier.h	/^    Haar *feature;$/;"	m	class:WeakClassifier
+featureCombination	matlab/old/arrangeFeatures.m	/^function features = featureCombination(width, height, minf, step)$/;"	f
+featureCombination	matlab/utilities/countFeatures.m	/^function count = featureCombination(width, height, minf, step)$/;"	f
+featureIndex	matlab/lib/src/adaboost/WeakClassifier.h	/^    int featureIndex;$/;"	m	class:WeakClassifier
+features	CMakeFiles/feature_tests.c	/^  const char features[] = {""$/;"	v
+features	CMakeFiles/feature_tests.cxx	/^  const char features[] = {""$/;"	v
+features	matlab/CMakeFiles/feature_tests.c	/^  const char features[] = {""$/;"	v
+features	matlab/CMakeFiles/feature_tests.cxx	/^  const char features[] = {""$/;"	v
+fetchImages	TrainsetCreator/src/it/univpm/dii/contoller/resize/ResizeSetAction.java	/^    private Map<String, DepthImage> fetchImages() {$/;"	m	class:ResizeSetAction	file:
+fetchTrainset	TrainsetCreator/src/it/univpm/dii/model/DatasetManager.java	/^    private void fetchTrainset() {$/;"	m	class:DatasetManager	file:
+fileName	TrainsetCreator/src/it/univpm/dii/model/entities/Element.java	/^    private String fileName;$/;"	f	class:Element	file:
+fill	TrainsetCreator/src/it/univpm/dii/view/component/BevelArrowIcon.java	/^    private Color fill;$/;"	f	class:BevelArrowIcon	file:
+fillColor	TrainsetCreator/src/it/univpm/dii/view/component/BlankIcon.java	/^    private Color fillColor;$/;"	f	class:BlankIcon	file:
+find	TrainsetCreator/src/it/univpm/dii/model/DatasetManager.java	/^    public Element find(int id) {$/;"	m	class:DatasetManager
+fineButton	TrainsetCreator/src/it/univpm/dii/view/AddFrameView.java	/^    private JButton fineButton;$/;"	f	class:AddFrameView	file:
+flipDirection	TrainsetCreator/src/it/univpm/dii/view/component/DepthImagePanel.java	/^    private int mode, flipDirection = DISABLE_FLIP;$/;"	f	class:DepthImagePanel	file:
+flipHorizontal	TrainsetCreator/src/it/univpm/dii/service/DepthImage.java	/^    public DepthImage flipHorizontal() {$/;"	m	class:DepthImage
+flipRadioGroup	TrainsetCreator/src/it/univpm/dii/view/AddFrameView.java	/^    private ButtonGroup flipRadioGroup;$/;"	f	class:AddFrameView	file:
+flipVertical	TrainsetCreator/src/it/univpm/dii/service/DepthImage.java	/^    public DepthImage flipVertical() {$/;"	m	class:DepthImage
+floorRebase	matlab/lib/src/image/Image.cpp	/^void Image::floorRebase(Image *origin, Image *destination) {$/;"	f	class:Image
+floorRebase	matlab/lib/src/image/Image.cpp	/^void Image::floorRebase(Image *origin, Image *destination, double floorValue) {$/;"	f	class:Image
+floorValue	matlab/lib/src/adaboost/StrongClassifier.h	/^    double floorValue;$/;"	m	class:StrongClassifier
+forceResize	TrainsetCreator/src/it/univpm/dii/view/component/DepthImagePanel.java	/^    public DepthImagePanel forceResize() {$/;"	m	class:DepthImagePanel
+frame	TrainsetCreator/src/it/univpm/dii/view/View.java	/^    public JFrame frame;$/;"	f	class:View
+frameLabel	TrainsetCreator/src/it/univpm/dii/view/AddFrameView.java	/^    private JLabel frameLabel;$/;"	f	class:AddFrameView	file:
+frames	TrainsetCreator/src/it/univpm/dii/contoller/framerender/AvantiRenderInfoAction.java	/^    private File[] frames;$/;"	f	class:AvantiRenderInfoAction	file:
+frames	TrainsetCreator/src/it/univpm/dii/contoller/framerender/FrameRenderController.java	/^    private File[] frames;$/;"	f	class:FrameRenderController	file:
+frames	TrainsetCreator/src/it/univpm/dii/view/AddFrameView.java	/^    private File[] frames;$/;"	f	class:AddFrameView	file:
+generateFilename	TrainsetCreator/src/it/univpm/dii/model/DatasetManager.java	/^    public DatasetManager generateFilename(Element e) {$/;"	m	class:DatasetManager
+generateFilename	TrainsetCreator/src/it/univpm/dii/model/DatasetManager.java	/^    public DatasetManager generateFilename(Element e, File positivesDir, File negativesDir) {$/;"	m	class:DatasetManager
+generateRectangle	TrainsetCreator/src/it/univpm/dii/view/component/DepthImagePanel.java	/^    private Rectangle generateRectangle(Point sp, Point ep) {$/;"	m	class:DepthImagePanel	file:
+generateWindow	matlab/old/hasp/generateWindow.m	/^function [x,y] = generateWindow(x0, y0, subwSize)$/;"	f
+generate_features	matlab/adaboost/get_features.cxx	/^void generate_features(int16 *result, int *cursor, int length, int feature,$/;"	f
+getAggiungiButton	TrainsetCreator/src/it/univpm/dii/view/AddFrameView.java	/^    public JButton getAggiungiButton() {$/;"	m	class:AddFrameView
+getAggiungiButton	TrainsetCreator/src/it/univpm/dii/view/MainFrame.java	/^    public JButton getAggiungiButton() {$/;"	m	class:MainFrame
+getArea	matlab/lib/src/feature/Haar.h	/^    Rectangle *getArea() const {$/;"	f	class:Haar
+getAvantiButton	TrainsetCreator/src/it/univpm/dii/view/FrameRenderView.java	/^    public JButton getAvantiButton() {$/;"	m	class:FrameRenderView
+getBasePath	TrainsetCreator/src/it/univpm/dii/model/entities/TrainingSet.java	/^    public File getBasePath() {$/;"	m	class:TrainingSet
+getBestTuning	matlab/adaboost/getBestTuning.m	/^function [threshold, numberOfClassifiers] = getBestTuning(data, param);$/;"	f
+getBicubicInterpolationRadio	TrainsetCreator/src/it/univpm/dii/view/ResizeDialog.java	/^    public JRadioButton getBicubicInterpolationRadio() {$/;"	m	class:ResizeDialog
+getBilinearInterpolationRadio	TrainsetCreator/src/it/univpm/dii/view/ResizeDialog.java	/^    public JRadioButton getBilinearInterpolationRadio() {$/;"	m	class:ResizeDialog
+getButtonCancel	TrainsetCreator/src/it/univpm/dii/view/ResizeDialog.java	/^    public JButton getButtonCancel() {$/;"	m	class:ResizeDialog
+getButtonOK	TrainsetCreator/src/it/univpm/dii/view/EditDialog.java	/^    public JButton getButtonOK() {$/;"	m	class:EditDialog
+getButtonOK	TrainsetCreator/src/it/univpm/dii/view/ResizeDialog.java	/^    public JButton getButtonOK() {$/;"	m	class:ResizeDialog
+getCode	matlab/lib/src/feature/Haar.h	/^    unsigned char getCode() const {$/;"	f	class:Haar
+getColumnCount	TrainsetCreator/src/it/univpm/dii/view/tablemodels/ElementModel.java	/^    public int getColumnCount() {$/;"	m	class:ElementModel
+getColumnName	TrainsetCreator/src/it/univpm/dii/view/tablemodels/ElementModel.java	/^    public String getColumnName(int column) {$/;"	m	class:ElementModel
+getCropHeight	TrainsetCreator/src/it/univpm/dii/view/AddFrameView.java	/^    public JFormattedTextField getCropHeight() {$/;"	m	class:AddFrameView
+getCropWidth	TrainsetCreator/src/it/univpm/dii/view/AddFrameView.java	/^    public JFormattedTextField getCropWidth() {$/;"	m	class:AddFrameView
+getData	TrainsetCreator/src/it/univpm/dii/view/AddFrameView.java	/^    public Element getData() {$/;"	m	class:AddFrameView
+getDatasetPath	matlab/io/getDatasetPath.m	/^function path = getDatasetPath(envName, set_number)$/;"	f
+getDepthImage	TrainsetCreator/src/it/univpm/dii/view/AddFrameView.java	/^    public DepthImage getDepthImage() {$/;"	m	class:AddFrameView
+getDimension	matlab/lib/src/geometry/Rectangle.cpp	/^Dimensions Rectangle::getDimension() {$/;"	f	class:Rectangle
+getElements	TrainsetCreator/src/it/univpm/dii/model/entities/TrainingSet.java	/^    public ArrayList<Element> getElements() {$/;"	m	class:TrainingSet
+getEliminaButton	TrainsetCreator/src/it/univpm/dii/view/MainFrame.java	/^    public JButton getEliminaButton() {$/;"	m	class:MainFrame
+getFastNegsCheck	TrainsetCreator/src/it/univpm/dii/view/AddFrameView.java	/^    public JCheckBox getFastNegsCheck() {$/;"	m	class:AddFrameView
+getFeature	matlab/lib/src/adaboost/FeatureTest.h	/^    Haar *getFeature() const {$/;"	f	class:FeatureTest
+getFeature	matlab/lib/src/adaboost/WeakClassifier.h	/^    Haar *getFeature() const {$/;"	f	class:WeakClassifier
+getFileName	TrainsetCreator/src/it/univpm/dii/model/entities/Element.java	/^    public String getFileName() {$/;"	m	class:Element
+getFineButton	TrainsetCreator/src/it/univpm/dii/view/AddFrameView.java	/^    public JButton getFineButton() {$/;"	m	class:AddFrameView
+getFrames	matlab/io/getFrames.m	/^function samples = getFrames(framesPath, dimension);$/;"	f
+getFramesPath	matlab/io/getFramesPath.m	/^function frames = getFramesPath(path)$/;"	f
+getHaarFeature	matlab/lib/src/mexutils/io.cpp	/^Haar *getHaarFeature(const mxArray *input, int index) {$/;"	f
+getHaarFeatureFromStruct	matlab/lib/src/mexutils/io.cpp	/^Haar *getHaarFeatureFromStruct(const mxArray *input) {$/;"	f
+getHandfreeCheckbox	TrainsetCreator/src/it/univpm/dii/view/AddFrameView.java	/^    public JCheckBox getHandfreeCheckbox() {$/;"	m	class:AddFrameView
+getHeight	TrainsetCreator/src/it/univpm/dii/model/entities/Element.java	/^    public int getHeight() {$/;"	m	class:Element
+getHeight	TrainsetCreator/src/it/univpm/dii/view/FrameRenderView.java	/^    public int getHeight() {$/;"	m	class:FrameRenderView
+getHeight	matlab/lib/src/image/Image.cpp	/^int Image::getHeight() {$/;"	f	class:Image
+getHeightScaleField	TrainsetCreator/src/it/univpm/dii/view/ResizeDialog.java	/^    public JFormattedTextField getHeightScaleField() {$/;"	m	class:ResizeDialog
+getHumanCheckbox	TrainsetCreator/src/it/univpm/dii/view/AddFrameView.java	/^    public JCheckBox getHumanCheckbox() {$/;"	m	class:AddFrameView
+getIconHeight	TrainsetCreator/src/it/univpm/dii/view/component/BevelArrowIcon.java	/^    public int getIconHeight() {$/;"	m	class:BevelArrowIcon
+getIconHeight	TrainsetCreator/src/it/univpm/dii/view/component/BlankIcon.java	/^    public int getIconHeight() {$/;"	m	class:BlankIcon
+getIconWidth	TrainsetCreator/src/it/univpm/dii/view/component/BevelArrowIcon.java	/^    public int getIconWidth() {$/;"	m	class:BevelArrowIcon
+getIconWidth	TrainsetCreator/src/it/univpm/dii/view/component/BlankIcon.java	/^    public int getIconWidth() {$/;"	m	class:BlankIcon
+getId	TrainsetCreator/src/it/univpm/dii/model/entities/Element.java	/^    public int getId() {$/;"	m	class:Element
+getImage	TrainsetCreator/src/it/univpm/dii/service/DepthImage.java	/^    public BufferedImage getImage() {$/;"	m	class:DepthImage
+getImage	matlab/lib/src/image/Image.cpp	/^double *Image::getImage() {$/;"	f	class:Image
+getImagePanel	TrainsetCreator/src/it/univpm/dii/view/AddFrameView.java	/^    public DepthImagePanel getImagePanel() {$/;"	m	class:AddFrameView
+getIndietroButton	TrainsetCreator/src/it/univpm/dii/view/FrameRenderView.java	/^    public JButton getIndietroButton() {$/;"	m	class:FrameRenderView
+getInstance	TrainsetCreator/src/it/univpm/dii/contoller/addframe/AddFrameController.java	/^    public static AddFrameController getInstance() {$/;"	m	class:AddFrameController
+getInstance	TrainsetCreator/src/it/univpm/dii/contoller/resize/ResizeController.java	/^    public static ResizeController getInstance() {$/;"	m	class:ResizeController
+getInstance	TrainsetCreator/src/it/univpm/dii/model/DatasetManager.java	/^    public static DatasetManager getInstance() {$/;"	m	class:DatasetManager
+getInstance	TrainsetCreator/src/it/univpm/dii/view/MainFrame.java	/^    public static MainFrame getInstance() {$/;"	m	class:MainFrame
+getLabels	matlab/lib/src/mexutils/io.cpp	/^vector<bool> getLabels(const mxArray *input) {$/;"	f
+getMenuFromMenuItemKey	TrainsetCreator/src/it/univpm/dii/view/MainFrame.java	/^    private String getMenuFromMenuItemKey(String mikey) {$/;"	m	class:MainFrame	file:
+getMenuItems	TrainsetCreator/src/it/univpm/dii/view/MainFrame.java	/^    public MenuItems getMenuItems() {$/;"	m	class:MainFrame
+getMenus	TrainsetCreator/src/it/univpm/dii/view/MainFrame.java	/^    public Menus getMenus() {$/;"	m	class:MainFrame
+getModificaButton	TrainsetCreator/src/it/univpm/dii/view/MainFrame.java	/^    public JButton getModificaButton() {$/;"	m	class:MainFrame
+getNearestNeightborRadio	TrainsetCreator/src/it/univpm/dii/view/ResizeDialog.java	/^    public JRadioButton getNearestNeightborRadio() {$/;"	m	class:ResizeDialog
+getNegativeSamplesNumber	TrainsetCreator/src/it/univpm/dii/view/MainFrame.java	/^    private int getNegativeSamplesNumber() {$/;"	m	class:MainFrame	file:
+getNegatives	TrainsetCreator/src/it/univpm/dii/model/entities/TrainingSet.java	/^    public ArrayList<Element> getNegatives() {$/;"	m	class:TrainingSet
+getNegativesPath	TrainsetCreator/src/it/univpm/dii/model/DatasetManager.java	/^    static public File getNegativesPath(File basepath) {$/;"	m	class:DatasetManager
+getNewPositiveness	TrainsetCreator/src/it/univpm/dii/view/EditDialog.java	/^    public boolean getNewPositiveness() {$/;"	m	class:EditDialog
+getPercentage	matlab/adaboost/evaluateThresholds.m	/^function percentage = getPercentage(max_i, max_j, i, j);$/;"	f
+getPolarity	matlab/lib/src/adaboost/WeakClassifier.h	/^    short getPolarity() const {$/;"	f	class:WeakClassifier
+getPositiveSamplesNumber	TrainsetCreator/src/it/univpm/dii/view/MainFrame.java	/^    private int getPositiveSamplesNumber() {$/;"	m	class:MainFrame	file:
+getPositives	TrainsetCreator/src/it/univpm/dii/model/entities/TrainingSet.java	/^    public ArrayList<Element> getPositives() {$/;"	m	class:TrainingSet
+getPositivesPath	TrainsetCreator/src/it/univpm/dii/model/DatasetManager.java	/^    static public File getPositivesPath(File basepath) {$/;"	m	class:DatasetManager
+getPreviewImagePanel	TrainsetCreator/src/it/univpm/dii/view/MainFrame.java	/^    public DepthImagePanel getPreviewImagePanel() {$/;"	m	class:MainFrame
+getRecentDatasets	TrainsetCreator/src/it/univpm/dii/contoller/main/RecentFilesManager.java	/^    private ArrayList<File> getRecentDatasets() {$/;"	m	class:RecentFilesManager	file:
+getRectangle	TrainsetCreator/src/it/univpm/dii/view/component/DepthImagePanel.java	/^    public Rectangle getRectangle() {$/;"	m	class:DepthImagePanel
+getResampleType	TrainsetCreator/src/it/univpm/dii/view/ResizeDialog.java	/^    public int getResampleType() {$/;"	m	class:ResizeDialog
+getResizeBasePath	TrainsetCreator/src/it/univpm/dii/model/DatasetManager.java	/^    static public File getResizeBasePath(File basepath, Dimension dims) {$/;"	m	class:DatasetManager
+getResizeProgressBar	TrainsetCreator/src/it/univpm/dii/view/ResizeDialog.java	/^    public JProgressBar getResizeProgressBar() {$/;"	m	class:ResizeDialog
+getResizeSampleDim	TrainsetCreator/src/it/univpm/dii/view/ResizeDialog.java	/^    public Dimension getResizeSampleDim() {$/;"	m	class:ResizeDialog
+getRow	TrainsetCreator/src/it/univpm/dii/view/tablemodels/ElementModel.java	/^    public Element getRow(int i) {$/;"	m	class:ElementModel
+getRowCount	TrainsetCreator/src/it/univpm/dii/view/tablemodels/ElementModel.java	/^    public int getRowCount() {$/;"	m	class:ElementModel
+getSample	matlab/lib/src/adaboost/FeatureTest.h	/^    Sample *getSample() const {$/;"	f	class:FeatureTest
+getSampleTable	TrainsetCreator/src/it/univpm/dii/view/MainFrame.java	/^    public SampleTable getSampleTable() {$/;"	m	class:MainFrame
+getSelectedElement	TrainsetCreator/src/it/univpm/dii/view/MainFrame.java	/^    public Element getSelectedElement() {$/;"	m	class:MainFrame
+getSlider	TrainsetCreator/src/it/univpm/dii/view/AddFrameView.java	/^    public JSlider getSlider() {$/;"	m	class:AddFrameView
+getSquareCheckbox	TrainsetCreator/src/it/univpm/dii/view/AddFrameView.java	/^    public JCheckBox getSquareCheckbox() {$/;"	m	class:AddFrameView
+getState	TrainsetCreator/src/it/univpm/dii/view/component/SortButtonRenderer.java	/^    public int getState(int col) {$/;"	m	class:SortButtonRenderer
+getStatusLabel	TrainsetCreator/src/it/univpm/dii/view/ResizeDialog.java	/^    public JLabel getStatusLabel() {$/;"	m	class:ResizeDialog
+getStrongClassifier	matlab/lib/src/mexutils/io.cpp	/^StrongClassifier *getStrongClassifier(const mxArray *input) {$/;"	f
+getTableCellRendererComponent	TrainsetCreator/src/it/univpm/dii/view/component/SortButtonRenderer.java	/^    public Component getTableCellRendererComponent(JTable table, Object value,$/;"	m	class:SortButtonRenderer
+getThreshold	matlab/lib/src/adaboost/WeakClassifier.h	/^    double getThreshold() const {$/;"	f	class:WeakClassifier
+getTrainingSet	TrainsetCreator/src/it/univpm/dii/model/DatasetManager.java	/^    public TrainingSet getTrainingSet() {$/;"	m	class:DatasetManager
+getTrainsetLabel	TrainsetCreator/src/it/univpm/dii/view/MainFrame.java	/^    public JLabel getTrainsetLabel() {$/;"	m	class:MainFrame
+getValueAt	TrainsetCreator/src/it/univpm/dii/view/tablemodels/ElementModel.java	/^    public Object getValueAt(int rowIndex, int columnIndex) {$/;"	m	class:ElementModel
+getVector	matlab/lib/src/mexutils/templates_definition.h	/^vector<T> getVector(const mxArray *input) {$/;"	f
+getWeakClassifierFromStruct	matlab/lib/src/mexutils/io.cpp	/^WeakClassifier *getWeakClassifierFromStruct(const mxArray *input, mwIndex index) {$/;"	f
+getWeight	matlab/lib/src/adaboost/Sample.h	/^    double getWeight() const {$/;"	f	class:Sample
+getWeightedError	matlab/lib/src/adaboost/WeakClassifier.h	/^    double getWeightedError() const {$/;"	f	class:WeakClassifier
+getWeights	matlab/lib/src/mexutils/io.cpp	/^vector<double> getWeights(const mxArray *input) {$/;"	f
+getWidth	TrainsetCreator/src/it/univpm/dii/model/entities/Element.java	/^    public int getWidth() {$/;"	m	class:Element
+getWidth	TrainsetCreator/src/it/univpm/dii/view/FrameRenderView.java	/^    public int getWidth() {$/;"	m	class:FrameRenderView
+getWidth	matlab/lib/src/image/Image.cpp	/^int Image::getWidth() {$/;"	f	class:Image
+getWidthScaleField	TrainsetCreator/src/it/univpm/dii/view/ResizeDialog.java	/^    public JFormattedTextField getWidthScaleField() {$/;"	m	class:ResizeDialog
+getX	TrainsetCreator/src/it/univpm/dii/model/entities/Element.java	/^    public int getX() {$/;"	m	class:Element
+getXoffset	TrainsetCreator/src/it/univpm/dii/view/AddFrameView.java	/^    public JSlider getXoffset() {$/;"	m	class:AddFrameView
+getY	TrainsetCreator/src/it/univpm/dii/model/entities/Element.java	/^    public int getY() {$/;"	m	class:Element
+getYoffset	TrainsetCreator/src/it/univpm/dii/view/AddFrameView.java	/^    public JSlider getYoffset() {$/;"	m	class:AddFrameView
+get_classifier_function	matlab/adaboost/get_classifier_function.m	/^function func = get_classifier_function(feature, polarity, threshold);$/;"	f
+get_feature_handler	matlab/haar/get_feature_handler.m	/^function handler = get_feature_handler(featureType, topleft, dimension);$/;"	f
+get_info	scripts/dataset_downloader.py	/^    def get_info(self):$/;"	m	class:Element
+getxFlipRadio	TrainsetCreator/src/it/univpm/dii/view/AddFrameView.java	/^    public JRadioButton getxFlipRadio() {$/;"	m	class:AddFrameView
+getxYFlipRadio	TrainsetCreator/src/it/univpm/dii/view/AddFrameView.java	/^    public JRadioButton getxYFlipRadio() {$/;"	m	class:AddFrameView
+getyFlipRadio	TrainsetCreator/src/it/univpm/dii/view/AddFrameView.java	/^    public JRadioButton getyFlipRadio() {$/;"	m	class:AddFrameView
+getyXFlipRadio	TrainsetCreator/src/it/univpm/dii/view/AddFrameView.java	/^    public JRadioButton getyXFlipRadio() {$/;"	m	class:AddFrameView
+haarHorizontalEdge	matlab/old/haarHorizontalEdge.m	/^function value = haarHorizontalEdge(ii, x1, y1, x2, y2)$/;"	f
+haarHorizontalLinear	matlab/old/haarHorizontalLinear.m	/^function value = haarHorizontalLinear(ii, x1, y1, x2, y2)$/;"	f
+haarVerticalEdge	matlab/old/haarVerticalEdge.m	/^function value = haarVerticalEdge(ii, x1, y1, x2, y2)$/;"	f
+haarVerticalLinear	matlab/old/haarVerticalLinear.m	/^function value = haarVerticalLinear(ii, x1, y1, x2, y2)$/;"	f
+handfreeCheckbox	TrainsetCreator/src/it/univpm/dii/view/AddFrameView.java	/^    private JCheckBox handfreeCheckbox;$/;"	f	class:AddFrameView	file:
+header	TrainsetCreator/src/it/univpm/dii/view/component/SampleTable.java	/^        private JTableHeader header;$/;"	f	class:SampleTable.HeaderListener	file:
+header	TrainsetCreator/src/it/univpm/dii/view/tablemodels/ElementModel.java	/^    String[] header = {"Id", "Width", "Height", "Positive"};$/;"	f	class:ElementModel
+height	TrainsetCreator/src/it/univpm/dii/model/entities/Element.java	/^    private int height;$/;"	f	class:Element	file:
+height	TrainsetCreator/src/it/univpm/dii/view/AddFrameView.java	/^    private int current, width, height;$/;"	f	class:AddFrameView	file:
+height	matlab/lib/src/geometry/Dimensions.h	/^    unsigned int width, height;$/;"	m	class:Dimensions
+height	matlab/lib/src/geometry/Rectangle.h	/^    int x, y, width, height;$/;"	m	class:Rectangle
+height	matlab/lib/src/image/Image.h	/^    int height;$/;"	m	class:Image
+heightScaleField	TrainsetCreator/src/it/univpm/dii/view/ResizeDialog.java	/^    private JFormattedTextField heightScaleField;$/;"	f	class:ResizeDialog	file:
+heightTextField	TrainsetCreator/src/it/univpm/dii/view/FrameRenderView.java	/^    private JFormattedTextField heightTextField;$/;"	f	class:FrameRenderView	file:
+horizontalEdge	matlab/lib/src/feature/Haar.cpp	/^double Haar::horizontalEdge(Image *image, Rectangle *rectangle) {$/;"	f	class:Haar
+horizontalLinear	matlab/lib/src/feature/Haar.cpp	/^double Haar::horizontalLinear(Image *image, Rectangle *rectangle) {$/;"	f	class:Haar
+horizontalSplit	matlab/lib/src/geometry/Rectangle.cpp	/^vector<Rectangle *> Rectangle::horizontalSplit(unsigned int divider)$/;"	f	class:Rectangle
+humanCheckbox	TrainsetCreator/src/it/univpm/dii/view/AddFrameView.java	/^    private JCheckBox humanCheckbox;$/;"	f	class:AddFrameView	file:
+id	TrainsetCreator/src/it/univpm/dii/model/entities/Element.java	/^    protected int id;$/;"	f	class:Element
+image	TrainsetCreator/src/it/univpm/dii/service/DepthImage.java	/^    private BufferedImage image;$/;"	f	class:DepthImage	file:
+image	TrainsetCreator/src/it/univpm/dii/view/component/DepthImagePanel.java	/^    private BufferedImage image;$/;"	f	class:DepthImagePanel	file:
+image	matlab/lib/src/image/Image.h	/^    double *image;$/;"	m	class:Image
+imagePanel	TrainsetCreator/src/it/univpm/dii/view/AddFrameView.java	/^    private DepthImagePanel imagePanel;$/;"	f	class:AddFrameView	file:
+images	TrainsetCreator/src/it/univpm/dii/contoller/resize/ResizeSetAction.java	/^    private Map<String, DepthImage> images;$/;"	f	class:ResizeSetAction	file:
+increaseResizeProcess	TrainsetCreator/src/it/univpm/dii/view/ResizeDialog.java	/^    public void increaseResizeProcess() {$/;"	m	class:ResizeDialog
+indexOf	TrainsetCreator/src/it/univpm/dii/view/tablemodels/ElementModel.java	/^    public int indexOf(Element element) {$/;"	m	class:ElementModel
+indietroButton	TrainsetCreator/src/it/univpm/dii/view/FrameRenderView.java	/^    private JButton indietroButton;$/;"	f	class:FrameRenderView	file:
+info_arch	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	/^char const* info_arch = "INFO" ":" "arch[" ARCHITECTURE_ID "]";$/;"	v
+info_arch	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^char const* info_arch = "INFO" ":" "arch[" ARCHITECTURE_ID "]";$/;"	v
+info_arch	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	/^char const* info_arch = "INFO" ":" "arch[" ARCHITECTURE_ID "]";$/;"	v
+info_arch	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^char const* info_arch = "INFO" ":" "arch[" ARCHITECTURE_ID "]";$/;"	v
+info_compiler	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	/^char const* info_compiler = "INFO" ":" "compiler[" COMPILER_ID "]";$/;"	v
+info_compiler	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^char const* info_compiler = "INFO" ":" "compiler[" COMPILER_ID "]";$/;"	v
+info_compiler	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	/^char const* info_compiler = "INFO" ":" "compiler[" COMPILER_ID "]";$/;"	v
+info_compiler	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^char const* info_compiler = "INFO" ":" "compiler[" COMPILER_ID "]";$/;"	v
+info_platform	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	/^char const* info_platform = "INFO" ":" "platform[" PLATFORM_ID "]";$/;"	v
+info_platform	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^char const* info_platform = "INFO" ":" "platform[" PLATFORM_ID "]";$/;"	v
+info_platform	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	/^char const* info_platform = "INFO" ":" "platform[" PLATFORM_ID "]";$/;"	v
+info_platform	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^char const* info_platform = "INFO" ":" "platform[" PLATFORM_ID "]";$/;"	v
+info_simulate	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	/^char const* info_simulate = "INFO" ":" "simulate[" SIMULATE_ID "]";$/;"	v
+info_simulate	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^char const* info_simulate = "INFO" ":" "simulate[" SIMULATE_ID "]";$/;"	v
+info_simulate	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	/^char const* info_simulate = "INFO" ":" "simulate[" SIMULATE_ID "]";$/;"	v
+info_simulate	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^char const* info_simulate = "INFO" ":" "simulate[" SIMULATE_ID "]";$/;"	v
+info_simulate_version	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	/^char const info_simulate_version[] = {$/;"	v
+info_simulate_version	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^char const info_simulate_version[] = {$/;"	v
+info_simulate_version	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	/^char const info_simulate_version[] = {$/;"	v
+info_simulate_version	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^char const info_simulate_version[] = {$/;"	v
+info_version	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	/^char const info_version[] = {$/;"	v
+info_version	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^char const info_version[] = {$/;"	v
+info_version	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	/^char const info_version[] = {$/;"	v
+info_version	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^char const info_version[] = {$/;"	v
+init	TrainsetCreator/src/it/univpm/dii/view/component/BevelArrowIcon.java	/^    private void init(Color color, int size, int direction) {$/;"	m	class:BevelArrowIcon	file:
+init	TrainsetCreator/src/it/univpm/dii/view/component/BevelArrowIcon.java	/^    private void init(Color edge1, Color edge2, Color fill,$/;"	m	class:BevelArrowIcon	file:
+initWeights	matlab/adaboost/adaboostTraining.m	/^function w = initWeights(samples);$/;"	f
+innerOffset	matlab/lib/src/adaboost/StrongClassifier.h	/^    Point innerOffset = Point(0, 0);$/;"	m	class:StrongClassifier
+inputdef	matlab/utilities/inputdef.m	/^function data = inputdef(prompt, default, string);$/;"	f
+instance	TrainsetCreator/src/it/univpm/dii/contoller/addframe/AddFrameController.java	/^    private static AddFrameController instance;$/;"	f	class:AddFrameController	file:
+instance	TrainsetCreator/src/it/univpm/dii/contoller/resize/ResizeController.java	/^    private static ResizeController instance;$/;"	f	class:ResizeController	file:
+instance	TrainsetCreator/src/it/univpm/dii/model/DatasetManager.java	/^    private static DatasetManager instance;$/;"	f	class:DatasetManager	file:
+instance	TrainsetCreator/src/it/univpm/dii/view/MainFrame.java	/^    private static MainFrame instance;$/;"	f	class:MainFrame	file:
+int16	matlab/adaboost/get_features.cxx	/^typedef short int int16;$/;"	t	file:
+integralImage	matlab/lib/src/image/Image.cpp	/^void Image::integralImage(Image *origin, Image *destination) {$/;"	f	class:Image
+isDataSetted	TrainsetCreator/src/it/univpm/dii/view/tablemodels/ElementModel.java	/^    public boolean isDataSetted() {$/;"	m	class:ElementModel
+isPositive	TrainsetCreator/src/it/univpm/dii/model/entities/Element.java	/^    public boolean isPositive() {$/;"	m	class:Element
+isPositive	matlab/lib/src/adaboost/Sample.h	/^    bool isPositive() const {$/;"	f	class:Sample
+isResizeDone	TrainsetCreator/src/it/univpm/dii/contoller/resize/ResizeController.java	/^    public boolean isResizeDone() {$/;"	m	class:ResizeController
+isResizeRunning	TrainsetCreator/src/it/univpm/dii/contoller/resize/ResizeController.java	/^    public boolean isResizeRunning() {$/;"	m	class:ResizeController
+isStopResizeAction	TrainsetCreator/src/it/univpm/dii/contoller/resize/ResizeController.java	/^    public boolean isStopResizeAction() {$/;"	m	class:ResizeController
+it.univpm.dii	TrainsetCreator/src/it/univpm/dii/TrainsetCreator.java	/^package it.univpm.dii;$/;"	p
+it.univpm.dii.contoller.addframe	TrainsetCreator/src/it/univpm/dii/contoller/addframe/AddFrameController.java	/^package it.univpm.dii.contoller.addframe;$/;"	p
+it.univpm.dii.contoller.addframe	TrainsetCreator/src/it/univpm/dii/contoller/addframe/ChangeFlipDirectionAction.java	/^package it.univpm.dii.contoller.addframe;$/;"	p
+it.univpm.dii.contoller.addframe	TrainsetCreator/src/it/univpm/dii/contoller/addframe/DimCropChangeAction.java	/^package it.univpm.dii.contoller.addframe;$/;"	p
+it.univpm.dii.contoller.addframe	TrainsetCreator/src/it/univpm/dii/contoller/addframe/FastNegativesCheckedAction.java	/^package it.univpm.dii.contoller.addframe;$/;"	p
+it.univpm.dii.contoller.addframe	TrainsetCreator/src/it/univpm/dii/contoller/addframe/FineAction.java	/^package it.univpm.dii.contoller.addframe;$/;"	p
+it.univpm.dii.contoller.addframe	TrainsetCreator/src/it/univpm/dii/contoller/addframe/FrameMouseWheelListener.java	/^package it.univpm.dii.contoller.addframe;$/;"	p
+it.univpm.dii.contoller.addframe	TrainsetCreator/src/it/univpm/dii/contoller/addframe/HandFreeSelectionCheckedAction.java	/^package it.univpm.dii.contoller.addframe;$/;"	p
+it.univpm.dii.contoller.addframe	TrainsetCreator/src/it/univpm/dii/contoller/addframe/SalvaAction.java	/^package it.univpm.dii.contoller.addframe;$/;"	p
+it.univpm.dii.contoller.addframe	TrainsetCreator/src/it/univpm/dii/contoller/addframe/SliderChangedAction.java	/^package it.univpm.dii.contoller.addframe;$/;"	p
+it.univpm.dii.contoller.addframe	TrainsetCreator/src/it/univpm/dii/contoller/addframe/SquareSelectionCheckedAction.java	/^package it.univpm.dii.contoller.addframe;$/;"	p
+it.univpm.dii.contoller.editframe	TrainsetCreator/src/it/univpm/dii/contoller/editframe/EditFrameController.java	/^package it.univpm.dii.contoller.editframe;$/;"	p
+it.univpm.dii.contoller.editframe	TrainsetCreator/src/it/univpm/dii/contoller/editframe/OkButtonListener.java	/^package it.univpm.dii.contoller.editframe;$/;"	p
+it.univpm.dii.contoller.framerender	TrainsetCreator/src/it/univpm/dii/contoller/framerender/AvantiRenderInfoAction.java	/^package it.univpm.dii.contoller.framerender;$/;"	p
+it.univpm.dii.contoller.framerender	TrainsetCreator/src/it/univpm/dii/contoller/framerender/FrameRenderController.java	/^package it.univpm.dii.contoller.framerender;$/;"	p
+it.univpm.dii.contoller.framerender	TrainsetCreator/src/it/univpm/dii/contoller/framerender/IndietroRenderInfoAction.java	/^package it.univpm.dii.contoller.framerender;$/;"	p
+it.univpm.dii.contoller.main	TrainsetCreator/src/it/univpm/dii/contoller/main/AddFrameAction.java	/^package it.univpm.dii.contoller.main;$/;"	p
+it.univpm.dii.contoller.main	TrainsetCreator/src/it/univpm/dii/contoller/main/EditSelectedAction.java	/^package it.univpm.dii.contoller.main;$/;"	p
+it.univpm.dii.contoller.main	TrainsetCreator/src/it/univpm/dii/contoller/main/EliminaSelectedAction.java	/^package it.univpm.dii.contoller.main;$/;"	p
+it.univpm.dii.contoller.main	TrainsetCreator/src/it/univpm/dii/contoller/main/MainController.java	/^package it.univpm.dii.contoller.main;$/;"	p
+it.univpm.dii.contoller.main	TrainsetCreator/src/it/univpm/dii/contoller/main/NewTrainingSetAction.java	/^package it.univpm.dii.contoller.main;$/;"	p
+it.univpm.dii.contoller.main	TrainsetCreator/src/it/univpm/dii/contoller/main/OpenRecentAction.java	/^package it.univpm.dii.contoller.main;$/;"	p
+it.univpm.dii.contoller.main	TrainsetCreator/src/it/univpm/dii/contoller/main/OpenTrainingSetAction.java	/^package it.univpm.dii.contoller.main;$/;"	p
+it.univpm.dii.contoller.main	TrainsetCreator/src/it/univpm/dii/contoller/main/QuitAction.java	/^package it.univpm.dii.contoller.main;$/;"	p
+it.univpm.dii.contoller.main	TrainsetCreator/src/it/univpm/dii/contoller/main/RecentFilesManager.java	/^package it.univpm.dii.contoller.main;$/;"	p
+it.univpm.dii.contoller.main	TrainsetCreator/src/it/univpm/dii/contoller/main/ResizeTrainingSetAction.java	/^package it.univpm.dii.contoller.main;$/;"	p
+it.univpm.dii.contoller.main	TrainsetCreator/src/it/univpm/dii/contoller/main/SampleSelectedAction.java	/^package it.univpm.dii.contoller.main;$/;"	p
+it.univpm.dii.contoller.resize	TrainsetCreator/src/it/univpm/dii/contoller/resize/CancelAction.java	/^package it.univpm.dii.contoller.resize;$/;"	p
+it.univpm.dii.contoller.resize	TrainsetCreator/src/it/univpm/dii/contoller/resize/ResizeController.java	/^package it.univpm.dii.contoller.resize;$/;"	p
+it.univpm.dii.contoller.resize	TrainsetCreator/src/it/univpm/dii/contoller/resize/ResizeSetAction.java	/^package it.univpm.dii.contoller.resize;$/;"	p
+it.univpm.dii.contoller.resize	TrainsetCreator/src/it/univpm/dii/contoller/resize/SizeFieldChangeAction.java	/^package it.univpm.dii.contoller.resize;$/;"	p
+it.univpm.dii.exception	TrainsetCreator/src/it/univpm/dii/exception/EmptyFrameDirException.java	/^package it.univpm.dii.exception;$/;"	p
+it.univpm.dii.model	TrainsetCreator/src/it/univpm/dii/model/DatasetManager.java	/^package it.univpm.dii.model;$/;"	p
+it.univpm.dii.model.entities	TrainsetCreator/src/it/univpm/dii/model/entities/Element.java	/^package it.univpm.dii.model.entities;$/;"	p
+it.univpm.dii.model.entities	TrainsetCreator/src/it/univpm/dii/model/entities/TrainingSet.java	/^package it.univpm.dii.model.entities;$/;"	p
+it.univpm.dii.service	TrainsetCreator/src/it/univpm/dii/service/DepthImage.java	/^package it.univpm.dii.service;$/;"	p
+it.univpm.dii.utils	TrainsetCreator/src/it/univpm/dii/utils/BinFileComparator.java	/^package it.univpm.dii.utils;$/;"	p
+it.univpm.dii.utils	TrainsetCreator/src/it/univpm/dii/utils/BinFileFilter.java	/^package it.univpm.dii.utils;$/;"	p
+it.univpm.dii.utils	TrainsetCreator/src/it/univpm/dii/utils/ElementComparator.java	/^package it.univpm.dii.utils;$/;"	p
+it.univpm.dii.utils	TrainsetCreator/src/it/univpm/dii/utils/ElementEqualityPredicate.java	/^package it.univpm.dii.utils;$/;"	p
+it.univpm.dii.utils	TrainsetCreator/src/it/univpm/dii/utils/MenuItems.java	/^package it.univpm.dii.utils;$/;"	p
+it.univpm.dii.utils	TrainsetCreator/src/it/univpm/dii/utils/Menus.java	/^package it.univpm.dii.utils;$/;"	p
+it.univpm.dii.utils	TrainsetCreator/src/it/univpm/dii/utils/TrainsetFileFilter.java	/^package it.univpm.dii.utils;$/;"	p
+it.univpm.dii.view	TrainsetCreator/src/it/univpm/dii/view/AddFrameView.java	/^package it.univpm.dii.view;$/;"	p
+it.univpm.dii.view	TrainsetCreator/src/it/univpm/dii/view/EditDialog.java	/^package it.univpm.dii.view;$/;"	p
+it.univpm.dii.view	TrainsetCreator/src/it/univpm/dii/view/FrameRenderView.java	/^package it.univpm.dii.view;$/;"	p
+it.univpm.dii.view	TrainsetCreator/src/it/univpm/dii/view/MainFrame.java	/^package it.univpm.dii.view;$/;"	p
+it.univpm.dii.view	TrainsetCreator/src/it/univpm/dii/view/ResizeDialog.java	/^package it.univpm.dii.view;$/;"	p
+it.univpm.dii.view	TrainsetCreator/src/it/univpm/dii/view/View.java	/^package it.univpm.dii.view;$/;"	p
+it.univpm.dii.view.component	TrainsetCreator/src/it/univpm/dii/view/component/BevelArrowIcon.java	/^package it.univpm.dii.view.component;$/;"	p
+it.univpm.dii.view.component	TrainsetCreator/src/it/univpm/dii/view/component/BlankIcon.java	/^package it.univpm.dii.view.component;$/;"	p
+it.univpm.dii.view.component	TrainsetCreator/src/it/univpm/dii/view/component/DepthImagePanel.java	/^package it.univpm.dii.view.component;$/;"	p
+it.univpm.dii.view.component	TrainsetCreator/src/it/univpm/dii/view/component/SampleTable.java	/^package it.univpm.dii.view.component;$/;"	p
+it.univpm.dii.view.component	TrainsetCreator/src/it/univpm/dii/view/component/SortButtonRenderer.java	/^package it.univpm.dii.view.component;$/;"	p
+it.univpm.dii.view.tablemodels	TrainsetCreator/src/it/univpm/dii/view/tablemodels/ElementModel.java	/^package it.univpm.dii.view.tablemodels;$/;"	p
+leftOperand	TrainsetCreator/src/it/univpm/dii/utils/ElementEqualityPredicate.java	/^    private Element leftOperand;$/;"	f	class:ElementEqualityPredicate	file:
+length	matlab/lib/src/geometry/Interval.cpp	/^unsigned int Interval::length() {$/;"	f	class:Interval
+length	matlab/lib/src/image/Image.cpp	/^int Image::length() {$/;"	f	class:Image
+localMinima	matlab/old/hasp/localMinima.m	/^function [minima, mx, my] = localMinima(data, meshSize)$/;"	f
+lowestErrorThreshold	matlab/lib/src/adaboost/Adaboost.cpp	/^WeakClassifier *Adaboost::lowestErrorThreshold(list<FeatureTest *> &tests, double positiveSum, double negativeSum) {$/;"	f	class:Adaboost
+lsec	matlab/lib/src/mexutils/utils.h	/^typedef std::chrono::duration<double > lsec;$/;"	t
+main	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	/^int main(int argc, char* argv[])$/;"	f
+main	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	/^void main() {}$/;"	f
+main	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^int main(int argc, char* argv[])$/;"	f
+main	CMakeFiles/feature_tests.c	/^int main(int argc, char** argv) { (void)argv; return features[argc]; }$/;"	f
+main	CMakeFiles/feature_tests.cxx	/^int main(int argc, char** argv) { (void)argv; return features[argc]; }$/;"	f
+main	TrainsetCreator/src/it/univpm/dii/TrainsetCreator.java	/^    public static void main(String[] args) {$/;"	m	class:TrainsetCreator
+main	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	/^int main(int argc, char* argv[])$/;"	f
+main	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	/^void main() {}$/;"	f
+main	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^int main(int argc, char* argv[])$/;"	f
+main	matlab/CMakeFiles/feature_tests.c	/^int main(int argc, char** argv) { (void)argv; return features[argc]; }$/;"	f
+main	matlab/CMakeFiles/feature_tests.cxx	/^int main(int argc, char** argv) { (void)argv; return features[argc]; }$/;"	f
+main	matlab/placeholder.cpp	/^int main(int argc, char**argv) {$/;"	f
+main	scripts/dataset_downloader.py	/^def main():$/;"	f
+mainPanel	TrainsetCreator/src/it/univpm/dii/view/MainFrame.java	/^    private JPanel mainPanel;$/;"	f	class:MainFrame	file:
+menuBar	TrainsetCreator/src/it/univpm/dii/view/MainFrame.java	/^    private JMenuBar menuBar;$/;"	f	class:MainFrame	file:
+menuItems	TrainsetCreator/src/it/univpm/dii/view/MainFrame.java	/^    private MenuItems menuItems;$/;"	f	class:MainFrame	file:
+menus	TrainsetCreator/src/it/univpm/dii/view/MainFrame.java	/^    private Menus menus;$/;"	f	class:MainFrame	file:
+mexFunction	matlab/adaboost/best_weak_classifier.cxx	/^void mexFunction(int outc, mxArray *output[], int inc, const mxArray *input[]) {$/;"	f
+mexFunction	matlab/adaboost/calculate_features.cxx	/^void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[]) {$/;"	f
+mexFunction	matlab/adaboost/evaluate_thresholds.cxx	/^void mexFunction(int outn, mxArray *output[], int nin, const mxArray *input[]) {$/;"	f
+mexFunction	matlab/adaboost/get_features.cxx	/^void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[]) {$/;"	f
+mexFunction	matlab/adaboost/weak_classify_samples.cxx	/^void mexFunction(int outn, mxArray *output[], int nin, const mxArray *input[]) {$/;"	f
+mexFunction	matlab/detection/detect_human.cxx	/^void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[]) {$/;"	f
+mexFunction	matlab/haar/haar_horizontal_edge.cxx	/^void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[]) {$/;"	f
+mexFunction	matlab/haar/haar_horizontal_linear.cxx	/^void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[]) {$/;"	f
+mexFunction	matlab/haar/haar_vertical_edge.cxx	/^void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[]) {$/;"	f
+mexFunction	matlab/haar/haar_vertical_linear.cxx	/^void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[]) {$/;"	f
+mexFunction	matlab/preprocess/array_fire_info.cxx	/^void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[]) {$/;"	f
+mexFunction	matlab/preprocess/floor_rebase.cxx	/^void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[]) {$/;"	f
+mexFunction	matlab/preprocess/integral_image.cxx	/^void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[]) {$/;"	f
+mexFunction	matlab/preprocess/scale_image.cxx	/^void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[]) {$/;"	f
+mode	TrainsetCreator/src/it/univpm/dii/view/component/DepthImagePanel.java	/^    private int mode, flipDirection = DISABLE_FLIP;$/;"	f	class:DepthImagePanel	file:
+model	TrainsetCreator/src/it/univpm/dii/view/component/SampleTable.java	/^        private ElementModel model;$/;"	f	class:SampleTable.HeaderListener	file:
+modificaButton	TrainsetCreator/src/it/univpm/dii/view/MainFrame.java	/^    private JButton modificaButton;$/;"	f	class:MainFrame	file:
+mouseClicked	TrainsetCreator/src/it/univpm/dii/view/component/DepthImagePanel.java	/^    public void mouseClicked(MouseEvent e) {$/;"	m	class:DepthImagePanel
+mouseDragged	TrainsetCreator/src/it/univpm/dii/view/component/DepthImagePanel.java	/^    public void mouseDragged(MouseEvent e) {$/;"	m	class:DepthImagePanel
+mouseEntered	TrainsetCreator/src/it/univpm/dii/view/component/DepthImagePanel.java	/^    public void mouseEntered(MouseEvent e) {$/;"	m	class:DepthImagePanel
+mouseExited	TrainsetCreator/src/it/univpm/dii/view/component/DepthImagePanel.java	/^    public void mouseExited(MouseEvent e) {$/;"	m	class:DepthImagePanel
+mouseMoved	TrainsetCreator/src/it/univpm/dii/view/component/DepthImagePanel.java	/^    public void mouseMoved(MouseEvent e) {$/;"	m	class:DepthImagePanel
+mousePressed	TrainsetCreator/src/it/univpm/dii/view/component/DepthImagePanel.java	/^    public void mousePressed(MouseEvent e) {$/;"	m	class:DepthImagePanel
+mousePressed	TrainsetCreator/src/it/univpm/dii/view/component/SampleTable.java	/^        public void mousePressed(MouseEvent e) {$/;"	m	class:SampleTable.HeaderListener
+mouseReleased	TrainsetCreator/src/it/univpm/dii/view/component/DepthImagePanel.java	/^    public void mouseReleased(MouseEvent e) {$/;"	m	class:DepthImagePanel
+mouseReleased	TrainsetCreator/src/it/univpm/dii/view/component/SampleTable.java	/^        public void mouseReleased(MouseEvent e) {$/;"	m	class:SampleTable.HeaderListener
+mouseWheelMoved	TrainsetCreator/src/it/univpm/dii/contoller/addframe/FrameMouseWheelListener.java	/^    public void mouseWheelMoved(MouseWheelEvent e) {$/;"	m	class:FrameMouseWheelListener
+moveRectangle	TrainsetCreator/src/it/univpm/dii/view/component/DepthImagePanel.java	/^    private void moveRectangle() {$/;"	m	class:DepthImagePanel	file:
+ms	matlab/lib/src/mexutils/utils.h	/^typedef std::chrono::milliseconds ms;$/;"	t
+mutualExclusion	TrainsetCreator/src/it/univpm/dii/view/EditDialog.java	/^        private void mutualExclusion(ChangeEvent e) {$/;"	m	class:EditDialog.RadioButtonHandler	file:
+nameLabel	TrainsetCreator/src/it/univpm/dii/view/EditDialog.java	/^    private JLabel nameLabel;$/;"	f	class:EditDialog	file:
+nearestNeightborRadio	TrainsetCreator/src/it/univpm/dii/view/ResizeDialog.java	/^    private JRadioButton nearestNeightborRadio;$/;"	f	class:ResizeDialog	file:
+negDstPath	TrainsetCreator/src/it/univpm/dii/contoller/resize/ResizeSetAction.java	/^    private File posDstPath, negDstPath;$/;"	f	class:ResizeSetAction	file:
+negNumLabel	TrainsetCreator/src/it/univpm/dii/view/MainFrame.java	/^    private JLabel negNumLabel;$/;"	f	class:MainFrame	file:
+negatives	TrainsetCreator/src/it/univpm/dii/model/entities/TrainingSet.java	/^    private ArrayList<Element> negatives;$/;"	f	class:TrainingSet	file:
+negativesDir	TrainsetCreator/src/it/univpm/dii/model/DatasetManager.java	/^    private File negativesDir;$/;"	f	class:DatasetManager	file:
+negativoRadioButton	TrainsetCreator/src/it/univpm/dii/view/EditDialog.java	/^    private JRadioButton negativoRadioButton;$/;"	f	class:EditDialog	file:
+newInstance	TrainsetCreator/src/it/univpm/dii/model/DatasetManager.java	/^    public static DatasetManager newInstance(File basepath) {$/;"	m	class:DatasetManager
+nextIdAvailable	TrainsetCreator/src/it/univpm/dii/model/DatasetManager.java	/^    private int nextIdAvailable;$/;"	f	class:DatasetManager	file:
+numberOfImages	TrainsetCreator/src/it/univpm/dii/view/ResizeDialog.java	/^    private int currentResizeProgress, numberOfImages;$/;"	f	class:ResizeDialog	file:
+offsetPt	TrainsetCreator/src/it/univpm/dii/view/component/DepthImagePanel.java	/^    private Point startPt, endPt, currentPt, offsetPt;$/;"	f	class:DepthImagePanel	file:
+onCancel	TrainsetCreator/src/it/univpm/dii/view/EditDialog.java	/^    private void onCancel() {$/;"	m	class:EditDialog	file:
+openDirectoryChooser	TrainsetCreator/src/it/univpm/dii/contoller/main/MainController.java	/^    protected static File openDirectoryChooser(String title, int constraint) {$/;"	m	class:MainController
+order	TrainsetCreator/src/it/univpm/dii/utils/ElementComparator.java	/^    private int order;$/;"	f	class:ElementComparator	file:
+outputUpdatedWeights	matlab/adaboost/best_weak_classifier.cxx	/^void outputUpdatedWeights(mxArray **output,$/;"	f
+outputWeakClassifier	matlab/adaboost/best_weak_classifier.cxx	/^void outputWeakClassifier(mxArray **output, WeakClassifier *bestWeakClassifier) {$/;"	f
+paintComponent	TrainsetCreator/src/it/univpm/dii/view/component/DepthImagePanel.java	/^    protected void paintComponent(Graphics g) {$/;"	m	class:DepthImagePanel
+paintIcon	TrainsetCreator/src/it/univpm/dii/view/component/BevelArrowIcon.java	/^    public void paintIcon(Component c, Graphics g, int x, int y) {$/;"	m	class:BevelArrowIcon
+paintIcon	TrainsetCreator/src/it/univpm/dii/view/component/BlankIcon.java	/^    public void paintIcon(Component c, Graphics g, int x, int y) {$/;"	m	class:BlankIcon
+panel	TrainsetCreator/src/it/univpm/dii/view/AddFrameView.java	/^    private JPanel panel;$/;"	f	class:AddFrameView	file:
+panel	TrainsetCreator/src/it/univpm/dii/view/FrameRenderView.java	/^    private JPanel panel;$/;"	f	class:FrameRenderView	file:
+parse_tables	scripts/dataset_downloader.py	/^    def parse_tables(self):$/;"	m	class:HtmlPage
+plotThresholdEval	matlab/analysis/plotThresholdEval.m	/^function plotThresholdEval(data);$/;"	f
+polarity	matlab/lib/src/adaboost/WeakClassifier.h	/^    short polarity;$/;"	m	class:WeakClassifier
+posDstPath	TrainsetCreator/src/it/univpm/dii/contoller/resize/ResizeSetAction.java	/^    private File posDstPath, negDstPath;$/;"	f	class:ResizeSetAction	file:
+posNumLabel	TrainsetCreator/src/it/univpm/dii/view/MainFrame.java	/^    private JLabel posNumLabel;$/;"	f	class:MainFrame	file:
+positive	TrainsetCreator/src/it/univpm/dii/model/entities/Element.java	/^    private boolean positive;$/;"	f	class:Element	file:
+positive	matlab/lib/src/adaboost/Sample.h	/^    bool positive;$/;"	m	class:Sample
+positives	TrainsetCreator/src/it/univpm/dii/model/entities/TrainingSet.java	/^    private ArrayList<Element> positives;$/;"	f	class:TrainingSet	file:
+positivesDir	TrainsetCreator/src/it/univpm/dii/model/DatasetManager.java	/^    private File positivesDir;$/;"	f	class:DatasetManager	file:
+positivoRadioButton	TrainsetCreator/src/it/univpm/dii/view/EditDialog.java	/^    private JRadioButton positivoRadioButton;$/;"	f	class:EditDialog	file:
+pref	TrainsetCreator/src/it/univpm/dii/TrainsetCreator.java	/^    public static Preferences pref;$/;"	f	class:TrainsetCreator
+preprocessImage	matlab/preprocess/preprocessImage.m	/^function image = preprocessImage(data, scaleFactor, floorValue);$/;"	f
+pretty_print	scripts/dataset_downloader.py	/^    def pretty_print(self):$/;"	m	class:HtmlPage
+previewImagePanel	TrainsetCreator/src/it/univpm/dii/view/MainFrame.java	/^    private DepthImagePanel previewImagePanel;$/;"	f	class:MainFrame	file:
+printLabelForCurrentFrame	TrainsetCreator/src/it/univpm/dii/view/AddFrameView.java	/^    private void printLabelForCurrentFrame() {$/;"	m	class:AddFrameView	file:
+print_info	scripts/dataset_downloader.py	/^    def print_info(self):$/;"	m	class:Element
+propertyChange	TrainsetCreator/src/it/univpm/dii/contoller/addframe/DimCropChangeAction.java	/^    public void propertyChange(PropertyChangeEvent evt) {$/;"	m	class:DimCropChangeAction
+propertyChange	TrainsetCreator/src/it/univpm/dii/contoller/resize/SizeFieldChangeAction.java	/^    public void propertyChange(PropertyChangeEvent evt) {$/;"	m	class:SizeFieldChangeAction
+prova	documents/tesi/index.tex	/^	\\pagebreak$/;"	s
+pushedCol	TrainsetCreator/src/it/univpm/dii/view/component/SortButtonRenderer.java	/^    private int pushedCol;$/;"	f	class:SortButtonRenderer	file:
+qnxnto	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	/^char const* qnxnto = "INFO" ":" "qnxnto[]";$/;"	v
+qnxnto	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^char const* qnxnto = "INFO" ":" "qnxnto[]";$/;"	v
+qnxnto	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	/^char const* qnxnto = "INFO" ":" "qnxnto[]";$/;"	v
+qnxnto	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^char const* qnxnto = "INFO" ":" "qnxnto[]";$/;"	v
+rHeight	TrainsetCreator/src/it/univpm/dii/view/component/DepthImagePanel.java	/^    private int rWidth, rHeight, resize;$/;"	f	class:DepthImagePanel	file:
+rWidth	TrainsetCreator/src/it/univpm/dii/view/component/DepthImagePanel.java	/^    private int rWidth, rHeight, resize;$/;"	f	class:DepthImagePanel	file:
+read	matlab/lib/src/image/Image.cpp	/^double Image::read(Point p) throw(MemoryAccessException) {$/;"	f	class:Image
+read	matlab/lib/src/image/Image.cpp	/^double Image::read(int index) throw(MemoryAccessException) {$/;"	f	class:Image
+read	matlab/lib/src/image/Image.cpp	/^double Image::read(int x, int y) throw(MemoryAccessException) {$/;"	f	class:Image
+readFrames	TrainsetCreator/src/it/univpm/dii/contoller/framerender/FrameRenderController.java	/^    private File[] readFrames(File framesDir)$/;"	m	class:FrameRenderController	file:
+readFramesAndLabels	matlab/io/readFramesAndLabels.m	/^function [frames, labels] = readFramesAndLabels(samples, scaleFactor, floorValue)$/;"	f
+readImage	matlab/lib/src/mexutils/io.cpp	/^Image *readImage(const mxArray* input) {$/;"	f
+readImage	matlab/lib/src/mexutils/io.cpp	/^void readImage(const mxArray* input, Image* image) {$/;"	f
+readImageData	matlab/io/readImageData.m	/^function data = readImageData(fp, colDim, rowDim, colorDepth)$/;"	f
+recentDatasets	TrainsetCreator/src/it/univpm/dii/contoller/main/RecentFilesManager.java	/^    private ArrayList<File> recentDatasets;$/;"	f	class:RecentFilesManager	file:
+rectangle	TrainsetCreator/src/it/univpm/dii/view/component/DepthImagePanel.java	/^    private Rectangle rectangle;$/;"	f	class:DepthImagePanel	file:
+refresh	TrainsetCreator/src/it/univpm/dii/view/AddFrameView.java	/^    public void refresh() {$/;"	m	class:AddFrameView
+refresh	TrainsetCreator/src/it/univpm/dii/view/FrameRenderView.java	/^    public void refresh() {$/;"	m	class:FrameRenderView
+refresh	TrainsetCreator/src/it/univpm/dii/view/MainFrame.java	/^    public void refresh() {$/;"	m	class:MainFrame
+refresh	TrainsetCreator/src/it/univpm/dii/view/View.java	/^    public abstract void refresh();$/;"	m	class:View
+remove	TrainsetCreator/src/it/univpm/dii/model/DatasetManager.java	/^    public DatasetManager remove(Element e)$/;"	m	class:DatasetManager
+remove	TrainsetCreator/src/it/univpm/dii/model/entities/TrainingSet.java	/^    public TrainingSet remove(Element e) {$/;"	m	class:TrainingSet
+removeElement	TrainsetCreator/src/it/univpm/dii/view/MainFrame.java	/^    public void removeElement(Element element) {$/;"	m	class:MainFrame
+removeElement	TrainsetCreator/src/it/univpm/dii/view/tablemodels/ElementModel.java	/^    public ElementModel removeElement(Element element) {$/;"	m	class:ElementModel
+renderInfoView	TrainsetCreator/src/it/univpm/dii/contoller/framerender/AvantiRenderInfoAction.java	/^    private FrameRenderView renderInfoView;$/;"	f	class:AvantiRenderInfoAction	file:
+renderer	TrainsetCreator/src/it/univpm/dii/view/component/SampleTable.java	/^        private SortButtonRenderer renderer;$/;"	f	class:SampleTable.HeaderListener	file:
+resamplingAlgorithmPanel	TrainsetCreator/src/it/univpm/dii/view/ResizeDialog.java	/^    private JPanel resamplingAlgorithmPanel;$/;"	f	class:ResizeDialog	file:
+resamplingButtonGroup	TrainsetCreator/src/it/univpm/dii/view/ResizeDialog.java	/^    private ButtonGroup resamplingButtonGroup;$/;"	f	class:ResizeDialog	file:
+resize	TrainsetCreator/src/it/univpm/dii/service/DepthImage.java	/^    public DepthImage resize(Dimension dim, int type) {$/;"	m	class:DepthImage
+resize	TrainsetCreator/src/it/univpm/dii/view/component/DepthImagePanel.java	/^    private int rWidth, rHeight, resize;$/;"	f	class:DepthImagePanel	file:
+resizeDim	TrainsetCreator/src/it/univpm/dii/contoller/resize/ResizeSetAction.java	/^    private Dimension resizeDim;$/;"	f	class:ResizeSetAction	file:
+resizeDone	TrainsetCreator/src/it/univpm/dii/contoller/resize/ResizeController.java	/^            resizeDone = false,$/;"	f	class:ResizeController	file:
+resizeE	TrainsetCreator/src/it/univpm/dii/view/component/DepthImagePanel.java	/^    private void resizeE() {$/;"	m	class:DepthImagePanel	file:
+resizeImages	TrainsetCreator/src/it/univpm/dii/contoller/resize/ResizeSetAction.java	/^    private void resizeImages() {$/;"	m	class:ResizeSetAction	file:
+resizeN	TrainsetCreator/src/it/univpm/dii/view/component/DepthImagePanel.java	/^    private void resizeN() {$/;"	m	class:DepthImagePanel	file:
+resizeProgressBar	TrainsetCreator/src/it/univpm/dii/view/ResizeDialog.java	/^    private JProgressBar resizeProgressBar;$/;"	f	class:ResizeDialog	file:
+resizeRectangle	TrainsetCreator/src/it/univpm/dii/view/component/DepthImagePanel.java	/^    private void resizeRectangle() {$/;"	m	class:DepthImagePanel	file:
+resizeRunning	TrainsetCreator/src/it/univpm/dii/contoller/resize/ResizeController.java	/^            resizeRunning = false;$/;"	f	class:ResizeController	file:
+resizeS	TrainsetCreator/src/it/univpm/dii/view/component/DepthImagePanel.java	/^    private void resizeS() {$/;"	m	class:DepthImagePanel	file:
+resizeW	TrainsetCreator/src/it/univpm/dii/view/component/DepthImagePanel.java	/^    private void resizeW() {$/;"	m	class:DepthImagePanel	file:
+rfm	TrainsetCreator/src/it/univpm/dii/contoller/main/MainController.java	/^    private static RecentFilesManager rfm;$/;"	f	class:MainController	file:
+rule	TrainsetCreator/src/it/univpm/dii/utils/ElementComparator.java	/^    private int rule;$/;"	f	class:ElementComparator	file:
+sample	matlab/lib/src/adaboost/FeatureTest.h	/^    Sample *sample;$/;"	m	class:FeatureTest
+sampleTable	TrainsetCreator/src/it/univpm/dii/view/MainFrame.java	/^    private JTable sampleTable;$/;"	f	class:MainFrame	file:
+samplesSize	matlab/lib/src/adaboost/StrongClassifier.h	/^    Dimensions samplesSize = Dimensions(0, 0);$/;"	m	class:StrongClassifier
+save	TrainsetCreator/src/it/univpm/dii/service/DepthImage.java	/^    public DepthImage save(File filename) throws Exception {$/;"	m	class:DepthImage
+saveCrop	TrainsetCreator/src/it/univpm/dii/service/DepthImage.java	/^    public DepthImage saveCrop(File filename) throws Exception {$/;"	m	class:DepthImage
+saveCropPreference	TrainsetCreator/src/it/univpm/dii/contoller/addframe/AddFrameController.java	/^    protected static void saveCropPreference(int w, int h) {$/;"	m	class:AddFrameController
+scaleFactor	matlab/lib/src/adaboost/StrongClassifier.h	/^    unsigned int scaleFactor;$/;"	m	class:StrongClassifier
+scaleImage	matlab/lib/src/image/Image.cpp	/^void Image::scaleImage(Image *origin, Image *destination, unsigned int scale) {$/;"	f	class:Image
+scale_classifier	matlab/adaboost/scale_classifier.m	/^function dst = scale_classifier(origin, scale);$/;"	f
+scale_final_classifier	matlab/adaboost/scale_final_classifier.m	/^function dst = scale_final_classifier(origin, scale);$/;"	f
+setArea	matlab/lib/src/feature/Haar.h	/^    void setArea(Rectangle *area) {$/;"	f	class:Haar
+setCode	matlab/lib/src/feature/Haar.h	/^    void setCode(unsigned char code) {$/;"	f	class:Haar
+setCropHeightValue	TrainsetCreator/src/it/univpm/dii/view/AddFrameView.java	/^    public AddFrameView setCropHeightValue(String height) {$/;"	m	class:AddFrameView
+setCropPreference	TrainsetCreator/src/it/univpm/dii/contoller/addframe/AddFrameController.java	/^    protected static void setCropPreference(AddFrameView view) {$/;"	m	class:AddFrameController
+setCropWidthValue	TrainsetCreator/src/it/univpm/dii/view/AddFrameView.java	/^    public AddFrameView setCropWidthValue(String width) {$/;"	m	class:AddFrameView
+setCurrent	TrainsetCreator/src/it/univpm/dii/view/AddFrameView.java	/^    public void setCurrent(int current) {$/;"	m	class:AddFrameView
+setData	TrainsetCreator/src/it/univpm/dii/view/tablemodels/ElementModel.java	/^    public ElementModel setData(TrainingSet set) {$/;"	m	class:ElementModel
+setDatasetPath	TrainsetCreator/src/it/univpm/dii/contoller/main/MainController.java	/^    public static void setDatasetPath(File datasetPath) {$/;"	m	class:MainController
+setDatasetPath	TrainsetCreator/src/it/univpm/dii/view/MainFrame.java	/^    public void setDatasetPath(File path) {$/;"	m	class:MainFrame
+setDepthImage	TrainsetCreator/src/it/univpm/dii/view/component/DepthImagePanel.java	/^    public DepthImagePanel setDepthImage(DepthImage depthImage) {$/;"	m	class:DepthImagePanel
+setElement	TrainsetCreator/src/it/univpm/dii/view/EditDialog.java	/^    public EditDialog setElement(Element element) {$/;"	m	class:EditDialog
+setFeature	matlab/lib/src/adaboost/FeatureTest.h	/^    void setFeature(Haar *feature) {$/;"	f	class:FeatureTest
+setFeature	matlab/lib/src/adaboost/WeakClassifier.h	/^    void setFeature(Haar *feature) {$/;"	f	class:WeakClassifier
+setFileName	TrainsetCreator/src/it/univpm/dii/model/entities/Element.java	/^    public Element setFileName(String fileName) {$/;"	m	class:Element
+setFlipDirection	TrainsetCreator/src/it/univpm/dii/view/component/DepthImagePanel.java	/^    public DepthImagePanel setFlipDirection(int direction) {$/;"	m	class:DepthImagePanel
+setHeight	TrainsetCreator/src/it/univpm/dii/model/entities/Element.java	/^    public Element setHeight(int height) {$/;"	m	class:Element
+setHeight	TrainsetCreator/src/it/univpm/dii/view/FrameRenderView.java	/^    public FrameRenderView setHeight(String height) {$/;"	m	class:FrameRenderView
+setHeight	matlab/lib/src/image/Image.cpp	/^void Image::setHeight(int height) {$/;"	f	class:Image
+setId	TrainsetCreator/src/it/univpm/dii/model/entities/Element.java	/^    public Element setId(int id) {$/;"	m	class:Element
+setImage	matlab/lib/src/image/Image.cpp	/^void Image::setImage(double *image) {$/;"	f	class:Image
+setListeners	TrainsetCreator/src/it/univpm/dii/view/component/DepthImagePanel.java	/^    public void setListeners() {$/;"	m	class:DepthImagePanel
+setNegativeSamplesNumber	TrainsetCreator/src/it/univpm/dii/view/MainFrame.java	/^    private MainFrame setNegativeSamplesNumber(int n) {$/;"	m	class:MainFrame	file:
+setPolarity	matlab/lib/src/adaboost/WeakClassifier.h	/^    void setPolarity(short polarity) {$/;"	f	class:WeakClassifier
+setPositive	TrainsetCreator/src/it/univpm/dii/model/entities/Element.java	/^    public Element setPositive(boolean positive) {$/;"	m	class:Element
+setPositive	matlab/lib/src/adaboost/Sample.h	/^    void setPositive(bool positive) {$/;"	f	class:Sample
+setPositiveSamplesNumber	TrainsetCreator/src/it/univpm/dii/view/MainFrame.java	/^    private MainFrame setPositiveSamplesNumber(int n) {$/;"	m	class:MainFrame	file:
+setPreferredSize	TrainsetCreator/src/it/univpm/dii/view/component/DepthImagePanel.java	/^    public DepthImagePanel setPreferredSize(BufferedImage image) {$/;"	m	class:DepthImagePanel
+setPressedColumn	TrainsetCreator/src/it/univpm/dii/view/component/SortButtonRenderer.java	/^    public void setPressedColumn(int col) {$/;"	m	class:SortButtonRenderer
+setRecentMenuActions	TrainsetCreator/src/it/univpm/dii/contoller/main/RecentFilesManager.java	/^    protected void setRecentMenuActions() {$/;"	m	class:RecentFilesManager
+setRecents	TrainsetCreator/src/it/univpm/dii/view/MainFrame.java	/^    public void setRecents(ArrayList<File> paths) {$/;"	m	class:MainFrame
+setRectangleDimensions	TrainsetCreator/src/it/univpm/dii/view/component/DepthImagePanel.java	/^    public DepthImagePanel setRectangleDimensions(int w, int h) {$/;"	m	class:DepthImagePanel
+setResizeDone	TrainsetCreator/src/it/univpm/dii/contoller/resize/ResizeController.java	/^    public void setResizeDone(boolean resizeDone) {$/;"	m	class:ResizeController
+setResizeRunning	TrainsetCreator/src/it/univpm/dii/contoller/resize/ResizeController.java	/^    public void setResizeRunning(boolean resizeRunning) {$/;"	m	class:ResizeController
+setSample	matlab/lib/src/adaboost/FeatureTest.h	/^    void setSample(Sample *sample) {$/;"	f	class:FeatureTest
+setSelectedColumn	TrainsetCreator/src/it/univpm/dii/view/component/SortButtonRenderer.java	/^    public void setSelectedColumn(int col) {$/;"	m	class:SortButtonRenderer
+setSize	matlab/lib/src/image/Image.cpp	/^void Image::setSize(const size_t *size) {$/;"	f	class:Image
+setSquareCropArea	TrainsetCreator/src/it/univpm/dii/view/AddFrameView.java	/^    public AddFrameView setSquareCropArea(String dim) {$/;"	m	class:AddFrameView
+setStopResizeAction	TrainsetCreator/src/it/univpm/dii/contoller/resize/ResizeController.java	/^    public ResizeController setStopResizeAction(boolean stopResizeAction) {$/;"	m	class:ResizeController
+setThreshold	matlab/lib/src/adaboost/WeakClassifier.h	/^    void setThreshold(double threshold) {$/;"	f	class:WeakClassifier
+setVisible	TrainsetCreator/src/it/univpm/dii/view/View.java	/^    public void setVisible(boolean visible) {$/;"	m	class:View
+setWeight	matlab/lib/src/adaboost/Sample.h	/^    void setWeight(double weight) {$/;"	f	class:Sample
+setWeightedError	matlab/lib/src/adaboost/WeakClassifier.h	/^    void setWeightedError(double weightedError) {$/;"	f	class:WeakClassifier
+setWidth	TrainsetCreator/src/it/univpm/dii/model/entities/Element.java	/^    public Element setWidth(int width) {$/;"	m	class:Element
+setWidth	TrainsetCreator/src/it/univpm/dii/view/FrameRenderView.java	/^    public FrameRenderView setWidth(String width) {$/;"	m	class:FrameRenderView
+setWidth	matlab/lib/src/image/Image.cpp	/^void Image::setWidth(int width) {$/;"	f	class:Image
+setX	TrainsetCreator/src/it/univpm/dii/model/entities/Element.java	/^    public Element setX(int x) {$/;"	m	class:Element
+setY	TrainsetCreator/src/it/univpm/dii/model/entities/Element.java	/^    public Element setY(int y) {$/;"	m	class:Element
+setupFeatures	matlab/haar/setupFeatures.m	/^function features = setupFeatures(samples, scaleFactor, featuresMinimumSizes, featuresStepSizes)$/;"	f
+setupFolders	TrainsetCreator/src/it/univpm/dii/contoller/resize/ResizeSetAction.java	/^    private void setupFolders()$/;"	m	class:ResizeSetAction	file:
+setupLookAndFeel	TrainsetCreator/src/it/univpm/dii/TrainsetCreator.java	/^    private static void setupLookAndFeel() {$/;"	m	class:TrainsetCreator	file:
+setupResizeProcess	TrainsetCreator/src/it/univpm/dii/view/ResizeDialog.java	/^    public void setupResizeProcess(int max) {$/;"	m	class:ResizeDialog
+setupView	TrainsetCreator/src/it/univpm/dii/contoller/addframe/AddFrameController.java	/^    private void setupView() {$/;"	m	class:AddFrameController	file:
+setupView	TrainsetCreator/src/it/univpm/dii/contoller/resize/ResizeController.java	/^    private void setupView() {$/;"	m	class:ResizeController	file:
+size	TrainsetCreator/src/it/univpm/dii/view/component/BevelArrowIcon.java	/^    private int size;$/;"	f	class:BevelArrowIcon	file:
+size	TrainsetCreator/src/it/univpm/dii/view/component/BlankIcon.java	/^    private int size;$/;"	f	class:BlankIcon	file:
+slider	TrainsetCreator/src/it/univpm/dii/contoller/addframe/FrameMouseWheelListener.java	/^    private JSlider slider;$/;"	f	class:FrameMouseWheelListener	file:
+slider	TrainsetCreator/src/it/univpm/dii/view/AddFrameView.java	/^    private JSlider slider;$/;"	f	class:AddFrameView	file:
+sortByColumn	TrainsetCreator/src/it/univpm/dii/view/tablemodels/ElementModel.java	/^    public void sortByColumn(int col, boolean isAsc) {$/;"	m	class:ElementModel
+sortName	matlab/io/getFrames.m	/^function sorted = sortName(framesPath, names);$/;"	f
+sortName	matlab/io/getFramesPath.m	/^function sorted = sortName(names)$/;"	f
+sorterMapper	TrainsetCreator/src/it/univpm/dii/view/tablemodels/ElementModel.java	/^    int[] sorterMapper = {$/;"	f	class:ElementModel
+split	matlab/lib/src/geometry/Interval.cpp	/^vector<Interval *> Interval::split(int divider) throw(SplitException) {$/;"	f	class:Interval
+squareCheckbox	TrainsetCreator/src/it/univpm/dii/view/AddFrameView.java	/^    private JCheckBox squareCheckbox;$/;"	f	class:AddFrameView	file:
+startPt	TrainsetCreator/src/it/univpm/dii/view/component/DepthImagePanel.java	/^    private Point startPt, endPt, currentPt, offsetPt;$/;"	f	class:DepthImagePanel	file:
+state	TrainsetCreator/src/it/univpm/dii/view/component/SortButtonRenderer.java	/^    private Hashtable state;$/;"	f	class:SortButtonRenderer	file:
+stateChanged	TrainsetCreator/src/it/univpm/dii/contoller/addframe/SliderChangedAction.java	/^    public void stateChanged(ChangeEvent e) {$/;"	m	class:SliderChangedAction
+stateChanged	TrainsetCreator/src/it/univpm/dii/view/EditDialog.java	/^        public void stateChanged(ChangeEvent e) {$/;"	m	class:EditDialog.RadioButtonHandler
+statusLabel	TrainsetCreator/src/it/univpm/dii/view/ResizeDialog.java	/^    private JLabel statusLabel;$/;"	f	class:ResizeDialog	file:
+std	matlab/lib/to_string_patch.h	/^namespace std$/;"	n
+stopResizeAction	TrainsetCreator/src/it/univpm/dii/contoller/resize/ResizeController.java	/^    private boolean stopResizeAction = false,$/;"	f	class:ResizeController	file:
+strongClassifier	matlab/old/hasp/strongClassifier.m	/^function precence = strongClassifier(weaks, weights, threshold)$/;"	f
+strongClassify	matlab/adaboost/strongClassify.m	/^function presence = strongClassify(image, classifiers, offset, threshold);$/;"	f
+test	TrainsetCreator/src/it/univpm/dii/utils/ElementEqualityPredicate.java	/^    public boolean test(Element rightOperand) {$/;"	m	class:ElementEqualityPredicate
+testValue	matlab/lib/src/adaboost/FeatureTest.cpp	/^bool FeatureTest::testValue() {$/;"	f	class:FeatureTest
+test_classifier	matlab/detection/test_classifier.m	/^function [tp, tn, fp, fn] = test_classifier(finalClassifier, frames, labels);$/;"	f
+threshold	matlab/lib/src/adaboost/WeakClassifier.h	/^    double threshold;$/;"	m	class:WeakClassifier
+toString	TrainsetCreator/src/it/univpm/dii/model/entities/Element.java	/^    public String toString() {$/;"	m	class:Element
+toString	TrainsetCreator/src/it/univpm/dii/model/entities/TrainingSet.java	/^    public String toString() {$/;"	m	class:TrainingSet
+to_string	matlab/lib/src/adaboost/Sample.cpp	/^string Sample::to_string() {$/;"	f	class:Sample
+to_string	matlab/lib/src/feature/Haar.cpp	/^string Haar::to_string() {$/;"	f	class:Haar
+to_string	matlab/lib/src/geometry/Dimensions.cpp	/^string Dimensions::to_string() {$/;"	f	class:Dimensions
+to_string	matlab/lib/src/geometry/Interval.cpp	/^std::string Interval::to_string() {$/;"	f	class:Interval
+to_string	matlab/lib/src/geometry/Point.cpp	/^std::string Point::to_string() {$/;"	f	class:Point
+to_string	matlab/lib/src/geometry/Rectangle.cpp	/^string Rectangle::to_string() {$/;"	f	class:Rectangle
+to_string	matlab/lib/to_string_patch.h	/^    template < typename T > std::string to_string( const T& n )$/;"	f	namespace:std
+topLeftPoint	matlab/lib/src/geometry/Rectangle.cpp	/^Point Rectangle::topLeftPoint() {$/;"	f	class:Rectangle
+topRightPoint	matlab/lib/src/geometry/Rectangle.cpp	/^Point Rectangle::topRightPoint() {$/;"	f	class:Rectangle
+trainingSet	TrainsetCreator/src/it/univpm/dii/model/DatasetManager.java	/^    private TrainingSet trainingSet;$/;"	f	class:DatasetManager	file:
+trainsetLabel	TrainsetCreator/src/it/univpm/dii/view/MainFrame.java	/^    private JLabel trainsetLabel;$/;"	f	class:MainFrame	file:
+translate	matlab/lib/src/geometry/Rectangle.cpp	/^void Rectangle::translate(Point p) {$/;"	f	class:Rectangle
+tuneStrongClassifier	matlab/adaboost/tuneStrongClassifier.m	/^function tuneStrongClassifier(dataPath, param);$/;"	f
+upButton	TrainsetCreator/src/it/univpm/dii/view/component/SortButtonRenderer.java	/^    private JButton upButton, downButton;$/;"	f	class:SortButtonRenderer	file:
+updateCropDimensions	TrainsetCreator/src/it/univpm/dii/contoller/addframe/AddFrameController.java	/^    protected static void updateCropDimensions(AddFrameView view) {$/;"	m	class:AddFrameController
+updateElement	TrainsetCreator/src/it/univpm/dii/view/MainFrame.java	/^    public void updateElement(Element element) {$/;"	m	class:MainFrame
+updateElement	TrainsetCreator/src/it/univpm/dii/view/tablemodels/ElementModel.java	/^    public ElementModel updateElement(Element element) {$/;"	m	class:ElementModel
+updatePreviewPanel	TrainsetCreator/src/it/univpm/dii/view/MainFrame.java	/^    public void updatePreviewPanel(Element e) throws IOException {$/;"	m	class:MainFrame
+updateRecents	TrainsetCreator/src/it/univpm/dii/contoller/main/RecentFilesManager.java	/^    protected void updateRecents(File path) {$/;"	m	class:RecentFilesManager
+updateWeights	matlab/lib/src/adaboost/Adaboost.cpp	/^vector<double> Adaboost::updateWeights(WeakClassifier *classifier, vector<Sample *> samples) {$/;"	f	class:Adaboost
+usage	scripts/dataset_downloader.py	/^def usage():$/;"	f
+value	matlab/lib/src/adaboost/FeatureTest.h	/^    double value;$/;"	m	class:FeatureTest
+valueChanged	TrainsetCreator/src/it/univpm/dii/contoller/main/SampleSelectedAction.java	/^    public void valueChanged(ListSelectionEvent e) {$/;"	m	class:SampleSelectedAction
+verticalEdge	matlab/lib/src/feature/Haar.cpp	/^double Haar::verticalEdge(Image *image, Rectangle *rectangle) {$/;"	f	class:Haar
+verticalLinear	matlab/lib/src/feature/Haar.cpp	/^double Haar::verticalLinear(Image *image, Rectangle *rectangle) {$/;"	f	class:Haar
+verticalSplit	matlab/lib/src/geometry/Rectangle.cpp	/^vector<Rectangle *> Rectangle::verticalSplit(unsigned int divider)$/;"	f	class:Rectangle
+view	TrainsetCreator/src/it/univpm/dii/contoller/addframe/AddFrameController.java	/^    private AddFrameView view;$/;"	f	class:AddFrameController	file:
+view	TrainsetCreator/src/it/univpm/dii/contoller/addframe/ChangeFlipDirectionAction.java	/^    private AddFrameView view;$/;"	f	class:ChangeFlipDirectionAction	file:
+view	TrainsetCreator/src/it/univpm/dii/contoller/addframe/DimCropChangeAction.java	/^    private AddFrameView view;$/;"	f	class:DimCropChangeAction	file:
+view	TrainsetCreator/src/it/univpm/dii/contoller/addframe/FastNegativesCheckedAction.java	/^    private AddFrameView view;$/;"	f	class:FastNegativesCheckedAction	file:
+view	TrainsetCreator/src/it/univpm/dii/contoller/addframe/FineAction.java	/^    private AddFrameView view;$/;"	f	class:FineAction	file:
+view	TrainsetCreator/src/it/univpm/dii/contoller/addframe/HandFreeSelectionCheckedAction.java	/^    private AddFrameView view;$/;"	f	class:HandFreeSelectionCheckedAction	file:
+view	TrainsetCreator/src/it/univpm/dii/contoller/addframe/SalvaAction.java	/^    private AddFrameView view;$/;"	f	class:SalvaAction	file:
+view	TrainsetCreator/src/it/univpm/dii/contoller/addframe/SliderChangedAction.java	/^    private AddFrameView view;$/;"	f	class:SliderChangedAction	file:
+view	TrainsetCreator/src/it/univpm/dii/contoller/addframe/SquareSelectionCheckedAction.java	/^    private AddFrameView view;$/;"	f	class:SquareSelectionCheckedAction	file:
+view	TrainsetCreator/src/it/univpm/dii/contoller/editframe/EditFrameController.java	/^    private EditDialog view;$/;"	f	class:EditFrameController	file:
+view	TrainsetCreator/src/it/univpm/dii/contoller/editframe/OkButtonListener.java	/^    private EditDialog view;$/;"	f	class:OkButtonListener	file:
+view	TrainsetCreator/src/it/univpm/dii/contoller/framerender/IndietroRenderInfoAction.java	/^    private FrameRenderView view;$/;"	f	class:IndietroRenderInfoAction	file:
+view	TrainsetCreator/src/it/univpm/dii/contoller/main/AddFrameAction.java	/^    private MainFrame view = MainFrame.getInstance();$/;"	f	class:AddFrameAction	file:
+view	TrainsetCreator/src/it/univpm/dii/contoller/main/EditSelectedAction.java	/^    private MainFrame view = MainFrame.getInstance();$/;"	f	class:EditSelectedAction	file:
+view	TrainsetCreator/src/it/univpm/dii/contoller/main/EliminaSelectedAction.java	/^    private MainFrame view = MainFrame.getInstance();$/;"	f	class:EliminaSelectedAction	file:
+view	TrainsetCreator/src/it/univpm/dii/contoller/main/MainController.java	/^    protected MainFrame view;$/;"	f	class:MainController
+view	TrainsetCreator/src/it/univpm/dii/contoller/main/SampleSelectedAction.java	/^    private MainFrame view = MainFrame.getInstance();$/;"	f	class:SampleSelectedAction	file:
+view	TrainsetCreator/src/it/univpm/dii/contoller/resize/ResizeController.java	/^    private ResizeDialog view;$/;"	f	class:ResizeController	file:
+weakClassifiers	matlab/old/hasp/weakClassifiers.m	/^function [h, v] = weakClassifiers(ii, Wx, Wy)$/;"	f
+weight	matlab/lib/src/adaboost/Sample.h	/^    double weight;$/;"	m	class:Sample
+weightedError	matlab/lib/src/adaboost/WeakClassifier.h	/^    double weightedError;$/;"	m	class:WeakClassifier
+what	matlab/lib/src/exception/MemoryAccessException.h	/^    virtual const char *what() const throw() {$/;"	f	class:MemoryAccessException
+what	matlab/lib/src/exception/SplitException.h	/^    virtual const char *what() const throw() {$/;"	f	class:SplitException
+width	TrainsetCreator/src/it/univpm/dii/model/entities/Element.java	/^    private int width;$/;"	f	class:Element	file:
+width	TrainsetCreator/src/it/univpm/dii/view/AddFrameView.java	/^    private int current, width, height;$/;"	f	class:AddFrameView	file:
+width	matlab/lib/src/geometry/Dimensions.h	/^    unsigned int width, height;$/;"	m	class:Dimensions
+width	matlab/lib/src/geometry/Rectangle.h	/^    int x, y, width, height;$/;"	m	class:Rectangle
+width	matlab/lib/src/image/Image.h	/^    int width;$/;"	m	class:Image
+widthScaleField	TrainsetCreator/src/it/univpm/dii/view/ResizeDialog.java	/^    private JFormattedTextField widthScaleField;$/;"	f	class:ResizeDialog	file:
+widthTextField	TrainsetCreator/src/it/univpm/dii/view/FrameRenderView.java	/^    private JFormattedTextField widthTextField;$/;"	f	class:FrameRenderView	file:
+windowClosing	TrainsetCreator/src/it/univpm/dii/contoller/main/QuitAction.java	/^    public void windowClosing(WindowEvent e) {$/;"	m	class:QuitAction
+write	matlab/lib/src/image/Image.cpp	/^void Image::write(double value, Point *p) throw(MemoryAccessException) {$/;"	f	class:Image
+write	matlab/lib/src/image/Image.cpp	/^void Image::write(double value, int index) throw(MemoryAccessException) {$/;"	f	class:Image
+write	matlab/lib/src/image/Image.cpp	/^void Image::write(double value, int x, int y) throw(MemoryAccessException) {$/;"	f	class:Image
+x	TrainsetCreator/src/it/univpm/dii/model/entities/Element.java	/^    private int x;$/;"	f	class:Element	file:
+x	matlab/lib/src/geometry/Point.h	/^    int x, y;$/;"	m	class:Point
+x	matlab/lib/src/geometry/Rectangle.h	/^    int x, y, width, height;$/;"	m	class:Rectangle
+xFlipRadio	TrainsetCreator/src/it/univpm/dii/view/AddFrameView.java	/^    private JRadioButton xFlipRadio;$/;"	f	class:AddFrameView	file:
+xInterval	matlab/lib/src/geometry/Rectangle.cpp	/^Interval Rectangle::xInterval() {$/;"	f	class:Rectangle
+xYFlipRadio	TrainsetCreator/src/it/univpm/dii/view/AddFrameView.java	/^    private JRadioButton xYFlipRadio;$/;"	f	class:AddFrameView	file:
+xoffset	TrainsetCreator/src/it/univpm/dii/view/AddFrameView.java	/^    private JSlider xoffset;$/;"	f	class:AddFrameView	file:
+y	TrainsetCreator/src/it/univpm/dii/model/entities/Element.java	/^    private int y;$/;"	f	class:Element	file:
+y	matlab/lib/src/geometry/Point.h	/^    int x, y;$/;"	m	class:Point
+y	matlab/lib/src/geometry/Rectangle.h	/^    int x, y, width, height;$/;"	m	class:Rectangle
+yFlipRadio	TrainsetCreator/src/it/univpm/dii/view/AddFrameView.java	/^    private JRadioButton yFlipRadio;$/;"	f	class:AddFrameView	file:
+yInterval	matlab/lib/src/geometry/Rectangle.cpp	/^Interval Rectangle::yInterval() {$/;"	f	class:Rectangle
+yXFlipRadio	TrainsetCreator/src/it/univpm/dii/view/AddFrameView.java	/^    private JRadioButton yXFlipRadio;$/;"	f	class:AddFrameView	file:
+yoffset	TrainsetCreator/src/it/univpm/dii/view/AddFrameView.java	/^    private JSlider yoffset;$/;"	f	class:AddFrameView	file:
+~Haar	matlab/lib/src/feature/Haar.cpp	/^Haar::~Haar() {$/;"	f	class:Haar
+~Image	matlab/lib/src/image/Image.cpp	/^Image::~Image() {$/;"	f	class:Image
+~Sample	matlab/lib/src/adaboost/Sample.cpp	/^Sample::~Sample() {$/;"	f	class:Sample
+~WeakClassifier	matlab/lib/src/adaboost/WeakClassifier.cpp	/^WeakClassifier::~WeakClassifier() {$/;"	f	class:WeakClassifier

@@ -1,0 +1,18 @@
+Descrizione del workflow del programma.
+
+Allenamento:
+    viene estratto un classificatore forte da ogni dataset di allenamento.
+    Si forma un classificatore finale come combinazione di più classificatori
+    forti.
+
+Valutazione delle soglie:
+    si utilizza lo stesso dataset per classificare, usando diversi valori di
+    soglie e diverse lunghezze del classificatore forte.
+
+Regolazione del rilevatore:
+    si estrae la coppia (soglia, lunghezza del classificatore) che massimizza
+    l'accuracy.
+
+Testing:
+
+Rilevamento:

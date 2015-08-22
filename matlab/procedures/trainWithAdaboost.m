@@ -32,7 +32,7 @@ trainingFolder = checkpath('TRAINING1');
 
 for name = classifiersName
     trainingData = fullfile(trainingFolder, char(name));
-    outputFolder = fullfile(folder, name);
+    outputFolder = fullfile(folder, char(name));
     [weakClassifiers, weightedErrors, w, betasT, alphas, samplesSize] = adaboostTraining(trainingData,...
         T, fmin, fstep, true, scaleFactor, floorValue);
     if ~exist(folder)

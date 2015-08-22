@@ -1,0 +1,681 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+ARCHITECTURE_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	372;"	d	file:
+ARCHITECTURE_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	375;"	d	file:
+ARCHITECTURE_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	378;"	d	file:
+ARCHITECTURE_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	381;"	d	file:
+ARCHITECTURE_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	384;"	d	file:
+ARCHITECTURE_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	387;"	d	file:
+ARCHITECTURE_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	390;"	d	file:
+ARCHITECTURE_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	395;"	d	file:
+ARCHITECTURE_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	398;"	d	file:
+ARCHITECTURE_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	401;"	d	file:
+ARCHITECTURE_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	405;"	d	file:
+ARCHITECTURE_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	367;"	d	file:
+ARCHITECTURE_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	370;"	d	file:
+ARCHITECTURE_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	373;"	d	file:
+ARCHITECTURE_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	376;"	d	file:
+ARCHITECTURE_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	379;"	d	file:
+ARCHITECTURE_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	382;"	d	file:
+ARCHITECTURE_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	385;"	d	file:
+ARCHITECTURE_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	390;"	d	file:
+ARCHITECTURE_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	393;"	d	file:
+ARCHITECTURE_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	396;"	d	file:
+ARCHITECTURE_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	400;"	d	file:
+Adaboost	lib/src/adaboost/Adaboost.h	/^class Adaboost {$/;"	c
+CMAKE_BINARY_DIR	Makefile	/^CMAKE_BINARY_DIR = \/home\/ilario\/Projects\/hasp-tracker$/;"	m
+CMAKE_BINARY_DIR	adaboost/Makefile	/^CMAKE_BINARY_DIR = \/home\/ilario\/Projects\/hasp-tracker$/;"	m
+CMAKE_BINARY_DIR	detection/Makefile	/^CMAKE_BINARY_DIR = \/home\/ilario\/Projects\/hasp-tracker$/;"	m
+CMAKE_BINARY_DIR	haar/Makefile	/^CMAKE_BINARY_DIR = \/home\/ilario\/Projects\/hasp-tracker$/;"	m
+CMAKE_BINARY_DIR	lib/Makefile	/^CMAKE_BINARY_DIR = \/home\/ilario\/Projects\/hasp-tracker$/;"	m
+CMAKE_BINARY_DIR	preprocess/Makefile	/^CMAKE_BINARY_DIR = \/home\/ilario\/Projects\/hasp-tracker$/;"	m
+CMAKE_COMMAND	Makefile	/^CMAKE_COMMAND = \/usr\/bin\/cmake$/;"	m
+CMAKE_COMMAND	adaboost/Makefile	/^CMAKE_COMMAND = \/usr\/bin\/cmake$/;"	m
+CMAKE_COMMAND	detection/Makefile	/^CMAKE_COMMAND = \/usr\/bin\/cmake$/;"	m
+CMAKE_COMMAND	haar/Makefile	/^CMAKE_COMMAND = \/usr\/bin\/cmake$/;"	m
+CMAKE_COMMAND	lib/Makefile	/^CMAKE_COMMAND = \/usr\/bin\/cmake$/;"	m
+CMAKE_COMMAND	preprocess/Makefile	/^CMAKE_COMMAND = \/usr\/bin\/cmake$/;"	m
+CMAKE_SOURCE_DIR	Makefile	/^CMAKE_SOURCE_DIR = \/home\/ilario\/Projects\/hasp-tracker$/;"	m
+CMAKE_SOURCE_DIR	adaboost/Makefile	/^CMAKE_SOURCE_DIR = \/home\/ilario\/Projects\/hasp-tracker$/;"	m
+CMAKE_SOURCE_DIR	detection/Makefile	/^CMAKE_SOURCE_DIR = \/home\/ilario\/Projects\/hasp-tracker$/;"	m
+CMAKE_SOURCE_DIR	haar/Makefile	/^CMAKE_SOURCE_DIR = \/home\/ilario\/Projects\/hasp-tracker$/;"	m
+CMAKE_SOURCE_DIR	lib/Makefile	/^CMAKE_SOURCE_DIR = \/home\/ilario\/Projects\/hasp-tracker$/;"	m
+CMAKE_SOURCE_DIR	preprocess/Makefile	/^CMAKE_SOURCE_DIR = \/home\/ilario\/Projects\/hasp-tracker$/;"	m
+COMPILER_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	103;"	d	file:
+COMPILER_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	110;"	d	file:
+COMPILER_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	117;"	d	file:
+COMPILER_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	124;"	d	file:
+COMPILER_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	132;"	d	file:
+COMPILER_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	137;"	d	file:
+COMPILER_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	144;"	d	file:
+COMPILER_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	147;"	d	file:
+COMPILER_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	14;"	d	file:
+COMPILER_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	150;"	d	file:
+COMPILER_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	153;"	d	file:
+COMPILER_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	168;"	d	file:
+COMPILER_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	182;"	d	file:
+COMPILER_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	190;"	d	file:
+COMPILER_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	208;"	d	file:
+COMPILER_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	217;"	d	file:
+COMPILER_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	220;"	d	file:
+COMPILER_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	227;"	d	file:
+COMPILER_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	245;"	d	file:
+COMPILER_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	248;"	d	file:
+COMPILER_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	251;"	d	file:
+COMPILER_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	37;"	d	file:
+COMPILER_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	45;"	d	file:
+COMPILER_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	51;"	d	file:
+COMPILER_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	57;"	d	file:
+COMPILER_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	66;"	d	file:
+COMPILER_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	75;"	d	file:
+COMPILER_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	89;"	d	file:
+COMPILER_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	96;"	d	file:
+COMPILER_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	101;"	d	file:
+COMPILER_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	108;"	d	file:
+COMPILER_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	115;"	d	file:
+COMPILER_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	122;"	d	file:
+COMPILER_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	129;"	d	file:
+COMPILER_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	137;"	d	file:
+COMPILER_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	13;"	d	file:
+COMPILER_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	142;"	d	file:
+COMPILER_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	149;"	d	file:
+COMPILER_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	152;"	d	file:
+COMPILER_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	155;"	d	file:
+COMPILER_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	170;"	d	file:
+COMPILER_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	184;"	d	file:
+COMPILER_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	192;"	d	file:
+COMPILER_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	19;"	d	file:
+COMPILER_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	210;"	d	file:
+COMPILER_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	219;"	d	file:
+COMPILER_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	222;"	d	file:
+COMPILER_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	240;"	d	file:
+COMPILER_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	243;"	d	file:
+COMPILER_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	246;"	d	file:
+COMPILER_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	42;"	d	file:
+COMPILER_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	50;"	d	file:
+COMPILER_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	56;"	d	file:
+COMPILER_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	62;"	d	file:
+COMPILER_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	71;"	d	file:
+COMPILER_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	80;"	d	file:
+COMPILER_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	94;"	d	file:
+COMPILER_VERSION_MAJOR	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	105;"	d	file:
+COMPILER_VERSION_MAJOR	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	112;"	d	file:
+COMPILER_VERSION_MAJOR	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	119;"	d	file:
+COMPILER_VERSION_MAJOR	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	125;"	d	file:
+COMPILER_VERSION_MAJOR	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	133;"	d	file:
+COMPILER_VERSION_MAJOR	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	139;"	d	file:
+COMPILER_VERSION_MAJOR	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	157;"	d	file:
+COMPILER_VERSION_MAJOR	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	172;"	d	file:
+COMPILER_VERSION_MAJOR	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	183;"	d	file:
+COMPILER_VERSION_MAJOR	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	192;"	d	file:
+COMPILER_VERSION_MAJOR	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	19;"	d	file:
+COMPILER_VERSION_MAJOR	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	211;"	d	file:
+COMPILER_VERSION_MAJOR	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	222;"	d	file:
+COMPILER_VERSION_MAJOR	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	230;"	d	file:
+COMPILER_VERSION_MAJOR	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	235;"	d	file:
+COMPILER_VERSION_MAJOR	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	38;"	d	file:
+COMPILER_VERSION_MAJOR	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	46;"	d	file:
+COMPILER_VERSION_MAJOR	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	53;"	d	file:
+COMPILER_VERSION_MAJOR	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	59;"	d	file:
+COMPILER_VERSION_MAJOR	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	68;"	d	file:
+COMPILER_VERSION_MAJOR	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	78;"	d	file:
+COMPILER_VERSION_MAJOR	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	83;"	d	file:
+COMPILER_VERSION_MAJOR	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	91;"	d	file:
+COMPILER_VERSION_MAJOR	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	98;"	d	file:
+COMPILER_VERSION_MAJOR	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	103;"	d	file:
+COMPILER_VERSION_MAJOR	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	110;"	d	file:
+COMPILER_VERSION_MAJOR	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	117;"	d	file:
+COMPILER_VERSION_MAJOR	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	124;"	d	file:
+COMPILER_VERSION_MAJOR	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	130;"	d	file:
+COMPILER_VERSION_MAJOR	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	138;"	d	file:
+COMPILER_VERSION_MAJOR	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	144;"	d	file:
+COMPILER_VERSION_MAJOR	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	159;"	d	file:
+COMPILER_VERSION_MAJOR	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	15;"	d	file:
+COMPILER_VERSION_MAJOR	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	174;"	d	file:
+COMPILER_VERSION_MAJOR	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	185;"	d	file:
+COMPILER_VERSION_MAJOR	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	194;"	d	file:
+COMPILER_VERSION_MAJOR	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	213;"	d	file:
+COMPILER_VERSION_MAJOR	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	225;"	d	file:
+COMPILER_VERSION_MAJOR	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	230;"	d	file:
+COMPILER_VERSION_MAJOR	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	24;"	d	file:
+COMPILER_VERSION_MAJOR	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	43;"	d	file:
+COMPILER_VERSION_MAJOR	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	51;"	d	file:
+COMPILER_VERSION_MAJOR	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	58;"	d	file:
+COMPILER_VERSION_MAJOR	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	64;"	d	file:
+COMPILER_VERSION_MAJOR	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	73;"	d	file:
+COMPILER_VERSION_MAJOR	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	83;"	d	file:
+COMPILER_VERSION_MAJOR	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	88;"	d	file:
+COMPILER_VERSION_MAJOR	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	96;"	d	file:
+COMPILER_VERSION_MINOR	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	106;"	d	file:
+COMPILER_VERSION_MINOR	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	113;"	d	file:
+COMPILER_VERSION_MINOR	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	120;"	d	file:
+COMPILER_VERSION_MINOR	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	126;"	d	file:
+COMPILER_VERSION_MINOR	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	134;"	d	file:
+COMPILER_VERSION_MINOR	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	140;"	d	file:
+COMPILER_VERSION_MINOR	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	158;"	d	file:
+COMPILER_VERSION_MINOR	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	173;"	d	file:
+COMPILER_VERSION_MINOR	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	184;"	d	file:
+COMPILER_VERSION_MINOR	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	193;"	d	file:
+COMPILER_VERSION_MINOR	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	20;"	d	file:
+COMPILER_VERSION_MINOR	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	212;"	d	file:
+COMPILER_VERSION_MINOR	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	223;"	d	file:
+COMPILER_VERSION_MINOR	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	231;"	d	file:
+COMPILER_VERSION_MINOR	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	236;"	d	file:
+COMPILER_VERSION_MINOR	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	39;"	d	file:
+COMPILER_VERSION_MINOR	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	47;"	d	file:
+COMPILER_VERSION_MINOR	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	54;"	d	file:
+COMPILER_VERSION_MINOR	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	60;"	d	file:
+COMPILER_VERSION_MINOR	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	69;"	d	file:
+COMPILER_VERSION_MINOR	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	79;"	d	file:
+COMPILER_VERSION_MINOR	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	84;"	d	file:
+COMPILER_VERSION_MINOR	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	92;"	d	file:
+COMPILER_VERSION_MINOR	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	99;"	d	file:
+COMPILER_VERSION_MINOR	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	104;"	d	file:
+COMPILER_VERSION_MINOR	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	111;"	d	file:
+COMPILER_VERSION_MINOR	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	118;"	d	file:
+COMPILER_VERSION_MINOR	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	125;"	d	file:
+COMPILER_VERSION_MINOR	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	131;"	d	file:
+COMPILER_VERSION_MINOR	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	139;"	d	file:
+COMPILER_VERSION_MINOR	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	145;"	d	file:
+COMPILER_VERSION_MINOR	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	160;"	d	file:
+COMPILER_VERSION_MINOR	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	16;"	d	file:
+COMPILER_VERSION_MINOR	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	175;"	d	file:
+COMPILER_VERSION_MINOR	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	186;"	d	file:
+COMPILER_VERSION_MINOR	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	195;"	d	file:
+COMPILER_VERSION_MINOR	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	214;"	d	file:
+COMPILER_VERSION_MINOR	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	226;"	d	file:
+COMPILER_VERSION_MINOR	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	231;"	d	file:
+COMPILER_VERSION_MINOR	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	25;"	d	file:
+COMPILER_VERSION_MINOR	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	44;"	d	file:
+COMPILER_VERSION_MINOR	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	52;"	d	file:
+COMPILER_VERSION_MINOR	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	59;"	d	file:
+COMPILER_VERSION_MINOR	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	65;"	d	file:
+COMPILER_VERSION_MINOR	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	74;"	d	file:
+COMPILER_VERSION_MINOR	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	84;"	d	file:
+COMPILER_VERSION_MINOR	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	89;"	d	file:
+COMPILER_VERSION_MINOR	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	97;"	d	file:
+COMPILER_VERSION_PATCH	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	100;"	d	file:
+COMPILER_VERSION_PATCH	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	107;"	d	file:
+COMPILER_VERSION_PATCH	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	114;"	d	file:
+COMPILER_VERSION_PATCH	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	121;"	d	file:
+COMPILER_VERSION_PATCH	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	128;"	d	file:
+COMPILER_VERSION_PATCH	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	141;"	d	file:
+COMPILER_VERSION_PATCH	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	159;"	d	file:
+COMPILER_VERSION_PATCH	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	174;"	d	file:
+COMPILER_VERSION_PATCH	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	186;"	d	file:
+COMPILER_VERSION_PATCH	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	197;"	d	file:
+COMPILER_VERSION_PATCH	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	200;"	d	file:
+COMPILER_VERSION_PATCH	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	213;"	d	file:
+COMPILER_VERSION_PATCH	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	224;"	d	file:
+COMPILER_VERSION_PATCH	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	22;"	d	file:
+COMPILER_VERSION_PATCH	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	232;"	d	file:
+COMPILER_VERSION_PATCH	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	237;"	d	file:
+COMPILER_VERSION_PATCH	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	24;"	d	file:
+COMPILER_VERSION_PATCH	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	41;"	d	file:
+COMPILER_VERSION_PATCH	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	48;"	d	file:
+COMPILER_VERSION_PATCH	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	62;"	d	file:
+COMPILER_VERSION_PATCH	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	71;"	d	file:
+COMPILER_VERSION_PATCH	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	80;"	d	file:
+COMPILER_VERSION_PATCH	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	85;"	d	file:
+COMPILER_VERSION_PATCH	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	93;"	d	file:
+COMPILER_VERSION_PATCH	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	105;"	d	file:
+COMPILER_VERSION_PATCH	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	112;"	d	file:
+COMPILER_VERSION_PATCH	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	119;"	d	file:
+COMPILER_VERSION_PATCH	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	126;"	d	file:
+COMPILER_VERSION_PATCH	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	133;"	d	file:
+COMPILER_VERSION_PATCH	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	146;"	d	file:
+COMPILER_VERSION_PATCH	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	161;"	d	file:
+COMPILER_VERSION_PATCH	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	176;"	d	file:
+COMPILER_VERSION_PATCH	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	188;"	d	file:
+COMPILER_VERSION_PATCH	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	199;"	d	file:
+COMPILER_VERSION_PATCH	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	202;"	d	file:
+COMPILER_VERSION_PATCH	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	215;"	d	file:
+COMPILER_VERSION_PATCH	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	227;"	d	file:
+COMPILER_VERSION_PATCH	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	232;"	d	file:
+COMPILER_VERSION_PATCH	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	27;"	d	file:
+COMPILER_VERSION_PATCH	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	29;"	d	file:
+COMPILER_VERSION_PATCH	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	46;"	d	file:
+COMPILER_VERSION_PATCH	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	53;"	d	file:
+COMPILER_VERSION_PATCH	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	67;"	d	file:
+COMPILER_VERSION_PATCH	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	76;"	d	file:
+COMPILER_VERSION_PATCH	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	85;"	d	file:
+COMPILER_VERSION_PATCH	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	90;"	d	file:
+COMPILER_VERSION_PATCH	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	98;"	d	file:
+COMPILER_VERSION_TWEAK	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	165;"	d	file:
+COMPILER_VERSION_TWEAK	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	204;"	d	file:
+COMPILER_VERSION_TWEAK	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	28;"	d	file:
+COMPILER_VERSION_TWEAK	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	167;"	d	file:
+COMPILER_VERSION_TWEAK	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	206;"	d	file:
+COMPILER_VERSION_TWEAK	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	33;"	d	file:
+DEC	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	409;"	d	file:
+DEC	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	404;"	d	file:
+Dimensions	lib/src/geometry/Dimensions.cpp	/^Dimensions::Dimensions(unsigned int width, unsigned int height) {$/;"	f	class:Dimensions
+Dimensions	lib/src/geometry/Dimensions.h	/^class Dimensions {$/;"	c
+EQUALS	Makefile	/^EQUALS = =$/;"	m
+EQUALS	adaboost/Makefile	/^EQUALS = =$/;"	m
+EQUALS	detection/Makefile	/^EQUALS = =$/;"	m
+EQUALS	haar/Makefile	/^EQUALS = =$/;"	m
+EQUALS	lib/Makefile	/^EQUALS = =$/;"	m
+EQUALS	preprocess/Makefile	/^EQUALS = =$/;"	m
+FEATURE_DIM	lib/src/mexutils/structure_mapping.h	29;"	d
+FEATURE_TLP	lib/src/mexutils/structure_mapping.h	28;"	d
+FEATURE_TYPE	lib/src/mexutils/structure_mapping.h	30;"	d
+FeatureTest	lib/src/adaboost/FeatureTest.cpp	/^FeatureTest::FeatureTest(Haar *feature, Sample *sample) {$/;"	f	class:FeatureTest
+FeatureTest	lib/src/adaboost/FeatureTest.h	/^    FeatureTest() { };$/;"	f	class:FeatureTest
+FeatureTest	lib/src/adaboost/FeatureTest.h	/^class FeatureTest {$/;"	c
+HASP_TRACKER_ADABOOST_H	lib/src/adaboost/Adaboost.h	6;"	d
+HASP_TRACKER_DIMENSIONS_H	lib/src/geometry/Dimensions.h	6;"	d
+HASP_TRACKER_FEATURETEST_H	lib/src/adaboost/FeatureTest.h	6;"	d
+HASP_TRACKER_HAAR_H	lib/src/feature/Haar.h	6;"	d
+HASP_TRACKER_IMAGE_H	lib/src/image/Image.h	6;"	d
+HASP_TRACKER_INTERVAL_H	lib/src/geometry/Interval.h	6;"	d
+HASP_TRACKER_LIBADABOOST_H	lib/include/adaboost.h	6;"	d
+HASP_TRACKER_LIBEXCEPTIONS_H	lib/include/exceptions.h	6;"	d
+HASP_TRACKER_LIBFEATURE_H	lib/include/feature.h	6;"	d
+HASP_TRACKER_LIBGEOMETRY_H	lib/include/geometry.h	6;"	d
+HASP_TRACKER_LIBIMAGE_H	lib/include/image.h	6;"	d
+HASP_TRACKER_LIBMEXUTILS_H	lib/include/mexutils.h	6;"	d
+HASP_TRACKER_MATLAB_H	lib/src/mexutils/io.h	6;"	d
+HASP_TRACKER_MEMORYACCESSEXCEPTION_H	lib/src/exception/MemoryAccessException.h	6;"	d
+HASP_TRACKER_POINT_H	lib/src/geometry/Point.h	6;"	d
+HASP_TRACKER_RECTANGLE_H	lib/src/geometry/Rectangle.h	12;"	d
+HASP_TRACKER_SAMPLE_H	lib/src/adaboost/Sample.h	6;"	d
+HASP_TRACKER_SPLITEXCEPTION_H	lib/src/exception/SplitException.h	6;"	d
+HASP_TRACKER_STRONGCLASSIFIER_H	lib/src/adaboost/StrongClassifier.h	6;"	d
+HASP_TRACKER_STRUCTURE_MAPPING_H	lib/src/mexutils/structure_mapping.h	6;"	d
+HASP_TRACKER_TEMPLATES_DEFINITION_H	lib/src/mexutils/templates_definition.h	6;"	d
+HASP_TRACKER_TO_STRING_PATCH_H	lib/to_string_patch.h	6;"	d
+HASP_TRACKER_UTILS_H	lib/src/mexutils/utils.h	6;"	d
+HASP_TRACKER_WEAKCLASSIFIER_H	lib/src/adaboost/WeakClassifier.h	6;"	d
+HEX	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	420;"	d	file:
+HEX	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	415;"	d	file:
+HORIZONTAL_EDGE	lib/src/feature/Haar.h	/^    static const unsigned char HORIZONTAL_EDGE = 1;$/;"	m	class:Haar
+HORIZONTAL_LINEAR	lib/src/feature/Haar.h	/^    static const unsigned char HORIZONTAL_LINEAR = 3;$/;"	m	class:Haar
+Haar	lib/src/feature/Haar.cpp	/^Haar::Haar(Rectangle *r, int code) {$/;"	f	class:Haar
+Haar	lib/src/feature/Haar.h	/^    Haar() { };$/;"	f	class:Haar
+Haar	lib/src/feature/Haar.h	/^class Haar {$/;"	c
+ID_VOID_MAIN	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	6;"	d	file:
+Image	lib/src/image/Image.cpp	/^Image::Image() { }$/;"	f	class:Image
+Image	lib/src/image/Image.cpp	/^Image::Image(char *filePath) {$/;"	f	class:Image
+Image	lib/src/image/Image.cpp	/^Image::Image(double *image, const size_t *size) {$/;"	f	class:Image
+Image	lib/src/image/Image.cpp	/^Image::Image(double *image, int width, int height) {$/;"	f	class:Image
+Image	lib/src/image/Image.h	/^class Image {$/;"	c
+Interval	lib/src/geometry/Interval.cpp	/^Interval::Interval(int a, int b) {$/;"	f	class:Interval
+Interval	lib/src/geometry/Interval.h	/^class Interval {$/;"	c
+MemoryAccessException	lib/src/exception/MemoryAccessException.h	/^class MemoryAccessException {$/;"	c
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	269;"	d	file:
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	272;"	d	file:
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	275;"	d	file:
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	278;"	d	file:
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	281;"	d	file:
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	284;"	d	file:
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	287;"	d	file:
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	290;"	d	file:
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	293;"	d	file:
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	296;"	d	file:
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	299;"	d	file:
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	302;"	d	file:
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	305;"	d	file:
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	308;"	d	file:
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	311;"	d	file:
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	314;"	d	file:
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	317;"	d	file:
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	320;"	d	file:
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	323;"	d	file:
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	326;"	d	file:
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	329;"	d	file:
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	332;"	d	file:
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	335;"	d	file:
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	338;"	d	file:
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	341;"	d	file:
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	345;"	d	file:
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	348;"	d	file:
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	351;"	d	file:
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	354;"	d	file:
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	357;"	d	file:
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	361;"	d	file:
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	264;"	d	file:
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	267;"	d	file:
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	270;"	d	file:
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	273;"	d	file:
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	276;"	d	file:
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	279;"	d	file:
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	282;"	d	file:
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	285;"	d	file:
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	288;"	d	file:
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	291;"	d	file:
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	294;"	d	file:
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	297;"	d	file:
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	300;"	d	file:
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	303;"	d	file:
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	306;"	d	file:
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	309;"	d	file:
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	312;"	d	file:
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	315;"	d	file:
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	318;"	d	file:
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	321;"	d	file:
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	324;"	d	file:
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	327;"	d	file:
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	330;"	d	file:
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	333;"	d	file:
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	336;"	d	file:
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	340;"	d	file:
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	343;"	d	file:
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	346;"	d	file:
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	349;"	d	file:
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	352;"	d	file:
+PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	356;"	d	file:
+Point	lib/src/geometry/Point.cpp	/^Point::Point(int x, int y) {$/;"	f	class:Point
+Point	lib/src/geometry/Point.h	/^    Point() { };$/;"	f	class:Point
+Point	lib/src/geometry/Point.h	/^class Point {$/;"	c
+RM	Makefile	/^RM = \/usr\/bin\/cmake -E remove -f$/;"	m
+RM	adaboost/Makefile	/^RM = \/usr\/bin\/cmake -E remove -f$/;"	m
+RM	detection/Makefile	/^RM = \/usr\/bin\/cmake -E remove -f$/;"	m
+RM	haar/Makefile	/^RM = \/usr\/bin\/cmake -E remove -f$/;"	m
+RM	lib/Makefile	/^RM = \/usr\/bin\/cmake -E remove -f$/;"	m
+RM	preprocess/Makefile	/^RM = \/usr\/bin\/cmake -E remove -f$/;"	m
+Rectangle	lib/src/geometry/Rectangle.cpp	/^Rectangle::Rectangle(Point p, Dimensions d) {$/;"	f	class:Rectangle
+Rectangle	lib/src/geometry/Rectangle.cpp	/^Rectangle::Rectangle(Point p, unsigned int width, unsigned int height) {$/;"	f	class:Rectangle
+Rectangle	lib/src/geometry/Rectangle.cpp	/^Rectangle::Rectangle(int x, int y, unsigned int width, unsigned height) {$/;"	f	class:Rectangle
+Rectangle	lib/src/geometry/Rectangle.h	/^class Rectangle {$/;"	c
+SHELL	Makefile	/^SHELL = \/bin\/sh$/;"	m
+SHELL	adaboost/Makefile	/^SHELL = \/bin\/sh$/;"	m
+SHELL	detection/Makefile	/^SHELL = \/bin\/sh$/;"	m
+SHELL	haar/Makefile	/^SHELL = \/bin\/sh$/;"	m
+SHELL	lib/Makefile	/^SHELL = \/bin\/sh$/;"	m
+SHELL	preprocess/Makefile	/^SHELL = \/bin\/sh$/;"	m
+SIMULATE_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	155;"	d	file:
+SIMULATE_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	16;"	d	file:
+SIMULATE_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	170;"	d	file:
+SIMULATE_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	157;"	d	file:
+SIMULATE_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	172;"	d	file:
+SIMULATE_ID	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	21;"	d	file:
+SIMULATE_VERSION_MAJOR	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	162;"	d	file:
+SIMULATE_VERSION_MAJOR	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	177;"	d	file:
+SIMULATE_VERSION_MAJOR	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	32;"	d	file:
+SIMULATE_VERSION_MAJOR	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	164;"	d	file:
+SIMULATE_VERSION_MAJOR	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	179;"	d	file:
+SIMULATE_VERSION_MAJOR	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	37;"	d	file:
+SIMULATE_VERSION_MINOR	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	163;"	d	file:
+SIMULATE_VERSION_MINOR	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	178;"	d	file:
+SIMULATE_VERSION_MINOR	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	33;"	d	file:
+SIMULATE_VERSION_MINOR	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	165;"	d	file:
+SIMULATE_VERSION_MINOR	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	180;"	d	file:
+SIMULATE_VERSION_MINOR	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	38;"	d	file:
+STRONG_CLASSIFIER_ALPHAS	lib/src/mexutils/structure_mapping.h	18;"	d
+STRONG_CLASSIFIER_FLOOR_VALUE	lib/src/mexutils/structure_mapping.h	14;"	d
+STRONG_CLASSIFIER_INNER_OFFSET	lib/src/mexutils/structure_mapping.h	16;"	d
+STRONG_CLASSIFIER_SAMPLES_SIZE	lib/src/mexutils/structure_mapping.h	13;"	d
+STRONG_CLASSIFIER_SCALE_FACTOR	lib/src/mexutils/structure_mapping.h	15;"	d
+STRONG_CLASSIFIER_WEAK_CLASSIFIERS	lib/src/mexutils/structure_mapping.h	17;"	d
+SUFFIXES	Makefile	/^SUFFIXES =$/;"	m
+SUFFIXES	adaboost/Makefile	/^SUFFIXES =$/;"	m
+SUFFIXES	detection/Makefile	/^SUFFIXES =$/;"	m
+SUFFIXES	haar/Makefile	/^SUFFIXES =$/;"	m
+SUFFIXES	lib/Makefile	/^SUFFIXES =$/;"	m
+SUFFIXES	preprocess/Makefile	/^SUFFIXES =$/;"	m
+Sample	lib/src/adaboost/Sample.cpp	/^Sample::Sample(char *filePath, bool positive, double weight)$/;"	f	class:Sample
+Sample	lib/src/adaboost/Sample.cpp	/^Sample::Sample(double *image, const size_t *size, bool positive, double weight)$/;"	f	class:Sample
+Sample	lib/src/adaboost/Sample.cpp	/^Sample::Sample(double *image, int width, int height, bool positive, double weight)$/;"	f	class:Sample
+Sample	lib/src/adaboost/Sample.h	/^    Sample() { };$/;"	f	class:Sample
+Sample	lib/src/adaboost/Sample.h	/^class Sample : public Image {$/;"	c
+SplitException	lib/src/exception/SplitException.h	/^class SplitException : public std::exception{$/;"	c
+StrongClassifier	lib/src/adaboost/StrongClassifier.cpp	/^StrongClassifier::StrongClassifier($/;"	f	class:StrongClassifier
+StrongClassifier	lib/src/adaboost/StrongClassifier.h	/^    StrongClassifier() { };$/;"	f	class:StrongClassifier
+StrongClassifier	lib/src/adaboost/StrongClassifier.h	/^class StrongClassifier {$/;"	c
+Time	lib/src/mexutils/utils.h	/^typedef std::chrono::high_resolution_clock Time;$/;"	t
+VERTICAL_EDGE	lib/src/feature/Haar.h	/^    static const unsigned char VERTICAL_EDGE = 0;$/;"	m	class:Haar
+VERTICAL_LINEAR	lib/src/feature/Haar.h	/^    static const unsigned char VERTICAL_LINEAR = 2;$/;"	m	class:Haar
+WEAK_CLASSIFIER_FEATURE	lib/src/mexutils/structure_mapping.h	25;"	d
+WEAK_CLASSIFIER_POLARITY	lib/src/mexutils/structure_mapping.h	26;"	d
+WEAK_CLASSIFIER_THRESHOLD	lib/src/mexutils/structure_mapping.h	27;"	d
+WeakClassifier	lib/src/adaboost/WeakClassifier.cpp	/^WeakClassifier::WeakClassifier() {$/;"	f	class:WeakClassifier
+WeakClassifier	lib/src/adaboost/WeakClassifier.cpp	/^WeakClassifier::WeakClassifier(Haar *feature, double thr, short p) {$/;"	f	class:WeakClassifier
+WeakClassifier	lib/src/adaboost/WeakClassifier.cpp	/^WeakClassifier::WeakClassifier(Haar *feature, double thr, short p, double weightedError) {$/;"	f	class:WeakClassifier
+WeakClassifier	lib/src/adaboost/WeakClassifier.h	/^class WeakClassifier {$/;"	c
+a	lib/src/geometry/Interval.h	/^    int a, b;$/;"	m	class:Interval
+adaboostTesting	adaboost/adaboostTesting.m	/^function [tp, tn, fp, fn] = adaboostTesting(finalClassifier, frames, labels);$/;"	f
+adaboostTraining	adaboost/adaboostTraining.m	/^function [weakClassifiers, weightedErrors, w, betasT, alphas, samplesSize] = adaboostTraining(datasetPath, numberOfWeakClassifiers, featuresMinimumSizes, featuresStepSizes, precalculateFeatures, scaleFactor, floorValue);$/;"	f
+allocateImages	lib/src/mexutils/io.cpp	/^vector<Image *> allocateImages(const mxArray *input) {$/;"	f
+allocateSamples	lib/src/mexutils/io.cpp	/^vector<Sample *> allocateSamples(const mxArray *input, vector<bool> labels) {$/;"	f
+allocateSamples	lib/src/mexutils/io.cpp	/^vector<Sample *> allocateSamples(const mxArray *input,$/;"	f
+alpha	lib/src/adaboost/StrongClassifier.h	/^    double alpha;$/;"	m	struct:classifier_struct
+alphaSum	lib/src/adaboost/StrongClassifier.h	/^    double alphaSum;$/;"	m	class:StrongClassifier
+alphaSum	lib/src/adaboost/StrongClassifier.h	/^    double alphaSum;$/;"	m	struct:classifier_struct
+area	lib/src/feature/Haar.h	/^    Rectangle *area;$/;"	m	class:Haar
+arrangeFeatures	old/arrangeFeatures.m	/^function features = arrangeFeatures(width, height, minf, step)$/;"	f
+b	lib/src/geometry/Interval.h	/^    int a, b;$/;"	m	class:Interval
+bestWeakClassifier	lib/src/adaboost/Adaboost.cpp	/^WeakClassifier *Adaboost::bestWeakClassifier(vector<Sample *> samples, vector<Haar *> features) {$/;"	f	class:Adaboost
+bestWeakClassifier	lib/src/adaboost/Adaboost.cpp	/^WeakClassifier *Adaboost::bestWeakClassifier(vector<Sample *> samples, vector<Haar *> features, float *values) {$/;"	f	class:Adaboost
+bottomLeftPoint	lib/src/geometry/Rectangle.cpp	/^Point Rectangle::bottomLeftPoint() {$/;"	f	class:Rectangle
+bottomRightPoint	lib/src/geometry/Rectangle.cpp	/^Point Rectangle::bottomRightPoint() {$/;"	f	class:Rectangle
+calcHaarFeature	adaboost/strongClassify.m	/^function value = calcHaarFeature(image, feature, offset)$/;"	f
+calculateBetaT	lib/src/adaboost/Adaboost.cpp	/^double Adaboost::calculateBetaT(WeakClassifier *classifier) {$/;"	f	class:Adaboost
+calculateBetaT	lib/src/adaboost/Adaboost.cpp	/^double Adaboost::calculateBetaT(WeakClassifier *classifier, vector<Sample *> samples) {$/;"	f	class:Adaboost
+calculateBetaT	lib/src/adaboost/Adaboost.cpp	/^double Adaboost::calculateBetaT(double minimumError) {$/;"	f	class:Adaboost
+calculateBetaT	lib/src/adaboost/Adaboost.cpp	/^double Adaboost::calculateBetaT(double minimumError, double errorSmothing) {$/;"	f	class:Adaboost
+calculateEvaluationParams	analysis/calculateEvaluationParams.m	/^function [sensitivity, specificity, accuracy, mcc] = calculateEvaluationParams(tp, tn, fp, fn);$/;"	f
+calculateIntensity	lib/src/feature/Haar.cpp	/^double Haar::calculateIntensity(Image *image, Rectangle *rectangle) {$/;"	f	class:Haar
+calculateValue	lib/src/adaboost/FeatureTest.cpp	/^void FeatureTest::calculateValue() {$/;"	f	class:FeatureTest
+calculateValue	lib/src/feature/Haar.cpp	/^double Haar::calculateValue(Image *image) {$/;"	f	class:Haar
+calculateValue	lib/src/feature/Haar.cpp	/^double Haar::calculateValue(Image *image, Point offset) {$/;"	f	class:Haar
+calculateValue	lib/src/feature/Haar.cpp	/^double Haar::calculateValue(Image *image, Rectangle *rectangle, int code) {$/;"	f	class:Haar
+calculateWeakClassifier	adaboost/strongClassify.m	/^function value = calculateWeakClassifier(image, classifier, offset)$/;"	f
+calculate_final_classifier	adaboost/calculate_final_classifier.m	/^function presence = calculate_final_classifier(final, frame, offset);$/;"	f
+calculate_strong_classifier	adaboost/calculate_strong_classifier.m	/^function [presence, value] = calculate_strong_classifier(strong, img, offset);$/;"	f
+calculate_weak_classifier	adaboost/calculate_weak_classifier.m	/^function [presence, value] = calculate_weak_classifier(img, feature, polarity, threshold, offset);$/;"	f
+checkArgs	adaboost/evaluate_thresholds.cxx	/^void checkArgs(int nin, int outn) {$/;"	f
+checkArgs	adaboost/weak_classify_samples.cxx	/^void checkArgs(int nin, int outn) {$/;"	f
+checkSamplesLabelsWeightsDim	lib/src/mexutils/io.cpp	/^void checkSamplesLabelsWeightsDim(const size_t *samples,$/;"	f
+checkinput	adaboost/best_weak_classifier.cxx	/^void checkinput(int inc, int outc) {$/;"	f
+checkinput	detection/detect_human.cxx	/^void checkinput(int inputc, int outputc)$/;"	f
+checkisdir	utilities/checkisdir.m	/^function result = checkisdir(fullpath)$/;"	f
+checkpath	utilities/checkpath.m	/^function [checkedPath, isdirectory] = checkpath(pathname)$/;"	f
+checksubdirs	utilities/checksubdirs.m	/^function presence = checksubdirs(baseDir, dirs);$/;"	f
+choosesubdir	utilities/choosesubdir.m	/^function dirpath = choosesubdir(basepath);$/;"	f
+classifier	lib/src/adaboost/StrongClassifier.h	/^    WeakClassifier* classifier;$/;"	m	struct:classifier_struct
+classifier_struct	lib/src/adaboost/StrongClassifier.h	/^struct classifier_struct {$/;"	s
+classifier_struct	lib/src/adaboost/StrongClassifier.h	/^typedef struct classifier_struct classifier_struct;$/;"	t	typeref:struct:classifier_struct
+classifiers	lib/src/adaboost/StrongClassifier.h	/^    vector<classifier_struct *> classifiers;$/;"	m	class:StrongClassifier
+classify	lib/src/adaboost/WeakClassifier.cpp	/^bool WeakClassifier::classify(Image *image) {$/;"	f	class:WeakClassifier
+classify	lib/src/adaboost/WeakClassifier.cpp	/^bool WeakClassifier::classify(Image *image, Point offset) {$/;"	f	class:WeakClassifier
+cleanIntervals	lib/src/geometry/Rectangle.cpp	/^void Rectangle::cleanIntervals(vector<Interval *> intervals) {$/;"	f	class:Rectangle
+clearRectangles	lib/src/feature/Haar.cpp	/^void Haar::clearRectangles(vector<Rectangle *> rects) {$/;"	f	class:Haar
+clone	lib/src/feature/Haar.cpp	/^Haar *Haar::clone() {$/;"	f	class:Haar
+clone	lib/src/geometry/Rectangle.cpp	/^Rectangle *Rectangle::clone() {$/;"	f	class:Rectangle
+code	lib/src/feature/Haar.h	/^    unsigned char code;$/;"	m	class:Haar
+compare	lib/src/adaboost/FeatureTest.cpp	/^bool FeatureTest::compare(FeatureTest *f1, FeatureTest *f2) {$/;"	f	class:FeatureTest
+coordinatesToIndex	lib/src/image/Image.cpp	/^int Image::coordinatesToIndex(int x, int y) {$/;"	f	class:Image
+countFeatures	utilities/countFeatures.m	/^function count = countFeatures(width, height, minf, step)$/;"	f
+countSamples	adaboost/adaboostTraining.m	/^function [l,m] = countSamples(samples);$/;"	f
+count_features	adaboost/get_features.cxx	/^int count_features(int w, int h, int minw, int minh, int stepw, int steph) {$/;"	f
+createStrongClassifier	adaboost/createStrongClassifier.m	/^function classifier = createStrongClassifier(weakClassifiers, alphas)$/;"	f
+decodeFinalClassifier	io/decodeFinalClassifier.m	/^function finalClassifier = decodeFinalClassifier(dataPath, disableOffset);$/;"	f
+decodeStrongClassifier	io/decodeStrongClassifier.m	/^function strongClassifier = decodeStrongClassifier(dataPath);$/;"	f
+decodeThresholdEval	io/decodeThresholdEval.m	/^function data = decodeThresholdEval(dataPath);$/;"	f
+decodeTuning	io/decodeTuning.m	/^function [thr, cls] = decodeTuning(dataPath);$/;"	f
+decodeWeakClassifier	io/decodeWeakClassifier.m	/^function weakClassifiers = decodeWeakClassifier(filePath);$/;"	f
+destroyrectangles	gfx/destroyrectangles.m	/^function destroyrectangles(fig, rectangles);$/;"	f
+detectHuman	detection/detectHuman.m	/^function [x, y] = detectHuman(frame, finalClassifier, windowWidth, windowHeight);$/;"	f
+detectHuman	old/hasp/OLDdetectHuman.m	/^function [precence, Wx, Wy] = detectHuman(image, subWindowSize, threshold)$/;"	f
+drawrectangles	gfx/drawrectangles.m	/^function rectangles = drawrectangles(fig, boxes, edgecolor);$/;"	f
+encodeThresholdEval	io/encodeThresholdEval.m	/^function encodeThresholdEval(destination, data);$/;"	f
+encodeTuning	io/encodeTuning.m	/^function encodeTuning(dataPath, thr, cls);$/;"	f
+encodeWeakClassifier	io/encodeWeakClassifier.m	/^function encodeWeakClassifier(dataPath,...$/;"	f
+evaluateThresholds	adaboost/evaluateThresholds.m	/^function [accuracy, sensitivity, specificity, mcc] = evaluateThresholds(classifier, frames, labels, thresholds);$/;"	f
+feature	lib/src/adaboost/FeatureTest.h	/^    Haar *feature;$/;"	m	class:FeatureTest
+feature	lib/src/adaboost/WeakClassifier.h	/^    Haar *feature;$/;"	m	class:WeakClassifier
+featureCombination	old/arrangeFeatures.m	/^function features = featureCombination(width, height, minf, step)$/;"	f
+featureCombination	utilities/countFeatures.m	/^function count = featureCombination(width, height, minf, step)$/;"	f
+featureHandler	io/decodeWeakClassifier.m	/^function handler = featureHandler(featureType, topleft, dimension);$/;"	f
+featureIndex	lib/src/adaboost/WeakClassifier.h	/^    int featureIndex;$/;"	m	class:WeakClassifier
+features	CMakeFiles/feature_tests.c	/^  const char features[] = {""$/;"	v
+features	CMakeFiles/feature_tests.cxx	/^  const char features[] = {""$/;"	v
+floorRebase	lib/src/image/Image.cpp	/^void Image::floorRebase(Image *origin, Image *destination) {$/;"	f	class:Image
+floorRebase	lib/src/image/Image.cpp	/^void Image::floorRebase(Image *origin, Image *destination, double floorValue) {$/;"	f	class:Image
+floorValue	lib/src/adaboost/StrongClassifier.h	/^    double floorValue;$/;"	m	class:StrongClassifier
+generateWindow	old/hasp/generateWindow.m	/^function [x,y] = generateWindow(x0, y0, subwSize)$/;"	f
+generate_features	adaboost/get_features.cxx	/^void generate_features(int16 *result, int *cursor, int length, int feature,$/;"	f
+getArea	lib/src/feature/Haar.h	/^    Rectangle *getArea() const {$/;"	f	class:Haar
+getBestTuning	adaboost/getBestTuning.m	/^function [threshold, numberOfClassifiers] = getBestTuning(data, param);$/;"	f
+getCode	lib/src/feature/Haar.h	/^    unsigned char getCode() const {$/;"	f	class:Haar
+getDatasetPath	io/getDatasetPath.m	/^function path = getDatasetPath(envName, set_number)$/;"	f
+getDimension	lib/src/geometry/Rectangle.cpp	/^Dimensions Rectangle::getDimension() {$/;"	f	class:Rectangle
+getFeature	lib/src/adaboost/FeatureTest.h	/^    Haar *getFeature() const {$/;"	f	class:FeatureTest
+getFeature	lib/src/adaboost/WeakClassifier.h	/^    Haar *getFeature() const {$/;"	f	class:WeakClassifier
+getFrames	io/getFrames.m	/^function samples = getFrames(framesPath);$/;"	f
+getFramesPath	io/getFramesPath.m	/^function frames = getFramesPath(path)$/;"	f
+getHaarFeature	lib/src/mexutils/io.cpp	/^Haar *getHaarFeature(const mxArray *input, int index) {$/;"	f
+getHaarFeatureFromStruct	lib/src/mexutils/io.cpp	/^Haar *getHaarFeatureFromStruct(const mxArray *input) {$/;"	f
+getHeight	lib/src/image/Image.cpp	/^int Image::getHeight() {$/;"	f	class:Image
+getImage	lib/src/image/Image.cpp	/^double *Image::getImage() {$/;"	f	class:Image
+getLabels	lib/src/mexutils/io.cpp	/^vector<bool> getLabels(const mxArray *input) {$/;"	f
+getPercentage	adaboost/evaluateThresholds.m	/^function percentage = getPercentage(max_i, max_j, i, j);$/;"	f
+getPolarity	lib/src/adaboost/WeakClassifier.h	/^    short getPolarity() const {$/;"	f	class:WeakClassifier
+getSample	lib/src/adaboost/FeatureTest.h	/^    Sample *getSample() const {$/;"	f	class:FeatureTest
+getStrongClassifier	lib/src/mexutils/io.cpp	/^StrongClassifier *getStrongClassifier(const mxArray *input) {$/;"	f
+getThreshold	lib/src/adaboost/WeakClassifier.h	/^    double getThreshold() const {$/;"	f	class:WeakClassifier
+getVector	lib/src/mexutils/templates_definition.h	/^vector<T> getVector(const mxArray *input) {$/;"	f
+getWeakClassifierFromStruct	lib/src/mexutils/io.cpp	/^WeakClassifier *getWeakClassifierFromStruct(const mxArray *input, mwIndex index) {$/;"	f
+getWeight	lib/src/adaboost/Sample.h	/^    double getWeight() const {$/;"	f	class:Sample
+getWeightedError	lib/src/adaboost/WeakClassifier.h	/^    double getWeightedError() const {$/;"	f	class:WeakClassifier
+getWeights	lib/src/mexutils/io.cpp	/^vector<double> getWeights(const mxArray *input) {$/;"	f
+getWidth	lib/src/image/Image.cpp	/^int Image::getWidth() {$/;"	f	class:Image
+haarHorizontalEdge	old/haarHorizontalEdge.m	/^function value = haarHorizontalEdge(ii, x1, y1, x2, y2)$/;"	f
+haarHorizontalLinear	old/haarHorizontalLinear.m	/^function value = haarHorizontalLinear(ii, x1, y1, x2, y2)$/;"	f
+haarVerticalEdge	old/haarVerticalEdge.m	/^function value = haarVerticalEdge(ii, x1, y1, x2, y2)$/;"	f
+haarVerticalLinear	old/haarVerticalLinear.m	/^function value = haarVerticalLinear(ii, x1, y1, x2, y2)$/;"	f
+height	lib/src/geometry/Dimensions.h	/^    unsigned int width, height;$/;"	m	class:Dimensions
+height	lib/src/geometry/Rectangle.h	/^    int x, y, width, height;$/;"	m	class:Rectangle
+height	lib/src/image/Image.h	/^    int height;$/;"	m	class:Image
+horizontalEdge	lib/src/feature/Haar.cpp	/^double Haar::horizontalEdge(Image *image, Rectangle *rectangle) {$/;"	f	class:Haar
+horizontalLinear	lib/src/feature/Haar.cpp	/^double Haar::horizontalLinear(Image *image, Rectangle *rectangle) {$/;"	f	class:Haar
+horizontalSplit	lib/src/geometry/Rectangle.cpp	/^vector<Rectangle *> Rectangle::horizontalSplit(unsigned int divider)$/;"	f	class:Rectangle
+image	lib/src/image/Image.h	/^    double *image;$/;"	m	class:Image
+info_arch	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	/^char const* info_arch = "INFO" ":" "arch[" ARCHITECTURE_ID "]";$/;"	v
+info_arch	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^char const* info_arch = "INFO" ":" "arch[" ARCHITECTURE_ID "]";$/;"	v
+info_compiler	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	/^char const* info_compiler = "INFO" ":" "compiler[" COMPILER_ID "]";$/;"	v
+info_compiler	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^char const* info_compiler = "INFO" ":" "compiler[" COMPILER_ID "]";$/;"	v
+info_platform	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	/^char const* info_platform = "INFO" ":" "platform[" PLATFORM_ID "]";$/;"	v
+info_platform	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^char const* info_platform = "INFO" ":" "platform[" PLATFORM_ID "]";$/;"	v
+info_simulate	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	/^char const* info_simulate = "INFO" ":" "simulate[" SIMULATE_ID "]";$/;"	v
+info_simulate	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^char const* info_simulate = "INFO" ":" "simulate[" SIMULATE_ID "]";$/;"	v
+info_simulate_version	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	/^char const info_simulate_version[] = {$/;"	v
+info_simulate_version	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^char const info_simulate_version[] = {$/;"	v
+info_version	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	/^char const info_version[] = {$/;"	v
+info_version	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^char const info_version[] = {$/;"	v
+initWeights	adaboost/adaboostTraining.m	/^function w = initWeights(samples);$/;"	f
+innerOffset	lib/src/adaboost/StrongClassifier.h	/^    Point innerOffset = Point(0, 0);$/;"	m	class:StrongClassifier
+inputdef	utilities/inputdef.m	/^function data = inputdef(prompt, default, string);$/;"	f
+int16	adaboost/get_features.cxx	/^typedef short int int16;$/;"	t	file:
+integralImage	lib/src/image/Image.cpp	/^void Image::integralImage(Image *origin, Image *destination) {$/;"	f	class:Image
+isPositive	lib/src/adaboost/Sample.h	/^    bool isPositive() const {$/;"	f	class:Sample
+length	lib/src/geometry/Interval.cpp	/^unsigned int Interval::length() {$/;"	f	class:Interval
+length	lib/src/image/Image.cpp	/^int Image::length() {$/;"	f	class:Image
+localMinima	old/hasp/localMinima.m	/^function [minima, mx, my] = localMinima(data, meshSize)$/;"	f
+lowestErrorThreshold	lib/src/adaboost/Adaboost.cpp	/^WeakClassifier *Adaboost::lowestErrorThreshold(list<FeatureTest *> &tests, double positiveSum, double negativeSum) {$/;"	f	class:Adaboost
+lsec	lib/src/mexutils/utils.h	/^typedef std::chrono::duration<double > lsec;$/;"	t
+main	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	/^int main(int argc, char* argv[])$/;"	f
+main	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	/^void main() {}$/;"	f
+main	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^int main(int argc, char* argv[])$/;"	f
+main	CMakeFiles/feature_tests.c	/^int main(int argc, char** argv) { (void)argv; return features[argc]; }$/;"	f
+main	CMakeFiles/feature_tests.cxx	/^int main(int argc, char** argv) { (void)argv; return features[argc]; }$/;"	f
+main	placeholder.cpp	/^int main(int argc, char**argv) {$/;"	f
+mexFunction	adaboost/best_weak_classifier.cxx	/^void mexFunction(int outc, mxArray *output[], int inc, const mxArray *input[]) {$/;"	f
+mexFunction	adaboost/calculate_features.cxx	/^void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[]) {$/;"	f
+mexFunction	adaboost/evaluate_thresholds.cxx	/^void mexFunction(int outn, mxArray *output[], int nin, const mxArray *input[]) {$/;"	f
+mexFunction	adaboost/get_features.cxx	/^void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[]) {$/;"	f
+mexFunction	adaboost/weak_classify_samples.cxx	/^void mexFunction(int outn, mxArray *output[], int nin, const mxArray *input[]) {$/;"	f
+mexFunction	detection/detect_human.cxx	/^void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[]) {$/;"	f
+mexFunction	haar/haar_horizontal_edge.cxx	/^void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[]) {$/;"	f
+mexFunction	haar/haar_horizontal_linear.cxx	/^void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[]) {$/;"	f
+mexFunction	haar/haar_vertical_edge.cxx	/^void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[]) {$/;"	f
+mexFunction	haar/haar_vertical_linear.cxx	/^void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[]) {$/;"	f
+mexFunction	preprocess/array_fire_info.cxx	/^void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[]) {$/;"	f
+mexFunction	preprocess/floor_rebase.cxx	/^void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[]) {$/;"	f
+mexFunction	preprocess/integral_image.cxx	/^void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[]) {$/;"	f
+mexFunction	preprocess/scale_image.cxx	/^void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[]) {$/;"	f
+ms	lib/src/mexutils/utils.h	/^typedef std::chrono::milliseconds ms;$/;"	t
+outputUpdatedWeights	adaboost/best_weak_classifier.cxx	/^void outputUpdatedWeights(mxArray **output,$/;"	f
+outputWeakClassifier	adaboost/best_weak_classifier.cxx	/^void outputWeakClassifier(mxArray **output, WeakClassifier *bestWeakClassifier) {$/;"	f
+plotThresholdEval	analysis/plotThresholdEval.m	/^function plotThresholdEval(data);$/;"	f
+polarity	lib/src/adaboost/WeakClassifier.h	/^    short polarity;$/;"	m	class:WeakClassifier
+positive	lib/src/adaboost/Sample.h	/^    bool positive;$/;"	m	class:Sample
+preprocessImage	preprocess/preprocessImage.m	/^function image = preprocessImage(data, scaleFactor, floorValue);$/;"	f
+qnxnto	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	/^char const* qnxnto = "INFO" ":" "qnxnto[]";$/;"	v
+qnxnto	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^char const* qnxnto = "INFO" ":" "qnxnto[]";$/;"	v
+read	lib/src/image/Image.cpp	/^double Image::read(Point p) throw(MemoryAccessException) {$/;"	f	class:Image
+read	lib/src/image/Image.cpp	/^double Image::read(int index) throw(MemoryAccessException) {$/;"	f	class:Image
+read	lib/src/image/Image.cpp	/^double Image::read(int x, int y) throw(MemoryAccessException) {$/;"	f	class:Image
+readFramesAndLabels	io/readFramesAndLabels.m	/^function [frames, labels] = readFramesAndLabels(samples, scaleFactor, floorValue)$/;"	f
+readImage	lib/src/mexutils/io.cpp	/^Image *readImage(const mxArray* input) {$/;"	f
+readImage	lib/src/mexutils/io.cpp	/^void readImage(const mxArray* input, Image* image) {$/;"	f
+readImageData	io/readImageData.m	/^function data = readImageData(fp, colDim, rowDim, colorDepth)$/;"	f
+sample	lib/src/adaboost/FeatureTest.h	/^    Sample *sample;$/;"	m	class:FeatureTest
+samplesSize	lib/src/adaboost/StrongClassifier.h	/^    Dimensions samplesSize = Dimensions(0, 0);$/;"	m	class:StrongClassifier
+scaleFactor	lib/src/adaboost/StrongClassifier.h	/^    unsigned int scaleFactor;$/;"	m	class:StrongClassifier
+scaleImage	lib/src/image/Image.cpp	/^void Image::scaleImage(Image *origin, Image *destination, unsigned int scale) {$/;"	f	class:Image
+setArea	lib/src/feature/Haar.h	/^    void setArea(Rectangle *area) {$/;"	f	class:Haar
+setCode	lib/src/feature/Haar.h	/^    void setCode(unsigned char code) {$/;"	f	class:Haar
+setFeature	lib/src/adaboost/FeatureTest.h	/^    void setFeature(Haar *feature) {$/;"	f	class:FeatureTest
+setFeature	lib/src/adaboost/WeakClassifier.h	/^    void setFeature(Haar *feature) {$/;"	f	class:WeakClassifier
+setHeight	lib/src/image/Image.cpp	/^void Image::setHeight(int height) {$/;"	f	class:Image
+setImage	lib/src/image/Image.cpp	/^void Image::setImage(double *image) {$/;"	f	class:Image
+setPolarity	lib/src/adaboost/WeakClassifier.h	/^    void setPolarity(short polarity) {$/;"	f	class:WeakClassifier
+setPositive	lib/src/adaboost/Sample.h	/^    void setPositive(bool positive) {$/;"	f	class:Sample
+setSample	lib/src/adaboost/FeatureTest.h	/^    void setSample(Sample *sample) {$/;"	f	class:FeatureTest
+setSize	lib/src/image/Image.cpp	/^void Image::setSize(const size_t *size) {$/;"	f	class:Image
+setThreshold	lib/src/adaboost/WeakClassifier.h	/^    void setThreshold(double threshold) {$/;"	f	class:WeakClassifier
+setWeight	lib/src/adaboost/Sample.h	/^    void setWeight(double weight) {$/;"	f	class:Sample
+setWeightedError	lib/src/adaboost/WeakClassifier.h	/^    void setWeightedError(double weightedError) {$/;"	f	class:WeakClassifier
+setWidth	lib/src/image/Image.cpp	/^void Image::setWidth(int width) {$/;"	f	class:Image
+setupFeatures	haar/setupFeatures.m	/^function features = setupFeatures(samples, scaleFactor, featuresMinimumSizes, featuresStepSizes)$/;"	f
+sortName	io/getFrames.m	/^function sorted = sortName(framesPath, names);$/;"	f
+sortName	io/getFramesPath.m	/^function sorted = sortName(names)$/;"	f
+split	lib/src/geometry/Interval.cpp	/^vector<Interval *> Interval::split(int divider) throw(SplitException) {$/;"	f	class:Interval
+std	lib/to_string_patch.h	/^namespace std$/;"	n
+strongClassifier	old/hasp/strongClassifier.m	/^function precence = strongClassifier(weaks, weights, threshold)$/;"	f
+strongClassify	adaboost/strongClassify.m	/^function presence = strongClassify(image, classifiers, offset, threshold);$/;"	f
+testValue	lib/src/adaboost/FeatureTest.cpp	/^bool FeatureTest::testValue() {$/;"	f	class:FeatureTest
+threshold	lib/src/adaboost/WeakClassifier.h	/^    double threshold;$/;"	m	class:WeakClassifier
+to_string	lib/src/adaboost/Sample.cpp	/^string Sample::to_string() {$/;"	f	class:Sample
+to_string	lib/src/feature/Haar.cpp	/^string Haar::to_string() {$/;"	f	class:Haar
+to_string	lib/src/geometry/Dimensions.cpp	/^string Dimensions::to_string() {$/;"	f	class:Dimensions
+to_string	lib/src/geometry/Interval.cpp	/^std::string Interval::to_string() {$/;"	f	class:Interval
+to_string	lib/src/geometry/Point.cpp	/^std::string Point::to_string() {$/;"	f	class:Point
+to_string	lib/src/geometry/Rectangle.cpp	/^string Rectangle::to_string() {$/;"	f	class:Rectangle
+to_string	lib/to_string_patch.h	/^    template < typename T > std::string to_string( const T& n )$/;"	f	namespace:std
+topLeftPoint	lib/src/geometry/Rectangle.cpp	/^Point Rectangle::topLeftPoint() {$/;"	f	class:Rectangle
+topRightPoint	lib/src/geometry/Rectangle.cpp	/^Point Rectangle::topRightPoint() {$/;"	f	class:Rectangle
+translate	lib/src/geometry/Rectangle.cpp	/^void Rectangle::translate(Point p) {$/;"	f	class:Rectangle
+tuneStrongClassifier	adaboost/tuneStrongClassifier.m	/^function tuneStrongClassifier(dataPath, param);$/;"	f
+updateWeights	lib/src/adaboost/Adaboost.cpp	/^vector<double> Adaboost::updateWeights(WeakClassifier *classifier, vector<Sample *> samples) {$/;"	f	class:Adaboost
+value	lib/src/adaboost/FeatureTest.h	/^    double value;$/;"	m	class:FeatureTest
+verticalEdge	lib/src/feature/Haar.cpp	/^double Haar::verticalEdge(Image *image, Rectangle *rectangle) {$/;"	f	class:Haar
+verticalLinear	lib/src/feature/Haar.cpp	/^double Haar::verticalLinear(Image *image, Rectangle *rectangle) {$/;"	f	class:Haar
+verticalSplit	lib/src/geometry/Rectangle.cpp	/^vector<Rectangle *> Rectangle::verticalSplit(unsigned int divider)$/;"	f	class:Rectangle
+weakClassifiers	old/hasp/weakClassifiers.m	/^function [h, v] = weakClassifiers(ii, Wx, Wy)$/;"	f
+weight	lib/src/adaboost/Sample.h	/^    double weight;$/;"	m	class:Sample
+weightedError	lib/src/adaboost/WeakClassifier.h	/^    double weightedError;$/;"	m	class:WeakClassifier
+what	lib/src/exception/MemoryAccessException.h	/^    virtual const char *what() const throw() {$/;"	f	class:MemoryAccessException
+what	lib/src/exception/SplitException.h	/^    virtual const char *what() const throw() {$/;"	f	class:SplitException
+width	lib/src/geometry/Dimensions.h	/^    unsigned int width, height;$/;"	m	class:Dimensions
+width	lib/src/geometry/Rectangle.h	/^    int x, y, width, height;$/;"	m	class:Rectangle
+width	lib/src/image/Image.h	/^    int width;$/;"	m	class:Image
+write	lib/src/image/Image.cpp	/^void Image::write(double value, Point *p) throw(MemoryAccessException) {$/;"	f	class:Image
+write	lib/src/image/Image.cpp	/^void Image::write(double value, int index) throw(MemoryAccessException) {$/;"	f	class:Image
+write	lib/src/image/Image.cpp	/^void Image::write(double value, int x, int y) throw(MemoryAccessException) {$/;"	f	class:Image
+x	lib/src/geometry/Point.h	/^    int x, y;$/;"	m	class:Point
+x	lib/src/geometry/Rectangle.h	/^    int x, y, width, height;$/;"	m	class:Rectangle
+xInterval	lib/src/geometry/Rectangle.cpp	/^Interval Rectangle::xInterval() {$/;"	f	class:Rectangle
+y	lib/src/geometry/Point.h	/^    int x, y;$/;"	m	class:Point
+y	lib/src/geometry/Rectangle.h	/^    int x, y, width, height;$/;"	m	class:Rectangle
+yInterval	lib/src/geometry/Rectangle.cpp	/^Interval Rectangle::yInterval() {$/;"	f	class:Rectangle
+~Haar	lib/src/feature/Haar.cpp	/^Haar::~Haar() {$/;"	f	class:Haar
+~Image	lib/src/image/Image.cpp	/^Image::~Image() {$/;"	f	class:Image
+~Sample	lib/src/adaboost/Sample.cpp	/^Sample::~Sample() {$/;"	f	class:Sample
+~WeakClassifier	lib/src/adaboost/WeakClassifier.cpp	/^WeakClassifier::~WeakClassifier() {$/;"	f	class:WeakClassifier
