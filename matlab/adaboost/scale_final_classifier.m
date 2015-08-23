@@ -7,4 +7,5 @@ function dst = scale_final_classifier(origin, scale);
         fc = scale_classifier(getfield(origin, name), scale);
         dst = setfield(dst, name, fc);
     end
+    dst.samplesSize = fix(dst.samplesSize * scale);
 end

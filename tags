@@ -991,6 +991,7 @@ checkArgs	matlab/adaboost/evaluate_thresholds.cxx	/^void checkArgs(int nin, int 
 checkArgs	matlab/adaboost/weak_classify_samples.cxx	/^void checkArgs(int nin, int outn) {$/;"	f
 checkSamplesLabelsWeightsDim	matlab/lib/src/mexutils/io.cpp	/^void checkSamplesLabelsWeightsDim(const size_t *samples,$/;"	f
 checkinput	matlab/adaboost/best_weak_classifier.cxx	/^void checkinput(int inc, int outc) {$/;"	f
+checkinput	matlab/adaboost/calculate_features.cxx	/^void checkinput(int inc, int outc) {$/;"	f
 checkinput	matlab/detection/detect_human.cxx	/^void checkinput(int inputc, int outputc)$/;"	f
 checkisdir	matlab/utilities/checkisdir.m	/^function result = checkisdir(fullpath)$/;"	f
 checkpath	matlab/utilities/checkpath.m	/^function [checkedPath, isdirectory] = checkpath(pathname)$/;"	f
@@ -1032,6 +1033,7 @@ createUIComponents	TrainsetCreator/src/it/univpm/dii/view/FrameRenderView.java	/
 createUIComponents	TrainsetCreator/src/it/univpm/dii/view/MainFrame.java	/^    private void createUIComponents() {$/;"	m	class:MainFrame	file:
 createUIComponents	TrainsetCreator/src/it/univpm/dii/view/ResizeDialog.java	/^    private void createUIComponents() {$/;"	m	class:ResizeDialog	file:
 createView	TrainsetCreator/src/it/univpm/dii/contoller/framerender/FrameRenderController.java	/^    private FrameRenderView createView() {$/;"	m	class:FrameRenderController	file:
+create_layers	matlab/detection/create_layers.m	/^function layers = create_layers(classifier, min_size, max_size);$/;"	f
 crop	TrainsetCreator/src/it/univpm/dii/service/DepthImage.java	/^    public DepthImage crop(int x, int y, int width, int height) {$/;"	m	class:DepthImage
 cropAndSave	TrainsetCreator/src/it/univpm/dii/view/component/DepthImagePanel.java	/^    public DepthImagePanel cropAndSave(File out) {$/;"	m	class:DepthImagePanel
 cropHeight	TrainsetCreator/src/it/univpm/dii/view/AddFrameView.java	/^    private JFormattedTextField cropHeight;$/;"	f	class:AddFrameView	file:
@@ -1050,8 +1052,8 @@ decodeWeakClassifier	matlab/io/decodeWeakClassifier.m	/^function weakClassifiers
 depthImage	TrainsetCreator/src/it/univpm/dii/view/AddFrameView.java	/^    private DepthImage depthImage;$/;"	f	class:AddFrameView	file:
 depthImage	TrainsetCreator/src/it/univpm/dii/view/component/DepthImagePanel.java	/^    private DepthImage depthImage;$/;"	f	class:DepthImagePanel	file:
 destroyrectangles	matlab/gfx/destroyrectangles.m	/^function destroyrectangles(fig, rectangles);$/;"	f
-detectHuman	matlab/detection/detectHuman.m	/^function [x, y] = detectHuman(frame, finalClassifier, windowWidth, windowHeight);$/;"	f
 detectHuman	matlab/old/hasp/OLDdetectHuman.m	/^function [precence, Wx, Wy] = detectHuman(image, subWindowSize, threshold)$/;"	f
+detect_positive_windows	matlab/detection/detect_positive_windows.m	/^function windows = detect_positive_windows(frame, finalClassifier);$/;"	f
 dialog	TrainsetCreator/src/it/univpm/dii/contoller/resize/CancelAction.java	/^    private ResizeDialog dialog;$/;"	f	class:CancelAction	file:
 dialog	TrainsetCreator/src/it/univpm/dii/contoller/resize/ResizeSetAction.java	/^    private ResizeDialog dialog;$/;"	f	class:ResizeSetAction	file:
 dialog	TrainsetCreator/src/it/univpm/dii/contoller/resize/SizeFieldChangeAction.java	/^    private ResizeDialog dialog;$/;"	f	class:SizeFieldChangeAction	file:
@@ -1369,7 +1371,7 @@ menuBar	TrainsetCreator/src/it/univpm/dii/view/MainFrame.java	/^    private JMen
 menuItems	TrainsetCreator/src/it/univpm/dii/view/MainFrame.java	/^    private MenuItems menuItems;$/;"	f	class:MainFrame	file:
 menus	TrainsetCreator/src/it/univpm/dii/view/MainFrame.java	/^    private Menus menus;$/;"	f	class:MainFrame	file:
 mexFunction	matlab/adaboost/best_weak_classifier.cxx	/^void mexFunction(int outc, mxArray *output[], int inc, const mxArray *input[]) {$/;"	f
-mexFunction	matlab/adaboost/calculate_features.cxx	/^void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[]) {$/;"	f
+mexFunction	matlab/adaboost/calculate_features.cxx	/^void mexFunction(int outc, mxArray *output[], int inc, const mxArray *input[]) {$/;"	f
 mexFunction	matlab/adaboost/evaluate_thresholds.cxx	/^void mexFunction(int outn, mxArray *output[], int nin, const mxArray *input[]) {$/;"	f
 mexFunction	matlab/adaboost/get_features.cxx	/^void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[]) {$/;"	f
 mexFunction	matlab/adaboost/weak_classify_samples.cxx	/^void mexFunction(int outn, mxArray *output[], int nin, const mxArray *input[]) {$/;"	f

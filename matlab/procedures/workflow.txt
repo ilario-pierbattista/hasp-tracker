@@ -14,5 +14,7 @@ Regolazione del rilevatore:
     l'accuracy.
 
 Testing:
+    utilizzando un dataset di testing, il classificatore forte viene testato.
+    Vengono valutati sensitivity, specificity e accuracy.
 
 Rilevamento:

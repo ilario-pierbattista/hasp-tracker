@@ -129,6 +129,7 @@ double Haar::calculateValue(Image *image, Rectangle *rectangle, int code) {
         default: {
             value = NAN;
         }
+        value = value / rectangle->height * rectangle->width;
     }
     return value;
 }
