@@ -49,9 +49,6 @@ for i = [1:framestep:length(framesFiles)]
     title(strcat('Frame: ', num2str(i)));
     truesize(f1);
 
-    % @TODO Cambiare
-    rectbox = [x y repmat(windowWidth, length(x), 1) repmat(windowHeight, length(x), 1)];
-
     rectangles = drawrectangles(f1, rectbox, 'y');
     drawnow;
     toc;

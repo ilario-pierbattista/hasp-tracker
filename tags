@@ -1,4 +1,5 @@
 			La finestra di visualizzazione, come accennato in precedenza è di $512 times 424$ pixel. In una registrazione che riprende dall alto una persona che attraversa la stanza camminando  la figura della persona occupa una porzione della finestra di circa $160 times 100$ pixel. Un dataset di allenamento non   altro che un insieme di porzioni di frame di una certa dimensione  la stessa per tutti  che vegono classificati manualmente dal creatore footnote  Il sistema di apprendimento che si sta trattando ricade nella categoria dei sistemi di emph  apprendimento supervisionato	documents/relazione/index.tex	/^		I dati in input per la fase di allenamento sono costituiti dal \\emph{dataset di allenamento}, ovvero una raccolta di oggetti preclassificati attraverso i quali Adaboost riuscirà a selezionare una combinazione di classificatori deboli che meglio approssimano la classificazione degli elementi del dataset.$/;"	u
+			La finestra di visualizzazione, come accennato in precedenza è di $512 times 424$ pixel. In una registrazione che riprende dall alto una persona che attraversa la stanza camminando  la figura della persona occupa una porzione della finestra di circa $160 times 100$ pixel. Un dataset di allenamento non   altro che un insieme di porzioni di frame di una certa dimensione  la stessa per tutti  che vegono classificati manualmente dal creatore footnote  Il sistema di apprendimento che si sta trattando ricade nella categoria dei sistemi di emph  apprendimento supervisionato	documents/tesi/index.tex	/^		I dati in input per la fase di allenamento sono costituiti dal \\emph{dataset di allenamento}, ovvero una raccolta di oggetti preclassificati attraverso i quali Adaboost riuscirà a selezionare una combinazione di classificatori deboli che meglio approssimano la classificazione degli elementi del dataset.$/;"	u
 		label{sub:il_dataset_dall_allenamento}
 !_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
 !_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
@@ -511,6 +512,7 @@ CancelAction	TrainsetCreator/src/it/univpm/dii/contoller/resize/CancelAction.jav
 ChangeFlipDirectionAction	TrainsetCreator/src/it/univpm/dii/contoller/addframe/ChangeFlipDirectionAction.java	/^    public ChangeFlipDirectionAction(AddFrameView view) {$/;"	m	class:ChangeFlipDirectionAction
 ChangeFlipDirectionAction	TrainsetCreator/src/it/univpm/dii/contoller/addframe/ChangeFlipDirectionAction.java	/^class ChangeFlipDirectionAction implements ActionListener {$/;"	c
 Conversione delle distanze	documents/relazione/index.tex	/^			Da ricordare che stiamo trattando di matrici $160 \\times 100$ (porzione del frame principale) i cui valori corrispondo al risultato della misurazione del sensore di profondità del Kinect ed è proporzionale alla distanza rilevata.$/;"	b
+Conversione delle distanze	documents/tesi/index.tex	/^			Da ricordare che stiamo trattando di matrici $160 \\times 100$ (porzione del frame principale) i cui valori corrispondo al risultato della misurazione del sensore di profondità del Kinect ed è proporzionale alla distanza rilevata.$/;"	b
 DEC	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	409;"	d	file:
 DEC	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	404;"	d	file:
 DEC	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	409;"	d	file:
@@ -626,6 +628,7 @@ Image	matlab/lib/src/image/Image.cpp	/^Image::Image(double *image, const size_t 
 Image	matlab/lib/src/image/Image.cpp	/^Image::Image(double *image, int width, int height) {$/;"	f	class:Image
 Image	matlab/lib/src/image/Image.h	/^class Image {$/;"	c
 Immagine integrale	documents/relazione/index.tex	/^				Questa prima operazione di preprocessing ha complessità computazionale $\\Theta(n \\cdot m)$ con $n$ ed $m$ dimensioni della porzione del frame.$/;"	b
+Immagine integrale	documents/tesi/index.tex	/^				Questa prima operazione di preprocessing ha complessità computazionale $\\Theta(n \\cdot m)$ con $n$ ed $m$ dimensioni della porzione del frame.$/;"	b
 IndietroRenderInfoAction	TrainsetCreator/src/it/univpm/dii/contoller/framerender/IndietroRenderInfoAction.java	/^    public IndietroRenderInfoAction(FrameRenderView view) {$/;"	m	class:IndietroRenderInfoAction
 IndietroRenderInfoAction	TrainsetCreator/src/it/univpm/dii/contoller/framerender/IndietroRenderInfoAction.java	/^class IndietroRenderInfoAction implements ActionListener {$/;"	c
 Interval	matlab/lib/src/geometry/Interval.cpp	/^Interval::Interval(int a, int b) {$/;"	f	class:Interval
@@ -785,6 +788,7 @@ PREF_LAST_SET	TrainsetCreator/src/it/univpm/dii/contoller/main/RecentFilesManage
 PREVIEW_HEIGHT	TrainsetCreator/src/it/univpm/dii/view/MainFrame.java	/^    private static final int PREVIEW_HEIGHT = 200;$/;"	f	class:MainFrame	file:
 PREVIEW_WIDTH	TrainsetCreator/src/it/univpm/dii/view/MainFrame.java	/^    private static final int PREVIEW_WIDTH = 200;$/;"	f	class:MainFrame	file:
 Panoramica generale	documents/relazione/index.tex	/^	\\maketitle$/;"	s
+Panoramica generale	documents/tesi/index.tex	/^	\\maketitle$/;"	s
 Point	matlab/lib/src/geometry/Point.cpp	/^Point::Point(int x, int y) {$/;"	f	class:Point
 Point	matlab/lib/src/geometry/Point.h	/^    Point() { };$/;"	f	class:Point
 Point	matlab/lib/src/geometry/Point.h	/^class Point {$/;"	c
@@ -1439,7 +1443,6 @@ printLabelForCurrentFrame	TrainsetCreator/src/it/univpm/dii/view/AddFrameView.ja
 print_info	scripts/dataset_downloader.py	/^    def print_info(self):$/;"	m	class:Element
 propertyChange	TrainsetCreator/src/it/univpm/dii/contoller/addframe/DimCropChangeAction.java	/^    public void propertyChange(PropertyChangeEvent evt) {$/;"	m	class:DimCropChangeAction
 propertyChange	TrainsetCreator/src/it/univpm/dii/contoller/resize/SizeFieldChangeAction.java	/^    public void propertyChange(PropertyChangeEvent evt) {$/;"	m	class:SizeFieldChangeAction
-prova	documents/tesi/index.tex	/^	\\pagebreak$/;"	s
 pushedCol	TrainsetCreator/src/it/univpm/dii/view/component/SortButtonRenderer.java	/^    private int pushedCol;$/;"	f	class:SortButtonRenderer	file:
 qnxnto	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	/^char const* qnxnto = "INFO" ":" "qnxnto[]";$/;"	v
 qnxnto	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^char const* qnxnto = "INFO" ":" "qnxnto[]";$/;"	v

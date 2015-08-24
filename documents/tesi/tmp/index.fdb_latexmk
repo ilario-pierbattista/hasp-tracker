@@ -1,8 +1,0 @@
-# Fdb version 3
-["pdflatex"] 1436000276 "index.tex" "index.pdf" "index" 1436000276
-  "index.tex" 1435999677 990 5916b86464753c289968973f96097f25 ""
-  "tmp/index.aux" 1435999442 8 a94a2480d3289e625eea47cd1b285758 ""
-  (generated)
-  "BUILD/index.pdf"
-  "tmp/index.log"
-  "index.pdf"
