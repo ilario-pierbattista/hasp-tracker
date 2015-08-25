@@ -27,6 +27,7 @@ double Haar::calculateValue(Image *image, Point offset) {
     Rectangle *rectangle = this->area->clone();
     rectangle->translate(offset);
     value = Haar::calculateValue(image, rectangle, this->code);
+    delete rectangle;
     return value;
 }
 
@@ -129,8 +130,8 @@ double Haar::calculateValue(Image *image, Rectangle *rectangle, int code) {
         default: {
             value = NAN;
         }
-        value = value / (rectangle->height * rectangle->width);
     }
+    value = value / (rectangle->height * rectangle->width);
     return value;
 }
 
