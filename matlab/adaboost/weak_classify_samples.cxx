@@ -1,8 +1,4 @@
 //
-// Created by ilario on 04/08/15.
-//
-
-//
 // Created by ilario on 02/08/15.
 //
 

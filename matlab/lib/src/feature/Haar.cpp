@@ -54,6 +54,7 @@ double Haar::verticalEdge(Image *image, Rectangle *rectangle) {
                 Haar::calculateIntensity(image, parts.at(1));
         Haar::clearRectangles(parts);
         parts.clear();
+        value = value / (rectangle->height * rectangle->width);
         return value;
     } catch (exception &e) {
         return NAN;
@@ -68,6 +69,7 @@ double Haar::horizontalEdge(Image *image, Rectangle *rectangle) {
                 Haar::calculateIntensity(image, parts.at(1));
         Haar::clearRectangles(parts);
         parts.clear();
+        value = value / (rectangle->height * rectangle->width);
         return value;
     } catch (exception &e) {
         return NAN;
@@ -83,6 +85,7 @@ double Haar::verticalLinear(Image *image, Rectangle *rectangle) {
                 Haar::calculateIntensity(image, parts.at(1));
         Haar::clearRectangles(parts);
         parts.clear();
+        value = value / (rectangle->height * rectangle->width);
         return value;
     } catch (exception &e) {
         cout << e.what() << endl;
@@ -99,6 +102,7 @@ double Haar::horizontalLinear(Image *image, Rectangle *rectangle) {
                 Haar::calculateIntensity(image, parts.at(1));
         Haar::clearRectangles(parts);
         parts.clear();
+        value = value / (rectangle->height * rectangle->width);
         return value;
     } catch (exception &e) {
         return NAN;
@@ -131,7 +135,6 @@ double Haar::calculateValue(Image *image, Rectangle *rectangle, int code) {
             value = NAN;
         }
     }
-    value = value / (rectangle->height * rectangle->width);
     return value;
 }
 

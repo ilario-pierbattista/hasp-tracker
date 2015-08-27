@@ -564,9 +564,9 @@ ElementModel	TrainsetCreator/src/it/univpm/dii/view/tablemodels/ElementModel.jav
 EliminaSelectedAction	TrainsetCreator/src/it/univpm/dii/contoller/main/EliminaSelectedAction.java	/^class EliminaSelectedAction implements ActionListener {$/;"	c
 EmptyFrameDirException	TrainsetCreator/src/it/univpm/dii/exception/EmptyFrameDirException.java	/^    public EmptyFrameDirException(String path) {$/;"	m	class:EmptyFrameDirException
 EmptyFrameDirException	TrainsetCreator/src/it/univpm/dii/exception/EmptyFrameDirException.java	/^public class EmptyFrameDirException extends Exception {$/;"	c
-FEATURE_DIM	matlab/lib/src/mexutils/structure_mapping.h	29;"	d
-FEATURE_TLP	matlab/lib/src/mexutils/structure_mapping.h	28;"	d
-FEATURE_TYPE	matlab/lib/src/mexutils/structure_mapping.h	30;"	d
+FEATURE_DIM	matlab/lib/src/mexutils/structure_mapping.h	31;"	d
+FEATURE_TLP	matlab/lib/src/mexutils/structure_mapping.h	30;"	d
+FEATURE_TYPE	matlab/lib/src/mexutils/structure_mapping.h	32;"	d
 FastNegativesCheckedAction	TrainsetCreator/src/it/univpm/dii/contoller/addframe/FastNegativesCheckedAction.java	/^    public FastNegativesCheckedAction(AddFrameView view) {$/;"	m	class:FastNegativesCheckedAction
 FastNegativesCheckedAction	TrainsetCreator/src/it/univpm/dii/contoller/addframe/FastNegativesCheckedAction.java	/^class FastNegativesCheckedAction implements ActionListener {$/;"	c
 FeatureTest	matlab/lib/src/adaboost/FeatureTest.cpp	/^FeatureTest::FeatureTest(Haar *feature, Sample *sample) {$/;"	f	class:FeatureTest
@@ -861,8 +861,10 @@ SIMULATE_VERSION_MINOR	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.
 STRONG_CLASSIFIER_ALPHAS	matlab/lib/src/mexutils/structure_mapping.h	18;"	d
 STRONG_CLASSIFIER_FLOOR_VALUE	matlab/lib/src/mexutils/structure_mapping.h	14;"	d
 STRONG_CLASSIFIER_INNER_OFFSET	matlab/lib/src/mexutils/structure_mapping.h	16;"	d
+STRONG_CLASSIFIER_LENGTH	matlab/lib/src/mexutils/structure_mapping.h	19;"	d
 STRONG_CLASSIFIER_SAMPLES_SIZE	matlab/lib/src/mexutils/structure_mapping.h	13;"	d
 STRONG_CLASSIFIER_SCALE_FACTOR	matlab/lib/src/mexutils/structure_mapping.h	15;"	d
+STRONG_CLASSIFIER_THRESHOLD	matlab/lib/src/mexutils/structure_mapping.h	20;"	d
 STRONG_CLASSIFIER_WEAK_CLASSIFIERS	matlab/lib/src/mexutils/structure_mapping.h	17;"	d
 SUFFIXES	Makefile	/^SUFFIXES =$/;"	m
 SUFFIXES	matlab/Makefile	/^SUFFIXES =$/;"	m
@@ -905,9 +907,9 @@ UP	TrainsetCreator/src/it/univpm/dii/view/component/SortButtonRenderer.java	/^  
 VERTICAL_EDGE	matlab/lib/src/feature/Haar.h	/^    static const unsigned char VERTICAL_EDGE = 0;$/;"	m	class:Haar
 VERTICAL_LINEAR	matlab/lib/src/feature/Haar.h	/^    static const unsigned char VERTICAL_LINEAR = 2;$/;"	m	class:Haar
 View	TrainsetCreator/src/it/univpm/dii/view/View.java	/^abstract class View {$/;"	c
-WEAK_CLASSIFIER_FEATURE	matlab/lib/src/mexutils/structure_mapping.h	25;"	d
-WEAK_CLASSIFIER_POLARITY	matlab/lib/src/mexutils/structure_mapping.h	26;"	d
-WEAK_CLASSIFIER_THRESHOLD	matlab/lib/src/mexutils/structure_mapping.h	27;"	d
+WEAK_CLASSIFIER_FEATURE	matlab/lib/src/mexutils/structure_mapping.h	27;"	d
+WEAK_CLASSIFIER_POLARITY	matlab/lib/src/mexutils/structure_mapping.h	28;"	d
+WEAK_CLASSIFIER_THRESHOLD	matlab/lib/src/mexutils/structure_mapping.h	29;"	d
 W_RESIZE	TrainsetCreator/src/it/univpm/dii/view/component/DepthImagePanel.java	/^    public static final int W_RESIZE = 7;$/;"	f	class:DepthImagePanel
 WeakClassifier	matlab/lib/src/adaboost/WeakClassifier.cpp	/^WeakClassifier::WeakClassifier() {$/;"	f	class:WeakClassifier
 WeakClassifier	matlab/lib/src/adaboost/WeakClassifier.cpp	/^WeakClassifier::WeakClassifier(Haar *feature, double thr, short p) {$/;"	f	class:WeakClassifier
@@ -991,11 +993,11 @@ calculate_strong_classifier	matlab/adaboost/calculate_strong_classifier.m	/^func
 calculate_weak_classifier	matlab/adaboost/calculate_weak_classifier.m	/^function [presence, value] = calculate_weak_classifier(img, feature, polarity, threshold, offset);$/;"	f
 changePositive	TrainsetCreator/src/it/univpm/dii/model/DatasetManager.java	/^    public DatasetManager changePositive(Element e, boolean newVal)$/;"	m	class:DatasetManager
 changePositiveness	TrainsetCreator/src/it/univpm/dii/model/entities/TrainingSet.java	/^    public TrainingSet changePositiveness(Element element, boolean newVal) {$/;"	m	class:TrainingSet
-checkArgs	matlab/adaboost/evaluate_thresholds.cxx	/^void checkArgs(int nin, int outn) {$/;"	f
 checkArgs	matlab/adaboost/weak_classify_samples.cxx	/^void checkArgs(int nin, int outn) {$/;"	f
 checkSamplesLabelsWeightsDim	matlab/lib/src/mexutils/io.cpp	/^void checkSamplesLabelsWeightsDim(const size_t *samples,$/;"	f
 checkinput	matlab/adaboost/best_weak_classifier.cxx	/^void checkinput(int inc, int outc) {$/;"	f
 checkinput	matlab/adaboost/calculate_features.cxx	/^void checkinput(int inc, int outc) {$/;"	f
+checkinput	matlab/adaboost/strong_classify.cxx	/^void checkinput(int inc, int outc) {$/;"	f
 checkinput	matlab/detection/detect_human.cxx	/^void checkinput(int inputc, int outputc)$/;"	f
 checkisdir	matlab/utilities/checkisdir.m	/^function result = checkisdir(fullpath)$/;"	f
 checkpath	matlab/utilities/checkpath.m	/^function [checkedPath, isdirectory] = checkpath(pathname)$/;"	f
@@ -1007,6 +1009,7 @@ classifier	matlab/lib/src/adaboost/StrongClassifier.h	/^    WeakClassifier* clas
 classifier_struct	matlab/lib/src/adaboost/StrongClassifier.h	/^struct classifier_struct {$/;"	s
 classifier_struct	matlab/lib/src/adaboost/StrongClassifier.h	/^typedef struct classifier_struct classifier_struct;$/;"	t	typeref:struct:classifier_struct
 classifiers	matlab/lib/src/adaboost/StrongClassifier.h	/^    vector<classifier_struct *> classifiers;$/;"	m	class:StrongClassifier
+classify	matlab/lib/src/adaboost/StrongClassifier.cpp	/^bool StrongClassifier::classify(Image *image, Point *offset) {$/;"	f	class:StrongClassifier
 classify	matlab/lib/src/adaboost/WeakClassifier.cpp	/^bool WeakClassifier::classify(Image *image) {$/;"	f	class:WeakClassifier
 classify	matlab/lib/src/adaboost/WeakClassifier.cpp	/^bool WeakClassifier::classify(Image *image, Point offset) {$/;"	f	class:WeakClassifier
 cleanIntervals	matlab/lib/src/geometry/Rectangle.cpp	/^void Rectangle::cleanIntervals(vector<Interval *> intervals) {$/;"	f	class:Rectangle
@@ -1057,7 +1060,7 @@ depthImage	TrainsetCreator/src/it/univpm/dii/view/AddFrameView.java	/^    privat
 depthImage	TrainsetCreator/src/it/univpm/dii/view/component/DepthImagePanel.java	/^    private DepthImage depthImage;$/;"	f	class:DepthImagePanel	file:
 destroyrectangles	matlab/gfx/destroyrectangles.m	/^function destroyrectangles(fig, rectangles);$/;"	f
 detectHuman	matlab/old/hasp/OLDdetectHuman.m	/^function [precence, Wx, Wy] = detectHuman(image, subWindowSize, threshold)$/;"	f
-detect_positive_windows	matlab/detection/detect_positive_windows.m	/^function windows = detect_positive_windows(frame, finalClassifier);$/;"	f
+detect_positive_windows	matlab/detection/detect_positive_windows.m	/^function windows = detect_positive_windows(frame, finalClassifier, sliding_step);$/;"	f
 dialog	TrainsetCreator/src/it/univpm/dii/contoller/resize/CancelAction.java	/^    private ResizeDialog dialog;$/;"	f	class:CancelAction	file:
 dialog	TrainsetCreator/src/it/univpm/dii/contoller/resize/ResizeSetAction.java	/^    private ResizeDialog dialog;$/;"	f	class:ResizeSetAction	file:
 dialog	TrainsetCreator/src/it/univpm/dii/contoller/resize/SizeFieldChangeAction.java	/^    private ResizeDialog dialog;$/;"	f	class:SizeFieldChangeAction	file:
@@ -1084,7 +1087,7 @@ encodeWeakClassifier	matlab/io/encodeWeakClassifier.m	/^function encodeWeakClass
 endPt	TrainsetCreator/src/it/univpm/dii/view/component/DepthImagePanel.java	/^    private Point startPt, endPt, currentPt, offsetPt;$/;"	f	class:DepthImagePanel	file:
 endResizeProcess	TrainsetCreator/src/it/univpm/dii/view/ResizeDialog.java	/^    public void endResizeProcess() {$/;"	m	class:ResizeDialog
 equals	TrainsetCreator/src/it/univpm/dii/model/entities/Element.java	/^    public boolean equals(Element obj) {$/;"	m	class:Element
-evaluateThresholds	matlab/adaboost/evaluateThresholds.m	/^function [accuracy, sensitivity, specificity, mcc] = evaluateThresholds(classifier, frames, labels, thresholds);$/;"	f
+evaluate_thresholds	matlab/adaboost/evaluate_thresholds.m	/^function [accuracy, sensitivity, specificity, mcc] = evaluate_thresholds(classifier, frames, labels, thresholds);$/;"	f
 extract	scripts/dataset_downloader.py	/^    def extract(self):$/;"	m	class:Element
 fastNegsCheck	TrainsetCreator/src/it/univpm/dii/view/AddFrameView.java	/^    private JCheckBox fastNegsCheck;$/;"	f	class:AddFrameView	file:
 feature	matlab/lib/src/adaboost/FeatureTest.h	/^    Haar *feature;$/;"	m	class:FeatureTest
@@ -1101,6 +1104,7 @@ fetchTrainset	TrainsetCreator/src/it/univpm/dii/model/DatasetManager.java	/^    
 fileName	TrainsetCreator/src/it/univpm/dii/model/entities/Element.java	/^    private String fileName;$/;"	f	class:Element	file:
 fill	TrainsetCreator/src/it/univpm/dii/view/component/BevelArrowIcon.java	/^    private Color fill;$/;"	f	class:BevelArrowIcon	file:
 fillColor	TrainsetCreator/src/it/univpm/dii/view/component/BlankIcon.java	/^    private Color fillColor;$/;"	f	class:BlankIcon	file:
+filter_rectangles	matlab/detection/filter_rectangles.m	/^function window = filter_rectangles(rectangles);$/;"	f
 find	TrainsetCreator/src/it/univpm/dii/model/DatasetManager.java	/^    public Element find(int id) {$/;"	m	class:DatasetManager
 fineButton	TrainsetCreator/src/it/univpm/dii/view/AddFrameView.java	/^    private JButton fineButton;$/;"	f	class:AddFrameView	file:
 flipDirection	TrainsetCreator/src/it/univpm/dii/view/component/DepthImagePanel.java	/^    private int mode, flipDirection = DISABLE_FLIP;$/;"	f	class:DepthImagePanel	file:
@@ -1181,7 +1185,8 @@ getNegativeSamplesNumber	TrainsetCreator/src/it/univpm/dii/view/MainFrame.java	/
 getNegatives	TrainsetCreator/src/it/univpm/dii/model/entities/TrainingSet.java	/^    public ArrayList<Element> getNegatives() {$/;"	m	class:TrainingSet
 getNegativesPath	TrainsetCreator/src/it/univpm/dii/model/DatasetManager.java	/^    static public File getNegativesPath(File basepath) {$/;"	m	class:DatasetManager
 getNewPositiveness	TrainsetCreator/src/it/univpm/dii/view/EditDialog.java	/^    public boolean getNewPositiveness() {$/;"	m	class:EditDialog
-getPercentage	matlab/adaboost/evaluateThresholds.m	/^function percentage = getPercentage(max_i, max_j, i, j);$/;"	f
+getPercentage	matlab/adaboost/evaluate_thresholds.m	/^function percentage = getPercentage(max_i, max_j, i, j);$/;"	f
+getPoint	matlab/lib/src/mexutils/io.cpp	/^Point *getPoint(const mxArray *input) {$/;"	f
 getPolarity	matlab/lib/src/adaboost/WeakClassifier.h	/^    short getPolarity() const {$/;"	f	class:WeakClassifier
 getPositiveSamplesNumber	TrainsetCreator/src/it/univpm/dii/view/MainFrame.java	/^    private int getPositiveSamplesNumber() {$/;"	m	class:MainFrame	file:
 getPositives	TrainsetCreator/src/it/univpm/dii/model/entities/TrainingSet.java	/^    public ArrayList<Element> getPositives() {$/;"	m	class:TrainingSet
@@ -1352,6 +1357,7 @@ it.univpm.dii.view.component	TrainsetCreator/src/it/univpm/dii/view/component/Sa
 it.univpm.dii.view.component	TrainsetCreator/src/it/univpm/dii/view/component/SortButtonRenderer.java	/^package it.univpm.dii.view.component;$/;"	p
 it.univpm.dii.view.tablemodels	TrainsetCreator/src/it/univpm/dii/view/tablemodels/ElementModel.java	/^package it.univpm.dii.view.tablemodels;$/;"	p
 leftOperand	TrainsetCreator/src/it/univpm/dii/utils/ElementEqualityPredicate.java	/^    private Element leftOperand;$/;"	f	class:ElementEqualityPredicate	file:
+length	matlab/lib/src/adaboost/StrongClassifier.h	/^    int length;$/;"	m	class:StrongClassifier
 length	matlab/lib/src/geometry/Interval.cpp	/^unsigned int Interval::length() {$/;"	f	class:Interval
 length	matlab/lib/src/image/Image.cpp	/^int Image::length() {$/;"	f	class:Image
 localMinima	matlab/old/hasp/localMinima.m	/^function [minima, mx, my] = localMinima(data, meshSize)$/;"	f
@@ -1376,8 +1382,8 @@ menuItems	TrainsetCreator/src/it/univpm/dii/view/MainFrame.java	/^    private Me
 menus	TrainsetCreator/src/it/univpm/dii/view/MainFrame.java	/^    private Menus menus;$/;"	f	class:MainFrame	file:
 mexFunction	matlab/adaboost/best_weak_classifier.cxx	/^void mexFunction(int outc, mxArray *output[], int inc, const mxArray *input[]) {$/;"	f
 mexFunction	matlab/adaboost/calculate_features.cxx	/^void mexFunction(int outc, mxArray *output[], int inc, const mxArray *input[]) {$/;"	f
-mexFunction	matlab/adaboost/evaluate_thresholds.cxx	/^void mexFunction(int outn, mxArray *output[], int nin, const mxArray *input[]) {$/;"	f
 mexFunction	matlab/adaboost/get_features.cxx	/^void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[]) {$/;"	f
+mexFunction	matlab/adaboost/strong_classify.cxx	/^void mexFunction(int outc, mxArray *output[], int inc, const mxArray *input[]) {$/;"	f
 mexFunction	matlab/adaboost/weak_classify_samples.cxx	/^void mexFunction(int outn, mxArray *output[], int nin, const mxArray *input[]) {$/;"	f
 mexFunction	matlab/detection/detect_human.cxx	/^void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[]) {$/;"	f
 mexFunction	matlab/haar/haar_horizontal_edge.cxx	/^void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[]) {$/;"	f
@@ -1455,11 +1461,12 @@ read	matlab/lib/src/image/Image.cpp	/^double Image::read(int index) throw(Memory
 read	matlab/lib/src/image/Image.cpp	/^double Image::read(int x, int y) throw(MemoryAccessException) {$/;"	f	class:Image
 readFrames	TrainsetCreator/src/it/univpm/dii/contoller/framerender/FrameRenderController.java	/^    private File[] readFrames(File framesDir)$/;"	m	class:FrameRenderController	file:
 readFramesAndLabels	matlab/io/readFramesAndLabels.m	/^function [frames, labels] = readFramesAndLabels(samples, scaleFactor, floorValue)$/;"	f
-readImage	matlab/lib/src/mexutils/io.cpp	/^Image *readImage(const mxArray* input) {$/;"	f
-readImage	matlab/lib/src/mexutils/io.cpp	/^void readImage(const mxArray* input, Image* image) {$/;"	f
+readImage	matlab/lib/src/mexutils/io.cpp	/^Image *readImage(const mxArray *input) {$/;"	f
+readImage	matlab/lib/src/mexutils/io.cpp	/^void readImage(const mxArray *input, Image *image) {$/;"	f
 readImageData	matlab/io/readImageData.m	/^function data = readImageData(fp, colDim, rowDim, colorDepth)$/;"	f
 recentDatasets	TrainsetCreator/src/it/univpm/dii/contoller/main/RecentFilesManager.java	/^    private ArrayList<File> recentDatasets;$/;"	f	class:RecentFilesManager	file:
 rectangle	TrainsetCreator/src/it/univpm/dii/view/component/DepthImagePanel.java	/^    private Rectangle rectangle;$/;"	f	class:DepthImagePanel	file:
+rectangle_center	matlab/detection/filter_rectangles.m	/^function center = rectangle_center(rect);$/;"	f
 refresh	TrainsetCreator/src/it/univpm/dii/view/AddFrameView.java	/^    public void refresh() {$/;"	m	class:AddFrameView
 refresh	TrainsetCreator/src/it/univpm/dii/view/FrameRenderView.java	/^    public void refresh() {$/;"	m	class:FrameRenderView
 refresh	TrainsetCreator/src/it/univpm/dii/view/MainFrame.java	/^    public void refresh() {$/;"	m	class:MainFrame
@@ -1496,6 +1503,7 @@ scaleFactor	matlab/lib/src/adaboost/StrongClassifier.h	/^    unsigned int scaleF
 scaleImage	matlab/lib/src/image/Image.cpp	/^void Image::scaleImage(Image *origin, Image *destination, unsigned int scale) {$/;"	f	class:Image
 scale_classifier	matlab/adaboost/scale_classifier.m	/^function dst = scale_classifier(origin, scale);$/;"	f
 scale_final_classifier	matlab/adaboost/scale_final_classifier.m	/^function dst = scale_final_classifier(origin, scale);$/;"	f
+search_row	matlab/detection/filter_rectangles.m	/^function result = search_row(matrix, r);$/;"	f
 setArea	matlab/lib/src/feature/Haar.h	/^    void setArea(Rectangle *area) {$/;"	f	class:Haar
 setCode	matlab/lib/src/feature/Haar.h	/^    void setCode(unsigned char code) {$/;"	f	class:Haar
 setCropHeightValue	TrainsetCreator/src/it/univpm/dii/view/AddFrameView.java	/^    public AddFrameView setCropHeightValue(String height) {$/;"	m	class:AddFrameView
@@ -1571,6 +1579,7 @@ strongClassify	matlab/adaboost/strongClassify.m	/^function presence = strongClas
 test	TrainsetCreator/src/it/univpm/dii/utils/ElementEqualityPredicate.java	/^    public boolean test(Element rightOperand) {$/;"	m	class:ElementEqualityPredicate
 testValue	matlab/lib/src/adaboost/FeatureTest.cpp	/^bool FeatureTest::testValue() {$/;"	f	class:FeatureTest
 test_classifier	matlab/detection/test_classifier.m	/^function [tp, tn, fp, fn] = test_classifier(finalClassifier, frames, labels);$/;"	f
+threshold	matlab/lib/src/adaboost/StrongClassifier.h	/^    double threshold;$/;"	m	class:StrongClassifier
 threshold	matlab/lib/src/adaboost/WeakClassifier.h	/^    double threshold;$/;"	m	class:WeakClassifier
 toString	TrainsetCreator/src/it/univpm/dii/model/entities/Element.java	/^    public String toString() {$/;"	m	class:Element
 toString	TrainsetCreator/src/it/univpm/dii/model/entities/TrainingSet.java	/^    public String toString() {$/;"	m	class:TrainingSet
@@ -1649,6 +1658,6 @@ yInterval	matlab/lib/src/geometry/Rectangle.cpp	/^Interval Rectangle::yInterval(
 yXFlipRadio	TrainsetCreator/src/it/univpm/dii/view/AddFrameView.java	/^    private JRadioButton yXFlipRadio;$/;"	f	class:AddFrameView	file:
 yoffset	TrainsetCreator/src/it/univpm/dii/view/AddFrameView.java	/^    private JSlider yoffset;$/;"	f	class:AddFrameView	file:
 ~Haar	matlab/lib/src/feature/Haar.cpp	/^Haar::~Haar() {$/;"	f	class:Haar
-~Image	matlab/lib/src/image/Image.cpp	/^Image::~Image() {$/;"	f	class:Image
 ~Sample	matlab/lib/src/adaboost/Sample.cpp	/^Sample::~Sample() {$/;"	f	class:Sample
+~StrongClassifier	matlab/lib/src/adaboost/StrongClassifier.cpp	/^StrongClassifier::~StrongClassifier() {$/;"	f	class:StrongClassifier
 ~WeakClassifier	matlab/lib/src/adaboost/WeakClassifier.cpp	/^WeakClassifier::~WeakClassifier() {$/;"	f	class:WeakClassifier

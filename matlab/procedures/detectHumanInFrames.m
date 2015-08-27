@@ -15,7 +15,14 @@ framesPath = choosesubdir(framesPath);
 % Inserimento della dimensione dei frames
 width = inputdef('Larghezza [%d]: ', 512);
 height = inputdef('Altezza [%d]: ', 424);
-framestep = inputdef('Intervallo con cui analizzare i frame [%d]: ', 20);
+multiple_frames = inputdef('Analizzare più frame presenti nella cartella? [Y/n]:', 'y', 's');
+if strcmp(multiple_frames, 'n') || strcmp(multiple_frames, 'N')
+    multiple_frames = false;
+    frame_index = inputdef('Indice del frame da analizzare [%d]: ', 1);
+else
+    framestep = inputdef('Intervallo con cui analizzare i frame [%d]: ', 20);
+    multiple_frames = true;
+end
 
 % Estrazione delle path di tutti i frames
 framesFiles = getFramesPath(framesPath);
@@ -29,7 +36,13 @@ rectangles = [];
 f1 = figure;
 im1 = imagesc();
 
-for i = [1:framestep:length(framesFiles)]
+if multiple_frames
+    indexes = [1:framestep:length(framesFiles)];
+else
+    indexes = [frame_index];
+end
+
+for i = indexes
     tic;
     % Lettura e preprocessing del frame
     frame = readImageData(char(framesFiles{i}), width, height, 16);
@@ -38,10 +51,12 @@ for i = [1:framestep:length(framesFiles)]
         finalClassifier.floorValue);
 
     rectbox = [];
-    layers = create_layers(finalClassifier, 100, 160);
+    layers = create_layers(finalClassifier, 150, 150);
     for classifier = transpose(layers);
-        rectbox = [rectbox; detect_positive_windows(processedFrame, classifier)];
+        rectbox = [rectbox; detect_positive_windows(processedFrame, classifier, 5)];
     end
+
+    rectbox = filter_rectangles(rectbox);
 
     destroyrectangles(f1, rectangles);
     figure(f1);

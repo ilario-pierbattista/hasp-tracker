@@ -95,4 +95,10 @@ WeakClassifier *getWeakClassifierFromStruct(const mxArray *input, mwIndex index)
  */
 Haar *getHaarFeatureFromStruct(const mxArray *input);
 
+/**
+ * getPoint
+ * input: dati del punto
+ */
+Point *getPoint(const mxArray *input);
+
 #endif //HASP_TRACKER_MATLAB_H

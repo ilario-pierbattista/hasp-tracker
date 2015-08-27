@@ -9,6 +9,9 @@ function [threshold, numberOfClassifiers] = getBestTuning(data, param);
     end
 
     paramEval = getfield(data, param);
+    minimum_number_of_classifier = 0;
+
+    paramEval = paramEval(:,minimum_number_of_classifier + 1:size(paramEval, 2));
 
     maximum = max(paramEval(:));
     [thr, cls] = ind2sub(size(paramEval), find(ismember(paramEval, maximum)));
@@ -21,6 +24,8 @@ function [threshold, numberOfClassifiers] = getBestTuning(data, param);
     % [i,j] = ind2sub(size(thr), find(ismember(thr, minThreshold)));
     % Selezione del numero di classificatori forti più alto
     [i,j] = ind2sub(size(cls), find(ismember(cls, maxClassifierNumber)));
+    % Nel caso in cui i e j siano vettori
+    i = min(i); j = min(j);
     threshold = data.thresholds(thr(i, j));
-    numberOfClassifiers = cls(i, j);
+    numberOfClassifiers = minimum_number_of_classifier + cls(i, j);
 end

@@ -32,13 +32,17 @@ public:
             Point innerOffset,
             unsigned int scaleFactor,
             double alphaSum,
-            double floorValue
+            double floorValue,
+            int length,
+            double threshold
     );
 
     // Empty constructor
     StrongClassifier() { };
 
+    ~StrongClassifier();
 
+    bool classify(Image *image, Point *offset);
 
     vector<classifier_struct *> classifiers;
     Dimensions samplesSize = Dimensions(0, 0);
@@ -46,6 +50,8 @@ public:
     unsigned int scaleFactor;
     double alphaSum;
     double floorValue;
+    int length;
+    double threshold;
 };
 
 #endif //HASP_TRACKER_STRONGCLASSIFIER_H

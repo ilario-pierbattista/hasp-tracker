@@ -1,6 +1,6 @@
 function tuneStrongClassifier(dataPath, param);
-    [dataPath, isdirectory] = checkpath(dataPath);
-    if isempty(dataPath) || ~isdirectory
+    dataPath = checkisdir(dataPath);
+    if dataPath == false
         error('Path non valida');
     end
 
@@ -10,10 +10,10 @@ function tuneStrongClassifier(dataPath, param);
 
     folders = struct();
     data = struct();
-    classNames = {'x', 'y'};
+    global CLASSIFIER_NAMES;
 
-    for i = [1:length(classNames)]
-        name = classNames{i};
+    for name = CLASSIFIER_NAMES
+        name = char(name);
         folders = setfield(folders, name, fullfile(dataPath, name));
         evaluation = decodeThresholdEval(getfield(folders, name));
         data = setfield(data, name, evaluation);

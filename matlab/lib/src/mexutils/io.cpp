@@ -37,20 +37,19 @@ vector<double> getWeights(const mxArray *input) {
     return weights;
 }
 
-Image *readImage(const mxArray* input) {
+Image *readImage(const mxArray *input) {
     Image *img = new Image();
     readImage(input, img);
     return img;
 }
 
-void readImage(const mxArray* input, Image* image) {
+void readImage(const mxArray *input, Image *image) {
     const size_t *size;
     size = mxGetDimensions(input);
     image->setHeight((unsigned int) size[0]);
     image->setWidth((unsigned int) size[1]);
     image->setImage(mxGetPr(input));
 }
-
 
 vector<Sample *> allocateSamples(const mxArray *input,
                                  vector<bool> labels,
@@ -89,7 +88,7 @@ vector<Image *> allocateImages(const mxArray *input) {
     Image *img;
     for (unsigned int i = 0; i < imagesCount; i++) {
         img = new Image(data + i * lenght,
-                            size);
+                        size);
         images.at(i) = img;
     }
     images.shrink_to_fit();
@@ -137,6 +136,16 @@ StrongClassifier *getStrongClassifier(const mxArray *input) {
     cursor = mxGetField(input, 0, STRONG_CLASSIFIER_FLOOR_VALUE);
     strongClassifier->floorValue = *mxGetPr(cursor);
 
+    /* Questi dati non sono sempre disponibili */
+    cursor = mxGetField(input, 0, STRONG_CLASSIFIER_LENGTH);
+    if (cursor != NULL) {
+        strongClassifier->length = (int) *mxGetPr(cursor);
+    }
+    cursor = mxGetField(input, 0, STRONG_CLASSIFIER_THRESHOLD);
+    if (cursor != NULL) {
+        strongClassifier->threshold = *mxGetPr(cursor);
+    }
+
     wc_struct = mxGetField(input, 0, STRONG_CLASSIFIER_WEAK_CLASSIFIERS);
     alphas = mxGetPr(mxGetField(input, 0, STRONG_CLASSIFIER_ALPHAS));
     vector<classifier_struct *> weakClassifiers(mxGetNumberOfElements(wc_struct));
@@ -157,7 +166,7 @@ WeakClassifier *getWeakClassifierFromStruct(const mxArray *input, mwIndex index)
     mxArray *cursor;
     short polarity;
     double threshold;
-    Haar * feature;
+    Haar *feature;
     WeakClassifier *classifier;
 
     cursor = mxGetField(input, index, WEAK_CLASSIFIER_FEATURE);
@@ -197,4 +206,19 @@ Haar *getHaarFeatureFromStruct(const mxArray *input) {
     r = new Rectangle(tl, dims);
     feature = new Haar(r, feature_type);
     return feature;
+}
+
+Point *getPoint(const mxArray *input) {
+    Point *point = new Point();
+    const size_t *size = mxGetDimensions(input);
+    double *data = mxGetPr(input);
+    if ((size[0] == 2 && size[1] == 1) ||
+        (size[0] == 1 && size[1] == 2)) {
+        point->x = (int) *data;
+        point->y = (int) *(data + 1);
+    } else {
+        delete point;
+        point = nullptr;
+    }
+    return point;
 }

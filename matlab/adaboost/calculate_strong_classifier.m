@@ -5,11 +5,11 @@ function [presence, value] = calculate_strong_classifier(strong, img, offset);
 
     value = 0;
     alphasum = 0;
-    %strong.threshold
-    %strong.numberOfClassifiers
-    for i = [1:length(strong.numberOfClassifiers)]
+    % strong.threshold
+    % strong.numberOfClassifiers
+    for i = [1:strong.numberOfClassifiers]
         value = value + strong.alphas(i) * strong.weakClassifiers(i).classify(img, strong.innerOffset + offset);
-        alphasum = alphasum + strong.alphas(i);
+        % alphasum = alphasum + strong.alphas(i);
     end
-    presence = value > strong.threshold * alphasum;
+    presence = (value > (strong.threshold * strong.summedAlphaList(strong.numberOfClassifiers)));
 end

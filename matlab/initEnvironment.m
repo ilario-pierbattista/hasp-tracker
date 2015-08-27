@@ -5,7 +5,7 @@ setenv('DATASET_ROOT', '/home/ilario/Documenti/Tirocinio/Dataset/DataBaseKinect/
 setenv('TRAINING1', '/home/ilario/Documenti/Tirocinio/Training/resized/');
 
 % Dataset di testing
-setenv('TEST1', '/home/ilario/Documenti/Tirocinio/Testing/1');
+setenv('TEST1', '/home/ilario/Documenti/Tirocinio/Testing/1/24_24/');
 setenv('TEST2', '/home/ilario/Documenti/Tirocinio/Testing/2');
 
 % Path delle cartelle con i frame delle registrazioni

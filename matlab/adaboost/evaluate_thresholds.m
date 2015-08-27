@@ -1,4 +1,4 @@
-function [accuracy, sensitivity, specificity, mcc] = evaluateThresholds(classifier, frames, labels, thresholds);
+function [accuracy, sensitivity, specificity, mcc] = evaluate_thresholds(classifier, frames, labels, thresholds);
     numberOfClassifiers = length(classifier.weakClassifiers);
     % True positives rate
     sensitivity = zeros(length(thresholds), numberOfClassifiers);
@@ -14,10 +14,8 @@ function [accuracy, sensitivity, specificity, mcc] = evaluateThresholds(classifi
 
     % Consultare gli appunti
     WC = weak_classify_samples(classifier, frames);
-    AM = [];
-    for i = [1:length(classifier.alphas)]
-        AM = [AM classifier.alphas];
-    end
+    AM = repmat(classifier.alphas, 1, length(classifier.alphas));
+    AM = triu(AM);
     WCA = WC * AM;
 
     fprintf('\n');
@@ -28,7 +26,7 @@ function [accuracy, sensitivity, specificity, mcc] = evaluateThresholds(classifi
             tp = 0; tn = 0;
             fp = 0; fn = 0;
             for k = [1:size(WCA, 1)]
-                presence = (WCA(k, j) > thresholds(i) * classifier.summedAlphaList(j));
+                presence = (WCA(k, j) > (thresholds(i) * classifier.summedAlphaList(j)));
 
                 if presence && labels(k)
                     tp = tp + 1;

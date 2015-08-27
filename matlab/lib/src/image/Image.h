@@ -24,8 +24,6 @@ public:
 
     Image(char *filePath);
 
-    ~Image();
-
     /**
      * Static methods for image processing
      */

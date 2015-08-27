@@ -16,6 +16,8 @@
 #define STRONG_CLASSIFIER_INNER_OFFSET "innerOffset"
 #define STRONG_CLASSIFIER_WEAK_CLASSIFIERS "weakClassifiers"
 #define STRONG_CLASSIFIER_ALPHAS "alphas"
+#define STRONG_CLASSIFIER_LENGTH "numberOfClassifiers"
+#define STRONG_CLASSIFIER_THRESHOLD "threshold"
 
 /*
  * Mappatura dei campi della struttura del classificatore

@@ -62,10 +62,6 @@ Image::Image(char *filePath) {
     }
 }
 
-Image::~Image() {
-    /*@TODO distruttore */
-}
-
 /**
  * floorRebase
  * Ricerca il punto di massimo dell'immagine di profondità e,
