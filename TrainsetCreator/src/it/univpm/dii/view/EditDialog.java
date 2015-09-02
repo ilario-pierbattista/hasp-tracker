@@ -52,6 +52,11 @@ public class EditDialog extends JDialog {
         this.setLocationRelativeTo(null);
     }
 
+    /**
+     * Imposta i dati dell'elemento
+     * @param element Elemento
+     * @return Istanza di {@link EditDialog}
+     */
     public EditDialog setElement(Element element) {
         this.element = element;
         nameLabel.setText(element.getFileName());

@@ -41,7 +41,7 @@ function [accuracy, sensitivity, specificity, mcc] = evaluate_thresholds(classif
 
             sensitivity(i,j) = tp / positivesNum;
             specificity(i,j) = tn / negativesNum;
-            accuracy(i,j) = (tp + tn) / (positivesNum + negativesNum);
+            accuracy(i,j) = (tp + tn) / (tp + tn + fp + fn);
             MCC = (tp * tn - fp * fn) ./ sqrt((tp + fp)*(tp + fn)*(tn + fp)*(tn + fn));
             if isnan(MCC)
                 MCC = 0;

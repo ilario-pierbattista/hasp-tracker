@@ -1,5 +1,4 @@
 			La finestra di visualizzazione, come accennato in precedenza è di $512 times 424$ pixel. In una registrazione che riprende dall alto una persona che attraversa la stanza camminando  la figura della persona occupa una porzione della finestra di circa $160 times 100$ pixel. Un dataset di allenamento non   altro che un insieme di porzioni di frame di una certa dimensione  la stessa per tutti  che vegono classificati manualmente dal creatore footnote  Il sistema di apprendimento che si sta trattando ricade nella categoria dei sistemi di emph  apprendimento supervisionato	documents/relazione/index.tex	/^		I dati in input per la fase di allenamento sono costituiti dal \\emph{dataset di allenamento}, ovvero una raccolta di oggetti preclassificati attraverso i quali Adaboost riuscirà a selezionare una combinazione di classificatori deboli che meglio approssimano la classificazione degli elementi del dataset.$/;"	u
-			La finestra di visualizzazione, come accennato in precedenza è di $512 times 424$ pixel. In una registrazione che riprende dall alto una persona che attraversa la stanza camminando  la figura della persona occupa una porzione della finestra di circa $160 times 100$ pixel. Un dataset di allenamento non   altro che un insieme di porzioni di frame di una certa dimensione  la stessa per tutti  che vegono classificati manualmente dal creatore footnote  Il sistema di apprendimento che si sta trattando ricade nella categoria dei sistemi di emph  apprendimento supervisionato	documents/tesi/index.tex	/^		I dati in input per la fase di allenamento sono costituiti dal \\emph{dataset di allenamento}, ovvero una raccolta di oggetti preclassificati attraverso i quali Adaboost riuscirà a selezionare una combinazione di classificatori deboli che meglio approssimano la classificazione degli elementi del dataset.$/;"	u
 		label{sub:il_dataset_dall_allenamento}
 !_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
 !_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
@@ -52,6 +51,7 @@ ARCHITECTURE_ID	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	393
 ARCHITECTURE_ID	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	396;"	d	file:
 ARCHITECTURE_ID	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	400;"	d	file:
 ASC	TrainsetCreator/src/it/univpm/dii/utils/ElementComparator.java	/^    public static final int ASC = 0;$/;"	f	class:ElementComparator
+Adaboost	documents/tesi/index.tex	/^	\\newpage$/;"	s
 Adaboost	matlab/lib/src/adaboost/Adaboost.h	/^class Adaboost {$/;"	c
 AddFrameAction	TrainsetCreator/src/it/univpm/dii/contoller/main/AddFrameAction.java	/^class AddFrameAction implements ActionListener {$/;"	c
 AddFrameController	TrainsetCreator/src/it/univpm/dii/contoller/addframe/AddFrameController.java	/^    public AddFrameController(AddFrameView view) {$/;"	m	class:AddFrameController
@@ -511,8 +511,9 @@ CancelAction	TrainsetCreator/src/it/univpm/dii/contoller/resize/CancelAction.jav
 CancelAction	TrainsetCreator/src/it/univpm/dii/contoller/resize/CancelAction.java	/^class CancelAction implements ActionListener {$/;"	c
 ChangeFlipDirectionAction	TrainsetCreator/src/it/univpm/dii/contoller/addframe/ChangeFlipDirectionAction.java	/^    public ChangeFlipDirectionAction(AddFrameView view) {$/;"	m	class:ChangeFlipDirectionAction
 ChangeFlipDirectionAction	TrainsetCreator/src/it/univpm/dii/contoller/addframe/ChangeFlipDirectionAction.java	/^class ChangeFlipDirectionAction implements ActionListener {$/;"	c
+Conclusioni	documents/tesi/index.tex	/^	\\label{sec:Rilevazioni su registrazioni reali}$/;"	s
 Conversione delle distanze	documents/relazione/index.tex	/^			Da ricordare che stiamo trattando di matrici $160 \\times 100$ (porzione del frame principale) i cui valori corrispondo al risultato della misurazione del sensore di profondità del Kinect ed è proporzionale alla distanza rilevata.$/;"	b
-Conversione delle distanze	documents/tesi/index.tex	/^			Da ricordare che stiamo trattando di matrici $160 \\times 100$ (porzione del frame principale) i cui valori corrispondo al risultato della misurazione del sensore di profondità del Kinect ed è proporzionale alla distanza rilevata.$/;"	b
+Costruzione dei Dataset	documents/tesi/index.tex	/^	\\label{sec:Adaboost}$/;"	s
 DEC	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	409;"	d	file:
 DEC	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	404;"	d	file:
 DEC	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	409;"	d	file:
@@ -628,11 +629,12 @@ Image	matlab/lib/src/image/Image.cpp	/^Image::Image(double *image, const size_t 
 Image	matlab/lib/src/image/Image.cpp	/^Image::Image(double *image, int width, int height) {$/;"	f	class:Image
 Image	matlab/lib/src/image/Image.h	/^class Image {$/;"	c
 Immagine integrale	documents/relazione/index.tex	/^				Questa prima operazione di preprocessing ha complessità computazionale $\\Theta(n \\cdot m)$ con $n$ ed $m$ dimensioni della porzione del frame.$/;"	b
-Immagine integrale	documents/tesi/index.tex	/^				Questa prima operazione di preprocessing ha complessità computazionale $\\Theta(n \\cdot m)$ con $n$ ed $m$ dimensioni della porzione del frame.$/;"	b
 IndietroRenderInfoAction	TrainsetCreator/src/it/univpm/dii/contoller/framerender/IndietroRenderInfoAction.java	/^    public IndietroRenderInfoAction(FrameRenderView view) {$/;"	m	class:IndietroRenderInfoAction
 IndietroRenderInfoAction	TrainsetCreator/src/it/univpm/dii/contoller/framerender/IndietroRenderInfoAction.java	/^class IndietroRenderInfoAction implements ActionListener {$/;"	c
 Interval	matlab/lib/src/geometry/Interval.cpp	/^Interval::Interval(int a, int b) {$/;"	f	class:Interval
 Interval	matlab/lib/src/geometry/Interval.h	/^class Interval {$/;"	c
+Introduzione	documents/tesi/section/introduzione.tex	/^% !TEX root=..\/index.tex$/;"	s
+IsPerson	scripts/FindPersonScript/IsPerson.m	/^function FlagPerson = IsPerson(Mat,rowPixel,columnPixel,minimo,SensorHeight,kinVr)$/;"	f
 MODE_CROP	TrainsetCreator/src/it/univpm/dii/view/component/DepthImagePanel.java	/^    public static final int MODE_CROP = 1;$/;"	f	class:DepthImagePanel
 MODE_PREVIEW	TrainsetCreator/src/it/univpm/dii/view/component/DepthImagePanel.java	/^    public static final int MODE_PREVIEW = 0;$/;"	f	class:DepthImagePanel
 MVPX	TrainsetCreator/src/it/univpm/dii/view/component/DepthImagePanel.java	/^    public static final int MVPX = 10;$/;"	f	class:DepthImagePanel
@@ -643,6 +645,7 @@ MainFrame	TrainsetCreator/src/it/univpm/dii/view/MainFrame.java	/^public class M
 MemoryAccessException	matlab/lib/src/exception/MemoryAccessException.h	/^class MemoryAccessException {$/;"	c
 MenuItems	TrainsetCreator/src/it/univpm/dii/utils/MenuItems.java	/^public class MenuItems extends HashMap<String, JMenuItem> {$/;"	c
 Menus	TrainsetCreator/src/it/univpm/dii/utils/Menus.java	/^public class Menus extends HashMap<String, JMenu> {$/;"	c
+Mindmap	documents/tesi/section/mindmap.tex	/^% !TEX root=..\/index.tex$/;"	s
 NEGATIVES_DIR	TrainsetCreator/src/it/univpm/dii/model/DatasetManager.java	/^    public static final String NEGATIVES_DIR = "negatives";$/;"	f	class:DatasetManager
 NE_RESIZE	TrainsetCreator/src/it/univpm/dii/view/component/DepthImagePanel.java	/^    public static final int NE_RESIZE = 1;$/;"	f	class:DepthImagePanel
 NONE	TrainsetCreator/src/it/univpm/dii/view/component/SortButtonRenderer.java	/^    public static final int NONE = 0;$/;"	f	class:SortButtonRenderer
@@ -788,10 +791,10 @@ PREF_LAST_SET	TrainsetCreator/src/it/univpm/dii/contoller/main/RecentFilesManage
 PREVIEW_HEIGHT	TrainsetCreator/src/it/univpm/dii/view/MainFrame.java	/^    private static final int PREVIEW_HEIGHT = 200;$/;"	f	class:MainFrame	file:
 PREVIEW_WIDTH	TrainsetCreator/src/it/univpm/dii/view/MainFrame.java	/^    private static final int PREVIEW_WIDTH = 200;$/;"	f	class:MainFrame	file:
 Panoramica generale	documents/relazione/index.tex	/^	\\maketitle$/;"	s
-Panoramica generale	documents/tesi/index.tex	/^	\\maketitle$/;"	s
 Point	matlab/lib/src/geometry/Point.cpp	/^Point::Point(int x, int y) {$/;"	f	class:Point
 Point	matlab/lib/src/geometry/Point.h	/^    Point() { };$/;"	f	class:Point
 Point	matlab/lib/src/geometry/Point.h	/^class Point {$/;"	c
+PreprocessingFrame	scripts/FindPersonScript/PreprocessingFrame.m	/^function M_corrNoZ = PreprocessingFrame(M,rowPixel,columnPixel,SensorHeight)$/;"	f
 QuitAction	TrainsetCreator/src/it/univpm/dii/contoller/main/QuitAction.java	/^class QuitAction extends WindowAdapter {$/;"	c
 RM	Makefile	/^RM = \/usr\/bin\/cmake -E remove -f$/;"	m
 RM	matlab/Makefile	/^RM = \/usr\/bin\/cmake -E remove -f$/;"	m
@@ -814,6 +817,7 @@ ResizeDialog	TrainsetCreator/src/it/univpm/dii/view/ResizeDialog.java	/^public c
 ResizeSetAction	TrainsetCreator/src/it/univpm/dii/contoller/resize/ResizeSetAction.java	/^    public ResizeSetAction(ResizeDialog dialog) {$/;"	m	class:ResizeSetAction
 ResizeSetAction	TrainsetCreator/src/it/univpm/dii/contoller/resize/ResizeSetAction.java	/^class ResizeSetAction implements ActionListener {$/;"	c
 ResizeTrainingSetAction	TrainsetCreator/src/it/univpm/dii/contoller/main/ResizeTrainingSetAction.java	/^public class ResizeTrainingSetAction implements ActionListener {$/;"	c
+Rilevazioni su registrazioni reali	documents/tesi/index.tex	/^	\\label{sec:Test e valutazione}$/;"	s
 SE_RESIZE	TrainsetCreator/src/it/univpm/dii/view/component/DepthImagePanel.java	/^    public static final int SE_RESIZE = 4;$/;"	f	class:DepthImagePanel
 SHELL	Makefile	/^SHELL = \/bin\/sh$/;"	m
 SHELL	matlab/Makefile	/^SHELL = \/bin\/sh$/;"	m
@@ -897,6 +901,7 @@ SquareSelectionCheckedAction	TrainsetCreator/src/it/univpm/dii/contoller/addfram
 StrongClassifier	matlab/lib/src/adaboost/StrongClassifier.cpp	/^StrongClassifier::StrongClassifier($/;"	f	class:StrongClassifier
 StrongClassifier	matlab/lib/src/adaboost/StrongClassifier.h	/^    StrongClassifier() { };$/;"	f	class:StrongClassifier
 StrongClassifier	matlab/lib/src/adaboost/StrongClassifier.h	/^class StrongClassifier {$/;"	c
+Test e valutazione	documents/tesi/index.tex	/^	\\label{sec:Costruzione dei Dataset}$/;"	s
 Time	matlab/lib/src/mexutils/utils.h	/^typedef std::chrono::high_resolution_clock Time;$/;"	t
 TrainingSet	TrainsetCreator/src/it/univpm/dii/model/entities/TrainingSet.java	/^    public TrainingSet(File basePath) {$/;"	m	class:TrainingSet
 TrainingSet	TrainsetCreator/src/it/univpm/dii/model/entities/TrainingSet.java	/^public class TrainingSet {$/;"	c
@@ -911,6 +916,7 @@ WEAK_CLASSIFIER_FEATURE	matlab/lib/src/mexutils/structure_mapping.h	27;"	d
 WEAK_CLASSIFIER_POLARITY	matlab/lib/src/mexutils/structure_mapping.h	28;"	d
 WEAK_CLASSIFIER_THRESHOLD	matlab/lib/src/mexutils/structure_mapping.h	29;"	d
 W_RESIZE	TrainsetCreator/src/it/univpm/dii/view/component/DepthImagePanel.java	/^    public static final int W_RESIZE = 7;$/;"	f	class:DepthImagePanel
+Weak learner	documents/tesi/section/weak_learner.tex	/^% !TEX root=..\/index.tex$/;"	s
 WeakClassifier	matlab/lib/src/adaboost/WeakClassifier.cpp	/^WeakClassifier::WeakClassifier() {$/;"	f	class:WeakClassifier
 WeakClassifier	matlab/lib/src/adaboost/WeakClassifier.cpp	/^WeakClassifier::WeakClassifier(Haar *feature, double thr, short p) {$/;"	f	class:WeakClassifier
 WeakClassifier	matlab/lib/src/adaboost/WeakClassifier.cpp	/^WeakClassifier::WeakClassifier(Haar *feature, double thr, short p, double weightedError) {$/;"	f	class:WeakClassifier
@@ -969,7 +975,6 @@ bestWeakClassifier	matlab/lib/src/adaboost/Adaboost.cpp	/^WeakClassifier *Adaboo
 bestWeakClassifier	matlab/lib/src/adaboost/Adaboost.cpp	/^WeakClassifier *Adaboost::bestWeakClassifier(vector<Sample *> samples, vector<Haar *> features, float *values) {$/;"	f	class:Adaboost
 bicubicInterpolationRadio	TrainsetCreator/src/it/univpm/dii/view/ResizeDialog.java	/^    private JRadioButton bicubicInterpolationRadio;$/;"	f	class:ResizeDialog	file:
 bilinearInterpolationRadio	TrainsetCreator/src/it/univpm/dii/view/ResizeDialog.java	/^    private JRadioButton bilinearInterpolationRadio;$/;"	f	class:ResizeDialog	file:
-binaryImage	TrainsetCreator/src/it/univpm/dii/service/DepthImage.java	/^    private byte[] binaryImage, cropped;$/;"	f	class:DepthImage	file:
 bottomLeftPoint	matlab/lib/src/geometry/Rectangle.cpp	/^Point Rectangle::bottomLeftPoint() {$/;"	f	class:Rectangle
 bottomRightPoint	matlab/lib/src/geometry/Rectangle.cpp	/^Point Rectangle::bottomRightPoint() {$/;"	f	class:Rectangle
 buttonCancel	TrainsetCreator/src/it/univpm/dii/view/EditDialog.java	/^    private JButton buttonCancel;$/;"	f	class:EditDialog	file:
@@ -1045,7 +1050,7 @@ crop	TrainsetCreator/src/it/univpm/dii/service/DepthImage.java	/^    public Dept
 cropAndSave	TrainsetCreator/src/it/univpm/dii/view/component/DepthImagePanel.java	/^    public DepthImagePanel cropAndSave(File out) {$/;"	m	class:DepthImagePanel
 cropHeight	TrainsetCreator/src/it/univpm/dii/view/AddFrameView.java	/^    private JFormattedTextField cropHeight;$/;"	f	class:AddFrameView	file:
 cropWidth	TrainsetCreator/src/it/univpm/dii/view/AddFrameView.java	/^    private JFormattedTextField cropWidth;$/;"	f	class:AddFrameView	file:
-cropped	TrainsetCreator/src/it/univpm/dii/service/DepthImage.java	/^    private byte[] binaryImage, cropped;$/;"	f	class:DepthImage	file:
+cropped	TrainsetCreator/src/it/univpm/dii/service/DepthImage.java	/^    private byte[] cropped;$/;"	f	class:DepthImage	file:
 current	TrainsetCreator/src/it/univpm/dii/view/AddFrameView.java	/^    private int current, width, height;$/;"	f	class:AddFrameView	file:
 currentPt	TrainsetCreator/src/it/univpm/dii/view/component/DepthImagePanel.java	/^    private Point startPt, endPt, currentPt, offsetPt;$/;"	f	class:DepthImagePanel	file:
 currentResizeProgress	TrainsetCreator/src/it/univpm/dii/view/ResizeDialog.java	/^    private int currentResizeProgress, numberOfImages;$/;"	f	class:ResizeDialog	file:
@@ -1109,7 +1114,6 @@ find	TrainsetCreator/src/it/univpm/dii/model/DatasetManager.java	/^    public El
 fineButton	TrainsetCreator/src/it/univpm/dii/view/AddFrameView.java	/^    private JButton fineButton;$/;"	f	class:AddFrameView	file:
 flipDirection	TrainsetCreator/src/it/univpm/dii/view/component/DepthImagePanel.java	/^    private int mode, flipDirection = DISABLE_FLIP;$/;"	f	class:DepthImagePanel	file:
 flipHorizontal	TrainsetCreator/src/it/univpm/dii/service/DepthImage.java	/^    public DepthImage flipHorizontal() {$/;"	m	class:DepthImage
-flipRadioGroup	TrainsetCreator/src/it/univpm/dii/view/AddFrameView.java	/^    private ButtonGroup flipRadioGroup;$/;"	f	class:AddFrameView	file:
 flipVertical	TrainsetCreator/src/it/univpm/dii/service/DepthImage.java	/^    public DepthImage flipVertical() {$/;"	m	class:DepthImage
 floorRebase	matlab/lib/src/image/Image.cpp	/^void Image::floorRebase(Image *origin, Image *destination) {$/;"	f	class:Image
 floorRebase	matlab/lib/src/image/Image.cpp	/^void Image::floorRebase(Image *origin, Image *destination, double floorValue) {$/;"	f	class:Image

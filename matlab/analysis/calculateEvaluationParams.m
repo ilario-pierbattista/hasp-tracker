@@ -4,6 +4,6 @@ function [sensitivity, specificity, accuracy, mcc] = calculateEvaluationParams(t
 
     sensitivity = tp / p;
     specificity = tn / n;
-    accuracy = (tp + tn) / (n + p);
+    accuracy = (tp + tn) / (tp + tn + fp + fn);
     mcc = (tp * tn - fp * fn) ./ sqrt((tp + fp)*(tp + fn)*(tn + fp)*(tn + fn));
 end

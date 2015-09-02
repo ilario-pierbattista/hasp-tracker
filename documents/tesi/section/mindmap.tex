@@ -1,0 +1,30 @@
+% !TEX root=../index.tex
+\section{Mindmap}
+\label{sec:Mindmap}
+
+\begin{tikzpicture}
+    \path[mindmap,concept color=black,text=black]
+
+    node[concept] {Hasp detection.}
+    [clockwise from=0]
+
+    child[concept] {
+        node[concept] {Classificazione}
+    }
+
+    child[concept] {
+        node[concept] {practical}
+        [clockwise from=90]
+        child { node[concept] {algorithms} }
+        child { node[concept] {data structures} }
+        child { node[concept] {programming languages} }
+        child { node[concept] {software engineering} }
+    }
+    child[concept] {
+        node[concept] {applied}
+        [clockwise from=-30]
+        child { node[concept] {databases} }
+        child { node[concept] {WWW} }
+    }
+    ;
+\end{tikzpicture}

@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1437555210 "index.tex" "index.pdf" "index" 1437555211
+["pdflatex"] 1437555210 "index.tex" "/home/ilario/Projects/hasp-tracker/documents/relazione/index.pdf" "index" 1440694714
   "/etc/texmf/web2c/texmf.cnf" 1428858801 1101 af7716885e081ab43982cab7b4672c1a ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1272929888 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr10.tfm" 1136768653 1296 45809c5a464d5f32c8f98ba97c1bb47f ""
@@ -125,9 +125,11 @@
   "index.tex" 1437476846 25150 1dc1c3d09cfaaf70df65be0d51d82c3c ""
   "packages.sty" 1437469157 3039 631e055069ab2be2a1b7894b57a6528d ""
   (generated)
+  "index.lof"
   "index.pdf"
-  "index.out"
   "index.toc"
   "index.log"
-  "index.lof"
+  "/home/ilario/Projects/hasp-tracker/documents/relazione/index.log"
   "index.aux"
+  "index.out"
+  "/home/ilario/Projects/hasp-tracker/documents/relazione/index.pdf"

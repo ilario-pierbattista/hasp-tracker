@@ -2,7 +2,10 @@ package it.univpm.dii.service;
 
 import java.awt.*;
 import java.awt.geom.AffineTransform;
-import java.awt.image.*;
+import java.awt.image.AffineTransformOp;
+import java.awt.image.BufferedImage;
+import java.awt.image.DataBufferUShort;
+import java.awt.image.WritableRaster;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -15,16 +18,23 @@ import java.io.IOException;
 public class DepthImage {
 
     private BufferedImage image;
-    private byte[] binaryImage, cropped;
+    private byte[] cropped;
     protected static final int COLOR_DEPTH = 2;
 
     public DepthImage(File depth, int width, int height)
             throws IOException {
+        byte[] binaryImage;
+        int length;
+
         /* Apertura del file */
         binaryImage = new byte[COLOR_DEPTH * width * height];
         FileInputStream fis = new FileInputStream(depth.getAbsolutePath());
+
         // Lettura del file
-        fis.read(binaryImage, 0, COLOR_DEPTH * width * height);
+        length = fis.read(binaryImage, 0, COLOR_DEPTH * width * height);
+        if(length != COLOR_DEPTH * width * height) {
+            throw new IOException("Immagine corrotta");
+        }
 
         /* creazione dell'immagine */
         image = new BufferedImage(width, height, BufferedImage.TYPE_USHORT_GRAY);
@@ -39,7 +49,7 @@ public class DepthImage {
             for (int j = 0; j < COLOR_DEPTH * width; j += COLOR_DEPTH) {
                 b1 = binaryImage[i * COLOR_DEPTH * width + j];
                 b2 = binaryImage[i * COLOR_DEPTH * width + j + 1];
-                pixelValue = (int) (b1 << 8) | b2;
+                pixelValue = (b1 << 8) | b2;
                 raster.setSample(j / COLOR_DEPTH, i, 0, pixelValue);
             }
         }

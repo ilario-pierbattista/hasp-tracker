@@ -3,7 +3,6 @@ package it.univpm.dii.contoller.main;
 import it.univpm.dii.view.MainFrame;
 
 import javax.swing.*;
-import java.awt.event.KeyEvent;
 import java.io.File;
 
 

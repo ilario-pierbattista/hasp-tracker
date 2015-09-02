@@ -32,7 +32,6 @@ public class AddFrameView extends View {
     private JRadioButton yFlipRadio;
     private JRadioButton yXFlipRadio;
     private JRadioButton xYFlipRadio;
-    private ButtonGroup flipRadioGroup;
     private DepthImage depthImage;
     private File[] frames;
     private int current, width, height;
@@ -176,6 +175,8 @@ public class AddFrameView extends View {
     }
 
     private void createUIComponents() {
+        ButtonGroup flipRadioGroup;
+
         NumberFormat pixelFormat = NumberFormat.getNumberInstance();
         pixelFormat.setMaximumFractionDigits(0);
         cropWidth = new JFormattedTextField(pixelFormat);
