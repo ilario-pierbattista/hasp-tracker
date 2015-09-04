@@ -1,7 +1,17 @@
-\BOOKMARK [1][-]{section.1}{Introduzione}{}% 1
-\BOOKMARK [1][-]{section.2}{Weak learner}{}% 2
-\BOOKMARK [1][-]{section.3}{Adaboost}{}% 3
-\BOOKMARK [1][-]{section.4}{Costruzione dei Dataset}{}% 4
-\BOOKMARK [1][-]{section.5}{Test e valutazione}{}% 5
-\BOOKMARK [1][-]{section.6}{Rilevazioni su registrazioni reali}{}% 6
-\BOOKMARK [1][-]{section.7}{Conclusioni}{}% 7
+\BOOKMARK [0][-]{chapter*.2}{Introduzione}{}% 1
+\BOOKMARK [0][-]{chapter.1}{Panoramica del sistema}{}% 2
+\BOOKMARK [1][-]{section.1.1}{Il Kinect}{chapter.1}% 3
+\BOOKMARK [1][-]{section.1.2}{Head and Shoulder Profile}{chapter.1}% 4
+\BOOKMARK [1][-]{section.1.3}{Un problema di Classificazione}{chapter.1}% 5
+\BOOKMARK [1][-]{section.1.4}{Weak learner}{chapter.1}% 6
+\BOOKMARK [2][-]{subsection.1.4.1}{Feature Haar-like}{section.1.4}% 7
+\BOOKMARK [2][-]{subsection.1.4.2}{Decision Stump}{section.1.4}% 8
+\BOOKMARK [1][-]{section.1.5}{Adaboost}{chapter.1}% 9
+\BOOKMARK [2][-]{subsection.1.5.1}{Il dataset dall'allenamento}{section.1.5}% 10
+\BOOKMARK [2][-]{subsection.1.5.2}{Preprocessing}{section.1.5}% 11
+\BOOKMARK [2][-]{subsection.1.5.3}{Estrazione del classificatore forte}{section.1.5}% 12
+\BOOKMARK [2][-]{subsection.1.5.4}{Il miglior classificatore debole}{section.1.5}% 13
+\BOOKMARK [1][-]{section.1.6}{Costruzione dei Dataset}{chapter.1}% 14
+\BOOKMARK [1][-]{section.1.7}{Test e valutazione}{chapter.1}% 15
+\BOOKMARK [1][-]{section.1.8}{Rilevazioni su registrazioni reali}{chapter.1}% 16
+\BOOKMARK [1][-]{section.1.9}{Conclusioni}{chapter.1}% 17

@@ -51,7 +51,7 @@ ARCHITECTURE_ID	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	393
 ARCHITECTURE_ID	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	396;"	d	file:
 ARCHITECTURE_ID	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	400;"	d	file:
 ASC	TrainsetCreator/src/it/univpm/dii/utils/ElementComparator.java	/^    public static final int ASC = 0;$/;"	f	class:ElementComparator
-Adaboost	documents/tesi/index.tex	/^	\\newpage$/;"	s
+Adaboost	documents/tesi/section/adaboost.tex	/^% !TEX root=..\/index.tex$/;"	s
 Adaboost	matlab/lib/src/adaboost/Adaboost.h	/^class Adaboost {$/;"	c
 AddFrameAction	TrainsetCreator/src/it/univpm/dii/contoller/main/AddFrameAction.java	/^class AddFrameAction implements ActionListener {$/;"	c
 AddFrameController	TrainsetCreator/src/it/univpm/dii/contoller/addframe/AddFrameController.java	/^    public AddFrameController(AddFrameView view) {$/;"	m	class:AddFrameController
@@ -513,7 +513,7 @@ ChangeFlipDirectionAction	TrainsetCreator/src/it/univpm/dii/contoller/addframe/C
 ChangeFlipDirectionAction	TrainsetCreator/src/it/univpm/dii/contoller/addframe/ChangeFlipDirectionAction.java	/^class ChangeFlipDirectionAction implements ActionListener {$/;"	c
 Conclusioni	documents/tesi/index.tex	/^	\\label{sec:Rilevazioni su registrazioni reali}$/;"	s
 Conversione delle distanze	documents/relazione/index.tex	/^			Da ricordare che stiamo trattando di matrici $160 \\times 100$ (porzione del frame principale) i cui valori corrispondo al risultato della misurazione del sensore di profondità del Kinect ed è proporzionale alla distanza rilevata.$/;"	b
-Costruzione dei Dataset	documents/tesi/index.tex	/^	\\label{sec:Adaboost}$/;"	s
+Costruzione dei Dataset	documents/tesi/index.tex	/^	\\newpage$/;"	s
 DEC	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	409;"	d	file:
 DEC	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	404;"	d	file:
 DEC	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	409;"	d	file:
@@ -529,6 +529,7 @@ DO_NOT_RESIZE	TrainsetCreator/src/it/univpm/dii/view/component/DepthImagePanel.j
 DRAWING_COLOR	TrainsetCreator/src/it/univpm/dii/view/component/DepthImagePanel.java	/^    public static final Color DRAWING_COLOR = Color.GREEN;$/;"	f	class:DepthImagePanel
 DatasetManager	TrainsetCreator/src/it/univpm/dii/model/DatasetManager.java	/^    public DatasetManager(File base) throws Exception {$/;"	m	class:DatasetManager
 DatasetManager	TrainsetCreator/src/it/univpm/dii/model/DatasetManager.java	/^public class DatasetManager {$/;"	c
+Decision Stump	documents/tesi/section/weak_learner.tex	/^\\label{subs:immagine_integrale}$/;"	u
 DepthImage	TrainsetCreator/src/it/univpm/dii/service/DepthImage.java	/^    public DepthImage(File depth, int width, int height)$/;"	m	class:DepthImage
 DepthImage	TrainsetCreator/src/it/univpm/dii/service/DepthImage.java	/^public class DepthImage {$/;"	c
 DepthImagePanel	TrainsetCreator/src/it/univpm/dii/view/component/DepthImagePanel.java	/^    public DepthImagePanel(DepthImage depthImage) {$/;"	m	class:DepthImagePanel
@@ -565,11 +566,13 @@ ElementModel	TrainsetCreator/src/it/univpm/dii/view/tablemodels/ElementModel.jav
 EliminaSelectedAction	TrainsetCreator/src/it/univpm/dii/contoller/main/EliminaSelectedAction.java	/^class EliminaSelectedAction implements ActionListener {$/;"	c
 EmptyFrameDirException	TrainsetCreator/src/it/univpm/dii/exception/EmptyFrameDirException.java	/^    public EmptyFrameDirException(String path) {$/;"	m	class:EmptyFrameDirException
 EmptyFrameDirException	TrainsetCreator/src/it/univpm/dii/exception/EmptyFrameDirException.java	/^public class EmptyFrameDirException extends Exception {$/;"	c
+Estrazione del classificatore forte	documents/tesi/section/adaboost.tex	/^            Grazie all'immagine integrale, una feature di qualsiasi dimensione può essere calcolata in un tempo costante.$/;"	u
 FEATURE_DIM	matlab/lib/src/mexutils/structure_mapping.h	31;"	d
 FEATURE_TLP	matlab/lib/src/mexutils/structure_mapping.h	30;"	d
 FEATURE_TYPE	matlab/lib/src/mexutils/structure_mapping.h	32;"	d
 FastNegativesCheckedAction	TrainsetCreator/src/it/univpm/dii/contoller/addframe/FastNegativesCheckedAction.java	/^    public FastNegativesCheckedAction(AddFrameView view) {$/;"	m	class:FastNegativesCheckedAction
 FastNegativesCheckedAction	TrainsetCreator/src/it/univpm/dii/contoller/addframe/FastNegativesCheckedAction.java	/^class FastNegativesCheckedAction implements ActionListener {$/;"	c
+Feature Haar-like	documents/tesi/section/weak_learner.tex	/^\\end{enumerate}$/;"	u
 FeatureTest	matlab/lib/src/adaboost/FeatureTest.cpp	/^FeatureTest::FeatureTest(Haar *feature, Sample *sample) {$/;"	f	class:FeatureTest
 FeatureTest	matlab/lib/src/adaboost/FeatureTest.h	/^    FeatureTest() { };$/;"	f	class:FeatureTest
 FeatureTest	matlab/lib/src/adaboost/FeatureTest.h	/^class FeatureTest {$/;"	c
@@ -623,17 +626,19 @@ HtmlPage	scripts/dataset_downloader.py	/^class HtmlPage:$/;"	c
 ID_VOID_MAIN	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	6;"	d	file:
 ID_VOID_MAIN	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	6;"	d	file:
 Il dataset dall allenamento} % (fold)
+Il miglior classificatore debole	documents/tesi/section/adaboost.tex	/^        La scelta della soglia per il classificatore forte (punto \\ref{adaboost_strong_classifier}) deve minimizzare il numero di esempi classificati in modo errato.$/;"	u
 Image	matlab/lib/src/image/Image.cpp	/^Image::Image() { }$/;"	f	class:Image
 Image	matlab/lib/src/image/Image.cpp	/^Image::Image(char *filePath) {$/;"	f	class:Image
 Image	matlab/lib/src/image/Image.cpp	/^Image::Image(double *image, const size_t *size) {$/;"	f	class:Image
 Image	matlab/lib/src/image/Image.cpp	/^Image::Image(double *image, int width, int height) {$/;"	f	class:Image
 Image	matlab/lib/src/image/Image.h	/^class Image {$/;"	c
+Immagine Integrale	documents/tesi/section/weak_learner.tex	/^\\label{sub:feature_haar_like}$/;"	b
 Immagine integrale	documents/relazione/index.tex	/^				Questa prima operazione di preprocessing ha complessità computazionale $\\Theta(n \\cdot m)$ con $n$ ed $m$ dimensioni della porzione del frame.$/;"	b
 IndietroRenderInfoAction	TrainsetCreator/src/it/univpm/dii/contoller/framerender/IndietroRenderInfoAction.java	/^    public IndietroRenderInfoAction(FrameRenderView view) {$/;"	m	class:IndietroRenderInfoAction
 IndietroRenderInfoAction	TrainsetCreator/src/it/univpm/dii/contoller/framerender/IndietroRenderInfoAction.java	/^class IndietroRenderInfoAction implements ActionListener {$/;"	c
 Interval	matlab/lib/src/geometry/Interval.cpp	/^Interval::Interval(int a, int b) {$/;"	f	class:Interval
 Interval	matlab/lib/src/geometry/Interval.h	/^class Interval {$/;"	c
-Introduzione	documents/tesi/section/introduzione.tex	/^% !TEX root=..\/index.tex$/;"	s
+Introduzione	documents/tesi/section/introduzione.tex	/^% !TEX root=..\/index.tex$/;"	c
 IsPerson	scripts/FindPersonScript/IsPerson.m	/^function FlagPerson = IsPerson(Mat,rowPixel,columnPixel,minimo,SensorHeight,kinVr)$/;"	f
 MODE_CROP	TrainsetCreator/src/it/univpm/dii/view/component/DepthImagePanel.java	/^    public static final int MODE_CROP = 1;$/;"	f	class:DepthImagePanel
 MODE_PREVIEW	TrainsetCreator/src/it/univpm/dii/view/component/DepthImagePanel.java	/^    public static final int MODE_PREVIEW = 0;$/;"	f	class:DepthImagePanel
@@ -790,10 +795,12 @@ PREF_IMAGE_WIDTH	TrainsetCreator/src/it/univpm/dii/contoller/framerender/FrameRe
 PREF_LAST_SET	TrainsetCreator/src/it/univpm/dii/contoller/main/RecentFilesManager.java	/^    public static final String[] PREF_LAST_SET = {$/;"	f	class:RecentFilesManager
 PREVIEW_HEIGHT	TrainsetCreator/src/it/univpm/dii/view/MainFrame.java	/^    private static final int PREVIEW_HEIGHT = 200;$/;"	f	class:MainFrame	file:
 PREVIEW_WIDTH	TrainsetCreator/src/it/univpm/dii/view/MainFrame.java	/^    private static final int PREVIEW_WIDTH = 200;$/;"	f	class:MainFrame	file:
+Panoramica del sistema	documents/tesi/section/overview.tex	/^% !TEX root=..\/index.tex$/;"	c
 Panoramica generale	documents/relazione/index.tex	/^	\\maketitle$/;"	s
 Point	matlab/lib/src/geometry/Point.cpp	/^Point::Point(int x, int y) {$/;"	f	class:Point
 Point	matlab/lib/src/geometry/Point.h	/^    Point() { };$/;"	f	class:Point
 Point	matlab/lib/src/geometry/Point.h	/^class Point {$/;"	c
+Preprocessing	documents/tesi/section/adaboost.tex	/^        La creazione del dataset è un'attività delicata. I criteri di scelta vengono trattati nella sezione \\ref{sec:considerazioni_sulla_costruzione_dei_dataset}.$/;"	u
 PreprocessingFrame	scripts/FindPersonScript/PreprocessingFrame.m	/^function M_corrNoZ = PreprocessingFrame(M,rowPixel,columnPixel,SensorHeight)$/;"	f
 QuitAction	TrainsetCreator/src/it/univpm/dii/contoller/main/QuitAction.java	/^class QuitAction extends WindowAdapter {$/;"	c
 RM	Makefile	/^RM = \/usr\/bin\/cmake -E remove -f$/;"	m
@@ -966,6 +973,7 @@ alphaSum	matlab/lib/src/adaboost/StrongClassifier.h	/^    double alphaSum;$/;"	m
 alphaSum	matlab/lib/src/adaboost/StrongClassifier.h	/^    double alphaSum;$/;"	m	struct:classifier_struct
 area	matlab/lib/src/feature/Haar.h	/^    Rectangle *area;$/;"	m	class:Haar
 arrangeFeatures	matlab/old/arrangeFeatures.m	/^function features = arrangeFeatures(width, height, minf, step)$/;"	f
+autocomplete-bibtex	.atomrc.cson	/^'autocomplete-bibtex':$/;"	f
 avantiButton	TrainsetCreator/src/it/univpm/dii/view/FrameRenderView.java	/^    private JButton avantiButton;$/;"	f	class:FrameRenderView	file:
 b	matlab/lib/src/geometry/Interval.h	/^    int a, b;$/;"	m	class:Interval
 balance_load	scripts/dataset_downloader.py	/^def balance_load(childnum, main_runner, dataset):$/;"	f
@@ -973,6 +981,7 @@ basePath	TrainsetCreator/src/it/univpm/dii/model/entities/TrainingSet.java	/^   
 basepath	TrainsetCreator/src/it/univpm/dii/model/DatasetManager.java	/^    private File basepath;$/;"	f	class:DatasetManager	file:
 bestWeakClassifier	matlab/lib/src/adaboost/Adaboost.cpp	/^WeakClassifier *Adaboost::bestWeakClassifier(vector<Sample *> samples, vector<Haar *> features) {$/;"	f	class:Adaboost
 bestWeakClassifier	matlab/lib/src/adaboost/Adaboost.cpp	/^WeakClassifier *Adaboost::bestWeakClassifier(vector<Sample *> samples, vector<Haar *> features, float *values) {$/;"	f	class:Adaboost
+bibtex	.atomrc.cson	/^ 'bibtex': [$/;"	f
 bicubicInterpolationRadio	TrainsetCreator/src/it/univpm/dii/view/ResizeDialog.java	/^    private JRadioButton bicubicInterpolationRadio;$/;"	f	class:ResizeDialog	file:
 bilinearInterpolationRadio	TrainsetCreator/src/it/univpm/dii/view/ResizeDialog.java	/^    private JRadioButton bilinearInterpolationRadio;$/;"	f	class:ResizeDialog	file:
 bottomLeftPoint	matlab/lib/src/geometry/Rectangle.cpp	/^Point Rectangle::bottomLeftPoint() {$/;"	f	class:Rectangle
