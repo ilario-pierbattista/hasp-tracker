@@ -35,60 +35,100 @@
 \@writefile{toc}{\contentsline {section}{\numberline {1.1}Il Kinect}{3}{section.1.1}}
 \newlabel{sec:sensor}{{1.1}{3}{Il Kinect}{section.1.1}{}}
 \providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
-\newlabel{fig:structured_light_scanner}{{\caption@xref {fig:structured_light_scanner}{ on input line 15}}{3}{Il Kinect}{figure.caption.3}{}}
+\newlabel{fig:structured_light_scanner}{{\caption@xref {fig:structured_light_scanner}{ on input line 14}}{3}{Il Kinect}{figure.caption.3}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {1.1}{\ignorespaces Schematizzazione di uno scanner 3D a luce strutturata.\relax }}{3}{figure.caption.3}}
 \@writefile{toc}{\contentsline {section}{\numberline {1.2}Head and Shoulder Profile}{4}{section.1.2}}
 \newlabel{sec:hasp}{{1.2}{4}{Head and Shoulder Profile}{section.1.2}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {1.2}{\ignorespaces Due persone in un ritaglio proveniente da un frame di profondit\IeC {\`a}. Il frame \IeC {\`e} stato acquisito con il Kinect V1, a differenza di quello in figura \ref  {fig:spatial_feature}, acquisito con il Kinect V2.\relax }}{4}{figure.caption.4}}
 \newlabel{fig:no_occlusion}{{1.2}{4}{Due persone in un ritaglio proveniente da un frame di profondità. Il frame è stato acquisito con il Kinect V1, a differenza di quello in figura \ref {fig:spatial_feature}, acquisito con il Kinect V2.\relax }{figure.caption.4}{}}
+\citation{Viola04}
 \@writefile{lof}{\contentsline {figure}{\numberline {1.3}{\ignorespaces Una persona mentre cammina\relax }}{5}{figure.caption.5}}
 \newlabel{fig:spatial_feature}{{1.3}{5}{Una persona mentre cammina\relax }{figure.caption.5}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {1.3}Un problema di Classificazione}{5}{section.1.3}}
-\newlabel{sub:struttura_software}{{1.3}{5}{Un problema di Classificazione}{section.1.3}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {1.4}Weak learner}{5}{section.1.4}}
-\newlabel{sec:weak_learner}{{1.4}{5}{Weak learner}{section.1.4}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.4.1}Feature Haar-like}{5}{subsection.1.4.1}}
-\newlabel{sub:feature_haar_like}{{1.4.1}{5}{Feature Haar-like}{subsection.1.4.1}{}}
-\@writefile{toc}{\contentsline {subsubsection}{Immagine Integrale}{5}{section*.6}}
-\newlabel{subs:immagine_integrale}{{1.4.1}{5}{Immagine Integrale}{section*.6}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.4.2}Decision Stump}{5}{subsection.1.4.2}}
-\newlabel{subs:decision_stump}{{1.4.2}{5}{Decision Stump}{subsection.1.4.2}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {1.5}Adaboost}{6}{section.1.5}}
-\newlabel{sec:adaboost}{{1.5}{6}{Adaboost}{section.1.5}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.5.1}Il dataset dall'allenamento}{6}{subsection.1.5.1}}
-\newlabel{sub:il_dataset_dall_allenamento}{{1.5.1}{6}{Il dataset dall'allenamento}{subsection.1.5.1}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.5.2}Preprocessing}{6}{subsection.1.5.2}}
-\newlabel{sub:preprocessing}{{1.5.2}{6}{Preprocessing}{subsection.1.5.2}{}}
-\@writefile{toc}{\contentsline {subsubsection}{Conversione delle distanze}{6}{section*.7}}
-\newlabel{ssub:conversione_delle_distanze}{{1.5.2}{6}{Conversione delle distanze}{section*.7}{}}
-\@writefile{toc}{\contentsline {subsubsection}{Immagine integrale}{7}{section*.8}}
-\newlabel{ssub:immagine_integrale}{{1.5.2}{7}{Immagine integrale}{section*.8}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.5.3}Estrazione del classificatore forte}{8}{subsection.1.5.3}}
-\newlabel{sub:estrazione_del_classificatore_forte}{{1.5.3}{8}{Estrazione del classificatore forte}{subsection.1.5.3}{}}
-\newlabel{adaboost_minimum_error}{{2b}{9}{Estrazione del classificatore forte}{Item.9}{}}
-\newlabel{adaboost_beta}{{2c}{9}{Estrazione del classificatore forte}{Item.10}{}}
-\newlabel{adaboost_update_weights}{{2d}{9}{Estrazione del classificatore forte}{Item.11}{}}
-\newlabel{adaboost_strong_classifier}{{3}{9}{Estrazione del classificatore forte}{Item.13}{}}
-\citation{ViolaJones}
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.5.4}Il miglior classificatore debole}{10}{subsection.1.5.4}}
-\newlabel{sub:il_miglior_classificatore_debole}{{1.5.4}{10}{Il miglior classificatore debole}{subsection.1.5.4}{}}
-\newlabel{best_classifier_p_theta}{{2(d)iv}{11}{Il miglior classificatore debole}{Item.25}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {1.3}Un Problema di Classificazione}{5}{section.1.3}}
+\newlabel{sec:classification_problem}{{1.3}{5}{Un Problema di Classificazione}{section.1.3}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {1.4}Preprocessing}{6}{section.1.4}}
+\newlabel{sec:preprocessing}{{1.4}{6}{Preprocessing}{section.1.4}{}}
+\newlabel{eq:floor_distance}{{1.1}{6}{Preprocessing}{equation.1.4.1}{}}
+\citation{Zhu13}
+\citation{Zhu13}
+\@writefile{toc}{\contentsline {chapter}{\numberline {2}Haar-like Features}{7}{chapter.2}}
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\newlabel{cap:haar_features}{{2}{7}{Haar-like Features}{chapter.2}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.1}Definizione}{7}{section.2.1}}
+\newlabel{sec:haar_def}{{2.1}{7}{Definizione}{section.2.1}{}}
+\citation{Haar10}
+\citation{Jpeg2000}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.1}{\ignorespaces Tipi di feature di Haar utilizzati in \cite  {Zhu13}.\relax }}{8}{figure.caption.6}}
+\newlabel{fig:features_type}{{2.1}{8}{Tipi di feature di Haar utilizzati in \cite {Zhu13}.\relax }{figure.caption.6}{}}
+\newlabel{eq:haar_feature_informal}{{2.1}{8}{Definizione}{equation.2.1.1}{}}
+\newlabel{eq:haar_scale_invariant}{{2.2}{8}{Definizione}{equation.2.1.2}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.2}Dalle Wavelet di Haar alle Feature}{8}{section.2.2}}
+\newlabel{sec:haar_wavelet}{{2.2}{8}{Dalle Wavelet di Haar alle Feature}{section.2.2}{}}
+\newlabel{eq:mother_wavelet}{{2.3}{8}{Dalle Wavelet di Haar alle Feature}{equation.2.2.3}{}}
+\citation{Oren97}
+\citation{Oren97}
+\citation{Oren97}
+\citation{Oren97}
+\citation{Oren97}
+\citation{Papageorgiou98}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.2}{\ignorespaces Rappresentazione di un segnale con una serie di funzioni armoniche.\relax }}{9}{figure.caption.7}}
+\newlabel{fig:awesome_image1}{{2.2}{9}{Rappresentazione di un segnale con una serie di funzioni armoniche.\relax }{figure.caption.7}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.3}{\ignorespaces Rappresentazione di un segnale con una serie di wavelet di Haar.\relax }}{9}{figure.caption.7}}
+\newlabel{fig:awesome_image2}{{2.3}{9}{Rappresentazione di un segnale con una serie di wavelet di Haar.\relax }{figure.caption.7}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.4}{\ignorespaces Wavelet di Haar bidimensionali utilizzate in \cite  {Oren97}.\relax }}{9}{figure.caption.8}}
+\newlabel{fig:haar_wavelet}{{2.4}{9}{Wavelet di Haar bidimensionali utilizzate in \cite {Oren97}.\relax }{figure.caption.8}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.5}{\ignorespaces Coefficienti delle wavelet di trasformate DWT di diverse scale applicate alla stessa immagine. I coefficienti vengono codificati utilizzando la scala dei grigi \cite  [Figura 3]{Oren97}.\relax }}{9}{figure.caption.9}}
+\newlabel{fig:non_standard_dwt}{{2.5}{9}{Coefficienti delle wavelet di trasformate DWT di diverse scale applicate alla stessa immagine. I coefficienti vengono codificati utilizzando la scala dei grigi \cite [Figura 3]{Oren97}.\relax }{figure.caption.9}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.3}Immagine Integrale}{10}{section.2.3}}
+\newlabel{sec:integral_image}{{2.3}{10}{Immagine Integrale}{section.2.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.6}{\ignorespaces \relax }}{10}{figure.caption.10}}
+\newlabel{fig:integral_image_sum}{{2.6}{10}{\relax }{figure.caption.10}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.4}Decision Stump}{11}{section.2.4}}
+\newlabel{sec:decision_stump}{{2.4}{11}{Decision Stump}{section.2.4}{}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {3}Adaboost}{12}{chapter.3}}
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\newlabel{cap:adaboost}{{3}{12}{Adaboost}{chapter.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.0.1}Il dataset dall'allenamento}{12}{subsection.3.0.1}}
+\newlabel{sub:il_dataset_dall_allenamento}{{3.0.1}{12}{Il dataset dall'allenamento}{subsection.3.0.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.0.2}Preprocessing}{12}{subsection.3.0.2}}
+\newlabel{sub:preprocessing}{{3.0.2}{12}{Preprocessing}{subsection.3.0.2}{}}
+\@writefile{toc}{\contentsline {subsubsection}{Conversione delle distanze}{13}{section*.11}}
+\newlabel{ssub:conversione_delle_distanze}{{3.0.2}{13}{Conversione delle distanze}{section*.11}{}}
+\@writefile{toc}{\contentsline {subsubsection}{Immagine integrale}{13}{section*.12}}
+\newlabel{ssub:immagine_integrale}{{3.0.2}{13}{Immagine integrale}{section*.12}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.0.3}Estrazione del classificatore forte}{14}{subsection.3.0.3}}
+\newlabel{sub:estrazione_del_classificatore_forte}{{3.0.3}{14}{Estrazione del classificatore forte}{subsection.3.0.3}{}}
+\newlabel{adaboost_minimum_error}{{2b}{15}{Estrazione del classificatore forte}{Item.7}{}}
+\newlabel{adaboost_beta}{{2c}{15}{Estrazione del classificatore forte}{Item.8}{}}
+\newlabel{adaboost_update_weights}{{2d}{15}{Estrazione del classificatore forte}{Item.9}{}}
+\newlabel{adaboost_strong_classifier}{{3}{15}{Estrazione del classificatore forte}{Item.11}{}}
+\citation{Viola04}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.0.4}Il miglior classificatore debole}{16}{subsection.3.0.4}}
+\newlabel{sub:il_miglior_classificatore_debole}{{3.0.4}{16}{Il miglior classificatore debole}{subsection.3.0.4}{}}
+\newlabel{best_classifier_p_theta}{{2(d)iv}{17}{Il miglior classificatore debole}{Item.23}{}}
+\newlabel{eq:weak_classifier}{{3.6}{18}{Il miglior classificatore debole}{equation.3.0.6}{}}
+\newlabel{obs:1}{{1}{18}{Il miglior classificatore debole}{Item.26}{}}
+\newlabel{obs:2}{{2}{18}{Il miglior classificatore debole}{Item.27}{}}
+\newlabel{obs:3}{{3}{18}{Il miglior classificatore debole}{Item.28}{}}
+\newlabel{obs:4}{{4}{18}{Il miglior classificatore debole}{Item.29}{}}
+\newlabel{obs:5}{{5}{18}{Il miglior classificatore debole}{Item.30}{}}
 \citation{CormenLeiserson}
-\newlabel{eq:weak_classifier}{{1.6}{12}{Il miglior classificatore debole}{equation.1.5.6}{}}
-\newlabel{obs:1}{{1}{12}{Il miglior classificatore debole}{Item.28}{}}
-\newlabel{obs:2}{{2}{12}{Il miglior classificatore debole}{Item.29}{}}
-\newlabel{obs:3}{{3}{12}{Il miglior classificatore debole}{Item.30}{}}
-\newlabel{obs:4}{{4}{12}{Il miglior classificatore debole}{Item.31}{}}
-\newlabel{obs:5}{{5}{12}{Il miglior classificatore debole}{Item.32}{}}
-\newlabel{obs:6}{{6}{12}{Il miglior classificatore debole}{Item.33}{}}
 \bibstyle{plainnat}
 \bibdata{bibliografia}
-\@writefile{toc}{\contentsline {section}{\numberline {1.6}Costruzione dei Dataset}{14}{section.1.6}}
-\newlabel{sec:Costruzione dei Dataset}{{1.6}{14}{Costruzione dei Dataset}{section.1.6}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {1.7}Test e valutazione}{14}{section.1.7}}
-\newlabel{sec:Test e valutazione}{{1.7}{14}{Test e valutazione}{section.1.7}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {1.8}Rilevazioni su registrazioni reali}{14}{section.1.8}}
-\newlabel{sec:Rilevazioni su registrazioni reali}{{1.8}{14}{Rilevazioni su registrazioni reali}{section.1.8}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {1.9}Conclusioni}{14}{section.1.9}}
-\newlabel{sec:Conclusioni}{{1.9}{14}{Conclusioni}{section.1.9}{}}
-\bibcite{Zhu13}{{1}{2013}{{Zhu and Wong}}{{}}}
+\newlabel{obs:6}{{6}{19}{Il miglior classificatore debole}{Item.31}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.1}Costruzione dei Dataset}{19}{section.3.1}}
+\newlabel{sec:Costruzione dei Dataset}{{3.1}{19}{Costruzione dei Dataset}{section.3.1}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.2}Test e valutazione}{19}{section.3.2}}
+\newlabel{sec:Test e valutazione}{{3.2}{19}{Test e valutazione}{section.3.2}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.3}Rilevazioni su registrazioni reali}{19}{section.3.3}}
+\newlabel{sec:Rilevazioni su registrazioni reali}{{3.3}{19}{Rilevazioni su registrazioni reali}{section.3.3}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.4}Conclusioni}{19}{section.3.4}}
+\newlabel{sec:Conclusioni}{{3.4}{19}{Conclusioni}{section.3.4}{}}
+\bibcite{Haar10}{{1}{1910}{{Haar}}{{}}}
+\bibcite{Oren97}{{2}{1997}{{Oren et~al.}}{{Oren, Papageorgiou, Sinha, Osuna, and Poggio}}}
+\bibcite{Papageorgiou98}{{3}{1998}{{Papageorgiou et~al.}}{{Papageorgiou, Oren, and Poggio}}}
+\bibcite{Jpeg2000}{{4}{2000}{{Rec}}{{}}}
+\bibcite{Viola04}{{5}{2004}{{Viola and Jones}}{{}}}
+\bibcite{Zhu13}{{6}{2013}{{Zhu and Wong}}{{}}}

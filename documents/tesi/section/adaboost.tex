@@ -1,227 +1,226 @@
 % !TEX root=../index.tex
 
-\section{Adaboost} % (fold)
-\label{sec:adaboost}
-    Adaboost è un \emph{meta algoritmo} di \emph{machine learning} che viene utilizzato per aumentare le prestazioni di altri algoritmi di apprendimento. Ciò avviene estraendo un \emph{classificatore forte} a partire da un insieme di \emph{classificatori deboli}, dove per classificatore si intende una funzione $f(x)$ che identifichi la \emph{classe} di appartenenza dell'oggetto $x$ in input.
+\chapter{Adaboost}
+\label{cap:adaboost}
 
-    La realtà d'interesse del problema prevede l'esistenza di due classi di oggetti: \emph{umano} e \emph{non umano}.
+Adaboost è un \emph{meta algoritmo} di \emph{machine learning} che viene utilizzato per aumentare le prestazioni di altri algoritmi di apprendimento. Ciò avviene estraendo un \emph{classificatore forte} a partire da un insieme di \emph{classificatori deboli}, dove per classificatore si intende una funzione $f(x)$ che identifichi la \emph{classe} di appartenenza dell'oggetto $x$ in input.
 
-    I dati in input per la fase di allenamento sono costituiti dal \emph{dataset di allenamento}, ovvero una raccolta di oggetti preclassificati attraverso i quali Adaboost riuscirà a selezionare una combinazione di classificatori deboli che meglio approssimano la classificazione degli elementi del dataset.
+La realtà d'interesse del problema prevede l'esistenza di due classi di oggetti: \emph{umano} e \emph{non umano}.
 
-    \subsection{Il dataset dall'allenamento} % (fold)
-    \label{sub:il_dataset_dall_allenamento}
-        La finestra di visualizzazione, come accennato in precedenza è di $512 \times 424$ pixel. In una registrazione che riprende dall'alto una persona che attraversa la stanza camminando, la figura della persona occupa una porzione della finestra di circa $160 \times 100$ pixel.
+I dati in input per la fase di allenamento sono costituiti dal \emph{dataset di allenamento}, ovvero una raccolta di oggetti preclassificati attraverso i quali Adaboost riuscirà a selezionare una combinazione di classificatori deboli che meglio approssimano la classificazione degli elementi del dataset.
 
-        Un dataset di allenamento non è altro che un insieme di porzioni di frame di una certa dimensione (la stessa per tutti) che vegono classificati manualmente dal creatore\footnote{Il sistema di apprendimento che si sta trattando ricade nella categoria dei sistemi di \emph{apprendimento supervisionato}.} del dataset.
+\subsection{Il dataset dall'allenamento} % (fold)
+\label{sub:il_dataset_dall_allenamento}
+La finestra di visualizzazione, come accennato in precedenza è di $512 \times 424$ pixel. In una registrazione che riprende dall'alto una persona che attraversa la stanza camminando, la figura della persona occupa una porzione della finestra di circa $160 \times 100$ pixel.
 
-        La creazione del dataset è un'attività delicata. I criteri di scelta vengono trattati nella sezione \ref{sec:considerazioni_sulla_costruzione_dei_dataset}.
+Un dataset di allenamento non è altro che un insieme di porzioni di frame di una certa dimensione (la stessa per tutti) che vegono classificati manualmente dal creatore\footnote{Il sistema di apprendimento che si sta trattando ricade nella categoria dei sistemi di \emph{apprendimento supervisionato}.} del dataset.
 
-    % subsection il_dataset_dall_allenamento (end)
+% subsection il_dataset_dall_allenamento (end)
 
-    \subsection{Preprocessing} % (fold)
-    \label{sub:preprocessing}
-        Gli elementi del dataset verranno preprocessati prima di poter essere dei dati di input adeguati per l'algoritmo.
+\subsection{Preprocessing} % (fold)
+\label{sub:preprocessing}
+Gli elementi del dataset verranno preprocessati prima di poter essere dei dati di input adeguati per l'algoritmo.
 
-        Da ricordare che stiamo trattando di matrici $160 \times 100$ (porzione del frame principale) i cui valori corrispondo al risultato della misurazione del sensore di profondità del Kinect ed è proporzionale alla distanza rilevata.
+Da ricordare che stiamo trattando di matrici $160 \times 100$ (porzione del frame principale) i cui valori corrispondo al risultato della misurazione del sensore di profondità del Kinect ed è proporzionale alla distanza rilevata.
 
-        \subsubsection{Conversione delle distanze} % (fold)
-        \label{ssub:conversione_delle_distanze}
-            La prima operazione di preprocessing consiste nel trasformare tali distanze (sensore-superficie) in distanze dal pavimento della stanza. Come è facilmente intuibile
-            $$ d' = d_{pavimento} - d $$
-            dove la distanza del pavimento dal sensore ($d_{pavimento}$). La distanza del pavimento può essere estratta dall'immagine stessa
+\subsubsection{Conversione delle distanze} % (fold)
+\label{ssub:conversione_delle_distanze}
+La prima operazione di preprocessing consiste nel trasformare tali distanze (sensore-superficie) in distanze dal pavimento della stanza. Come è facilmente intuibile
+$$ d' = d_{pavimento} - d $$
+dove la distanza del pavimento dal sensore ($d_{pavimento}$). La distanza del pavimento può essere estratta dall'immagine stessa
 
-            Questa prima operazione di preprocessing ha complessità computazionale $\Theta(n \cdot m)$ con $n$ ed $m$ dimensioni della porzione del frame.
-        % subsubsection conversione_delle_distanze (end)
+Questa prima operazione di preprocessing ha complessità computazionale $\Theta(n \cdot m)$ con $n$ ed $m$ dimensioni della porzione del frame.
+% subsubsection conversione_delle_distanze (end)
 
-        \subsubsection{Immagine integrale} % (fold)
-        \label{ssub:immagine_integrale}
-            Costruire una funzione riesca a classificare un'immagine (la matrice dei valori del sensore di profondità è a tutti gli effetti considerabile come un'immagine) prevede l'utilizzo delle \emph{Haar-like features}.
+\subsubsection{Immagine integrale} % (fold)
+\label{ssub:immagine_integrale}
+Costruire una funzione riesca a classificare un'immagine (la matrice dei valori del sensore di profondità è a tutti gli effetti considerabile come un'immagine) prevede l'utilizzo delle \emph{Haar-like features}.
 
-            L'obbiettivo di una feature di Haar è quello di evidenziare le \emph{differenze d'intensità} tra due regioni rettangolari adiacenti di un'immagine. Il valore di una semplice feature a due rettangoli corrisponde alla differenza tra la somma delle intensità di tutti i pixel della prima area e la somma delle intensità di tutti i pixel della seconda. Per intensità del pixel si intende il valore che il pixel assume. Inoltre si possono considerare aree partizionate in più di due rettangoli con una semplice generalizzazione del calcolo.
-            $$feature = \sum Area_{White} - \sum Area_{Black}$$
-            Saranno utilizzate solamente features a due e a tre rettangoli (bandate).
+L'obbiettivo di una feature di Haar è quello di evidenziare le \emph{differenze d'intensità} tra due regioni rettangolari adiacenti di un'immagine. Il valore di una semplice feature a due rettangoli corrisponde alla differenza tra la somma delle intensità di tutti i pixel della prima area e la somma delle intensità di tutti i pixel della seconda. Per intensità del pixel si intende il valore che il pixel assume. Inoltre si possono considerare aree partizionate in più di due rettangoli con una semplice generalizzazione del calcolo.
+$$feature = \sum Area_{White} - \sum Area_{Black}$$
+Saranno utilizzate solamente features a due e a tre rettangoli (bandate).
 
-            Il calcolo di una feature è un'operazione computazionalmente costosa. Si introduce quindi il concetto di \emph{immagine integrale} (altrimenti nota come \emph{summed area table}): ogni pixel dell'immagine integrale corrisponde alla somma dei valori di tutti i pixel della regione in alto a sinistra dell'immagine.
-            Rigorosamente, sia $II(x,y)$ l'intensità del pixel alla posizione $(x,y)$ dell'immagine integrale: $$ II(x, y) = \sum_{i = 0}^{x} \sum_{j = 0}^{y} I(i, j) $$
+Il calcolo di una feature è un'operazione computazionalmente costosa. Si introduce quindi il concetto di \emph{immagine integrale} (altrimenti nota come \emph{summed area table}): ogni pixel dell'immagine integrale corrisponde alla somma dei valori di tutti i pixel della regione in alto a sinistra dell'immagine.
+Rigorosamente, sia $II(x,y)$ l'intensità del pixel alla posizione $(x,y)$ dell'immagine integrale: $$ II(x, y) = \sum_{i = 0}^{x} \sum_{j = 0}^{y} I(i, j) $$
 
-            Calcolare la somma delle intensità di tutti i pixel in un'area rettangolare attraverso l'immagine integrale diventa un'operazione molto veloce.
-            Infatti: $$ \sum_{i = x_1}^{x_2} \sum_{j = y_1}^{y_2} I(i,j) =
-            II(x_2, y_2) + II(x_1, y_1) - II(x_1, y_2) - II(x_2, y_1)$$
+Calcolare la somma delle intensità di tutti i pixel in un'area rettangolare attraverso l'immagine integrale diventa un'operazione molto veloce.
+Infatti: $$ \sum_{i = x_1}^{x_2} \sum_{j = y_1}^{y_2} I(i,j) =
+II(x_2, y_2) + II(x_1, y_1) - II(x_1, y_2) - II(x_2, y_1)$$
 
-            Grazie all'immagine integrale, una feature di qualsiasi dimensione può essere calcolata in un tempo costante.
-        % subsubsection immagine_integrale (end)
+Grazie all'immagine integrale, una feature di qualsiasi dimensione può essere calcolata in un tempo costante.
+% subsubsection immagine_integrale (end)
 
-    % subsection preprocessing (end)
+% subsection preprocessing (end)
 
-    \subsection{Estrazione del classificatore forte} % (fold)
-    \label{sub:estrazione_del_classificatore_forte}
-        Sia $D = \{(x_1, y_1), ..., (x_n, y_n)\}$ un insieme di $n$ coppie costituite da un'immagine ($x_i$) e la relativa classificazione ($y_i \in \{ 0, 1 \}$). Se $y_i = 1$, allora $x_i$ appartiene alla classe \emph{umano} (la coppia $(x_i, y_i)$ prende il nome di \emph{esempio positivo}), altrimenti appartiene alla classe \emph{non umano} (la coppia $(x_i, y_i)$ prende il nome di \emph{esempio negativo}).
+\subsection{Estrazione del classificatore forte} % (fold)
+\label{sub:estrazione_del_classificatore_forte}
+Sia $D = \{(x_1, y_1), ..., (x_n, y_n)\}$ un insieme di $n$ coppie costituite da un'immagine ($x_i$) e la relativa classificazione ($y_i \in \{ 0, 1 \}$). Se $y_i = 1$, allora $x_i$ appartiene alla classe \emph{umano} (la coppia $(x_i, y_i)$ prende il nome di \emph{esempio positivo}), altrimenti appartiene alla classe \emph{non umano} (la coppia $(x_i, y_i)$ prende il nome di \emph{esempio negativo}).
 
-        L'insieme $D$ può essere partizionato come segue:
-        $$P = \{(x, y) \in D | y = 1\} \text{ e } N = \{(x,y) \in D | y = 0\}$$
+L'insieme $D$ può essere partizionato come segue:
+$$P = \{(x, y) \in D | y = 1\} \text{ e } N = \{(x,y) \in D | y = 0\}$$
 
-        Si tenga a mente che, essendo $P$ ed $N$ partizioni di $D$, valgono le seguenti\footnote{La scrittura $\#(D)$ denota il numero di elementi dell'insieme $D$.}:
-        \begin{equation}
-            D = P \cup N
-        \end{equation}
-        \begin{equation}
-            P \cap N = \emptyset
-        \end{equation}
-        \begin{equation}
-            \#(D) = \#(P \cup N) = \#(P) + \#(N)
-        \end{equation}
+Si tenga a mente che, essendo $P$ ed $N$ partizioni di $D$, valgono le seguenti\footnote{La scrittura $\#(D)$ denota il numero di elementi dell'insieme $D$.}:
+\begin{equation}
+    D = P \cup N
+\end{equation}
+\begin{equation}
+    P \cap N = \emptyset
+\end{equation}
+\begin{equation}
+    \#(D) = \#(P \cup N) = \#(P) + \#(N)
+\end{equation}
 
-        Si introduce anche il concetto di \emph{classificatore debole}. Si tratta di una funzione che per una data immagine $x$ in ingresso, assume il valore che simboleggia la presunta classe di appartenenza di quest'ultima.
-        Nel dettaglio:
-        \begin{equation}
-            h(x) = \begin{cases}
-                1 & \text{se $pf(x) < p\theta$}\\
-                0 & \text{altrimenti}
-            \end{cases}
-        \end{equation}
-        dove $f(x)$ è il valore di una feature di Haar applicata all'immagine $x$, $p \in \{-1,1\}$ è detta \emph{polarità} e $\theta$ è la \emph{soglia} (\emph{threshold}). Tutti i classificatori deboli sono costruiti usando un'unica feature.
+Si introduce anche il concetto di \emph{classificatore debole}. Si tratta di una funzione che per una data immagine $x$ in ingresso, assume il valore che simboleggia la presunta classe di appartenenza di quest'ultima.
+Nel dettaglio:
+\begin{equation}
+    h(x) = \begin{cases}
+    1 & \text{se $pf(x) < p\theta$}\\
+    0 & \text{altrimenti}
+\end{cases}
+\end{equation}
+dove $f(x)$ è il valore di una feature di Haar applicata all'immagine $x$, $p \in \{-1,1\}$ è detta \emph{polarità} e $\theta$ è la \emph{soglia} (\emph{threshold}). Tutti i classificatori deboli sono costruiti usando un'unica feature.
 
-        L'obbiettivo di Adaboost è quello di formare un \emph{classificatore forte} come combinazione lineare dei migliori classificatori deboli estraibili dal set di allenamento, dove il fattore moltiplicativo di ogni classificatore nella combinazione è inversamente proporzionale agli errori di classificazione compiuti da quest'ultimo in fase di allenamento.
+L'obbiettivo di Adaboost è quello di formare un \emph{classificatore forte} come combinazione lineare dei migliori classificatori deboli estraibili dal set di allenamento, dove il fattore moltiplicativo di ogni classificatore nella combinazione è inversamente proporzionale agli errori di classificazione compiuti da quest'ultimo in fase di allenamento.
 
-        Il seguente algoritmo descrive la procedura di estrazione e combinazone di $T$ classificatori deboli.
+Il seguente algoritmo descrive la procedura di estrazione e combinazone di $T$ classificatori deboli.
+
+\begin{enumerate}
+    \item Si associa ad ogni elemento $(x_i, y_i) \in D$ un peso $w_i$ tale che $w_i = \frac{1}{2l}$ se $(x_i, y_i) \in P$ oppure $w_i = \frac{1}{2m}$ se $(x_i, y_i) \in N$, dove $l = \#(P)$ ed $m = \#(N)$ (numero degli esempi positivi e numero degli esempi negativi).
+
+    Sia inoltre $n := \#(D) = \#(P) + \#(N) = l + m$.
+
+    \item \emph{For} $t = [1:T]$
+    \begin{enumerate}
+        \item Si normalizzano i pesi, in modo che la loro somma sia pari ad 1:
+        $$ w_{t,i} \leftarrow \frac{w_{t,i}}{\sum_{j = 1}^{n}w_{t,j}}$$
+
+        \item \label{adaboost_minimum_error}
+        Si estrae il miglior classificatore debole. La procedura viene esposta nel dettaglio nella sezione \ref{sub:il_miglior_classificatore_debole}, ma si tenga presente che il miglior classificatore è quello il cui \emph{errore pesato} è minimo per la corrente iterazione.
+        $$ \epsilon_t = \min_{f,p,\theta} \{
+        \sum_{i = 1}^{n} w_{t,i} \cdot |h(x_i, f, p, \theta) - y_i|
+        \} $$
+        Siano inoltre $f_t$, $p_t$, $\theta_t$ i parametri del classificatore debole che ne minimizzano l'errore pesato:
+        $$ h_t(x) := h(x, f_t, p_t, \theta_t) $$
+
+        \item \label{adaboost_beta} $\beta_t \leftarrow \frac{\epsilon_t}{1 - \epsilon_t}$
+
+        \item \label{adaboost_update_weights} Si aggiornano i pesi
+        $$ w_{t+1, i} \leftarrow w_{t,i} \cdot \beta_{t}^{e_i} $$
+        dove $e_i = 1$ se $(x_i, h_t(x_i)) \in D$ (ovvero se $x_i$ è classificata correttamente), $e_i = 0$ altrimenti.
+
+        \item $\alpha_t \leftarrow \log(\frac{1}{\beta_t})$
+    \end{enumerate}
+
+    \item \label{adaboost_strong_classifier} Il classificatore forte è dato da:
+    \begin{equation}
+        F(x) = \begin{cases}
+        1 & \text{ se } \sum_{t = 1}^{T} \alpha_t h_t(x) > \theta \sum_{t = 1}^{T} \alpha_t \\
+        0 & \text{ altrimenti }
+    \end{cases}
+\end{equation}
+dove $\theta \in [0,1]$ è la soglia.
+\end{enumerate}
+
+Si noti che, nel'operazione \ref{adaboost_minimum_error}, l'errore pesato non è altro che la somma dei pesi degli esempi non classificati correttamente. Infatti:
+$$ h(x_i, f, p, \theta) = y_i \Rightarrow |h(x_i, f, p, \theta) - y_i| = 0 $$
+$$ h(x_i, f, p, \theta) \neq y_i \Rightarrow |h(x_i, f, p, \theta) - y_i| = 1 $$
+
+Al punto \ref{adaboost_beta}, il valore di $\beta_t$ non è altro che il rapporto tra l'errore pesato del classificatore debole e la somma dei pesi delle immagini classificate correttamente. Tale valore è chiaramente $0 < \beta_t < 1$.
+
+In fase di aggiornamento dei pesi (punto \ref{adaboost_update_weights}), i pesi relativi ad esempi classificati correttamente vengono moltiplicati per $\beta_t$ ($\beta_{t}^{1} = \beta_t < 1$) e quindi decrementati, mentre gli altri vengono lasciati inalterati ($\beta_{t}^{0} = 1$). Fare in modo che gli esempi non classificati correttamente abbiano un peso maggiore di quelli classificati correttamente è il modo per influenzare la scelta del classificatore debole successivo che andrà a colmare le lacune del suo predecessore.
+
+La scelta della soglia per il classificatore forte (punto \ref{adaboost_strong_classifier}) deve minimizzare il numero di esempi classificati in modo errato.
+
+% subsection estrazione_del_classificatore_forte (end)
+
+\subsection{Il miglior classificatore debole} % (fold)
+\label{sub:il_miglior_classificatore_debole}
+Si è detto che un classificatore debole è costruito a partire da una feature di Haar. La scelta del migliore, quindi, mira ad identificare la feature, la polarità e la soglia che minimizzano l'errore pesato di classificazione.
+
+Si ricordi che le feature di Haar sono degli indicatori di quanto le intensità dei pixel variano da una regione della feature ad un'altra. Il classificatore debole, quindi, classificherà l'immagine a seconda che tale indice sia maggiore o minore di una certa soglia. Il compito della polarità è quello di stabilire il verso della diseguaglianza.
+
+Il pool di feature da testare è costituito - teoricamente - da tutte quelle individuabili nell'immagini di allenamento. Nell'opera di Viola e Jones vengono utilizzate immagini di allenamento di $24 \times 24$ pixel e 5 tipologie di feature (\cite{Viola04}, sezione 2.2): il numero di possibili features in tale area è maggiore di 160000. In questa applicazione si utilizzano immagini di $160 \times 100$ pixel e 4 tipologie di feature: il pool è costituito da un numero di elementi maggiore di almeno 4 ordini di grandezza.
+
+È da tener presente che moltissime di queste feature sono poco significative in questa situazione: non ha senso calcolare la variazione di intensità di due aree molto piccole con delle immagini che hanno una risoluzione tanto alta. Effettuando una prima scrematura, si cercherà di avere un pool di feature selezionabili la cui dimensione non superi quella del pool di Viola-Jones per più di un ordine di grandezza.
+
+Sia $\{ f_1,...,f_k\}$ l'insieme di tutte le feature selezionabili, $D = \{(x_1,y_1), ..., (x_n, y_n) \}$ l'insieme degli esempi di allenamento e $\{w_1, ..., w_n\}$ l'insieme dei relativi pesi. La scelta del classificatore debole avviene come descritto dal seguente algoritmo in pseudocodice:
+
+\begin{enumerate}
+    \item Si calcolano $T^+$ e $T^-$, rispettivamente, somma dei pesi degli esempi negativi e di quelli negativi:
+    $$T^+ \leftarrow \sum_{i = 1}^{n} (w_i y_i)
+    \text{ , }
+    T^- \leftarrow \sum_{i = 1}^{n} [w_i (1 - y_i)]$$
+
+    \item \emph{For} $f = [f_1, ..., f_k]$
+
+    \begin{enumerate}
+        \item Si inizializza una lista di $n$ elementi per memorizzare i valori della feature i-esima applicata ad ogni immagine di allenamento:
+        $$values[i] \leftarrow f(x_i) \; \forall x_i \in D$$
+
+        \item Si ordinano gli elementi della lista in ordine crescente. Si tenga in conto che, dopo tale operazione, all'i-esima posizione della lista non corrisponderà più il valore della feature applicata all'i-esima immagine di allenamento.
+
+        \item Si inizializzano $S^+$ ed $S^-$, con le quali, scorrendo gli elementi della lista con un cursore, indicheremo rispettivamente la somma dei pesi degli esempi positivi e di quelli negativi: $S^+ \leftarrow 0, S^- \leftarrow 0$
+
+        \item \emph{For} $i = [1:n]$
 
         \begin{enumerate}
-            \item Si associa ad ogni elemento $(x_i, y_i) \in D$ un peso $w_i$ tale che $w_i = \frac{1}{2l}$ se $(x_i, y_i) \in P$ oppure $w_i = \frac{1}{2m}$ se $(x_i, y_i) \in N$, dove $l = \#(P)$ ed $m = \#(N)$ (numero degli esempi positivi e numero degli esempi negativi).
+            \item A causa del rilocamento degli indici, alla posizione i-esima della lista corrisponderà il valore della feature dell'elemento $x_j$ con classificazione $y_j$ e peso $w_j$ tale che $(x_j, y_j) \in D$:
+            $$x_j, y_j, w_j \Leftarrow values[i]$$
 
-            Sia inoltre $n := \#(D) = \#(P) + \#(N) = l + m$.
-
-            \item \emph{For} $t = [1:T]$
-                \begin{enumerate}
-                    \item Si normalizzano i pesi, in modo che la loro somma sia pari ad 1:
-                    $$ w_{t,i} \leftarrow \frac{w_{t,i}}{\sum_{j = 1}^{n}w_{t,j}}$$
-
-                    \item \label{adaboost_minimum_error}
-                    Si estrae il miglior classificatore debole. La procedura viene esposta nel dettaglio nella sezione \ref{sub:il_miglior_classificatore_debole}, ma si tenga presente che il miglior classificatore è quello il cui \emph{errore pesato} è minimo per la corrente iterazione.
-                    $$ \epsilon_t = \min_{f,p,\theta} \{
-                        \sum_{i = 1}^{n} w_{t,i} \cdot |h(x_i, f, p, \theta) - y_i|
-                    \} $$
-                    Siano inoltre $f_t$, $p_t$, $\theta_t$ i parametri del classificatore debole che ne minimizzano l'errore pesato:
-                    $$ h_t(x) := h(x, f_t, p_t, \theta_t) $$
-
-                    \item \label{adaboost_beta} $\beta_t \leftarrow \frac{\epsilon_t}{1 - \epsilon_t}$
-
-                    \item \label{adaboost_update_weights} Si aggiornano i pesi
-                    $$ w_{t+1, i} \leftarrow w_{t,i} \cdot \beta_{t}^{e_i} $$
-                    dove $e_i = 1$ se $(x_i, h_t(x_i)) \in D$ (ovvero se $x_i$ è classificata correttamente), $e_i = 0$ altrimenti.
-
-                    \item $\alpha_t \leftarrow \log(\frac{1}{\beta_t})$
-                \end{enumerate}
-
-            \item \label{adaboost_strong_classifier} Il classificatore forte è dato da:
-            \begin{equation}
-                F(x) = \begin{cases}
-                    1 & \text{ se } \sum_{t = 1}^{T} \alpha_t h_t(x) > \theta \sum_{t = 1}^{T} \alpha_t \\
-                    0 & \text{ altrimenti }
-                \end{cases}
-            \end{equation}
-            dove $\theta \in [0,1]$ è la soglia.
-        \end{enumerate}
-
-        Si noti che, nel'operazione \ref{adaboost_minimum_error}, l'errore pesato non è altro che la somma dei pesi degli esempi non classificati correttamente. Infatti:
-        $$ h(x_i, f, p, \theta) = y_i \Rightarrow |h(x_i, f, p, \theta) - y_i| = 0 $$
-        $$ h(x_i, f, p, \theta) \neq y_i \Rightarrow |h(x_i, f, p, \theta) - y_i| = 1 $$
-
-        Al punto \ref{adaboost_beta}, il valore di $\beta_t$ non è altro che il rapporto tra l'errore pesato del classificatore debole e la somma dei pesi delle immagini classificate correttamente. Tale valore è chiaramente $0 < \beta_t < 1$.
-
-        In fase di aggiornamento dei pesi (punto \ref{adaboost_update_weights}), i pesi relativi ad esempi classificati correttamente vengono moltiplicati per $\beta_t$ ($\beta_{t}^{1} = \beta_t < 1$) e quindi decrementati, mentre gli altri vengono lasciati inalterati ($\beta_{t}^{0} = 1$). Fare in modo che gli esempi non classificati correttamente abbiano un peso maggiore di quelli classificati correttamente è il modo per influenzare la scelta del classificatore debole successivo che andrà a colmare le lacune del suo predecessore.
-
-        La scelta della soglia per il classificatore forte (punto \ref{adaboost_strong_classifier}) deve minimizzare il numero di esempi classificati in modo errato.
-
-    % subsection estrazione_del_classificatore_forte (end)
-
-    \subsection{Il miglior classificatore debole} % (fold)
-    \label{sub:il_miglior_classificatore_debole}
-        Si è detto che un classificatore debole è costruito a partire da una feature di Haar. La scelta del migliore, quindi, mira ad identificare la feature, la polarità e la soglia che minimizzano l'errore pesato di classificazione.
-
-        Si ricordi che le feature di Haar sono degli indicatori di quanto le intensità dei pixel variano da una regione della feature ad un'altra. Il classificatore debole, quindi, classificherà l'immagine a seconda che tale indice sia maggiore o minore di una certa soglia. Il compito della polarità è quello di stabilire il verso della diseguaglianza.
-
-        Il pool di feature da testare è costituito - teoricamente - da tutte quelle individuabili nell'immagini di allenamento. Nell'opera di Viola e Jones vengono utilizzate immagini di allenamento di $24 \times 24$ pixel e 5 tipologie di feature (\cite{ViolaJones}, sezione 2.2): il numero di possibili features in tale area è maggiore di 160000. In questa applicazione si utilizzano immagini di $160 \times 100$ pixel e 4 tipologie di feature: il pool è costituito da un numero di elementi maggiore di almeno 4 ordini di grandezza.
-
-        È da tener presente che moltissime di queste feature sono poco significative in questa situazione: non ha senso calcolare la variazione di intensità di due aree molto piccole con delle immagini che hanno una risoluzione tanto alta. Effettuando una prima scrematura, si cercherà di avere un pool di feature selezionabili la cui dimensione non superi quella del pool di Viola-Jones per più di un ordine di grandezza.
-
-        Sia $\{ f_1,...,f_k\}$ l'insieme di tutte le feature selezionabili, $D = \{(x_1,y_1), ..., (x_n, y_n) \}$ l'insieme degli esempi di allenamento e $\{w_1, ..., w_n\}$ l'insieme dei relativi pesi. La scelta del classificatore debole avviene come descritto dal seguente algoritmo in pseudocodice:
-
-        \begin{enumerate}
-            \item Si calcolano $T^+$ e $T^-$, rispettivamente, somma dei pesi degli esempi negativi e di quelli negativi:
-            $$T^+ \leftarrow \sum_{i = 1}^{n} (w_i y_i)
-            \text{ , }
-            T^- \leftarrow \sum_{i = 1}^{n} [w_i (1 - y_i)]$$
-
-            \item \emph{For} $f = [f_1, ..., f_k]$
-
+            \item \emph{If} $y_i = 1$ \emph{Then}
             \begin{enumerate}
-                \item Si inizializza una lista di $n$ elementi per memorizzare i valori della feature i-esima applicata ad ogni immagine di allenamento:
-                $$values[i] \leftarrow f(x_i) \; \forall x_i \in D$$
-
-                \item Si ordinano gli elementi della lista in ordine crescente. Si tenga in conto che, dopo tale operazione, all'i-esima posizione della lista non corrisponderà più il valore della feature applicata all'i-esima immagine di allenamento.
-
-                \item Si inizializzano $S^+$ ed $S^-$, con le quali, scorrendo gli elementi della lista con un cursore, indicheremo rispettivamente la somma dei pesi degli esempi positivi e di quelli negativi: $S^+ \leftarrow 0, S^- \leftarrow 0$
-
-                \item \emph{For} $i = [1:n]$
-
-                \begin{enumerate}
-                    \item A causa del rilocamento degli indici, alla posizione i-esima della lista corrisponderà il valore della feature dell'elemento $x_j$ con classificazione $y_j$ e peso $w_j$ tale che $(x_j, y_j) \in D$:
-                    $$x_j, y_j, w_j \Leftarrow values[i]$$
-
-                    \item \emph{If} $y_i = 1$ \emph{Then}
-                        \begin{enumerate}
-                            \item $S^+ \leftarrow S^+ + w_j$
-                        \end{enumerate}
-                    \item \emph{Else}
-                        \begin{enumerate}
-                            \item $S^+ \leftarrow S^- + w_j$
-                        \end{enumerate}
-
-                    \item \label{best_classifier_p_theta}
-                    Si calcola calcola l'errore pesato di classificazione:
-                        $$e_i = \min\{ S^+ + (T^- - S^-), S^- + (T^+ - S^+) \}$$
-
-                \end{enumerate}
-
-                \item Si determinano la polarità ($p_f$) e la soglia ($\theta_f$) per cui l'errore pesato ($\epsilon_f)$ di classificazione per un classificatore che utilizza la feature $f$ è minimo:
-                $$p_f, \theta_f | \epsilon_f = \min \{ e_1, ..., e_n \}$$
+                \item $S^+ \leftarrow S^+ + w_j$
+            \end{enumerate}
+            \item \emph{Else}
+            \begin{enumerate}
+                \item $S^+ \leftarrow S^- + w_j$
             \end{enumerate}
 
-            \item Si scelgono polarità ($p$) e soglia ($\theta$) finali, ovvero quelle del classificatore debole con errore pesato $\epsilon$ minore tra tutti i classificatori possibili:
-            $$p, \theta | \epsilon = \min \{ \epsilon_1, ..., \epsilon_k \}$$
-            Il miglior classificatore debole è quindi:
-            \begin{equation}
-            \label{eq:weak_classifier}
-                h(x) := \begin{cases}
-                    1 & \text{ se } pf(x) < p\theta \\
-                    0 & \text{ altrimenti }
-                \end{cases}
-            \end{equation}
+            \item \label{best_classifier_p_theta}
+            Si calcola calcola l'errore pesato di classificazione:
+            $$e_i = \min\{ S^+ + (T^- - S^-), S^- + (T^+ - S^+) \}$$
 
         \end{enumerate}
 
-        Il metodo di identificazione della polarità e della soglia non viene riportato nell'algoritmo, essendo un passaggio che merita una trattazione a parte. Selezionare un valore di soglia vuol dire trovare il \emph{punto che partiziona al meglio la lista dei valori della feature calcolata sulle immagini di allenamento, in modo tale da minimizzare gli errori di classificazione}. La miglior soglia di una buona feature fa in modo che la maggior parte delle immagini appartenenti alla stessa classe assumano un valore minore (o maggiore). Si può notare, come diretta conseguenza, che con una feature pessima per la classificazione non sarà possibile trovare un valore di soglia che soddisfi tale criterio.
+        \item Si determinano la polarità ($p_f$) e la soglia ($\theta_f$) per cui l'errore pesato ($\epsilon_f)$ di classificazione per un classificatore che utilizza la feature $f$ è minimo:
+        $$p_f, \theta_f | \epsilon_f = \min \{ e_1, ..., e_n \}$$
+    \end{enumerate}
 
-        Al punto \ref{best_classifier_p_theta} viene calcolato l'errore pesato di classificazione per una feature $f$ con soglia $values[i]$\footnote{I possibili valori delle soglie corrispondono esattamente ai valori della feature calcolata sugli esempi di allenamento}. Per essere più espliciti, bisogna effettuare una serie di osservazioni:
-        \begin{enumerate}
-            \item \label{obs:1} $T^+$ ($T^-$) corrisponde alla somma dei pesi degli esempi positivi (negativi);
-            \item \label{obs:2} $S^+$ ($S^-$) corrisponde alla somma dei pesi degli esempi positivi (negativi) dalla prima posizione fino all'i-esima della lista (quella su cui è posizionato il cursore);
-            \item \label{obs:3} $T^+ - S^+$ ($T^- - S^-$) corrisponde alla somma dei pesi degli esempi positivi (negativi) dalla posizione $i+1$ della lista fino alla fine;
-            \item \label{obs:4} Per un classificatore della forma (\ref{eq:weak_classifier}) con $p = 1$, $S^+$ corrisponde alla \emph{somma dei pesi degli esempi classificati correttamente}, mentre $S^- + (T^+ - S^+)$ corrisponde alla somma dei pesi degli esempi classificati in modo scorretto;
-            \item \label{obs:5} Per l'osservazione \ref{obs:4} un classificatore (\ref{eq:weak_classifier}) con $p = 1$, la quantità $S^- + (T^+ - S^+)$ è \emph{l'errore pesato};
-            \item \label{obs:6} Analogamente alle osservazioni \ref{obs:4} e \ref{obs:5}, un classificatore (\ref{eq:weak_classifier}) con $p = -1$ commetterà un errore pesato pari alla quantità $S^+ + (T^- - S^-)$.
-        \end{enumerate}
+    \item Si scelgono polarità ($p$) e soglia ($\theta$) finali, ovvero quelle del classificatore debole con errore pesato $\epsilon$ minore tra tutti i classificatori possibili:
+    $$p, \theta | \epsilon = \min \{ \epsilon_1, ..., \epsilon_k \}$$
+    Il miglior classificatore debole è quindi:
+    \begin{equation}
+        \label{eq:weak_classifier}
+        h(x) := \begin{cases}
+        1 & \text{ se } pf(x) < p\theta \\
+        0 & \text{ altrimenti }
+    \end{cases}
+\end{equation}
 
-        Grazie alle osservazioni \ref{obs:5} e \ref{obs:6}, dal semplice calcolo dell'errore di classificazione pesato, si ottiene anche il valore della polarità:
-        \begin{equation}
-            p = \begin{cases}
-                1 & \text{ se } S^- + (T^+ - S^+) < S^+ + (T^- - S^-) \\
-                -1 & \text{ altrimenti }
-            \end{cases}
-        \end{equation}
+\end{enumerate}
 
-        In definitiva, con uno scorrimento della lista ordinata si ottengo i parametri per la costruzione del classificatore debole. La complessità di tale operazione è fortemente legata all'algoritmo di ordinamento della lista, la quale ha $\Theta(n\log n)$ come limite teorico inferiore (\cite{CormenLeiserson}, p. 167). Nell'implementazione è stato scelto proprio un algoritmo che avesse complessità $\Theta(n\log n)$ nel caso peggiore. Ripetendo queste operazioni per ognuna delle feature selezionabili, si ottiene che l'algoritmo di selezione del miglior classificatore debole ha complessità $\Theta(kn\log n)$.
+Il metodo di identificazione della polarità e della soglia non viene riportato nell'algoritmo, essendo un passaggio che merita una trattazione a parte. Selezionare un valore di soglia vuol dire trovare il \emph{punto che partiziona al meglio la lista dei valori della feature calcolata sulle immagini di allenamento, in modo tale da minimizzare gli errori di classificazione}. La miglior soglia di una buona feature fa in modo che la maggior parte delle immagini appartenenti alla stessa classe assumano un valore minore (o maggiore). Si può notare, come diretta conseguenza, che con una feature pessima per la classificazione non sarà possibile trovare un valore di soglia che soddisfi tale criterio.
 
-    % subsection il_miglior_classificatore_debole (end)
+Al punto \ref{best_classifier_p_theta} viene calcolato l'errore pesato di classificazione per una feature $f$ con soglia $values[i]$\footnote{I possibili valori delle soglie corrispondono esattamente ai valori della feature calcolata sugli esempi di allenamento}. Per essere più espliciti, bisogna effettuare una serie di osservazioni:
+\begin{enumerate}
+    \item \label{obs:1} $T^+$ ($T^-$) corrisponde alla somma dei pesi degli esempi positivi (negativi);
+    \item \label{obs:2} $S^+$ ($S^-$) corrisponde alla somma dei pesi degli esempi positivi (negativi) dalla prima posizione fino all'i-esima della lista (quella su cui è posizionato il cursore);
+    \item \label{obs:3} $T^+ - S^+$ ($T^- - S^-$) corrisponde alla somma dei pesi degli esempi positivi (negativi) dalla posizione $i+1$ della lista fino alla fine;
+    \item \label{obs:4} Per un classificatore della forma (\ref{eq:weak_classifier}) con $p = 1$, $S^+$ corrisponde alla \emph{somma dei pesi degli esempi classificati correttamente}, mentre $S^- + (T^+ - S^+)$ corrisponde alla somma dei pesi degli esempi classificati in modo scorretto;
+    \item \label{obs:5} Per l'osservazione \ref{obs:4} un classificatore (\ref{eq:weak_classifier}) con $p = 1$, la quantità $S^- + (T^+ - S^+)$ è \emph{l'errore pesato};
+    \item \label{obs:6} Analogamente alle osservazioni \ref{obs:4} e \ref{obs:5}, un classificatore (\ref{eq:weak_classifier}) con $p = -1$ commetterà un errore pesato pari alla quantità $S^+ + (T^- - S^-)$.
+\end{enumerate}
+
+Grazie alle osservazioni \ref{obs:5} e \ref{obs:6}, dal semplice calcolo dell'errore di classificazione pesato, si ottiene anche il valore della polarità:
+\begin{equation}
+    p = \begin{cases}
+    1 & \text{ se } S^- + (T^+ - S^+) < S^+ + (T^- - S^-) \\
+    -1 & \text{ altrimenti }
+\end{cases}
+\end{equation}
+
+In definitiva, con uno scorrimento della lista ordinata si ottengo i parametri per la costruzione del classificatore debole. La complessità di tale operazione è fortemente legata all'algoritmo di ordinamento della lista, la quale ha $\Theta(n\log n)$ come limite teorico inferiore (\cite{CormenLeiserson}, p. 167). Nell'implementazione è stato scelto proprio un algoritmo che avesse complessità $\Theta(n\log n)$ nel caso peggiore. Ripetendo queste operazioni per ognuna delle feature selezionabili, si ottiene che l'algoritmo di selezione del miglior classificatore debole ha complessità $\Theta(kn\log n)$.
+
+% subsection il_miglior_classificatore_debole (end)
 
 % section adaboost (end)

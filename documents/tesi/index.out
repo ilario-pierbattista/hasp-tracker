@@ -2,16 +2,19 @@
 \BOOKMARK [0][-]{chapter.1}{Panoramica del sistema}{}% 2
 \BOOKMARK [1][-]{section.1.1}{Il Kinect}{chapter.1}% 3
 \BOOKMARK [1][-]{section.1.2}{Head and Shoulder Profile}{chapter.1}% 4
-\BOOKMARK [1][-]{section.1.3}{Un problema di Classificazione}{chapter.1}% 5
-\BOOKMARK [1][-]{section.1.4}{Weak learner}{chapter.1}% 6
-\BOOKMARK [2][-]{subsection.1.4.1}{Feature Haar-like}{section.1.4}% 7
-\BOOKMARK [2][-]{subsection.1.4.2}{Decision Stump}{section.1.4}% 8
-\BOOKMARK [1][-]{section.1.5}{Adaboost}{chapter.1}% 9
-\BOOKMARK [2][-]{subsection.1.5.1}{Il dataset dall'allenamento}{section.1.5}% 10
-\BOOKMARK [2][-]{subsection.1.5.2}{Preprocessing}{section.1.5}% 11
-\BOOKMARK [2][-]{subsection.1.5.3}{Estrazione del classificatore forte}{section.1.5}% 12
-\BOOKMARK [2][-]{subsection.1.5.4}{Il miglior classificatore debole}{section.1.5}% 13
-\BOOKMARK [1][-]{section.1.6}{Costruzione dei Dataset}{chapter.1}% 14
-\BOOKMARK [1][-]{section.1.7}{Test e valutazione}{chapter.1}% 15
-\BOOKMARK [1][-]{section.1.8}{Rilevazioni su registrazioni reali}{chapter.1}% 16
-\BOOKMARK [1][-]{section.1.9}{Conclusioni}{chapter.1}% 17
+\BOOKMARK [1][-]{section.1.3}{Un Problema di Classificazione}{chapter.1}% 5
+\BOOKMARK [1][-]{section.1.4}{Preprocessing}{chapter.1}% 6
+\BOOKMARK [0][-]{chapter.2}{Haar-like Features}{}% 7
+\BOOKMARK [1][-]{section.2.1}{Definizione}{chapter.2}% 8
+\BOOKMARK [1][-]{section.2.2}{Dalle Wavelet di Haar alle Feature}{chapter.2}% 9
+\BOOKMARK [1][-]{section.2.3}{Immagine Integrale}{chapter.2}% 10
+\BOOKMARK [1][-]{section.2.4}{Decision Stump}{chapter.2}% 11
+\BOOKMARK [0][-]{chapter.3}{Adaboost}{}% 12
+\BOOKMARK [1][-]{subsection.3.0.1}{Il dataset dall'allenamento}{chapter.3}% 13
+\BOOKMARK [2][-]{subsection.3.0.2}{Preprocessing}{subsection.3.0.1}% 14
+\BOOKMARK [2][-]{subsection.3.0.3}{Estrazione del classificatore forte}{subsection.3.0.1}% 15
+\BOOKMARK [2][-]{subsection.3.0.4}{Il miglior classificatore debole}{subsection.3.0.1}% 16
+\BOOKMARK [1][-]{section.3.1}{Costruzione dei Dataset}{chapter.3}% 17
+\BOOKMARK [1][-]{section.3.2}{Test e valutazione}{chapter.3}% 18
+\BOOKMARK [1][-]{section.3.3}{Rilevazioni su registrazioni reali}{chapter.3}% 19
+\BOOKMARK [1][-]{section.3.4}{Conclusioni}{chapter.3}% 20

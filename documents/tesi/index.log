@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.4.12)  4 SEP 2015 21:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.4.12)  7 SEP 2015 22:07
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -862,6 +862,7 @@ Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is usel
 Package hyperref Info: Option `colorlinks' set `true' on input line 70.
 Package hyperref Info: Option `bookmarksopen' set `true' on input line 70.
 \c@example=\count167
+\c@definition=\count168
 ) (/home/ilario/Projects/hasp-tracker/documents/tesi/frontespizio.sty) (/home/ilario/Projects/hasp-tracker/documents/tesi/index.aux)
 \openout1 = `index.aux'.
 
@@ -884,16 +885,16 @@ LaTeX Font Info:    Try loading font information for OT1+lmr on input line 11.
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ) (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count168
+\scratchcounter=\count169
 \scratchdimen=\dimen203
 \scratchbox=\box55
-\nofMPsegments=\count169
-\nofMParguments=\count170
+\nofMPsegments=\count170
+\nofMParguments=\count171
 \everyMPshowfont=\toks51
-\MPscratchCnt=\count171
+\MPscratchCnt=\count172
 \MPscratchDim=\dimen204
-\MPnumerator=\count172
-\makeMPintoPDFobject=\count173
+\MPnumerator=\count173
+\makeMPintoPDFobject=\count174
 \everyMPtoPDFconversion=\toks52
 ) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
@@ -924,7 +925,7 @@ Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
  (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count174
+\c@section@level=\count175
 )
 LaTeX Info: Redefining \ref on input line 11.
 LaTeX Info: Redefining \pageref on input line 11.
@@ -968,7 +969,7 @@ LaTeX Info: Redefining \nameref on input line 11.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-\c@lstlisting=\count175
+\c@lstlisting=\count176
 ABD: EveryShipout initializing macros
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
@@ -982,7 +983,7 @@ Overfull \hbox (31.29994pt too wide) in paragraph at lines 14--14
  [] 
  []
 
-<img/logo-univpm.png, id=75, 501.875pt x 501.875pt>
+<img/logo-univpm.png, id=87, 501.875pt x 501.875pt>
 File: img/logo-univpm.png Graphic file (type png)
  <use img/logo-univpm.png>
 Package pdftex.def Info: img/logo-univpm.png used on input line 14.
@@ -1048,22 +1049,22 @@ File: ot1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ]
 Capitolo 1.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 10.
+(Font)              <9> on input line 9.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 10.
-/home/ilario/Projects/hasp-tracker/documents/tesi/section/overview.tex:11: Missing number, treated as zero.
+(Font)              <5> on input line 9.
+/home/ilario/Projects/hasp-tracker/documents/tesi/section/overview.tex:10: Missing number, treated as zero.
 <to be read again> 
                    \relax 
-l.11 \begin{wrapfigure}{r}{}
+l.10 \begin{wrapfigure}{r}{}
                             
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
-/home/ilario/Projects/hasp-tracker/documents/tesi/section/overview.tex:11: Illegal unit of measure (pt inserted).
+/home/ilario/Projects/hasp-tracker/documents/tesi/section/overview.tex:10: Illegal unit of measure (pt inserted).
 <to be read again> 
                    \relax 
-l.11 \begin{wrapfigure}{r}{}
+l.10 \begin{wrapfigure}{r}{}
                             
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -1073,85 +1074,85 @@ delete the erroneous units; e.g., type `2' to delete
 two letters. (See Chapter 27 of The TeXbook.)
 
 
-/home/ilario/Projects/hasp-tracker/documents/tesi/section/overview.tex:12: LaTeX Error: Something's wrong--perhaps a missing \item.
+/home/ilario/Projects/hasp-tracker/documents/tesi/section/overview.tex:11: LaTeX Error: Something's wrong--perhaps a missing \item.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.12     \begin{center}
+l.11     \begin{center}
                        
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-/home/ilario/Projects/hasp-tracker/documents/tesi/section/overview.tex:12: LaTeX Error: Something's wrong--perhaps a missing \item.
+/home/ilario/Projects/hasp-tracker/documents/tesi/section/overview.tex:11: LaTeX Error: Something's wrong--perhaps a missing \item.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.12     \begin{center}
+l.11     \begin{center}
                        
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-/home/ilario/Projects/hasp-tracker/documents/tesi/section/overview.tex:12: LaTeX Error: Something's wrong--perhaps a missing \item.
+/home/ilario/Projects/hasp-tracker/documents/tesi/section/overview.tex:11: LaTeX Error: Something's wrong--perhaps a missing \item.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.12     \begin{center}
+l.11     \begin{center}
                        
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-<img/3d-structured-light-scanner.png, id=119, 1284.8pt x 609.27625pt>
+<img/3d-structured-light-scanner.png, id=134, 1284.8pt x 609.27625pt>
 File: img/3d-structured-light-scanner.png Graphic file (type png)
  <use img/3d-structured-light-scanner.png>
-Package pdftex.def Info: img/3d-structured-light-scanner.png used on input line 13.
+Package pdftex.def Info: img/3d-structured-light-scanner.png used on input line 12.
 (pdftex.def)             Requested size: 227.62204pt x 107.93578pt.
 
 
-/home/ilario/Projects/hasp-tracker/documents/tesi/section/overview.tex:14: LaTeX Error: Something's wrong--perhaps a missing \item.
+/home/ilario/Projects/hasp-tracker/documents/tesi/section/overview.tex:13: LaTeX Error: Something's wrong--perhaps a missing \item.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.14     \end{center}
+l.13     \end{center}
                      
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-/home/ilario/Projects/hasp-tracker/documents/tesi/section/overview.tex:14: LaTeX Error: Something's wrong--perhaps a missing \item.
+/home/ilario/Projects/hasp-tracker/documents/tesi/section/overview.tex:13: LaTeX Error: Something's wrong--perhaps a missing \item.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.14     \end{center}
+l.13     \end{center}
                      
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-/home/ilario/Projects/hasp-tracker/documents/tesi/section/overview.tex:14: LaTeX Error: Something's wrong--perhaps a missing \item.
+/home/ilario/Projects/hasp-tracker/documents/tesi/section/overview.tex:13: LaTeX Error: Something's wrong--perhaps a missing \item.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.14     \end{center}
+l.13     \end{center}
                      
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 10--17
+Underfull \hbox (badness 10000) in paragraph at lines 9--16
 \OT1/lmr/m/n/10.95 di-stan-za) del Ki-nect, ^^Re in realt^^Ra uno \OT1/lmr/m/it/10.95 scan-ner 3D a lu-ce strut-tu-ra-ta[][][][][]\OT1/lmr/m/n/10.95 .
  []
 
@@ -1191,7 +1192,7 @@ l.33     \begin{center}
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-<img/no_occlusion.png, id=132, 185.69376pt x 191.71625pt>
+<img/no_occlusion.png, id=147, 185.69376pt x 191.71625pt>
 File: img/no_occlusion.png Graphic file (type png)
  <use img/no_occlusion.png>
 Package pdftex.def Info: img/no_occlusion.png used on input line 34.
@@ -1291,7 +1292,7 @@ l.63     \begin{center}
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-<img/spatial_features.png, id=147, 199.74625pt x 199.74625pt>
+<img/spatial_features.png, id=162, 199.74625pt x 199.74625pt>
 File: img/spatial_features.png Graphic file (type png)
  <use img/spatial_features.png>
 Package pdftex.def Info: img/spatial_features.png used on input line 64.
@@ -1333,53 +1334,465 @@ l.65     \end{center}
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
+[5 </home/ilario/Projects/hasp-tracker/documents/tesi/img/spatial_features.png>]) (/home/ilario/Projects/hasp-tracker/documents/tesi/section/weak_learner.tex [6]
+Capitolo 2.
+/home/ilario/Projects/hasp-tracker/documents/tesi/section/weak_learner.tex:23: Missing number, treated as zero.
+<to be read again> 
+                   \relax 
+l.23 \begin{wrapfigure}{l}{}
+                            
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
 
-Underfull \hbox (badness 1406) in paragraph at lines 74--75
-\OT1/lmr/m/n/10.95 Il soft-ware ^^Re di-vi-so in due mo-du-li: il mo-du-lo per il
- []
+/home/ilario/Projects/hasp-tracker/documents/tesi/section/weak_learner.tex:23: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \relax 
+l.23 \begin{wrapfigure}{l}{}
+                            
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
 
-) (/home/ilario/Projects/hasp-tracker/documents/tesi/section/weak_learner.tex) [5 </home/ilario/Projects/hasp-tracker/documents/tesi/img/spatial_features.png>] (/home/ilario/Projects/hasp-tracker/documents/tesi/section/adaboost.tex
 
-LaTeX Warning: Reference `sec:considerazioni_sulla_costruzione_dei_dataset' on page 6 undefined on input line 17.
+/home/ilario/Projects/hasp-tracker/documents/tesi/section/weak_learner.tex:24: LaTeX Error: Something's wrong--perhaps a missing \item.
 
-[6] [7] [8] [9]
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.24     \begin{center}
+                       
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
 
-Package natbib Warning: Citation `ViolaJones' on page 10 undefined on input line 143.
 
-[10] [11]
+/home/ilario/Projects/hasp-tracker/documents/tesi/section/weak_learner.tex:24: LaTeX Error: Something's wrong--perhaps a missing \item.
 
-Package natbib Warning: Citation `CormenLeiserson' on page 12 undefined on input line 223.
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.24     \begin{center}
+                       
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
 
-[12]) [13] (/home/ilario/Projects/hasp-tracker/documents/tesi/index.bbl [14])
+
+/home/ilario/Projects/hasp-tracker/documents/tesi/section/weak_learner.tex:24: LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.24     \begin{center}
+                       
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+<img/feature_types.jpg, id=183, 662.475pt x 679.53876pt>
+File: img/feature_types.jpg Graphic file (type jpg)
+ <use img/feature_types.jpg>
+Package pdftex.def Info: img/feature_types.jpg used on input line 25.
+(pdftex.def)             Requested size: 142.26378pt x 145.9217pt.
+
+
+/home/ilario/Projects/hasp-tracker/documents/tesi/section/weak_learner.tex:26: LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.26     \end{center}
+                     
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+/home/ilario/Projects/hasp-tracker/documents/tesi/section/weak_learner.tex:26: LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.26     \end{center}
+                     
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+/home/ilario/Projects/hasp-tracker/documents/tesi/section/weak_learner.tex:26: LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.26     \end{center}
+                     
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+[7
+
+] <img/fourier_rapresentation.png, id=197, 817.0525pt x 275.0275pt>
+File: img/fourier_rapresentation.png Graphic file (type png)
+ <use img/fourier_rapresentation.png>
+Package pdftex.def Info: img/fourier_rapresentation.png used on input line 68.
+(pdftex.def)             Requested size: 188.21288pt x 63.3515pt.
+ <img/haar_rapresentation.png, id=198, 691.58376pt x 261.97874pt>
+File: img/haar_rapresentation.png Graphic file (type png)
+ <use img/haar_rapresentation.png>
+Package pdftex.def Info: img/haar_rapresentation.png used on input line 73.
+(pdftex.def)             Requested size: 188.21288pt x 71.29485pt.
+ [8 </home/ilario/Projects/hasp-tracker/documents/tesi/img/feature_types.jpg>]
+/home/ilario/Projects/hasp-tracker/documents/tesi/section/weak_learner.tex:84: Missing number, treated as zero.
+<to be read again> 
+                   \relax 
+l.84 \begin{wrapfigure}{l}{}
+                            
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+/home/ilario/Projects/hasp-tracker/documents/tesi/section/weak_learner.tex:84: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \relax 
+l.84 \begin{wrapfigure}{l}{}
+                            
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+
+/home/ilario/Projects/hasp-tracker/documents/tesi/section/weak_learner.tex:85: LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.85     \begin{center}
+                       
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+/home/ilario/Projects/hasp-tracker/documents/tesi/section/weak_learner.tex:85: LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.85     \begin{center}
+                       
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+/home/ilario/Projects/hasp-tracker/documents/tesi/section/weak_learner.tex:85: LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.85     \begin{center}
+                       
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+<img/haar_wavelet.png, id=210, 129.48375pt x 44.165pt>
+File: img/haar_wavelet.png Graphic file (type png)
+ <use img/haar_wavelet.png>
+Package pdftex.def Info: img/haar_wavelet.png used on input line 86.
+(pdftex.def)             Requested size: 85.35826pt x 29.11595pt.
+
+
+/home/ilario/Projects/hasp-tracker/documents/tesi/section/weak_learner.tex:87: LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.87     \end{center}
+                     
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+/home/ilario/Projects/hasp-tracker/documents/tesi/section/weak_learner.tex:87: LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.87     \end{center}
+                     
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+/home/ilario/Projects/hasp-tracker/documents/tesi/section/weak_learner.tex:87: LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.87     \end{center}
+                     
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Package wrapfig Warning: Collision between wrapping environments on input line 95.
+
+/home/ilario/Projects/hasp-tracker/documents/tesi/section/weak_learner.tex:95: Missing number, treated as zero.
+<to be read again> 
+                   \relax 
+l.95 \begin{wrapfigure}{r}{}
+                            
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+/home/ilario/Projects/hasp-tracker/documents/tesi/section/weak_learner.tex:95: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \relax 
+l.95 \begin{wrapfigure}{r}{}
+                            
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+
+/home/ilario/Projects/hasp-tracker/documents/tesi/section/weak_learner.tex:96: LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.96     \begin{center}
+                       
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+/home/ilario/Projects/hasp-tracker/documents/tesi/section/weak_learner.tex:96: LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.96     \begin{center}
+                       
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+/home/ilario/Projects/hasp-tracker/documents/tesi/section/weak_learner.tex:96: LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.96     \begin{center}
+                       
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+<img/pedestrian_dwt.png, id=213, 716.6775pt x 240.9pt>
+File: img/pedestrian_dwt.png Graphic file (type png)
+ <use img/pedestrian_dwt.png>
+Package pdftex.def Info: img/pedestrian_dwt.png used on input line 97.
+(pdftex.def)             Requested size: 227.62204pt x 76.50879pt.
+
+
+/home/ilario/Projects/hasp-tracker/documents/tesi/section/weak_learner.tex:98: LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.98     \end{center}
+                     
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+/home/ilario/Projects/hasp-tracker/documents/tesi/section/weak_learner.tex:98: LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.98     \end{center}
+                     
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+/home/ilario/Projects/hasp-tracker/documents/tesi/section/weak_learner.tex:98: LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.98     \end{center}
+                     
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Package wrapfig Warning: Stationary wrapfigure forced to float on input line 103.
+
+[9 </home/ilario/Projects/hasp-tracker/documents/tesi/img/fourier_rapresentation.png> </home/ilario/Projects/hasp-tracker/documents/tesi/img/haar_rapresentation.png> </home/ilario/Projects/hasp-tracker/documents/tesi/img/haar_wavelet.png> </home/ilario/Projects/hasp-tracker/documents/tesi/img/pedestrian_dwt.png>]
+/home/ilario/Projects/hasp-tracker/documents/tesi/section/weak_learner.tex:122: Missing number, treated as zero.
+<to be read again> 
+                   \relax 
+l.122 \begin{wrapfigure}{l}{}
+                             
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+/home/ilario/Projects/hasp-tracker/documents/tesi/section/weak_learner.tex:122: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \relax 
+l.122 \begin{wrapfigure}{l}{}
+                             
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+
+/home/ilario/Projects/hasp-tracker/documents/tesi/section/weak_learner.tex:123: LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.123     \begin{center}
+                        
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+/home/ilario/Projects/hasp-tracker/documents/tesi/section/weak_learner.tex:123: LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.123     \begin{center}
+                        
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+/home/ilario/Projects/hasp-tracker/documents/tesi/section/weak_learner.tex:123: LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.123     \begin{center}
+                        
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+<img/integral_image_sum.png, id=231, 210.84598pt x 178.21922pt>
+File: img/integral_image_sum.png Graphic file (type png)
+ <use img/integral_image_sum.png>
+Package pdftex.def Info: img/integral_image_sum.png used on input line 124.
+(pdftex.def)             Requested size: 142.26378pt x 120.24927pt.
+
+
+/home/ilario/Projects/hasp-tracker/documents/tesi/section/weak_learner.tex:125: LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.125     \end{center}
+                      
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+/home/ilario/Projects/hasp-tracker/documents/tesi/section/weak_learner.tex:125: LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.125     \end{center}
+                      
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+/home/ilario/Projects/hasp-tracker/documents/tesi/section/weak_learner.tex:125: LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.125     \end{center}
+                      
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+[10 </home/ilario/Projects/hasp-tracker/documents/tesi/img/integral_image_sum.png>]) (/home/ilario/Projects/hasp-tracker/documents/tesi/section/adaboost.tex [11]
+Capitolo 3.
+
+Package hyperref Warning: Difference (2) between bookmark levels is greater 
+(hyperref)                than one, level fixed on input line 12.
+
+[12
+
+] [13] [14] [15] [16] [17] [18]
+
+Package natbib Warning: Citation `CormenLeiserson' on page 19 undefined on input line 222.
+
+) (/home/ilario/Projects/hasp-tracker/documents/tesi/index.bbl [19])
 
 Package natbib Warning: There were undefined citations.
 
-[15
+[20
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 61.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 61.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 59.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 59.
  (/home/ilario/Projects/hasp-tracker/documents/tesi/index.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 61.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 61.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 59.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 59.
 Package rerunfilecheck Info: File `index.out' has not changed.
-(rerunfilecheck)             Checksum: 7B55B3344A2ED9FCDDB13BC2A3646CF1;1153.
+(rerunfilecheck)             Checksum: 1AA871E3A5C77FA9B63996DEF2845833;1336.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-
-LaTeX Warning: There were undefined references.
-
  ) 
 Here is how much of TeX's memory you used:
- 21704 strings out of 493105
- 390768 string characters out of 6137072
- 481371 words of memory out of 5000000
- 24652 multiletter control sequences out of 15000+600000
+ 21796 strings out of 493105
+ 392443 string characters out of 6137072
+ 482557 words of memory out of 5000000
+ 24715 multiletter control sequences out of 15000+600000
  85396 words of font info for 51 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 62i,12n,67p,846b,590s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 62i,12n,67p,846b,588s stack positions out of 5000i,500n,10000p,200000b,80000s
+pdfTeX warning (dest): name{Hfootnote.5} has been referenced but does not exist, replaced by a fixed one
+
 pdfTeX warning (dest): name{Hfootnote.4} has been referenced but does not exist, replaced by a fixed one
 
 pdfTeX warning (dest): name{Hfootnote.3} has been referenced but does not exist, replaced by a fixed one
@@ -1390,10 +1803,10 @@ pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist,
 
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathex.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rmsc.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmbxi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmcsc10.pfb></usr/share/texmf/fonts/type1/public/lm/lmex10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi6.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi8.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi9.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr6.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr9.pfb></usr/share/texmf/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1/public/lm/lmri9
 .pfb></usr/share/texmf/fonts/type1/public/lm/lmss8.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb>
-Output written on /home/ilario/Projects/hasp-tracker/documents/tesi/index.pdf (16 pages, 534728 bytes).
+Output written on /home/ilario/Projects/hasp-tracker/documents/tesi/index.pdf (21 pages, 649402 bytes).
 PDF statistics:
- 347 PDF objects out of 1000 (max. 8388607)
- 299 compressed objects within 3 object streams
- 86 named destinations out of 1000 (max. 500000)
- 169 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 434 PDF objects out of 1000 (max. 8388607)
+ 366 compressed objects within 4 object streams
+ 108 named destinations out of 1000 (max. 500000)
+ 223 words of extra memory for PDF output out of 10000 (max. 10000000)
 

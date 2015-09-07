@@ -2,8 +2,7 @@
 
 \chapter{Panoramica del sistema}
 \label{cap:overview}
-Riproducendo la configurazione proposta in \cite{Zhu13} al soffitto del laboratorio è stato fissato un dispositivo Kinect V2 rivolto verso il pavimento.
-In tale configurazione, all'ingresso di una persona nella visuale del Kinect, ne saranno ben visibili la testa e le spalle.
+Riproducendo la configurazione proposta in \cite{Zhu13} al soffitto del laboratorio è stato fissato un dispositivo Kinect V2 rivolto verso il pavimento: all'ingresso di una persona nella visuale del Kinect, ne saranno ben visibili la testa e le spalle.
 
 \section{Il Kinect}
 \label{sec:sensor}
@@ -25,6 +24,7 @@ Il dispositivo è montato al soffitto a $2,8m$ da terra e ha un campo visivo di 
 
 La dimensione di ogni immagine di profondità è di $512 \times 424$ pixel. Nativamente non vengono codificate in alcun modo particolare, sono delle semplici matrici di interi.
 Il Kinect V2 è in grado di catturarne fino a 30 al secondo. Utilizzando un apposito software di registrazione è stato possibile mettere insieme dei video di profondità a 30 fps.
+
 
 \section{Head and Shoulder Profile}
 \label{sec:hasp}
@@ -69,10 +69,40 @@ Alla luce di ciò, si possono identificare i seguenti criteri descrittivi:
 
 Di qui in avanti, con l'acronimo \emph{HASP} (\emph{Head And Shoulder Profile}), ci si riferirà proprio al profilo della persona ripreso dall'alto che soddisfa i criteri appena elencati.
 
-\section{Un problema di Classificazione} % (fold)
-\label{sub:struttura_software}
-Il software è diviso in due moduli: il modulo per il riconoscimento e il modulo di allenamento.
 
-Nella prima fase, quella di allenamento, il relativo modulo software, a partire da un insieme di campioni classificati, genererà un insieme di regole per classificare campioni con le medesime caratteristiche. Implementa l'algoritmo Adaboost.
+\section{Un Problema di Classificazione}
+\label{sec:classification_problem}
+Quello che il sistema di rilevamento deve fare è riconoscere se e dove è presente l'immagine HASP di una persona all'interno del frame di profondità.
+Ciò avviene analizzando sequenzialmente delle porzioni del frame originale in modo da coprire tutta l'area. Si tornerà più avanti su questo aspetto, per il momento si consideri che il problema di rilevamento è naturalmente riconducibile ad un problema di classificazione.
 
-La seconda fase, quella di riconoscimento, lavora su dati reali: ad ogni frame acquisito tramite il sensore di profondità del Kinect si applicano le regole di classificazione generate nella fase precedente, stabilendo se nel frame è stata ripresa una persona e - in caso affermativo - la posizione di quest'ultima.
+Gli oggetti da classificare sono immagini di profondità e le possibili classi di appartenenza di tali oggetti sono due: la classe delle immagini che ritraggono il profilo di una persona è la classe delle immagini che invece ne sono prive.
+Il fatto che vi siano solamente due classi lo rende un \emph{problema di classificazione binario}.
+
+L'operazione di classificazione avviene mediante la misurazione di alcune \emph{caratteristiche} (\emph{feature}) interessanti dell'immagine di profondità.
+I criteri di riconoscimento presentati nella sezione \ref{sec:hasp} sono dei validi esempi di caratteristiche. Sono espresse in linguaggio naturale e sono comprensibili agli esseri umani, ma mancano di rigore e perciò non sono direttamente implementabili come criteri di classificazione delle immagini HASP.
+
+Il \emph{classificatore} è il componente che esegue effettivamente la classificazione. La definizione di un classificatore può avvenire \emph{manualmente}, mediante l'applicazione di un modello atto a descrivere al meglio gli oggetti di una determinata classe, oppure può essere \emph{allenato}.
+Gli algoritmi per la definizione di classificatori allenati si distinguono a loro volta tra algoritmi di \emph{allenamento supervisionato} e di \emph{allenamento non supervisionato}, a seconda che facciano uso o meno di un insieme di allenamento.
+
+Un insieme di allenamento non è altro che un insieme di oggetti adeguati al problema di classificazione per cui viene fornita la classificazione \emph{reale}.
+In questo caso saranno delle immagini di profondità opportunamente marcate come immagini che contengono o meno il profilo di una persona.
+
+Il sistema in esame prevede l'utilizzo di classificatori allenati con \emph{Adaboost}. Sono molti i sistemi di riconoscimento di immagini che utilizzano Adaboost per allenare i rispettivi classificatori, primo tra tutti il quello di riconoscimento facciale proposto da Viola e Jones \cite{Viola04}, ad oggi considerato il più robusto ed efficiente della sua categoria.
+
+La forte somiglianza con il lavoro di Viola e Jones farà sì che saranno molteplici i riferimenti ad esso nel testo e i dettagli implementativi in comune.
+
+
+\section{Preprocessing}
+\label{sec:preprocessing}
+Ogni pixel di un'immagine di profondità denota la distanza in millimetri della superficie dell'oggetto dal sensore. Tuttavia, prima di poter essere utilizzate da qualsiasi componente del sistema di rilevamento, occorre convertire il valore di ogni pixel in quota della superficie dal pavimento.
+
+Il pavimento è la superficie la cui distanza dal sensore è massima, quindi per individuarne il valore sarebbe sufficiente ricercare il valore massimo di ciascuna immagine di profondità.
+Nella pratica ciò non è vero, in quanto, a causa della distorsione prospettica, nelle aree periferiche dell'immagine la distanza percepita del pavimento è maggiore rispetto a quella misurata al centro dell'immagine.
+
+Quindi, per determinare la reale distanza del pavimento è necessario disporre di un'immagine di riferimento che ritragga solamente il pavimento stesso. A questo punto la distanza di riferimento è quella misurata esattamente al centro del frame.
+
+La trasformazione delle distanze in quote avviene, come è intuibile, sostituendo il valore di ogni pixel $d$ con il valore $d'$.
+\begin{equation}
+    d' = d - d_{pavimento}
+    \label{eq:floor_distance}
+\end{equation}
