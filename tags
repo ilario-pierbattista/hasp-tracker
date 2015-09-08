@@ -567,6 +567,7 @@ ElementModel	TrainsetCreator/src/it/univpm/dii/view/tablemodels/ElementModel.jav
 EliminaSelectedAction	TrainsetCreator/src/it/univpm/dii/contoller/main/EliminaSelectedAction.java	/^class EliminaSelectedAction implements ActionListener {$/;"	c
 EmptyFrameDirException	TrainsetCreator/src/it/univpm/dii/exception/EmptyFrameDirException.java	/^    public EmptyFrameDirException(String path) {$/;"	m	class:EmptyFrameDirException
 EmptyFrameDirException	TrainsetCreator/src/it/univpm/dii/exception/EmptyFrameDirException.java	/^public class EmptyFrameDirException extends Exception {$/;"	c
+Estrazione del classificatore forte	documents/tesi/section/adaboost.tex	/^Questa prima operazione di preprocessing ha complessità computazionale $\\Theta(n \\cdot m)$ con $n$ ed $m$ dimensioni della porzione del frame.$/;"	u
 FEATURE_DIM	matlab/lib/src/mexutils/structure_mapping.h	31;"	d
 FEATURE_TLP	matlab/lib/src/mexutils/structure_mapping.h	30;"	d
 FEATURE_TYPE	matlab/lib/src/mexutils/structure_mapping.h	32;"	d
@@ -626,6 +627,7 @@ HtmlPage	scripts/dataset_downloader.py	/^class HtmlPage:$/;"	c
 ID_VOID_MAIN	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	6;"	d	file:
 ID_VOID_MAIN	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	6;"	d	file:
 Il dataset dall allenamento} % (fold)
+Il miglior classificatore debole	documents/tesi/section/adaboost.tex	/^La scelta della soglia per il classificatore forte (punto \\ref{adaboost_strong_classifier}) deve minimizzare il numero di esempi classificati in modo errato.$/;"	u
 Image	matlab/lib/src/image/Image.cpp	/^Image::Image() { }$/;"	f	class:Image
 Image	matlab/lib/src/image/Image.cpp	/^Image::Image(char *filePath) {$/;"	f	class:Image
 Image	matlab/lib/src/image/Image.cpp	/^Image::Image(double *image, const size_t *size) {$/;"	f	class:Image
@@ -633,7 +635,6 @@ Image	matlab/lib/src/image/Image.cpp	/^Image::Image(double *image, int width, in
 Image	matlab/lib/src/image/Image.h	/^class Image {$/;"	c
 Immagine Integrale	documents/tesi/section/weak_learner.tex	/^Una wavelet di Haar bidimensionale di una data dimensione, utilizzata per campionare un'immagine in una posizione specifica mette in evidenza le differenze di intensità dell'immagine nella regione descritta dall'area della wavelet. Tale differenza di intensità costituisce una proprietà osservabile e misurabile dell'immagine che ritrae l'oggetto. Queste sono le \\emph{Haar-like feature} (o semplicemente feature di Haar).$/;"	s
 Immagine integrale	documents/relazione/index.tex	/^				Questa prima operazione di preprocessing ha complessità computazionale $\\Theta(n \\cdot m)$ con $n$ ed $m$ dimensioni della porzione del frame.$/;"	b
-Immagine integrale	documents/tesi/section/adaboost.tex	/^Questa prima operazione di preprocessing ha complessità computazionale $\\Theta(n \\cdot m)$ con $n$ ed $m$ dimensioni della porzione del frame.$/;"	b
 IndietroRenderInfoAction	TrainsetCreator/src/it/univpm/dii/contoller/framerender/IndietroRenderInfoAction.java	/^    public IndietroRenderInfoAction(FrameRenderView view) {$/;"	m	class:IndietroRenderInfoAction
 IndietroRenderInfoAction	TrainsetCreator/src/it/univpm/dii/contoller/framerender/IndietroRenderInfoAction.java	/^class IndietroRenderInfoAction implements ActionListener {$/;"	c
 Interval	matlab/lib/src/geometry/Interval.cpp	/^Interval::Interval(int a, int b) {$/;"	f	class:Interval

@@ -32,26 +32,6 @@ dove la distanza del pavimento dal sensore ($d_{pavimento}$). La distanza del pa
 Questa prima operazione di preprocessing ha complessità computazionale $\Theta(n \cdot m)$ con $n$ ed $m$ dimensioni della porzione del frame.
 % subsubsection conversione_delle_distanze (end)
 
-\subsubsection{Immagine integrale} % (fold)
-\label{ssub:immagine_integrale}
-Costruire una funzione riesca a classificare un'immagine (la matrice dei valori del sensore di profondità è a tutti gli effetti considerabile come un'immagine) prevede l'utilizzo delle \emph{Haar-like features}.
-
-L'obbiettivo di una feature di Haar è quello di evidenziare le \emph{differenze d'intensità} tra due regioni rettangolari adiacenti di un'immagine. Il valore di una semplice feature a due rettangoli corrisponde alla differenza tra la somma delle intensità di tutti i pixel della prima area e la somma delle intensità di tutti i pixel della seconda. Per intensità del pixel si intende il valore che il pixel assume. Inoltre si possono considerare aree partizionate in più di due rettangoli con una semplice generalizzazione del calcolo.
-$$feature = \sum Area_{White} - \sum Area_{Black}$$
-Saranno utilizzate solamente features a due e a tre rettangoli (bandate).
-
-Il calcolo di una feature è un'operazione computazionalmente costosa. Si introduce quindi il concetto di \emph{immagine integrale} (altrimenti nota come \emph{summed area table}): ogni pixel dell'immagine integrale corrisponde alla somma dei valori di tutti i pixel della regione in alto a sinistra dell'immagine.
-Rigorosamente, sia $II(x,y)$ l'intensità del pixel alla posizione $(x,y)$ dell'immagine integrale: $$ II(x, y) = \sum_{i = 0}^{x} \sum_{j = 0}^{y} I(i, j) $$
-
-Calcolare la somma delle intensità di tutti i pixel in un'area rettangolare attraverso l'immagine integrale diventa un'operazione molto veloce.
-Infatti: $$ \sum_{i = x_1}^{x_2} \sum_{j = y_1}^{y_2} I(i,j) =
-II(x_2, y_2) + II(x_1, y_1) - II(x_1, y_2) - II(x_2, y_1)$$
-
-Grazie all'immagine integrale, una feature di qualsiasi dimensione può essere calcolata in un tempo costante.
-% subsubsection immagine_integrale (end)
-
-% subsection preprocessing (end)
-
 \subsection{Estrazione del classificatore forte} % (fold)
 \label{sub:estrazione_del_classificatore_forte}
 Sia $D = \{(x_1, y_1), ..., (x_n, y_n)\}$ un insieme di $n$ coppie costituite da un'immagine ($x_i$) e la relativa classificazione ($y_i \in \{ 0, 1 \}$). Se $y_i = 1$, allora $x_i$ appartiene alla classe \emph{umano} (la coppia $(x_i, y_i)$ prende il nome di \emph{esempio positivo}), altrimenti appartiene alla classe \emph{non umano} (la coppia $(x_i, y_i)$ prende il nome di \emph{esempio negativo}).
@@ -219,7 +199,7 @@ Grazie alle osservazioni \ref{obs:5} e \ref{obs:6}, dal semplice calcolo dell'er
 \end{cases}
 \end{equation}
 
-In definitiva, con uno scorrimento della lista ordinata si ottengo i parametri per la costruzione del classificatore debole. La complessità di tale operazione è fortemente legata all'algoritmo di ordinamento della lista, la quale ha $\Theta(n\log n)$ come limite teorico inferiore (\cite{CormenLeiserson}, p. 167). Nell'implementazione è stato scelto proprio un algoritmo che avesse complessità $\Theta(n\log n)$ nel caso peggiore. Ripetendo queste operazioni per ognuna delle feature selezionabili, si ottiene che l'algoritmo di selezione del miglior classificatore debole ha complessità $\Theta(kn\log n)$.
+In definitiva, con uno scorrimento della lista ordinata si ottengo i parametri per la costruzione del classificatore debole. La complessità di tale operazione è fortemente legata all'algoritmo di ordinamento della lista, la quale ha $\Theta(n\log n)$ come limite teorico inferiore \cite[p. 167]{Cormen09}. Nell'implementazione è stato scelto proprio un algoritmo che avesse complessità $\Omega(n\log n)$ nel caso peggiore. Ripetendo queste operazioni per ognuna delle feature selezionabili, si ottiene che l'algoritmo di selezione del miglior classificatore debole ha complessità $\Theta(kn\log n)$.
 
 % subsection il_miglior_classificatore_debole (end)
 

@@ -20,10 +20,9 @@ La somma delle intensità dei pixel della regione bianca a cui viene sottratta l
 
 Di feature ne esistono di diverse forme: in figura \ref{fig:features_type} sono presenti quelle utilizzate in questo ambito, ma disponibili molte forme di feature utilizzate da altri sistemi di object detection. Non tutte sono formate solamente da \emph{due regioni adiacenti}, ma l'importante è che tutte abbiano una regione \emph{nera} ed una regione \emph{bianca}.
 
-\begin{wrapfigure}{l}{}
-    \begin{center}
-        \includegraphics[width=5cm]{img/feature_types.jpg}
-    \end{center}
+\begin{wrapfigure}{L}{0cm}
+    \centering
+    \includegraphics[width=5cm]{img/feature_types.jpg}
     \caption{Tipi di feature di Haar utilizzati in \cite{Zhu13}.}
     \label{fig:features_type}
 \end{wrapfigure}
@@ -81,10 +80,9 @@ Le applicazioni sono notevoli e ad ampio spettro, prime tra tutte quelle nell'am
 
 Una variante della trasformazione DWT con le wavelet di Haar bidimesionali (figura \ref{sec:haar_wavelet}) è stata utilizzata da \citet{Oren97} in un sistema in grado di riconoscere la presenza di pedoni in delle immagini.
 
-\begin{wrapfigure}{l}{}
-    \begin{center}
-        \includegraphics[width=3cm]{img/haar_wavelet.png}
-    \end{center}
+\begin{wrapfigure}{L}{0cm}
+    \centering
+    \includegraphics[width=3cm]{img/haar_wavelet.png}
     \caption{Wavelet di Haar bidimensionali utilizzate in \cite{Oren97}.}
     \label{fig:haar_wavelet}
 \end{wrapfigure}
@@ -92,10 +90,9 @@ Una variante della trasformazione DWT con le wavelet di Haar bidimesionali (figu
 Applicando alle immagini la trasformata DWT in diverse scale, si passa da una rappresentazione dell'immagine in scala dei grigi, ad una rappresentazione in termini di coefficienti delle wavelet di Haar.
 Tali coefficienti denotano le differenze di intensità tra le aree adiacenti dell'immagine e vengono utilizzati per evidenziare analogie strutturali delle immagini che contengono la figura di un pedone.
 
-\begin{wrapfigure}{r}{}
-    \begin{center}
-        \includegraphics[width=8cm]{img/pedestrian_dwt.png}
-    \end{center}
+\begin{wrapfigure}{R}{0cm}
+    \centering
+    \includegraphics[width=8cm]{img/pedestrian_dwt.png}
     \caption{Coefficienti delle wavelet di trasformate DWT di diverse scale applicate alla stessa immagine. I coefficienti vengono codificati utilizzando la scala dei grigi \cite[Figura 3]{Oren97}.}
     \label{fig:non_standard_dwt}
 \end{wrapfigure}
@@ -119,10 +116,9 @@ Il calcolo della somma delle intensità dei pixel di un'area è un'operazione il
     \end{equation}
 \end{definition}
 
-\begin{wrapfigure}{l}{}
-    \begin{center}
-        \includegraphics[width=5cm]{img/integral_image_sum.png}
-    \end{center}
+\begin{wrapfigure}{L}{0cm}
+    \centering
+    \includegraphics[width=5cm]{img/integral_image_sum.png}
     \caption{}
     \label{fig:integral_image_sum}
 \end{wrapfigure}
@@ -155,3 +151,52 @@ Grazie all'immagine integrale è quindi possibile valutare in tempi brevi, grupp
 
 \section{Decision Stump}
 \label{sec:decision_stump}
+\begin{wrapfigure}{R}{0cm}
+    \centering
+    \includegraphics[width=7cm]{img/decision_stump.jpg}
+    \caption{Esempio di decision stump usato per dividere gli oggetti in due classi delle tre descritte nel dataset delle caratteristiche dei fiori di Iris \cite{Fisher36}}
+    \label{fig:decision_stump}
+\end{wrapfigure}
+Si tratta di \emph{alberi decisionali} binari di profondità unitaria.
+Vi è un unico test alla radice, in base al quale si decide l'appartenenza di un oggetto ad due classi. Combinando tra loro diversi decision stump, è possibile creare alberi decisionali più complessi da poter utilizzare in alberi di classificazione non binari.
+
+I decision stump costituiscono il meccanismo più semplice di classificazione che si può avere a disposizione. Il test da collocare alla radice dell'albero viene eseguito sul valore di una feature di Haar.
+
+\begin{equation}
+    test_1(x) =
+    \begin{cases}
+        true & \text{ se } f_1(x) < \theta_1\\
+        false & \text{ altrimenti }
+    \end{cases}
+    \label{eq:decision_stump_minor}
+\end{equation}
+
+\begin{equation}
+    test_2(x) =
+    \begin{cases}
+        true & \text{ se } f_2(x) > \theta_2\\
+        false & \text{ altrimenti }
+    \end{cases}
+    \label{eq:decision_stump_maior}
+\end{equation}
+
+Le equazioni \ref{eq:decision_stump_minor} e \ref{eq:decision_stump_maior} descrivono due possibili test decisionali che possono essere collocati alla radice di un decision stump.
+Per standardizzare la forma dei test si utilizzerà l'equazione \ref{eq:decision_stump}.
+
+\begin{equation}
+    test(x) =
+    \begin{cases}
+        true & \text{ se } f(x)p > p\theta\\
+        false & \text{ altrimenti }
+    \end{cases}
+    \label{eq:decision_stump}
+\end{equation}
+
+In riferimento all'equazione \ref{eq:decision_stump}, $x$ è un'immagine di profondità, $f$ una feature di Haar ed $f(x)$ il valore della feature misurato sull'immagine $x$.
+Il parametro $p \in \{ 1, -1 \}$, che assumerà il nome di \emph{polarità}, serve solamente per invertire il segno della disequazione all'occorrenza.
+Il parametro $\theta$ è il valore di \emph{soglia} (\emph{threshold}).
+
+Utilizzare i decision stump con le immagini di profondità equavale a verificare la presenza di variazioni di quota tra regioni contigue dell'immagine al di sopra o al di sotto di un certo valore di soglia.
+La scelta del valore di soglia non è un problema banale e sarà trattato approfonditamente nel prossimo capitolo.
+
+Il successo o l'insuccesso del test deve essere interpretato correttamente ai fini della classificazione. Di qui in avanti qualsiasi test decisionale applicato ad immagini di profondità che avrà successo, segnalerà la presenza di una persona, mentre, viceversa, quelli che non avranno successo ne segnaleranno l'assenza.

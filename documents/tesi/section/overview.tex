@@ -7,10 +7,9 @@ Riproducendo la configurazione proposta in \cite{Zhu13} al soffitto del laborato
 \section{Il Kinect}
 \label{sec:sensor}
 Ad onor del vero, ciò che viene comunemente chiamato \emph{sensore di profondità} (o sensore di distanza) del Kinect, è in realtà uno \emph{scanner 3D a luce strutturata}\footnote{Nonostante ciò, lo si continuerà a chiamare \emph{sensore di profondità}, leggermente inesatto, ma decisamente più breve ed intuitivo}.
-\begin{wrapfigure}{r}{}
-    \begin{center}
-        \includegraphics[width=8cm]{img/3d-structured-light-scanner.png}
-    \end{center}
+\begin{wrapfigure}{R}{0cm}
+    \centering
+    \includegraphics[width=8cm]{img/3d-structured-light-scanner.png}
     \label{fig:structured_light_scanner}
     \caption{Schematizzazione di uno scanner 3D a luce strutturata.}
 \end{wrapfigure}
@@ -29,10 +28,9 @@ Il Kinect V2 è in grado di catturarne fino a 30 al secondo. Utilizzando un appo
 \section{Head and Shoulder Profile}
 \label{sec:hasp}
 
-\begin{wrapfigure}{l}{}
-    \begin{center}
-        \includegraphics[width=5cm]{img/no_occlusion.png}
-    \end{center}
+\begin{wrapfigure}{L}{0cm}
+    \centering
+    \includegraphics[width=5cm]{img/no_occlusion.png}
     \caption{Due persone in un ritaglio proveniente da un frame di profondità. Il frame è stato acquisito con il Kinect V1, a differenza di quello in figura \ref{fig:spatial_feature}, acquisito con il Kinect V2.}
     \label{fig:no_occlusion}
 \end{wrapfigure}
@@ -59,10 +57,9 @@ Alla luce di ciò, si possono identificare i seguenti criteri descrittivi:
 
 \end{enumerate}
 
-\begin{wrapfigure}{r}{}
-    \begin{center}
-        \includegraphics[width=4cm]{img/spatial_features.png}
-    \end{center}
+\begin{wrapfigure}{R}{0cm}
+    \centering
+    \includegraphics[width=4cm]{img/spatial_features.png}
     \caption{Una persona mentre cammina}
     \label{fig:spatial_feature}
 \end{wrapfigure}
@@ -106,3 +103,4 @@ La trasformazione delle distanze in quote avviene, come è intuibile, sostituend
     d' = d - d_{pavimento}
     \label{eq:floor_distance}
 \end{equation}
+L'operazione di conversione ha complessità computazionale $\Theta(n \cdot m)$, dove $n$ ed $m$ sono le dimensioni del frame.
