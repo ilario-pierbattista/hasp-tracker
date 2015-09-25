@@ -58,6 +58,7 @@ AddFrameController	TrainsetCreator/src/it/univpm/dii/contoller/addframe/AddFrame
 AddFrameController	TrainsetCreator/src/it/univpm/dii/contoller/addframe/AddFrameController.java	/^public class AddFrameController {$/;"	c
 AddFrameView	TrainsetCreator/src/it/univpm/dii/view/AddFrameView.java	/^    public AddFrameView(DepthImage init, File[] frames, int width, int height) {$/;"	m	class:AddFrameView
 AddFrameView	TrainsetCreator/src/it/univpm/dii/view/AddFrameView.java	/^public class AddFrameView extends View {$/;"	c
+Altro	documents/tesi/index.tex	/^	\\input{section\/adaboost.tex}$/;"	c
 AvantiRenderInfoAction	TrainsetCreator/src/it/univpm/dii/contoller/framerender/AvantiRenderInfoAction.java	/^    public AvantiRenderInfoAction(FrameRenderView renderInfoView, File[] frames) {$/;"	m	class:AvantiRenderInfoAction
 AvantiRenderInfoAction	TrainsetCreator/src/it/univpm/dii/contoller/framerender/AvantiRenderInfoAction.java	/^class AvantiRenderInfoAction implements ActionListener {$/;"	c
 BORDER_COLOR	TrainsetCreator/src/it/univpm/dii/view/component/DepthImagePanel.java	/^    public static final Color BORDER_COLOR = Color.BLUE;$/;"	f	class:DepthImagePanel
@@ -513,8 +514,7 @@ ChangeFlipDirectionAction	TrainsetCreator/src/it/univpm/dii/contoller/addframe/C
 ChangeFlipDirectionAction	TrainsetCreator/src/it/univpm/dii/contoller/addframe/ChangeFlipDirectionAction.java	/^class ChangeFlipDirectionAction implements ActionListener {$/;"	c
 Conclusioni	documents/tesi/index.tex	/^	\\label{sec:Rilevazioni su registrazioni reali}$/;"	s
 Conversione delle distanze	documents/relazione/index.tex	/^			Da ricordare che stiamo trattando di matrici $160 \\times 100$ (porzione del frame principale) i cui valori corrispondo al risultato della misurazione del sensore di profondità del Kinect ed è proporzionale alla distanza rilevata.$/;"	b
-Conversione delle distanze	documents/tesi/section/adaboost.tex	/^Da ricordare che stiamo trattando di matrici $160 \\times 100$ (porzione del frame principale) i cui valori corrispondo al risultato della misurazione del sensore di profondità del Kinect ed è proporzionale alla distanza rilevata.$/;"	b
-Costruzione dei Dataset	documents/tesi/index.tex	/^	\\input{section\/adaboost.tex}$/;"	s
+Costruzione dei Dataset	documents/tesi/index.tex	/^	\\chapter{Altro}$/;"	s
 DEC	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	409;"	d	file:
 DEC	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	404;"	d	file:
 DEC	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	409;"	d	file:
@@ -567,7 +567,6 @@ ElementModel	TrainsetCreator/src/it/univpm/dii/view/tablemodels/ElementModel.jav
 EliminaSelectedAction	TrainsetCreator/src/it/univpm/dii/contoller/main/EliminaSelectedAction.java	/^class EliminaSelectedAction implements ActionListener {$/;"	c
 EmptyFrameDirException	TrainsetCreator/src/it/univpm/dii/exception/EmptyFrameDirException.java	/^    public EmptyFrameDirException(String path) {$/;"	m	class:EmptyFrameDirException
 EmptyFrameDirException	TrainsetCreator/src/it/univpm/dii/exception/EmptyFrameDirException.java	/^public class EmptyFrameDirException extends Exception {$/;"	c
-Estrazione del classificatore forte	documents/tesi/section/adaboost.tex	/^Questa prima operazione di preprocessing ha complessità computazionale $\\Theta(n \\cdot m)$ con $n$ ed $m$ dimensioni della porzione del frame.$/;"	u
 FEATURE_DIM	matlab/lib/src/mexutils/structure_mapping.h	31;"	d
 FEATURE_TLP	matlab/lib/src/mexutils/structure_mapping.h	30;"	d
 FEATURE_TYPE	matlab/lib/src/mexutils/structure_mapping.h	32;"	d
@@ -627,7 +626,6 @@ HtmlPage	scripts/dataset_downloader.py	/^class HtmlPage:$/;"	c
 ID_VOID_MAIN	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	6;"	d	file:
 ID_VOID_MAIN	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	6;"	d	file:
 Il dataset dall allenamento} % (fold)
-Il miglior classificatore debole	documents/tesi/section/adaboost.tex	/^La scelta della soglia per il classificatore forte (punto \\ref{adaboost_strong_classifier}) deve minimizzare il numero di esempi classificati in modo errato.$/;"	u
 Image	matlab/lib/src/image/Image.cpp	/^Image::Image() { }$/;"	f	class:Image
 Image	matlab/lib/src/image/Image.cpp	/^Image::Image(char *filePath) {$/;"	f	class:Image
 Image	matlab/lib/src/image/Image.cpp	/^Image::Image(double *image, const size_t *size) {$/;"	f	class:Image

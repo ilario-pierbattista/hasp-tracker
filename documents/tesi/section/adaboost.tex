@@ -2,6 +2,8 @@
 
 \chapter{Adaboost}
 \label{cap:adaboost}
+Adaboost è un algoritmo di apprendimento automatico della famiglia degli \emph{ensamble learner}. Un algoritmo di ensamble learning mira alla costruzione di un classificatore composto da un insieme di 
+
 
 Adaboost è un \emph{meta algoritmo} di \emph{machine learning} che viene utilizzato per aumentare le prestazioni di altri algoritmi di apprendimento. Ciò avviene estraendo un \emph{classificatore forte} a partire da un insieme di \emph{classificatori deboli}, dove per classificatore si intende una funzione $f(x)$ che identifichi la \emph{classe} di appartenenza dell'oggetto $x$ in input.
 
@@ -16,21 +18,6 @@ La finestra di visualizzazione, come accennato in precedenza è di $512 \times 4
 Un dataset di allenamento non è altro che un insieme di porzioni di frame di una certa dimensione (la stessa per tutti) che vegono classificati manualmente dal creatore\footnote{Il sistema di apprendimento che si sta trattando ricade nella categoria dei sistemi di \emph{apprendimento supervisionato}.} del dataset.
 
 % subsection il_dataset_dall_allenamento (end)
-
-\subsection{Preprocessing} % (fold)
-\label{sub:preprocessing}
-Gli elementi del dataset verranno preprocessati prima di poter essere dei dati di input adeguati per l'algoritmo.
-
-Da ricordare che stiamo trattando di matrici $160 \times 100$ (porzione del frame principale) i cui valori corrispondo al risultato della misurazione del sensore di profondità del Kinect ed è proporzionale alla distanza rilevata.
-
-\subsubsection{Conversione delle distanze} % (fold)
-\label{ssub:conversione_delle_distanze}
-La prima operazione di preprocessing consiste nel trasformare tali distanze (sensore-superficie) in distanze dal pavimento della stanza. Come è facilmente intuibile
-$$ d' = d_{pavimento} - d $$
-dove la distanza del pavimento dal sensore ($d_{pavimento}$). La distanza del pavimento può essere estratta dall'immagine stessa
-
-Questa prima operazione di preprocessing ha complessità computazionale $\Theta(n \cdot m)$ con $n$ ed $m$ dimensioni della porzione del frame.
-% subsubsection conversione_delle_distanze (end)
 
 \subsection{Estrazione del classificatore forte} % (fold)
 \label{sub:estrazione_del_classificatore_forte}
