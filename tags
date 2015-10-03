@@ -1164,7 +1164,7 @@ getFeature	matlab/lib/src/adaboost/WeakClassifier.h	/^    Haar *getFeature() con
 getFileName	TrainsetCreator/src/it/univpm/dii/model/entities/Element.java	/^    public String getFileName() {$/;"	m	class:Element
 getFineButton	TrainsetCreator/src/it/univpm/dii/view/AddFrameView.java	/^    public JButton getFineButton() {$/;"	m	class:AddFrameView
 getFrames	matlab/io/getFrames.m	/^function samples = getFrames(framesPath, dimension);$/;"	f
-getFramesPath	matlab/io/getFramesPath.m	/^function frames = getFramesPath(path)$/;"	f
+getFramesPath	matlab/io/getFramesPath.m	/^function frames = getFramesPath(path);$/;"	f
 getHaarFeature	matlab/lib/src/mexutils/io.cpp	/^Haar *getHaarFeature(const mxArray *input, int index) {$/;"	f
 getHaarFeatureFromStruct	matlab/lib/src/mexutils/io.cpp	/^Haar *getHaarFeatureFromStruct(const mxArray *input) {$/;"	f
 getHandfreeCheckbox	TrainsetCreator/src/it/univpm/dii/view/AddFrameView.java	/^    public JCheckBox getHandfreeCheckbox() {$/;"	m	class:AddFrameView
@@ -1240,6 +1240,7 @@ getYoffset	TrainsetCreator/src/it/univpm/dii/view/AddFrameView.java	/^    public
 get_classifier_function	matlab/adaboost/get_classifier_function.m	/^function func = get_classifier_function(feature, polarity, threshold);$/;"	f
 get_feature_handler	matlab/haar/get_feature_handler.m	/^function handler = get_feature_handler(featureType, topleft, dimension);$/;"	f
 get_info	scripts/dataset_downloader.py	/^    def get_info(self):$/;"	m	class:Element
+get_record_path	matlab/utilities/get_record_path.m	/^function record_path = get_record_path(id, classification);$/;"	f
 getxFlipRadio	TrainsetCreator/src/it/univpm/dii/view/AddFrameView.java	/^    public JRadioButton getxFlipRadio() {$/;"	m	class:AddFrameView
 getxYFlipRadio	TrainsetCreator/src/it/univpm/dii/view/AddFrameView.java	/^    public JRadioButton getxYFlipRadio() {$/;"	m	class:AddFrameView
 getyFlipRadio	TrainsetCreator/src/it/univpm/dii/view/AddFrameView.java	/^    public JRadioButton getyFlipRadio() {$/;"	m	class:AddFrameView
@@ -1510,10 +1511,12 @@ samplesSize	matlab/lib/src/adaboost/StrongClassifier.h	/^    Dimensions samplesS
 save	TrainsetCreator/src/it/univpm/dii/service/DepthImage.java	/^    public DepthImage save(File filename) throws Exception {$/;"	m	class:DepthImage
 saveCrop	TrainsetCreator/src/it/univpm/dii/service/DepthImage.java	/^    public DepthImage saveCrop(File filename) throws Exception {$/;"	m	class:DepthImage
 saveCropPreference	TrainsetCreator/src/it/univpm/dii/contoller/addframe/AddFrameController.java	/^    protected static void saveCropPreference(int w, int h) {$/;"	m	class:AddFrameController
+save_reversed_sample	matlab/utilities/save_reversed_sample.m	/^function save_reversed_sample(sample, frame_data, coordinates, destination_folder);$/;"	f
 scaleFactor	matlab/lib/src/adaboost/StrongClassifier.h	/^    unsigned int scaleFactor;$/;"	m	class:StrongClassifier
 scaleImage	matlab/lib/src/image/Image.cpp	/^void Image::scaleImage(Image *origin, Image *destination, unsigned int scale) {$/;"	f	class:Image
 scale_classifier	matlab/adaboost/scale_classifier.m	/^function dst = scale_classifier(origin, scale);$/;"	f
 scale_final_classifier	matlab/adaboost/scale_final_classifier.m	/^function dst = scale_final_classifier(origin, scale);$/;"	f
+search_blob_pattern	matlab/utilities/search_blob_pattern.m	/^function coordinates = search_blob_pattern(frame_data, blob_data);$/;"	f
 search_row	matlab/detection/filter_rectangles.m	/^function result = search_row(matrix, r);$/;"	f
 setArea	matlab/lib/src/feature/Haar.h	/^    void setArea(Rectangle *area) {$/;"	f	class:Haar
 setCode	matlab/lib/src/feature/Haar.h	/^    void setCode(unsigned char code) {$/;"	f	class:Haar
@@ -1574,7 +1577,7 @@ slider	TrainsetCreator/src/it/univpm/dii/contoller/addframe/FrameMouseWheelListe
 slider	TrainsetCreator/src/it/univpm/dii/view/AddFrameView.java	/^    private JSlider slider;$/;"	f	class:AddFrameView	file:
 sortByColumn	TrainsetCreator/src/it/univpm/dii/view/tablemodels/ElementModel.java	/^    public void sortByColumn(int col, boolean isAsc) {$/;"	m	class:ElementModel
 sortName	matlab/io/getFrames.m	/^function sorted = sortName(framesPath, names);$/;"	f
-sortName	matlab/io/getFramesPath.m	/^function sorted = sortName(names)$/;"	f
+sortName	matlab/io/getFramesPath.m	/^function sorted = sortName(names);$/;"	f
 sorterMapper	TrainsetCreator/src/it/univpm/dii/view/tablemodels/ElementModel.java	/^    int[] sorterMapper = {$/;"	f	class:ElementModel
 split	matlab/lib/src/geometry/Interval.cpp	/^vector<Interval *> Interval::split(int divider) throw(SplitException) {$/;"	f	class:Interval
 squareCheckbox	TrainsetCreator/src/it/univpm/dii/view/AddFrameView.java	/^    private JCheckBox squareCheckbox;$/;"	f	class:AddFrameView	file:

@@ -34,7 +34,7 @@ function sorted = sortName(framesPath, names);
                 positive = false;
             end
             data = struct('filepath', pathname, 'positive', positive,...
-                'id', id, 'width', width, 'height', height);
+                'id', id, 'width', width, 'height', height, 'x', 0, 'y', 0);
             if length(splitted) == 7
                 tlx = str2double(splitted(6));
                 tly = str2double(splitted(7));

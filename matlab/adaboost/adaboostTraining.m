@@ -66,7 +66,6 @@ function [weakClassifiers, weightedErrors, w, betasT, alphas, samplesSize] = ada
         alphas = [alphas; log(1/betaT)];
     end
     toc(loopETA);
-    % @TODO Organizzare il classificatore forte come una struttura
 end
 
 

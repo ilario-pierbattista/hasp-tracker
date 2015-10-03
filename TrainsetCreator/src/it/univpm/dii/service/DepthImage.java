@@ -33,7 +33,9 @@ public class DepthImage {
         // Lettura del file
         length = fis.read(binaryImage, 0, COLOR_DEPTH * width * height);
         if(length != COLOR_DEPTH * width * height) {
-            throw new IOException("Immagine corrotta");
+            throw new IOException("Immagine corrotta. Sono previsti " +
+                    Integer.toString(COLOR_DEPTH * height * width) +
+                    " byte, sono stati trovati " + Integer.toString(length) + " byte");
         }
 
         /* creazione dell'immagine */
