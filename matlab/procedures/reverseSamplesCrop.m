@@ -39,6 +39,9 @@ end
 frames_size = inputdef('Dimensioni dei frame [%d %d]: ', [512 424]);
 frames_size = struct('width', frames_size(1), 'height', frames_size(2));
 
+% Input dell'indice iniziale (utile per riprendere il processo in un secondo momento)
+begin_index = inputdef('Indice iniziale da cui partire [%d]: ', 1);
+
 % Creazione della directory di destinazione
 destination_folder = strcat('reversed_samples_',datestr(now, 'DDmmmYYYYHHMMSS'));
 destination_folder = fullfile(pwd, destination_folder);
@@ -48,16 +51,26 @@ end
 
 % Apertura dei frammenti e ricerca
 samples = getFrames(datasetPath);
+[s ind] = sort([samples.id]);
+samples = samples(ind);
 
 listed_frame_paths = struct();
-last_frame_analysed = 1;
+
+% Input dell'indice del frame da cui cominciare a cercare l'esempio
+force_first_frame = false;
+if begin_index ~= 1
+    last_frame_analysed = inputdef('Indice del frame da cui partire a cercare [%d]: ', 1);
+    force_first_frame = true;
+else
+    last_frame_analysed = 1;
+end
+
 last_group_analysed = [];
 saved_frames = [];
 number_of_found_frames = 0;
 number_of_non_founds_frames = 0;
 % for each sample in dataset
-% for i = [1:size(samples,1)]
-for i = [1601:size(samples,1)]
+for i = [1:size(samples,1)]
     for row = [1:size(mapping, 1)]
         if mapping(row, 1) <= samples(i).id
             group = mapping(row, :);
@@ -78,9 +91,10 @@ for i = [1601:size(samples,1)]
     % Defining research order
     % If the previous sample was found at the frame i, then the next samples should be
     % located in the frames j > i
-    if isequal(last_group_analysed, group(3:4))
+    if isequal(last_group_analysed, group(3:4)) || force_first_frame
         frame_indexes = [last_frame_analysed : size(paths, 1)];
         frame_indexes = [frame_indexes [1 : frame_indexes - 1]];
+        force_first_frame = false;
     else
         frame_indexes = [1 : size(paths, 1)];
     end

@@ -5,7 +5,12 @@ if nargin > 4
     error('myfuns:readImageData:tooManyArguments')
 end
 
+file_name = fp;
 fp = fopen(fp, 'r');
+if fp < 0
+    error(sprintf('readImageData:impossibile aprire il file %s', file_name));
+end
+
 
 % Impostazione del formato
 formato = '';
@@ -15,7 +20,7 @@ switch colorDepth
     case 24
         % Potrebbe generare errori. Oppure potrebbe essere del tutto
         % inutile.
-        formato = 'ubit24'; 
+        formato = 'ubit24';
     case 8
         formato = 'uint8';
     case 32
@@ -35,5 +40,5 @@ if length(stream) ~= colDim * rowDim
         ' il file è corrotto'))
 end
 
-% Conversione da array a matrice 
+% Conversione da array a matrice
 data = vec2mat(stream, colDim);
