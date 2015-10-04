@@ -67,7 +67,7 @@ end
 
 last_group_analysed = [];
 saved_frames = [];
-number_of_found_frames = 0;
+number_of_found_frames = begin_index - 1;
 number_of_non_founds_frames = 0;
 % for each sample in dataset
 for i = [1:size(samples,1)]
