@@ -1384,6 +1384,7 @@ main	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^int main(int argc, 
 main	CMakeFiles/feature_tests.c	/^int main(int argc, char** argv) { (void)argv; return features[argc]; }$/;"	f
 main	CMakeFiles/feature_tests.cxx	/^int main(int argc, char** argv) { (void)argv; return features[argc]; }$/;"	f
 main	TrainsetCreator/src/it/univpm/dii/TrainsetCreator.java	/^    public static void main(String[] args) {$/;"	m	class:TrainsetCreator
+main	framesviewer/package.json	/^    "main": "main.js"$/;"	f
 main	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	/^int main(int argc, char* argv[])$/;"	f
 main	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	/^void main() {}$/;"	f
 main	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^int main(int argc, char* argv[])$/;"	f
@@ -1425,6 +1426,7 @@ mouseWheelMoved	TrainsetCreator/src/it/univpm/dii/contoller/addframe/FrameMouseW
 moveRectangle	TrainsetCreator/src/it/univpm/dii/view/component/DepthImagePanel.java	/^    private void moveRectangle() {$/;"	m	class:DepthImagePanel	file:
 ms	matlab/lib/src/mexutils/utils.h	/^typedef std::chrono::milliseconds ms;$/;"	t
 mutualExclusion	TrainsetCreator/src/it/univpm/dii/view/EditDialog.java	/^        private void mutualExclusion(ChangeEvent e) {$/;"	m	class:EditDialog.RadioButtonHandler	file:
+name	framesviewer/package.json	/^    "name": "frames-viewer",$/;"	f
 nameLabel	TrainsetCreator/src/it/univpm/dii/view/EditDialog.java	/^    private JLabel nameLabel;$/;"	f	class:EditDialog	file:
 nearestNeightborRadio	TrainsetCreator/src/it/univpm/dii/view/ResizeDialog.java	/^    private JRadioButton nearestNeightborRadio;$/;"	f	class:ResizeDialog	file:
 negDstPath	TrainsetCreator/src/it/univpm/dii/contoller/resize/ResizeSetAction.java	/^    private File posDstPath, negDstPath;$/;"	f	class:ResizeSetAction	file:
@@ -1623,6 +1625,7 @@ updateWeights	matlab/lib/src/adaboost/Adaboost.cpp	/^vector<double> Adaboost::up
 usage	scripts/dataset_downloader.py	/^def usage():$/;"	f
 value	matlab/lib/src/adaboost/FeatureTest.h	/^    double value;$/;"	m	class:FeatureTest
 valueChanged	TrainsetCreator/src/it/univpm/dii/contoller/main/SampleSelectedAction.java	/^    public void valueChanged(ListSelectionEvent e) {$/;"	m	class:SampleSelectedAction
+version	framesviewer/package.json	/^    "version": "0.1.0",$/;"	f
 verticalEdge	matlab/lib/src/feature/Haar.cpp	/^double Haar::verticalEdge(Image *image, Rectangle *rectangle) {$/;"	f	class:Haar
 verticalLinear	matlab/lib/src/feature/Haar.cpp	/^double Haar::verticalLinear(Image *image, Rectangle *rectangle) {$/;"	f	class:Haar
 verticalSplit	matlab/lib/src/geometry/Rectangle.cpp	/^vector<Rectangle *> Rectangle::verticalSplit(unsigned int divider)$/;"	f	class:Rectangle
