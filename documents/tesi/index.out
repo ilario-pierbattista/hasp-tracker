@@ -1,20 +1,20 @@
-\BOOKMARK [0][-]{chapter*.2}{Introduzione}{}% 1
-\BOOKMARK [0][-]{chapter.1}{Panoramica del sistema}{}% 2
-\BOOKMARK [1][-]{section.1.1}{Il Kinect}{chapter.1}% 3
-\BOOKMARK [1][-]{section.1.2}{Head and Shoulder Profile}{chapter.1}% 4
-\BOOKMARK [1][-]{section.1.3}{Un Problema di Classificazione}{chapter.1}% 5
-\BOOKMARK [1][-]{section.1.4}{Preprocessing}{chapter.1}% 6
-\BOOKMARK [0][-]{chapter.2}{Haar-like Features}{}% 7
-\BOOKMARK [1][-]{section.2.1}{Definizione}{chapter.2}% 8
-\BOOKMARK [1][-]{section.2.2}{Dalle Wavelet di Haar alle Feature}{chapter.2}% 9
-\BOOKMARK [1][-]{section.2.3}{Immagine Integrale}{chapter.2}% 10
-\BOOKMARK [1][-]{section.2.4}{Decision Stump}{chapter.2}% 11
-\BOOKMARK [0][-]{chapter.3}{Adaboost}{}% 12
-\BOOKMARK [1][-]{subsection.3.0.1}{Il dataset dall'allenamento}{chapter.3}% 13
-\BOOKMARK [2][-]{subsection.3.0.2}{Estrazione del classificatore forte}{subsection.3.0.1}% 14
-\BOOKMARK [2][-]{subsection.3.0.3}{Il miglior classificatore debole}{subsection.3.0.1}% 15
-\BOOKMARK [0][-]{chapter.4}{Altro}{}% 16
-\BOOKMARK [1][-]{section.4.1}{Costruzione dei Dataset}{chapter.4}% 17
-\BOOKMARK [1][-]{section.4.2}{Test e valutazione}{chapter.4}% 18
-\BOOKMARK [1][-]{section.4.3}{Rilevazioni su registrazioni reali}{chapter.4}% 19
-\BOOKMARK [1][-]{section.4.4}{Conclusioni}{chapter.4}% 20
+\BOOKMARK [0][-]{chapter.1}{Introduzione}{}% 1
+\BOOKMARK [1][-]{section.1.1}{Head and Shoulder Profile}{chapter.1}% 2
+\BOOKMARK [0][-]{chapter.2}{Panoramica del sistema}{}% 3
+\BOOKMARK [1][-]{section.2.1}{Un Problema di Classificazione}{chapter.2}% 4
+\BOOKMARK [1][-]{section.2.2}{Preprocessing}{chapter.2}% 5
+\BOOKMARK [0][-]{chapter.3}{Haar-like Features}{}% 6
+\BOOKMARK [1][-]{section.3.1}{Definizione}{chapter.3}% 7
+\BOOKMARK [1][-]{section.3.2}{Dalle Wavelet di Haar alle Feature}{chapter.3}% 8
+\BOOKMARK [1][-]{section.3.3}{Immagine Integrale}{chapter.3}% 9
+\BOOKMARK [1][-]{section.3.4}{Decision Stump}{chapter.3}% 10
+\BOOKMARK [0][-]{chapter.4}{Adaboost}{}% 11
+\BOOKMARK [1][-]{subsection.4.0.1}{Il dataset dall'allenamento}{chapter.4}% 12
+\BOOKMARK [2][-]{subsection.4.0.2}{Estrazione del classificatore forte}{subsection.4.0.1}% 13
+\BOOKMARK [2][-]{subsection.4.0.3}{Il miglior classificatore debole}{subsection.4.0.1}% 14
+\BOOKMARK [0][-]{chapter.5}{Tuning}{}% 15
+\BOOKMARK [0][-]{chapter.6}{Rilevamento}{}% 16
+\BOOKMARK [0][-]{chapter.7}{Conclusioni}{}% 17
+\BOOKMARK [0][-]{section*.10}{Appendici}{}% 18
+\BOOKMARK [0][-]{Appendice.1.Alph1}{Struttura Software}{}% 19
+\BOOKMARK [0][-]{Appendice.1.Alph2}{Kinect}{}% 20

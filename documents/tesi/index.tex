@@ -1,11 +1,9 @@
 \documentclass[a4paper,11pt,oneside]{book}
 \synctex=1
 
-
 \usepackage{packages}
 \usepackage{frontespizio}
 %\makeindex                                          %CREA INDICE ANALITICO
-
 
 %Document begin
 \begin{document}
@@ -27,10 +25,7 @@
 	% @TODO Rimuovere dopo le correzioni
 	\linenumbers
 
-	\onehalfspacing
-
-	% \input{section/mindmap.tex}
-	% \newpage
+	% \onehalfspacing
 
 	% Introduzione
 	\input{section/introduzione.tex}
@@ -41,18 +36,30 @@
 
 	\input{section/adaboost.tex}
 
-	\chapter{Altro}
-	\section{Costruzione dei Dataset}
-	\label{sec:Costruzione dei Dataset}
+	\chapter{Tuning}
+	\label{chap:Tuning}
+	\emph{Definizione dei criteri di valutazione delle prestazioni.
+	Algoritmo di massimizzazione dell'accuratezza.
+	Valutazione del risultato dell'algoritmo di apprendimento.
+	Valutazione degli elementi di disturbo.}
 
-	\section{Test e valutazione}
-	\label{sec:Test e valutazione}
+	\chapter{Rilevamento}
+	\label{chap:Rilevamento}
+	\emph{Presentazione della tecnica di rilevamento su registrazioni reali.
+	Algoritmo evoluto di selezione della finestra ottima.
+	Tecniche di ottimizzazione dell'operazione di rilevamento a regime.
+	Presentazione e confronto dei risultati ottenuti con quelli in letteratura.}
 
-	\section{Rilevazioni su registrazioni reali}
-	\label{sec:Rilevazioni su registrazioni reali}
+	\chapter{Conclusioni}
+	\label{chap:Conclusioni}
 
-	\section{Conclusioni}
-	\label{sec:Conclusioni}
+	\begin{appendices}
+
+		\input{appendices/software.tex}
+
+		\input{appendices/kinect.tex}
+
+	\end{appendices}
 
 	% Far comparire tutti gli elementi della bibliografia
 	\nocite{*}

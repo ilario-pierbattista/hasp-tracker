@@ -58,7 +58,6 @@ AddFrameController	TrainsetCreator/src/it/univpm/dii/contoller/addframe/AddFrame
 AddFrameController	TrainsetCreator/src/it/univpm/dii/contoller/addframe/AddFrameController.java	/^public class AddFrameController {$/;"	c
 AddFrameView	TrainsetCreator/src/it/univpm/dii/view/AddFrameView.java	/^    public AddFrameView(DepthImage init, File[] frames, int width, int height) {$/;"	m	class:AddFrameView
 AddFrameView	TrainsetCreator/src/it/univpm/dii/view/AddFrameView.java	/^public class AddFrameView extends View {$/;"	c
-Altro	documents/tesi/index.tex	/^	\\input{section\/adaboost.tex}$/;"	c
 AvantiRenderInfoAction	TrainsetCreator/src/it/univpm/dii/contoller/framerender/AvantiRenderInfoAction.java	/^    public AvantiRenderInfoAction(FrameRenderView renderInfoView, File[] frames) {$/;"	m	class:AvantiRenderInfoAction
 AvantiRenderInfoAction	TrainsetCreator/src/it/univpm/dii/contoller/framerender/AvantiRenderInfoAction.java	/^class AvantiRenderInfoAction implements ActionListener {$/;"	c
 BORDER_COLOR	TrainsetCreator/src/it/univpm/dii/view/component/DepthImagePanel.java	/^    public static final Color BORDER_COLOR = Color.BLUE;$/;"	f	class:DepthImagePanel
@@ -512,9 +511,7 @@ CancelAction	TrainsetCreator/src/it/univpm/dii/contoller/resize/CancelAction.jav
 CancelAction	TrainsetCreator/src/it/univpm/dii/contoller/resize/CancelAction.java	/^class CancelAction implements ActionListener {$/;"	c
 ChangeFlipDirectionAction	TrainsetCreator/src/it/univpm/dii/contoller/addframe/ChangeFlipDirectionAction.java	/^    public ChangeFlipDirectionAction(AddFrameView view) {$/;"	m	class:ChangeFlipDirectionAction
 ChangeFlipDirectionAction	TrainsetCreator/src/it/univpm/dii/contoller/addframe/ChangeFlipDirectionAction.java	/^class ChangeFlipDirectionAction implements ActionListener {$/;"	c
-Conclusioni	documents/tesi/index.tex	/^	\\label{sec:Rilevazioni su registrazioni reali}$/;"	s
 Conversione delle distanze	documents/relazione/index.tex	/^			Da ricordare che stiamo trattando di matrici $160 \\times 100$ (porzione del frame principale) i cui valori corrispondo al risultato della misurazione del sensore di profondità del Kinect ed è proporzionale alla distanza rilevata.$/;"	b
-Costruzione dei Dataset	documents/tesi/index.tex	/^	\\chapter{Altro}$/;"	s
 DEC	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	409;"	d	file:
 DEC	CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	404;"	d	file:
 DEC	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	409;"	d	file:
@@ -567,6 +564,7 @@ ElementModel	TrainsetCreator/src/it/univpm/dii/view/tablemodels/ElementModel.jav
 EliminaSelectedAction	TrainsetCreator/src/it/univpm/dii/contoller/main/EliminaSelectedAction.java	/^class EliminaSelectedAction implements ActionListener {$/;"	c
 EmptyFrameDirException	TrainsetCreator/src/it/univpm/dii/exception/EmptyFrameDirException.java	/^    public EmptyFrameDirException(String path) {$/;"	m	class:EmptyFrameDirException
 EmptyFrameDirException	TrainsetCreator/src/it/univpm/dii/exception/EmptyFrameDirException.java	/^public class EmptyFrameDirException extends Exception {$/;"	c
+Estrazione del classificatore forte	documents/tesi/section/adaboost.tex	/^Un dataset di allenamento non è altro che un insieme di porzioni di frame di una certa dimensione (la stessa per tutti) che vegono classificati manualmente dal creatore\\footnote{Il sistema di apprendimento che si sta trattando ricade nella categoria dei sistemi di \\emph{apprendimento supervisionato}.} del dataset.$/;"	u
 FEATURE_DIM	matlab/lib/src/mexutils/structure_mapping.h	31;"	d
 FEATURE_TLP	matlab/lib/src/mexutils/structure_mapping.h	30;"	d
 FEATURE_TYPE	matlab/lib/src/mexutils/structure_mapping.h	32;"	d
@@ -626,6 +624,7 @@ HtmlPage	scripts/dataset_downloader.py	/^class HtmlPage:$/;"	c
 ID_VOID_MAIN	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	6;"	d	file:
 ID_VOID_MAIN	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	6;"	d	file:
 Il dataset dall allenamento} % (fold)
+Il miglior classificatore debole	documents/tesi/section/adaboost.tex	/^La scelta della soglia per il classificatore forte (punto \\ref{adaboost_strong_classifier}) deve minimizzare il numero di esempi classificati in modo errato.$/;"	u
 Image	matlab/lib/src/image/Image.cpp	/^Image::Image() { }$/;"	f	class:Image
 Image	matlab/lib/src/image/Image.cpp	/^Image::Image(char *filePath) {$/;"	f	class:Image
 Image	matlab/lib/src/image/Image.cpp	/^Image::Image(double *image, const size_t *size) {$/;"	f	class:Image
@@ -639,6 +638,8 @@ Interval	matlab/lib/src/geometry/Interval.cpp	/^Interval::Interval(int a, int b)
 Interval	matlab/lib/src/geometry/Interval.h	/^class Interval {$/;"	c
 Introduzione	documents/tesi/section/introduzione.tex	/^% !TEX root=..\/index.tex$/;"	c
 IsPerson	scripts/FindPersonScript/IsPerson.m	/^function FlagPerson = IsPerson(Mat,rowPixel,columnPixel,minimo,SensorHeight,kinVr)$/;"	f
+Kinect	documents/tesi/appendices/kinect.tex	/^% !TEX root=..\/index.tex$/;"	c
+La finestra di visualizzazione, come accennato in precedenza è di $512 times 424$ pixel. In una registrazione che riprende dall alto una persona che attraversa la stanza camminando  la figura della persona occupa una porzione della finestra di circa $160 times 100$ pixel. Un dataset di allenamento non   altro che un insieme di porzioni di frame di una certa dimensione  la stessa per tutti  che vegono classificati manualmente dal creatore footnote  Il sistema di apprendimento che si sta trattando ricade nella categoria dei sistemi di emph  apprendimento supervisionato	documents/tesi/section/adaboost.tex	/^I dati in input per la fase di allenamento sono costituiti dal \\emph{dataset di allenamento}, ovvero una raccolta di oggetti preclassificati attraverso i quali Adaboost riuscirà a selezionare una combinazione di classificatori deboli che meglio approssimano la classificazione degli elementi del dataset.$/;"	u
 MODE_CROP	TrainsetCreator/src/it/univpm/dii/view/component/DepthImagePanel.java	/^    public static final int MODE_CROP = 1;$/;"	f	class:DepthImagePanel
 MODE_PREVIEW	TrainsetCreator/src/it/univpm/dii/view/component/DepthImagePanel.java	/^    public static final int MODE_PREVIEW = 0;$/;"	f	class:DepthImagePanel
 MVPX	TrainsetCreator/src/it/univpm/dii/view/component/DepthImagePanel.java	/^    public static final int MVPX = 10;$/;"	f	class:DepthImagePanel
@@ -823,7 +824,7 @@ ResizeDialog	TrainsetCreator/src/it/univpm/dii/view/ResizeDialog.java	/^public c
 ResizeSetAction	TrainsetCreator/src/it/univpm/dii/contoller/resize/ResizeSetAction.java	/^    public ResizeSetAction(ResizeDialog dialog) {$/;"	m	class:ResizeSetAction
 ResizeSetAction	TrainsetCreator/src/it/univpm/dii/contoller/resize/ResizeSetAction.java	/^class ResizeSetAction implements ActionListener {$/;"	c
 ResizeTrainingSetAction	TrainsetCreator/src/it/univpm/dii/contoller/main/ResizeTrainingSetAction.java	/^public class ResizeTrainingSetAction implements ActionListener {$/;"	c
-Rilevazioni su registrazioni reali	documents/tesi/index.tex	/^	\\label{sec:Test e valutazione}$/;"	s
+Rilevamento	documents/tesi/index.tex	/^	Valutazione degli elementi di disturbo.}$/;"	c
 SE_RESIZE	TrainsetCreator/src/it/univpm/dii/view/component/DepthImagePanel.java	/^    public static final int SE_RESIZE = 4;$/;"	f	class:DepthImagePanel
 SHELL	Makefile	/^SHELL = \/bin\/sh$/;"	m
 SHELL	matlab/Makefile	/^SHELL = \/bin\/sh$/;"	m
@@ -907,12 +908,13 @@ SquareSelectionCheckedAction	TrainsetCreator/src/it/univpm/dii/contoller/addfram
 StrongClassifier	matlab/lib/src/adaboost/StrongClassifier.cpp	/^StrongClassifier::StrongClassifier($/;"	f	class:StrongClassifier
 StrongClassifier	matlab/lib/src/adaboost/StrongClassifier.h	/^    StrongClassifier() { };$/;"	f	class:StrongClassifier
 StrongClassifier	matlab/lib/src/adaboost/StrongClassifier.h	/^class StrongClassifier {$/;"	c
-Test e valutazione	documents/tesi/index.tex	/^	\\label{sec:Costruzione dei Dataset}$/;"	s
+Struttura Software	documents/tesi/appendices/software.tex	/^% !TEX root=..\/index.tex$/;"	c
 Time	matlab/lib/src/mexutils/utils.h	/^typedef std::chrono::high_resolution_clock Time;$/;"	t
 TrainingSet	TrainsetCreator/src/it/univpm/dii/model/entities/TrainingSet.java	/^    public TrainingSet(File basePath) {$/;"	m	class:TrainingSet
 TrainingSet	TrainsetCreator/src/it/univpm/dii/model/entities/TrainingSet.java	/^public class TrainingSet {$/;"	c
 TrainsetCreator	TrainsetCreator/src/it/univpm/dii/TrainsetCreator.java	/^public class TrainsetCreator {$/;"	c
 TrainsetFileFilter	TrainsetCreator/src/it/univpm/dii/utils/TrainsetFileFilter.java	/^public class TrainsetFileFilter implements FilenameFilter {$/;"	c
+Tuning	documents/tesi/index.tex	/^	\\input{section\/adaboost.tex}$/;"	c
 UP	TrainsetCreator/src/it/univpm/dii/view/component/BevelArrowIcon.java	/^    public static final int UP = 0;         \/\/ direction$/;"	f	class:BevelArrowIcon
 UP	TrainsetCreator/src/it/univpm/dii/view/component/SortButtonRenderer.java	/^    public static final int UP = 1;$/;"	f	class:SortButtonRenderer
 VERTICAL_EDGE	matlab/lib/src/feature/Haar.h	/^    static const unsigned char VERTICAL_EDGE = 0;$/;"	m	class:Haar
@@ -1368,6 +1370,7 @@ it.univpm.dii.view.component	TrainsetCreator/src/it/univpm/dii/view/component/De
 it.univpm.dii.view.component	TrainsetCreator/src/it/univpm/dii/view/component/SampleTable.java	/^package it.univpm.dii.view.component;$/;"	p
 it.univpm.dii.view.component	TrainsetCreator/src/it/univpm/dii/view/component/SortButtonRenderer.java	/^package it.univpm.dii.view.component;$/;"	p
 it.univpm.dii.view.tablemodels	TrainsetCreator/src/it/univpm/dii/view/tablemodels/ElementModel.java	/^package it.univpm.dii.view.tablemodels;$/;"	p
+label{sub:il_dataset_dall_allenamento}
 leftOperand	TrainsetCreator/src/it/univpm/dii/utils/ElementEqualityPredicate.java	/^    private Element leftOperand;$/;"	f	class:ElementEqualityPredicate	file:
 length	matlab/lib/src/adaboost/StrongClassifier.h	/^    int length;$/;"	m	class:StrongClassifier
 length	matlab/lib/src/geometry/Interval.cpp	/^unsigned int Interval::length() {$/;"	f	class:Interval
