@@ -2,13 +2,15 @@
 
 \chapter{Adaboost}
 \label{cap:adaboost}
-\emph{Classificazione nell'ambito degli algoritmi di apprendimento automatico.
-Costruzione e preparazione dei dataset di allenamento:
-    definizione delle categorie di classificatori da utilizzare;
-    operazioni preliminari di preprocessing.
-Procedura di estrazione del classificatore forte.
-Procedura di estrazione del miglior classificatore debole.}
+% Classificazione nell'ambito degli algoritmi di apprendimento automatico.
+% Costruzione e preparazione dei dataset di allenamento:
+%     definizione delle categorie di classificatori da utilizzare;
+%     operazioni preliminari di preprocessing.
+% Procedura di estrazione del classificatore forte.
+% Procedura di estrazione del miglior classificatore debole.
 
+Adaboost è un algoritmo di apprendimento automatico della famiglia degli \emph{ensamble learner}.
+Rispetto ad altri metodi di apprendimento, nei quali, da uno spazio di \emph{ipotesi}, ne viene selezionata una sola per formulare la previsione di classificazione dell'oggetto, gli algoritmi di ensamble learning selezionano una collezione di ipotesi e ne combinano le rispettive previsioni.
 
 Adaboost è un algoritmo di apprendimento automatico della famiglia degli \emph{ensamble learner}. Un algoritmo di ensamble learning mira alla costruzione di un classificatore composto da un insieme di
 
@@ -19,6 +21,15 @@ La realtà d'interesse del problema prevede l'esistenza di due classi di oggetti
 
 I dati in input per la fase di allenamento sono costituiti dal \emph{dataset di allenamento}, ovvero una raccolta di oggetti preclassificati attraverso i quali Adaboost riuscirà a selezionare una combinazione di classificatori deboli che meglio approssimano la classificazione degli elementi del dataset.
 
+\section{Apprendimento Supervisionato}
+\label{sec:supervised_learning}
+Gli algoritmi di apprendimento supervisionato utilizzano
+Si consideri un \emph{insieme di allenamento} costituito da $n$ coppie di valori:
+$$ \left\{ (x_1, y_1), (x_2, y_2), ..., (x_n, y_n) \right\} $$
+Per ogni coppia $(x_i, y_i)$, il valore $y_i$ è generato da una funzione sconosciuta $y_i = f(x_i)$.
+
+\section{Alte sottosezioni}
+\label{sec:Alte sottosezioni}
 \subsection{Il dataset dall'allenamento} % (fold)
 \label{sub:il_dataset_dall_allenamento}
 La finestra di visualizzazione, come accennato in precedenza è di $512 \times 424$ pixel. In una registrazione che riprende dall'alto una persona che attraversa la stanza camminando, la figura della persona occupa una porzione della finestra di circa $160 \times 100$ pixel.

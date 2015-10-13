@@ -1,20 +1,36 @@
 \BOOKMARK [0][-]{chapter.1}{Introduzione}{}% 1
-\BOOKMARK [1][-]{section.1.1}{Head and Shoulder Profile}{chapter.1}% 2
-\BOOKMARK [0][-]{chapter.2}{Panoramica del sistema}{}% 3
-\BOOKMARK [1][-]{section.2.1}{Un Problema di Classificazione}{chapter.2}% 4
-\BOOKMARK [1][-]{section.2.2}{Preprocessing}{chapter.2}% 5
-\BOOKMARK [0][-]{chapter.3}{Haar-like Features}{}% 6
-\BOOKMARK [1][-]{section.3.1}{Definizione}{chapter.3}% 7
-\BOOKMARK [1][-]{section.3.2}{Dalle Wavelet di Haar alle Feature}{chapter.3}% 8
-\BOOKMARK [1][-]{section.3.3}{Immagine Integrale}{chapter.3}% 9
-\BOOKMARK [1][-]{section.3.4}{Decision Stump}{chapter.3}% 10
-\BOOKMARK [0][-]{chapter.4}{Adaboost}{}% 11
-\BOOKMARK [1][-]{subsection.4.0.1}{Il dataset dall'allenamento}{chapter.4}% 12
-\BOOKMARK [2][-]{subsection.4.0.2}{Estrazione del classificatore forte}{subsection.4.0.1}% 13
-\BOOKMARK [2][-]{subsection.4.0.3}{Il miglior classificatore debole}{subsection.4.0.1}% 14
-\BOOKMARK [0][-]{chapter.5}{Tuning}{}% 15
-\BOOKMARK [0][-]{chapter.6}{Rilevamento}{}% 16
-\BOOKMARK [0][-]{chapter.7}{Conclusioni}{}% 17
-\BOOKMARK [0][-]{section*.10}{Appendici}{}% 18
-\BOOKMARK [0][-]{Appendice.1.Alph1}{Struttura Software}{}% 19
-\BOOKMARK [0][-]{Appendice.1.Alph2}{Kinect}{}% 20
+\BOOKMARK [1][-]{section.1.1}{Human Sensing}{chapter.1}% 2
+\BOOKMARK [2][-]{subsection.1.1.1}{Human Sensing}{section.1.1}% 3
+\BOOKMARK [2][-]{subsection.1.1.2}{Stato dell'arte}{section.1.1}% 4
+\BOOKMARK [1][-]{section.1.2}{Panoramica Generale}{chapter.1}% 5
+\BOOKMARK [2][-]{subsection.1.2.1}{Configurazione dell'Hardware}{section.1.2}% 6
+\BOOKMARK [2][-]{subsection.1.2.2}{Head and Shoulders Profile}{section.1.2}% 7
+\BOOKMARK [2][-]{subsection.1.2.3}{Flusso di Lavoro}{section.1.2}% 8
+\BOOKMARK [0][-]{chapter.2}{Haar-Like Features}{}% 9
+\BOOKMARK [1][-]{section.2.1}{Definizione}{chapter.2}% 10
+\BOOKMARK [1][-]{section.2.2}{Immagine Integrale}{chapter.2}% 11
+\BOOKMARK [1][-]{section.2.3}{Decision Stump}{chapter.2}% 12
+\BOOKMARK [0][-]{chapter.3}{L'Algoritmo di Allenamento: Adaboost}{}% 13
+\BOOKMARK [1][-]{section.3.1}{Apprendimento Supervisionato Ensamble}{chapter.3}% 14
+\BOOKMARK [2][-]{subsection.3.1.1}{Apprendimento Supervisionato}{section.3.1}% 15
+\BOOKMARK [2][-]{subsection.3.1.2}{Ensamble Learning}{section.3.1}% 16
+\BOOKMARK [2][-]{subsection.3.1.3}{Adaptive Boosting}{section.3.1}% 17
+\BOOKMARK [1][-]{section.3.2}{Dataset di Allenamento}{chapter.3}% 18
+\BOOKMARK [2][-]{subsection.3.2.1}{Categorie di Classificatori}{section.3.2}% 19
+\BOOKMARK [2][-]{subsection.3.2.2}{Preparazione dei Dataset}{section.3.2}% 20
+\BOOKMARK [2][-]{subsection.3.2.3}{Preprocessing}{section.3.2}% 21
+\BOOKMARK [1][-]{section.3.3}{Strong Learner}{chapter.3}% 22
+\BOOKMARK [1][-]{section.3.4}{Weak Learner}{chapter.3}% 23
+\BOOKMARK [0][-]{chapter.4}{Validazione e Regolazione dei Classificatori}{}% 24
+\BOOKMARK [1][-]{section.4.1}{Criteri di Valutazione}{chapter.4}% 25
+\BOOKMARK [1][-]{section.4.2}{Dataset di Validazione}{chapter.4}% 26
+\BOOKMARK [1][-]{section.4.3}{Massimizzazione all'Accuracy}{chapter.4}% 27
+\BOOKMARK [1][-]{section.4.4}{Analisi dei Risultati}{chapter.4}% 28
+\BOOKMARK [0][-]{chapter.5}{Rilevamento}{}% 29
+\BOOKMARK [1][-]{section.5.1}{Tecnica di Rilevamento}{chapter.5}% 30
+\BOOKMARK [1][-]{section.5.2}{Selezione della Finestra Migliore}{chapter.5}% 31
+\BOOKMARK [1][-]{section.5.3}{Confronto con l'Algoritmo G-C}{chapter.5}% 32
+\BOOKMARK [0][-]{chapter.6}{Conclusioni}{}% 33
+\BOOKMARK [0][-]{section*.19}{Appendici}{}% 34
+\BOOKMARK [0][-]{Appendice.1.Alph1}{Struttura Software}{}% 35
+\BOOKMARK [0][-]{Appendice.1.Alph2}{Cenni del funzionamento del sensore Kinect}{}% 36

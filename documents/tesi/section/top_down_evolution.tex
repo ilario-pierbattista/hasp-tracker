@@ -1,0 +1,164 @@
+% !TEX root=../index.tex
+
+% Capitoli sviluppati fino al 5° livello di profondità
+% Introduzione
+
+\chapter{Introduzione}
+\label{chap:introduction}
+    \section{Human Sensing}
+    \label{sec:human_sensing}
+        \subsection{Human Sensing}
+            \subsubsection{Definizione}
+                \paragraph{Definizione enciclopedica di Human Sensing}
+                \paragraph{Dispositivi di acquisizione}
+                \paragraph{Modalità di riconoscimento (?)}
+            \subsubsection{Contesti Applicativi}
+                \paragraph{People Detection: Sistemi di sorveglianza}
+                \paragraph{People Counting: Indagini di mercato}
+                \paragraph{Rilevamento dei parametri vitali: Search & Rescue}
+                \paragraph{People Tracking: Ambienti assistivi}
+            \subsubsection{HS e Computer Vision}
+                \paragraph{Definizione enciclopedica di computer vision}
+                \paragraph{Sensori di acquisizione \emph{visivi}}
+        \subsection{Stato dell'arte}
+            \subsubsection{Pedestrian Detection and Counting}
+            \subsubsection{Face Recognition}
+            \subsubsection{Kinect: a serious game}
+    \section{Panoramica Generale}
+    \label{sec:overview}
+        \subsection{Introduzione al lavoro di Zhu & Wong}
+            \subsubsection{Elenco delle tecnologie coinvolte}
+                \paragraph{Kinect per l'acquisizione}
+                \paragraph{Adaboost per l'allenamento}
+                \paragraph{Affermare la notevole affinità con Viola & Jones}
+        \subsection{Configurazione dell'Hardware}
+        \label{sub:hardware_configuration}
+            \subsubsection{Sensore utilizzato}
+                \paragraph{Descrizione sommaria del Kinect}
+                \paragraph{Breve esposizione delle caratteristiche tecniche del sensore}
+                \paragraph{Presentazione delle immagini di profondità}
+            \subsubsection{Configurazione Top-Down}
+                \paragraph{Esposizione della configurazione hardware}
+                \paragraph{Vantaggi del top-down rispetto al rilevamento frontale}
+        \subsection{\emph{Head and Shoulders Profile}}
+        \label{sub:hasp}
+            \subsubsection{L'attività di riconoscimento è un'attività di classificazione}
+                \paragraph{Cosa bisogna riconoscere?}
+                \paragraph{Il riconoscimento è un'attività affine alla discriminazione}
+                \paragraph{Definizione di classi di oggetti: classificazione}
+            \subsubsection{La classificazione si basa sulla misurazione di alcune caratteristiche}
+                \paragraph{Discriminare in base a cosa?}
+                \paragraph{Le caratteristiche di un oggetto sono la base su cui differenziare un oggetto da un altro}
+            \subsubsection{Caratteristiche del profilo HASP in linguaggio naturale}
+                \paragraph{Come si può descrivere un'immagine di profondità?}
+                \paragraph{Le tre caratteristiche}
+        \subsection{Flusso di Lavoro}
+        \label{sub:overall_workflow}
+            \subsubsection{Definizione dei moduli funzionali}
+                \paragraph{Allenamento}
+                \paragraph{Rilevamento}
+            \subsubsection{Allenamento}
+                \paragraph{Input: Dataset}
+                \paragraph{Adaboost}
+                \paragraph{Output: Classificatore}
+            \subsubsection{Rilevamento}
+                \paragraph{Input: Frame}
+                \paragraph{Algoritmo di rilevamento}
+                \paragraph{Output: finestre di rilevamento}
+
+\chapter{Haar-Like Features}
+\label{chap:features}
+    \section{Definizione}
+    \label{sec:haar_features_definition}
+        \subsection{Richiamo: cosa è una feature (caratteristica)}
+            \subsubsection{Cosa sono le caratteristiche di un oggetto}
+            \subsubsection{Le caratteristiche dipendono da cosa si vuole evidenziare}
+            \subsubsection{Le caratteristiche dipendono da cosa si ha a disposizione}
+        \subsection{Wavelet di Haar}
+            \subsubsection{}
+        \subsection{Formula di calcolo standard}
+        \subsection{Cosa mette in evidenza la feature di Haar}
+        \subsection{Formula di calcolo invariante ai resize}
+    \section{Immagine Integrale}
+    \label{sec:integral_image}
+    \section{Decision Stump}
+    \label{sec:decision_stump}
+
+\chapter{L'Algoritmo di Allenamento: Adaboost}
+\label{chap:adaboost}
+    \section{Apprendimento Supervisionato \emph{Ensamble}}
+    \label{sec:supervised_ensamble_learning}
+        \subsection{Apprendimento Supervisionato}
+        \label{sub:supervised_learning}
+        \subsection{\emph{Ensamble Learning}}
+        \label{sub:ensamble_learning}
+        \subsection{\emph{Adaptive Boosting}}
+        \label{sub:adaptive_boosting}
+    \section{Dataset di Allenamento}
+    \label{sec:training_dataset}
+        \subsection{Categorie di Classificatori}
+        \label{sub:classifiers_categories}
+        \subsection{Preparazione dei Dataset}
+        \label{sub:datasets_setup}
+        \subsection{Preprocessing}
+        \subsection{Formula di calcolo standard}
+        \subsection{Cosa mette in evidenza la feature di Haar}
+        \subsection{Formula di calcolo invariante ai resize}
+    \section{Immagine Integrale}
+    \label{sec:integral_image}
+    \section{Decision Stump}
+    \label{sec:decision_stump}
+
+\chapter{L'Algoritmo di Allenamento: Adaboost}
+\label{chap:adaboost}
+    \section{Apprendimento Supervisionato \emph{Ensamble}}
+    \label{sec:supervised_ensamble_learning}
+        \subsection{Apprendimento Supervisionato}
+        \label{sub:supervised_learning}
+        \subsection{\emph{Ensamble Learning}}
+        \label{sub:ensamble_learning}
+        \subsection{\emph{Adaptive Boosting}}
+        \label{sub:adaptive_boosting}
+    \section{Dataset di Allenamento}
+    \label{sec:training_dataset}
+        \subsection{Categorie di Classificatori}
+        \label{sub:classifiers_categories}
+        \subsection{Preparazione dei Dataset}
+        \label{sub:datasets_setup}
+        \subsection{Preprocessing}
+        \label{sub:preprocessing}
+    \section{\emph{Strong Learner}}
+    \label{sec:strong_learner}
+    \section{\emph{Weak Learner}}
+    \label{sec:weak_learner}
+
+\chapter{Validazione e Regolazione dei Classificatori}
+\label{chap:tuning}
+    \section{Criteri di Valutazione}
+    \label{sec:evaluation_criteria}
+    \section{Dataset di Validazione}
+    \label{sec:validation_dataset}
+    \section{Massimizzazione all'\emph{Accuracy}}
+    \label{sec:accuracy_maximization}
+    \section{Analisi dei Risultati}
+    \label{sec:Analisi dei Risultati}
+
+\chapter{Rilevamento}
+\label{chap:rilevamento}
+    \section{Tecnica di Rilevamento}
+    \label{sec:detection_tecnique}
+    \section{Selezione della Finestra Migliore} %@TODO
+    \label{sec:best_detection_window}
+    \section{Confronto con l'Algoritmo G-C} %@TODO
+    \label{sec:gc_algorithm_comparison}
+
+\chapter{Conclusioni}
+
+% Questa parte non è stata ancora analizzata
+\begin{appendices}
+    \chapter{Struttura Software}
+    \label{chap:Struttura Software}
+
+    \chapter{Cenni del funzionamento del sensore Kinect}
+    \label{chap:Cenni del funzionamento del sensore Kinect}
+\end{appendices}
