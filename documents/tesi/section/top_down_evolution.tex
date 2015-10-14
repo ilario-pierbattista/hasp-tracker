@@ -75,14 +75,54 @@
             \subsubsection{Le caratteristiche dipendono da cosa si vuole evidenziare}
             \subsubsection{Le caratteristiche dipendono da cosa si ha a disposizione}
         \subsection{Wavelet di Haar}
-            \subsubsection{}
+            \subsubsection{Le feature di Haar derivano dalle wavelet di Haar}
+            \subsubsection{Definizione informale delle wavelet di Haar}
+                \paragraph{Chi le ha sviluppate}
+                \paragraph{Cosa sono (base ortonormale spazio funzionale)}
+                \paragraph{Rappresentazione dei segnali (fourier duale)}
+            \subsubsection{Wavelet di Haar e DWT}
+                \paragraph{Utilizzi commerciali DWT (JPEG2000)}
+                \paragraph{Utilizzo delle dwt per il pattern recognition}
         \subsection{Formula di calcolo standard}
+            \subsubsection{Rappresentazione visuale}
+            \subsubsection{Formula generale}
+            \subsubsection{Altri tipi di feature (OpenCv)}
+            \subsubsection{Tipi di feature utilizzate}
         \subsection{Cosa mette in evidenza la feature di Haar}
+            \subsubsection{Immagini normali (Viola Jones)}
+            \subsubsection{Immagini di profondità (Zhu Wong)}
         \subsection{Formula di calcolo invariante ai resize}
+            \subsubsection{Anticipazione del problema del ridimensionamento}
+            \subsubsection{Formula: Normalizzazione sull'area}
+        \subsection{Vantaggi}
+            \subsubsection{Differenze di intensità vs Valutazione dei singoli pixel}
+            \subsubsection{Differenze di intensità vs Estrazione dei contorni}
+            \subsubsection{Estrema efficienza computazionale}
     \section{Immagine Integrale}
     \label{sec:integral_image}
+        \subsection{Definizione rigorosa dell'immagine integrale}
+            \subsubsection{Problema: efficienza nel calcolo di somme di pixel}
+                \paragraph{Complessità computazionale del calcolo \emph{ignorante}}
+                \paragraph{Soluzione: rendere queste somme subito disponibili}
+            \subsubsection{Definizione immagine integrale}
+            \subsubsection{Formula di calcolo della somma dei pixel in un'area}
+                \paragraph{Enunciazione della formula}
+                \paragraph{Dimostrazione della formula}
+                \paragraph{Complessità computazionale del calcolo della feature}
+        \subsection{Complessità computazionale generale}
+            \subsubsection{Complessità del calcolo dell'immagine integrale}
+            \subsubsection{Convenienza del calcolo dell'immagine integrale}
     \section{Decision Stump}
     \label{sec:decision_stump}
+        \subsection{Problema: utilizzare le feature}
+            \subsubsection{È necessario un meccanismo primitivo per utilizzare le feature}
+            \subsubsection{Bisogna discriminare in base al valore}
+        \subsection{Definizione di albero decisionale}
+        \subsection{Definizione di decision stump}
+            \subsubsection{Radice: Test, funzione booleana}
+            \subsubsection{Foglie: risultati possibili}
+            \subsubsection{Formule di calcolo binaria}
+            \subsubsection{Formula di calcolo unica: polarità}
 
 \chapter{L'Algoritmo di Allenamento: Adaboost}
 \label{chap:adaboost}
@@ -90,56 +130,66 @@
     \label{sec:supervised_ensamble_learning}
         \subsection{Apprendimento Supervisionato}
         \label{sub:supervised_learning}
-        \subsection{\emph{Ensamble Learning}}
-        \label{sub:ensamble_learning}
+            \subsubsection{Definizione}
+                \paragraph{Obiettivo}
+                \paragraph{Spazio delle Ipotesi}
+            \subsubsection{Esempi di Supervised learning}
+                \paragraph{Algoritmi di Sup.Learning}
+                \paragraph{Maggiori campi applicativi}
+                \paragraph{Concetti di base}
+                    \subparagraph{Overfitting}
+            \subsubsection{Ensamble Learning}
         \subsection{\emph{Adaptive Boosting}}
         \label{sub:adaptive_boosting}
+            \subsubsection{Algoritmi di Boosting}
+            \subsubsection{Aptive: adattabilità}
+            \subsubsection{Strong learner e Weak learner}
     \section{Dataset di Allenamento}
     \label{sec:training_dataset}
         \subsection{Categorie di Classificatori}
         \label{sub:classifiers_categories}
+            \subsubsection{Variabilità della forma HASP}
+                \paragraph{Variazione dell'orientazione}
+                \paragraph{Variazione derivata dalla distorsione prospettica}
+            \subsubsection{Definizione delle categorie di classificatori}
+                \paragraph{Categorie: Verticale e Orizzontale}
+                \paragraph{Categorie alternative: Obliquo, a zone}
         \subsection{Preparazione dei Dataset}
         \label{sub:datasets_setup}
-        \subsection{Preprocessing}
-        \subsection{Formula di calcolo standard}
-        \subsection{Cosa mette in evidenza la feature di Haar}
-        \subsection{Formula di calcolo invariante ai resize}
-    \section{Immagine Integrale}
-    \label{sec:integral_image}
-    \section{Decision Stump}
-    \label{sec:decision_stump}
-
-\chapter{L'Algoritmo di Allenamento: Adaboost}
-\label{chap:adaboost}
-    \section{Apprendimento Supervisionato \emph{Ensamble}}
-    \label{sec:supervised_ensamble_learning}
-        \subsection{Apprendimento Supervisionato}
-        \label{sub:supervised_learning}
-        \subsection{\emph{Ensamble Learning}}
-        \label{sub:ensamble_learning}
-        \subsection{\emph{Adaptive Boosting}}
-        \label{sub:adaptive_boosting}
-    \section{Dataset di Allenamento}
-    \label{sec:training_dataset}
-        \subsection{Categorie di Classificatori}
-        \label{sub:classifiers_categories}
-        \subsection{Preparazione dei Dataset}
-        \label{sub:datasets_setup}
+            \subsubsection{Acquisizioni}
+                \paragraph{Soggetti, percorsi}
+                \paragraph{Acquisizione delle registrazioni}
+            \subsubsection{Ritaglio dei samples}
+                \paragraph{Trainset Creator}
         \subsection{Preprocessing}
         \label{sub:preprocessing}
+            \subsubsection{Resize}
+                \paragraph{Nearest Neighbour}
+                \paragraph{Altri algoritmi di resize}
+            \subsubsection{Conversione delle distanze}
     \section{\emph{Strong Learner}}
     \label{sec:strong_learner}
+        \subsection{Procedura di estrazione del classificatore forte}
     \section{\emph{Weak Learner}}
     \label{sec:weak_learner}
+        \subsection{Procedura di estrazione del classificatore debole}
+        \subsection{Valutazione della complessità computazionale}
 
+% Valutare l'accorpamento dei due capitoli successivi
 \chapter{Validazione e Regolazione dei Classificatori}
 \label{chap:tuning}
     \section{Criteri di Valutazione}
     \label{sec:evaluation_criteria}
     \section{Dataset di Validazione}
     \label{sec:validation_dataset}
+        \subsection{Criteri di creazione delle registrazioni}
+        \subsection{Altre caratteristiche}
     \section{Massimizzazione all'\emph{Accuracy}}
     \label{sec:accuracy_maximization}
+        \subsection{Parametri liberi del classificatore}
+            \subsubsection{Numero di weak learner}
+            \subsubsection{Soglia del classificatore}
+        \subsection{Algoritmo di ricerca della soglia e del NWL ottimi}
     \section{Analisi dei Risultati}
     \label{sec:Analisi dei Risultati}
 
@@ -147,8 +197,14 @@
 \label{chap:rilevamento}
     \section{Tecnica di Rilevamento}
     \label{sec:detection_tecnique}
+        \subsection{Detection Window}
+        \subsection{Rilevazione su frame}
+            \subsubsection{Resize detection window}
+            \subsubsection{Slide detection window}
     \section{Selezione della Finestra Migliore} %@TODO
     \label{sec:best_detection_window}
+        \subsection{Introduzione al problema}
+        \subsection{Algoritmo di selezione}
     \section{Confronto con l'Algoritmo G-C} %@TODO
     \label{sec:gc_algorithm_comparison}
 
@@ -156,8 +212,16 @@
 
 % Questa parte non è stata ancora analizzata
 \begin{appendices}
-    \chapter{Struttura Software}
-    \label{chap:Struttura Software}
+    \chapter{Software Sviluppato}
+    \label{chap:software}
+        \section{Componenti}
+            \subsection{Creatore dei Dataset}
+            \subsection{Allenamento}
+            \subsection{Tuning, Testing, Rilevamento}
+        \section{Tecnologie utilizzate}
+            \subsection{C++ e Matlab}
+            \subsection{Git e Github [Opzionale]}
+        \section{Proposte di miglioramento}
 
     \chapter{Cenni del funzionamento del sensore Kinect}
     \label{chap:Cenni del funzionamento del sensore Kinect}
