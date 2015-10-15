@@ -1,0 +1,76 @@
+% !TEX root=../index.tex
+
+\chapter{Introduzione}
+\label{chap:introduction}
+    \section{Human Sensing}
+    \label{sec:human_sensing}
+        \subsection{Human Sensing}
+            \subsubsection{Definizione}
+                % \paragraph{Definizione enciclopedica di Human Sensing}
+                L'insieme di tecniche di riconoscimento della presenza di una persona nello spazio prendono il nome di tecniche di \emph{human sensing}.
+                % \paragraph{Dispositivi di acquisizione}
+                Sensori di vario tipo vengono utilizzati nelle tecniche di riconoscimento.
+                % \paragraph{Modalità di riconoscimento (?)}
+                Una volta acquisite le informazioni dai sensori, vanno elaborate da un apposito algoritmo per rilevare la presenza e la posizione della persona nell'ambiente.
+            \subsubsection{Contesti Applicativi}
+                % \paragraph{People Detection: Sistemi di sorveglianza}
+                La possibilità di rilevare la presenza di persone, rende le applicazioni di \emph{human sensing} perfette per le applicazioni di sorveglianza.
+                % \paragraph{People Counting: Indagini di mercato}
+                Sistemi di \emph{people counting} sono utili per la conduzione di indagini di mercato.
+                % \paragraph{Rilevamento dei parametri vitali: Search & Rescue}
+                Dispositivi in grado di rilevare la presenza di corpi umani in contesti di crisi sono utilizzati nelle attività di \emph{search & rescue}.
+                % \paragraph{People Tracking: Ambienti assistivi}
+                Le applicazioni di \emph{human tracking} sono utili anche negli ambienti assistivi automatizzati al fine di monitorare le attività dell'assistito.
+            \subsubsection{HS e Computer Vision}
+                % \paragraph{Sensori di acquisizione \emph{visivi}}
+                Le applicazioni di human sensing che utilizzano sensori di acquisizione \emph{visiva} risolvono problemi di computer vision.
+                % \paragraph{Definizione enciclopedica di computer vision}
+                Lo scopo della \emph{computer vision} è quello di riprodurre la vista umana. L'obbiettivo di tale riproduzione non si limita alla semplice acquisizione di una rappresetazione bidimensionale di una regione di spazio, ma mira all'interpretazione del relativo contenuto.
+        \subsection{Stato dell'arte}
+            \subsubsection{Pedestrian Detection and Counting}
+            Papageorgiou et Al \cite{Papageorgiou98} hanno sviluppato un sistema di riconoscimento e conteggio di pedoni a partire da immagini RGB.
+            \subsubsection{Face Recognition}
+            Viola e Jones \cite{Viola04} hanno proposto un framework per il riconoscimento dei volti all'interno di immagini RGB. Al momento è il sistema più solido nel suo contesto.
+            \subsubsection{Kinect: a serious game}
+            Gli ambiti d'utilizzo del dispositivo Kinect, nota periferica legata a sistemi videoludici, si stanno espandendo constantemente. La quantità e la qualità dei sensori di cui è equipaggiato, il costo relativamente contenuto e l'evoluzione di framework e toolkit di sviluppo, lo rendono un dispositivo particolarmente versatile e adatto allo studio di problemi di computer vision.
+    \section{Panoramica Generale}
+    \label{sec:overview}
+        \subsection{Introduzione al lavoro di Zhu & Wong}
+            \subsubsection{Elenco delle tecnologie coinvolte}
+                \paragraph{Kinect per l'acquisizione}
+                \paragraph{Adaboost per l'allenamento}
+                \paragraph{Affermare la notevole affinità con Viola & Jones}
+        \subsection{Configurazione dell'Hardware}
+        \label{sub:hardware_configuration}
+            \subsubsection{Sensore utilizzato}
+                \paragraph{Descrizione sommaria del Kinect}
+                \paragraph{Breve esposizione delle caratteristiche tecniche del sensore}
+                \paragraph{Presentazione delle immagini di profondità}
+            \subsubsection{Configurazione Top-Down}
+                \paragraph{Esposizione della configurazione hardware}
+                \paragraph{Vantaggi del top-down rispetto al rilevamento frontale}
+        \subsection{\emph{Head and Shoulders Profile}}
+        \label{sub:hasp}
+            \subsubsection{L'attività di riconoscimento è un'attività di classificazione}
+                \paragraph{Cosa bisogna riconoscere?}
+                \paragraph{Il riconoscimento è un'attività affine alla discriminazione}
+                \paragraph{Definizione di classi di oggetti: classificazione}
+            \subsubsection{La classificazione si basa sulla misurazione di alcune caratteristiche}
+                \paragraph{Discriminare in base a cosa?}
+                \paragraph{Le caratteristiche di un oggetto sono la base su cui differenziare un oggetto da un altro}
+            \subsubsection{Caratteristiche del profilo HASP in linguaggio naturale}
+                \paragraph{Come si può descrivere un'immagine di profondità?}
+                \paragraph{Le tre caratteristiche}
+        \subsection{Flusso di Lavoro}
+        \label{sub:overall_workflow}
+            \subsubsection{Definizione dei moduli funzionali}
+                \paragraph{Allenamento}
+                \paragraph{Rilevamento}
+            \subsubsection{Allenamento}
+                \paragraph{Input: Dataset}
+                \paragraph{Adaboost}
+                \paragraph{Output: Classificatore}
+            \subsubsection{Rilevamento}
+                \paragraph{Input: Frame}
+                \paragraph{Algoritmo di rilevamento}
+                \paragraph{Output: finestre di rilevamento}

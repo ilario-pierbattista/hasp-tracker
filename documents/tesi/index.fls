@@ -288,8 +288,8 @@ INPUT /usr/share/texmf/tex/latex/lm/omxlmex.fd
 INPUT /usr/share/texmf/fonts/tfm/public/lm/lmex10.tfm
 INPUT /usr/share/texmf/fonts/tfm/public/lm/rm-lmri10.tfm
 OUTPUT /home/ilario/Projects/hasp-tracker/documents/tesi/index.toc
-INPUT /home/ilario/Projects/hasp-tracker/documents/tesi/section/top_down_evolution.tex
-INPUT /home/ilario/Projects/hasp-tracker/documents/tesi/section/top_down_evolution.tex
+INPUT /home/ilario/Projects/hasp-tracker/documents/tesi/chapters/cap_1.tex
+INPUT /home/ilario/Projects/hasp-tracker/documents/tesi/chapters/cap_1.tex
 INPUT /usr/share/texmf/fonts/tfm/public/lm/rm-lmr17.tfm
 INPUT /usr/share/texmf/fonts/tfm/public/lm/rm-lmbx12.tfm
 INPUT /usr/share/texmf/tex/latex/lm/ot1lmss.fd
@@ -297,6 +297,8 @@ INPUT /usr/share/texmf/tex/latex/lm/ot1lmss.fd
 INPUT /usr/share/texmf/fonts/tfm/public/lm/rm-lmss8.tfm
 INPUT /usr/share/texmf/fonts/tfm/public/lm/rm-lmbx12.tfm
 INPUT /usr/share/texmf/fonts/tfm/public/lm/rm-lmbxi10.tfm
+INPUT /home/ilario/Projects/hasp-tracker/documents/tesi/section/top_down_evolution.tex
+INPUT /home/ilario/Projects/hasp-tracker/documents/tesi/section/top_down_evolution.tex
 INPUT /usr/share/texmf/fonts/tfm/public/lm/rm-lmbxi10.tfm
 INPUT /usr/share/texmf/fonts/tfm/public/lm/rm-lmbxi10.tfm
 INPUT /home/ilario/Projects/hasp-tracker/documents/tesi/index.bbl
