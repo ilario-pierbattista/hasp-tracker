@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2015.9.25)  14 OCT 2015 23:33
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2015.9.25)  23 OCT 2015 18:26
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1046,7 +1046,7 @@ might try typing `S' now just to see what is salvageable.
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.141 ...ssificatore debole}{11}{subsection.3.4.1}
+l.118 ...ssificatore debole}{13}{subsection.3.4.1}
                                                    [1
 
 ])
@@ -1059,10 +1059,10 @@ LaTeX Font Info:    Try loading font information for OT1+lmss on input line 3.
 (/usr/share/texmf/tex/latex/lm/ot1lmss.fd
 File: ot1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-/home/ilario/Projects/hasp-tracker/documents/tesi/chapters/cap_1.tex:21: Misplaced alignment tab character &.
+/home/ilario/Projects/hasp-tracker/documents/tesi/chapters/cap_1.tex:26: Misplaced alignment tab character &.
 <argument> search &
                     rescue
-l.21 ... nelle attività di \emph{search & rescue}
+l.26 ... nelle attività di \emph{search & rescue}
                                                   .
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -1074,10 +1074,10 @@ might try typing `S' now just to see what is salvageable.
 [3
 
 ]
-/home/ilario/Projects/hasp-tracker/documents/tesi/chapters/cap_1.tex:38: Misplaced alignment tab character &.
+/home/ilario/Projects/hasp-tracker/documents/tesi/chapters/cap_1.tex:50: Misplaced alignment tab character &.
 <argument> Introduzione al lavoro di Zhu &
                                            Wong
-l.38 ...tion{Introduzione al lavoro di Zhu & Wong}
+l.50 ...tion{Introduzione al lavoro di Zhu & Wong}
                                                   
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -1088,52 +1088,45 @@ might try typing `S' now just to see what is salvageable.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `alignment tab' on input line 38.
+(hyperref)                removing `alignment tab' on input line 50.
 
-/home/ilario/Projects/hasp-tracker/documents/tesi/chapters/cap_1.tex:43: Misplaced alignment tab character &.
-<argument> ...re la notevole affinità con Viola &
-                                                   Jones
-l.43         \subsection
-                        {Configurazione dell'Hardware}
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-[4]) (/home/ilario/Projects/hasp-tracker/documents/tesi/section/top_down_evolution.tex [5]
+[4]
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <9> on input line 114.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 114.
+ [5] [6]) (/home/ilario/Projects/hasp-tracker/documents/tesi/section/top_down_evolution.tex [7]
 Capitolo 2.
-[6
+[8
 
-] [7] [8]
+] [9] [10]
 Capitolo 3.
-[9
+[11
 
-] [10] [11]
+] [12] [13]
 Capitolo 4.
-[12
+[14
 
 ]
 Capitolo 5.
-[13
+[15
 
 ]
 Capitolo 6.
-[14
+[16
 
-] [15
+] [17
 
 
 ]
 Appendice A.
-[16
+[18
 
 ]
 Appendice B.
-) (/home/ilario/Projects/hasp-tracker/documents/tesi/index.bbl [17
+) (/home/ilario/Projects/hasp-tracker/documents/tesi/index.bbl [19
 
-]) [18
+]) [20
 
 ]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 75.
@@ -1142,25 +1135,27 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 75.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 75.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 75.
 Package rerunfilecheck Info: File `index.out' has not changed.
-(rerunfilecheck)             Checksum: 255A4179098AAA46D3D8080133CD301F;5043.
+(rerunfilecheck)             Checksum: 2D0A81AD5FF9B4DF817DC808AB3868C1;5042.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 21967 strings out of 493087
- 395432 string characters out of 6137029
- 483441 words of memory out of 5000000
- 24833 multiletter control sequences out of 15000+600000
- 79508 words of font info for 45 fonts, out of 8000000 for 9000
+ 21972 strings out of 493087
+ 395435 string characters out of 6137029
+ 483445 words of memory out of 5000000
+ 24848 multiletter control sequences out of 15000+600000
+ 90913 words of font info for 52 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,12n,67p,846b,494s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rmsc.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmbxi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmcsc10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1/public/lm/lmss8.pfb>
-Output written on /home/ilario/Projects/hasp-tracker/documents/tesi/index.pdf (19 pages, 233901 bytes).
+pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist, replaced by a fixed one
+
+{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rmsc.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmbxi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmcsc10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr6.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr9.pfb></usr/share/texmf/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1/public/lm/lmri9.pfb></usr/share/texmf/fonts/type1/public/lm/lmss8.pfb>
+Output written on /home/ilario/Projects/hasp-tracker/documents/tesi/index.pdf (21 pages, 308730 bytes).
 PDF statistics:
- 621 PDF objects out of 1000 (max. 8388607)
- 585 compressed objects within 6 object streams
- 204 named destinations out of 1000 (max. 500000)
+ 626 PDF objects out of 1000 (max. 8388607)
+ 584 compressed objects within 6 object streams
+ 187 named destinations out of 1000 (max. 500000)
  546 words of extra memory for PDF output out of 10000 (max. 10000000)
 

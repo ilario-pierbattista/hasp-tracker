@@ -2,24 +2,18 @@
 			La finestra di visualizzazione, come accennato in precedenza è di $512 times 424$ pixel. In una registrazione che riprende dall alto una persona che attraversa la stanza camminando  la figura della persona occupa una porzione della finestra di circa $160 times 100$ pixel. Un dataset di allenamento non   altro che un insieme di porzioni di frame di una certa dimensione  la stessa per tutti  che vegono classificati manualmente dal creatore footnote  Il sistema di apprendimento che si sta trattando ricade nella categoria dei sistemi di emph  apprendimento supervisionato	documents/relazione/index.tex	/^		I dati in input per la fase di allenamento sono costituiti dal \\emph{dataset di allenamento}, ovvero una raccolta di oggetti preclassificati attraverso i quali Adaboost riuscirà a selezionare una combinazione di classificatori deboli che meglio approssimano la classificazione degli elementi del dataset.$/;"	u
 		label{sub:il_dataset_dall_allenamento}
                 paragraph{Acquisizione delle registrazioni}
-                paragraph{Affermare la notevole affinità con Viola & Jones}
                 paragraph{Altri algoritmi di resize}
                 paragraph{Categorie alternative: Obliquo, a zone}
                 paragraph{Categorie: Verticale e Orizzontale}
-                paragraph{Come si può descrivere un immagine di profondit   	documents/tesi/chapters/cap_1.tex	/^                \\paragraph{Cosa bisogna riconoscere?}$/;"	P
                 paragraph{Complessità computazionale del calcolo della feature}
-                paragraph{Definizione di classi di oggetti: classificazione}
                 paragraph{Dimostrazione della formula}
-                paragraph{Discriminare in base a cosa?}
                 paragraph{Enunciazione della formula}
-                paragraph{Le caratteristiche di un oggetto sono la base su cui differenziare un oggetto da un altro}
                 paragraph{Nearest Neighbour}
                 paragraph{Soggetti, percorsi}
                 paragraph{Trainset Creator}
                 paragraph{Variazione derivata dalla distorsione prospettica}
             subsubsection{Acquisizioni}
             subsubsection{Bisogna discriminare in base al valore}
-            subsubsection{Caratteristiche del profilo HASP in linguaggio naturale}
             subsubsection{Complessità del calcolo dell immagine integrale	documents/tesi/section/top_down_evolution.tex	/^            \\subsubsection{Definizione immagine integrale}$/;"	b
             subsubsection{Conversione delle distanze}
             subsubsection{Definizione delle categorie di classificatori}
@@ -29,7 +23,6 @@
             subsubsection{Foglie: risultati possibili}
             subsubsection{Formula di calcolo unica: polarità}
             subsubsection{Formule di calcolo binaria}
-            subsubsection{La classificazione si basa sulla misurazione di alcune caratteristiche}
             subsubsection{Numero di weak learner}
             subsubsection{Radice: Test, funzione booleana}
             subsubsection{Resize detection window}
@@ -43,7 +36,6 @@
         subsection{Algoritmo di ricerca della soglia e del NWL ottimi}
         subsection{Algoritmo di selezione}
         subsection{Complessità computazionale generale}
-        subsection{Configurazione dell Hardware	documents/tesi/chapters/cap_1.tex	/^                \\paragraph{Kinect per l'acquisizione}$/;"	P
         subsection{Definizione di albero decisionale}
         subsection{Definizione di decision stump}
         subsection{Definizione rigorosa dell immagine integrale	documents/tesi/section/top_down_evolution.tex	/^            \\subsubsection{Anticipazione del problema del ridimensionamento}$/;"	b
@@ -126,10 +118,8 @@ ARCHITECTURE_ID	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	393
 ARCHITECTURE_ID	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	396;"	d	file:
 ARCHITECTURE_ID	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	400;"	d	file:
 ASC	TrainsetCreator/src/it/univpm/dii/utils/ElementComparator.java	/^    public static final int ASC = 0;$/;"	f	class:ElementComparator
-Adaboost	documents/tesi/chapters/cap_1.tex	/^                \\paragraph{Input: Dataset}$/;"	P
 Adaboost	documents/tesi/section/adaboost.tex	/^% !TEX root=..\/index.tex$/;"	c
 Adaboost	matlab/lib/src/adaboost/Adaboost.h	/^class Adaboost {$/;"	c
-Adaboost per l allenamento}
 AddFrameAction	TrainsetCreator/src/it/univpm/dii/contoller/main/AddFrameAction.java	/^class AddFrameAction implements ActionListener {$/;"	c
 AddFrameController	TrainsetCreator/src/it/univpm/dii/contoller/addframe/AddFrameController.java	/^    public AddFrameController(AddFrameView view) {$/;"	m	class:AddFrameController
 AddFrameController	TrainsetCreator/src/it/univpm/dii/contoller/addframe/AddFrameController.java	/^public class AddFrameController {$/;"	c
@@ -137,9 +127,7 @@ AddFrameView	TrainsetCreator/src/it/univpm/dii/view/AddFrameView.java	/^    publ
 AddFrameView	TrainsetCreator/src/it/univpm/dii/view/AddFrameView.java	/^public class AddFrameView extends View {$/;"	c
 Algoritmi di Boosting	documents/tesi/section/top_down_evolution.tex	/^        \\label{sub:adaptive_boosting}$/;"	b
 Algoritmi di Sup.Learning	documents/tesi/section/top_down_evolution.tex	/^            \\subsubsection{Esempi di Supervised learning}$/;"	P
-Algoritmo di rilevamento	documents/tesi/chapters/cap_1.tex	/^                \\paragraph{Input: Frame}$/;"	P
-Allenamento	documents/tesi/chapters/cap_1.tex	/^                \\paragraph{Rilevamento}$/;"	b
-Allenamento	documents/tesi/chapters/cap_1.tex	/^            \\subsubsection{Definizione dei moduli funzionali}$/;"	P
+Allenamento	documents/tesi/chapters/cap_1.tex	/^                Un modulo software sarà dedicato al rilevamento.$/;"	b
 Allenamento	documents/tesi/section/top_down_evolution.tex	/^            \\subsection{Creatore dei Dataset}$/;"	u
 Alte sottosezioni	documents/tesi/section/adaboost.tex	/^Per ogni coppia $(x_i, y_i)$, il valore $y_i$ è generato da una funzione sconosciuta $y_i = f(x_i)$.$/;"	s
 Altre caratteristiche	documents/tesi/section/top_down_evolution.tex	/^        \\subsection{Criteri di creazione delle registrazioni}$/;"	u
@@ -164,7 +152,6 @@ BinFileFilter	TrainsetCreator/src/it/univpm/dii/utils/BinFileFilter.java	/^publi
 BlankIcon	TrainsetCreator/src/it/univpm/dii/view/component/BlankIcon.java	/^    public BlankIcon() {$/;"	m	class:BlankIcon
 BlankIcon	TrainsetCreator/src/it/univpm/dii/view/component/BlankIcon.java	/^    public BlankIcon(Color color, int size) {$/;"	m	class:BlankIcon
 BlankIcon	TrainsetCreator/src/it/univpm/dii/view/component/BlankIcon.java	/^public class BlankIcon implements Icon {$/;"	c
-Breve esposizione delle caratteristiche tecniche del sensore	documents/tesi/chapters/cap_1.tex	/^                \\paragraph{Descrizione sommaria del Kinect}$/;"	P
 C   e Matlab	documents/tesi/section/top_down_evolution.tex	/^        \\section{Tecnologie utilizzate}$/;"	u
 CMAKE_BINARY_DIR	Makefile	/^CMAKE_BINARY_DIR = \/home\/ilario\/Projects\/hasp-tracker$/;"	m
 CMAKE_BINARY_DIR	matlab/Makefile	/^CMAKE_BINARY_DIR = \/home\/ilario\/Projects\/hasp-tracker$/;"	m
@@ -602,6 +589,7 @@ COMPILER_VERSION_TWEAK	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.
 COMPILER_VERSION_TWEAK	matlab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp	33;"	d	file:
 CancelAction	TrainsetCreator/src/it/univpm/dii/contoller/resize/CancelAction.java	/^    public CancelAction(ResizeDialog dialog) {$/;"	m	class:CancelAction
 CancelAction	TrainsetCreator/src/it/univpm/dii/contoller/resize/CancelAction.java	/^class CancelAction implements ActionListener {$/;"	c
+Caratteristiche del profilo HASP in linguaggio naturale	documents/tesi/chapters/cap_1.tex	/^                Nei capitoli successivi verrà presentato un algoritmo che automatizzerà la selezione delle caratteristiche più rilevanti dell'immagine.$/;"	b
 Categorie di Classificatori	documents/tesi/section/top_down_evolution.tex	/^    \\label{sec:training_dataset}$/;"	u
 Cenni del funzionamento del sensore Kinect	documents/tesi/section/top_down_evolution.tex	/^        \\section{Proposte di miglioramento}$/;"	c
 ChangeFlipDirectionAction	TrainsetCreator/src/it/univpm/dii/contoller/addframe/ChangeFlipDirectionAction.java	/^    public ChangeFlipDirectionAction(AddFrameView view) {$/;"	m	class:ChangeFlipDirectionAction
@@ -611,11 +599,10 @@ Complessit   computazionale del calcolo emph  ignorante	documents/tesi/section/t
 Componenti	documents/tesi/section/top_down_evolution.tex	/^    \\label{chap:software}$/;"	s
 Concetti di base	documents/tesi/section/top_down_evolution.tex	/^                \\paragraph{Maggiori campi applicativi}$/;"	P
 Conclusioni	documents/tesi/section/top_down_evolution.tex	/^    \\label{sec:gc_algorithm_comparison}$/;"	c
-Configurazione Top-Down	documents/tesi/chapters/cap_1.tex	/^                \\paragraph{Presentazione delle immagini di profondità}$/;"	b
+Configurazione Top-Down	documents/tesi/chapters/cap_1.tex	/^                Ci si riferirà a tali immagini chiamandole \\emph{immagini di profondità}. Il sensore del Kinect, di cui è disponibile una piccola descrizione più dettagliata all'appendice \\ref{chap:kinect_sensor}, fornisce uno stream di tali immagini ad una frequenza di 30 frame al secondo: è possibile quindi registrare dei \\emph{video di profondità}.$/;"	b
 Contesti Applicativi	documents/tesi/chapters/cap_1.tex	/^                Una volta acquisite le informazioni dai sensori, vanno elaborate da un apposito algoritmo per rilevare la presenza e la posizione della persona nell'ambiente.$/;"	b
 Convenienza del calcolo dell immagine integrale}
 Conversione delle distanze	documents/relazione/index.tex	/^			Da ricordare che stiamo trattando di matrici $160 \\times 100$ (porzione del frame principale) i cui valori corrispondo al risultato della misurazione del sensore di profondità del Kinect ed è proporzionale alla distanza rilevata.$/;"	b
-Cosa bisogna riconoscere 	documents/tesi/chapters/cap_1.tex	/^            \\subsubsection{L'attività di riconoscimento è un'attività di classificazione}$/;"	P
 Cosa mette in evidenza la feature di Haar	documents/tesi/section/top_down_evolution.tex	/^            \\subsubsection{Tipi di feature utilizzate}$/;"	u
 Cosa sono  base ortonormale spazio funzionale 	documents/tesi/section/top_down_evolution.tex	/^                \\paragraph{Chi le ha sviluppate}$/;"	P
 Cosa sono le caratteristiche di un oggetto	documents/tesi/section/top_down_evolution.tex	/^        \\subsection{Richiamo: cosa è una feature (caratteristica)}$/;"	b
@@ -643,7 +630,6 @@ Definizione	documents/tesi/chapters/cap_1.tex	/^        \\subsection{Human Sensi
 Definizione	documents/tesi/section/top_down_evolution.tex	/^        \\label{sub:supervised_learning}$/;"	b
 Definizione	documents/tesi/section/top_down_evolution.tex	/^\\label{chap:features}$/;"	s
 Definizione	documents/tesi/section/weak_learner.tex	/^Le immagini di profondità sono il frutto della percezione della realtà, le feature di Haar costituiscono gli attributi con i quali è possibile descrivere tali immagini.$/;"	s
-Definizione dei moduli funzionali	documents/tesi/chapters/cap_1.tex	/^        \\label{sub:overall_workflow}$/;"	b
 Definizione immagine integrale	documents/tesi/section/top_down_evolution.tex	/^                \\paragraph{Soluzione: rendere queste somme subito disponibili}$/;"	b
 Definizione informale delle wavelet di Haar	documents/tesi/section/top_down_evolution.tex	/^            \\subsubsection{Le feature di Haar derivano dalle wavelet di Haar}$/;"	b
 DepthImage	TrainsetCreator/src/it/univpm/dii/service/DepthImage.java	/^    public DepthImage(File depth, int width, int height)$/;"	m	class:DepthImage
@@ -652,7 +638,6 @@ DepthImagePanel	TrainsetCreator/src/it/univpm/dii/view/component/DepthImagePanel
 DepthImagePanel	TrainsetCreator/src/it/univpm/dii/view/component/DepthImagePanel.java	/^    public DepthImagePanel(DepthImage depthImage, int mode) {$/;"	m	class:DepthImagePanel
 DepthImagePanel	TrainsetCreator/src/it/univpm/dii/view/component/DepthImagePanel.java	/^    public DepthImagePanel(int mode) {$/;"	m	class:DepthImagePanel
 DepthImagePanel	TrainsetCreator/src/it/univpm/dii/view/component/DepthImagePanel.java	/^public class DepthImagePanel extends JPanel implements MouseListener, MouseMotionListener {$/;"	c
-Descrizione sommaria del Kinect	documents/tesi/chapters/cap_1.tex	/^            \\subsubsection{Sensore utilizzato}$/;"	P
 DimCropChangeAction	TrainsetCreator/src/it/univpm/dii/contoller/addframe/DimCropChangeAction.java	/^    public DimCropChangeAction(AddFrameView view) {$/;"	m	class:DimCropChangeAction
 DimCropChangeAction	TrainsetCreator/src/it/univpm/dii/contoller/addframe/DimCropChangeAction.java	/^class DimCropChangeAction implements PropertyChangeListener {$/;"	c
 Dimensions	matlab/lib/src/geometry/Dimensions.cpp	/^Dimensions::Dimensions(unsigned int width, unsigned int height) {$/;"	f	class:Dimensions
@@ -685,7 +670,6 @@ EmptyFrameDirException	TrainsetCreator/src/it/univpm/dii/exception/EmptyFrameDir
 EmptyFrameDirException	TrainsetCreator/src/it/univpm/dii/exception/EmptyFrameDirException.java	/^public class EmptyFrameDirException extends Exception {$/;"	c
 Ensamble Learning	documents/tesi/section/top_down_evolution.tex	/^                    \\subparagraph{Overfitting}$/;"	b
 Esempi di Supervised learning	documents/tesi/section/top_down_evolution.tex	/^                \\paragraph{Spazio delle Ipotesi}$/;"	b
-Esposizione della configurazione hardware	documents/tesi/chapters/cap_1.tex	/^            \\subsubsection{Configurazione Top-Down}$/;"	P
 Estrazione del classificatore forte	documents/tesi/section/adaboost.tex	/^Un dataset di allenamento non è altro che un insieme di porzioni di frame di una certa dimensione (la stessa per tutti) che vegono classificati manualmente dal creatore\\footnote{Il sistema di apprendimento che si sta trattando ricade nella categoria dei sistemi di \\emph{apprendimento supervisionato}.} del dataset.$/;"	u
 FEATURE_DIM	matlab/lib/src/mexutils/structure_mapping.h	31;"	d
 FEATURE_TLP	matlab/lib/src/mexutils/structure_mapping.h	30;"	d
@@ -698,7 +682,6 @@ FeatureTest	matlab/lib/src/adaboost/FeatureTest.h	/^    FeatureTest() { };$/;"	f
 FeatureTest	matlab/lib/src/adaboost/FeatureTest.h	/^class FeatureTest {$/;"	c
 FineAction	TrainsetCreator/src/it/univpm/dii/contoller/addframe/FineAction.java	/^    public FineAction(AddFrameView view) {$/;"	m	class:FineAction
 FineAction	TrainsetCreator/src/it/univpm/dii/contoller/addframe/FineAction.java	/^class FineAction implements ActionListener {$/;"	c
-Flusso di Lavoro	documents/tesi/chapters/cap_1.tex	/^                \\paragraph{Le tre caratteristiche}$/;"	u
 Formula  Normalizzazione sull area}
 Formula di calcolo della somma dei pixel in un area}
 Formula di calcolo invariante ai resize	documents/tesi/section/top_down_evolution.tex	/^            \\subsubsection{Immagini di profondità (Zhu Wong)}$/;"	u
@@ -758,7 +741,6 @@ ID_VOID_MAIN	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	6;"	d	file:
 ID_VOID_MAIN	matlab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	6;"	d	file:
 Il dataset dall allenamento} % (fold)
 Il miglior classificatore debole	documents/tesi/section/adaboost.tex	/^La scelta della soglia per il classificatore forte (punto \\ref{adaboost_strong_classifier}) deve minimizzare il numero di esempi classificati in modo errato.$/;"	u
-Il riconoscimento   un attività affine alla discriminazione}
 Image	matlab/lib/src/image/Image.cpp	/^Image::Image() { }$/;"	f	class:Image
 Image	matlab/lib/src/image/Image.cpp	/^Image::Image(char *filePath) {$/;"	f	class:Image
 Image	matlab/lib/src/image/Image.cpp	/^Image::Image(double *image, const size_t *size) {$/;"	f	class:Image
@@ -770,20 +752,17 @@ Immagini di profondit    Zhu Wong 	documents/tesi/section/top_down_evolution.tex
 Immagini normali  Viola Jones 	documents/tesi/section/top_down_evolution.tex	/^        \\subsection{Cosa mette in evidenza la feature di Haar}$/;"	b
 IndietroRenderInfoAction	TrainsetCreator/src/it/univpm/dii/contoller/framerender/IndietroRenderInfoAction.java	/^    public IndietroRenderInfoAction(FrameRenderView view) {$/;"	m	class:IndietroRenderInfoAction
 IndietroRenderInfoAction	TrainsetCreator/src/it/univpm/dii/contoller/framerender/IndietroRenderInfoAction.java	/^class IndietroRenderInfoAction implements ActionListener {$/;"	c
-Input  Dataset	documents/tesi/chapters/cap_1.tex	/^            \\subsubsection{Allenamento}$/;"	P
-Input  Frame	documents/tesi/chapters/cap_1.tex	/^            \\subsubsection{Rilevamento}$/;"	P
 Interval	matlab/lib/src/geometry/Interval.cpp	/^Interval::Interval(int a, int b) {$/;"	f	class:Interval
 Interval	matlab/lib/src/geometry/Interval.h	/^class Interval {$/;"	c
 Introduzione	documents/tesi/chapters/cap_1.tex	/^% !TEX root=..\/index.tex$/;"	c
 Introduzione	documents/tesi/section/introduzione.tex	/^% !TEX root=..\/index.tex$/;"	c
 IsPerson	scripts/FindPersonScript/IsPerson.m	/^function FlagPerson = IsPerson(Mat,rowPixel,columnPixel,minimo,SensorHeight,kinVr)$/;"	f
 Kinect	documents/tesi/appendices/kinect.tex	/^% !TEX root=..\/index.tex$/;"	c
-L attività di riconoscimento è un attivit   di classificazione	documents/tesi/chapters/cap_1.tex	/^        \\label{sub:hasp}$/;"	b
+La classificazione si basa sulla misurazione di alcune caratteristiche	documents/tesi/chapters/cap_1.tex	/^                Il processo di rilevamento, quindi, si basa sulla determinazione della classe di appartenenza dei vari oggetti: \\emph{classificazione}.$/;"	b
 La finestra di visualizzazione, come accennato in precedenza è di $512 times 424$ pixel. In una registrazione che riprende dall alto una persona che attraversa la stanza camminando  la figura della persona occupa una porzione della finestra di circa $160 times 100$ pixel. Un dataset di allenamento non   altro che un insieme di porzioni di frame di una certa dimensione  la stessa per tutti  che vegono classificati manualmente dal creatore footnote  Il sistema di apprendimento che si sta trattando ricade nella categoria dei sistemi di emph  apprendimento supervisionato	documents/tesi/section/adaboost.tex	/^\\label{sec:Alte sottosezioni}$/;"	u
 Le caratteristiche dipendono da cosa si ha a disposizione	documents/tesi/section/top_down_evolution.tex	/^            \\subsubsection{Le caratteristiche dipendono da cosa si vuole evidenziare}$/;"	b
 Le caratteristiche dipendono da cosa si vuole evidenziare	documents/tesi/section/top_down_evolution.tex	/^            \\subsubsection{Cosa sono le caratteristiche di un oggetto}$/;"	b
 Le feature di Haar derivano dalle wavelet di Haar	documents/tesi/section/top_down_evolution.tex	/^        \\subsection{Wavelet di Haar}$/;"	b
-Le tre caratteristiche	documents/tesi/chapters/cap_1.tex	/^                \\paragraph{Come si può descrivere un'immagine di profondità?}$/;"	P
 MODE_CROP	TrainsetCreator/src/it/univpm/dii/view/component/DepthImagePanel.java	/^    public static final int MODE_CROP = 1;$/;"	f	class:DepthImagePanel
 MODE_PREVIEW	TrainsetCreator/src/it/univpm/dii/view/component/DepthImagePanel.java	/^    public static final int MODE_PREVIEW = 0;$/;"	f	class:DepthImagePanel
 MVPX	TrainsetCreator/src/it/univpm/dii/view/component/DepthImagePanel.java	/^    public static final int MVPX = 10;$/;"	f	class:DepthImagePanel
@@ -808,8 +787,6 @@ OkButtonListener	TrainsetCreator/src/it/univpm/dii/contoller/editframe/OkButtonL
 OkButtonListener	TrainsetCreator/src/it/univpm/dii/contoller/editframe/OkButtonListener.java	/^class OkButtonListener implements ActionListener {$/;"	c
 OpenRecentAction	TrainsetCreator/src/it/univpm/dii/contoller/main/OpenRecentAction.java	/^class OpenRecentAction implements ActionListener {$/;"	c
 OpenTrainingSetAction	TrainsetCreator/src/it/univpm/dii/contoller/main/OpenTrainingSetAction.java	/^class OpenTrainingSetAction implements ActionListener {$/;"	c
-Output  Classificatore	documents/tesi/chapters/cap_1.tex	/^                \\paragraph{Adaboost}$/;"	P
-Output  finestre di rilevamento	documents/tesi/chapters/cap_1.tex	/^                \\paragraph{Algoritmo di rilevamento}$/;"	P
 Overfitting	documents/tesi/section/top_down_evolution.tex	/^                \\paragraph{Concetti di base}$/;"	G
 PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	269;"	d	file:
 PLATFORM_ID	CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c	272;"	d	file:
@@ -953,7 +930,6 @@ Point	matlab/lib/src/geometry/Point.h	/^    Point() { };$/;"	f	class:Point
 Point	matlab/lib/src/geometry/Point.h	/^class Point {$/;"	c
 Preprocessing	documents/tesi/section/overview.tex	/^La forte somiglianza con il lavoro di Viola e Jones farà sì che saranno molteplici i riferimenti ad esso nel testo e i dettagli implementativi in comune.$/;"	s
 PreprocessingFrame	scripts/FindPersonScript/PreprocessingFrame.m	/^function M_corrNoZ = PreprocessingFrame(M,rowPixel,columnPixel,SensorHeight)$/;"	f
-Presentazione delle immagini di profondit  	documents/tesi/chapters/cap_1.tex	/^                \\paragraph{Breve esposizione delle caratteristiche tecniche del sensore}$/;"	P
 Problema  efficienza nel calcolo di somme di pixel	documents/tesi/section/top_down_evolution.tex	/^        \\subsection{Definizione rigorosa dell'immagine integrale}$/;"	b
 Proposte di miglioramento	documents/tesi/section/top_down_evolution.tex	/^            \\subsection{Git e Github [Opzionale]}$/;"	s
 QuitAction	TrainsetCreator/src/it/univpm/dii/contoller/main/QuitAction.java	/^class QuitAction extends WindowAdapter {$/;"	c
@@ -981,8 +957,6 @@ ResizeSetAction	TrainsetCreator/src/it/univpm/dii/contoller/resize/ResizeSetActi
 ResizeSetAction	TrainsetCreator/src/it/univpm/dii/contoller/resize/ResizeSetAction.java	/^class ResizeSetAction implements ActionListener {$/;"	c
 ResizeTrainingSetAction	TrainsetCreator/src/it/univpm/dii/contoller/main/ResizeTrainingSetAction.java	/^public class ResizeTrainingSetAction implements ActionListener {$/;"	c
 Richiamo  cosa   una feature  caratteristica 	documents/tesi/section/top_down_evolution.tex	/^    \\label{sec:haar_features_definition}$/;"	u
-Rilevamento	documents/tesi/chapters/cap_1.tex	/^                \\paragraph{Allenamento}$/;"	P
-Rilevamento	documents/tesi/chapters/cap_1.tex	/^                \\paragraph{Output: Classificatore}$/;"	b
 SE_RESIZE	TrainsetCreator/src/it/univpm/dii/view/component/DepthImagePanel.java	/^    public static final int SE_RESIZE = 4;$/;"	f	class:DepthImagePanel
 SHELL	Makefile	/^SHELL = \/bin\/sh$/;"	m
 SHELL	matlab/Makefile	/^SHELL = \/bin\/sh$/;"	m
@@ -1086,7 +1060,6 @@ Utilizzi commerciali DWT  JPEG2000 	documents/tesi/section/top_down_evolution.te
 Utilizzo delle dwt per il pattern recognition	documents/tesi/section/top_down_evolution.tex	/^                \\paragraph{Utilizzi commerciali DWT (JPEG2000)}$/;"	P
 VERTICAL_EDGE	matlab/lib/src/feature/Haar.h	/^    static const unsigned char VERTICAL_EDGE = 0;$/;"	m	class:Haar
 VERTICAL_LINEAR	matlab/lib/src/feature/Haar.h	/^    static const unsigned char VERTICAL_LINEAR = 2;$/;"	m	class:Haar
-Vantaggi del top-down rispetto al rilevamento frontale	documents/tesi/chapters/cap_1.tex	/^                \\paragraph{Esposizione della configurazione hardware}$/;"	P
 Variabilit   della forma HASP	documents/tesi/section/top_down_evolution.tex	/^        \\label{sub:classifiers_categories}$/;"	b
 Variazione dell orientazione}
 View	TrainsetCreator/src/it/univpm/dii/view/View.java	/^abstract class View {$/;"	c
@@ -1269,7 +1242,6 @@ elements	TrainsetCreator/src/it/univpm/dii/contoller/resize/ResizeSetAction.java
 elements	TrainsetCreator/src/it/univpm/dii/view/tablemodels/ElementModel.java	/^    private ArrayList<Element> elements;$/;"	f	class:ElementModel	file:
 eliminaButton	TrainsetCreator/src/it/univpm/dii/view/MainFrame.java	/^    private JButton eliminaButton;$/;"	f	class:MainFrame	file:
 emph  Adaptive Boosting	documents/tesi/section/top_down_evolution.tex	/^            \\subsubsection{Ensamble Learning}$/;"	u
-emph  Head and Shoulders Profile	documents/tesi/chapters/cap_1.tex	/^                \\paragraph{Vantaggi del top-down rispetto al rilevamento frontale}$/;"	u
 enableEdit	TrainsetCreator/src/it/univpm/dii/view/MainFrame.java	/^    public void enableEdit(boolean enable) {$/;"	m	class:MainFrame
 encodeThresholdEval	matlab/io/encodeThresholdEval.m	/^function encodeThresholdEval(destination, data);$/;"	f
 encodeTuning	matlab/io/encodeTuning.m	/^function encodeTuning(dataPath, thr, cls);$/;"	f
