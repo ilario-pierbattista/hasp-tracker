@@ -1,0 +1,150 @@
+% !TEX root=../index.tex
+
+\chapter{Haar-Like Features}
+\label{chap:features}
+    \section{Definizione}
+    \label{sec:haar_features_definition}
+        \subsection{Richiamo: cosa è una feature (caratteristica)}
+            % @FIXME Possibile ripetizione con sottosezione HASP al capitolo precedente
+            % \subsubsection{Cosa sono le caratteristiche di un oggetto}
+                Le caratteristiche di un oggetto sono quelle proprietà elementari osservabili e misurabili.
+
+            % \subsubsection{Le caratteristiche dipendono da cosa si vuole evidenziare}
+                È stato già detto che la scelta delle caratteristiche è fondamentale e dipende da cosa si vuole mettere in evidenza dell'oggetto in questione.
+
+            % \subsubsection{Le caratteristiche dipendono da cosa si ha a disposizione}
+                Ovviamente la scelta delle caratteristiche è sempre subordinata a ciò che si ha disposizione.
+        \subsection{Wavelet di Haar}
+            \subsubsection{Le feature di Haar derivano dalle wavelet di Haar}
+                Le feature di Haar si adattano molto bene alle proprietà che si vogliono misurare degli oggetti appartenenti all'applicazione d'interesse.
+                Sono un costrutto derivante dalle \emph{wavelet di Haar}.
+            \subsubsection{Definizione informale delle wavelet di Haar}
+                % \paragraph{Chi le ha sviluppate}
+                Alfréd Haar sviluppò il primo tipo di wavelet.
+
+                % \paragraph{Cosa sono (base ortonormale spazio funzionale)}
+                Furono sviluppate come un esempio di funzioni ortonormali di base per uno spazio funzionale.
+
+                % \paragraph{Rappresentazione dei segnali (fourier duale)}
+                In quanto base di uno spazio ortornomale, con le wavelet di Haar è possibile esprimere un qualsiasi segnale limitato.
+                Esse costituiscono, sotto particolari ipotesi, un sistema di rappresentazione dei segnali duale all'analisi spettrale di Fourier.
+                Hanno anche il vantaggio, rispetto a quest'ultimo, di mantenere l'informazione del tempo (approfondire).
+
+            \subsubsection{Wavelet di Haar e DWT}
+                % \paragraph{DWT}
+                Le wavelet di Haar sono state utilizzate nelle \emph{Discrete Wavelet Transform}, in breve DWT.
+
+                % \paragraph{Utilizzi commerciali DWT (JPEG2000)}
+                Un'importante applicazione delle DWT è quella definita dal nuovo standard di compressione delle immagini JPEG2000.
+
+                % \paragraph{Utilizzo delle dwt per il pattern recognition}
+                Nelle applicazioni di machine learning e pattern recognition, le trasformazioni DWT furono utilizzate nei primi lavori di riconoscimento a partire da immagini RGB (riconoscimento dei pedoni).
+                È da quest'ultima applicazione che hanno origine le feature di Haar come verranno trattate.
+
+        \subsection{Formula di calcolo standard}
+            \subsubsection{Rappresentazione visuale}
+            Le feature di Haar sono rappresentabili come due aree adiacenti, una chiara ed una scura.
+            La somma delle intensità (il valore numerico) di tutti i pixel dell'area scura, viene sottratta alla somma delle intensità di tutti i pixel nell'area chiara.
+            Ciò permette di evidenziare le differenze di intensità medie tra i valori dei pixel nelle due aree.
+            [Formula a due aree]
+            È da notare il fatto che, con le feature di Haar, non si vanno a valutare i singoli pixel al fine di individuarne un pattern, ma si ragiona procedendo per aree adiacenti.
+
+            \subsubsection{Formula generale}
+            La definizione delle feature di Haar può essere estesa all'utilizzo di più di due aree adiacenti.
+            Il principio resta lo stesso: si hanno due gruppi di aree, uno chiaro ed uno scuro.
+            La formula di calcolo si generalizza con estrema semplicità.
+            [Formula generale con più aree]
+
+            \subsubsection{Altri tipi di feature (OpenCv)}
+            È possibile formulare feature di moltissime formule.
+            La libreria di computer vision OpenCV mette a disposizione una grande varietà di feature, introducendo anche quelle la cui forma è inclinata di 45°. (Citare articolo in cui vi è la definizione delle feature a 45°).
+
+            \subsubsection{Tipi di feature utilizzate}
+            In questa applicazione vengono utilizzati solo due 4 tipi di feature, contro i 5 utilizzati nel sistema di riconoscimento di Viola-Jones.
+
+        \subsection{Cosa mette in evidenza la feature di Haar}
+            \subsubsection{Immagini normali (Viola Jones)}
+            Nella framework di riconoscimento dei volti di Viola-Jones, le immagini RGB sono la fonte di informazioni del sistema.
+            Vengono applicate le feature di Haar a tali immagini (ovviamente dopo che queste ultime sono state trattate da opportune operazioni di preprocessing) e ciò che viene evidenziato sono le differenze di intensità tra le regioni della foto.
+            A far variare l'intensità di un pixel in una foto concorrono l'illuminazione, il colore e molti altri fattori.
+            Tuttavia, le feature di Haar divengono il mezzo con il quale si può riconoscere un volto umano.
+            Ad esempio, è stato osservato che nella foto di un volto, l'area che racchiude entrambi gli occhi e l'inizio del naso è caratterizzato da una particolare variazione di luminosità, misurabile e utilizzabile per descriminare le i volti da i non volti.
+
+            \subsubsection{Immagini di profondità (Zhu Wong)}
+            Nelle immagini di profondità, dove il valore di ogni pixel corrisponde alla distanza in millimetri della superficie dal sensore, applicare le feature di Haar ad un'area dell'immagine equivale a misurare le differenze di quota tra due aree adiacenti tra di loro.
+            Il sistema di allenamento deciderà quali sono le feature migliori per il riconoscimento della persona, ma tutto si basa sul concetto che le differenze di quota osservabili dal profilo ripreso dall'alto di una persona sono caratteristiche della persona stessa e costituiscono il parametro di riconoscimento rispetto ad un qualsiasi altro oggetto.
+            Una sedia, un tavolo o qualsiasi altro elemento presenterà delle differenze di quota differenti dal profilo della persona.
+
+        \subsection{Formula di calcolo invariante ai resize}
+            \subsubsection{Anticipazione del problema del ridimensionamento}
+            In seguito sarà necessario ridimensionare una feature in modo da coprire un'area più grande, in quanto, dovendo misurare le caratteristiche degli oggetti di interesse, questi ultimi sono variabili in dimensione.
+            Il valore calcolato con la feature in questione, tuttavia, non dovrebbe essere troppo sensibile ai ridimensionamenti (che saranno frequenti).
+
+            \subsubsection{Formula: Normalizzazione sull'area}
+            Al fine di ottenere la massima invarianza ai ridimensionamenti dell'area della feature, il valore di essa viene normalizzato con l'estensione dell'area totale valutata.
+            [Formula normalizzata]
+
+        \subsection{Vantaggi}
+            \subsubsection{Differenze di intensità vs Valutazione dei singoli pixel}
+            Il primo indiscutibile vantaggio delle feature di Haar sta nel fatto che la caratterizzazione dell'oggetto viene effettuata sulla base di osservazioni d'insieme su intere aree dell'immagine e non su ossevazioni globali effettuate su singoli pixel.
+            Oltre alla grandissima complessità che una valutazione su singoli pixel introdurrebbe, bisogna prendere atto che, con dati soggetti a disturbi e alla presenza di rumore, delle caratteristiche misurate sui singoli pixel non sarebbero molto significative.
+
+            \subsubsection{Differenze di intensità vs Estrazione dei contorni}
+            L'estrazione dei contorni potrebbe essere più significativo della valutazione sui singoli pixel, ma continuano ad essere caratteristiche abbastanza complesse da calcolare ed ottenere.
+            L'estrazione dei contorni, inoltre, è un concetto fortemente legato alle immagini RGB, usarlo con le immagini di profondità è un forzatura.
+
+            \subsubsection{Estrema efficienza computazionale}
+            Il principale vantaggio delle feature di Haar rispetto ad altri tipi più elaborati di feature resta la loro efficienza computazionale.
+            Si vedrà che, con una particolare struttura dati di supporto, calcolare il valore di un feature di Haar per un'immagine è un'operazione eseguibile in un tempo costante.
+    \section{Immagine Integrale}
+    \label{sec:integral_image}
+        \subsection{Definizione rigorosa dell'immagine integrale}
+            \subsubsection{Problema: efficienza nel calcolo di somme di pixel}
+                % \paragraph{Complessità computazionale del calcolo \emph{ignorante}}
+                Il calcolo della somma delle intensità di ciascun pixel appartenente ad un'area, necessario al fine di calcolare il valore delle feature di Haar, è un'operazione il cui costo varia all'aumentare della dimensione complessiva dell'area.
+                Calcolare tali somme infatti ha complessità computazionale $\Theta(m \cdot n)$ con $m$ ed $n$ dimensione dell'area.
+
+                % \paragraph{Soluzione: rendere queste somme subito disponibili}
+                La soluzione a tale problema consiste nell'utilizzo dell'immagine integrale, una struttura dati che mette a permette di calcolare la somma dei pixel di qualsiasi area all'interno di essa in un tempo costante.
+            \subsubsection{Definizione immagine integrale}
+                Un'immagine integrale è un matrice delle stesse dimensioni dell'immagine di partenza.
+                Ogni elemento di tale matrice contiene il valore della somma dei pixel che si trovano al di sopra e a destra (estremi inclusi) del pixel relativo alla posizione dell'elemento.
+                [Formula]
+            \subsubsection{Formula di calcolo della somma dei pixel in un'area}
+                % \paragraph{Enunciazione della formula}
+                Attraverso l'immagine integrale è possibile calcolare l'area necessaria per una feature sommando i valori dei due vertici dell'area sulla diagonale principale e sottrandovi quelli dei vertici sulla diagonale secondaria.
+                [Formula]
+
+                % \paragraph{Dimostrazione della formula}
+                [Dimostrazione formula]
+
+                % \paragraph{Complessità computazionale del calcolo della feature}
+                Qualsiasi calcolo di questo tipo richiederà un tempo costante, non più legato alle dimensioni dell'input.
+                La complessità computazionale è quindi $\Theta(1)$.
+
+        \subsection{Complessità computazionale generale}
+            \subsubsection{Complessità del calcolo dell'immagine integrale}
+            La complessità computazione totale del calcolo dell'immagine integrale continua ad essere legata alla dimensione dell'input.
+            Se l'immagine è larga $w$ pixel ed alta $h$ pixel, la complessità computazionale per la generazione dell'immagine integrale è pari a $\Theta(w \cdot h)$.
+
+            \subsubsection{Convenienza del calcolo dell'immagine integrale}
+            L'utilizzo delle immagini integrale è molto vantaggiosa nel momento in cui è necessario calcolare molte feature sulla stessa immagine.
+            Volendo essere più espliciti, se la complessità computazionale totale del calcolo di $n$ feature senza l'utilizzo dell'immagine integrale è maggiore di quella per la generazione dell'immagine integrale stessa, allora è vantaggioso utilizzare tale struttura dati.
+
+    \section{Decision Stump}
+    \label{sec:decision_stump}
+        \subsection{Problema: utilizzare le feature}
+            % \subsubsection{È necessario un meccanismo primitivo per utilizzare le feature}
+            Una volta misurata una caratteristica di un oggetto, bisogna essere in grado di utilizzarla ai fini di classificarlo.
+
+            % \subsubsection{Bisogna discriminare in base al valore}
+            È necessario, quindi, un meccanismo per effettuare una previsione della classe di appartenenza dell'oggetto che si basa esclusivamente sul valore della feature misurata.
+
+        \subsection{Definizione di albero decisionale}
+        Un albero decisionale è un modello predittivo. Ogni nodo dell'albero rappresenta una variabile o una proprietà osservabile. Ogni arco dal nodo padre verso un nodo figlio rappresenta un possibile valore per la proprietà del nodo padre. Le foglie dell'albero rappresentano i valori che si predice possa assumere una variabile obiettivo. Il percorso dalla radice ad una foglia rappresenta la previsione del valore di tale variabile obiettivo a fronte delle osservazioni effettuate sui valori delle variabili rappresentate da ciascun nodo attraversato.
+        \subsection{Definizione di decision stump}
+            \subsubsection{Radice: Test, funzione booleana}
+            Il più semplice albero decisionale è il \emph{decision stump}. Ha profondità unitaria, cioè si basa sull'osservazione di una sola variabile, in base al valore della quale può effettuare due diverse previsioni della variabile obiettivo (ha due foglie).
+            \subsubsection{Foglie: risultati possibili}
+            \subsubsection{Formule di calcolo binaria}
+            \subsubsection{Formula di calcolo unica: polarità}
