@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2015.10.25)  27 OCT 2015 18:09
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2015.10.25)  31 OCT 2015 11:22
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1066,7 +1066,7 @@ might try typing `S' now just to see what is salvageable.
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.103 ...ssificatore debole}{15}{subsection.3.4.1}
+l.89 ...assificatore debole}{21}{subsection.3.4.1}
                                                    [1
 
 ])
@@ -1110,12 +1110,12 @@ might try typing `S' now just to see what is salvageable.
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `alignment tab' on input line 50.
 
-[4]
+[4] [5]
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <9> on input line 114.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <5> on input line 114.
- [5] [6]) (/home/ilario/Projects/hasp-tracker/documents/tesi/chapters/cap_2.tex [7]
+ [6]) (/home/ilario/Projects/hasp-tracker/documents/tesi/chapters/cap_2.tex [7]
 Capitolo 2.
 [8
 
@@ -1148,63 +1148,75 @@ Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-[9] [10] [11]) (/home/ilario/Projects/hasp-tracker/documents/tesi/section/top_down_evolution.tex [12]
+[9] [10] [11] [12]) (/home/ilario/Projects/hasp-tracker/documents/tesi/chapters/cap_3.tex [13]
 Capitolo 3.
-[13
+[14
 
-] [14] [15]
+] [15] [16] [17] [18] [19]
+
+LaTeX Warning: Reference `sub:il_miglior_classificatore_debole' on page 20 undefined on input line 185.
+
+[20] [21] [22] [23]) (/home/ilario/Projects/hasp-tracker/documents/tesi/section/top_down_evolution.tex [24]
 Capitolo 4.
-[16
+[25
 
 ]
 Capitolo 5.
-[17
+[26
 
 ]
 Capitolo 6.
-[18
+[27
 
-] [19
+] [28
 
 
 ]
 Appendice A.
-[20
+[29
 
 ]
 Appendice B.
-) (/home/ilario/Projects/hasp-tracker/documents/tesi/index.bbl [21
+) (/home/ilario/Projects/hasp-tracker/documents/tesi/index.bbl [30
 
-]) [22
+]) [31
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 78.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 78.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 81.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 81.
  (/home/ilario/Projects/hasp-tracker/documents/tesi/index.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 78.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 78.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 81.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 81.
 Package rerunfilecheck Info: File `index.out' has not changed.
-(rerunfilecheck)             Checksum: 92BDE513FE1B215890AF438A8A0329E7;5042.
+(rerunfilecheck)             Checksum: 5BB3DC6313E2DBC8EF83AAE0C04F0153;5042.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
+
+LaTeX Warning: There were undefined references.
+
  ) 
 Here is how much of TeX's memory you used:
- 21993 strings out of 493050
- 395811 string characters out of 6136824
- 484576 words of memory out of 5000000
- 24916 multiletter control sequences out of 15000+600000
+ 22051 strings out of 493050
+ 396533 string characters out of 6136824
+ 485438 words of memory out of 5000000
+ 24939 multiletter control sequences out of 15000+600000
  86687 words of font info for 51 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 62i,12n,67p,846b,494s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 62i,12n,67p,846b,515s stack positions out of 5000i,500n,10000p,200000b,80000s
+pdfTeX warning (dest): name{Hfootnote.3} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exist, replaced by a fixed one
+
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist, replaced by a fixed one
 
-{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rmsc.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmbxi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmcsc10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr6.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr9.pfb></usr/share/texmf/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1/public/lm/lmri9.pfb></usr/share/texmf/fonts/type1/public/lm/lmss8.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb>
-Output written on /home/ilario/Projects/hasp-tracker/documents/tesi/index.pdf (23 pages, 323448 bytes).
+{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathex.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rmsc.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmbxi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmcsc10.pfb></usr/share/texmf/fonts/type1/public/lm/lmex10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi6.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi8.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi9.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr6.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr9.pfb></usr/share/texmf/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1/public/lm/lmri9
+.pfb></usr/share/texmf/fonts/type1/public/lm/lmss8.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb>
+Output written on /home/ilario/Projects/hasp-tracker/documents/tesi/index.pdf (32 pages, 387368 bytes).
 PDF statistics:
- 625 PDF objects out of 1000 (max. 8388607)
- 579 compressed objects within 6 object streams
- 174 named destinations out of 1000 (max. 500000)
+ 732 PDF objects out of 1000 (max. 8388607)
+ 671 compressed objects within 7 object streams
+ 206 named destinations out of 1000 (max. 500000)
  546 words of extra memory for PDF output out of 10000 (max. 10000000)
 

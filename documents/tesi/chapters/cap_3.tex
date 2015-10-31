@@ -1,0 +1,308 @@
+% !TEX root=../index.tex
+
+\chapter{L'Algoritmo di Allenamento: Adaboost}
+\label{chap:adaboost}
+    \section{Apprendimento Supervisionato \emph{Ensamble}}
+    \label{sec:supervised_ensamble_learning}
+        \subsection{Apprendimento Supervisionato}
+        \label{sub:supervised_learning}
+            \subsubsection{Definizione}
+                % \paragraph{Obiettivo}
+                Gli algoritmi di apprendimento supervisionato funzionano attraverso l'utilizzo di un insieme di allenamento, ovvero un insieme i cui elementi sono formati da coppie di oggetti e le relative etichette.
+                La funzione che associa ad ogni oggetto la corretta etichetta è sconosciuta.
+                L'obiettivo dell'algoritmo è quello di trovare una funzione che approssima tale funzione, cioè che permetta di prevedere l'etichetta dell'oggetto.
+
+                % \paragraph{Spazio delle Ipotesi}
+                Le possibili funzioni candidate ad approssimare il comportamento della funzione di classificazione reale, fanno parte dello spazio delle ipotesi.
+
+            \subsubsection{Esempi di Supervised learning}
+                % \paragraph{Algoritmi di Sup.Learning}
+                Addestramento su reti neurali con apprendimento supervisionato.
+                Un famoso algoritmo di supervised learning è il \emph{Support Vector Machine} (SVM).
+
+                % \paragraph{Maggiori campi applicativi}
+                SVM $\rightarrow$ Pedestrian counting.
+
+            \subsubsection{Overfitting}
+                Le tecniche di addestramento supervisionato potrebbero incorrere in problemi di \emph{overfitting}.
+                Dato un insieme di allenamento, infatti, la ricerca delle ipotesi che approssimano al meglio la funzione obiettivo potrebbe essere influenzata da caratteristiche che sono comuni tra gli elementi dell'insieme stesso, ma che non sono discriminanti nella descrizione più generale della classe di oggetti.
+                Ciò porta ad un sequenziale miglioramento delle prestazioni del riconoscimento per gli elementi del dataset di allenamento, ma a prestazioni peggiori in scala globale (ad esempio su elementi di un insieme di validazione o di testing).
+
+            \subsubsection{Ensamble Learning}
+                Gli algoritmi di ensamble learning sono una categoria di algoritmi di apprendimento supervisionato.
+                L'approssimazione della funzione obiettivo avviene mediante la selezione di un insieme di funzioni dallo spazio delle ipotesi.
+                La predizione della classe dell'oggetto avviene, poi, combinando tra loro il risultato delle predizioni formulate dalle singole ipotesi.
+                Indicativamente, un classificatore allenato con un algoritmo di ensamble learning avrà prestazioni migliori.
+
+        \subsection{\emph{Adaptive Boosting}}
+        \label{sub:adaptive_boosting}
+            \subsubsection{Strong learner e Weak learner}
+                Si fanno riferimento a due tipologie di classificatori (o ipotesi).
+                I \emph{weak learner} sono delle singole ipotesi, la cui attendibilità si considera di poco maggiore rispetto ad una previsione casuale.
+                Gli \emph{strong learner} invece sono delle combinazioni di weak learners. Le previsioni effettuate con un classificatore forte sono nettamente migliori delle precedenti.
+
+            \subsubsection{Algoritmi di Boosting}
+                Gli algoritmi di boosting sono la famiglia più popolare di algoritmi che implementano l'ensamble learning.
+                Inizialmente, gli algoritmi di questo tipo, associano ad un insieme di allenamento una distribuzione: ad ogni elemento dell'insieme viene associato un peso.
+                Iterativamente viene selezionato il migliore weak learner, cioè quello che riesce a classificare gli elementi del dataset compiendo meno errori possibili.
+                Sostanzialmente l'idea che è alla base del successo degli algoritmi di boosting sta nel fatto che, tali pesi, vengono aggiornati per ogni elemento ad ogni iterazione in base al risultato della classificazione con il weak learner corrente. Viene diminuito il peso degli elementi classificati correttamente e aumentato quello degli altri, in modo tale da favorire la selezione, all'iterazione successiva, di un weak learner che copra gli errori del precedente.
+                Quest'ultimo viene aggiunto allo strong learner finale, che alla fine del processo sarà costituito da una combinazione dei vari weak learner.
+
+            \subsubsection{Adaboost}
+                Adaboost è l'algoritmo proposto da Freund e Schapire che è valso loro il premio Gödel.
+                Il nome deriva dalla fusione delle parole \emph{Adaptive} e \emph{Boosting} ed implementa le operazioni descritte precedentemente.
+
+    \section{Dataset di Allenamento}
+    \label{sec:training_dataset}
+        \subsection{Categorie di Classificatori}
+        \label{sub:classifiers_categories}
+            \subsubsection{Variabilità della forma HASP}
+                La forma dell'immagine HASP della persona nel frame di profondità varia per molti motivi.
+
+                % \paragraph{Variazione dell'orientazione}
+                La prima causa di variazione della forma HASP è l'orientazione delle persona.
+                L'immagine di una persona che cammina seguendo una direzione parallela al lato lungo del frame sarà indubbiamente diversa dall'immagine di una persona che cammina seguendo una direzione perpendicolare, così come sarà diversa dall'immagine di una persona che compie una traiettoria obliqua all'interno della stanza.
+
+                % \paragraph{Variazione derivata dalla distorsione prospettica}
+                Un altro fattore importante che concorre nella variazione della forma è la distorsione prospettiva.
+                L'immagine di una persona ripresa al centro del frame e quella della stessa persona ripresa in una zona periferica è molto diversa, anche se orientata sempre nella stessa direzione.
+                L'entità della distorsione prospettica della forma è tanto maggiore quanto più il sensore è vicino al pavimento. D'altro canto, le caratteristiche tecniche di quest'ultimo impongono un limite massimo alla distanza.
+                Considerata la realtà applicativa del sistema, la distanza massima del sensore dal pavimento sarà di poco inferiore all'altezza del soffitto in una comune abitazione.
+                L'altezza a cui viene montato il sensore, quindi, non verrà considerato un parametro progettuale, bensì una condizione ambientale entro la quale il sistema deve operare.
+                La distorsione prospettica, quindi, non può essere eliminata.
+
+                % \paragraph{Variazione derivata dalle differenze di statura}
+                Un'ulteriore causa della variazione della forma dell'immagine HASP consiste nelle differenze di corporatura e di statura delle persone.
+                Tali differenze vengono chiamate \emph{differenze interclasse}, essendo delle caratteristiche variabili di oggetti che appartengono alla stessa classe.
+                Ovviemente un buon sistema di rilevamento dovrebbe essere in grado di riconoscere soggetti di differente statura e corporatura.
+                Per ovviare a questo problema verranno prese delle opportune misure di ridimensionamento delle immagini.
+
+            \subsubsection{Definizione delle categorie di classificatori}
+                % \paragraph{Soluzione alla variabilità delle immagini HASP}
+                Una forte variabilità intraclasse potrebbe portare alla sintesi di classificatori troppo laschi.
+                Un buon approccio a questo problema consiste nel dividere gli oggetti, appartenenti alla stessa classe, in diverse categorie.
+                Tali categorie devono essere scelte in modo tale che le differenze tra gli oggetti appartenti alla stessa categoria siano lievi, mentre quelle relative agli oggetti di differenti categorie siano più accentuati.
+                Definite tali categorie, per ognuna di esse verrà sintetizzato un classificatore, allendandolo solo su elementi appartenenti ad una stessa categoria.
+                Così facendo le differenze intraclasse di entità superiore vengono arginate.
+
+                % \paragraph{Categorie: Verticale e Orizzontale}
+                L'orientazione della persona è il parametro su cui si possono formulare le diverse categorie.
+                In questo sistema vengono allenati due classificatori forti che vanno ad operare in parallelo in fase di riconoscimento: il primo è allenato esclusivamente con immagini di persone che si muovono in direzione parallela al lato lungo del frame (informalmente, direzione \emph{orizzontale}), il secondo con immagini di persone che si muovono in direzione perpendicolare alla prima (direzione \emph{verticale}).
+
+                % \paragraph{Categorie alternative: Obliquo, a zone}
+                Sarebbe possibile anche definire ulteriori categorie basate sulla direzione delle persona, introducendo due classificatori dedicati alle due direzioni oblique rispetto alle prime due.
+                Inoltre si può pensare di porre rimedio alla distorsione prospettica del sensore suddividendo il frame in aree ed allenando, per ognuna di esse, una coppia di classificatori orizzontale-verticale.
+                Queste ultime due soluzioni introducono una certa complessità aggiuntiva ed in questa fase iniziale di sperimentazione non porteranno grandi vantaggi alla precisione complessiva del sistema.
+
+        \subsection{Preparazione dei Dataset}
+        \label{sub:datasets_setup}
+            \subsubsection{Acquisizioni}
+                % \paragraph{Soggetti, percorsi}
+                Per la creazione dei dataset di allenamento è stato chiesto a 10 soggetti, di statura e corporatura differente, di percorrere una traiettoria differente per ogni registrazione.
+                Delimitata l'area del pavimento corrispondente all'area di visualizzazione del frame di profondità, sono state individuate 3 traiettorie:
+                \begin{description}
+                    \item[Orizzontale] È stato chiesto ai soggetti di coprire tutta l'area muovendosi lungo la direzione parallela al lato maggiore;
+                    \item[Verticale] È stato chiesto ai soggetti di comprire tutta l'area muovendosi lungo la direzione perpendicolare al lato maggiore;
+                    \item[Random] È stato chiesto ai soggetti di seguire una traiettoria casuale, cercando di coprire tutta l'area del frame.
+                \end{description}
+                Le prime due traiettorie corrispondo alle categorie individuate precedentemente: da tali registrazioni vengono estratti gli oggetti per l'allenamento dei classificatori orizzontale e verticale.
+                Le registrazioni dell'ultima traiettoria, invece, vengono utilizzate per la creazione del dataset di validazione.
+
+                % \paragraph{Acquisizione delle registrazioni}
+                Con un software apposito %@TODO Inserire crediti
+                vengono sequenzialmente catturati e salvati i frame di profondità provenienti dal dispositivo Kinect, ad una frequenza massima di $30 fps$.
+                Il software è in grado di catturare fino a 1000 frame, che vengono salvati in file binari grezzi, senza ricorrere a compressione.
+                La durata delle registrazioni delle traiettorie orizzontale e verticale è subordinata al tempo necessario al soggetto per coprire tutta l'area del frame, mentre le registrazioni riferite alle traiettorie casuali sono tutte costituite da 1000 frame.
+
+            \subsubsection{Ritaglio dei samples}
+                % \paragraph{Trainset Creator}
+                È stato sviluppato \emph{ad hoc} un applicativo dedicato alla creazione e alla gestione dei dataset di allenamento.
+                Attraverso un'efficace interfaccia utente, permette di aprire e visualizzare una registrazione e scorrere ciascun frame. Una volta individuato il frame interessato, è possibile estrarre un ritaglio selezionando l'area. La porzione selezionata di frame viene immediatamente salvata in un file binario grezzo nella cartella contenente il dataset correntemente aperto.
+                [Appendici per spiegazioni migliori]
+
+        \subsection{Preprocessing}
+        \label{sub:preprocessing}
+            \subsubsection{Resize}
+                In fase di creazione dei dataset è necessario effettuare una prima operazione di preprocessing.
+                In virtù del fatto che, a soggetti di corporatura differente, corrispondo immagini HASP di dimensioni differenti, è necessario normalizzare le dimensioni dei ritagli componenti i dataset di allenamento.
+                Tutte le immagini vengono quindi ridimensionate a $24 \times 24$ pixel (valore noto in letteretura).
+
+                % \paragraph{Possibili algoritmi di resize}
+                I possibili algoritmi per il ridimensionamento delle immagini sono \emph{nearest neighbour}, \emph{bilinear interpolation} ed \emph{bicubic interpolation}.
+                Il ridimensionamento degli elementi del dataset si può effettuare direttamente dal software di gestione, che implementa i tre algoritmi precedenti.
+
+                % \paragraph{Nearest Neighbour}
+                L'algoritmo nearest neighbour è quello maggiormente utilizzato in quanto è il meno invasivo dei tre.
+
+            \subsubsection{Conversione delle distanze}
+                Un'ulteriore operazione di preprocessing da effettuare sugli elementi del dataset è la conversione delle distanze.
+                Convertire le distanze dal sensore in quote dal pavimento.
+
+    \section{\emph{Strong Learner}}
+    \label{sec:strong_learner}
+        \subsection{Procedura di estrazione del classificatore forte}
+            Sia $D = \{(x_1, y_1), ..., (x_n, y_n)\}$ un insieme di $n$ coppie costituite da un'immagine ($x_i$) e la relativa classificazione ($y_i \in \{ 0, 1 \}$). Se $y_i = 1$, allora $x_i$ appartiene alla classe \emph{umano} (la coppia $(x_i, y_i)$ prende il nome di \emph{esempio positivo}), altrimenti appartiene alla classe \emph{non umano} (la coppia $(x_i, y_i)$ prende il nome di \emph{esempio negativo}).
+
+            L'insieme $D$ può essere partizionato come segue:
+            $$P = \{(x, y) \in D | y = 1\} \text{ e } N = \{(x,y) \in D | y = 0\}$$
+
+            Si tenga a mente che, essendo $P$ ed $N$ partizioni di $D$, valgono le seguenti\footnote{La scrittura $\#(D)$ denota il numero di elementi dell'insieme $D$.}:
+            \begin{equation}
+                D = P \cup N
+            \end{equation}
+            \begin{equation}
+                P \cap N = \emptyset
+            \end{equation}
+            \begin{equation}
+                \#(D) = \#(P \cup N) = \#(P) + \#(N)
+            \end{equation}
+
+            Si introduce anche il concetto di \emph{classificatore debole}. Si tratta di una funzione che per una data immagine $x$ in ingresso, assume il valore che simboleggia la presunta classe di appartenenza di quest'ultima.
+            Nel dettaglio:
+            \begin{equation}
+                h(x) = \begin{cases}
+                1 & \text{se $pf(x) < p\theta$}\\
+                0 & \text{altrimenti}
+            \end{cases}
+            \end{equation}
+            dove $f(x)$ è il valore di una feature di Haar applicata all'immagine $x$, $p \in \{-1,1\}$ è detta \emph{polarità} e $\theta$ è la \emph{soglia} (\emph{threshold}). Tutti i classificatori deboli sono costruiti usando un'unica feature.
+
+            L'obbiettivo di Adaboost è quello di formare un \emph{classificatore forte} come combinazione lineare dei migliori classificatori deboli estraibili dal set di allenamento, dove il fattore moltiplicativo di ogni classificatore nella combinazione è inversamente proporzionale agli errori di classificazione compiuti da quest'ultimo in fase di allenamento.
+
+            Il seguente algoritmo descrive la procedura di estrazione e combinazone di $T$ classificatori deboli.
+
+            \begin{enumerate}
+                \item Si associa ad ogni elemento $(x_i, y_i) \in D$ un peso $w_i$ tale che $w_i = \frac{1}{2l}$ se $(x_i, y_i) \in P$ oppure $w_i = \frac{1}{2m}$ se $(x_i, y_i) \in N$, dove $l = \#(P)$ ed $m = \#(N)$ (numero degli esempi positivi e numero degli esempi negativi).
+
+                Sia inoltre $n := \#(D) = \#(P) + \#(N) = l + m$.
+
+                \item \emph{For} $t = [1:T]$
+                \begin{enumerate}
+                    \item Si normalizzano i pesi, in modo che la loro somma sia pari ad 1:
+                    $$ w_{t,i} \leftarrow \frac{w_{t,i}}{\sum_{j = 1}^{n}w_{t,j}}$$
+
+                    \item \label{adaboost_minimum_error}
+                    Si estrae il miglior classificatore debole. La procedura viene esposta nel dettaglio nella sezione \ref{sub:il_miglior_classificatore_debole}, ma si tenga presente che il miglior classificatore è quello il cui \emph{errore pesato} è minimo per la corrente iterazione.
+                    $$ \epsilon_t = \min_{f,p,\theta} \{
+                    \sum_{i = 1}^{n} w_{t,i} \cdot |h(x_i, f, p, \theta) - y_i|
+                    \} $$
+                    Siano inoltre $f_t$, $p_t$, $\theta_t$ i parametri del classificatore debole che ne minimizzano l'errore pesato:
+                    $$ h_t(x) := h(x, f_t, p_t, \theta_t) $$
+
+                    \item \label{adaboost_beta} $\beta_t \leftarrow \frac{\epsilon_t}{1 - \epsilon_t}$
+
+                    \item \label{adaboost_update_weights} Si aggiornano i pesi
+                    $$ w_{t+1, i} \leftarrow w_{t,i} \cdot \beta_{t}^{e_i} $$
+                    dove $e_i = 1$ se $(x_i, h_t(x_i)) \in D$ (ovvero se $x_i$ è classificata correttamente), $e_i = 0$ altrimenti.
+
+                    \item $\alpha_t \leftarrow \log(\frac{1}{\beta_t})$
+                \end{enumerate}
+
+                \item \label{adaboost_strong_classifier} Il classificatore forte è dato da:
+                \begin{equation}
+                    F(x) = \begin{cases}
+                    1 & \text{ se } \sum_{t = 1}^{T} \alpha_t h_t(x) > \theta \sum_{t = 1}^{T} \alpha_t \\
+                    0 & \text{ altrimenti }
+                \end{cases}
+            \end{equation}
+            dove $\theta \in [0,1]$ è la soglia.
+            \end{enumerate}
+
+            Si noti che, nel'operazione \ref{adaboost_minimum_error}, l'errore pesato non è altro che la somma dei pesi degli esempi non classificati correttamente. Infatti:
+            $$ h(x_i, f, p, \theta) = y_i \Rightarrow |h(x_i, f, p, \theta) - y_i| = 0 $$
+            $$ h(x_i, f, p, \theta) \neq y_i \Rightarrow |h(x_i, f, p, \theta) - y_i| = 1 $$
+
+            Al punto \ref{adaboost_beta}, il valore di $\beta_t$ non è altro che il rapporto tra l'errore pesato del classificatore debole e la somma dei pesi delle immagini classificate correttamente. Tale valore è chiaramente $0 < \beta_t < 1$.
+
+            In fase di aggiornamento dei pesi (punto \ref{adaboost_update_weights}), i pesi relativi ad esempi classificati correttamente vengono moltiplicati per $\beta_t$ ($\beta_{t}^{1} = \beta_t < 1$) e quindi decrementati, mentre gli altri vengono lasciati inalterati ($\beta_{t}^{0} = 1$). Fare in modo che gli esempi non classificati correttamente abbiano un peso maggiore di quelli classificati correttamente è il modo per influenzare la scelta del classificatore debole successivo che andrà a colmare le lacune del suo predecessore.
+
+            La scelta della soglia per il classificatore forte (punto \ref{adaboost_strong_classifier}) deve minimizzare il numero di esempi classificati in modo errato.
+    \section{\emph{Weak Learner}}
+    \label{sec:weak_learner}
+        \subsection{Procedura di estrazione del classificatore debole}
+            Si è detto che un classificatore debole è costruito a partire da una feature di Haar. La scelta del migliore, quindi, mira ad identificare la feature, la polarità e la soglia che minimizzano l'errore pesato di classificazione.
+
+            Si ricordi che le feature di Haar sono degli indicatori di quanto le intensità dei pixel variano da una regione della feature ad un'altra. Il classificatore debole, quindi, classificherà l'immagine a seconda che tale indice sia maggiore o minore di una certa soglia. Il compito della polarità è quello di stabilire il verso della diseguaglianza.
+
+            Il pool di feature da testare è costituito - teoricamente - da tutte quelle individuabili nell'immagini di allenamento. Nell'opera di Viola e Jones vengono utilizzate immagini di allenamento di $24 \times 24$ pixel e 5 tipologie di feature (\cite{Viola04}, sezione 2.2): il numero di possibili features in tale area è maggiore di 160000. In questa applicazione si utilizzano immagini di $160 \times 100$ pixel e 4 tipologie di feature: il pool è costituito da un numero di elementi maggiore di almeno 4 ordini di grandezza.
+
+            È da tener presente che moltissime di queste feature sono poco significative in questa situazione: non ha senso calcolare la variazione di intensità di due aree molto piccole con delle immagini che hanno una risoluzione tanto alta. Effettuando una prima scrematura, si cercherà di avere un pool di feature selezionabili la cui dimensione non superi quella del pool di Viola-Jones per più di un ordine di grandezza.
+
+            Sia $\{ f_1,...,f_k\}$ l'insieme di tutte le feature selezionabili, $D = \{(x_1,y_1), ..., (x_n, y_n) \}$ l'insieme degli esempi di allenamento e $\{w_1, ..., w_n\}$ l'insieme dei relativi pesi. La scelta del classificatore debole avviene come descritto dal seguente algoritmo in pseudocodice:
+
+            \begin{enumerate}
+                \item Si calcolano $T^+$ e $T^-$, rispettivamente, somma dei pesi degli esempi negativi e di quelli negativi:
+                $$T^+ \leftarrow \sum_{i = 1}^{n} (w_i y_i)
+                \text{ , }
+                T^- \leftarrow \sum_{i = 1}^{n} [w_i (1 - y_i)]$$
+
+                \item \emph{For} $f = [f_1, ..., f_k]$
+
+                \begin{enumerate}
+                    \item Si inizializza una lista di $n$ elementi per memorizzare i valori della feature i-esima applicata ad ogni immagine di allenamento:
+                    $$values[i] \leftarrow f(x_i) \; \forall x_i \in D$$
+
+                    \item Si ordinano gli elementi della lista in ordine crescente. Si tenga in conto che, dopo tale operazione, all'i-esima posizione della lista non corrisponderà più il valore della feature applicata all'i-esima immagine di allenamento.
+
+                    \item Si inizializzano $S^+$ ed $S^-$, con le quali, scorrendo gli elementi della lista con un cursore, indicheremo rispettivamente la somma dei pesi degli esempi positivi e di quelli negativi: $S^+ \leftarrow 0, S^- \leftarrow 0$
+
+                    \item \emph{For} $i = [1:n]$
+
+                    \begin{enumerate}
+                        \item A causa del rilocamento degli indici, alla posizione i-esima della lista corrisponderà il valore della feature dell'elemento $x_j$ con classificazione $y_j$ e peso $w_j$ tale che $(x_j, y_j) \in D$:
+                        $$x_j, y_j, w_j \Leftarrow values[i]$$
+
+                        \item \emph{If} $y_i = 1$ \emph{Then}
+                        \begin{enumerate}
+                            \item $S^+ \leftarrow S^+ + w_j$
+                        \end{enumerate}
+                        \item \emph{Else}
+                        \begin{enumerate}
+                            \item $S^+ \leftarrow S^- + w_j$
+                        \end{enumerate}
+
+                        \item \label{best_classifier_p_theta}
+                        Si calcola calcola l'errore pesato di classificazione:
+                        $$e_i = \min\{ S^+ + (T^- - S^-), S^- + (T^+ - S^+) \}$$
+
+                    \end{enumerate}
+
+                    \item Si determinano la polarità ($p_f$) e la soglia ($\theta_f$) per cui l'errore pesato ($\epsilon_f)$ di classificazione per un classificatore che utilizza la feature $f$ è minimo:
+                    $$p_f, \theta_f | \epsilon_f = \min \{ e_1, ..., e_n \}$$
+                \end{enumerate}
+
+                \item Si scelgono polarità ($p$) e soglia ($\theta$) finali, ovvero quelle del classificatore debole con errore pesato $\epsilon$ minore tra tutti i classificatori possibili:
+                $$p, \theta | \epsilon = \min \{ \epsilon_1, ..., \epsilon_k \}$$
+                Il miglior classificatore debole è quindi:
+                \begin{equation}
+                    \label{eq:weak_classifier}
+                    h(x) := \begin{cases}
+                    1 & \text{ se } pf(x) < p\theta \\
+                    0 & \text{ altrimenti }
+                \end{cases}
+            \end{equation}
+
+            \end{enumerate}
+
+            Il metodo di identificazione della polarità e della soglia non viene riportato nell'algoritmo, essendo un passaggio che merita una trattazione a parte. Selezionare un valore di soglia vuol dire trovare il \emph{punto che partiziona al meglio la lista dei valori della feature calcolata sulle immagini di allenamento, in modo tale da minimizzare gli errori di classificazione}. La miglior soglia di una buona feature fa in modo che la maggior parte delle immagini appartenenti alla stessa classe assumano un valore minore (o maggiore). Si può notare, come diretta conseguenza, che con una feature pessima per la classificazione non sarà possibile trovare un valore di soglia che soddisfi tale criterio.
+
+            Al punto \ref{best_classifier_p_theta} viene calcolato l'errore pesato di classificazione per una feature $f$ con soglia $values[i]$\footnote{I possibili valori delle soglie corrispondono esattamente ai valori della feature calcolata sugli esempi di allenamento}. Per essere più espliciti, bisogna effettuare una serie di osservazioni:
+            \begin{enumerate}
+                \item \label{obs:1} $T^+$ ($T^-$) corrisponde alla somma dei pesi degli esempi positivi (negativi);
+                \item \label{obs:2} $S^+$ ($S^-$) corrisponde alla somma dei pesi degli esempi positivi (negativi) dalla prima posizione fino all'i-esima della lista (quella su cui è posizionato il cursore);
+                \item \label{obs:3} $T^+ - S^+$ ($T^- - S^-$) corrisponde alla somma dei pesi degli esempi positivi (negativi) dalla posizione $i+1$ della lista fino alla fine;
+                \item \label{obs:4} Per un classificatore della forma (\ref{eq:weak_classifier}) con $p = 1$, $S^+$ corrisponde alla \emph{somma dei pesi degli esempi classificati correttamente}, mentre $S^- + (T^+ - S^+)$ corrisponde alla somma dei pesi degli esempi classificati in modo scorretto;
+                \item \label{obs:5} Per l'osservazione \ref{obs:4} un classificatore (\ref{eq:weak_classifier}) con $p = 1$, la quantità $S^- + (T^+ - S^+)$ è \emph{l'errore pesato};
+                \item \label{obs:6} Analogamente alle osservazioni \ref{obs:4} e \ref{obs:5}, un classificatore (\ref{eq:weak_classifier}) con $p = -1$ commetterà un errore pesato pari alla quantità $S^+ + (T^- - S^-)$.
+            \end{enumerate}
+
+            Grazie alle osservazioni \ref{obs:5} e \ref{obs:6}, dal semplice calcolo dell'errore di classificazione pesato, si ottiene anche il valore della polarità:
+            \begin{equation}
+                p = \begin{cases}
+                1 & \text{ se } S^- + (T^+ - S^+) < S^+ + (T^- - S^-) \\
+                -1 & \text{ altrimenti }
+            \end{cases}
+            \end{equation}
+
+        \subsection{Valutazione della complessità computazionale}
+            In definitiva, con uno scorrimento della lista ordinata si ottengo i parametri per la costruzione del classificatore debole. La complessità di tale operazione è fortemente legata all'algoritmo di ordinamento della lista, la quale ha $\Theta(n\log n)$ come limite teorico inferiore \cite[p. 167]{Cormen09}. Nell'implementazione è stato scelto proprio un algoritmo che avesse complessità $\Omega(n\log n)$ nel caso peggiore. Ripetendo queste operazioni per ognuna delle feature selezionabili, si ottiene che l'algoritmo di selezione del miglior classificatore debole ha complessità $\Theta(kn\log n)$.
