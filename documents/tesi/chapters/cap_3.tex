@@ -182,7 +182,7 @@
                     $$ w_{t,i} \leftarrow \frac{w_{t,i}}{\sum_{j = 1}^{n}w_{t,j}}$$
 
                     \item \label{adaboost_minimum_error}
-                    Si estrae il miglior classificatore debole. La procedura viene esposta nel dettaglio nella sezione \ref{sub:il_miglior_classificatore_debole}, ma si tenga presente che il miglior classificatore è quello il cui \emph{errore pesato} è minimo per la corrente iterazione.
+                    Si estrae il miglior classificatore debole. La procedura viene esposta nel dettaglio nella sezione \ref{sec:weak_learner}, ma si tenga presente che il miglior classificatore è quello il cui \emph{errore pesato} è minimo per la corrente iterazione.
                     $$ \epsilon_t = \min_{f,p,\theta} \{
                     \sum_{i = 1}^{n} w_{t,i} \cdot |h(x_i, f, p, \theta) - y_i|
                     \} $$

@@ -32,25 +32,25 @@
 \usepackage[font={small,it}]{caption}
 \usepackage[toc,page]{appendix}
 \usetikzlibrary{mindmap,trees} % Mappe concettuali
-
-
+\usepackage{newunicodechar}
+\usepackage{gensymb}
 
 \modulolinenumbers[5]
 
 % * Intestazioni/piè di pagina *
 
 \pagestyle{fancy}															%OPZIONI PACCHETTO: fancy
-\fancyhf{} 																	    %LIBERA TUTTI GLI HEADER
+\fancyhf{} 																    %LIBERA TUTTI GLI HEADER
 \lhead{\rightmark}
-\rhead{\bfseries\thepage} 														%RIGHT HEADER: num. pag. in grassetto
-\renewcommand{\headrulewidth}{0.4pt}										    %LINE ORIZ. INTESTAZIONE DI 0.4pt
-\renewcommand{\footrulewidth}{0pt}										        %LINE ORIZ. PIÈ PAG.: assente
+\rhead{\bfseries\thepage}										%RIGHT HEADER: num. pag. in grassetto
+\renewcommand{\headrulewidth}{0.4pt}						    %LINE ORIZ. INTESTAZIONE DI 0.4pt
+\renewcommand{\footrulewidth}{0pt}						    %LINE ORIZ. PIÈ PAG.: assente
 \setlength{\headheight}{15pt}													%ALTEZZA HEADER: 15pt
 \fancypagestyle{plain}{\fancyhead{}\renewcommand{\headrulewidth}{0pt}}		%NELLE PAG. VUOTE: non inserire niente
 
-\fancyhead[LE,RO]{\textbf{\thepage}} %Mostra il numero della pagina in grassetto;
+\fancyhead[R]{\textbf{\thepage}} %Mostra il numero della pagina in grassetto;
 %a sinistra nelle pagine pari e destra in quelle dispari.
-\fancyhead[RE,LO]{\nouppercase{\leftmark}} %Mostra l'upper-level (Capitolo) RE: right, even page.
+\fancyhead[L]{\nouppercase{\leftmark}} %Mostra l'upper-level (Capitolo) RE: right, even page.
 %\fancyhead[LO]{\nouppercase{\leftmark}} %Mostra l'upper-level (Capitolo) LO: left, odd page.
 
 
@@ -58,16 +58,28 @@
 
 \usepackage{hyperref}
 \hypersetup{
-	pdftitle = {Implementazione di un Algoritmo di Identificazione della Persona utilizzando Frame di Profondità},										                        %TITOLO DEL PDF
-	pdfauthor= {Ilario Pierbattista},				                                            %AUTORE/I
-	colorlinks=true,																	%ABILITA COLORE DEI COLLEGAMENTI
-	linkcolor=blue,																		%COLLEGAMENTI DI COLORE: blu
-	bookmarksopen=true,																%ACROBAT: barra laterale segnalibri aperta
-	bookmarksopenlevel=0,															%ACROBAT: livello di sezione visibile
-	citecolor=black,															    %COLORE DELLE CITAZIONI: nere
-	urlcolor=black,																	%COLORE URL: nero
+	pdftitle = {Implementazione di un Algoritmo di Identificazione della Persona utilizzando Frame di Profondità},													%TITOLO DEL PDF
+	pdfauthor= {Ilario Pierbattista},       	                    %AUTORE/I
+	colorlinks=true,												%ABILITA COLORE DEI COLLEGAMENTI
+	linkcolor=blue,													%COLLEGAMENTI DI COLORE: blu
+	bookmarksopen=true,									%ACROBAT: barra laterale segnalibri aperta
+	bookmarksopenlevel=0,								%ACROBAT: livello di sezione visibile
+	citecolor=black,								    %COLORE DELLE CITAZIONI: nere
+	urlcolor=black,										%COLORE URL: nero
 	%pdfsubject={???},
-	pdfkeywords= {Tesi, Ingegneria Informatica, Università Politecnica delle Marche, Adaboost, Machine Learning, Kinect, HASP}	%PAROLE CHIAVE DOCUMENTO
+	pdfkeywords=										%PAROLE CHIAVE DOCUMENTO
+		{Tesi} 
+		{Ingegneria Informatica} 
+		{Università Politecnica delle Marche}
+		{Adaboost}
+		{Machine Learning}
+		{Kinect}
+		{HASP} 
+		{C++} 
+		{Matlab}
+		{Java}
+		{CMake}
+		{UNIVPM}	
 }
 
 % Example tag definitions
@@ -82,3 +94,5 @@
 % Traduzione dei titoli per le appendici
 \renewcommand{\appendixtocname}{Appendici}
 \renewcommand{\appendixpagename}{Appendici}
+
+\newunicodechar{°}{\degree}
