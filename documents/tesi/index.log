@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2015.10.25)  3 NOV 2015 08:38
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2015.10.25)  3 NOV 2015 10:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1283,10 +1283,14 @@ Appendice A.
 [28
 
 ]
-Appendice B.
-) (/home/ilario/Projects/hasp-tracker/documents/tesi/index.bbl [29
+Overfull \vbox (29.59363pt too high) has occurred while \output is active []
 
-]) [30
+
+[29]
+Appendice B.
+) (/home/ilario/Projects/hasp-tracker/documents/tesi/index.bbl [30
+
+]) [31
 
 ]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 84.
@@ -1303,8 +1307,8 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 22116 strings out of 493050
- 397557 string characters out of 6136824
+ 22131 strings out of 493050
+ 397718 string characters out of 6136824
  488469 words of memory out of 5000000
  24994 multiletter control sequences out of 15000+600000
  86687 words of font info for 51 fonts, out of 8000000 for 9000
@@ -1334,10 +1338,10 @@ xmf/fonts/type1/public/lm/lmr9.pfb></usr/share/texmf/fonts/type1/public/lm/lmri
 10.pfb></usr/share/texmf/fonts/type1/public/lm/lmri9.pfb></usr/share/texmf/font
 s/type1/public/lm/lmss8.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb>
 </usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb>
-Output written on index.pdf (31 pages, 391815 bytes).
+Output written on index.pdf (32 pages, 393335 bytes).
 PDF statistics:
- 732 PDF objects out of 1000 (max. 8388607)
- 672 compressed objects within 7 object streams
- 205 named destinations out of 1000 (max. 500000)
+ 755 PDF objects out of 1000 (max. 8388607)
+ 694 compressed objects within 7 object streams
+ 220 named destinations out of 1000 (max. 500000)
  546 words of extra memory for PDF output out of 10000 (max. 10000000)
 
