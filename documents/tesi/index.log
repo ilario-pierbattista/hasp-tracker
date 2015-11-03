@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2015.10.25)  31 OCT 2015 12:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2015.10.25)  1 NOV 2015 21:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1263,30 +1263,30 @@ Capitolo 3.
 ] [14] [15] [16] [17] [18] [19] [20])
 (/home/ilario/Projects/hasp-tracker/documents/tesi/chapters/cap_4.tex [21]
 Capitolo 4.
+[22
+
+] [23] [24]
+Capitolo 5.
 )
 (/home/ilario/Projects/hasp-tracker/documents/tesi/section/top_down_evolution.t
-ex [22
-
-]
-Capitolo 5.
-[23
+ex [25
 
 ]
 Capitolo 6.
-[24
+[26
 
-] [25
+] [27
 
 
 ]
 Appendice A.
-[26
+[28
 
 ]
 Appendice B.
-) (/home/ilario/Projects/hasp-tracker/documents/tesi/index.bbl [27
+) (/home/ilario/Projects/hasp-tracker/documents/tesi/index.bbl [29
 
-]) [28
+]) [30
 
 ]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 84.
@@ -1303,13 +1303,13 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 22114 strings out of 493050
- 397543 string characters out of 6136824
+ 22116 strings out of 493050
+ 397557 string characters out of 6136824
  488469 words of memory out of 5000000
  24994 multiletter control sequences out of 15000+600000
  86687 words of font info for 51 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 62i,12n,67p,924b,589s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 62i,12n,67p,924b,515s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{Hfootnote.3} has been referenced but does not exi
 st, replaced by a fixed one
 
@@ -1334,10 +1334,10 @@ xmf/fonts/type1/public/lm/lmr9.pfb></usr/share/texmf/fonts/type1/public/lm/lmri
 10.pfb></usr/share/texmf/fonts/type1/public/lm/lmri9.pfb></usr/share/texmf/font
 s/type1/public/lm/lmss8.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb>
 </usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb>
-Output written on index.pdf (29 pages, 385863 bytes).
+Output written on index.pdf (31 pages, 391747 bytes).
 PDF statistics:
- 719 PDF objects out of 1000 (max. 8388607)
- 661 compressed objects within 7 object streams
- 203 named destinations out of 1000 (max. 500000)
+ 732 PDF objects out of 1000 (max. 8388607)
+ 672 compressed objects within 7 object streams
+ 205 named destinations out of 1000 (max. 500000)
  546 words of extra memory for PDF output out of 10000 (max. 10000000)
 

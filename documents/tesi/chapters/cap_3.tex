@@ -51,6 +51,9 @@
             \subsubsection{Adaboost}
                 Adaboost è l'algoritmo proposto da Freund e Schapire che è valso loro il premio Gödel.
                 Il nome deriva dalla fusione delle parole \emph{Adaptive} e \emph{Boosting} ed implementa le operazioni descritte precedentemente.
+                Ciò che rende Adaboost un algoritmo di boosting \emph{adaptive} è la politica di aggiornamento dei pesi relativi agli elementi dell'insieme di allenamento: viene decrementato il peso degli elementi classificati correttamente, lasciando invariato il peso degli altri.
+                Il valore di tale decremento non è costante, ma dipende dall'errore pesato di classificazione complessivo per la relativa iterazione. Maggiore è l'errore, maggiore è il decremento dei pesi.
+                In tale senso, Adaboost è un algoritmo di boosting che ad ogni iterazione cambia il proprio comportamento adattandosi al contesto.
 
     \section{Dataset di Allenamento}
     \label{sec:training_dataset}

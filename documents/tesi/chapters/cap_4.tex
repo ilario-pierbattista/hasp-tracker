@@ -4,15 +4,73 @@
 \label{chap:tuning}
     \section{Criteri di Valutazione}
     \label{sec:evaluation_criteria}
+        Criteri di valutazione dell'algoritmo di classificazione binaria.
+        True positive rate, true negative rate, accuracy, (mcc).
+
     \section{Dataset di Validazione}
     \label{sec:validation_dataset}
         \subsection{Criteri di creazione delle registrazioni}
+            Il dataset di validazione è stato creato dalle registrazioni a traiettoria casuale.
         \subsection{Altre caratteristiche}
+            Il dataset è caratterizzato da 1500 elementi positivi e 1600 elementi negativi.
+
     \section{Massimizzazione all'\emph{Accuracy}}
     \label{sec:accuracy_maximization}
         \subsection{Parametri liberi del classificatore}
             \subsubsection{Numero di weak learner}
+                Il numero di classificatori deboli per ogni classificatore forte è un parametro libero all'interno della procedura di allenamento.
+                Vista la procedura di Adaboost nel capito precedente, potrebbe sembrare che, aggiungendo altri weak learner si possa migliorare progressivamente la precisione del sistema.
+                Ciò generalmente non è vero: troppi classificatori deboli potrebbero generare problemi di \emph{overfitting}.
+                È necessario quindi conoscere il numero ottimale di classificatori deboli a comporre ciascun classificatore forte.
+
             \subsubsection{Soglia del classificatore}
+                Il valore di soglia relativo a ciascun classificatore forte allenato non è mai stato precisato.
+                È necessario quindi impostare tale valore al fine di migliorare complessivamente l'affidabilità del sistema.
+
         \subsection{Algoritmo di ricerca della soglia e del NWL ottimi}
-    \section{Analisi dei Risultati}
-    \label{sec:Analisi dei Risultati}
+            I parametri da definire sono quindi il numero di classificatori deboli ed il valore di soglia per ciascuno dei classificatori forti allenati.
+            Entrambi vengono scelti, per ogni classificatore forte, al fine di massimizzarne l'accuratezza in relazione al dataset di validazione.
+            Massimizzare l'accuratezza implica la massimizzazione dei positivi e dei negativi reali e la conseguente riduzione dei falsi positivi e negativi.
+
+            L'algoritmo per determinare tali valori è fondamentalmente semplice: ogni strong learner viene utilizzato per classificare gli elementi del dataset di validazione.
+            L'attività di classificazione, in virtù dei parametri liberi appena identificati, sarà dipendente dalla coppia di valori $(\theta, N_{wl})$ (per $\theta$ si intende il valore di soglia del classificatore e $N_{wl}$ il numero di weak learner che lo compongono).
+            Per ogni possibile coppia di parametri, viene misurata l'accuratezza del classificatore nel classificatare correttamente l'intero dataset, quindi viene scelta la coppia per cui l'accuratezza è massima.
+
+            Una procedura di questo tipo, se implementata senza adoperare dei piccoli accorgimenti, potrebbe richiedere molto tempo per essere portata a termine.
+            [Algoritmo figo di selezione della coppia minima]
+
+    \section{Analisi dei Risultati} % (fold)
+    \label{sec:analisi_dei_risultati}
+        Alla fine della procedura di selezione della coppia ottima, si ottengono i valori di accuratezza migliori del sistema.
+            % \paragraph{Soglia del classificatore}
+            In letteratura il valore di soglia di un classificatore forte si assume essere pari a 0.5 (\cite{Freund97} e \cite{Viola04} aggiungere riferimenti più specifici). Nel lavoro presentato in \cite{Zhu13}, tuttavia, il valore di soglia non viene esplicitato, considerandolo come parametro libero.
+            I risultati ottenuti con l'algoritmo di massimizzazione dell'accuracy, in quanto a valore di soglia, sono lievemente differenti da quelli proposti in letteratura, ma non troppo distanti.
+
+            % \paragraph{Numero di classificatori deboli}
+            Il numero dei classificatori deboli che compongono ciascun classificatore forte, è molto differente quello ottenuto in altre applicazioni, prima tra tutte il sistema di riconoscimento dei volti di Viola Jones.
+            I classificatori forte di questo sistema sono formati da una decina di classificatori deboli, un numero straordinariamente piccolo se confrontato con i migliaia di weak learners necessari a costruire un classificatore di volti.
+            Bisogna considerare però la diversa natura dei due problemi e i diversi canali di acquisizione dei dati per il riconoscimento. L'immagine di profondità di una persona ripresa dall'alto non che una grezza rappresentazione dell'individuo se paragonata all'immagine di un volto umano.
+            La ricchezza di particolari di un volto, l'incredibile variabilità intraclasse e la sensibilità alle variazioni ambientali (come la luce), rende molto più complesso il problema di riconoscimento e di conseguenza è necessario avere dei classificatori molto più complessi.
+            Per raggiungere elevate prestazioni con il framework di Viola-Jones, infatti, è necessario dividere un classificatore forte in diversi stadi, creando dei classificatori a cascata in grado di scartare nel minor tempo possibile, il maggior numero di oggetti che non corrispondono ai volti umani.
+            In questo sistema di rilevamento, tutto questo non è necessario. Un numero così basso di classificatori deboli non è dovuto ad un errore, ma è la conseguenza dell'estrema essenzialità delle immagini di profondità HASP.
+            Si pensi alle caratteristiche espresse in linguaggio naturale dell'immagine del profilo della persona: sono solamente tre. Quante ne sarebbero necessarie per esprimere le principali caratteristiche di un volto umano?
+
+            % \paragraph{Valore di sensitivity e specificity}
+            In base a quanto presente in letteratura, i valori calcolati di \emph{specificity} e \emph{sensitivity} rivelano la bontà del sistema.
+
+    % section analisi_dei_risultati (end)
+
+\chapter{Rilevamento}
+\label{chap:rilevamento}
+    \section{Tecnica di Rilevamento}
+    \label{sec:detection_tecnique}
+        \subsection{Detection Window}
+        \subsection{Rilevazione su frame}
+            \subsubsection{Resize detection window}
+            \subsubsection{Slide detection window}
+    \section{Selezione della Finestra Migliore} %@TODO
+    \label{sec:best_detection_window}
+        \subsection{Introduzione al problema}
+        \subsection{Algoritmo di selezione}
+    \section{Confronto con l'Algoritmo G-C} %@TODO
+    \label{sec:gc_algorithm_comparison}
