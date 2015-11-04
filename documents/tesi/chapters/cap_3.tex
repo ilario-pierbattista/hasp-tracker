@@ -141,7 +141,7 @@
                 Un'ulteriore operazione di preprocessing da effettuare sugli elementi del dataset è la conversione delle distanze.
                 Convertire le distanze dal sensore in quote dal pavimento.
 
-    \section{\emph{Strong Learner}}
+    \section{\emph{Strong Learner} [Da revisionare]}
     \label{sec:strong_learner}
         \subsection{Procedura di estrazione del classificatore forte}
             Sia $D = \{(x_1, y_1), ..., (x_n, y_n)\}$ un insieme di $n$ coppie costituite da un'immagine ($x_i$) e la relativa classificazione ($y_i \in \{ 0, 1 \}$). Se $y_i = 1$, allora $x_i$ appartiene alla classe \emph{umano} (la coppia $(x_i, y_i)$ prende il nome di \emph{esempio positivo}), altrimenti appartiene alla classe \emph{non umano} (la coppia $(x_i, y_i)$ prende il nome di \emph{esempio negativo}).
@@ -220,7 +220,8 @@
             In fase di aggiornamento dei pesi (punto \ref{adaboost_update_weights}), i pesi relativi ad esempi classificati correttamente vengono moltiplicati per $\beta_t$ ($\beta_{t}^{1} = \beta_t < 1$) e quindi decrementati, mentre gli altri vengono lasciati inalterati ($\beta_{t}^{0} = 1$). Fare in modo che gli esempi non classificati correttamente abbiano un peso maggiore di quelli classificati correttamente è il modo per influenzare la scelta del classificatore debole successivo che andrà a colmare le lacune del suo predecessore.
 
             La scelta della soglia per il classificatore forte (punto \ref{adaboost_strong_classifier}) deve minimizzare il numero di esempi classificati in modo errato.
-    \section{\emph{Weak Learner}}
+    
+    \section{\emph{Weak Learner} [Da revisionare]}
     \label{sec:weak_learner}
         \subsection{Procedura di estrazione del classificatore debole}
             Si è detto che un classificatore debole è costruito a partire da una feature di Haar. La scelta del migliore, quindi, mira ad identificare la feature, la polarità e la soglia che minimizzano l'errore pesato di classificazione.
