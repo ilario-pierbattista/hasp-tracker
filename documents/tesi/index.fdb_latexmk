@@ -1,14 +1,14 @@
 # Fdb version 3
-["bibtex index"] 1446622411 "index.aux" "index.bbl" "index" 1447075410
+["bibtex index"] 1446622411 "index.aux" "index.bbl" "index" 1447235737
   "/usr/share/texlive/texmf-dist/bibtex/bst/natbib/plainnat.bst" 1233624470 26816 ffe5423d2019860bad9f54bc402fac15 ""
   "bibliografia.bib" 1441703376 2419 80d12761ece051ec4a954af91045a04e ""
-  "index.aux" 1446981537 20190 731b0be7baf89021bfe77072ae9396ac ""
+  "index.aux" 1447235737 20190 731b0be7baf89021bfe77072ae9396ac ""
   "index.bcf" 0 -1 0 ""
   (generated)
   "index.blg"
   "index.bbl"
-["pdflatex"] 1446981536 "index.tex" "/home/ilario/Projects/hasp-tracker/documents/tesi/index.pdf" "index" 1447075410
-  "/home/ilario/Projects/hasp-tracker/documents/tesi/index.aux" 1446981537 20190 731b0be7baf89021bfe77072ae9396ac ""
+["pdflatex"] 1447235736 "index.tex" "/home/ilario/Projects/hasp-tracker/documents/tesi/index.pdf" "index" 1447235737
+  "/home/ilario/Projects/hasp-tracker/documents/tesi/index.aux" 1447235737 20190 731b0be7baf89021bfe77072ae9396ac ""
   "/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii" 1337017135 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "/usr/share/texlive/texmf-dist/tex/generic/babel-italian/italian.ldf" 1427500211 11189 d827b86dd4c0a92244fd9bf209b00d86 ""
   "/usr/share/texlive/texmf-dist/tex/generic/babel/babel.def" 1438639509 49726 da63d4c1647e9dde3c60a8f9b90b7b5f ""
@@ -152,22 +152,22 @@
   "chapters/cap_2.tex" 1446622547 13576 3ad699b3ce35b2399e7ab231905c1310 ""
   "chapters/cap_3.tex" 1446622409 28887 4f8cbd1e556c5e381bb7aa06e584d616 ""
   "chapters/cap_4.tex" 1446556316 6672 a88ca23d6a8f1622eb27204a1f27fe95 ""
-  "frontespizio.sty" 1446981531 2102 903a0bd77385c07d2979f9104cd9f183 ""
+  "frontespizio.sty" 1447235729 2099 d144674d202d5760cfc1ad5c3ab439e1 ""
   "img/logo-univpm.png" 1435998744 33896 988e90865fd301e2289c9bcd0cc0b6ef ""
-  "index.aux" 1446981537 20190 731b0be7baf89021bfe77072ae9396ac ""
+  "index.aux" 1447235737 20190 731b0be7baf89021bfe77072ae9396ac ""
   "index.bbl" 1446622412 2471 9b47340c5b3f1853238d63fb9b23b240 "bibtex index"
-  "index.out" 1446981537 5074 c200f79bddda00686bb724263a3b06fd ""
+  "index.out" 1447235737 5074 c200f79bddda00686bb724263a3b06fd ""
   "index.tex" 1446556299 2156 fc64347af24049f059c8e517cd2294e4 ""
-  "index.toc" 1446981537 11635 48ce0736f526d701e3224c2bc28256c5 ""
+  "index.toc" 1447235737 11635 48ce0736f526d701e3224c2bc28256c5 ""
   "packages.sty" 1446289215 3502 09e70981e473bdc97faffe03e8c90bdf ""
   "section/top_down_evolution.tex" 1446544646 1496 cd4bfd7e525694dca8f58a3423669e60 ""
   (generated)
-  "index.pdf"
-  "/home/ilario/Projects/hasp-tracker/documents/tesi/index.pdf"
   "index.toc"
+  "/home/ilario/Projects/hasp-tracker/documents/tesi/index.pdf"
+  "index-blx.bib"
   "index.log"
   "index.run.xml"
+  "index.pdf"
   "index.out"
   "/home/ilario/Projects/hasp-tracker/documents/tesi/index.log"
-  "index-blx.bib"
   "index.aux"
