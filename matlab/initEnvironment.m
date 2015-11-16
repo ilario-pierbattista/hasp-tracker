@@ -1,10 +1,10 @@
 % Deprecato
 setenv('DATASET_ROOT', '/home/ilario/Documenti/Tirocinio/Dataset/DataBaseKinect/FindPerson/KinectLab/');
 
-% Dataset di allenamento
+% Path del dataset di allenamento
 setenv('TRAINING1', '/home/ilario/Documenti/Tirocinio/Training/resized/');
 
-% Dataset di testing
+% Path del dataset di validazione
 setenv('TEST1', '/home/ilario/Documenti/Tirocinio/Testing/1/24_24/');
 setenv('TEST2', '/home/ilario/Documenti/Tirocinio/Testing/2');
 
@@ -30,6 +30,9 @@ setenv('FALSE6', '/home/ilario/Documenti/Tirocinio/Registrazioni/Falses-V2/6/');
 setenv('FALSE7', '/home/ilario/Documenti/Tirocinio/Registrazioni/Falses-V2/7/');
 setenv('FALSE8', '/home/ilario/Documenti/Tirocinio/Registrazioni/Falses-V2/8/');
 
+% Valore misurato con il Kinect della distanza del dispositivo dal pavimento
 KINECT_V2_FLOOR_VALUE = 2850;
+
+% Categorie globali di classificatori forti (cfr: tesi, capitolo su Adaboost)
 global CLASSIFIER_NAMES
 CLASSIFIER_NAMES = {'x', 'y'};
