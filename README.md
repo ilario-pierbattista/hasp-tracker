@@ -27,7 +27,7 @@ Questo repository contiene:
 
 
 ## Compatibilità
-Il sistema è completamente compatibile con qualsiasi distribuzione GNU/Linux.
+Il sistema è completamente compatibile con qualsiasi distribuzione __GNU/Linux__.
 
 Sebbene non siano stati utilizzati componenti specifici per la piattaforma, la compatibilità con Windows o Mac OS non è stata testata.
 
