@@ -18,6 +18,7 @@ Utilizza degli insiemi di allenamento, costituiti da ritagli di immagini di prof
 Il __modulo di rilevamento__ sfrutta il classificatore prodotto dal modulo di allenamento per effettuare il rilevamento su registrazioni reali, classificando sequenzialmente porzioni di esso al fine di determinare la zona occupata dalla persona.
 
 Questo repository contiene:
+
 1. il tool per la creazione degli insiemi di allenamento ([TrainsetCreator](https://github.com/ilario-pierbattista/hasp-tracker/tree/master/TrainsetCreator))
 2. gli script per le procedure di allenamento e rilevamento ([matlab/procedures](https://github.com/ilario-pierbattista/hasp-tracker/tree/master/matlab/procedures))
 3. una piccola libreria, scritta in C++, per fattorizzare ed ottimizzare alcune funzioni dei due moduli software ([matlab/lib](https://github.com/ilario-pierbattista/hasp-tracker/tree/master/matlab/lib))
