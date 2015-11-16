@@ -24,3 +24,22 @@ Questo repository contiene:
 3. una piccola libreria, scritta in C++, per fattorizzare ed ottimizzare alcune funzioni dei due moduli software ([matlab/lib](https://github.com/ilario-pierbattista/hasp-tracker/tree/master/matlab/lib))
 4. una collezione di funzioni, scritte in Matlab, utilizzate per fattorizzare il codice dei due moduli ([matlab](https://github.com/ilario-pierbattista/hasp-tracker/tree/master/matlab))
 5. la mia tesi di laurea ([doc/tesi/index.pdf](https://github.com/ilario-pierbattista/hasp-tracker/tree/master/doc/tesi/index.pdf))
+
+
+## Compatibilità
+Il sistema è completamente compatibile con qualsiasi distribuzione GNU/Linux.
+
+Sebbene non siano stati utilizzati componenti specifici per la piattaforma, la compatibilità con Windows o Mac OS non è stata testata.
+
+Particolarmente critica è la compilazione della libreria scritta in C++ e la compilazione degli eseguibili [mex](http://it.mathworks.com/help/matlab/matlab_external/introducing-mex-files.html).
+Per ulteriori informazioni consultare la relativa sezione.
+
+
+## TrainsetCreator
+È un'applicazione desktop scritta in Java che consente di gestire gli insiemi (_dataset_) di allenamento.
+È uno strumento efficace per ritagliare, dai frame di profondità, delle porzioni di immagine che andranno a costituire i dataset di allenamento.
+Inoltre permette di effettuare anche il resize di tali immagini.
+
+### Compilazione
+L'applicazione è stata sviluppata utilizzando l'IDE [Intellij IDEA](https://www.jetbrains.com/idea/) (sono disponibili license per studenti fornendo l'indirizzo email istituzionale oppure è possibile scaricare la _community edition_).
+È __necessario__ utilizzare tale IDE per compilare il progetto, residente nella relativa cartella, e generare il file jar (che è eseguibile su qualsiasi piattaforma).
