@@ -36,3 +36,21 @@ KINECT_V2_FLOOR_VALUE = 2850;
 % Categorie globali di classificatori forti (cfr: tesi, capitolo su Adaboost)
 global CLASSIFIER_NAMES
 CLASSIFIER_NAMES = {'x', 'y'};
+
+% Quantitativo minimo di detection window positive per considerare l'ipotesi
+% accettabile (valore empirico)
+FALSE_POSITIVE_WINDOWS_THRESHOLD = 7;
+
+% Granulosità nello sliding della finestra di riconoscimento (valore empirico)
+global DETECTION_GRANULARITY;
+DETECTION_GRANULARITY = 5;
+
+% Largezza in pixel del bordo del frame da considerare per le rilevazioni
+% su registrazioni reali a regime
+global FRAMEWORK_BORDER_WIDTH;
+FRAMEWORK_BORDER_WIDTH = DETECTION_GRANULARITY*2;
+
+% Distanza, dall'attuale posizione dell'umano in pixel, entro la quale cercare
+% la presenza dell'umano nell'instante successivo
+global HUMAN_NEIGHBORHOOR_RADIUS;
+HUMAN_NEIGHBORHOOR_RADIUS = DETECTION_GRANULARITY*2;

@@ -21,6 +21,13 @@ if strcmp(multiple_frames, 'n') || strcmp(multiple_frames, 'N')
     frame_index = inputdef('Indice del frame da analizzare [%d]: ', 1);
 else
     framestep = inputdef('Intervallo con cui analizzare i frame [%d]: ', 20);
+    if framestep < 1
+        framestep = 1;
+    end
+    % Se viene analizzato fino ad un frame ogni 3, la sequenza dei frame è
+    % abbastanza scorrevole per attivare il meccanismo di rilevamento con memoria.
+    % Vengono analizzati, cioè, solamente le aree più interessanti
+    detection_with_memory = (framestep <= 3);
     multiple_frames = true;
 end
 
@@ -42,6 +49,9 @@ else
     indexes = [frame_index];
 end
 
+first_iteration = true;
+humans = [];
+
 for i = indexes
     tic;
     % Lettura e preprocessing del frame
@@ -51,12 +61,31 @@ for i = indexes
         finalClassifier.floorValue);
 
     rectbox = [];
+    % Per il momento la dimensione delle finestre di riconoscimento è fissa
+    % È necessario un algoritmo migliore di selezione della finstra vincente
+    % per utilizzare finestre di diverse dimensioni
+    % @TODO
     layers = create_layers(finalClassifier, 150, 150);
     for classifier = transpose(layers);
-        rectbox = [rectbox; detect_positive_windows(processedFrame, classifier, 5)];
+        positions = generate_positions([size(processedFrame, 2) size(processedFrame, 1)], classifier.samplesSize,...
+            humans, DETECTION_GRANULARITY, first_iteration);
+        rectbox = [rectbox; detect_positive_windows(processedFrame, classifier, positions)];
+    end
+    fprintf('Detected %d positive windows\t', size(rectbox, 1));
+
+    % Se ci sono troppi pochi rettangoli, si scarta a priori il risultato
+    % in quanto si potrebbe trattare di un falso positivo
+    if size(rectbox, 1) <= FALSE_POSITIVE_WINDOWS_THRESHOLD
+        rectbox = [];
+        fprintf('Windows rejected\t');
+    else
+        rectbox = filter_rectangles(rectbox);
     end
 
-    rectbox = filter_rectangles(rectbox);
+    if detection_with_memory
+        humans = rectbox;
+        first_iteration = false;
+    end
 
     destroyrectangles(f1, rectangles);
     figure(f1);
