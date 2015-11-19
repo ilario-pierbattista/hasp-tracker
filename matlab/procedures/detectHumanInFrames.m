@@ -76,14 +76,18 @@ for i = indexes
     % Se ci sono troppi pochi rettangoli, si scarta a priori il risultato
     % in quanto si potrebbe trattare di un falso positivo
     if size(rectbox, 1) <= FALSE_POSITIVE_WINDOWS_THRESHOLD
-        rectbox = [];
-        fprintf('Windows rejected\t');
+        winner_windows = [];
+        fprintf('Rejected\t');
     else
-        rectbox = filter_rectangles(rectbox);
+        winner_windows = filter_rectangles(rectbox, humans);
+        % Calcolo con media aritmetica
+        % winner_windows = filter_rectangles(rectbox, []);
     end
 
     if detection_with_memory
-        humans = rectbox;
+        % TODO remove
+        old_humans = humans;
+        humans = winner_windows;
         first_iteration = false;
     end
 
@@ -93,7 +97,7 @@ for i = indexes
     title(strcat('Frame: ', num2str(i)));
     truesize(f1);
 
-    rectangles = drawrectangles(f1, rectbox, 'y');
+    rectangles = drawrectangles(f1, winner_windows, 'y');
     drawnow;
     toc;
 end

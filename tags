@@ -1227,7 +1227,7 @@ fetchTrainset	TrainsetCreator/src/it/univpm/dii/model/DatasetManager.java	/^    
 fileName	TrainsetCreator/src/it/univpm/dii/model/entities/Element.java	/^    private String fileName;$/;"	f	class:Element	file:
 fill	TrainsetCreator/src/it/univpm/dii/view/component/BevelArrowIcon.java	/^    private Color fill;$/;"	f	class:BevelArrowIcon	file:
 fillColor	TrainsetCreator/src/it/univpm/dii/view/component/BlankIcon.java	/^    private Color fillColor;$/;"	f	class:BlankIcon	file:
-filter_rectangles	matlab/detection/filter_rectangles.m	/^function window = filter_rectangles(rectangles);$/;"	f
+filter_rectangles	matlab/detection/filter_rectangles.m	/^function window = filter_rectangles(rectangles, human);$/;"	f
 find	TrainsetCreator/src/it/univpm/dii/model/DatasetManager.java	/^    public Element find(int id) {$/;"	m	class:DatasetManager
 fineButton	TrainsetCreator/src/it/univpm/dii/view/AddFrameView.java	/^    private JButton fineButton;$/;"	f	class:AddFrameView	file:
 flipDirection	TrainsetCreator/src/it/univpm/dii/view/component/DepthImagePanel.java	/^    private int mode, flipDirection = DISABLE_FLIP;$/;"	f	class:DepthImagePanel	file:
@@ -1594,7 +1594,7 @@ readImage	matlab/lib/src/mexutils/io.cpp	/^void readImage(const mxArray *input, 
 readImageData	matlab/io/readImageData.m	/^function data = readImageData(fp, colDim, rowDim, colorDepth)$/;"	f
 recentDatasets	TrainsetCreator/src/it/univpm/dii/contoller/main/RecentFilesManager.java	/^    private ArrayList<File> recentDatasets;$/;"	f	class:RecentFilesManager	file:
 rectangle	TrainsetCreator/src/it/univpm/dii/view/component/DepthImagePanel.java	/^    private Rectangle rectangle;$/;"	f	class:DepthImagePanel	file:
-rectangle_center	matlab/detection/filter_rectangles.m	/^function center = rectangle_center(rect);$/;"	f
+rectangle_center	matlab/detection/filter_rectangles.m	/^function center = rectangle_center(r);$/;"	f
 refresh	TrainsetCreator/src/it/univpm/dii/view/AddFrameView.java	/^    public void refresh() {$/;"	m	class:AddFrameView
 refresh	TrainsetCreator/src/it/univpm/dii/view/FrameRenderView.java	/^    public void refresh() {$/;"	m	class:FrameRenderView
 refresh	TrainsetCreator/src/it/univpm/dii/view/MainFrame.java	/^    public void refresh() {$/;"	m	class:MainFrame

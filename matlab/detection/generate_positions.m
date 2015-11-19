@@ -23,11 +23,17 @@ function positions = generate_positions(frame_dim, window_dim, humans, granulari
         % Alle iterazioni successive, solamente le bande laterali del frame e le
         % aree intorno alla posizione attuale della persona potranno contenere,
         % all'istante successivo la figura della
-        filtered_x = get_matrix_border(x, FRAMEWORK_BORDER_WIDTH / DETECTION_GRANULARITY);
-        filtered_y = get_matrix_border(y, FRAMEWORK_BORDER_WIDTH / DETECTION_GRANULARITY);
-        for i = [1:size(humans, 1)]
-            [filtered_x, filtered_y] = get_human_neighbourhood(x, y, humans(i, :),...
-                filtered_x, filtered_y);
+
+        % @TODO Questo è un porchetto, rimuovere questa struttura condizionale
+        filtered_x = zeros(size(x)); filtered_y = zeros(size(y));
+        if isempty(humans)
+            filtered_x = get_matrix_border(x, FRAMEWORK_BORDER_WIDTH / DETECTION_GRANULARITY, filtered_x);
+            filtered_y = get_matrix_border(y, FRAMEWORK_BORDER_WIDTH / DETECTION_GRANULARITY, filtered_y);
+        else
+            for i = [1:size(humans, 1)]
+                [filtered_x, filtered_y] = get_human_neighbourhood(x, y, humans(i, :),...
+                    filtered_x, filtered_y);
+            end
         end
         positions = [];
         unfiltered_positions = [filtered_x(:), filtered_y(:)];
@@ -66,8 +72,10 @@ function [dest_x, dest_y] = get_human_neighbourhood(x, y, human_position, dest_x
     [y_position, i] = ind2sub(size(diff_y), y_position);
     human_x_range = [(x_position - box_step):(x_position + box_step)];
     human_x_range = human_x_range(find(human_x_range >= 1));
+    human_x_range = human_x_range(find(human_x_range <= size(x, 2)));
     human_y_range = [(y_position - box_step):(y_position + box_step)];
     human_y_range = human_y_range(find(human_y_range >= 1));
+    human_y_range = human_y_range(find(human_y_range <= size(y, 1)));
     dest_x(:, human_x_range) = x(:, human_x_range);
     dest_y(human_y_range, :) = y(human_y_range, :);
 end

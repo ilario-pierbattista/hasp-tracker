@@ -48,9 +48,9 @@ DETECTION_GRANULARITY = 5;
 % Largezza in pixel del bordo del frame da considerare per le rilevazioni
 % su registrazioni reali a regime
 global FRAMEWORK_BORDER_WIDTH;
-FRAMEWORK_BORDER_WIDTH = DETECTION_GRANULARITY*2;
+FRAMEWORK_BORDER_WIDTH = DETECTION_GRANULARITY;
 
 % Distanza, dall'attuale posizione dell'umano in pixel, entro la quale cercare
 % la presenza dell'umano nell'instante successivo
 global HUMAN_NEIGHBORHOOR_RADIUS;
-HUMAN_NEIGHBORHOOR_RADIUS = DETECTION_GRANULARITY*2;
+HUMAN_NEIGHBORHOOR_RADIUS = DETECTION_GRANULARITY*6;
