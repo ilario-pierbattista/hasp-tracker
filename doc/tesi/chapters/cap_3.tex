@@ -202,13 +202,14 @@
                 \end{enumerate}
 
                 \item \label{adaboost_strong_classifier} Il classificatore forte è dato da:
-                \begin{equation}
-                    F(x) = \begin{cases}
-                    1 & \text{ se } \sum_{t = 1}^{T} \alpha_t h_t(x) > \theta \sum_{t = 1}^{T} \alpha_t \\
-                    0 & \text{ altrimenti }
-                \end{cases}
-            \end{equation}
-            dove $\theta \in [0,1]$ è la soglia.
+                \begin{equation}\label{eq:strong_classifier}
+                    F(x) = 
+                    \begin{cases}
+                        1 & \text{ se } \sum_{t = 1}^{T} \alpha_t h_t(x) > \theta \sum_{t = 1}^{T} \alpha_t \\
+                        0 & \text{ altrimenti }
+                    \end{cases}
+                \end{equation}
+                dove $\theta \in [0,1]$ è la soglia.
             \end{enumerate}
 
             Si noti che, nel'operazione \ref{adaboost_minimum_error}, l'errore pesato non è altro che la somma dei pesi degli esempi non classificati correttamente. Infatti:
