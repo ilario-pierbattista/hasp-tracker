@@ -80,7 +80,7 @@
                 \item [Precision] Porzione di predizioni positive corrette.
                 \begin{equation}
                     \label{eq:precision}
-                    P = \frac{TP}{TP + FP}
+                    PR = \frac{TP}{TP + FP}
                 \end{equation}
 
                 \item [Sensitiviy o Recall] Porzione delle istanze realmente positive classificate correttamente. Per $P$ si intende il numero totale di istanze realmente positive.
@@ -101,19 +101,40 @@
                     FPR = \frac{FP}{N} = \frac{FP}{TN + FP} = 1 - TNR
                 \end{equation}
 
-                
+                \item [Accuracy] Porzione di istanze, sia positive che negative, classificate correttamente.
+                \begin{equation}
+                    \label{eq:accuracy}
+                    ACC = \frac{TP+TN}{P + N} = \frac{TP + TN}{TP + TN + FP + FN}
+                \end{equation}
+
+                \item [F1 measure] Media armonica tra \emph{precision} e \emph{recall}.
+                \begin{equation}
+                    \label{eq:f1_measure}
+                    F1 = \frac{2PR\cdot TPR}{PR + TPR} = \frac{2TP}{2TP + FP + FN}
+                \end{equation}
             \end{description}
+
+        \emph{F1 measure} e \emph{accuracy} sono le misure più indicate per la valutazione complessiva dei classificatori, mentre le altre forniscono informazioni parziali.
+
+        Solitamente si utializzano \emph{precision}, \emph{recall} e \emph{F1 measure}, nei problemi in cui, tra le due classi, una è molto meno interessante dell'altra, oppure nei casi in cui si vuole studiare l'andamento del classificatore nelle predizioni di una classe di oggetti in particolare.
+
+        D'altra parte, l'\emph{accuracy} viene utilizzata quando tutte le classi ricoprono una posizione di egual interesse. 
+        In particolare, nei problemi binari, tale misura è una adeguata fonte di valutazione quando le due classi sono bilanciate.
+
+        In questa applicazione, poichè le classi e la distribuzione degli elementi di allenamento rispettano i criteri di quest'ultima misura, verrà utilizzata l'\emph{accuracy} come misura di valutazione delle prestazioni.
         
         % subsection misure_per_valutare_le_prestazioni (end)
 
     \section{Massimizzazione all'\emph{Accuracy}}
     \label{sec:accuracy_maximization}
         \subsection{Parametri liberi del classificatore}
+        I classificatori allenati con Adaboost non sono ancora pronti per poter essere utilizzati, vi sono ancora dei parametri liberi da vincolare.
+        Dal momento che l'obiettivo è ottenere un sistema di rilevamento che sia più accurato possibile, questi parametri devono essere impostati in modo tale che l'\emph{accuracy} sia massima.
             \subsubsection{Numero di weak learner}
-                Il numero di classificatori deboli per ogni classificatore forte è un parametro libero all'interno della procedura di allenamento.
+                Il numero di weak learner\footnote{Abbreviando: NWL} per ogni classificatore forte è un parametro libero all'interno della procedura di allenamento.
                 Vista la procedura di Adaboost nel capito precedente, potrebbe sembrare che, aggiungendo altri weak learner si possa migliorare progressivamente la precisione del sistema.
                 Ciò generalmente non è vero: troppi classificatori deboli potrebbero generare problemi di \emph{overfitting}.
-                È necessario quindi conoscere il numero ottimale di classificatori deboli a comporre ciascun classificatore forte.
+                È necessario quindi ricavare il numero ottimale di classificatori deboli a comporre ciascun classificatore forte.
 
             \subsubsection{Soglia del classificatore}
                 Il valore di soglia relativo a ciascun classificatore forte allenato non è mai stato precisato.
@@ -122,14 +143,129 @@
         \subsection{Algoritmo di ricerca della soglia e del NWL ottimi}
             I parametri da definire sono quindi il numero di classificatori deboli ed il valore di soglia per ciascuno dei classificatori forti allenati.
             Entrambi vengono scelti, per ogni classificatore forte, al fine di massimizzarne l'accuratezza in relazione al dataset di validazione.
-            Massimizzare l'accuratezza implica la massimizzazione dei positivi e dei negativi reali e la conseguente riduzione dei falsi positivi e negativi.
+            Ciò implica la massimizzazione del numero di oggetti che vengono classificati correttamente e la conseguente riduzione dei falsi positivi e negativi.
 
-            L'algoritmo per determinare tali valori è fondamentalmente semplice: ogni strong learner viene utilizzato per classificare gli elementi del dataset di validazione.
-            L'attività di classificazione, in virtù dei parametri liberi appena identificati, sarà dipendente dalla coppia di valori $(\theta, N_{wl})$ (per $\theta$ si intende il valore di soglia del classificatore e $N_{wl}$ il numero di weak learner che lo compongono).
+            L'algoritmo per determinare tali valori è fondamentalmente semplice: ogni strong learner viene utilizzato per classificare gli elementi del \emph{dataset di validazione}.
+            L'attività di classificazione, in virtù dei parametri liberi appena identificati, sarà dipendente dalla coppia di valori $(\theta, N_{wl})$ \footnote{Per $\theta$ si intende il valore di soglia del classificatore e $N_{wl}$ il numero di weak learner che lo compongono}.
             Per ogni possibile coppia di parametri, viene misurata l'accuratezza del classificatore nel classificatare correttamente l'intero dataset, quindi viene scelta la coppia per cui l'accuratezza è massima.
 
             Una procedura di questo tipo, se implementata senza adoperare dei piccoli accorgimenti, potrebbe richiedere molto tempo per essere portata a termine.
-            [Algoritmo figo di selezione della coppia minima]
+            Di seguito viene presentato un metodo che permette di classificare molto velocemente il dataset di validazione utilizzando diversi valori per la coppia $(\theta, N_{wl})$.
+
+            \begin{enumerate}
+                \item Si definisce il classificatore forte $F(x)$ (equazione \ref{eq:strong_classifier}) costituito dai primi $T$  weak learner\footnote{In questa applicazione vengono estratti i primi 200 classificatori deboli. Questi ultimi sono il limite superiore al numero di weak learner totali che potranno essere utilizzati.}, selezionati da Adaboost.
+
+                \item Si definisce l'insieme $V = {(x_1, y_1),..., (x_m, y_m)}$ di validazione.
+
+                \item Si costruisce la matrice di valutazione dei weak learner $W$. L'elemento alla posizione $(i,j)$ di tale matrice sarà la valutazione del \emph{j-esimo weak lerner} sul \emph{i-esimo elemento del dataset}.
+                \begin{equation}
+                    \label{subeq:wl_valuation_matrix}
+                    W = \left[
+                    \begin{array}{cccccc}
+                        h_1(x_1) & h_2(x_1) & \cdots & h_j(x_1) & \cdots & h_T(x_1)\\
+                        h_1(x_2) & h_2(x_2) & \cdots & h_j(x_2) & \cdots & h_T(x_2)\\
+                        \vdots & \vdots & & \vdots & & \vdots \\
+                        h_1(x_i) & h_2(x_i) & \cdots & h_j(x_i) & \cdots & h_T(x_i)\\
+                        \vdots & \vdots & & \vdots & & \vdots \\
+                        h_1(x_m) & h_2(x_m) & \cdots & h_j(x_m) & \cdots & h_T(x_m)\\
+                    \end{array}
+                    \right]
+                \end{equation}
+                Poichè $h_j(x_i): V \rightarrow \{0,1\}$, allora tale matrice sarà composta solamente da $0$ ed $1$ (con un piccolo abuso di notazione: $W \in \{0,1\}^{m \times T}$).
+
+                \item Si costruisce una matrice triangolare superiore con i moltiplicatore dei weak learner, disposti come di seguito:
+                \begin{equation}
+                    \label{subeq:wl_multipliers_matrix}
+                    A = \left[
+                    \begin{array}{cccccc}
+                        \alpha_1 & \alpha_1 & \cdots & \alpha_1 & \cdots & \alpha_1 \\
+                        0 & \alpha_2 & \cdots & \alpha_2 & \cdots & \alpha_2 \\
+                        \vdots & \vdots & \ddots & \vdots & & \vdots \\
+                        0 & 0 & \cdots & \alpha_i & \cdots & \alpha_i \\
+                        \vdots & \vdots & & \vdots  & \ddots & \vdots \\
+                        0 & 0 & \cdots & 0 & \cdots & \alpha_T
+                    \end{array}
+                    \right] \in \mathbb{R}^{T \times T}
+                \end{equation}
+
+                \item Si calcola il prodotto della matrice $W$ e della matrice $A$. L'elemento alla posizione $(i,j)$ della matrice risultante, sarà il \emph{valore della combinazione lineare dei primi j weak learner, valutati sul i-esimo elemento del dataset di validazione}.
+                \begin{equation}
+                    \label{subeq:wca}
+                    \forall a_{ij} \in (W \cdot A), 
+                    a_{ij} = \sum_{t = 1}^{j} a_t h_t(x_i)
+                \end{equation}
+
+                \item Si definiscono i possibili valori di sogli assumibili dal classificatore forte. Qui sono stati utilizzati tutti i valori da $0$ ad $1$, con un passo pari a $0.01$, estremi inclusi\footnote{Quindi i possibili valori di soglia sono 101: $\{0, 0.01, 0.02, ..., 0.98, 0.99, 1\}$}.
+                \begin{equation}
+                    \label{subeq:thresholds_vector}
+                    \Theta = \left[
+                    \begin{array}{c}
+                        \theta_1 \\
+                        \theta_2 \\
+                        \vdots \\
+                        \theta_l \\
+                    \end{array}
+                    \right] \in \mathbb{R}^l
+                \end{equation}
+
+                \item Si definisce un array con la somma cumulativa dei fattori moltiplicativi dei weak learner:
+                \begin{equation}
+                    \label{subeq:multipliers_cum_sum}
+                    \widetilde{A} = \left[
+                    \begin{array}{c}
+                        \alpha_1 \\
+                        \alpha_1 + \alpha_2 \\
+                        \vdots \\
+                        \sum_{t = 1}^{T} \alpha_t \\
+                    \end{array}
+                    \right] \in \mathbb{R}^T
+                \end{equation}
+
+                \item \emph{For} $i = [1...l]$ (ovvero, per ogni possibile valore di soglia):
+                \begin{enumerate}
+
+                    \item \emph{For} $t = [1...T]:$
+                    \begin{enumerate}
+                        
+                        \item Si inizializzano $TP = TN = FP = FN = 0$.
+
+                        \item \emph{For} $k = [1...m]$ (cioè, per ogni elemento del dataset di validazione):
+                            \begin{enumerate}
+                                
+                                \item Si classifica velocemente l'elemento utilizzando le strutture dati preparate in precedenza:
+                                \begin{equation}
+                                    \label{subeq:element_fast_classification}
+                                    F(x_k) = 
+                                    \begin{cases}
+                                        1 & \text{ se } a_{kt} > \theta_i \widetilde{a_t} \\
+                                        0 & \text{ altrimenti }
+                                    \end{cases}
+                                \end{equation}
+
+                                \item Si confronta tale classificazione con la classificazione reale e si aggiornano i contatori:
+                                    \begin{itemize}
+                                        \item $F(x_k) = y_k = 1 
+                                        \Longrightarrow TP \leftarrow TP + 1$
+                                        \item $F(x_k) = y_k = 0
+                                        \Longrightarrow TN \leftarrow TN + 1$
+                                        \item $F(x_k) = 1 \wedge y_k = 0 
+                                        \Longrightarrow FP \leftarrow FP + 1$
+                                        \item $F(x_k) = 0 \wedge y_k = 1 
+                                        \Longrightarrow FN \leftarrow FN + 1$
+                                    \end{itemize}
+
+                                \item Si salvano i valori $TP, TN, FP, FN$ relativi alla coppia $(\theta_i, N_{wl})$ (con $N_{wl} = t$), organizzandoli in una struttura dati a piacere, purchè in un secondo momento si sia in grado di risalire esattamente al valore di soglia e al numero di weak learner utilizzati.
+
+                                In questo caso, ad esempio, sono state utilizzate 4 matrici distinte, formate da tante colonne quanti sono i weak learner totali e da tante righe quanti sono i possibili valori di soglia.
+                            \end{enumerate}
+                    \end{enumerate}
+                \end{enumerate}
+
+                \item Per ogni coppia $(\theta, N_{wl})$ calcolare l'\emph{accuracy} (formula \ref{eq:accuracy}).
+                Si seleziona la coppia di valori per i quali l'accuratezza del classificatore è massima.
+            \end{enumerate}
+
+            % Inserire qui eventuali commenti allo pseudo codice
 
     \section{Analisi dei Risultati} % (fold)
     \label{sec:analisi_dei_risultati}
