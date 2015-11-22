@@ -269,22 +269,66 @@
 
     \section{Analisi dei Risultati} % (fold)
     \label{sec:analisi_dei_risultati}
-        Alla termine della procedura di selezione della coppia ottima, si ottengono i valori di accuratezza migliori del sistema.
-            % \paragraph{Soglia del classificatore}
-            In letteratura il valore di soglia di un classificatore forte si assume essere pari a 0.5 (\cite{Freund97} e \cite{Viola04} aggiungere riferimenti più specifici). Nel lavoro presentato in \cite{Zhu13}, tuttavia, il valore di soglia non viene esplicitato, considerandolo come parametro libero.
-            I risultati ottenuti con l'algoritmo di massimizzazione dell'accuracy, in quanto a valore di soglia, sono lievemente differenti da quelli proposti in letteratura, ma non troppo distanti.
+        Alla termine della procedura di selezione della coppia ottima, si ottiene un classificatore la cui accuratezza è la migliore rispetto a tutte le altre possibili coppie di parametri.
 
-            % \paragraph{Numero di classificatori deboli}
-            Il numero dei classificatori deboli che compongono ciascun classificatore forte, è molto differente quello ottenuto in altre applicazioni, prima tra tutte il sistema di riconoscimento dei volti di Viola Jones.
-            I classificatori forte di questo sistema sono formati da una decina di classificatori deboli, un numero straordinariamente piccolo se confrontato con i migliaia di weak learners necessari a costruire un classificatore di volti.
-            Bisogna considerare però la diversa natura dei due problemi e i diversi canali di acquisizione dei dati per il riconoscimento. L'immagine di profondità di una persona ripresa dall'alto non che una grezza rappresentazione dell'individuo se paragonata all'immagine di un volto umano.
-            La ricchezza di particolari di un volto, l'incredibile variabilità intraclasse e la sensibilità alle variazioni ambientali (come la luce), rende molto più complesso il problema di riconoscimento e di conseguenza è necessario avere dei classificatori molto più complessi.
-            Per raggiungere elevate prestazioni con il framework di Viola-Jones, infatti, è necessario dividere un classificatore forte in diversi stadi, creando dei classificatori a cascata in grado di scartare nel minor tempo possibile, il maggior numero di oggetti che non corrispondono ai volti umani.
-            In questo sistema di rilevamento, tutto questo non è necessario. Un numero così basso di classificatori deboli non è dovuto ad un errore, ma è la conseguenza dell'estrema essenzialità delle immagini di profondità HASP.
-            Si pensi alle caratteristiche espresse in linguaggio naturale dell'immagine del profilo della persona: sono solamente tre. Quante ne sarebbero necessarie per esprimere le principali caratteristiche di un volto umano?
+            \subsection{Soglia del classificatore} % (fold)
+            \label{sub:soglia_del_classificatore}            
+                In letteratura il valore di soglia di un classificatore forte si assume essere pari a 0.5, come descritto da Freund e Schapire in \cite{Freund97}, Viola e Jones in \cite{Viola04}.
 
-            % \paragraph{Valore di sensitivity e specificity}
-            In base a quanto presente in letteratura, i valori calcolati di \emph{specificity} e \emph{sensitivity} rivelano la bontà del sistema.
+                Nel lavoro presentato da Zhu e Wong in \cite{Zhu13}, tuttavia, il valore di soglia non viene esplicitato, ma viene considerato un parametro libero, pur senza fornire alcun metodo esplicativo per la sua derivazione.
+
+                Il valore ottenuto tramite l'algoritmo di massimizzazione dell'accuratezza dei classificatori (sezione \ref{sec:accuracy_maximization}) si aggira intorno al valore $0.4$ per entrambi.
+                
+                Una prima interpretazione potrebbe essere la seguente: la discordanza, seppur contenuta, tra il valore di soglia presente in letteratura ed il valore calcolato può essere dovuto a problemi di overfitting al dataset di validazione.
+                Senza dover creare un ulteriore dataset esclusivamente per il testing, potrebbe essere utile utilizza il valore $0.5$ come soglia effettiva dei classificatori finali, eliminando l'overfitting, e considerare le soglie calcolate come delle controprova della correttezza dell'algoritmo di allenamento.
+
+                La seconda interpretazione, invece, è diametralmente opposta: l'aver ottenuto dei valori di soglia ottimi per accuratezza, potrebbe essere un valore aggiunto rispetto alla formulazione generale classica dei classificatori forti.
+
+                Per il momento si assumeranno validi i valori ottimi di soglia appena calcolati, tuttavia sarà solo in fase di rilevamento su frame reali che ci si potrà rendere conto della bontà di tale soluzione.
+            % subsection soglia_del_classificatore (end)
+
+            \subsection{Numero di Weak Learner} % (fold)
+            \label{sub:numero_di_weak_learner}
+                Il numero dei classificatori deboli che compongono ciascun classificatore forte, è molto differente quello ottenuto in altre applicazioni, prima tra tutte il sistema di riconoscimento dei volti di Viola Jones.
+
+                I classificatori forte di questo sistema sono formati da una decina di classificatori deboli, un numero straordinariamente piccolo se confrontato con i migliaia di weak learner necessari a costruire un classificatore di volti.
+
+                Tuttavia considerare la diversa natura dei due problemi e i diversi canali di acquisizione dei dati per il riconoscimento. L'immagine di profondità di una persona ripresa dall'alto è una rappresentazione grezza, ma essenziale, dell'individuo ed è incredibilmente povera di informazione se paragonata all'immagine di un volto umano.
+                La ricchezza di particolari di un volto, l'incredibile variabilità intraclasse dei volti, per non parlare della fortissima sensibilità delle immagini alle variazioni ambientali (come la luce), rende molto più complesso il problema di riconoscimento. Ecco perchè i classificatori di volti sono cento, mille volte più complessi.
+
+                Per raggiungere elevate prestazioni con il framework di Viola-Jones, infatti, è necessario dividere un classificatore forte in diversi stadi, creando dei classificatori a cascata in grado di scartare nel minor tempo possibile, il maggior numero di oggetti che non corrispondono ai volti umani.
+
+                In questo sistema di rilevamento, tutto questo non è necessario. Un numero così basso di classificatori deboli non è dovuto ad un errore, ma è la conseguenza dell'estrema essenzialità delle immagini di profondità dei profili umani.
+                
+                Come ulteriore argomentazione, si può pensare alle caratteristiche espresse in linguaggio naturale dell'immagine del profilo della persona: sono solamente tre. 
+                Quante ne sarebbero necessarie per esprimere le caratteristiche di un volto umano?
+            % subsection numero_di_weak_learner (end)
+
+            \subsection{Sensitivity, Specificity, Accuracy} % (fold)
+            \label{sub:sensitivity_specificity_accuracy}
+                In base a quanto presente in letteratura, un buon sistema di rilevamento presenta dei valori di \emph{sensitivity} intorno al $90\%$ e di \emph{specificity} intorno al $70\%$.
+
+                Ovviamente tali criteri di giudizio dipendono molto dall'applicazione finale del sistema.
+                Esisteranno situazioni più critiche che richiederanno parametri più stringenti, ma in fase sperimentale ci si attiene a questi valori empirici.
+
+                I valori di \emph{sensitivity}, \emph{specificity} e \emph{accuracy} complessivi\footnote{In riferimento al classificatore finale. I singoli classificatori forti, allenati con Adaboost, vengono utilizzati in parallelo in modo da formare uno unico.}, calcolati una volta che i parametri dei classificatori sono stati fissati in condizioni di massima accuratezza, sono i seguenti:
+
+                \begin{equation}
+                    \label{eq:sensitivity_value}
+                    TPR = 96.87\%
+                \end{equation}
+
+                \begin{equation}
+                    \label{eq:specificity_value}
+                    TNR = 91.25\%
+                \end{equation}
+
+                \begin{equation}
+                    \label{eq:accuracy_value}
+                    ACC = 93.87\%
+                \end{equation}
+
+                Alla luce dei risultati ottenuti, il classificatore finale, testato sul dataset di validazione, risulta sufficientemente accurato rispetto alle valori empirici di riferimento.
 
     % section analisi_dei_risultati (end)
 
