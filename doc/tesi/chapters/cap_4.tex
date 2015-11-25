@@ -331,25 +331,3 @@
                 Alla luce dei risultati ottenuti, il classificatore finale, testato sul dataset di validazione, risulta sufficientemente accurato rispetto alle valori empirici di riferimento.
 
     % section analisi_dei_risultati (end)
-
-\chapter{Rilevamento}
-\label{chap:rilevamento}
-    \section{Tecnica di Rilevamento}
-    \label{sec:detection_tecnique}
-        \subsection{Detection Window}
-            Vengono create delle \emph{detection window} per gestire il rilevamento su frames.
-            La detection window viene fatta scorrere sequenzialmente su tutta l'area del frame, in modo da coprirne tutta l'area.
-        \subsection{Rilevazione su frame}
-            \subsubsection{Resize detection window}
-                A causa della variabilità delle dimensioni della figura HASP della persona, si rende necessario poter effettuare dei ridimensionamenti della finestra di rilevamento. 
-                Per ridimensionarla bisogna ridimensionare tutte le feature di haar associate ai classificatori della finestra.
-            \subsubsection{Slide detection window}
-                Si fa scorrere la finestra in modo da coprire tutta l'area del frame.
-                Ciò permette di effettuare delle rilevazioni in contesti statici (su singoli frame o su frame non correlati tra di loro).
-                Quando si ha a che fare con frame sequenziali, è possibile evitare di analizzare tutte le parti del frame in condizioni di regime, rendendo il processo più veloce.
-    \section{Selezione della Finestra Migliore} %@TODO
-    \label{sec:best_detection_window}
-        \subsection{Introduzione al problema}
-        \subsection{Algoritmo di selezione}
-    \section{Confronto con l'Algoritmo G-C} %@TODO
-    \label{sec:gc_algorithm_comparison}

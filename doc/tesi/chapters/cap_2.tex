@@ -133,18 +133,63 @@
 
     \section{Decision Stump}
     \label{sec:decision_stump}
-        \subsection{Problema: utilizzare le feature}
-            % \subsubsection{È necessario un meccanismo primitivo per utilizzare le feature}
-            Una volta misurata una caratteristica di un oggetto, bisogna essere in grado di utilizzarla ai fini di classificarlo.
+        Una volta misurata una caratteristica relativa ad un oggetto, è necessario trovare un meccanismo, da utilizzare per classificare l'oggetto, che si basi esclusivamente sul valore della misura stessa.        
 
-            % \subsubsection{Bisogna discriminare in base al valore}
-            È necessario, quindi, un meccanismo per effettuare una previsione della classe di appartenenza dell'oggetto che si basa esclusivamente sul valore della feature misurata.
+        \subsection{Definizione di Albero Decisionale}
+        Un albero decisionale è un modello predittivo, per il quale, definita una variabile obiettivo, grazie ad una serie di osservazioni e valutazioni di alcune proprietà (o caratteristiche), si giunge a predirne il valore.
 
-        \subsection{Definizione di albero decisionale}
-        Un albero decisionale è un modello predittivo. Ogni nodo dell'albero rappresenta una variabile o una proprietà osservabile. Ogni arco dal nodo padre verso un nodo figlio rappresenta un possibile valore per la proprietà del nodo padre. Le foglie dell'albero rappresentano i valori che si predice possa assumere una variabile obiettivo. Il percorso dalla radice ad una foglia rappresenta la previsione del valore di tale variabile obiettivo a fronte delle osservazioni effettuate sui valori delle variabili rappresentate da ciascun nodo attraversato.
-        \subsection{Definizione di decision stump} % @TODO Finire questa sottosezione
-            \subsubsection{Radice: Test, funzione booleana}
-            Il più semplice albero decisionale è il \emph{decision stump}. Ha profondità unitaria, cioè si basa sull'osservazione di una sola variabile, in base al valore della quale può effettuare due diverse previsioni della variabile obiettivo (ha due foglie).
-            \subsubsection{Foglie: risultati possibili}
-            \subsubsection{Formule di calcolo binaria}
-            \subsubsection{Formula di calcolo unica: polarità}
+        Valgono le seguenti considerazioni:
+        \begin{enumerate}
+            \item Ogni nodo dell'albero rappresenta una caratteristica osservabile.
+            \item Ogni arco dal nodo padre al nodo figlio rappresenta una proprietà, per la caratteristica relativa al nodo padre, che deve essere soddisfatta per percorrere l'arco stesso.
+            \item Le foglie dell'albero rappresentano i valori ammissibili per la variabile obiettivo.
+            \item Il percorso dalla radice ad una foglia rappresenta la previsione del valore della variabile obiettivo, a fronte delle osservazioni effettuate sulle caratteristiche relative a ciascun nodo attraversato.
+        \end{enumerate}
+
+        \subsection{Definizione di Decision Stump}
+            Il più semplice albero decisionale è il \emph{decision stump} (letteralmente \emph{ceppo decisionale}), il quale ha profondità unitaria e solamente due foglie.
+            Si basa sull'osservazione di una singola caratteristica per le previsioni della variabile obiettivo.
+
+            % Inserire esempio classificazione iris (Fisher) ed immagine
+
+            Alla radice del ceppo decisionale è presente una \emph{funzione di valutazione}\footnote{Il dominio $L$ è costituito da tutte le \emph{formule ben formate}, ovvero da proposizione logiche e dalle relative combinazioni ottenute per mezzo di connettivi logici.} $v:L \rightarrow \{V, F\}$, utilizzata per valutare la caratteristica associata alla radice stessa.
+            A seconda del risultato della funzione di valutazione, il percorso terminerà in una o nell'altra foglia.
+
+            Pragmaticamente, intercalando questa iniziale definizione formale nell'attuale contesto applicativo, la radice di ogni ceppo decisionale conterrà un test con cui valutare la feature associata.
+            Essendo le feature delle misure a valori reali (quanto meno in questo caso), tutto ciò che bisognerà verificare sarà l'appartenenza della misura ad un preciso range di valori per la selezione del percorso da seguire.
+
+            Si impone un valore di soglia che andrà a partizionare l'immagine della funzione di calcolo della feature: definita la soglia $\theta \in \mathbb{R}$ da associare alla feature $f:Dom(f) \rightarrow Img(f) \in \mathbb{R}$, si partizionerà come segue:
+            $$Img(f) = \{f(x)|f(x) < \theta\} \cup \{f(x) | f(x) \geq \theta\}$$
+
+            L'appartenenza della misura ad una o all'altra partizione, decreterà il percorso da seguire verso la foglia.
+            In un problema di classificazione binaria, assumendo una classe come classe di oggetti positivi e l'altra come classe di oggetti negativi, associando alla prima il valore simbolico $1$ ed alla seconda $0$, un generico test da porre alla radice del ceppo, può essere della forma \ref{subeq:decision_test_pos} oppure della forma \ref{subeq:decision_test_neg}.
+
+            \begin{equation}
+                \label{subeq:decision_test_pos}
+                h_1(x) =
+                \begin{cases}
+                    1 & \text{ se } f(x) > \theta \\
+                    0 & \text{ altrimenti }
+                \end{cases}
+            \end{equation}
+            \begin{equation}
+                \label{subeq:decision_test_neg}
+                h_2(x) = 
+                \begin{cases}
+                    1 & \text{ se } f(x) < \theta \\
+                    0 & \text{ altrimenti }
+                \end{cases}
+            \end{equation}
+
+            Questi test non fanno altro che discriminare gli oggetti, misurandone una feature, in due classi distinte, a seconda che il valore misurato sia al di sotto o al di sopra del valore di soglia.
+            Volendo trovare una descrizione formale unica, si introduce un ulteriore parametro $p \in \{0,1\}$, detto \emph{polarità}, il cui unico compito è quello di invertire il segno della disequazione, permettendo di fondere le formule \ref{subeq:decision_test_pos} e \ref{subeq:decision_test_neg} in \ref{eq:decision_stump_test}.
+
+            \begin{equation}
+                \label{eq:decision_stump_test}
+                h(x) = 
+                \begin{cases}
+                    1 & \text{ se } f(x)p > \theta p\\
+                    0 & \text{ altrimenti }
+                \end{cases}
+            \end{equation}
+

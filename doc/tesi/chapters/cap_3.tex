@@ -37,7 +37,7 @@
         \subsection{\emph{Adaptive Boosting}}
         \label{sub:adaptive_boosting}
             \subsubsection{Strong learner e Weak learner}
-                Si fanno riferimento a due tipologie di classificatori (o ipotesi).
+                Si fa riferimento a due tipologie di classificatori (o ipotesi).
                 I \emph{weak learner} sono delle singole ipotesi, la cui attendibilità si considera di poco maggiore rispetto ad una previsione casuale.
                 Gli \emph{strong learner} invece sono delle combinazioni di weak learners. Le previsioni effettuate con un classificatore forte sono nettamente migliori delle precedenti.
 
@@ -143,13 +143,13 @@
 
     \section{\emph{Strong Learner} [Da revisionare]}
     \label{sec:strong_learner}
-        \subsection{Procedura di estrazione del classificatore forte}
-            Sia $D = \{(x_1, y_1), ..., (x_n, y_n)\}$ un insieme di $n$ coppie costituite da un'immagine ($x_i$) e la relativa classificazione ($y_i \in \{ 0, 1 \}$). Se $y_i = 1$, allora $x_i$ appartiene alla classe \emph{umano} (la coppia $(x_i, y_i)$ prende il nome di \emph{esempio positivo}), altrimenti appartiene alla classe \emph{non umano} (la coppia $(x_i, y_i)$ prende il nome di \emph{esempio negativo}).
+        \subsection{Procedura di Estrazione del Classificatore forte}
+            Sia $D = \{(x_1, y_1), ..., (x_n, y_n)\}$ un insieme di $n$ coppie costituite da un'immagine ($x_i$) e la relativa classificazione reale ($y_i \in \{ 0, 1 \}$). Se $y_i = 1$, allora $x_i$ appartiene alla classe \emph{umano} (la coppia $(x_i, y_i)$ prende il nome di \emph{esempio positivo}), altrimenti appartiene alla classe \emph{non umano} (la coppia $(x_i, y_i)$ prende il nome di \emph{esempio negativo}).
 
             L'insieme $D$ può essere partizionato come segue:
             $$P = \{(x, y) \in D | y = 1\} \text{ e } N = \{(x,y) \in D | y = 0\}$$
 
-            Si tenga a mente che, essendo $P$ ed $N$ partizioni di $D$, valgono le seguenti\footnote{La scrittura $\#(D)$ denota il numero di elementi dell'insieme $D$.}:
+            Si tenga presente che, essendo $P$ ed $N$ partizioni di $D$, valgono le seguenti\footnote{La scrittura $\#(D)$ denota il numero di elementi dell'insieme $D$.}:
             \begin{equation}
                 D = P \cup N
             \end{equation}
