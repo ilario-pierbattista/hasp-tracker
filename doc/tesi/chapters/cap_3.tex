@@ -2,36 +2,76 @@
 
 \chapter{L'Algoritmo di Allenamento: Adaboost}
 \label{chap:adaboost}
-    \section{Apprendimento Supervisionato \emph{Ensamble}}
+    \section{\emph{Ensamble Supervised Learning}}
     \label{sec:supervised_ensamble_learning}
+        L'algoritmo di \emph{machine learning} utilizzato dal Zhu e Wong in \cite{Zhu13} è chiamato \emph{Adaboost}, appartenente alla famiglia degli algoritmi di allenamento supervisionati, in particolare a quella degli \emph{ensamble learner}.
+
         \subsection{Apprendimento Supervisionato}
         \label{sub:supervised_learning}
             \subsubsection{Definizione}
-                % \paragraph{Obiettivo}
                 Gli algoritmi di apprendimento supervisionato funzionano attraverso l'utilizzo di un insieme di allenamento, ovvero un insieme i cui elementi sono formati da coppie di oggetti e le relative etichette.
-                La funzione che associa ad ogni oggetto la corretta etichetta è sconosciuta.
-                L'obiettivo dell'algoritmo è quello di trovare una funzione che approssima tale funzione, cioè che permetta di prevedere l'etichetta dell'oggetto.
 
-                % \paragraph{Spazio delle Ipotesi}
-                Le possibili funzioni candidate ad approssimare il comportamento della funzione di classificazione reale, fanno parte dello spazio delle ipotesi.
+                \begin{equation}
+                    \label{subeq:training_set_labelled}
+                    T = \left\{(x_1, y_1), \cdots, (x_n, y_n)\right\} 
+                    \text{ con } 
+                    y_1, \cdots, y_n \in L = \left\{l_1, \cdots, l_k, \cdots \right\}
+                \end{equation}
 
-            \subsubsection{Esempi di Supervised learning}
-                % \paragraph{Algoritmi di Sup.Learning}
-                Addestramento su reti neurali con apprendimento supervisionato.
-                Un famoso algoritmo di supervised learning è il \emph{Support Vector Machine} (SVM).
+                Esiste una funzione $f$ che associa ad ogni elemento $x$ l'etichetta $y$ corretta, ovvero in modo tale che:
 
-                % \paragraph{Maggiori campi applicativi}
-                SVM $\rightarrow$ Pedestrian counting.
+                \begin{equation}
+                    \label{subeq:unknown_function}
+                    f:Dom(f) \rightarrow L | \forall x \in Dom(f), (x, f(x)) \in T
+                \end{equation}
+
+                Se l'insieme $L$ delle etichette è costituito da un numero finito di elementi ($L = \{l_1, \cdots, l_k\}$), allora il problema dell'associazione oggetto-etichetta, prende il nome di problema di \emph{classificatore} e la funzione $f$ sarà il relativo classificatore reale.
+                
+                L'obiettivo dell'apprendimento supervisionato è quello di trovare la \emph{migliore} funzione $h$ che approssima il classificatore reale, essendo sconosciuto.
+
+                L'algoritmo di apprendimento cerca la funzione $h$, chiamata \emph{ipotesi}, all'interno dello \emph{spazio delle ipotesi} $\mathcal{H}$, scegliendo quella in grado di fornire le prestazioni migliori, sia rispetto agli elementi dell'insieme di allenamento, che rispetto ad altri elementi aggiuntivi\footnote{Si costruisce anche un insieme di testing per la valutazione delle prestazioni. Per non appesantire eccessivamente la lettura, i dettagli riguardo al testing vengono omessi ad un livello di trattazione così generale. Si faccia riferimento alla sottosezione \ref{sub:dataset_di_validazione} per ulteriori chiarimenti.}.
+                Si considera una ipotesi $h$ una buona \emph{generalizzazione} di $f$, quando riesce ad etichettare correttamente anche nuovi oggetti.
+
+                Molto spesso la funzione di classificazione reale $f$ non dipende strettamente dall'oggetto $x$, ma è costituita da un \emph{processo stocastico}: in tal caso, ciò che l'algoritmo deve apprendere è una \emph{distribuzione di probabilità condizionale} $P(Y|x)$.
+
+                \begin{equation}
+                    \label{subeq:stochastic_hypotesis_choice}
+                    h^* = \argmax{h \in \mathcal{H}}{P(h | data)}
+                \end{equation}
+
+                La scelta del corretto spazio delle ipotesi è fondamentale.
+                È necessario trovare un compromesso tra l'\emph{espressività delle ipotesi} nello spazio $\mathcal{H}$ e la \emph{complessità computazionale della scelta di una buona ipotesi}.
+                Complessivamente, il tempo di calcolo dell'allenamento, tende ad aumentare molto velocemente all'aumento della \emph{dimensione} dello spazio $\mathcal{H}$ e della \emph{complessità computazionale} nel calcolo da ogni singola ipotesi.  
+
+            \subsubsection{Esempi di Supervised Learning}
+                Esistono molti algoritmi di apprendimento supervisionato.
+                Alcuni dei più famosi sono l'\emph{apprendimento di alberi decisionali}, l'\emph{addestramento su reti neurali} e le \emph{macchine a vettori di supporto}.
+
+                Nell'apprendimento di alberi decisionali, definito un insieme di allenamento (\ref{subeq:training_set_labelled}) ed una collezione di \emph{attributi} valutabili sugli oggetti di tale insieme, si costruisce l'albero ramo per ramo, associando alla valutazione di ogni attributo il risultato più probabile.
+                Più nel dettaglio, se l'insieme degli esempi di allenamento non è vuoto, se la classificazione su tali esempi non è sempre la stessa e se l'insieme degli attributi valutabili non è vuoto, allora si seleziona l'attributo più \emph{importante}\footnote{Minore è l'\emph{entropia} correlata all'attributo, maggiore è la sua \emph{importanza}. Nella teoria dell'informazione, ci si riferisce al concetto di \emph{entropia di Shannon}, ovvero alla misura dell'incertezza su una variabile aleatoria.
+                Per una variabile aleatoria $V$ con $v_1,\cdots, v_k$ possibili valori, ognuno con probabilità $P(v_i)$, l'entropia relativa a $V$ sarà $H(V) = \sum_{i = 1}^{k}P(v_i)\log_2\frac{1}{P(v_i)} = - \sum_{i = 1}^{k}P(v_i)\log_2P(v_i)$}.
+                Si valuta l'attributo su tutti gli esempi di allenamento e, per ogni valore che esso assume, si partiziona l'insieme di allenamento stesso in base a tale valore.
+                Per ogni partizione, si allena un sottoalbero utilizzando la stessa procedura, prendendo in considerazione però, la collezione degli attributi privata dell'attributo appena valutato.
+
+                % @TODO Dare qualche informazione anche su reti neurali e SVM
+                Nell'addrestramento su reti neurali
 
             \subsubsection{Overfitting}
                 Le tecniche di addestramento supervisionato potrebbero incorrere in problemi di \emph{overfitting}.
                 Dato un insieme di allenamento, infatti, la ricerca delle ipotesi che approssimano al meglio la funzione obiettivo potrebbe essere influenzata da caratteristiche che sono comuni tra gli elementi dell'insieme stesso, ma che non sono discriminanti nella descrizione più generale della classe di oggetti.
-                Ciò porta ad un sequenziale miglioramento delle prestazioni del riconoscimento per gli elementi del dataset di allenamento, ma a prestazioni peggiori in scala globale (ad esempio su elementi di un insieme di validazione o di testing).
+
+                La variabilità \emph{intraclasse} delle caratteristiche degli esempi di allenamento, viene equivocata, in fase di eselezione, per variabilità \emph{extraclasse} e utilizzata, erroneamente, per la classificazione.
+
+                Ciò porta ad un sequenziale miglioramento delle prestazioni del riconoscimento per gli elementi del dataset di allenamento, ma a prestazioni peggiori nella classificazione di nuovi elementi.
+
+                Nella sottosezione \ref{sub:dataset_di_validazione}, verranno esposte alcune tecniche per evitare l'insorgere di problemi di overfitting.
 
             \subsubsection{Ensamble Learning}
-                Gli algoritmi di ensamble learning sono una categoria di algoritmi di apprendimento supervisionato.
-                L'approssimazione della funzione obiettivo avviene mediante la selezione di un insieme di funzioni dallo spazio delle ipotesi.
-                La predizione della classe dell'oggetto avviene, poi, combinando tra loro il risultato delle predizioni formulate dalle singole ipotesi.
+                Gli algoritmi di \emph{ensamble learning} sono una particolare categoria di algoritmi di apprendimento supervisionato.
+
+                L'approssimazione della funzione obiettivo avviene mediante la selezione di una collezione di funzioni dallo spazio delle ipotesi.
+                La predizione della classificazione dell'oggetto avviene, poi, combinando tra loro il risultato delle predizioni formulate dalle singole ipotesi.
+                
                 Indicativamente, un classificatore allenato con un algoritmo di ensamble learning avrà prestazioni migliori.
 
         \subsection{\emph{Adaptive Boosting}}

@@ -1,6 +1,22 @@
 % !TEX root=../index.tex
 
-\chapter{Cenni sul Funzionamento del Sensore del Kinect} % (fold)
+\chapter{Accenni sul Funzionamento e le Caratteristiche del Sensore del Kinect} % (fold)
 \label{cha:kinect}
+
+Ciò che viene comunemente chiamato \emph{sensore di profondità} o \emph{sensore di distanza}, in riferimento al dispositivo Kinect, è in realtà uno \emph{scanner 3D a luce strutturata}.
+
+Un sorgente di raggi infrarossi proietta una serie di pattern codificati nello spazio.
+Le superfici colpite inducono una deformazione nella struttura di tali pattern.
+Il pattern deformato viene quindi catturato da una o più telecamere, che confrontando la deformazione con il pattern originario, riescono a ricostruire, dalla rappresentazione bidimensionale di ogni punto nello spazio, le sue coordinate tridimensionali.
+
+Il risultato di un sensore di questo tipo è un insieme di triplette $(x,y,z)$, organizzate in una \emph{immagine di profontità}, una struttura dati che è molto simile ad una semplice immagine in scala dei grigi\footnote{La forte somiglianza con le immagini in scala dei grigi è supportata dal fatto che ogni pixel è codificato utilizzando 16bit.}, dove il valore di ogni pixel rappresenta la misura in millimetri della distanza della superficie dal sensore.
+
+La massima affidabilità del sensore del Kinect V2 si ha per distanza comprese tra $50cm$ e $4,5m$.
+Il dispositivo è montato al soffitto a $2,8m$ da terra e ha un campo visivo di $70^{\circ} \times 60^{\circ}$, il quale, all'altezza del pavimento, determina un'area di cattura di circa $4m \times 5m$.
+
+La dimensione di ogni immagine di profondità è di $512 \times 424$ pixel. 
+Nativamente non vengono codificate in alcun modo particolare, sono delle semplici matrici di interi.
+È in grado di catturarne fino a 30 al secondo. 
+Utilizzando un apposito software di registrazione è stato possibile mettere insieme dei video di profondità a 30 fps.
 
 % chapter kinect (end)
