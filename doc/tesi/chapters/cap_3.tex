@@ -43,7 +43,7 @@
                 È necessario trovare un compromesso tra l'\emph{espressività delle ipotesi} nello spazio $\mathcal{H}$ e la \emph{complessità computazionale della scelta di una buona ipotesi}.
                 Complessivamente, il tempo di calcolo dell'allenamento, tende ad aumentare molto velocemente all'aumento della \emph{dimensione} dello spazio $\mathcal{H}$ e della \emph{complessità computazionale} nel calcolo da ogni singola ipotesi.  
 
-            \subsubsection{Esempi di Supervised Learning}
+            \subsubsection{Esempi di \emph{Supervised Learning}}
                 Esistono molti algoritmi di apprendimento supervisionato.
                 Alcuni dei più famosi sono l'\emph{apprendimento di alberi decisionali}, l'\emph{addestramento su reti neurali} e le \emph{macchine a vettori di supporto}.
 
@@ -53,10 +53,30 @@
                 Si valuta l'attributo su tutti gli esempi di allenamento e, per ogni valore che esso assume, si partiziona l'insieme di allenamento stesso in base a tale valore.
                 Per ogni partizione, si allena un sottoalbero utilizzando la stessa procedura, prendendo in considerazione però, la collezione degli attributi privata dell'attributo appena valutato.
 
-                % @TODO Dare qualche informazione anche su reti neurali e SVM
-                Nell'addrestramento su reti neurali
+                Una rete neurale è una particolare struttura decisionale che ricorda la struttura neurale del cervello umano.
+                Come una qualsiasi rete è rappresentabile con un grafo, in cui i nodi sono detti \emph{units} e gli archi \emph{links}.
+                Un generico link dall'unità $i$ all'unità $j$ propaga l'attivazione $a_i$ dai due nodi. Ad ognuno di essi è inoltre associato un \emph{peso} $w_{ij}$, che denota la forza ed il segno della connessione.
+                L'unità $j$-esima, calcola innanzitutto la combinazione lineare dei segnali in input e dei rispettivi pesi, quindi, in prossimità del valore ottenuto, calcola il risultato della \emph{funzione di attivazione} (\ref{subeq:activation_function}).
+                \begin{equation}
+                    \label{subeq:activation_function}
+                    a_j = g(in_j) = g\left(\sum_{i = 0}^{n}w_{ij}a_i\right)
+                \end{equation}
+                La definizione delle funzioni di attivazione è un parametro progettuale relativo alla rete da compiere a priori dell'allenamento: a seconda del particolare obiettivo che si vuole perseguire, si sceglie una struttura neurale piuttosto che un'altra.
+                In fase di allenamento, invece, si procede determinare il valore ottimo di ciascun peso relativo agli archi della rete: dato un insieme di allenamento, si cerca di mappare nel modo migliore possibile ciascun input al relativo valore di output.
 
-            \subsubsection{Overfitting}
+                Le \emph{Support Vector Machine} (SVM) sono, attualmente, il framework di allenamento supervisionato più popolare.
+                Godono di tre caratteristiche:
+                \begin{enumerate}
+                    \item Costruiscono un \emph{margine di separazione massimale} tra gli elementi del dataset di allenamento. Si tratta di un confine che separa gli esempi di allenamento distanziando più possibile gli elementi di classi diverse. Questa caratteristica garantisce un buon grado di generalizzazione.
+
+                    \item Creano degli \emph{iperpiani lineari di separazione}. Elementi che non possono essere separati linearmente nello spazio originale di separazione, vengono rappresentati in spazi con un numero più elevato di dimensioni, al fine di trovare un iperpiano lineare come separatore.
+
+                    \item Combinano i vantaggi dei metodi \emph{parametrici} e \emph{non parametrici}\footnote{I modelli \emph{parametrici} caratterizzano gli elementi di un insieme di allenamento utilizzando un numero prefissato di parametri, indipendentemente dalla cardinalità dell'insieme. 
+                    Ad esempio, nelle reti neurali, il numero di pesi da fissare è una caratteristica strutturale della rete.
+                    Di contro, i metodi \emph{non parametrici} non sono caratterizzati da un limite prefissato di parametri con cui caratterizzare gli esempi di allenamento.} risultando molto flessibili nella rappresentazione di funzioni di classificazione complesse, ma poco sensibili a problematiche di \emph{overfitting}.
+                \end{enumerate}
+
+            \subsubsection{\emph{Overfitting}}
                 Le tecniche di addestramento supervisionato potrebbero incorrere in problemi di \emph{overfitting}.
                 Dato un insieme di allenamento, infatti, la ricerca delle ipotesi che approssimano al meglio la funzione obiettivo potrebbe essere influenzata da caratteristiche che sono comuni tra gli elementi dell'insieme stesso, ma che non sono discriminanti nella descrizione più generale della classe di oggetti.
 
@@ -66,75 +86,103 @@
 
                 Nella sottosezione \ref{sub:dataset_di_validazione}, verranno esposte alcune tecniche per evitare l'insorgere di problemi di overfitting.
 
-            \subsubsection{Ensamble Learning}
+            \subsubsection{\emph{Ensamble Learning}}
                 Gli algoritmi di \emph{ensamble learning} sono una particolare categoria di algoritmi di apprendimento supervisionato.
 
                 L'approssimazione della funzione obiettivo avviene mediante la selezione di una collezione di funzioni dallo spazio delle ipotesi.
                 La predizione della classificazione dell'oggetto avviene, poi, combinando tra loro il risultato delle predizioni formulate dalle singole ipotesi.
                 
-                Indicativamente, un classificatore allenato con un algoritmo di ensamble learning avrà prestazioni migliori.
+                Un classificatore allenato con un algoritmo di ensamble learning, intuitivamente, fornisce previsioni più accurate, ampliando il numero di ipotesi vincenti scelte per le predizioni.
 
         \subsection{\emph{Adaptive Boosting}}
         \label{sub:adaptive_boosting}
-            \subsubsection{Strong learner e Weak learner}
-                Si fa riferimento a due tipologie di classificatori (o ipotesi).
-                I \emph{weak learner} sono delle singole ipotesi, la cui attendibilità si considera di poco maggiore rispetto ad una previsione casuale.
-                Gli \emph{strong learner} invece sono delle combinazioni di weak learners. Le previsioni effettuate con un classificatore forte sono nettamente migliori delle precedenti.
+            \subsubsection{\emph{Strong} e \emph{Weak Learner}}
+                Di qui in avanti, si farà riferimento due tipologie distinte di classificatori, i \emph{weak learner} e gli \emph{strong learner}\footnote{Alternativamente, \emph{weak classifier} e \emph{strong classifier}.}.
+
+                I \emph{weak learner} sono costituiti da singole ipotesi, selezionate da utilizzando un qualsiasi algoritmo di allenamento supervisionato.
+                La loro caratteristica principale è quella di essere meccanismi di classificazione estremamente semplici, anche dal punto di vista computazionale, e nel complesso, la loro attendibilità viene considerata di poco maggiore rispetto ad una previsione casuale.
+
+                Gli \emph{strong learner}, invece, sono delle combinazioni di weak learner.
+                Vengono definiti grazie all'implementazione di un metodo di ensamble boosting e garantiscono un'affidabilità molto maggiore rispetto ad i singoli weak learner.
 
             \subsubsection{Algoritmi di Boosting}
-                Gli algoritmi di boosting sono la famiglia più popolare di algoritmi che implementano l'ensamble learning.
-                Inizialmente, gli algoritmi di questo tipo, associano ad un insieme di allenamento una distribuzione: ad ogni elemento dell'insieme viene associato un peso.
-                Iterativamente viene selezionato il migliore weak learner, cioè quello che riesce a classificare gli elementi del dataset compiendo meno errori possibili.
-                Sostanzialmente l'idea che è alla base del successo degli algoritmi di boosting sta nel fatto che, tali pesi, vengono aggiornati per ogni elemento ad ogni iterazione in base al risultato della classificazione con il weak learner corrente. Viene diminuito il peso degli elementi classificati correttamente e aumentato quello degli altri, in modo tale da favorire la selezione, all'iterazione successiva, di un weak learner che copra gli errori del precedente.
-                Quest'ultimo viene aggiunto allo strong learner finale, che alla fine del processo sarà costituito da una combinazione dei vari weak learner.
+            \label{subsub:boostin_alg}
+                Sono la famiglia più popolare di algoritmi che implementano l'ensamble learning.
+
+                Inizialmente, gli algoritmi di questo tipo, associano ad un insieme di allenamento una distribuzione: ogni elemento viene correlato di un peso.
+                Iterativamente viene selezionato, dallo spazio delle ipotesi, il \emph{miglior weak learner}, ovvero quello che riesce a classificare gli elementi del dataset compiendo meno errori possibili.
+
+                L'idea che è alla base del successo degli algoritmi di boosting sta nel fatto che, tali pesi, vengono aggiornati per ogni elemento ad ogni iterazione in base al risultato della classificazione con il weak learner corrente. 
+                Viene diminuito il peso degli elementi classificati correttamente e aumentato quello degli altri, in modo da favorire la selezione, all'iterazione successiva, di un weak learner che vada a compensare gli errori compiuti dal precedente.
+
+                Tutti i weak learner selezionati combinano le loro singole predizioni in un'unica predizione molto accurata: lo strong learner risultante sarà la combinazione dei weak learner estratti.
 
             \subsubsection{Adaboost}
-                Adaboost è l'algoritmo proposto da Freund e Schapire che è valso loro il premio Gödel.
-                Il nome deriva dalla fusione delle parole \emph{Adaptive} e \emph{Boosting} ed implementa le operazioni descritte precedentemente.
+                Adaboost è l'algoritmo proposto da Freund e Schapire in \cite{Freund97}, ed è valso loro il premio Gödel per il contributo originale apportato al campo dell'informatica teorica.
+
+                Il nome \emph{Adaboost} deriva dalla fusione delle parole \emph{Adaptive} e \emph{Boosting} (ed essendo un algoritmo di boosting, implementa le operazioni descritte precedentemente).
+
                 Ciò che rende Adaboost un algoritmo di boosting \emph{adaptive} è la politica di aggiornamento dei pesi relativi agli elementi dell'insieme di allenamento: viene decrementato il peso degli elementi classificati correttamente, lasciando invariato il peso degli altri.
-                Il valore di tale decremento non è costante, ma dipende dall'errore pesato di classificazione complessivo per la relativa iterazione. Maggiore è l'errore, maggiore è il decremento dei pesi.
-                In tale senso, Adaboost è un algoritmo di boosting che ad ogni iterazione cambia il proprio comportamento adattandosi al contesto.
+
+                Il valore di tale decremento non è costante, ma \emph{dipende dall'errore pesato di classificazione complessivo} per la relativa iterazione. 
+                Maggiore è l'errore, maggiore è il decremento dei pesi.
+                
+                È così che Adaboost, ad ogni iterazione, cambia il proprio comportamento adattandosi perfettamente al contesto specifico.
 
     \section{Dataset di Allenamento}
     \label{sec:training_dataset}
+        Prima di procedere ulteriormente nella presentazione dell'algoritmo di allenamento, è necessario fare qualche considerazione preventiva sulla costruzione dei dataset di allenamento.
+
+        Innanzi tutto, qualche delucidazione sui termini: è stato utilizzato largamente il termine \emph{insieme} per denotare l'organizzazione di dati in ingresso ad un algoritmo di allenamento, ma di qui in avanti si utilizzerà anche il termine \emph{dataset}.
+        È un termine più legato al gergo tecnico, senza alcuna particolare accezione, se non quella di denotare un insieme organizzato in una reale struttura dati.
+
         \subsection{Categorie di Classificatori}
         \label{sub:classifiers_categories}
-            \subsubsection{Variabilità della forma HASP}
+            È stato detto precedentemente che, come tutti gli algoritmi di supervised learning, Adaboost riceve in input un insieme di allenamento e resitituisce un classificatore forte.
+
+            Potrebbe non essere sufficiente disporre di un unico classificatore forte per l'applicazione di rilevamento che si vuole realizzare.
+
+            \subsubsection{Variabilità della Forma delle Immagini HASP}
                 La forma dell'immagine HASP della persona nel frame di profondità varia per molti motivi.
 
-                % \paragraph{Variazione dell'orientazione}
-                La prima causa di variazione della forma HASP è l'orientazione delle persona.
+                La prima causa di variazione della forma HASP è l'\emph{orientazione delle persona}.
                 L'immagine di una persona che cammina seguendo una direzione parallela al lato lungo del frame sarà indubbiamente diversa dall'immagine di una persona che cammina seguendo una direzione perpendicolare, così come sarà diversa dall'immagine di una persona che compie una traiettoria obliqua all'interno della stanza.
 
-                % \paragraph{Variazione derivata dalla distorsione prospettica}
-                Un altro fattore importante che concorre nella variazione della forma è la distorsione prospettiva.
+                Un altro fattore importante che concorre nella variazione della forma è la \emph{distorsione prospettica}.
                 L'immagine di una persona ripresa al centro del frame e quella della stessa persona ripresa in una zona periferica è molto diversa, anche se orientata sempre nella stessa direzione.
-                L'entità della distorsione prospettica della forma è tanto maggiore quanto più il sensore è vicino al pavimento. D'altro canto, le caratteristiche tecniche di quest'ultimo impongono un limite massimo alla distanza.
-                Considerata la realtà applicativa del sistema, la distanza massima del sensore dal pavimento sarà di poco inferiore all'altezza del soffitto in una comune abitazione.
-                L'altezza a cui viene montato il sensore, quindi, non verrà considerato un parametro progettuale, bensì una condizione ambientale entro la quale il sistema deve operare.
-                La distorsione prospettica, quindi, non può essere eliminata.
 
-                % \paragraph{Variazione derivata dalle differenze di statura}
-                Un'ulteriore causa della variazione della forma dell'immagine HASP consiste nelle differenze di corporatura e di statura delle persone.
+                L'entità della distorsione prospettica della forma è tanto maggiore quanto più il sensore è vicino al pavimento. 
+                D'altro canto, le caratteristiche tecniche di quest'ultimo impongono un limite massimo alla distanza.
+                
+                Considerata la realtà applicativa del sistema, la distanza massima del sensore dal pavimento sarà di poco inferiore all'altezza del soffitto in una comune abitazione.
+                L'altezza a cui viene montato il sensore, quindi, non verrà considerato un parametro progettuale, bensì una condizione ambientale entro la quale il sistema deve operare: la distorsione prospettica non può essere eliminata.
+
+                Un'ulteriore causa della variazione della forma dell'immagine HASP consiste nelle \emph{differenze di corporatura e di statura delle persone}.
                 Tali differenze vengono chiamate \emph{differenze interclasse}, essendo delle caratteristiche variabili di oggetti che appartengono alla stessa classe.
                 Ovviemente un buon sistema di rilevamento dovrebbe essere in grado di riconoscere soggetti di differente statura e corporatura.
                 Per ovviare a questo problema verranno prese delle opportune misure di ridimensionamento delle immagini.
 
-            \subsubsection{Definizione delle categorie di classificatori}
-                % \paragraph{Soluzione alla variabilità delle immagini HASP}
+            \subsubsection{Definizione delle Categorie di Classificatori}
                 Una forte variabilità intraclasse potrebbe portare alla sintesi di classificatori troppo laschi.
+
                 Un buon approccio a questo problema consiste nel dividere gli oggetti, appartenenti alla stessa classe, in diverse categorie.
                 Tali categorie devono essere scelte in modo tale che le differenze tra gli oggetti appartenti alla stessa categoria siano lievi, mentre quelle relative agli oggetti di differenti categorie siano più accentuati.
+                
                 Definite tali categorie, per ognuna di esse verrà sintetizzato un classificatore, allendandolo solo su elementi appartenenti ad una stessa categoria.
                 Così facendo le differenze intraclasse di entità superiore vengono arginate.
 
-                % \paragraph{Categorie: Verticale e Orizzontale}
-                L'orientazione della persona è il parametro su cui si possono formulare le diverse categorie.
-                In questo sistema vengono allenati due classificatori forti che vanno ad operare in parallelo in fase di riconoscimento: il primo è allenato esclusivamente con immagini di persone che si muovono in direzione parallela al lato lungo del frame (informalmente, direzione \emph{orizzontale}), il secondo con immagini di persone che si muovono in direzione perpendicolare alla prima (direzione \emph{verticale}).
+                L'\emph{orientazione della persona} è il parametro su cui si possono formulare le diverse categorie.
+                In questo sistema vengono allenati due classificatori forti che vanno ad operare in parallelo (equazione \ref{eq:parallel_classifiers}) in fase di riconoscimento: il primo è allenato esclusivamente con immagini di persone che si muovono in direzione parallela al lato lungo del frame (informalmente, direzione \emph{orizzontale}), il secondo con immagini di persone che si muovono in direzione perpendicolare alla prima (direzione \emph{verticale}).
 
-                % \paragraph{Categorie alternative: Obliquo, a zone}
-                Sarebbe possibile anche definire ulteriori categorie basate sulla direzione delle persona, introducendo due classificatori dedicati alle due direzioni oblique rispetto alle prime due.
+                \begin{equation}
+                    \label{eq:parallel_classifiers}
+                    F_{final}(x) = F_{hor}(x) || F_{ver}(x)
+                \end{equation}
+
+                Sarebbe possibile anche definire ulteriori categorie basate sulla direzione delle persona, introducendo due classificatori dedicati alle due \emph{direzioni oblique} rispetto alle prime due.
+
                 Inoltre si può pensare di porre rimedio alla distorsione prospettica del sensore suddividendo il frame in aree ed allenando, per ognuna di esse, una coppia di classificatori orizzontale-verticale.
+                
                 Queste ultime due soluzioni introducono una certa complessità aggiuntiva ed in questa fase iniziale di sperimentazione non porteranno grandi vantaggi alla precisione complessiva del sistema.
 
         \subsection{Preparazione dei Dataset}
