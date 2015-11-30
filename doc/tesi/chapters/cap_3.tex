@@ -182,52 +182,66 @@
                 Sarebbe possibile anche definire ulteriori categorie basate sulla direzione delle persona, introducendo due classificatori dedicati alle due \emph{direzioni oblique} rispetto alle prime due.
 
                 Inoltre si può pensare di porre rimedio alla distorsione prospettica del sensore suddividendo il frame in aree ed allenando, per ognuna di esse, una coppia di classificatori orizzontale-verticale.
-                
+
                 Queste ultime due soluzioni introducono una certa complessità aggiuntiva ed in questa fase iniziale di sperimentazione non porteranno grandi vantaggi alla precisione complessiva del sistema.
 
         \subsection{Preparazione dei Dataset}
         \label{sub:datasets_setup}
             \subsubsection{Acquisizioni}
-                % \paragraph{Soggetti, percorsi}
                 Per la creazione dei dataset di allenamento è stato chiesto a 10 soggetti, di statura e corporatura differente, di percorrere una traiettoria differente per ogni registrazione.
-                Delimitata l'area del pavimento corrispondente all'area di visualizzazione del frame di profondità, sono state individuate 3 traiettorie:
+
+                Delimitata fisicamente l'area del pavimento corrispondente all'area di visualizzazione del frame di profondità, sono state individuate tre traiettorie significative:
+
                 \begin{description}
-                    \item[Orizzontale] È stato chiesto ai soggetti di coprire tutta l'area muovendosi lungo la direzione parallela al lato maggiore;
-                    \item[Verticale] È stato chiesto ai soggetti di comprire tutta l'area muovendosi lungo la direzione perpendicolare al lato maggiore;
+                    \item[Orizzontale] Seguendo questa traiettoria, i soggetti coprono tutta l'area muovendosi lungo le parallele al lato maggiore.
+
+                    \item[Verticale] I soggetti coprono l'area muovendosi lungo la direzione perpendicolare al lato maggiore.
+
                     \item[Random] È stato chiesto ai soggetti di seguire una traiettoria casuale, cercando di coprire tutta l'area del frame.
                 \end{description}
-                Le prime due traiettorie corrispondo alle categorie individuate precedentemente: da tali registrazioni vengono estratti gli oggetti per l'allenamento dei classificatori orizzontale e verticale.
-                Le registrazioni dell'ultima traiettoria, invece, vengono utilizzate per la creazione del dataset di validazione.
 
-                % \paragraph{Acquisizione delle registrazioni}
-                Con un software apposito %@TODO Inserire crediti
-                vengono sequenzialmente catturati e salvati i frame di profondità provenienti dal dispositivo Kinect, ad una frequenza massima di $30 fps$.
-                Il software è in grado di catturare fino a 1000 frame, che vengono salvati in file binari grezzi, senza ricorrere a compressione.
+                I primi due percorsi corrispondo alle categorie individuate precedentemente: da tali registrazioni vengono estratti gli oggetti per l'allenamento dei classificatori che sono stati denominati, informalmente, orizzontale e verticale.
+
+                Le registrazioni dell'ultima traiettoria, invece, vengono utilizzate per la creazione del \emph{dataset di validazione}\footnote{Per ulteriori informazioni, consultare il capitolo \ref{chap:tuning}, nella fattispecie la sottosezione \ref{sub:dataset_di_validazione}.}.
+
+                Con un software di registrazione\footnote{Sviluppato al Laboratorio di Telecomunicazioni presso l'Università Politecnica delle Marche (\url{http://www.tlc.dii.univpm.it/blog/}).} apposito vengono sequenzialmente catturati e salvati i frame di profondità elaborati dal dispositivo Kinect, ad una frequenza massima di $30 fps$.
+                Il software è in grado di catturare fino a 1000 frame, corrispondenti a poco più di mezzo minuto, che vengono salvati in file binari grezzi, senza ricorrere a compressione.
+
                 La durata delle registrazioni delle traiettorie orizzontale e verticale è subordinata al tempo necessario al soggetto per coprire tutta l'area del frame, mentre le registrazioni riferite alle traiettorie casuali sono tutte costituite da 1000 frame.
 
-            \subsubsection{Ritaglio dei samples}
-                % \paragraph{Trainset Creator}
-                È stato sviluppato \emph{ad hoc} un applicativo dedicato alla creazione e alla gestione dei dataset di allenamento.
-                Attraverso un'efficace interfaccia utente, permette di aprire e visualizzare una registrazione e scorrere ciascun frame. Una volta individuato il frame interessato, è possibile estrarre un ritaglio selezionando l'area. La porzione selezionata di frame viene immediatamente salvata in un file binario grezzo nella cartella contenente il dataset correntemente aperto.
-                [Appendici per spiegazioni migliori]
+            \subsubsection{Ritaglio dei Samples}
+                È stato sviluppato un software apposto per la gestione dei dataset per ritagliare, organizzare e ridimensionare, le immagini dei dataset di allenamento.
+
+                Attraverso un'efficace interfaccia utente, permette di aprire e visualizzare una registrazione e scorrere ciascun frame. 
+                Una volta individuato il frame interessato, è possibile estrarre un ritaglio selezionando l'area. 
+                La porzione selezionata di frame viene immediatamente salvata in un file binario grezzo nella cartella contenente il dataset correntemente aperto.
+
+                Nella sezione \ref{sub:training_set_creator} vi saranno ulteriori spiegazioni al riguardo.
 
         \subsection{Preprocessing}
         \label{sub:preprocessing}
             \subsubsection{Resize}
                 In fase di creazione dei dataset è necessario effettuare una prima operazione di preprocessing.
                 In virtù del fatto che, a soggetti di corporatura differente, corrispondo immagini HASP di dimensioni differenti, è necessario normalizzare le dimensioni dei ritagli componenti i dataset di allenamento.
-                Tutte le immagini vengono quindi ridimensionate a $24 \times 24$ pixel (valore noto in letteretura).
+                
+                Tutte le immagini vengono quindi ridimensionate a $24 \times 24$ pixel, valore già utilizzato in letteratura nel framework proposto da Viola e Jones in \cite{Viola04}.
+                Sono disponibili tre algoritmi per il resize delle immagini: \emph{nearest neighbour}, \emph{bilinear interpolation} e \emph{bicubic interpolation}.
 
-                % \paragraph{Possibili algoritmi di resize}
-                I possibili algoritmi per il ridimensionamento delle immagini sono \emph{nearest neighbour}, \emph{bilinear interpolation} ed \emph{bicubic interpolation}.
-                Il ridimensionamento degli elementi del dataset si può effettuare direttamente dal software di gestione, che implementa i tre algoritmi precedenti.
-
-                % \paragraph{Nearest Neighbour}
-                L'algoritmo nearest neighbour è quello maggiormente utilizzato in quanto è il meno invasivo dei tre.
+                La scelta dell'algoritmo di resize è caduta sul \emph{nearest neighbour}, il più semplice ed il meno invasivo dei tre.
 
             \subsubsection{Conversione delle distanze}
                 Un'ulteriore operazione di preprocessing da effettuare sugli elementi del dataset è la conversione delle distanze.
-                Convertire le distanze dal sensore in quote dal pavimento.
+                
+                Il valore di ciascun pixel nelle immagini di profondità, esprime la distanza in $mm$ della superficie rilevata dal sensore.
+                È necessario elaborare le immagini di profondità trasformando la distanza della superficie dal sensore in \emph{quota della superficie dal pavimento}.
+                \begin{equation}
+                    \label{eq:floor_distance}
+                    d' = d - d_{pavimento}
+                \end{equation}
+
+                L'equazione \ref{eq:floor_distance} esplicita la modalità di conversione delle distanze.
+                Bisogna notare che il valore della distanza del pavimento dal sensore, non è uniforme in tutta l'area del frame, a causa della distorsione prospettica: nelle zone periferiche essa sarà maggiore.
+                Si considera valida la distanza misurata esattamente al centro del frame, corrispondente a circa $2850mm$.
 
     \section{\emph{Strong Learner} [Da revisionare]}
     \label{sec:strong_learner}
