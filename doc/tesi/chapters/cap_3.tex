@@ -243,15 +243,41 @@
                 Bisogna notare che il valore della distanza del pavimento dal sensore, non è uniforme in tutta l'area del frame, a causa della distorsione prospettica: nelle zone periferiche essa sarà maggiore.
                 Si considera valida la distanza misurata esattamente al centro del frame, corrispondente a circa $2850mm$.
 
-    \section{\emph{Strong Learner} [Da revisionare]}
-    \label{sec:strong_learner}
-        \subsection{Procedura di Estrazione del Classificatore forte}
-            Sia $D = \{(x_1, y_1), ..., (x_n, y_n)\}$ un insieme di $n$ coppie costituite da un'immagine ($x_i$) e la relativa classificazione reale ($y_i \in \{ 0, 1 \}$). Se $y_i = 1$, allora $x_i$ appartiene alla classe \emph{umano} (la coppia $(x_i, y_i)$ prende il nome di \emph{esempio positivo}), altrimenti appartiene alla classe \emph{non umano} (la coppia $(x_i, y_i)$ prende il nome di \emph{esempio negativo}).
+    \section{Procedura di Allenamento}
+    \label{sec:training_procedure}
+        \subsection{Notazione} % (fold)
+        \label{sub:notazione}
+            Sia $D$ un insieme di allenamento.
+            \begin{equation}
+                \label{subeq:training_set}
+                D = \left\{(x_1, y_1), \cdots, (x_n, y_n)\right\}
+            \end{equation}
+            
+            $D$ è costituito da $n$ coppie $(x_i, y_i)$, dove $x_i$ è un'immagine di profondità e $y_i$ è la relativa etichettatura reale.
+     
+            Il problema è di classificazione binaria, quindi ogni etichette $y_i$ rappresenta la \emph{classificazione} dell'oggetto $x_i$.
+            Inoltre, poniamo che:
+
+            \begin{equation}
+                \label{eq:classification_notation}
+                y_i =
+                \begin{cases}
+                    1 & \text{ se }x_i\text{ raffigura un umano }\\
+                    0 & \text{ altrimenti }\\
+                \end{cases}
+            \end{equation}
+
+            Se $y_i = 1$, si parlerà, in riferimento a $x_i$, di \emph{esempio positivo}, se $y_i = 0$ invece si parlerà di \emph{esempio negativo}.
 
             L'insieme $D$ può essere partizionato come segue:
-            $$P = \{(x, y) \in D | y = 1\} \text{ e } N = \{(x,y) \in D | y = 0\}$$
+            \begin{equation}
+                \label{subeq:traininig_set_partitions}
+                P = \left\{(x, y) \in D | y = 1\right\} 
+                \text{ e } 
+                N = \left\{(x,y) \in D | y = 0\right\}
+            \end{equation}
 
-            Si tenga presente che, essendo $P$ ed $N$ partizioni di $D$, valgono le seguenti\footnote{La scrittura $\#(D)$ denota il numero di elementi dell'insieme $D$.}:
+            Si tenga presente che, essendo $P$ ed $N$ partizioni di $D$, valgono le seguenti\footnote{La scrittura $\#(D)$ denota la cardinalità dell'insieme $D$.}:
             \begin{equation}
                 D = P \cup N
             \end{equation}
@@ -261,46 +287,103 @@
             \begin{equation}
                 \#(D) = \#(P \cup N) = \#(P) + \#(N)
             \end{equation}
+        % subsection notazione (end)
 
-            Si introduce anche il concetto di \emph{classificatore debole}. Si tratta di una funzione che per una data immagine $x$ in ingresso, assume il valore che simboleggia la presunta classe di appartenenza di quest'ultima.
-            Nel dettaglio:
+        \subsection{Definizione dei Weak Learner} % (fold)
+        \label{sub:definizione_dei_weak_learner}
+            È necessario, a questo punto, esplicitare ciò che andrà a costituire i weak learner.
+            Viola e Jones in \cite{Viola04}, Zhu e Wong in \cite{Zhu13} utilizzano dei \emph{decision stump} equipaggiati per il calcolo delle feature di Haar sulle immagini di profondità.
+
+            Come è stato detto nella sezione \ref{sec:decision_stump}, un decision stump è della forma espressa dall'equazione \ref{eq:decision_stump_test}.
             \begin{equation}
-                h(x) = \begin{cases}
-                1 & \text{se $pf(x) < p\theta$}\\
-                0 & \text{altrimenti}
-            \end{cases}
+                \tag{\ref{eq:decision_stump_test}}
+                h(x) = 
+                \begin{cases}
+                    1 & \text{ se } pf(x) < p\theta \\
+                    0 & \text{ altrimenti }
+                \end{cases}
             \end{equation}
-            dove $f(x)$ è il valore di una feature di Haar applicata all'immagine $x$, $p \in \{-1,1\}$ è detta \emph{polarità} e $\theta$ è la \emph{soglia} (\emph{threshold}). Tutti i classificatori deboli sono costruiti usando un'unica feature.
 
-            L'obbiettivo di Adaboost è quello di formare un \emph{classificatore forte} come combinazione lineare dei migliori classificatori deboli estraibili dal set di allenamento, dove il fattore moltiplicativo di ogni classificatore nella combinazione è inversamente proporzionale agli errori di classificazione compiuti da quest'ultimo in fase di allenamento.
+            In questo specifico contesto, $f$ rappresenta una singola feature di Haar: esistono tanti weak learner tante sono le possibili feature di Haar per le immagini che costituiscono il dataset di allenamento.
+            Il valore della soglia $\theta$ e quello della polarità $p \in \{-1,1\}$, sono i parametri liberi del weak learner, che verranno fissati in fase di allenamento.
+            Verranno fornite ulteriori spiegazioni nelle sezioni successive (\ref{sub:strong_learner_extraction} e \ref{sec:weak_learner}).
+        % subsection definizione_dei_weak_learner (end)
 
-            Il seguente algoritmo descrive la procedura di estrazione e combinazone di $T$ classificatori deboli.
+        \subsection{Procedura di Estrazione dello \emph{Strong Learner}} % (fold)
+        \label{sub:strong_learner_extraction}
+            La seguente procedura, descrive il processo di costruzione dello strong learner come combinazione di weak learner: è il corpo principale di Adaboost ed implementa le tecniche di boosting adattivo sul dataset di allenamento.
+            Di seguito si presenta la sequenza di passi necessari alla combinazione di $T$ weak learner in un unico classificatore forte.
 
             \begin{enumerate}
-                \item Si associa ad ogni elemento $(x_i, y_i) \in D$ un peso $w_i$ tale che $w_i = \frac{1}{2l}$ se $(x_i, y_i) \in P$ oppure $w_i = \frac{1}{2m}$ se $(x_i, y_i) \in N$, dove $l = \#(P)$ ed $m = \#(N)$ (numero degli esempi positivi e numero degli esempi negativi).
+                \item Si associa ad ogni elemento $(x_i, y_i) \in D$ un peso $w_i$ iniziale:
+                \begin{equation}
+                    \label{subeq:weighting_samples}
+                    \forall (x_i, y_i) \in D \text{  }
+                    w_i = 
+                    \begin{cases}
+                        \frac{1}{2l} & \text{ se } (x_i, y_i) \in P \text{ con } l = \#(P) \\
+                        \frac{1}{2m} & \text{ se } (x_i, y_i) \in N \text{ con } m = \#(N) \\
+                    \end{cases}
+                \end{equation}
 
-                Sia inoltre $n := \#(D) = \#(P) + \#(N) = l + m$.
+                Sia inoltre:
+                \begin{equation}
+                    \label{subeq:definition_of_n}
+                    n := \#(D) = \left[\#(P) + \#(N) \right] = l + m
+                \end{equation}
 
                 \item \emph{For} $t = [1:T]$
                 \begin{enumerate}
                     \item Si normalizzano i pesi, in modo che la loro somma sia pari ad 1:
-                    $$ w_{t,i} \leftarrow \frac{w_{t,i}}{\sum_{j = 1}^{n}w_{t,j}}$$
+                    \begin{equation}
+                        \label{subeq:weight_nomalization}
+                        w_{t,i} \leftarrow \frac{w_{t,i}}{\sum_{j = 1}^{n}w_{t,j}}
+                    \end{equation}
 
                     \item \label{adaboost_minimum_error}
-                    Si estrae il miglior classificatore debole. La procedura viene esposta nel dettaglio nella sezione \ref{sec:weak_learner}, ma si tenga presente che il miglior classificatore è quello il cui \emph{errore pesato} è minimo per la corrente iterazione.
-                    $$ \epsilon_t = \min_{f,p,\theta} \{
-                    \sum_{i = 1}^{n} w_{t,i} \cdot |h(x_i, f, p, \theta) - y_i|
-                    \} $$
+                    Si estrae il miglior weak learner. 
+                    La procedura viene esposta nel dettaglio nella sezione \ref{sec:weak_learner}, ma si tenga presente che il miglior classificatore debole è quello il cui \emph{errore pesato} è minimo, in riferimento alla corrente iterazione.
+                    \begin{equation}
+                        \label{subeq:minimum_error}
+                        \epsilon_t = \min_{f,p,\theta} \left\{
+                        \sum_{i = 1}^{n} w_{t,i} \cdot |h(x_i, f, p, \theta) - y_i|
+                        \right\} 
+                    \end{equation}
+                    
                     Siano inoltre $f_t$, $p_t$, $\theta_t$ i parametri del classificatore debole che ne minimizzano l'errore pesato:
-                    $$ h_t(x) := h(x, f_t, p_t, \theta_t) $$
+                    \begin{equation}
+                        \label{subeq:best_weak_classifier}
+                        h_t(x) := h(x, f_t, p_t, \theta_t)
+                    \end{equation}
 
-                    \item \label{adaboost_beta} $\beta_t \leftarrow \frac{\epsilon_t}{1 - \epsilon_t}$
+                    \item \label{adaboost_beta} 
+                    Si calcola il fattore moltiplicativo per la modifica dei pesi associati agli esempi di allenamento:
+                    \begin{equation}
+                        \label{subeq:weight_factor_definition}
+                        \beta_t \leftarrow \frac{\epsilon_t}{1 - \epsilon_t}
+                    \end{equation}
 
                     \item \label{adaboost_update_weights} Si aggiornano i pesi
-                    $$ w_{t+1, i} \leftarrow w_{t,i} \cdot \beta_{t}^{e_i} $$
-                    dove $e_i = 1$ se $(x_i, h_t(x_i)) \in D$ (ovvero se $x_i$ è classificata correttamente), $e_i = 0$ altrimenti.
+                    \begin{equation}
+                        \label{subeq:weight_update}
+                        w_{t+1, i} \leftarrow w_{t,i} \cdot \beta_{t}^{e_i}
+                    \end{equation}
+                    dove:
+                    \begin{equation}
+                        \label{subeq:weak_learner_classification}
+                        e_i = 
+                        \begin{cases}
+                            1 & \text{ se } (x_i, h_t(x_i)) \in D\\
+                            0 & \text{ altrimenti }
+                        \end{cases}
+                    \end{equation}
+                    È da notare che la prima condizione è vera solo nel caso in cui il weak learner $h_t$ ha predetto correttamente la classificazione di $x_i$.
 
-                    \item $\alpha_t \leftarrow \log(\frac{1}{\beta_t})$
+                    \item Definizione del fattore moltiplicativo, ovvero il coefficiente nella combinazione lineare, per il weak learner corrente:
+                    \begin{equation}
+                        \label{subeq:alpha_factor}
+                        \alpha_t \leftarrow \log\frac{1}{\beta_t}
+                    \end{equation}
                 \end{enumerate}
 
                 \item \label{adaboost_strong_classifier} Il classificatore forte è dato da:
@@ -311,53 +394,90 @@
                         0 & \text{ altrimenti }
                     \end{cases}
                 \end{equation}
-                dove $\theta \in [0,1]$ è la soglia.
+                dove $\theta \in [0,1]$ è la soglia dello strong learner.
             \end{enumerate}
-
-            Si noti che, nel'operazione \ref{adaboost_minimum_error}, l'errore pesato non è altro che la somma dei pesi degli esempi non classificati correttamente. Infatti:
-            $$ h(x_i, f, p, \theta) = y_i \Rightarrow |h(x_i, f, p, \theta) - y_i| = 0 $$
-            $$ h(x_i, f, p, \theta) \neq y_i \Rightarrow |h(x_i, f, p, \theta) - y_i| = 1 $$
+            
+            Si noti che, nel'operazione \ref{adaboost_minimum_error}, l'\emph{errore pesato} non è altro che la somma dei pesi degli esempi che non vengono classificati correttamente. 
+            Infatti:
+            \begin{equation}
+                \label{subeq:minimum_error_evaluation}
+                |h(x_i, f, p, \theta) - y_i| = 
+                \begin{cases}
+                    0 & \text{ se } h(x_i, f, p, \theta) = y_i \\
+                    1 & \text{ se } h(x_i, f, p, \theta) \neq y_i
+                \end{cases}
+            \end{equation}
 
             Al punto \ref{adaboost_beta}, il valore di $\beta_t$ non è altro che il rapporto tra l'errore pesato del classificatore debole e la somma dei pesi delle immagini classificate correttamente. Tale valore è chiaramente $0 < \beta_t < 1$.
 
-            In fase di aggiornamento dei pesi (punto \ref{adaboost_update_weights}), i pesi relativi ad esempi classificati correttamente vengono moltiplicati per $\beta_t$ ($\beta_{t}^{1} = \beta_t < 1$) e quindi decrementati, mentre gli altri vengono lasciati inalterati ($\beta_{t}^{0} = 1$). Fare in modo che gli esempi non classificati correttamente abbiano un peso maggiore di quelli classificati correttamente è il modo per influenzare la scelta del classificatore debole successivo che andrà a colmare le lacune del suo predecessore.
+            In fase di aggiornamento dei pesi (punto \ref{adaboost_update_weights}), i pesi relativi ad esempi classificati correttamente vengono moltiplicati per $\beta_t$ ($\beta_{t}^{1} = \beta_t < 1$) e quindi decrementati, mentre gli altri vengono lasciati inalterati ($\beta_{t}^{0} = 1$). 
+            Fare in modo che gli esempi non classificati correttamente abbiano un peso maggiore di quelli classificati correttamente è il modo per influenzare la scelta del classificatore debole successivo che andrà a colmare le lacune del suo predecessore.
 
             La scelta della soglia per il classificatore forte (punto \ref{adaboost_strong_classifier}) deve minimizzare il numero di esempi classificati in modo errato.
+            La procedura di selezione viene spiegata nel dettaglio al capitolo \ref{chap:tuning}.
+        % subsection strong_learner_extraction (end)
     
-    \section{\emph{Weak Learner} [Da revisionare]}
+    \section{Selezione del \emph{Weak Learner} Migliore}
     \label{sec:weak_learner}
-        \subsection{Procedura di estrazione del classificatore debole}
-            Si è detto che un classificatore debole è costruito a partire da una feature di Haar. La scelta del migliore, quindi, mira ad identificare la feature, la polarità e la soglia che minimizzano l'errore pesato di classificazione.
+        La scelta del miglior weak learner mira ad identificare la feature di Haar, la polarità e la soglia che minimizzano l'errore pesato di classificazione.
 
-            Si ricordi che le feature di Haar sono degli indicatori di quanto le intensità dei pixel variano da una regione della feature ad un'altra. Il classificatore debole, quindi, classificherà l'immagine a seconda che tale indice sia maggiore o minore di una certa soglia. Il compito della polarità è quello di stabilire il verso della diseguaglianza.
+        Si ricordi che le feature di Haar sono degli indicatori di quanto le intensità dei pixel variano da una regione della feature ad un'altra. 
+        Il classificatore debole, quindi, prevederà l'etichettatura dell'immagine a seconda che tale indice sia maggiore o minore di una certa soglia. 
+        Il compito della polarità è quello di stabilire il verso della diseguaglianza.
 
-            Il pool di feature da testare è costituito - teoricamente - da tutte quelle individuabili nell'immagini di allenamento. Nell'opera di Viola e Jones vengono utilizzate immagini di allenamento di $24 \times 24$ pixel e 5 tipologie di feature (\cite{Viola04}, sezione 2.2): il numero di possibili features in tale area è maggiore di 160000. In questa applicazione si utilizzano immagini di $160 \times 100$ pixel e 4 tipologie di feature: il pool è costituito da un numero di elementi maggiore di almeno 4 ordini di grandezza.
+        \subsection{Pool delle Feature di Haar} % (fold)
+        \label{sub:features_pool}
+            Il pool delle feature di Haar da testare è costituito da tutte le possibili configurazioni valutabili sulle immagini di allenamento.
+            Viola e Jones utilizzano immagini di allenamento di $24 \times 24$ pixel e 5 tipologie di feature differenti (\cite[sezione 2.2]{Viola04}).
 
-            È da tener presente che moltissime di queste feature sono poco significative in questa situazione: non ha senso calcolare la variazione di intensità di due aree molto piccole con delle immagini che hanno una risoluzione tanto alta. Effettuando una prima scrematura, si cercherà di avere un pool di feature selezionabili la cui dimensione non superi quella del pool di Viola-Jones per più di un ordine di grandezza.
+            Contrariamente a quanto potrebbe sembrare, già in dimensioni così limitate il numero di configurazioni possibili raggiunge l'ordine delle centinaia di migliaia\footnote{Questo è un ulteriore motivo per voler ridimensionare la dimensione degli esempi di allenamento: la figura umana in una immagine di profondità catturata con il KinectV2 ha dimensioni comprese tra i $120 \times 120$ pixel ed i $160 \times 160$ pixel. È impossibile valutare tutte le possibili feature in un'area così grande in tempi accettabili.}.
 
-            Sia $\{ f_1,...,f_k\}$ l'insieme di tutte le feature selezionabili, $D = \{(x_1,y_1), ..., (x_n, y_n) \}$ l'insieme degli esempi di allenamento e $\{w_1, ..., w_n\}$ l'insieme dei relativi pesi. La scelta del classificatore debole avviene come descritto dal seguente algoritmo in pseudocodice:
+            In questa applicazione, come è stato già detto, si utilizzano immagini di allenamento delle stesse dimensioni, adeguatamente ricampionate dopo il ritaglio.
+            Inoltre, si utilizzano solamente 4 feature di Haar (confrontare la sottosezione \ref{sub:formula_di_calcolo_canonica}): ciò genera un pool di feature possibili di poco più di un centinaio di migliaia di configurazioni differenti, per cui i tempi di calcolo complessivi risulteranno ancora ragionevoli.
+        % subsection features_pool (end)
+
+        \subsection{Procedura di Selezione} % (fold)
+        \label{sub:weak_learner_selection_procedure}
+            La procedura di selezione del miglior weak learner viene richiamata al punto \ref{adaboost_minimum_error} della procedura di allenamento principale.
+
+            Sia $\left\{f_1,\cdots,f_k\right\}$ l'insieme di tutte le feature selezionabili, $D = \left\{(x_1,y_1), \cdots, (x_n, y_n) \right\}$ l'insieme degli esempi di allenamento e $\left\{w_1, \cdots, w_n\right\}$ l'insieme dei relativi pesi\footnote{Essendo richiamata all'interno del loop principale di Adaboost, saranno disponibili i pesi relativi agli esempi di allenamento in riferimento all'iterazione corrente.}. 
+            La scelta del classificatore debole avviene come descritto dal seguente algoritmo.
 
             \begin{enumerate}
                 \item Si calcolano $T^+$ e $T^-$, rispettivamente, somma dei pesi degli esempi negativi e di quelli negativi:
-                $$T^+ \leftarrow \sum_{i = 1}^{n} (w_i y_i)
-                \text{ , }
-                T^- \leftarrow \sum_{i = 1}^{n} [w_i (1 - y_i)]$$
+                \begin{equation}
+                    \label{subeq:weight_total_sums}
+                    T^+ \leftarrow \sum_{i = 1}^{n} (w_i y_i)
+                    \text{ , }
+                    T^- \leftarrow \sum_{i = 1}^{n} \left[w_i (1 - y_i)\right]
+                \end{equation}
 
-                \item \emph{For} $f = [f_1, ..., f_k]$
+                \item \emph{For each} $f \in \left\{f_1, \cdots, f_k\right\}$
 
                 \begin{enumerate}
-                    \item Si inizializza una lista di $n$ elementi per memorizzare i valori della feature i-esima applicata ad ogni immagine di allenamento:
-                    $$values[i] \leftarrow f(x_i) \; \forall x_i \in D$$
+                    \item Si inizializza una lista di $n$ elementi per memorizzare i valori della feature $i$-esima applicata ad ogni immagine di allenamento:
+                    \begin{equation}
+                        \label{subeq:element_list_initialization}
+                        values[i] \leftarrow f(x_i) \; \forall x_i \in D
+                    \end{equation}
 
-                    \item Si ordinano gli elementi della lista in ordine crescente. Si tenga in conto che, dopo tale operazione, all'i-esima posizione della lista non corrisponderà più il valore della feature applicata all'i-esima immagine di allenamento.
+                    \item Si ordinano gli elementi della lista in \emph{ordine crescente}. 
+                    Si tenga in conto che, dopo tale operazione, all'$i$-esima posizione della lista non corrisponderà più il valore della feature applicata all'\emph{i}-esima immagine di allenamento.
 
-                    \item Si inizializzano $S^+$ ed $S^-$, con le quali, scorrendo gli elementi della lista con un cursore, indicheremo rispettivamente la somma dei pesi degli esempi positivi e di quelli negativi: $S^+ \leftarrow 0, S^- \leftarrow 0$
+                    \item Si inizializzano $S^+$ ed $S^-$, con le quali, \emph{scorrendo gli elementi della lista con un cursore, si indicheranno rispettivamente la somma dei pesi degli esempi positivi e di quelli negativi}:
+                    \begin{equation}
+                        \label{subeq:partial_sum_initialization}
+                        S^+ \leftarrow 0, S^- \leftarrow 0
+                    \end{equation}
 
                     \item \emph{For} $i = [1:n]$
 
                     \begin{enumerate}
-                        \item A causa del rilocamento degli indici, alla posizione i-esima della lista corrisponderà il valore della feature dell'elemento $x_j$ con classificazione $y_j$ e peso $w_j$ tale che $(x_j, y_j) \in D$:
-                        $$x_j, y_j, w_j \Leftarrow values[i]$$
+                        \item A causa del rilocamento degli indici, alla posizione $i$-esima della lista corrisponderà il valore della feature dell'elemento $x_j$ con classificazione $y_j$ e peso $w_j$ tale che $(x_j, y_j) \in D$:
+                        \begin{equation}
+                            \label{subeq:indices_relocation}
+                            x_j, y_j, w_j \Leftarrow values[i]
+                        \end{equation}
 
                         \item \emph{If} $y_i = 1$ \emph{Then}
                         \begin{enumerate}
@@ -365,51 +485,84 @@
                         \end{enumerate}
                         \item \emph{Else}
                         \begin{enumerate}
-                            \item $S^+ \leftarrow S^- + w_j$
+                            \item $S^- \leftarrow S^- + w_j$
                         \end{enumerate}
 
                         \item \label{best_classifier_p_theta}
-                        Si calcola calcola l'errore pesato di classificazione:
-                        $$e_i = \min\{ S^+ + (T^- - S^-), S^- + (T^+ - S^+) \}$$
+                        Si calcola calcola l'errore pesato di classificazione (questo passaggio è critico, seguiranno ulteriori commenti e spiegazioni):
+                        \begin{equation}
+                            \label{subeq:weighted_error_calculus}
+                            e_i = \min\left\{ \left[S^+ + (T^- - S^-)\right], \left[S^- + (T^+ - S^+)\right] \right\}
+                        \end{equation}
+                        Inoltre, si determinano la polarità ed il valore di soglia:
+                        \begin{equation}
+                            \label{subeq:polarity_assignment}
+                            p_i = 
+                            \begin{cases}
+                                1 & \text{ se } S^+ + (T^- - S^-) > S^- + (T^+ - S^+) \\
+                                -1 & \text{ altrimenti }
+                            \end{cases}
+                        \end{equation}
+                        \begin{equation}
+                            \label{subeq:threshold_assignment}
+                            \theta_i = values[i]
+                        \end{equation}
 
                     \end{enumerate}
 
                     \item Si determinano la polarità ($p_f$) e la soglia ($\theta_f$) per cui l'errore pesato ($\epsilon_f)$ di classificazione per un classificatore che utilizza la feature $f$ è minimo:
-                    $$p_f, \theta_f | \epsilon_f = \min \{ e_1, ..., e_n \}$$
+                    \begin{equation}
+                        \label{subeq:minimum_error_polarity_and_threshold}
+                        (p_f, \theta_f) \leftarrow (p_i, \theta_i) 
+                        \text{ } | \text{ } 
+                        \begin{cases}
+                            \epsilon_f = \underset{i \in \{1, \cdots, n\}}\min{\left\{ e_1, \cdots, e_n \right\}} & \\
+                            i = \argmin{i \in \{1, \cdots, n\}}{\left\{ e_1, \cdots, e_n \right\}}
+                        \end{cases}
+                    \end{equation}
+
+                    \item Si costruisce il weak learner basato sulla feature $f$ più adeguato per la classificazione, fissando i suoi parametri liberi:
+                    \begin{equation}
+                        \label{subeq:weak_learner_specifications}
+                        h_f(x) \leftarrow h(x, f, p, \theta)|_{p = p_f, \theta = \theta_f}
+                    \end{equation}
                 \end{enumerate}
 
-                \item Si scelgono polarità ($p$) e soglia ($\theta$) finali, ovvero quelle del classificatore debole con errore pesato $\epsilon$ minore tra tutti i classificatori possibili:
-                $$p, \theta | \epsilon = \min \{ \epsilon_1, ..., \epsilon_k \}$$
-                Il miglior classificatore debole è quindi:
+                \item Ottenuti i weak learner $\left\{h_1(x), \cdots, h_k(x)\right\}$ (uno per ogni feature), correlati dei rispettivi errori pesati nella classificazione del dataset di allenamento $E = \left \{ \epsilon_1, \cdots, \epsilon_k \right \}$, si sceglie quello con l'errore pesato più basso, relativamente all'iterazione $t$-esima del ciclo principale di Adaboost.
                 \begin{equation}
-                    \label{eq:weak_classifier}
-                    h(x) := \begin{cases}
-                    1 & \text{ se } pf(x) < p\theta \\
-                    0 & \text{ altrimenti }
-                \end{cases}
-            \end{equation}
+                    \label{subeq:best_weak_learner}
+                    h_t(x) \leftarrow h_j(x) = h(x, f_j, p_{f_j}, \theta_{f_j})| j = \argmin{j \in \{1, \cdots, k\}}{\{\epsilon_1, \cdots, \epsilon_k\}}
+                \end{equation}
 
             \end{enumerate}
 
-            Il metodo di identificazione della polarità e della soglia non viene riportato nell'algoritmo, essendo un passaggio che merita una trattazione a parte. Selezionare un valore di soglia vuol dire trovare il \emph{punto che partiziona al meglio la lista dei valori della feature calcolata sulle immagini di allenamento, in modo tale da minimizzare gli errori di classificazione}. La miglior soglia di una buona feature fa in modo che la maggior parte delle immagini appartenenti alla stessa classe assumano un valore minore (o maggiore). Si può notare, come diretta conseguenza, che con una feature pessima per la classificazione non sarà possibile trovare un valore di soglia che soddisfi tale criterio.
+            La selezione della polarità e della soglia ottimi per il weak learner costruito sulla generica feature $f$ (punto \ref{best_classifier_p_theta}) è un passaggio particolarmente critico e necessita di ulteriori spiegazioni.
+            Selezionare un valore di soglia vuol dire trovare il \emph{punto che partiziona al meglio la lista dei valori della feature calcolata sulle immagini di allenamento, al fine di minimizzare gli errori di classificazione}.
+            
+            Si tenga bene a mente che la lista dei valori delle feature viene, innanzi tutto, ordinata in ordine crescente.
+            La miglior soglia di una buona feature fa in modo che la maggior parte delle immagini appartenenti alla stessa classe assumano un valore minore (o maggiore) della soglia stessa.
 
-            Al punto \ref{best_classifier_p_theta} viene calcolato l'errore pesato di classificazione per una feature $f$ con soglia $values[i]$\footnote{I possibili valori delle soglie corrispondono esattamente ai valori della feature calcolata sugli esempi di allenamento}. Per essere più espliciti, bisogna effettuare una serie di osservazioni:
+            Scorrendo una sola volta la lista dei valori ($values[1...n]$) della feature associati ad ogni immagine, si è in grado di trovare il valore di soglia.
+            Bisogna effettuare alcune considerazioni sul significato delle somme presentate al punto \ref{best_classifier_p_theta}:
             \begin{enumerate}
-                \item \label{obs:1} $T^+$ ($T^-$) corrisponde alla somma dei pesi degli esempi positivi (negativi);
-                \item \label{obs:2} $S^+$ ($S^-$) corrisponde alla somma dei pesi degli esempi positivi (negativi) dalla prima posizione fino all'i-esima della lista (quella su cui è posizionato il cursore);
-                \item \label{obs:3} $T^+ - S^+$ ($T^- - S^-$) corrisponde alla somma dei pesi degli esempi positivi (negativi) dalla posizione $i+1$ della lista fino alla fine;
-                \item \label{obs:4} Per un classificatore della forma (\ref{eq:weak_classifier}) con $p = 1$, $S^+$ corrisponde alla \emph{somma dei pesi degli esempi classificati correttamente}, mentre $S^- + (T^+ - S^+)$ corrisponde alla somma dei pesi degli esempi classificati in modo scorretto;
-                \item \label{obs:5} Per l'osservazione \ref{obs:4} un classificatore (\ref{eq:weak_classifier}) con $p = 1$, la quantità $S^- + (T^+ - S^+)$ è \emph{l'errore pesato};
-                \item \label{obs:6} Analogamente alle osservazioni \ref{obs:4} e \ref{obs:5}, un classificatore (\ref{eq:weak_classifier}) con $p = -1$ commetterà un errore pesato pari alla quantità $S^+ + (T^- - S^-)$.
+                \item \label{obs:1} $T^+$ ($T^-$) corrisponde alla somma dei pesi degli esempi positivi (negativi)
+                \item \label{obs:2} $S^+$ ($S^-$) corrisponde alla somma dei pesi degli esempi positivi (negativi) dalla prima posizione fino all'i-esima della lista (quella in cui è posizionato il cursore)
+                \item \label{obs:3} $T^+ - S^+$ ($T^- - S^-$) corrisponde alla somma dei pesi degli esempi positivi (negativi) dalla posizione $i+1$ della lista fino alla fine
+                \item \label{obs:4} Per un classificatore della forma \ref{eq:decision_stump_test} con $p = 1$, $S^+$ corrisponde alla \emph{somma dei pesi degli esempi classificati correttamente}, mentre $S^- + (T^+ - S^+)$ corrisponde alla somma dei pesi degli esempi classificati in modo scorretto
+                \item \label{obs:5} Per l'osservazione \ref{obs:4} un classificatore con $p = 1$, la quantità $S^- + (T^+ - S^+)$ è \emph{l'errore pesato}
+                \item \label{obs:6} Analogamente alle osservazioni \ref{obs:4} e \ref{obs:5}, un classificatore con $p = -1$ commetterà un errore pesato pari alla quantità $S^+ + (T^- - S^-)$
             \end{enumerate}
 
-            Grazie alle osservazioni \ref{obs:5} e \ref{obs:6}, dal semplice calcolo dell'errore di classificazione pesato, si ottiene anche il valore della polarità:
-            \begin{equation}
-                p = \begin{cases}
-                1 & \text{ se } S^- + (T^+ - S^+) < S^+ + (T^- - S^-) \\
-                -1 & \text{ altrimenti }
-            \end{cases}
-            \end{equation}
+            Scorrendo la lista, si sceglierà come soglia, il valore che minimizza l'errore pesato di classificazione.
+            Il calcolo dell'errore pesato è specificato dall'equazione \ref{subeq:weighted_error_calculus} e deriva dalle osservazioni \ref{obs:5} e \ref{obs:6}.
+            Inoltre, per grazie alle stesse osservazioni, si ottiene anche la corretta polarità (equazione \ref{subeq:polarity_assignment}).
+        % subsection procedura_di_selezione (end)           
 
         \subsection{Valutazione della complessità computazionale}
-            In definitiva, con uno scorrimento della lista ordinata si ottengo i parametri per la costruzione del classificatore debole. La complessità di tale operazione è fortemente legata all'algoritmo di ordinamento della lista, la quale ha $\Theta(n\log n)$ come limite teorico inferiore \cite[p. 167]{Cormen09}. Nell'implementazione è stato scelto proprio un algoritmo che avesse complessità $\Omega(n\log n)$ nel caso peggiore. Ripetendo queste operazioni per ognuna delle feature selezionabili, si ottiene che l'algoritmo di selezione del miglior classificatore debole ha complessità $\Theta(kn\log n)$.
+            In definitiva, con uno scorrimento della lista ordinata si ottengo i parametri per la costruzione del classificatore debole. 
+            La complessità di tale operazione è fortemente legata all'algoritmo di ordinamento della lista, la quale ha $\Theta(n\log n)$ come limite teorico inferiore \cite[p. 167]{Cormen09}.
+            Nell'implementazione è stato scelto proprio un algoritmo che avesse complessità $O(n\log n)$ nel caso peggiore. 
+
+            Ripetendo queste operazioni per ognuna delle feature selezionabili, si ottiene che l'algoritmo di selezione del miglior classificatore debole ha complessità $O(kn \log n)$.
+
+            Complessivamente, l'intera procedura di allenamento ha complessità computazionale, nel caso peggiore, pari a $O(tkn \log n)$.

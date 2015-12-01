@@ -41,7 +41,8 @@
                 Nelle applicazioni di machine learning e pattern recognition, le trasformazioni DWT furono utilizzate nei primi lavori di riconoscimento a partire da immagini RGB (riconoscimento dei pedoni).
                 È da quest'ultima applicazione che hanno origine le feature di Haar come verranno trattate.
 
-        \subsection{Formula di calcolo standard}
+        \subsection{Formula di Calcolo Canonica} % (fold)
+        \label{sub:formula_di_calcolo_canonica}
             \subsubsection{Rappresentazione visuale}
             Le feature di Haar sono rappresentabili come due aree adiacenti, una chiara ed una scura.
             La somma delle intensità (il valore numerico) di tutti i pixel dell'area scura, viene sottratta alla somma delle intensità di tutti i pixel nell'area chiara.
@@ -61,7 +62,8 @@
 
             \subsubsection{Tipi di feature utilizzate}
             In questa applicazione vengono utilizzati solo due 4 tipi di feature, contro i 5 utilizzati nel sistema di riconoscimento di Viola-Jones.
-
+        % subsection formula_di_calcolo_canonica (end)
+            
         \subsection{Cosa mette in evidenza la feature di Haar}
             \subsubsection{Immagini normali (Viola Jones)}
             Nella framework di riconoscimento dei volti di Viola-Jones, le immagini RGB sono la fonte di informazioni del sistema.
@@ -188,7 +190,7 @@
                 \label{eq:decision_stump_test}
                 h(x) = 
                 \begin{cases}
-                    1 & \text{ se } f(x)p > \theta p \\
+                    1 & \text{ se } pf(x) < p\theta \\
                     0 & \text{ altrimenti }
                 \end{cases}
             \end{equation}
