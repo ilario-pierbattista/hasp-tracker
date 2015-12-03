@@ -4,46 +4,36 @@
 \label{chap:introduction}
     \section{Human Sensing}
     \label{sec:human_sensing}
-        \subsection{Human Sensing}
-            \subsubsection{Definizione}
-                % \paragraph{Definizione enciclopedica di Human Sensing}
-                L'insieme di tecniche di riconoscimento della presenza di una persona nello spazio prendono il nome di tecniche di \emph{human sensing}.
+        L'insieme di tecniche e di soluzioni per il riconoscimento della presenza della persona nello spazio prende il nome \emph{human sensing}.
 
-                % \paragraph{Dispositivi di acquisizione}
-                Sensori di vario tipo vengono utilizzati nelle tecniche di riconoscimento.
+        Vengono utilizzati vari dispositivi di sensoristica per l'acquisizione di informazioni ai fini del riconoscimento. 
+        Dall'elaborazione delle informazioni acquisite, i sistemi di human sensing sono in grado di rilevare la presenza e la posizione della persona all'interno dell'ambiente interessato.
 
-                % \paragraph{Modalità di riconoscimento (?)}
-                Una volta acquisite le informazioni dai sensori, vanno elaborate da un apposito algoritmo per rilevare la presenza e la posizione della persona nell'ambiente.
+        I contesti applicativi di sistemi di questo genere sono variegati ed in costante espazione.
+        Sistemi per il rilevamento delle persone si adattano perfettamente in contesti di sorveglianza, sia al fine di garantire la sicurezza di un ambiente in termini di rilevamento delle intrusioni, sia al fine di costruire delle soluzioni di monitoraggio in ambienti assistivi automatizzati.
+        Dispositivi in grado di localizzare corpi umani sono utilissimi nelle attività \emph{search \& rescue}, dove è necessario, in caso di catastrofi o calamità naturali, localizzare nel minor tempo possibile i superstiti in condizioni avverse.
+        Vi sono delle applicazioni anche in ambito economico: soluzioni di \emph{people counting} sono sempre più usate nei processi di \emph{business intelligence} per effettuare analisi di mercato.
 
-            \subsubsection{Contesti Applicativi}
-                % \paragraph{People Detection: Sistemi di sorveglianza}
-                La possibilità di rilevare la presenza di persone, rende le applicazioni di \emph{human sensing} perfette per le applicazioni di sorveglianza.
+        Molto spesso, la natura dei sensori utilizzati per le acquisizioni, fanno in modo che i problemi di human sensing si intersechino con problemi di \emph{computer vision}: l'utilizzo di sensori ad acquisizione visiva comporta l'insorgere di svariati problemi di visione artificiale.
 
-                % \paragraph{People Counting: Indagini di mercato}
-                Sistemi di \emph{people counting} sono utili per la conduzione di indagini di mercato.
+        Lo scopo della visione artificiale è quello di riprodurre la vista umana, intesa non come semplice acquisizione di rappresentazione bidimensionale di una regione di spazio, ma mira ad una reale interpretazione del relativo contenuto.
 
-                % \paragraph{Rilevamento dei parametri vitali: Search & Rescue}
-                Dispositivi in grado di rilevare la presenza di corpi umani in contesti di crisi sono utilizzati nelle attività di \emph{search \& rescue}.
+        \subsection{Stato dell'Arte}
+            Il crescente interesse per le soluzioni di human sensing ha dato luogo a numerosi studi e ricerche sull'argomento.
+            Rimanendo nel contesto del rilevamento legato a problemi di computer vision, spiccano i seguenti risultati.
 
-                % \paragraph{People Tracking: Ambienti assistivi}
-                Le applicazioni di \emph{human tracking} sono utili anche negli ambienti assistivi automatizzati al fine di monitorare le attività dell'assistito.
+            \begin{description}
+                \item[People Tracking and Counting] \citet{Papageorgiou98} nel \citeyear{Papageorgiou98} proposero una tecnica di riconoscimento e conteggio di pedoni a partire da immagini RGB.
+                Elaborando opportunamente le informazioni raccolte da comuni telecamere, il sistema era in grado di apprendere a riconoscere il pattern della figura umana analizzando le variazioni di intensità tra le diverse aree delle immagini.
+                Per l'apprendimento utilizzarono una \emph{macchina a vettori di supporto}\footnote{Consultare la sezione \ref{sec:supervised_ensamble_learning} ed in generale tutto il capitolo \ref{chap:adaboost} per ulteriori informazioni al riguardo.}.
+                
+                \item[Face Recognition] Viola e Jones in \cite{Viola04} descrivono quello che è, ad oggi, il framework più robusto di \emph{object recognition}, applicandolo con successo al caso del riconoscimento dei volti.
+                Ancora una volta, si tratta di un sistema allenabile che utilizza l'algoritmo \emph{Adaboost}\footnote{Per maggiori informazioni consultare \cite{Freund97} ed il capitolo \ref{chap:adaboost}.}.
 
-            \subsubsection{HS e Computer Vision}
-                % \paragraph{Sensori di acquisizione \emph{visivi}}
-                Le applicazioni di human sensing che utilizzano sensori di acquisizione \emph{visiva} risolvono problemi di computer vision.
-
-                % \paragraph{Definizione enciclopedica di computer vision}
-                Lo scopo della \emph{computer vision} è quello di riprodurre la vista umana. L'obbiettivo di tale riproduzione non si limita alla semplice acquisizione di una rappresetazione bidimensionale di una regione di spazio, ma mira all'interpretazione del relativo contenuto.
-
-        \subsection{Stato dell'arte}
-            \subsubsection{Pedestrian Detection and Counting}
-            Papageorgiou et Al \cite{Papageorgiou98} hanno sviluppato un sistema di riconoscimento e conteggio di pedoni a partire da immagini RGB.
-
-            \subsubsection{Face Recognition}
-            Viola e Jones \cite{Viola04} hanno proposto un framework per il riconoscimento dei volti all'interno di immagini RGB. Al momento è il sistema più solido nel suo contesto.
-
-            \subsubsection{Kinect: a serious game}
-            Gli ambiti d'utilizzo del dispositivo Kinect, nota periferica legata a sistemi videoludici, si stanno espandendo constantemente. La quantità e la qualità dei sensori di cui è equipaggiato, il costo relativamente contenuto e l'evoluzione di framework e toolkit di sviluppo, lo rendono un dispositivo particolarmente versatile e adatto allo studio di problemi di computer vision.
+                \item[Human Sensing tramite Kinect] Anche il dispositivo Kinect, prodotto da Microsoft, costituisce, nel complesso, un valido esempio di sistema di human sensing.
+                La quantità e la qualità dei sensori con cui è equipaggiato, il costo relativamente basso e la disponibilità di \emph{SDK} e toolkit integrabili con ambienti di sviluppo evoluti, stanno accrescendo la popolarità di tale dispositivo al di là delle applicazioni videoludiche.
+                Cresce anche l'interesse per i \emph{serious game}, videogiochi sviluppati con una doppia valenza, quella di assistere e guidare i pazienti in contesti riabilitativi.
+            \end{description}
 
     \section{Panoramica Generale}
     \label{sec:overview}
