@@ -37,109 +37,99 @@
 
     \section{Panoramica Generale}
     \label{sec:overview}
-        \subsection{Introduzione al lavoro di Zhu e Wong}
-            \subsubsection{Elenco delle tecnologie coinvolte}
-                % \paragraph{Kinect per l'acquisizione}
-                La sorgente di informazione è il sensore di profondità del Kinect.
+        Questo elaborato descrive principalmente il lavoro svolto per l'implementazione del sistema di rilevamento descritto da Zhu e Wong in \cite{Zhu13}.
+        È correlato di numerosi approfondimenti teorici, necessari, sia per avere una corretta visione d'insieme del problema, sia per essere in grado di agire efficacemente nella futura richiesta di miglioramenti nell'implementazione proposta.
 
-                % \paragraph{Adaboost per l'allenamento}
-                Il sistema descritto prevede l'utilizzo di un algoritmo di allenamento per sviluppare i criteri di riconoscimento della persona.
+        \subsection{Il Lavoro di Zhu e Wong} % (fold)
+        \label{sub:il_lavoro_di_zhu_e_wong}
+            Nel \citeyear{Zhu13} Zhu e Wong presentano un sistema di riconoscimento della figura umana, ripresa dall'alto di una stanza, con il dispositivo Kinect.
+            Si tratta di una soluzione di human sensing, intercalata in una particolare condizione ambientale, che utilizza il \emph{sensore di profondità} del dispositivo Kinect come sorgente per l'acquisizione di dati.
 
-                % \paragraph{Affermare la notevole affinità con Viola & Jones}
-                Ciò che viene presentato da Zhu e Wong è un sistema di rilevamento che prende notevolmente in considerazione le soluzioni proposte da Viola e Jones, eccezion fatta, naturalmente, per il dispositivo di acquisizione.
+            Come altre soluzioni proposte in precedenza, il sistema deve essere allenato a riconoscere persone.
+            L'algoritmo utilizzato per lo sviluppo dei criteri di riconoscimento è \emph{Adaboost}, lo stesso utilizzato per il framework di \emph{face detection} sviluppato da Viola e Jones.
+            Come si potrà vedere in seguito, in maniera più dettagliata, saranno numerose le somiglianze con quest'ultimo.
 
-        \subsection{Configurazione dell'Hardware}
+        \subsection{Configurazione Hardware}
         \label{sub:hardware_configuration}
-            \subsubsection{Sensore utilizzato}
-                % \paragraph{Descrizione sommaria del Kinect}
-                Il sensore di profondità del Kinect V2 fornisce una rappresentazione bidimensionale dello spazio sotto forma di immagini. In tali immagini ogni pixel corrisponde il valore in millimetri della distanza dal sensore della superficie dell'oggetto interessato.
+            Precisamente la versione del dispositivo Kinect utilizzato è la \emph{V2}.
+            Il sensore di profondità del Kinect V2 fornisce una rappresentazione bidimensionale dello spazio, fondamentalmente sotto forma di immagini particolari. 
+            In queste ultime ogni pixel corrisponde il valore in millimetri della distanza dal sensore della superficie dell'oggetto presente nell'immagine.
+            Ci si riferirà ad esse chiamandole \emph{immagini di profondità}.
 
-                % \paragraph{Presentazione delle immagini di profondità}
-                Ci si riferirà a tali immagini chiamandole \emph{immagini di profondità}. Il sensore del Kinect, di cui è disponibile una piccola descrizione più dettagliata all'appendice \ref{chap:kinect_sensor}, fornisce uno stream di tali immagini ad una frequenza di 30 frame al secondo: è possibile quindi registrare dei \emph{video di profondità}.
+            Il sensore del Kinect, di cui è disponibile una piccola descrizione più dettagliata all'appendice \ref{chap:kinect}, fornisce uno stream di tali immagini ad una frequenza di 30 frame al secondo: è possibile quindi registrare dei \emph{video di profondità}.
 
-            \subsubsection{Configurazione Top-Down}
-                % \paragraph{Esposizione della configurazione hardware}
+            \subsubsection{Visuale Top-Down}
                 Il dispositivo Kinect viene montato al soffitto di una stanza e l'ambiente viene ripreso da tale prospettiva.
-                Solitamente l'altezza a cui viene montato è di poco inferiore alla distanza del soffitto dal pavimento (poco meno di 2m).
-                La linea focale del sensore dovrebbe essere quanto più possibile ortogonale al pavimento della stanza, in modo da ridurre ai minimi termini la presenza di asimmetrie nelle riprese.
+                Solitamente l'altezza a cui viene montato è di poco inferiore alla distanza del soffitto dal pavimento (poco meno di $3m$), inoltre la linea focale del sensore dovrebbe essere quanto più possibile ortogonale al pavimento della stanza, in modo da ridurre ai minimi termini la presenza di asimmetrie nelle riprese.
+                
                 Tali distanze sono perfettamente compatibili con le specifiche tecniche del dispositivo stesso.
-                Nel caso in cui vi sia la necessità di montare il Kinect a soffitti più alti di 4m, si possono utilizzare delle lenti correttive per aumentare il range di affidabilità del sensore.
+                Nel caso in cui vi sia la necessità di montare il Kinect a soffitti più alti di $4m$, si possono utilizzare delle lenti correttive per aumentare il range di affidabilità del sensore.
 
-                % \paragraph{Vantaggi del top-down rispetto al rilevamento frontale}
-                Molto sistemi di riconoscimento utilizzano il Kinect in posizione frontale ai soggetti da riconoscere.
+                Molto sistemi di riconoscimento utilizzano il Kinect - e più in generale, qualsiasi dispositivo di acquisizione visivo - in posizione frontale rispetto ai soggetti da riconoscere.
                 Di fatti, il dispositivo, concepito per applicazioni videoludiche, è progettato per operare in tale posizione.
-                Tuttavia, la configurazione descritta precedentemente, ha l'enorme vantaggio di eliminare l'occlusione del soggetto: normalmente una persona non può nascondere dietro di sè un'altra persona alla vista del sensore (se non in scomode posizioni), cosa frequentessima invece con i sistemi di rilevamento frontali.
+                Tuttavia, la configurazione descritta precedentemente, ha l'enorme vantaggio di eliminare l'occlusione del soggetto: in tali condizioni una persona non può nasconderne dietro di sè un'altra alla vista del sensore (se non in scomode posizioni), cosa invece frequentissima nei i sistemi di rilevamento frontali.
 
         \subsection{\emph{Head and Shoulders Profile}}
         \label{sub:hasp}
-            \subsubsection{L'attività di riconoscimento è un'attività di classificazione}
-                % \paragraph{Cosa bisogna riconoscere?}
-                Ciò che bisogna riconoscere è, all'interno di un'immagine di profondità, la figura della persona.
+            Riconoscere un oggetto significa mettere in relazione la sua rappresentazione con un concetto, più o meno specifico, che lo descriva.
+            In questo caso, dovendo riconoscere delle persone, si dovrà mettere correttamente in relazione un'immagine di profondità che raffigura un individuo con il \emph{concetto di persona}, mentre per un'immagine che non la raffigura, si dovrà evitare una relazione di tale natura.
+            
+            Si definiscono due classi.
+            Il concetto di classe è molto simile a quello delle \emph{classi di equivalenza}, relativo all'algebra astratta, ma anche a quello delle classi come prototipi di \emph{oggetti software}, relativo al paradigma di programmazione ad oggetti.
+            Una classe costituisce un insieme di oggetti che condividono determinate proprietà caratteristiche: 
+            per le classi di equivalenza, tutti gli elementi appartenenti ad essa devono essere tra di loro in una relazione di equivalenza;
+            per le classi software, tutte istanze di tali classi sono caratterizzate dalla medesima struttura (stessi attributi, stessi metodi), anche se poi ogni oggetto è ben distinto dall'altro. 
 
-                % \paragraph{Il riconoscimento è un'attività affine alla discriminazione}
-                Considerando un altro punto di vista, l'attività di riconoscimento consiste nel discriminare gli oggetti che sono figure di persone, da oggetti che non lo sono.
+            Distinguere gli oggetti che rappresentano persone da quelli che non le rappresentano, significa classificare tali oggetti in due classi: la \emph{classe delle persone} e quella delle \emph{non persone}.
+            A questo punto, bisogna iniziare a chiedersi quali debbano essere le proprietà degli elementi dell'una e quali quelli dell'altra.
 
-                % \paragraph{Definizione di classi di oggetti: classificazione}
-                Si definiscono quindi due classi. Il concetto di classe è molto simile alle \emph{classi di equivalenza} dell'algebra astratta e costituiscono degli insiemi di oggetti che condividono determinate proprietà.
-                Distinguere gli oggetti che rappresentano persone da quelli che non le rappresentano, significa classificare tali oggetti in due classi: le persone e le non persone.
-                Il processo di rilevamento, quindi, si basa sulla determinazione della classe di appartenenza dei vari oggetti: \emph{classificazione}.
+            Bisogna sottolineare il fatto che gli oggetti di una stessa classe, hanno sì delle proprietà in comune tra di loro, ma averne altre per cui differiscono.
+            Individuare le \emph{caratteristiche} - ovvero proprietà osservabili e misurabili di un oggetto - in base alle quali decretare l'appartenenza all'una o all'altra classe, non è un problema banale.
+            Si può intuire quanto sia vasto l'insieme delle caratteristiche valutabili nella rappresentazione di un oggetto.
+            Ovviamente la natura della rappresentazione influisce nella scelta delle caratteristiche più rilevanti.
+            
+            Si ricordi che un'immagine di profondità rappresenta la realtà attraverso il valore della distanza misurata in ogni punto dello spazio osservato. 
+            È naturale, quindi, considerare tali distanze come caratteristiche misurabili dell'oggetto rappresentato.
 
-            \subsubsection{La classificazione si basa sulla misurazione di alcune caratteristiche}
-                % \paragraph{Le caratteristiche di un oggetto sono la base su cui differenziare un oggetto da un altro}
-                Gli oggetti di una stessa classe hanno alcune proprietà in comune, ma differiscono per altre.
-                Individuare le caratteristiche - ovvero proprietà osservabili e misurabili di un oggetto - in base alle quali discriminarli nelle due classi non è un problema banale.
-                Si può intuire quanto sia vasto l'insieme delle caratteristiche valutabili nella rappresentazione di un oggetto.
-                Ovviamente la natura della rappresentazione influisce nella scelta delle caratteristiche più rilevanti.
-                Nei capitoli successivi verrà presentato un algoritmo che automatizzerà la selezione delle caratteristiche più rilevanti dell'immagine.
+            In un sistema allenabile, sarà premura del modulo di apprendimento selezionare le caratteristiche più rilevanti per un oggetto.
+            Senza anticipare altro sulla questione dell'apprendimento, è comunque utile fornire una descrizione in linguaggio naturale delle caratteristiche della forma del profilo umano, da tale visuale, che saltano immediatamente all'occhio.
 
-            \subsubsection{Caratteristiche del profilo HASP in linguaggio naturale}
-                % \paragraph{Come si può descrivere un'immagine di profondità?}
-                Un'immagine di profondità, per sua natura, rappresenta la realtà attraverso il valore della distanza misurata in ogni punto dello spazio osservato. È naturale, quindi, considerare tali distanze come caratteristiche misurabili dell'oggetto rappresentato.
+            \begin{enumerate}
+                \item L'immagine di una persona è caratterizzata da uno \emph{spazio vuoto}\footnote{Per \emph{spazio vuoto} si intende una regione di spazio il cui valore della distanza, percepita dal sensore, è molto vicino al quello della distanza del pavimento della stanza.} di fronte ad essa e dietro di essa.
 
-                % \paragraph{Le tre caratteristiche}
-                È utile quindi fornire una descrizione, se non altro in linguaggio naturale, della forma del profilo umano ripreso dall'alto, obiettivo del riconoscimento.
-                Tale descrizione è informale.
+                \item A sinistra della spalla sinistra ed a destra della spalla destra del profilo dall'alto di una persona, sono presenti degli spazi vuoti.
+                
+                \item Tra la testa e le spalle vi è una differenza di altezza.
+            \end{enumerate}
 
-                \begin{enumerate}
-                    \item L'immagine di una persona è caratterizzata da uno \emph{spazio vuoto}\footnote{Per \emph{spazio vuoto} si intende una regione di spazio il cui valore della distanza, percepita dal sensore, è molto vicino al quello della distanza del pavimento della stanza.} di fronte ad essa e dietro di essa.
-                    \item A sinistra della spalla sinistra ed a destra della spalla destra del profilo dall'alto di una persona, sono presenti degli spazi vuoti.
-                    \item Tra la testa e le spalle vi è una differenza di altezza.
-                \end{enumerate}
+            Si segua quindi la seguente convenzione: le immagini che soddisferanno le precedenti proprietà saranno chiamate immagini \emph{Head and Shoulders Profile}, o più brevemente \emph{immagini HASP}.
 
         \subsection{Flusso di Lavoro}
         \label{sub:overall_workflow}
-            \subsubsection{Definizione dei moduli funzionali}
-                % \paragraph{Allenamento}
-                Un modulo software sarà dedicato all'allenamento.
-
-                % \paragraph{Rilevamento}
-                Un modulo software sarà dedicato al rilevamento.
+            A conclusione di questa rilassata premessa, per evitare di perdersi in questo miscuglio di osservazioni eterogenee apparentemente prive di uno scopo preciso, è opportuno definire qual è il \emph{workflow} principale dell'intero sistema di rilevamento.
+            Sostanzialmente quest'ultimo è diviso in due componenti accoppiati, uno delegato all'apprendimento delle caratteristiche di classificazione, l'altro delegato all'effettivo rilevamento.
+            Come è facilmente intuibile, il secondo non può funzionare senza il risultato fornito dal primo, che è il più complesso e corposo dei due.
 
             \subsubsection{Allenamento}
-                % \paragraph{Input: Dataset}
-                Per allenare il sistema è necessario creare un insieme di allenamento, ovvero un insieme i cui elementi sono delle immagini che ritraggono persone e non.
-                In fase di creazione, ogni elemento viene dotato di un'etichetta che identifica la classe di appartenenza reale dell'oggetto.
+                Per allenare il sistema è necessario creare un insieme di allenamento, ovvero un insieme i cui elementi sono delle immagini di profondità che ritraggono persone (immagini HASP) e non.
+                In fase di creazione, ogni elemento di tale insieme viene dotato di un'etichetta che identifica la reale classe di appartenenza dell'oggetto.
 
-                % \paragraph{Adaboost}
                 La componente software che si occupa dell'allenamento del sistema implementa l'algoritmo Adaboost.
                 Quest'ultimo riceve in input l'insieme di allenamento, i cui elementi, dotati della rispettiva classificazione reale, sono alla base della scelta delle caratteristiche migliori per la descrizione delle classi di oggetti.
-
-                % \paragraph{Output: Classificatore}
                 Alla fine della sua esecuzione, Adaboost restituisce come output un classificatore.
-                Nei capitoli successvi si darà una definizione più formale di quello che è un classificatore.
-                Per il momento è sufficiente una definizione intuitiva: un classificatore \emph{classifica} i vari oggetti, ovvero fornisce una \emph{previsione} della relativa classe di appartenenza.
-                La classificazione effettuata da questa componente approssima solamente la classificazione reale. La bontà di tale approssimazione sarà il parametro di valutazione della bontà generale del sistema.
+
+                Nei capitoli successvi si darà una definizione più formale di quello che è un classificatore, per il momento è sufficiente una definizione intuitiva: un classificatore \emph{classifica} i vari oggetti, ovvero fornisce una \emph{previsione} della classe di appartenenza relativamente ad ognuno di essi.
+
+                La classificazione effettuata da questa componente approssima solamente la classificazione reale. 
+                La bontà di tale approssimazione sarà il parametro di valutazione della bontà generale del sistema.
+
                 Nel caso di Adaboost il classificatore risultante sarà simile ad una collezione di test: il risultato di tali test, eseguiti su di un qualsiasi oggetto, fornirà la previsione della classificazione dell'oggetto stesso.
 
             \subsubsection{Rilevamento}
-                % \paragraph{Input: Frame}
                 In questa fase il sistema analizza i frame di profondità delle acquisizione in ordine sequenziale, alla ricerca di persone al suo interno.
 
-                % \paragraph{Algoritmo di rilevamento}
-                Il classificatore ottenuto al termine dell'esecuzione di Adaboost, sarà in grado di classificare porzioni di immagini di profondità, ma non è in grado di predire direttamente, a partire da un intero frame, la presenza e la posizione di un persona al suo interno.
-                Le porzioni analizzabili dal classificatore hanno dei vincoli dimensionali da rispettare. In prima approssimazione si può pensare a tali porzioni come a dei quadrati di dimensione costante.
+                Il classificatore ottenuto al termine dell'esecuzione di Adaboost, sarà in grado di classificare porzioni di immagini di profondità, ma non è in grado di predire direttamente, a partire da un intero frame, la presenza e la posizione di una o più persone al suo interno: le porzioni analizzabili dal classificatore hanno dei vincoli dimensionali da rispettare, che in prima approssimazione si possono immaginare come dei quadrati di dimensione costante.
                 L'attività di rilevamento della persona all'interno del frame, quindi, consterà della sequenziale analisi di tutte le porzioni di frame che rispettano tali vincoli, al fine di coprire l'intera area.
 
-                % \paragraph{Output: finestre di rilevamento}
                 Si vedrà in seguito che nei pressi di una persona nell'immagine di profondità, saranno molteplici le porzioni di frame per le quali il rilevamento darà esito positivo.
                 Si pone quindi l'ulteriore problema di selezionare, delle tante porzioni che hanno dato esito positivo, quella che meglio approssima la reale posizione della persona. 
