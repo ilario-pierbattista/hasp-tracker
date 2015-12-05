@@ -75,23 +75,15 @@
         La comune rappresentazione grafica mette in evidenza le due regioni colorandone una di bianco e l'altra di nero.
         La somma delle intensità dei pixel della regione bianca, a cui viene sottratta la somma delle intensità della regione nera, fornisce una misura della variazione media di intensità tra le due regioni.
 
-        L'equazione \ref{eq:haar_feature_informal} fornisce una descrizione informale del funzionamento delle feature di Haar. Con $E(Area)$ si intende la somma delle intensità di tutti i pixel che appartengono all'area specificata.
-
         \begin{equation}
             \label{eq:haar_feature_informal}
             f(Img) = E(Area_{white}) - E(Area_{black})
         \end{equation}
 
+        L'equazione \ref{eq:haar_feature_informal} fornisce una descrizione informale del funzionamento delle feature di Haar. Con $E(Area)$ si intende la somma delle intensità di tutti i pixel che appartengono all'area specificata.
+
         Al di là di questa iniziale definizione, una feature può essere composta da più di due aree adiacenti, dando luogo alle forme più disparate.
         La libreria \emph{OpenCV} mette a disposizione una grande quantità di feature di forme differenti (figura \ref{fig:opencv_haar_features}).
-
-        \begin{wrapfigure}{R}{0cm}
-            \centering
-            \includegraphics[width=8cm]{img/open_cv_haar_features.png}
-            \caption{Set esteso di feature di Haar messe a disposizione dalla libreria \emph{OpenCV}. 
-            Le feature inclinate di $45 \degree$ sono state introdotte in \cite{Lienhart02}.}
-            \label{fig:opencv_haar_features}
-        \end{wrapfigure}
 
         Nonostante le forme differenti, il principio resta lo stesso: si hanno sempre due insiemi di aree, quello delle aree chiare ($W$) e quello delle aree scure ($B$).
         Si estende in tal modo la formula per il calcolo del valore della feature:
@@ -101,6 +93,14 @@
         \end{equation}
 
         Il \emph{segno} del valore di una feature identifica il verso della variazione. Se si prende in esame la forma di feature in alto a sinistra della figura \ref{fig:features_type}, un valore positivo denota un'intensità mediamente maggiore nella regione bianca rispetto alla media della regione nera e viceveresa.
+
+        \begin{wrapfigure}{R}{0cm}
+            \centering
+            \includegraphics[width=8cm]{img/open_cv_haar_features.png}
+            \caption{Set esteso di feature di Haar messe a disposizione dalla libreria \emph{OpenCV}. 
+            Le feature inclinate di $45 \degree$ sono state introdotte in \cite{Lienhart02}.}
+            \label{fig:opencv_haar_features}
+        \end{wrapfigure}
 
         \subsection{Applicazioni} % (fold)
         \label{sub:haar_features_applications}
@@ -140,7 +140,7 @@
                     \label{eq:haar_scale_invariant}
                 \end{equation}
 
-                La tecnica vera e propria utilizzata per ridimensionare una feature verrà presentata nella sottosezione \ref{sub:resize_della_detection_window}.
+                La tecnica vera e propria utilizzata per ridimensionare una feature verrà presentata nella sezione \ref{sec:detection_tecnique}.
         % subsection resize_invariance (end)
 
         \subsection{Vantaggi} % (fold)
