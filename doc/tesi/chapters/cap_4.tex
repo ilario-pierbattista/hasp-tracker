@@ -147,7 +147,7 @@
 
             L'algoritmo per determinare tali valori è fondamentalmente semplice: ogni strong learner viene utilizzato per classificare gli elementi del \emph{dataset di validazione}.
             L'attività di classificazione, in virtù dei parametri liberi appena identificati, sarà dipendente dalla coppia di valori $(\theta, N_{wl})$ \footnote{Per $\theta$ si intende il valore di soglia del classificatore e $N_{wl}$ il numero di weak learner che lo compongono}.
-            Per ogni possibile coppia di parametri, viene misurata l'accuratezza del classificatore nel classificatare correttamente l'intero dataset, quindi viene scelta la coppia per cui l'accuratezza è massima.
+            Per ogni possibile coppia di parametri, viene misurata l'accuratezza del classificatore nel classificare correttamente l'intero dataset, quindi viene scelta la coppia per cui l'accuratezza è massima.
 
             Una procedura di questo tipo, se implementata senza adoperare dei piccoli accorgimenti, potrebbe richiedere molto tempo per essere portata a termine.
             Di seguito viene presentato un metodo che permette di classificare molto velocemente il dataset di validazione utilizzando diversi valori per la coppia $(\theta, N_{wl})$.
@@ -277,7 +277,7 @@
 
                 Nel lavoro presentato da Zhu e Wong in \cite{Zhu13}, tuttavia, il valore di soglia non viene esplicitato, ma viene considerato un parametro libero, pur senza fornire alcun metodo esplicativo per la sua derivazione.
 
-                Il valore ottenuto tramite l'algoritmo di massimizzazione dell'accuratezza dei classificatori (sezione \ref{sec:accuracy_maximization}) si aggira intorno al valore $0.4$ per entrambi.
+                Il valore ottenuto tramite l'algoritmo di massimizzazione dell'accuratezza dei classificatori (sezione \ref{sec:accuracy_maximization}) si aggira intorno al valore $0.4$ per entrambi ($F_{hor}$ e $F_{ver}$).
                 
                 Una prima interpretazione potrebbe essere la seguente: la discordanza, seppur contenuta, tra il valore di soglia presente in letteratura ed il valore calcolato può essere dovuto a problemi di overfitting al dataset di validazione.
                 Senza dover creare un ulteriore dataset esclusivamente per il testing, potrebbe essere utile utilizza il valore $0.5$ come soglia effettiva dei classificatori finali, eliminando l'overfitting, e considerare le soglie calcolate come delle controprova della correttezza dell'algoritmo di allenamento.
@@ -289,7 +289,8 @@
 
             \subsection{Numero di Weak Learner} % (fold)
             \label{sub:numero_di_weak_learner}
-                Il numero dei classificatori deboli che compongono ciascun classificatore forte, è molto differente quello ottenuto in altre applicazioni, prima tra tutte il sistema di riconoscimento dei volti di Viola Jones.
+                % TODO Inserire i grafici 3d con l'andamento della soglia
+                Il numero dei classificatori deboli che compongono ciascun classificatore forte, è molto differente da quello ottenuto in altre applicazioni, prima tra tutte il sistema di riconoscimento dei volti di Viola Jones.
 
                 I classificatori forte di questo sistema sono formati da una decina di classificatori deboli, un numero straordinariamente piccolo se confrontato con i migliaia di weak learner necessari a costruire un classificatore di volti.
 

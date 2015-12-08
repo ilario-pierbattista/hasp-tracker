@@ -31,6 +31,7 @@
         % Hanno anche il vantaggio, rispetto a quest'ultimo, di mantenere l'informazione del tempo (approfondire).
 
         \begin{figure}[!htb]
+        % @TODO unire le figure in un'unica descrizione
             \minipage{0.45\textwidth}
             \includegraphics[width=\linewidth]{img/fourier_rapresentation.png}
             \caption{Rappresentazione di un segnale con una serie di funzioni armoniche.}
@@ -48,22 +49,21 @@
 
         Una variante della trasformazione DWT con le wavelet di Haar bidimesionali (figura \ref{fig:haar_wavelet}) è stata utilizzata da \citet{Oren97} in un sistema in grado di riconoscere la presenza di pedoni in delle immagini.
 
-        \begin{wrapfigure}{L}{0cm}
+        \begin{figure}
             \centering
             \includegraphics[width=5cm]{img/haar_wavelet.png}
             \caption{Wavelet di Haar bidimensionali utilizzate in \cite{Oren97}.}
             \label{fig:haar_wavelet}
-        \end{wrapfigure}
+        \end{figure}
 
         Applicando alle immagini la trasformata DWT in diverse scale, si passa da una rappresentazione dell'immagine in scala dei grigi, ad una rappresentazione in termini di coefficienti delle wavelet di Haar.
         Tali coefficienti denotano le differenze di intensità tra le aree adiacenti dell'immagine e vengono utilizzati per evidenziare analogie strutturali delle immagini che contengono la figura di un pedone.
 
-        \begin{wrapfigure}{R}{0cm}
-            \centering
+        \begin{figure}fig      \centering
             \includegraphics[width=8cm]{img/pedestrian_dwt.png}
             \caption{Coefficienti delle wavelet di trasformate DWT di diverse scale applicate alla stessa immagine. I coefficienti vengono codificati utilizzando la scala dei grigi \cite[Figura 3]{Oren97}.}
             \label{fig:non_standard_dwt}
-        \end{wrapfigure}
+        \end{figure}
 
         Nella descrizione di un framework generale per l'object detection, \citet{Papageorgiou98} utilizzano la trasformata DWT a wavelet di Haar bidimensionali non per l'estrazione di un template dell'oggetto espresso in variazioni di intensità, bensì per la selezione delle wavelet più significative al fine del riconoscimento dell'oggetto.
 
@@ -94,13 +94,13 @@
 
         Il \emph{segno} del valore di una feature identifica il verso della variazione. Se si prende in esame la forma di feature in alto a sinistra della figura \ref{fig:features_type}, un valore positivo denota un'intensità mediamente maggiore nella regione bianca rispetto alla media della regione nera e viceveresa.
 
-        \begin{wrapfigure}{R}{0cm}
+        \begin{figure}
             \centering
             \includegraphics[width=8cm]{img/open_cv_haar_features.png}
             \caption{Set esteso di feature di Haar messe a disposizione dalla libreria \emph{OpenCV}. 
             Le feature inclinate di $45 \degree$ sono state introdotte in \cite{Lienhart02}.}
             \label{fig:opencv_haar_features}
-        \end{wrapfigure}
+        \end{figure}
 
         \subsection{Applicazioni} % (fold)
         \label{sub:haar_features_applications}
@@ -114,12 +114,12 @@
 
             Zhu e Wong le utilizzano su immagini di profondità.
             Vengono considerati solamente quattro tipi di feature, contro i cinque utilizzati da Viola e Jones \ref{fig:features_type}.
-            \begin{wrapfigure}{L}{0cm}
+            \begin{figure}
                 \centering
-                \includegraphics[width=5cm]{img/feature_types.jpg}
+                \includegraphics[width=4cm]{img/feature_types.jpg}
                 \caption{Tipi di feature di Haar utilizzati in \cite{Zhu13}.}
                 \label{fig:features_type}
-            \end{wrapfigure}
+            \end{figure}
 
             Nelle immagini di profondità, dove il valore di ogni pixel corrisponde alla distanza in millimetri della superficie dal sensore, applicare le feature di Haar ad un'area dell'immagine equivale a misurare la differenza di quota media rispetto ad un'altra adiacente ad essa.
 
@@ -162,12 +162,12 @@
         Il calcolo della somma delle intensità di ciascun pixel appartenente ad un'area, necessario al fine di calcolare il valore delle feature di Haar, è un'operazione il cui costo varia all'aumentare della dimensione complessiva dell'area.
         Calcolare tali somme infatti ha complessità computazionale $\Theta(m \cdot n)$ con $m$ ed $n$ dimensione dell'area.
 
-        \begin{wrapfigure}{L}{0cm}
+        \begin{figure}
             \centering
             \includegraphics[width=5cm]{img/integral_image_sum.png}
             \caption{}
             \label{fig:integral_image_sum}
-        \end{wrapfigure}
+        \end{figure}
 
         La soluzione a tale problema consiste nell'utilizzo dell'\emph{immagine integrale}, altrimenti detta \emph{Summed Area Table}, una struttura dati che mette a permette di calcolare la somma dei pixel di qualsiasi area all'interno di essa in un tempo costante.
 

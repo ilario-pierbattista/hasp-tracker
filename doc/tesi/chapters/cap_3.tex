@@ -46,7 +46,7 @@
             \subsubsection{Esempi di \emph{Supervised Learning}}
             \label{subsub:supervised_learning_examples}
                 Esistono molti algoritmi di apprendimento supervisionato.
-                Alcuni dei più famosi sono l'\emph{apprendimento di alberi decisionali}, l'\emph{addestramento su reti neurali} e le \emph{macchine a vettori di supporto}.
+                Alcuni dei più famosi sono l'\emph{apprendimento di alberi decisionali}, l'\emph{addestramento su reti neurali} e le \emph{support vector machine}.
 
                 Nell'apprendimento di alberi decisionali, definito un insieme di allenamento (\ref{subeq:training_set_labelled}) ed una collezione di \emph{attributi} valutabili sugli oggetti di tale insieme, si costruisce l'albero ramo per ramo, associando alla valutazione di ogni attributo il risultato più probabile.
                 Più nel dettaglio, se l'insieme degli esempi di allenamento non è vuoto, se la classificazione su tali esempi non è sempre la stessa e se l'insieme degli attributi valutabili non è vuoto, allora si seleziona l'attributo più \emph{importante}\footnote{Minore è l'\emph{entropia} correlata all'attributo, maggiore è la sua \emph{importanza}. Nella teoria dell'informazione, ci si riferisce al concetto di \emph{entropia di Shannon}, ovvero alla misura dell'incertezza su una variabile aleatoria.
@@ -81,7 +81,7 @@
                 Le tecniche di addestramento supervisionato potrebbero incorrere in problemi di \emph{overfitting}.
                 Dato un insieme di allenamento, infatti, la ricerca delle ipotesi che approssimano al meglio la funzione obiettivo potrebbe essere influenzata da caratteristiche che sono comuni tra gli elementi dell'insieme stesso, ma che non sono discriminanti nella descrizione più generale della classe di oggetti.
 
-                La variabilità \emph{intraclasse} delle caratteristiche degli esempi di allenamento, viene equivocata, in fase di eselezione, per variabilità \emph{extraclasse} e utilizzata, erroneamente, per la classificazione.
+                La variabilità \emph{intraclasse} delle caratteristiche degli esempi di allenamento, viene equivocata, in fase di selezione, per variabilità \emph{extraclasse} e utilizzata, erroneamente, per la classificazione.
 
                 Ciò porta ad un sequenziale miglioramento delle prestazioni del riconoscimento per gli elementi del dataset di allenamento, ma a prestazioni peggiori nella classificazione di nuovi elementi.
 
@@ -100,7 +100,7 @@
             \subsubsection{\emph{Strong} e \emph{Weak Learner}}
                 Di qui in avanti, si farà riferimento due tipologie distinte di classificatori, i \emph{weak learner} e gli \emph{strong learner}\footnote{Alternativamente, \emph{weak classifier} e \emph{strong classifier}.}.
 
-                I \emph{weak learner} sono costituiti da singole ipotesi, selezionate da utilizzando un qualsiasi algoritmo di allenamento supervisionato.
+                I \emph{weak learner} sono costituiti da singole ipotesi, selezionate da un qualsiasi algoritmo di allenamento supervisionato.
                 La loro caratteristica principale è quella di essere meccanismi di classificazione estremamente semplici, anche dal punto di vista computazionale, e nel complesso, la loro attendibilità viene considerata di poco maggiore rispetto ad una previsione casuale.
 
                 Gli \emph{strong learner}, invece, sono delle combinazioni di weak learner.
@@ -205,7 +205,7 @@
 
                 Le registrazioni dell'ultima traiettoria, invece, vengono utilizzate per la creazione del \emph{dataset di validazione}\footnote{Per ulteriori informazioni, consultare il capitolo \ref{chap:tuning}, nella fattispecie la sottosezione \ref{sub:dataset_di_validazione}.}.
 
-                Con un software di registrazione\footnote{Sviluppato al Laboratorio di Telecomunicazioni presso l'Università Politecnica delle Marche (\url{http://www.tlc.dii.univpm.it/blog/}).} apposito vengono sequenzialmente catturati e salvati i frame di profondità elaborati dal dispositivo Kinect, ad una frequenza massima di $30 fps$.
+                Con un software di registrazione\footnote{Sviluppato al Laboratorio di Telecomunicazioni presso l'Università Politecnica delle Marche (\url{http://www.tlc.dii.univpm.it/blog/databases4kinect}).} apposito vengono sequenzialmente catturati e salvati i frame di profondità elaborati dal dispositivo Kinect, ad una frequenza massima di $30 fps$.
                 Il software è in grado di catturare fino a 1000 frame, corrispondenti a poco più di mezzo minuto, che vengono salvati in file binari grezzi, senza ricorrere a compressione.
 
                 La durata delle registrazioni delle traiettorie orizzontale e verticale è subordinata al tempo necessario al soggetto per coprire tutta l'area del frame, mentre le registrazioni riferite alle traiettorie casuali sono tutte costituite da 1000 frame.
@@ -391,11 +391,11 @@
                 \begin{equation}\label{eq:strong_classifier}
                     F(x) = 
                     \begin{cases}
-                        1 & \text{ se } \sum_{t = 1}^{T} \alpha_t h_t(x) > \theta \sum_{t = 1}^{T} \alpha_t \\
+                        1 & \text{ se } \sum_{t = 1}^{T} \alpha_t h_t(x) > \theta_{str} \sum_{t = 1}^{T} \alpha_t \\
                         0 & \text{ altrimenti }
                     \end{cases}
                 \end{equation}
-                dove $\theta \in [0,1]$ è la soglia dello strong learner.
+                dove $\theta_{str} \in [0,1]$ è la soglia dello strong learner.
             \end{enumerate}
             
             Si noti che, nel'operazione \ref{adaboost_minimum_error}, l'\emph{errore pesato} non è altro che la somma dei pesi degli esempi che non vengono classificati correttamente. 
@@ -434,7 +434,7 @@
             Contrariamente a quanto potrebbe sembrare, già in dimensioni così limitate il numero di configurazioni possibili raggiunge l'ordine delle centinaia di migliaia\footnote{Questo è un ulteriore motivo per voler ridimensionare la dimensione degli esempi di allenamento: la figura umana in una immagine di profondità catturata con il KinectV2 ha dimensioni comprese tra i $120 \times 120$ pixel ed i $160 \times 160$ pixel. È impossibile valutare tutte le possibili feature in un'area così grande in tempi accettabili.}.
 
             In questa applicazione, come è stato già detto, si utilizzano immagini di allenamento delle stesse dimensioni, adeguatamente ricampionate dopo il ritaglio.
-            Inoltre, si utilizzano solamente 4 feature di Haar (confrontare la sottosezione \ref{sub:formula_di_calcolo_canonica}): ciò genera un pool di feature possibili di poco più di un centinaio di migliaia di configurazioni differenti, per cui i tempi di calcolo complessivi risulteranno ancora ragionevoli.
+            Inoltre, si utilizzano solamente quattro feature di Haar, due composte da due rettangoli di egual misura e due composte da tre rettangoli uguali affiancati (confrontare la sottosezione \ref{sub:haar_features_applications} ed in particolare la figura \ref{fig:features_type}): ciò genera un pool di feature possibili di poco più di un centinaio di migliaia di configurazioni differenti, per cui i tempi di calcolo complessivi risulteranno ancora ragionevoli.
         % subsection features_pool (end)
 
         \subsection{Procedura di Selezione} % (fold)
@@ -490,7 +490,7 @@
                         \end{enumerate}
 
                         \item \label{best_classifier_p_theta}
-                        Si calcola calcola l'errore pesato di classificazione (questo passaggio è critico, seguiranno ulteriori commenti e spiegazioni):
+                        Si calcola l'errore pesato di classificazione (questo passaggio è critico, seguiranno ulteriori commenti e spiegazioni):
                         \begin{equation}
                             \label{subeq:weighted_error_calculus}
                             e_i = \min\left\{ \left[S^+ + (T^- - S^-)\right], \left[S^- + (T^+ - S^+)\right] \right\}
@@ -546,9 +546,9 @@
             Scorrendo una sola volta la lista dei valori ($values[1...n]$) della feature associati ad ogni immagine, si è in grado di trovare il valore di soglia.
             Bisogna effettuare alcune considerazioni sul significato delle somme presentate al punto \ref{best_classifier_p_theta}:
             \begin{enumerate}
-                \item \label{obs:1} $T^+$ ($T^-$) corrisponde alla somma dei pesi degli esempi positivi (negativi)
-                \item \label{obs:2} $S^+$ ($S^-$) corrisponde alla somma dei pesi degli esempi positivi (negativi) dalla prima posizione fino all'i-esima della lista (quella in cui è posizionato il cursore)
-                \item \label{obs:3} $T^+ - S^+$ ($T^- - S^-$) corrisponde alla somma dei pesi degli esempi positivi (negativi) dalla posizione $i+1$ della lista fino alla fine
+                \item \label{obs:1} $T^+$, ($T^-$) corrisponde alla somma dei pesi degli esempi positivi (negativi)
+                \item \label{obs:2} $S^+$, ($S^-$) corrisponde alla somma dei pesi degli esempi positivi (negativi) dalla prima posizione fino all'i-esima della lista (quella in cui è posizionato il cursore)
+                \item \label{obs:3} $T^+ - S^+$, ($T^- - S^-$) corrisponde alla somma dei pesi degli esempi positivi (negativi) dalla posizione $i+1$ della lista fino alla fine
                 \item \label{obs:4} Per un classificatore della forma \ref{eq:decision_stump_test} con $p = 1$, $S^+$ corrisponde alla \emph{somma dei pesi degli esempi classificati correttamente}, mentre $S^- + (T^+ - S^+)$ corrisponde alla somma dei pesi degli esempi classificati in modo scorretto
                 \item \label{obs:5} Per l'osservazione \ref{obs:4} un classificatore con $p = 1$, la quantità $S^- + (T^+ - S^+)$ è \emph{l'errore pesato}
                 \item \label{obs:6} Analogamente alle osservazioni \ref{obs:4} e \ref{obs:5}, un classificatore con $p = -1$ commetterà un errore pesato pari alla quantità $S^+ + (T^- - S^-)$

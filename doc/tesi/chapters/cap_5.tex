@@ -25,7 +25,7 @@
         Alla luce di tali considerazioni, ridimensionare un classificatore non vuol dire altro che ridimensionare le feature relative ai weak learner a lui associati.
 
         \begin{enumerate}
-            \item \emph{For each} weak learner $w_i \in F = \left\{w_1, \cdots, w_k\right\}$: 
+            \item \emph{For each} weak learner $w_i \in \Phi = \left\{w_1, \cdots, w_k\right\}$: 
             \begin{enumerate}
                 \item Sia $f$ la feature associata al weak learner $w_i$.
                 Quest'ultima è racchiusa in una regione rettangolare $R$, esprimibile, rispetto al sistema di coordinate convenzionale delle immagini raster, in base alle coordinate del punto in alto a sinistra (\emph{Top Left Point}) e alle dimensioni del rettagolo (\emph{width} e \emph{height}).
@@ -99,8 +99,9 @@
 
         % subsection sliding_della_detection_window (end)
 
-    \section{Selezione della Finestra Migliore} %@TODO
+    \section{Selezione della Finestra Migliore}
     \label{sec:best_detection_window}
+        % @TODO Inserire figura comparativa tra tutte le finestre che hanno dato esito positivo e quella selezionata
         Solitamente, scansionando un frame alla ricerca di una persona, in prossimità di quest'ultima, saranno numerose le finestre di rilevamento che daranno esito positivo.
         Bisogna, di contro, elaborare un meccanismo di selezione della finestra migliore, che circoscriva adeguatamente l'area entro cui la persona si trova realmente.
 
