@@ -19,6 +19,7 @@ multiple_frames = inputdef('Analizzare più frame presenti nella cartella? [Y/n]
 if strcmp(multiple_frames, 'n') || strcmp(multiple_frames, 'N')
     multiple_frames = false;
     frame_index = inputdef('Indice del frame da analizzare [%d]: ', 1);
+    detection_with_memory = false;
 else
     framestep = inputdef('Intervallo con cui analizzare i frame [%d]: ', 20);
     if framestep < 1
@@ -98,6 +99,7 @@ for i = indexes
     truesize(f1);
 
     rectangles = drawrectangles(f1, winner_windows, 'y');
+    % rectangles = drawrectangles(f1, rectbox, 'y');
     drawnow;
     toc;
 end

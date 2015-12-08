@@ -30,18 +30,22 @@
         % @TODO È vero?
         % Hanno anche il vantaggio, rispetto a quest'ultimo, di mantenere l'informazione del tempo (approfondire).
 
-        \begin{figure}[!htb]
-        % @TODO unire le figure in un'unica descrizione
-            \minipage{0.45\textwidth}
+        \begin{figure}[h]
+            \centering
+            \begin{subfigure}[b]{0.48\textwidth}
             \includegraphics[width=\linewidth]{img/fourier_rapresentation.png}
-            \caption{Rappresentazione di un segnale con una serie di funzioni armoniche.}
-            \label{fig:awesome_image1}
-            \endminipage\hfill
-            \minipage{0.45\textwidth}
+                \caption{}
+                \label{fig:fourier_rapresentation}
+            \end{subfigure}
+            ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
+              %(or a blank line to force the subfigure onto a new line)
+            \begin{subfigure}[b]{0.48\textwidth}
             \includegraphics[width=\linewidth]{img/haar_rapresentation.png}
-            \caption{Rappresentazione di un segnale con una serie di wavelet di Haar.}
-            \label{fig:awesome_image2}
-            \endminipage
+                \caption{}
+                \label{fig:wavelet_rapresentation}
+            \end{subfigure}
+            \caption{Rappresentazione di un segnale con una serie di funzioni armoniche \ref{fig:fourier_rapresentation} e con una serie di wavelet di Haar \ref{fig:wavelet_rapresentation}}
+            \label{fig:signal_rapresentation}
         \end{figure}
 
         Alfrèd Haar propose anche la prima DWT (\emph{Discrete Wavelet Transform}) con la quale, le wavelet che compongono un segnale, vengono campionate discretamente.

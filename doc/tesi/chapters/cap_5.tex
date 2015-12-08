@@ -101,9 +101,26 @@
 
     \section{Selezione della Finestra Migliore}
     \label{sec:best_detection_window}
-        % @TODO Inserire figura comparativa tra tutte le finestre che hanno dato esito positivo e quella selezionata
         Solitamente, scansionando un frame alla ricerca di una persona, in prossimità di quest'ultima, saranno numerose le finestre di rilevamento che daranno esito positivo.
         Bisogna, di contro, elaborare un meccanismo di selezione della finestra migliore, che circoscriva adeguatamente l'area entro cui la persona si trova realmente.
+
+        \begin{figure}[h]
+            \centering
+            \begin{subfigure}[b]{0.48\textwidth}
+                \includegraphics[width=\textwidth]{img/detection_without_selection.jpg}
+                \caption{}
+                \label{fig:detection_without_selection}
+            \end{subfigure}
+            ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
+              %(or a blank line to force the subfigure onto a new line)
+            \begin{subfigure}[b]{0.48\textwidth}
+                \includegraphics[width=\textwidth]{img/detection_with_selection.jpg}
+                \caption{}
+                \label{fig:detection_with_selection}
+            \end{subfigure}
+            \caption{Rilevamento senza selezione della finestra migliore \ref{fig:detection_without_selection} e con selezione \ref{fig:detection_with_selection}}
+            \label{fig:detection}
+        \end{figure}
 
         Il problema non è banale, allo stato attuale del sistema rappresenta a tutti gli effetti un collo di bottiglia per quanto riguarda la scalabilità.
         
