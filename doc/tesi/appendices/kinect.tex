@@ -3,11 +3,33 @@
 \chapter{Accenni sul Funzionamento e le Caratteristiche del Sensore del Kinect} % (fold)
 \label{chap:kinect}
 
-Ciò che viene comunemente chiamato \emph{sensore di profondità} o \emph{sensore di distanza}, in riferimento al dispositivo Kinect, è in realtà uno \emph{scanner 3D a luce strutturata}.
+Ciò che viene comunemente chiamato \emph{sensore di profondità} o \emph{sensore di distanza}, trova due differenti realizzazioni, a seconda della versione del Kinect.
 
-Un sorgente di raggi infrarossi proietta una serie di pattern codificati nello spazio.
-Le superfici colpite inducono una deformazione nella struttura di tali pattern.
-Il pattern deformato viene quindi catturato da una o più telecamere, che confrontando la deformazione con il pattern originario, riescono a ricostruire, dalla rappresentazione bidimensionale di ogni punto nello spazio, le sue coordinate tridimensionali.
+\begin{figure}[h]
+    \centering
+    \begin{subfigure}[b]{0.48\textwidth}
+    \includegraphics[width=\linewidth]{img/3d-structured-light-scanner.png}
+        \caption{}
+        \label{fig:3d_scanner}
+    \end{subfigure}
+    ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
+      %(or a blank line to force the subfigure onto a new line)
+    \begin{subfigure}[b]{0.48\textwidth}
+    \includegraphics[width=\linewidth]{img/tof_camera.jpg}
+        \caption{}
+        \label{fig:tof_camera}
+    \end{subfigure}
+    \caption{Rappresentazione schematica di uno scanner a luce strutturata (\ref{fig:3d_scanner}) e di una \emph{TOF camera} (\ref{fig:tof_camera}).}
+    \label{fig:distance_sensor}
+\end{figure}
+
+Il Kinect V1 utilizza uno \emph{scanner 3D a luce strutturata}, ovvero un dispositivo in cui una sorgente di raggi infrarossi proietta una serie di pattern codificati nello spazio.
+Le superfici colpite inducono una deformazione nella struttura di tali pattern, che vengono quindi catturati da una o più telecamere, che confrontando la deformazione con il pattern originario.
+Da questo confronto riescono a ricostruire, dalla rappresentazione bidimensionale di ogni punto nello spazio, le sue coordinate tridimensionali.
+
+Il Kinect V2 invece utilizza una \emph{time of flight camera}: vengono inviati degli impulsi luminosi, quindi viene misurato il tempo che intercorre tra l'invio del segnale e la ricezione della radiazione di ritorno.
+Dalla misura di questo intervallo (che altro non è che il tempo necessario alla luce per raggiungere l'oggetto e tornare indietro per il fenomeno della \emph{riflessione diffusa}) viene ricavata la distanza alla quale si trova il punto. 
+Ripetendo questo procedimento si è in grado di costruire una rappresentazione tridimensionale dello spazio.
 
 Il risultato di un sensore di questo tipo è un insieme di triplette $(x,y,z)$, organizzate in una \emph{immagine di profondità}, una struttura dati che è molto simile ad una semplice immagine in scala dei grigi\footnote{La forte somiglianza con le immagini in scala dei grigi è supportata dal fatto che ogni pixel è codificato utilizzando 16bit.}, dove il valore di ogni pixel rappresenta la misura in millimetri della distanza della superficie dal sensore.
 
