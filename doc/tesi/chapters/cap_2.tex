@@ -49,7 +49,7 @@
         \end{figure}
 
         Alfrèd Haar propose anche la prima DWT (\emph{Discrete Wavelet Transform}) con la quale, le wavelet che compongono un segnale, vengono campionate discretamente.
-        Le applicazioni sono notevoli e ad ampio spettro, prime tra tutte quelle nell'ambito della codica dei segnali e nella compressione dei dati. Per fare un esempio, lo standard di compressione JPEG2000 sfrutta la trasformazione DWT \cite{Jpeg2000} per ottenere risultati qualitativamente migliori rispetto allo standard precedente.
+        Le applicazioni sono notevoli e ad ampio spettro, prime tra tutte quelle nell'ambito della codifica dei segnali e nella compressione dei dati. Per fare un esempio, lo standard di compressione JPEG2000 sfrutta la trasformazione DWT \cite{Jpeg2000} per ottenere risultati qualitativamente migliori rispetto allo standard precedente.
 
         Una variante della trasformazione DWT con le wavelet di Haar bidimesionali (figura \ref{fig:haar_wavelet}) è stata utilizzata da \citet{Oren97} in un sistema in grado di riconoscere la presenza di pedoni in delle immagini.
 
@@ -86,7 +86,7 @@
 
         L'equazione \ref{eq:haar_feature_informal} fornisce una descrizione informale del funzionamento delle feature di Haar. Con $E(Area)$ si intende la somma delle intensità di tutti i pixel che appartengono all'area specificata.
 
-        Al di là di questa iniziale definizione, una feature può essere composta da più di due aree adiacenti, dando luogo alle forme più disparate.
+        Oltre questa iniziale definizione, una feature può essere composta da più di due aree adiacenti, dando luogo alle forme più disparate.
         La libreria \emph{OpenCV} mette a disposizione una grande quantità di feature di forme differenti (figura \ref{fig:opencv_haar_features}).
 
         Nonostante le forme differenti, il principio resta lo stesso: si hanno sempre due insiemi di aree, quello delle aree chiare ($W$) e quello delle aree scure ($B$).
@@ -108,7 +108,7 @@
 
         \subsection{Applicazioni} % (fold)
         \label{sub:haar_features_applications}
-            Nella framework di riconoscimento dei volti di Viola-Jones, vengono applicate le feature di Haar ad immagini RGB, dopo che queste sono state convertite in scala dei grigi e normalizzate in luminosità.
+            Nel framework di riconoscimento dei volti di Viola-Jones, vengono applicate le feature di Haar ad immagini RGB, dopo che queste sono state convertite in scala dei grigi e normalizzate in luminosità.
             Ciò che viene evidenziato sono le differenze di intensità dei pixel tra le regioni della foto.
 
             A far variare l'intensità di un pixel in una foto concorrono l'illuminazione, il colore e molti altri fattori, alcuni dei quali sono fattori caratteristici del volto, oggetto del riconoscimento, mentre altri sono a tutti gli effetti dei disturbi ambientali che le operazioni di preprocessing mirano ad arginare.
@@ -153,7 +153,7 @@
 
             Oltre alla grandissima complessità che una valutazione su singoli pixel introdurrebbe, bisogna prendere atto che, con dati soggetti a disturbi e alla presenza di rumore, delle caratteristiche misurate su di essi non sarebbero molto significative.
 
-            L'estrazione dei contorni potrebbe essere più significativo della valutazione sui singoli pixel, ma continuano ad essere caratteristiche abbastanza complesse da calcolare ed ottenere.
+            L'estrazione dei contorni potrebbe essere più significativa della valutazione sui singoli pixel, ma continuano ad essere caratteristiche abbastanza complesse da calcolare ed ottenere.
             L'estrazione dei contorni, inoltre, è un concetto fortemente legato alle immagini RGB, usarlo con le immagini di profondità è un forzatura.
 
             Il principale vantaggio delle feature di Haar rispetto ad altri tipi più elaborati di feature resta la loro efficienza computazionale.
@@ -173,7 +173,7 @@
             \label{fig:integral_image_sum}
         \end{figure}
 
-        La soluzione a tale problema consiste nell'utilizzo dell'\emph{immagine integrale}, altrimenti detta \emph{Summed Area Table}, una struttura dati che mette a permette di calcolare la somma dei pixel di qualsiasi area all'interno di essa in un tempo costante.
+        La soluzione a tale problema consiste nell'utilizzo dell'\emph{immagine integrale}, altrimenti detta \emph{Summed Area Table}, una struttura dati che permette di calcolare la somma dei pixel di qualsiasi area all'interno di essa in un tempo costante.
 
         \begin{definition}
             Sia $I$ un'immagine larga $w$ pixel ed alta $h$ pixel. Con la scrittura $I(x, y)$ si identifica il pixel dell'immagine $I$ che si trova alla colonna $x$ e alla riga $y$.
@@ -206,7 +206,7 @@
 
         Elaborare l'immagine integrale è un'operazione con complessità computazionale $\Theta(w \cdot h)$, cioè il cui costo varia linearmente con la dimensione dell'immagine. Una volta ottenuta però, permette di calcolare qualsiasi somma di pixel in regioni rettangolari con operazioni di complessità $\Theta(1)$.
 
-        L'utilizzo delle immagini integrale è molto vantaggiosa nel momento in cui è necessario calcolare molte feature sulla stessa immagine.
+        L'utilizzo dell'immagine integrale è molto vantaggioso nel momento in cui è necessario calcolare molte feature sulla stessa immagine.
         Volendo essere più espliciti, se la complessità computazionale totale del calcolo di $n$ feature senza l'utilizzo dell'immagine integrale è maggiore di quella per la generazione dell'immagine integrale stessa, allora è vantaggioso utilizzare tale struttura dati.
 
     \section{Decision Stump}

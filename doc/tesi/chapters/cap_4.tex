@@ -132,7 +132,7 @@
         Dal momento che l'obiettivo è ottenere un sistema di rilevamento che sia più accurato possibile, questi parametri devono essere impostati in modo tale che l'\emph{accuracy} sia massima.
             \subsubsection{Numero di weak learner}
                 Il numero di weak learner\footnote{Abbreviando: NWL} per ogni classificatore forte è un parametro libero all'interno della procedura di allenamento.
-                Vista la procedura di Adaboost nel capito precedente, potrebbe sembrare che, aggiungendo altri weak learner si possa migliorare progressivamente la precisione del sistema.
+                Vista la procedura di Adaboost nel capitolo precedente, potrebbe sembrare che, aggiungendo altri weak learner si possa migliorare progressivamente la precisione del sistema.
                 Ciò generalmente non è vero: troppi classificatori deboli potrebbero generare problemi di \emph{overfitting}.
                 È necessario quindi ricavare il numero ottimale di classificatori deboli a comporre ciascun classificatore forte.
 
@@ -195,7 +195,7 @@
                     a_{ij} = \sum_{t = 1}^{j} a_t h_t(x_i)
                 \end{equation}
 
-                \item Si definiscono i possibili valori di sogli assumibili dal classificatore forte. Qui sono stati utilizzati tutti i valori da $0$ ad $1$, con un passo pari a $0.01$, estremi inclusi\footnote{Quindi i possibili valori di soglia sono 101: $\{0, 0.01, 0.02, ..., 0.98, 0.99, 1\}$}.
+                \item Si definiscono i possibili valori di soglia assumibili dal classificatore forte. Qui sono stati utilizzati tutti i valori da $0$ ad $1$, con un passo pari a $0.01$, estremi inclusi\footnote{Quindi i possibili valori di soglia sono 101: $\{0, 0.01, 0.02, ..., 0.98, 0.99, 1\}$}.
                 \begin{equation}
                     \label{subeq:thresholds_vector}
                     \Theta = \left[
@@ -267,9 +267,32 @@
 
             % Inserire qui eventuali commenti allo pseudo codice
 
+            \begin{figure}
+                \centering
+                \begin{subfigure}[b]{0.9\textwidth}
+                    \includegraphics[width=\textwidth]{img/sensitivity_tuning.jpg}
+                    \caption{}
+                    \label{fig:sensitivity_tuning}
+                \end{subfigure}
+                ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
+                  %(or a blank line to force the subfigure onto a new line)
+                \begin{subfigure}[b]{0.9\textwidth}
+                    \includegraphics[width=\textwidth]{img/specificity_tuning.jpg}
+                    \caption{}
+                    \label{fig:specificity_tuning}
+                \end{subfigure}
+                \begin{subfigure}[b]{0.9\textwidth}
+                    \includegraphics[width=\textwidth]{img/accuracy_tuning.jpg}
+                    \caption{}
+                    \label{fig:accuracy_tuning}
+                \end{subfigure}
+                \caption{Plot tridimensionale dell'andamento di \emph{sensitivity} (\ref{fig:sensitivity_tuning}), \emph{specificity} (\ref{fig:specificity_tuning}) e \emph{accuracy} (\ref{fig:accuracy_tuning}) al variare del valore di soglia e del numero di weak learner di $F_{hor}$.}
+                \label{fig:performance_evaluation}
+            \end{figure}
+
     \section{Analisi dei Risultati} % (fold)
     \label{sec:analisi_dei_risultati}
-        Alla termine della procedura di selezione della coppia ottima, si ottiene un classificatore la cui accuratezza è la migliore rispetto a tutte le altre possibili coppie di parametri.
+        Al termine della procedura di selezione della coppia ottima, si ottiene un classificatore la cui accuratezza è la migliore rispetto a tutte le altre possibili coppie di parametri.
 
             \subsection{Soglia del classificatore} % (fold)
             \label{sub:soglia_del_classificatore}            
@@ -280,7 +303,7 @@
                 Il valore ottenuto tramite l'algoritmo di massimizzazione dell'accuratezza dei classificatori (sezione \ref{sec:accuracy_maximization}) si aggira intorno al valore $0.4$ per entrambi ($F_{hor}$ e $F_{ver}$).
                 
                 Una prima interpretazione potrebbe essere la seguente: la discordanza, seppur contenuta, tra il valore di soglia presente in letteratura ed il valore calcolato può essere dovuto a problemi di overfitting al dataset di validazione.
-                Senza dover creare un ulteriore dataset esclusivamente per il testing, potrebbe essere utile utilizza il valore $0.5$ come soglia effettiva dei classificatori finali, eliminando l'overfitting, e considerare le soglie calcolate come delle controprova della correttezza dell'algoritmo di allenamento.
+                Senza dover creare un ulteriore dataset esclusivamente per il testing, potrebbe essere utile utilizzare il valore $0.5$ come soglia effettiva dei classificatori finali, eliminando l'overfitting, e considerare le soglie calcolate come delle controprova della correttezza dell'algoritmo di allenamento.
 
                 La seconda interpretazione, invece, è diametralmente opposta: l'aver ottenuto dei valori di soglia ottimi per accuratezza, potrebbe essere un valore aggiunto rispetto alla formulazione generale classica dei classificatori forti.
 
@@ -289,12 +312,11 @@
 
             \subsection{Numero di Weak Learner} % (fold)
             \label{sub:numero_di_weak_learner}
-                % TODO Inserire i grafici 3d con l'andamento della soglia
                 Il numero dei classificatori deboli che compongono ciascun classificatore forte, è molto differente da quello ottenuto in altre applicazioni, prima tra tutte il sistema di riconoscimento dei volti di Viola Jones.
 
                 I classificatori forte di questo sistema sono formati da una decina di classificatori deboli, un numero straordinariamente piccolo se confrontato con i migliaia di weak learner necessari a costruire un classificatore di volti.
 
-                Tuttavia considerare la diversa natura dei due problemi e i diversi canali di acquisizione dei dati per il riconoscimento. L'immagine di profondità di una persona ripresa dall'alto è una rappresentazione grezza, ma essenziale, dell'individuo ed è incredibilmente povera di informazione se paragonata all'immagine di un volto umano.
+                Tuttavia è necessario considerare la diversa natura dei due problemi e i diversi canali di acquisizione dei dati per il riconoscimento. L'immagine di profondità di una persona ripresa dall'alto è una rappresentazione grezza, ma essenziale, dell'individuo ed è incredibilmente povera di informazione se paragonata all'immagine di un volto umano.
                 La ricchezza di particolari di un volto, l'incredibile variabilità intraclasse dei volti, per non parlare della fortissima sensibilità delle immagini alle variazioni ambientali (come la luce), rende molto più complesso il problema di riconoscimento. Ecco perchè i classificatori di volti sono cento, mille volte più complessi.
 
                 Per raggiungere elevate prestazioni con il framework di Viola-Jones, infatti, è necessario dividere un classificatore forte in diversi stadi, creando dei classificatori a cascata in grado di scartare nel minor tempo possibile, il maggior numero di oggetti che non corrispondono ai volti umani.
@@ -329,6 +351,6 @@
                     ACC = 93.87\%
                 \end{equation}
 
-                Alla luce dei risultati ottenuti, il classificatore finale, testato sul dataset di validazione, risulta sufficientemente accurato rispetto alle valori empirici di riferimento.
+                Alla luce dei risultati ottenuti, il classificatore finale, testato sul dataset di validazione, risulta sufficientemente accurato rispetto ai valori empirici di riferimento.
 
     % section analisi_dei_risultati (end)

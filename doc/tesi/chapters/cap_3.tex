@@ -110,7 +110,7 @@
             \label{subsub:boostin_alg}
                 Sono la famiglia più popolare di algoritmi che implementano l'ensamble learning.
 
-                Inizialmente, gli algoritmi di questo tipo, associano ad un insieme di allenamento una distribuzione: ogni elemento viene correlato di un peso.
+                Inizialmente, gli algoritmi di questo tipo, associano ad un insieme di allenamento una distribuzione: ogni elemento viene caratterizzato un peso.
                 Iterativamente viene selezionato, dallo spazio delle ipotesi, il \emph{miglior weak learner}, ovvero quello che riesce a classificare gli elementi del dataset compiendo meno errori possibili.
 
                 L'idea che è alla base del successo degli algoritmi di boosting sta nel fatto che, tali pesi, vengono aggiornati per ogni elemento ad ogni iterazione in base al risultato della classificazione con il weak learner corrente. 
@@ -139,14 +139,14 @@
 
         \subsection{Categorie di Classificatori}
         \label{sub:classifiers_categories}
-            È stato detto precedentemente che, come tutti gli algoritmi di supervised learning, Adaboost riceve in input un insieme di allenamento e resitituisce un classificatore forte.
+            È stato detto precedentemente che, come tutti gli algoritmi di supervised learning, Adaboost riceve in input un insieme di allenamento e restituisce un classificatore forte.
 
             Potrebbe non essere sufficiente disporre di un unico classificatore forte per l'applicazione di rilevamento che si vuole realizzare.
 
             \subsubsection{Variabilità della Forma delle Immagini HASP}
                 La forma dell'immagine HASP della persona nel frame di profondità varia per molti motivi.
 
-                La prima causa di variazione della forma HASP è l'\emph{orientazione delle persona}.
+                La prima causa di variazione della forma HASP è l'\emph{orientazione della persona}.
                 L'immagine di una persona che cammina seguendo una direzione parallela al lato lungo del frame sarà indubbiamente diversa dall'immagine di una persona che cammina seguendo una direzione perpendicolare, così come sarà diversa dall'immagine di una persona che compie una traiettoria obliqua all'interno della stanza.
 
                 Un altro fattore importante che concorre nella variazione della forma è la \emph{distorsione prospettica}.
@@ -211,7 +211,7 @@
                 La durata delle registrazioni delle traiettorie orizzontale e verticale è subordinata al tempo necessario al soggetto per coprire tutta l'area del frame, mentre le registrazioni riferite alle traiettorie casuali sono tutte costituite da 1000 frame.
 
             \subsubsection{Ritaglio dei Samples}
-                È stato sviluppato un software apposto per la gestione dei dataset per ritagliare, organizzare e ridimensionare, le immagini dei dataset di allenamento.
+                È stato sviluppato un software apposito per la gestione dei dataset per ritagliare, organizzare e ridimensionare, le immagini dei dataset di allenamento.
 
                 Attraverso un'efficace interfaccia utente, permette di aprire e visualizzare una registrazione e scorrere ciascun frame. 
                 Una volta individuato il frame interessato, è possibile estrarre un ritaglio selezionando l'area. 
@@ -560,7 +560,7 @@
         % subsection procedura_di_selezione (end)           
 
         \subsection{Valutazione della complessità computazionale}
-            In definitiva, con uno scorrimento della lista ordinata si ottengo i parametri per la costruzione del classificatore debole. 
+            In definitiva, con uno scorrimento della lista ordinata si ottengono i parametri per la costruzione del classificatore debole. 
             La complessità di tale operazione è fortemente legata all'algoritmo di ordinamento della lista, la quale ha $\Theta(n\log n)$ come limite teorico inferiore \cite[p. 167]{Cormen09}.
             Nell'implementazione è stato scelto proprio un algoritmo che avesse complessità $O(n\log n)$ nel caso peggiore. 
 

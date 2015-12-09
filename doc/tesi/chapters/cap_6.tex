@@ -2,16 +2,16 @@
 
 \chapter{Conclusioni} % (fold)
 \label{cha:conclusioni}
-	Si è partiti dalla descrizione fornita da Zhu e Wong del sistema di human sensing.
-	Da essa è partito un lungo lavoro di documentazione, senza il quale non sarebbe stato possibile avere pienamente coscienza di ogni particolare, di ogni sfumatura di quest'ultimo.
+	A partire da quanto descritto da Zhu e Wong in \cite{Zhu13} è stata elaborata una semplice implementazione del loro sistema di human sensing.
 
-	L'implementazione proposta è semplice, ma è stata progettata per poter accogliere, con poco sforzo, eventuali miglioramenti futuri.
-	Sono stati utilizzati strumenti moderni, sia nello sviluppo che nella sperimentazione, e dove mancavano ne sono stati creati di nuovi.
+	Nei capitoli precedenti sono state largamente commentate le molteplici somiglianze con il sistema di \emph{face recognition} di Viola e Jones: l'uso dello stesso algoritmo di allenamento, della stessa famiglia di feature e quello di alcuni parametri caratteristici, come la dimensione delle immagini di allenamento.
 
-	Nei test, livelli di accuratezza molto buoni ed il comportamento complessivo su dati reali è discreto.
-	Vi sono ancora numerosi punti su cui è possibile agire per migliorare le prestazioni, sia in velocità d'esecuzione che in accuratezza.
-	Lo sviluppo del sistema non è stato tanto lineare quanto il suo resoconto: ad un certo punto è dovuto terminare.
+	L'impiego di immagini di profondità, che forniscono una rappresentazione essenziale della realtà, fondamentalmente priva della ricchezza di dettagli riscontrabile in immagini RGB, comporta l'elaborazione di classificatori molto più semplici rispetto a quelli per il riconoscimento dei volti e quindi, a differenza di questi ultimi, non necessitano di particolari accorgimenti per velocizzare l'esecuzione.
 
-	Quel che si ha, in definitiva, è l'implementazione di un framework di \emph{object detection} maturo e stabile, specializzata nel riconoscimento di persone attraverso immagini di profondità.
+	La valutazione dell'accuratezza del sistema ed il confronto dei risultati ottenuti con quelli esposti in letteratura, confermano la correttezza dell'implementazione e la complessiva qualità del sistema.
+
+	Rimangono migliorabili le prestazioni in fase di rilevamento.
+	La logica utilizzata per la selezione delle finestre di rilevamento ottimali ha validità limitata al caso in cui è presente solo una persona nell'area del frame, il che costituisce un limite importante, ma raggirabile implementando una logica di selezione migliore.
+
 
 % chapter conclusioni (end)

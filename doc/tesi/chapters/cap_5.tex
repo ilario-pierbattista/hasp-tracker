@@ -91,7 +91,7 @@
 
         Quando si ha a che fare con frame correlati tra di loro, è possibile velocizzare il processo di rilevamento scartando delle intere aree del frame.
 
-        Quando valgolo le precedenti ipotesi, infatti, dopo un'iniziale scansione totale del frame, l'algoritmo di rilevamento prende coscenza dell'eventuale presenza di persone e conosce a priori quali sono le zone in cui sicuramente, negli istanti successivi, tutte le finestre di rilevamento daranno esito negativo.
+        Quando valgono le precedenti ipotesi, infatti, dopo un'iniziale scansione totale del frame, l'algoritmo di rilevamento prende coscenza dell'eventuale presenza di persone e conosce a priori quali sono le zone in cui sicuramente, negli istanti successivi, tutte le finestre di rilevamento daranno esito negativo.
 
         Negli istanti successivi, vengono scansionate solamente le porzioni che si trovano nelle vicinanze della persona rilevata all'istante precedente.
         Si scansionano inoltre i bordi del frame, alla ricerca di eventuali persone in ingresso.
@@ -129,7 +129,7 @@
 
         In un secondo momento le finestre sono state pesate con valori decrescenti man mano che queste si allontanano dalla posizione della persona allo stato precedente.
         Finestre positive troppo distanti, difficilmente portano a risultati veritieri, quindi vengono premiate le finestre di rilevamento nelle immediate vicinanze della persona.
-        Vengono inoltre effettuata una prima scrematura, non considerando rilevamenti che hanno prodotto un numero di finestre positive troppo basso.
+        Viene inoltre effettuata una prima scrematura, non considerando rilevamenti che hanno prodotto un numero di finestre positive troppo basso.
 
         Lo svantaggio delle soluzioni appena presentate sta nel fatto che funzionano quando nel frame è presente una sola persona.
         Sarà necessario in futuro, per apportare dei miglioramenti, implementare una soluzione simile a quella descritta da Wang in \cite{Wang14}, basata sul raggruppamento delle finestre in insiemi di aree connesse tra loro e sulla selezione di quelle con un maggiore indice di sovrapposizione. 

@@ -9,10 +9,10 @@
         Vengono utilizzati vari dispositivi di sensoristica per l'acquisizione di informazioni ai fini del riconoscimento. 
         Dall'elaborazione delle informazioni acquisite, i sistemi di human sensing sono in grado di rilevare la presenza e la posizione della persona all'interno dell'ambiente interessato.
 
-        I contesti applicativi di sistemi di questo genere sono variegati ed in costante espazione.
+        I contesti applicativi di sistemi di questo genere sono variegati ed in costante espansione.
         Sistemi per il rilevamento delle persone si adattano perfettamente in contesti di sorveglianza, sia al fine di garantire la sicurezza di un ambiente in termini di rilevamento delle intrusioni, sia al fine di costruire delle soluzioni di monitoraggio in ambienti assistivi automatizzati.
         Dispositivi in grado di localizzare corpi umani sono utilissimi nelle attività \emph{search \& rescue}, dove è necessario, in caso di catastrofi o calamità naturali, localizzare nel minor tempo possibile i superstiti in condizioni avverse.
-        Vi sono delle applicazioni anche in ambito economico: soluzioni di \emph{people counting} sono sempre più usate nei processi di \emph{business intelligence} per effettuare analisi di mercato.
+        Vi sono delle applicazioni anche in ambito economico: soluzioni di \emph{people counting} sono sempre più usate nei processi di \emph{retail} per effettuare analisi di mercato.
 
         Molto spesso, la natura dei sensori utilizzati per le acquisizioni, fanno in modo che i problemi di human sensing si intersechino con problemi di \emph{computer vision}: l'utilizzo di sensori ad acquisizione visiva comporta l'insorgere di svariati problemi di visione artificiale.
 
@@ -24,7 +24,7 @@
 
             \begin{description}
                 \item[People Tracking and Counting] \citet{Papageorgiou98} nel \citeyear{Papageorgiou98} proposero una tecnica di riconoscimento e conteggio di pedoni a partire da immagini RGB.
-                Elaborando opportunamente le informazioni raccolte da comuni telecamere, il sistema era in grado di apprendere a riconoscere il pattern della figura umana analizzando le variazioni di intensità tra le diverse aree delle immagini.
+                Elaborando opportunamente le informazioni raccolte da comuni telecamere, il sistema era in grado di riconoscere il pattern della figura umana analizzando le variazioni di intensità tra le diverse aree delle immagini.
                 Per l'apprendimento utilizzarono una \emph{macchina a vettori di supporto}\footnote{Consultare la sezione \ref{sec:supervised_ensamble_learning} ed in generale tutto il capitolo \ref{chap:adaboost} per ulteriori informazioni al riguardo.}.
                 
                 \item[Face Recognition] Viola e Jones in \cite{Viola04} descrivono un framework di \emph{object recognition}, applicandolo con successo al caso del riconoscimento dei volti.
@@ -65,8 +65,8 @@
                 Tali distanze sono perfettamente compatibili con le specifiche tecniche del dispositivo stesso.
                 Nel caso in cui vi sia la necessità di montare il Kinect a soffitti più alti di $4m$, si possono utilizzare delle lenti correttive per aumentare il range di affidabilità del sensore.
 
-                Molto sistemi di riconoscimento utilizzano il Kinect - e più in generale, qualsiasi dispositivo di acquisizione visivo - in posizione frontale rispetto ai soggetti da riconoscere.
-                Di fatti, il dispositivo, concepito per applicazioni videoludiche, è progettato per operare in tale posizione.
+                Molti sistemi di riconoscimento utilizzano il Kinect - e più in generale, qualsiasi dispositivo di acquisizione visivo - in posizione frontale rispetto ai soggetti da riconoscere.
+                Infatti, il dispositivo, concepito per applicazioni videoludiche, è progettato per operare in tale posizione.
                 Tuttavia, la configurazione descritta precedentemente, ha l'enorme vantaggio di eliminare l'occlusione del soggetto: in tali condizioni una persona non può nasconderne dietro di sè un'altra alla vista del sensore (se non in scomode posizioni), cosa invece frequentissima nei i sistemi di rilevamento frontali.
 
         \subsection{\emph{Head and Shoulders Profile}}
@@ -83,7 +83,7 @@
             Distinguere gli oggetti che rappresentano persone da quelli che non le rappresentano, significa classificare tali oggetti in due classi: la \emph{classe delle persone} e quella delle \emph{non persone}.
             A questo punto, bisogna iniziare a chiedersi quali debbano essere le proprietà degli elementi dell'una e quali quelli dell'altra.
 
-            Bisogna sottolineare il fatto che gli oggetti di una stessa classe, hanno sì delle proprietà in comune tra di loro, ma averne altre per cui differiscono.
+            Bisogna sottolineare il fatto che gli oggetti di una stessa classe, hanno sì delle proprietà in comune tra di loro, ma ne hanno altre per cui differiscono.
             Individuare le \emph{caratteristiche} - ovvero proprietà osservabili e misurabili di un oggetto - in base alle quali decretare l'appartenenza all'una o all'altra classe, non è un problema banale.
             Si può intuire quanto sia vasto l'insieme delle caratteristiche valutabili nella rappresentazione di un oggetto.
             Ovviamente la natura della rappresentazione influisce nella scelta delle caratteristiche più rilevanti.
@@ -106,7 +106,7 @@
 
         \subsection{Flusso di Lavoro}
         \label{sub:overall_workflow}
-            A conclusione di questa rilassata premessa, per evitare di perdersi in questo miscuglio di osservazioni eterogenee apparentemente prive di uno scopo preciso, è opportuno definire qual è il \emph{workflow} principale dell'intero sistema di rilevamento.
+            A conclusione di questa premessa, per evitare di perdersi in questo miscuglio di osservazioni eterogenee apparentemente prive di uno scopo preciso, è opportuno definire qual è il \emph{workflow} principale dell'intero sistema di rilevamento.
             Sostanzialmente quest'ultimo è diviso in due componenti accoppiati, uno delegato all'apprendimento delle caratteristiche di classificazione, l'altro delegato all'effettivo rilevamento.
             Come è facilmente intuibile, il secondo non può funzionare senza il risultato fornito dal primo, che è il più complesso e corposo dei due.
 
@@ -121,12 +121,12 @@
                 Nei capitoli successvi si darà una definizione più formale di quello che è un classificatore, per il momento è sufficiente una definizione intuitiva: un classificatore \emph{classifica} i vari oggetti, ovvero fornisce una \emph{previsione} della classe di appartenenza relativamente ad ognuno di essi.
 
                 La classificazione effettuata da questa componente approssima solamente la classificazione reale. 
-                La bontà di tale approssimazione sarà il parametro di valutazione della bontà generale del sistema.
+                La bontà di tale approssimazione sarà il parametro di valutazione della prestazione generale del sistema.
 
                 Nel caso di Adaboost il classificatore risultante sarà simile ad una collezione di test: il risultato di tali test, eseguiti su di un qualsiasi oggetto, fornirà la previsione della classificazione dell'oggetto stesso.
 
             \subsubsection{Rilevamento}
-                In questa fase il sistema analizza i frame di profondità delle acquisizione in ordine sequenziale, alla ricerca di persone al suo interno.
+                In questa fase il sistema analizza i frame di profondità delle acquisizioni in ordine sequenziale, alla ricerca di persone al suo interno.
 
                 Il classificatore ottenuto al termine dell'esecuzione di Adaboost, sarà in grado di classificare porzioni di immagini di profondità, ma non è in grado di predire direttamente, a partire da un intero frame, la presenza e la posizione di una o più persone al suo interno: le porzioni analizzabili dal classificatore hanno dei vincoli dimensionali da rispettare, che in prima approssimazione si possono immaginare come dei quadrati di dimensione costante.
                 L'attività di rilevamento della persona all'interno del frame, quindi, consterà della sequenziale analisi di tutte le porzioni di frame che rispettano tali vincoli, al fine di coprire l'intera area.
