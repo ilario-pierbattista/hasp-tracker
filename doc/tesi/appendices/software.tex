@@ -1,35 +1,76 @@
 % !TEX root=../index.tex
 
-\chapter{Software Sviluppato}
-\label{chap:software}
 
+\chapter{Gestore dei Dataset} % (fold)
+\label{chap:training_set_creator}
+    Si tratta di un'applicazione desktop che consente di gestire efficacemente i vari dataset.
+    Una volta aperto, nella schemata principale (figura \ref{fig:tsc_main}) gli elementi vengono organizzati in una tabella che ne riporta l'id numerico, le dimensioni e l'etichettatura reale.
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=10cm]{img/training_set_creator_main.png}
+        \caption{Schermata principale del software di gestione.}
+        \label{fig:tsc_main}
+    \end{figure}
 
-    \section{Componenti}
-        \subsection{Gestore dei Dataset} % (fold)
-        \label{sub:training_set_creator}
-            \subsubsection{Interfaccia Grafica}
-                Le funzionalità offerte dal software di gestione sono 
-                Funzionalità: gestione dei dataset (aggiunta, modifica ed eliminazione), aggiunta (selezione, flipping, crop), resize (i 3 algoritmi)
-            \subsubsection{Strutture Dati per la persistenza}
-                Cartella divisa in pos e negs, indici incrementali, immagini grezze
-            \subsubsection{Tecnologie utilizzate}        
-                Java, javaswing, pattern mvc.
-        % subsection training_set_creator (end)
-        
-        \subsection{Allenamento}
-            \subsubsection{Punti critici dal punto di vista computazionale}
-            \subsubsection{Mex files}
-            \subsubsection{Architettura delle librerie}
-            \subsubsection{Struttura dati per la persistenza}
-        \subsection{Tuning, Testing, Rilevamento}
-            \subsubsection{Organizzazione degli script e delle funzioni}
-            \subsubsection{Struttura dati per la persistenza}
-    \section{Tecnologie utilizzate}
-        \subsection{C++ e Matlab}
-            \subsubsection{Matlab: prototipazione e componenti non critiche}
-            \subsubsection{C++: ottimizzazione delle componenti critiche}
-        \subsection{Git e Github [Opzionale]}
-            \subsubsection{Sistemi VCS}
-    \section{Proposte di miglioramento}
-        \subsubsection{Componenti da ottimizzare}
-        \subsubsection{Nuovi linguaggi da utilizzare}
+    Di ogni elemento, una volta selezionato, è disponibile una piccola preview.
+    Inoltre sono disponibili le elementari azioni di modifica (che consiste nel cambiare l'etichettatura dell'elemento in caso di errore) e cancellazione per ognuno di essi.
+
+    Premendo il bottone \emph{Aggiungi} si attiverà la procedura per l'aggiunta degli elementi al dataset. 
+    Si aprirà una schermata in cui verrà richiesto di selezionare la cartella contenente le registrazioni effettuate con il Kinect.
+    Poichè ogni frame viene salvato in un file binario privo di qualsiasi metadato, non è possibile risalire alla risoluzione originale del frame e sarà necessario specificarla manualmente. 
+
+    Inseriti i dati necessari si aprirà l'interfaccia in figura \ref{fig:tsc_add} che permetterà di scorrere tra i frame della registrazione utilizzando la scrollbar in alto e selezionare la porzione di frame desiderata evidenziandola con il mouse, così come si farebbe in un qualsiasi programma di photo editing.
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=10cm]{img/training_set_creator_add.png}
+        \caption{Schermata per l'aggiunta di un nuovo elemento al dataset.}
+        \label{fig:tsc_add}
+    \end{figure}
+
+    È disponibile anche la funzionalità per il resize delle immagini, raggiungibile dalla voce \emph{Resize} del menu \emph{Esporta}.
+
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=10cm]{img/training_set_creator_resize.png}
+        \caption{Schermata per il resize degli elementi del dataset.}
+        \label{fig:tsc_resize}
+    \end{figure}
+
+    Nella schermata in figura \ref{fig:tsc_resize} sarà necessario inserire le nuove dimensioni per le immagini e selezionare l'algoritmo di resampling desiderato.
+
+    Il software è stato scritto in linguaggio Java, utilizzando il pattern \emph{Model View Controller}.
+    Questo approccio mira a dividere il codice in blocchi funzionali ben distinti, ognuno con un obiettivo ben specifico:
+    \begin{description}
+        \item[Model] Le classi che lo compongono implementano la \emph{business logic} dell'applicazione, ovvero si occupano della modellazione degli oggetti della realtà di interesse in oggetti software e descrivono le operazioni eseguibili su di essi.
+
+        \item[View] Tutte le interfacce grafiche vengono raggruppate in questo modulo software. Vengono implementati i metodi per il popolamento delle viste e l'estrazione dei valori inseriti nei campi di input dall'utente.
+
+        \item[Controller] Le classi di controllo si frappongono tra quelle del \emph{model} e quelle della \emph{view}, governando i meccanismi di rappresentazione dei dati all'utente e la loro modifica a fronte di un'azione intrapresa da quest'ultimo.
+    \end{description}
+
+    Questo approccio alla scrittura del software permette la realizzazione di un prodotto modulare, facilmente manutenibile ed espandibile.
+
+    Per la persistenza dei dati e soprattutto dei metadati relativi agli elementi dei dataset, si è scelto di non utilizzare alcun meccanismo di persistenza centralizzato (\emph{DBMS} o file \emph{XML}), ma di rappresentare i metadati codificandoli nei nomi dei file.
+
+    Ogni dataset, infatti, risiede in una specifica cartella.
+    Al suo interno saranno presenti le sotto cartelle \emph{positives} e \emph{negatives}, che organizzeranno il file con i ritagli delle immagini di profondità in base alla loro reale classificazione.
+    Il nome di ogni ritaglio è composto da una serie di parametri separati dal carattere \emph{underscore} e serializza lo stato del relativo oggetto software che lo modella all'interno dell'applicazione (\ref{eq:samples_filename}).
+
+    \begin{equation}
+        \label{eq:samples_filename}
+        nome_{sample} = sample\_<id>\_<width>\_<height>\_<label>.bin
+    \end{equation}
+    
+\chapter{Implementazione dell'Algoritmo di Allenamento}
+    Il linguaggio Matlab permette di sviluppare software molto velocemente grazie alla miriade di funzionalità messe a disposizione dalle librerie standard, che consentono di tralasciare molti dettagli implementativi e concentrare gli sforzi sullo sviluppo della logica di business.
+    Tuttavia la fase di allenamento è la più pesante dal punto di vista computazionale, sia per la complessità intrinseca dell'algoritmo, che per la mole di dati in ingresso, quindi richiede un approccio differente.
+
+    In Matlab alcune funzioni possono essere implementate in un altro linguaggio ad alto livello (come il C++, il Java o il FORTRAN) attraverso l'uso dei \emph{file mex}, al fine di migliorne le prestazioni.
+    Una volta scritto il file sorgente della funzione nel linguaggio scelto, lo si compila utilizzando il compilatore in dotazione con la suite Matlab, generando così il file mex che verrà linkato dinamicamente in fase di esecuzione.
+
+    È stata quindi sviluppata una libreria di supporto in C++ che implementa le parti più critiche dell'algoritmo di allenamento.
+    Tale liberia viene poi utilizzata nelle funzioni implementate nei file mex e queste ultime verranno richiamate negli script in Matlab.
+
+    \lstinputlisting[language=c++, frame=single]{code/best_weak_classifier.cxx}
+
+    In questa piccola porzione di codice, relativa alla funzione compilata per la selezione del miglior weak learner, mostra l'utilizzo del metodo \emph{bestWeakClassifier} della classe \emph{Adaboost} definita in \emph{adaboost.h}.
