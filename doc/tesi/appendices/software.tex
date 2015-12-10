@@ -61,16 +61,44 @@
         nome_{sample} = sample\_<id>\_<width>\_<height>\_<label>.bin
     \end{equation}
     
-\chapter{Implementazione dell'Algoritmo di Allenamento}
-    Il linguaggio Matlab permette di sviluppare software molto velocemente grazie alla miriade di funzionalità messe a disposizione dalle librerie standard, che consentono di tralasciare molti dettagli implementativi e concentrare gli sforzi sullo sviluppo della logica di business.
-    Tuttavia la fase di allenamento è la più pesante dal punto di vista computazionale, sia per la complessità intrinseca dell'algoritmo, che per la mole di dati in ingresso, quindi richiede un approccio differente.
+\chapter{Annotazioni sulla Suite di Training e Testing}
+    \section{Utilizzo} % (fold)
+    \label{sec:utilizzo}
+        Il codice della suite software risiede nella cartella \emph{matlab} e nelle relative sotto cartelle.
+        Per installarla\footnote{Per informazioni più specifiche riguardo alla compilazione delle librerie ed all'installazione della suite, si rimanda alla lettura del file \emph{README.md} contenuto nella root del progetto.} è sufficiente aggiungere ricorsivamente il percorso della prima alla variabile \emph{PATH} dell'ambiente Matlab.
 
-    In Matlab alcune funzioni possono essere implementate in un altro linguaggio ad alto livello (come il C++, il Java o il FORTRAN) attraverso l'uso dei \emph{file mex}, al fine di migliorne le prestazioni.
-    Una volta scritto il file sorgente della funzione nel linguaggio scelto, lo si compila utilizzando il compilatore in dotazione con la suite Matlab, generando così il file mex che verrà linkato dinamicamente in fase di esecuzione.
+        All'interno della cartella \emph{matlab/procedures} vi è la definizione degli script.
+        Questi ultimi costituiscono a tutti gli effetti l'interfaccia che l'utente avrà a disposizione per l'utilizzo del sistema.
+        Tali script richiamano una serie di funzioni, che vengono definite, per mantenere il codice leggibile e manutenibile, nelle altre sotto cartelle, divise per ambito d'utilizzo.
 
-    È stata quindi sviluppata una libreria di supporto in C++ che implementa le parti più critiche dell'algoritmo di allenamento.
-    Tale liberia viene poi utilizzata nelle funzioni implementate nei file mex e queste ultime verranno richiamate negli script in Matlab.
+        Di seguito viene presentata la sequenza con il quale gli script vengono richiamati, in modo da percorrere l'intero workflow del sistema.
+        \begin{description}
+            \item[trainWithAdaboost] Esegue l'allenamento dell'algoritmo utilizzando il dataset di training predefinito\footnote{Consultare \emph{README.md}, specialmente la sezione relativa alla configurazione del file \emph{initEnvironment.m}.}.
+            I classificatori forti estratti vengono serializzati e salvati in una cartella dal nome $strong\_classifier\_<datetime>$\footnote{Tutte le procedure successive, sono in grado di deserializzare lo strong learner, data tale path.}, all'interno dell'attuale directory di lavoro.
 
-    \lstinputlisting[language=c++, frame=single]{code/best_weak_classifier.cxx}
+            \item[evaluateClassifierThresholds] Valuta le prestazioni dei classificatori facendo variare la soglia e il numero di weak learner.
+            Salva automaticamente i risultati all'interno della path dei classificatori.
 
-    In questa piccola porzione di codice, relativa alla funzione compilata per la selezione del miglior weak learner, mostra l'utilizzo del metodo \emph{bestWeakClassifier} della classe \emph{Adaboost} definita in \emph{adaboost.h}.
+            \item[strongClassifierTuning] Utilizzando i dati ottenuti al passo precedente, sceglie i parametri ottimali per la regolazione.
+
+            \item[testAdaboost] Una volta che il sistema è stato allenato ed è stato effettuato il tuning, è possibile lanciare questo script per testarne le prestazioni complessive.
+
+            \item[detectHumanInFrames] Script per il rilevamento della persona all'interno dei frame delle registrazioni.
+            È possibile effettuare rilevamenti sia su frame singoli o che su frame sequenzialmente correlati.
+        \end{description}
+    % section utilizzo (end)
+
+
+    \section{Implementazione dell'Algoritmo di Allenamento}
+        Il linguaggio Matlab permette di sviluppare software molto velocemente grazie alla miriade di funzionalità messe a disposizione dalle librerie standard, che consentono di tralasciare molti dettagli implementativi e concentrare gli sforzi sullo sviluppo della logica di business.
+        Tuttavia la fase di allenamento è la più pesante dal punto di vista computazionale, sia per la complessità intrinseca dell'algoritmo, che per la mole di dati in ingresso, quindi richiede un approccio differente.
+
+        In Matlab alcune funzioni possono essere implementate in un altro linguaggio ad alto livello (come il C++, il Java o il FORTRAN) attraverso l'uso dei \emph{file mex}, al fine di migliorne le prestazioni.
+        Una volta scritto il file sorgente della funzione nel linguaggio scelto, lo si compila utilizzando il compilatore in dotazione con la suite Matlab, generando così il file mex che verrà linkato dinamicamente in fase di esecuzione.
+
+        È stata quindi sviluppata una libreria di supporto in C++ che implementa le parti più critiche dell'algoritmo di allenamento.
+        Tale liberia viene poi utilizzata nelle funzioni implementate nei file mex e queste ultime verranno richiamate negli script in Matlab.
+
+        \lstinputlisting[language=c++, frame=single]{code/best_weak_classifier.cxx}
+
+        In questa piccola porzione di codice, relativa alla funzione compilata per la selezione del miglior weak learner, mostra l'utilizzo del metodo \emph{bestWeakClassifier} della classe \emph{Adaboost} definita in \emph{adaboost.h}.

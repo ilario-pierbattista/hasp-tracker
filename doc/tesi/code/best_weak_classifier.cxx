@@ -4,9 +4,6 @@
 
 // [...]
 
-/**
- * Main function
- */
 void mexFunction(int outc, mxArray *output[], 
     int inc, const mxArray *input[]) 
 {
