@@ -7,7 +7,6 @@
 
 #include <climits>
 #include <exception>
-#include <af/array.h>
 #include "geometry.h"
 #include "../exception/MemoryAccessException.h"
 
